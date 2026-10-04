@@ -1,0 +1,247 @@
+# CONTENT.md — the single source of copy
+
+Status markers:
+- **LOCKED** — taken verbatim from the strategy v2 §6. Claude Code reproduces exactly. Faris may change it here; Claude Code may not.
+- **LOCKED ⚑Dn** — locked, but flagged by an open decision in DECISIONS.md. Build as written; expect a change.
+- **DRAFT** — written for this package. Renders with a DRAFT marker in dev; blocks production until Faris changes the marker to LOCKED.
+- `[[KEY]]` — a fact only Faris or the operator can supply. Defined in `content/placeholders.ts`. Blocks production.
+- `{CL-nn}` — a claim that must have a source in the claims register (§12) before production.
+
+---
+
+## 1. Site-wide (`content/site.ts`)
+
+| Key | Value | Status |
+|---|---|---|
+| `brand.name` | `[[BRAND]]` | ⚑D1 |
+| `entity.nameEn` | `[[ENTITY_NAME_EN]]` | |
+| `entity.nameJa` | `[[ENTITY_NAME_JA]]` | |
+| `entity.address` | `[[ENTITY_ADDRESS]]` (Tokyo) and `[[OSAKA_ADDRESS]]` | |
+| `registration.lineJa` | `[[REG_AUTHORITY_JA]]登録旅行業 第[[REG_NUMBER]]号` — the prescribed form, e.g. 東京都知事登録旅行業第3-0000号 or 観光庁長官登録旅行業第0000号. Exact form to be confirmed by the 行政書士. | |
+| `registration.lineEn` | `[[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]` | DRAFT |
+| `tradeNameLine` | `[[BRAND]] is a trading name of [[ENTITY_NAME_EN]].` | DRAFT (COMPLIANCE C2) |
+| `memberships` | `Member, [[ASSOCIATION]]` — one line per membership, never "licensed", "accredited" or "certified by". | LOCKED rule |
+| `whatsapp` | `[[WHATSAPP_E164]]` | |
+| `phone` | `[[PHONE]]` | |
+| `email` | `[[EMAIL]]` | |
+| `desk.enabled` | `false` until the desk is staffed | ⚑D3 |
+| `desk.zone` / `desk.hours` | `[[DESK_ZONE]]` / `[[DESK_HOURS]]` | ⚑D3 |
+| `whatsapp.prefill` | "Hello, I would like to plan a trip to Japan for my family." | DRAFT |
+
+## 2. Navigation
+
+Summer Journeys · Private Japan · Family Services · Experiences · About · Contact — and "For travel advisors". Status: LOCKED (page names from strategy §5).
+
+## 3. Home (`/`)
+
+**Hero — LOCKED ⚑D2**
+
+> **Japan, planned for the whole household.**
+>
+> Families travel together — three generations, staff, children of different ages, one itinerary. We plan for that unit.
+>
+> We work directly from Tokyo and Osaka, in English, Arabic and Japanese, and we specialise in the months most operators avoid: Hokkaido and Okinawa in summer, when Japan is cool, quiet and at its best for a family.
+>
+> Enquiry only. No packages, no resellers.
+
+**Hero margin — DRAFT**
+
+> Registered travel agency
+> `registration.lineJa`
+> Verify our registration with the Japan Tourism Agency. {CL-06}
+
+**Entry points — DRAFT**
+
+- *Summer Journeys* — "Hokkaido, Okinawa and the Japan Alps in July and August."
+- *Private Japan* — "Year-round journeys for families and small groups who travel together."
+
+**Contact band — DRAFT**
+
+> Tell us who is travelling and when.
+> [WhatsApp button] [DeskStatus] Email `[[EMAIL]]` · Telephone `[[PHONE]]`
+
+## 4. Summer Journeys (`/summer-journeys`)
+
+**Title and lede — LOCKED ⚑D5**
+
+> **July and August are the best months to bring a family to Japan — in the right places.**
+>
+> Honshu in high summer is hot and crowded. Hokkaido is not. Okinawa is coastal. The Japan Alps are cool at altitude. These are the months when Japan's finest properties are quietest and most available, and they are also the months when families from the Gulf and southern Europe most need to travel.
+>
+> We built this company around that overlap.
+
+**Season band — needs data** {CL-05}
+Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."
+Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa row — Okinawa's case is coastal, not cool, and a Naha row would undercut the page (⚑D6).
+
+**Region sections — BRIEF, not copy.** The strategy calls this the page with "the most specific content". Only the operator can write it truthfully. For each region Faris/the operator supplies, and Claude Code renders:
+
+| Slot | Hokkaido | Okinawa | Hokuriku and the Japan Alps ⚑D6 |
+|---|---|---|---|
+| Body, 80–120 words: what a household does here in July–August, named places | `[[HOKKAIDO_BODY]]` | `[[OKINAWA_BODY]]` | `[[ALPS_BODY]]` |
+| Margin: vertical name | 北海道 | 沖縄 | 北陸 / 北アルプス |
+| Margin: best weeks | `[[..]]` | `[[..]]` | `[[..]]` |
+| Margin: suggested length | `[[..]]` | `[[..]]` | `[[..]]` |
+| Margin: getting there from Tokyo | `[[..]]` | `[[..]]` | `[[..]]` |
+| Margin: properties with private bathing we use | count `[[..]]` | `[[..]]` | `[[..]]` |
+
+**Closing — DRAFT**
+
+> Summer dates go first. Tell us the household and the weeks you are weighing.
+> [WhatsApp button]
+
+## 5. Private Japan (`/private-japan`)
+
+**Lede — LOCKED**
+
+> A family trip to Japan is a household moving together. We plan for the unit, not the individual traveller: rooms that connect, pacing that works for a grandparent and a six-year-old on the same day, transport that keeps the group together, and privacy for the group as a whole rather than as a request added at the end.
+
+**Sections — DRAFT**
+
+- **Rooms.** Connecting rooms, or rooms on one floor, confirmed room by room rather than by category. We tell you what is confirmed before you commit.
+- **Pacing.** Days planned so that the grandparent and the six-year-old both finish them well: fewer stops, longer at each, rest written into the day.
+- **Transport.** Private vehicles sized for the whole group and its luggage, so no one travels separately. *Margin:* Vehicles and drivers are supplied by `[[TRANSPORT_OPERATOR]]`, a licensed hire operator.
+- **Privacy.** Private dining rooms, private bathing and a guide who works for your household alone, planned from the first draft.
+
+## 6. Family Services (`/family-services`)
+
+**All copy — LOCKED.** Page title: **For Muslim families**
+
+> We build these into the itinerary from the first draft, not as requests added later.
+>
+> **Dining.** Japan has no national halal standard — certification is issued by private bodies, and the certifier matters: the UAE recognises three Japanese certifiers, and Saudi recognition is narrower still. We tell you which certification a restaurant holds and whether your authority recognises it. Where it does not, we arrange a private chef or a kitchen briefed to cook without alcohol-based seasoning — mirin, cooking sake and most commercial soy sauces — and we say plainly which of the two we have arranged. We do not describe a pork-free kitchen as halal. {CL-01} {CL-07}
+>
+> **Bathing.** Communal bathing is the norm in Japan. We book only properties with private bathing — 貸切風呂 or rooms with their own bath — and we confirm the specific room, not the room category. At the luxury tier this narrows the property list considerably, and in Kyoto it narrows it to a handful. We will tell you which properties are available for your dates before you commit.
+>
+> **Prayer.** Prayer times shape the day's pacing rather than interrupting it. Mosques and prayer rooms are concentrated in Tokyo, Osaka and Kyoto, and are limited outside them, so we provide prayer space in the vehicle and at the hotel when the itinerary goes regional. {CL-04}
+>
+> **Guiding.** We provide guides who work in Arabic, and female guides where requested. Japan has no Arabic guide credential — Arabic is not one of the ten languages of the national interpreter-guide examination — so ours are people we have recruited, trained and worked with ourselves. We will name your guide before you travel. {CL-02}
+>
+> **Transport.** Private vehicles with professional drivers, arranged through a licensed hire operator. Where a female driver is requested we will say honestly whether one is available for your dates: there are roughly 13,000 female professional drivers in all of Japan, and we will not promise what we cannot confirm. {CL-03}
+
+`貸切風呂` renders with `lang="ja"`.
+
+**Margin notes — DRAFT** (one per section, each carrying the claim's source link): e.g. beside Guiding — "National interpreter-guide examination languages: ten. Arabic is not among them." {CL-02}
+
+## 7. Experiences (`/experiences`)
+
+**Intro — DRAFT**
+
+> Each of these is arranged with a named person, in a stated season, with a stated lead time. If an entry says six weeks, it needs six weeks.
+
+**Entries — 8 to 12, supplied by the operator.** Fixed format (strategy §6, LOCKED):
+
+```ts
+{
+  venue: "[[VENUE]]", city: "[[CITY]]",
+  what: "[[WHAT_HAPPENS]]",
+  practitioner: "[[NAMED_PRACTITIONER]]",   // cleric, artisan, chef — a real name
+  season: "[[SEASON_OR_MONTHS]]",
+  duration: "[[DURATION]]",
+  groupLimit: "[[GROUP_LIMIT]]",
+  leadTimeWeeks: 0,                          // number
+}
+```
+
+Banned in any entry (COMPLIANCE C3): "private access", "exclusive", "arranged through a relationship", "after hours" at any Imperial Household Agency property.
+
+## 8. About (`/about`)
+
+**Who we are — LOCKED**
+
+> We are a registered Japanese travel agency working from Tokyo and Osaka. Our registration and the name of our certified travel services manager appear at the foot of every page — you can verify both with the Japan Tourism Agency.
+>
+> The company is led by an Egyptian founder who works in Japanese, alongside a team that covers Arabic, Japanese and English as first languages. Client conversations happen in the client's own language, without an interpreter in the middle.
+>
+> Our work is enquiry-only. Most of what we arrange, we arrange once.
+
+Note: the copy says the manager's name appears at the foot of every page. Strategy §7.5 puts the manager on About only. **Build it in the footer** so the copy is true (COMPLIANCE C1).
+
+**Credentials — FactList, labels LOCKED, values placeholders**
+
+| Label | Value |
+|---|---|
+| Registration | `registration.lineJa` / `registration.lineEn` |
+| Registering authority | `[[REG_AUTHORITY_EN]]` |
+| Registered entity | `[[ENTITY_NAME_EN]]` (`[[ENTITY_NAME_JA]]`) |
+| Tokyo office | `[[ENTITY_ADDRESS]]` |
+| Osaka office | `[[OSAKA_ADDRESS]]` |
+| Travel services manager, Tokyo | `[[MANAGER_TOKYO]]`, 旅行業務取扱管理者 (`[[MANAGER_TOKYO_GRADE]]`) |
+| Travel services manager, Osaka | `[[MANAGER_OSAKA]]`, 旅行業務取扱管理者 (`[[MANAGER_OSAKA_GRADE]]`) |
+| Memberships | `Member, [[ASSOCIATION]]` |
+| Public liability insurance | `[[INSURER]]`, cover `[[COVER_LEVEL]]` |
+| Languages | Arabic, English, Japanese — `[[LANGUAGE_STAFF_NOTE]]` (who speaks each natively) |
+| How we quote | "Net supplier rates plus a stated service margin." (LOCKED) |
+| Founder | "Our founder has worked in Japanese inbound travel since `[[FOUNDER_YEAR]]`." — attributed to the person, never the entity (LOCKED rule) |
+
+**Sources — DRAFT heading "Sources"**: the claims register rendered as a numbered list.
+
+## 9. For Travel Advisors (`/for-travel-advisors`)
+
+**All copy — DRAFT ⚑D9**
+
+> **For travel advisors**
+>
+> We work with advisors whose clients travel to Japan as a household. You hold the client relationship; we plan and operate the trip in Japan, and we speak with your clients in Arabic, English or Japanese when you ask us to.
+>
+> Everything a due-diligence check needs is public: our registration, our named travel services managers, our memberships and our insurance are on the About page. Only net rates sit behind a sign-in, issued to advisors we have verified.
+
+Sections:
+- **Net rates.** Quoted in yen, net of our margin, so your commission is yours to set. ⚑D9 (confirm yen pricing and FX clause per strategy §8)
+- **Response.** The same desk that answers clients answers advisors, on the same response commitment.
+- **Request access.** Form fields: your name; agency; country; consortium or network (Virtuoso, Traveller Made, Signature, Ensemble, independent, other); agency registration or IATA number; work email. Submit: "Request access". Confirmation: "Request received. We verify every agency by hand and reply by email."
+- **Already approved?** Link "Sign in to net rates".
+
+## 10. Contact (`/contact`)
+
+**LOCKED ⚑D3**
+
+> **Tell us the household, the dates you are weighing, and what the trip needs to do.**
+>
+> WhatsApp: `[[WHATSAPP_DISPLAY]]` — answered in Arabic or English, within two hours during Japan business hours.
+> Telephone: `[[PHONE]]`
+> Email: `[[EMAIL]]`
+>
+> Or use the form: who is travelling (and ages), dates you are considering, language preference.
+
+**Arabic line — DRAFT ⚑D10, requires native review before LOCK**
+
+> يسعدنا التواصل معكم باللغة العربية عبر واتساب.
+
+**Form fields** (no budget field, no traveller-type field — LOCKED rule)
+
+| Field | Type | Required |
+|---|---|---|
+| Your name | text | yes |
+| How should we reply? | WhatsApp / Email / Telephone | yes |
+| WhatsApp or telephone number | tel | if chosen |
+| Email | email | if chosen |
+| Who is travelling, and their ages | textarea | yes |
+| Dates you are considering | textarea (free text; families weigh ranges) | yes |
+| What the trip needs to do | textarea | no |
+| Language for our reply | Arabic / English / Japanese | yes |
+
+Submit: "Send enquiry" (DRAFT). Confirmation (DRAFT): "Enquiry received. We will reply in the language you chose, by the route you chose."
+
+Privacy line under the form (DRAFT): "We use these details only to reply to you and plan your trip. See our privacy notice."
+
+## 11. Utility pages
+
+- `/privacy` — `[[PRIVACY_NOTICE]]`. APPI-compliant notice, to be supplied by the 行政書士 (⚑D11).
+- `/terms` — `[[TERMS_OF_BUSINESS]]` (旅行業約款 / 取引条件 as advised, ⚑D11).
+- 404 — DRAFT: "There is no page at this address." followed by the site navigation.
+- Page titles and meta descriptions: DRAFT, one per page, written in Prompt 7 and listed in the checkpoint for approval.
+
+## 12. Claims register (`content/claims.ts`)
+
+Every `{CL-nn}` must have a source URL, publisher, and date verified before production (COMPLIANCE C5).
+
+| ID | Claim as used in copy | Source status |
+|---|---|---|
+| CL-01 | The UAE recognises three Japanese halal certifiers | **Unsourced.** Strategy cites ESMA; ESMA's functions moved to the Ministry of Industry and Advanced Technology in 2020 — verify against the current MoIAT list. |
+| CL-02 | Arabic is not one of the ten languages of the national interpreter-guide examination | JNTO / JTA exam pages — to attach |
+| CL-03 | Roughly 13,000 female professional drivers in Japan | **Unsourced** — needs a named statistic and year |
+| CL-04 | Mosques and prayer rooms concentrated in Tokyo, Osaka, Kyoto | JNTO Muslim-traveller resources — to attach |
+| CL-05 | Monthly mean maximum temperatures (Season band) | JMA 1991–2020 normals — to attach, with station names |
+| CL-06 | Registration verifiable with the Japan Tourism Agency | Link to the registering authority's public register — to attach |
+| CL-07 | Japan has no national halal standard | To attach (MAFF / JNTO) |
