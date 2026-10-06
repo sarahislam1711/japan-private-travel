@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@layer base {
+  :root {
+    /* Inline-start as a transform origin; flips for right-to-left. */
+    --origin-start: 0%;
+  }
+  :root:dir(rtl) {
+    --origin-start: 100%;
+  }
+
+  html {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    -webkit-text-size-adjust: 100%;
+    /* No italic is loaded; never let the browser fake one. */
+    font-synthesis-style: none;
+    caret-color: var(--color-navy);
+    accent-color: var(--color-navy);
+    scrollbar-color: var(--color-hairline) var(--color-ground);
+  }
+
+  body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-optical-sizing: auto;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+  }
+
+  ::selection {
+    background-color: var(--color-navy);
+    color: var(--color-plate);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :lang(ja) {
+    font-family: var(--font-mincho);
+    font-variant-numeric: lining-nums;
+  }
+
+  a {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: currentColor;
+    transition: color var(--duration-link) ease-out;
+  }
+  a:hover {
+    color: var(--color-navy);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-navy);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* The double rule that frames a plate and underlines its title. */
+  .rule-double {
+    border-block-end: var(--rule-frame) double var(--color-ink);
+  }
+
+  /* Home's one moment: rules draw from inline-start, then ink settles. */
+  @media (prefers-reduced-motion: no-preference) {
+    .draw-rule {
+      transform-origin: var(--origin-start) 50%;
+      animation: draw-rule var(--duration-rule) var(--ease-out-expo) both;
+      animation-delay: calc(var(--i, 0) * var(--stagger));
+    }
+    .ink-in {
+      animation: ink-in var(--duration-ink) var(--ease-out-expo) both;
+      animation-delay: calc(var(--i, 0) * var(--stagger));
+    }
+  }
+
+  @keyframes draw-rule {
+    from {
+      transform: scaleX(0);
+    }
+  }
+  @keyframes ink-in {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+    }
+  }
+}
