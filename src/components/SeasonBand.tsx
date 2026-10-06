@@ -40,7 +40,7 @@ export function SeasonBand() {
                 <CopyText copy={row} />
               </th>
               {months.map((m) => (
-                <td key={m} className={`py-2.5 text-center text-hairline ${summer.has(m) ? "bg-navy/8" : ""}`}>
+                <td key={m} className={`py-2.5 text-center text-ink-soft ${summer.has(m) ? "bg-navy/8" : ""}`}>
                   –
                 </td>
               ))}

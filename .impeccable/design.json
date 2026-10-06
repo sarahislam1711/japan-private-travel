@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T00:00:00Z",
+  "title": "Design System: [[BRAND]]",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "primary", "displayName": "Registry Navy", "canonical": "#1f3a5f", "tonalRamp": ["oklch(15% 0.06 255)", "oklch(25% 0.07 255)", "oklch(35% 0.07 255)", "oklch(45% 0.07 255)", "oklch(57% 0.06 255)", "oklch(70% 0.045 255)", "oklch(83% 0.03 255)", "oklch(95% 0.012 255)"] },
+      "ground": { "role": "neutral", "displayName": "Cool Ground", "canonical": "#eef1f2", "tonalRamp": ["oklch(15% 0.005 220)", "oklch(27% 0.005 220)", "oklch(39% 0.005 220)", "oklch(51% 0.005 220)", "oklch(63% 0.005 220)", "oklch(75% 0.005 220)", "oklch(87% 0.005 220)", "oklch(95.5% 0.004 220)"] },
+      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#e2e7ea", "tonalRamp": ["oklch(15% 0.008 230)", "oklch(27% 0.008 230)", "oklch(39% 0.008 230)", "oklch(51% 0.008 230)", "oklch(63% 0.008 230)", "oklch(75% 0.008 230)", "oklch(87% 0.008 230)", "oklch(92.5% 0.007 230)"] },
+      "plate": { "role": "neutral", "displayName": "Enamel Plate", "canonical": "#fbfcfc", "tonalRamp": ["oklch(15% 0.002 200)", "oklch(27% 0.002 200)", "oklch(39% 0.002 200)", "oklch(51% 0.002 200)", "oklch(63% 0.002 200)", "oklch(75% 0.002 200)", "oklch(87% 0.002 200)", "oklch(99% 0.001 200)"] },
+      "ink": { "role": "neutral", "displayName": "Plate Ink", "canonical": "#14181d", "tonalRamp": ["oklch(20% 0.01 250)", "oklch(30% 0.01 250)", "oklch(40% 0.01 250)", "oklch(50% 0.01 250)", "oklch(62% 0.01 250)", "oklch(74% 0.008 250)", "oklch(86% 0.006 250)", "oklch(95% 0.004 250)"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#4a5159", "tonalRamp": ["oklch(20% 0.012 250)", "oklch(30% 0.012 250)", "oklch(40% 0.014 250)", "oklch(50% 0.014 250)", "oklch(62% 0.012 250)", "oklch(74% 0.01 250)", "oklch(86% 0.008 250)", "oklch(95% 0.004 250)"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline (non-text only)", "canonical": "#c3c9ce", "tonalRamp": ["oklch(20% 0.01 240)", "oklch(30% 0.01 240)", "oklch(42% 0.01 240)", "oklch(54% 0.01 240)", "oklch(66% 0.01 240)", "oklch(78% 0.01 240)", "oklch(84% 0.009 240)", "oklch(95% 0.004 240)"] },
+      "stone": { "role": "neutral", "displayName": "Stone (dev-only outlines, never text)", "canonical": "#6b7480", "tonalRamp": ["oklch(20% 0.015 255)", "oklch(30% 0.015 255)", "oklch(42% 0.018 255)", "oklch(55% 0.02 255)", "oklch(66% 0.016 255)", "oklch(77% 0.012 255)", "oklch(87% 0.008 255)", "oklch(95% 0.004 255)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home's headline only, set over a single 1px ink rule." },
+      "headline": { "displayName": "Headline", "purpose": "Page titles." },
+      "title": { "displayName": "Title", "purpose": "Section heads and entry-point headings." },
+      "title-small": { "displayName": "Title small", "purpose": "The plate's own title; sub-heads." },
+      "lede": { "displayName": "Lede", "purpose": "First paragraph under a title; the footer's trade-name line." },
+      "body": { "displayName": "Body", "purpose": "Main column at a 36rem measure; oldstyle numerals." },
+      "field": { "displayName": "Field", "purpose": "Plate values; lining tabular numerals." },
+      "label": { "displayName": "Label", "purpose": "Plate labels, navigation, form labels, margin notes (BIZ UDPGothic)." },
+      "small": { "displayName": "Small", "purpose": "Captions, footer links and legal lines." },
+      "japanese": { "displayName": "Japanese", "purpose": "Every lang=\"ja\" run; keep-all, strict line breaking." }
+    },
+    "shadows": [],
+    "rules": [
+      { "name": "frame", "value": "4px double var(--color-ink)", "purpose": "The plate's frame; Home hero, About credentials and footer only." },
+      { "name": "title-rule", "value": "1px solid var(--color-ink)", "purpose": "Under the headline and the plate title, above the plate foot, the season band head." },
+      { "name": "row-rule", "value": "1px solid var(--color-hairline)", "purpose": "Between plate rows, above entry points, above the footer link row." },
+      { "name": "note-rule", "value": "2px solid var(--color-hairline) on the inline-start edge", "purpose": "Marks a margin note as evidence." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Home's one moment." },
+      { "name": "duration-rule", "value": "900ms", "purpose": "A rule draws from inline-start (scaleX 0 to 1)." },
+      { "name": "duration-ink", "value": "600ms", "purpose": "A value inks in (opacity 0 and blur 3px to rest)." },
+      { "name": "stagger", "value": "90ms", "purpose": "Per-step delay across headline, intro, plate rows and foot." },
+      { "name": "duration-link", "value": "150ms", "purpose": "Link colour shift to navy on hover." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "640px" },
+      { "name": "desktop", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The site's one solid button. No icon, no arrow.",
+      "html": "<button class=\"ds-btn\">Send enquiry</button>",
+      "css": ".ds-btn { min-height: 48px; padding: 0 24px; border: 0; border-radius: 6px; background: var(--color-ink, #14181d); color: var(--color-plate, #fbfcfc); font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; font-weight: 700; cursor: pointer; transition: background-color 150ms ease-out; } .ds-btn:hover { background: var(--color-navy, #1f3a5f); } .ds-btn:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Label above, plate field, soft-ink border, 6px radius.",
+      "html": "<label class=\"ds-field\">Your name<input class=\"ds-input\" /></label>",
+      "css": ".ds-field { display: grid; gap: 6px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: var(--color-ink-soft, #4a5159); } .ds-input { min-height: 48px; width: 18rem; padding: 0 12px; border: 1px solid var(--color-ink-soft, #4a5159); border-radius: 6px; background: var(--color-plate, #fbfcfc); color: var(--color-ink, #14181d); font-family: 'Source Serif 4', Georgia, serif; font-size: 1.125rem; caret-color: var(--color-navy, #1f3a5f); } .ds-input:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Underlined at 1px, navy on hover. Every action other than the one button.",
+      "html": "<a class=\"ds-link\" href=\"#\">Verify our registration with the Japan Tourism Agency.</a>",
+      "css": ".ds-link { color: var(--color-ink, #14181d); text-decoration: underline 1px currentColor; text-underline-offset: 0.22em; font-family: 'Source Serif 4', Georgia, serif; transition: color 150ms ease-out; } .ds-link:hover { color: var(--color-navy, #1f3a5f); } .ds-link:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Wordmark at inline-start, label-face links at inline-end, advisors set apart by a hairline divider.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">[[BRAND]]</a><nav class=\"ds-nav-links\"><a href=\"#\" aria-current=\"page\">Summer Journeys</a><a href=\"#\">Private Japan</a><a href=\"#\">About</a><a href=\"#\">Contact</a><span class=\"ds-nav-adv\"><a href=\"#\">For travel advisors</a></span></nav></header>",
+      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 28px 0 20px; background: var(--color-ground, #eef1f2); } .ds-wordmark { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.375rem; font-weight: 600; letter-spacing: -0.015em; line-height: 1; color: var(--color-ink, #14181d); text-decoration: none; } .ds-nav-links { display: flex; align-items: baseline; gap: 24px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; } .ds-nav-links a { color: var(--color-ink, #14181d); text-decoration: none; text-underline-offset: 0.22em; } .ds-nav-links a:hover { text-decoration: underline 1px; color: var(--color-navy, #1f3a5f); } .ds-nav-links a[aria-current=page] { text-decoration: underline 2px; } .ds-nav-links a:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; } .ds-nav-adv { border-inline-start: 1px solid var(--color-hairline, #c3c9ce); padding-inline-start: 24px; }"
+    },
+    {
+      "name": "Registration Plate",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "The signature: a double-rule framed table of checkable facts. Home hero, About credentials and footer only.",
+      "html": "<div class=\"ds-plate\"><div class=\"ds-plate-title\">Registered travel agency</div><dl><div class=\"ds-plate-row\"><dt>Registration</dt><dd lang=\"ja\">[[REG_AUTHORITY_JA]]登録旅行業 第[[REG_NUMBER]]号</dd></div><div class=\"ds-plate-row\"><dt>Registered entity</dt><dd>[[ENTITY_NAME_EN]]</dd></div><div class=\"ds-plate-row\"><dt>Memberships</dt><dd>Member, [[ASSOCIATION]]</dd></div></dl><div class=\"ds-plate-foot\"><a href=\"#\">Verify our registration with the Japan Tourism Agency.</a></div></div>",
+      "css": ".ds-plate { max-width: 36rem; border: 4px double var(--color-ink, #14181d); border-radius: 0; background: var(--color-plate, #fbfcfc); padding: 0 20px 4px; color: var(--color-ink, #14181d); } .ds-plate-title { padding: 12px 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.375rem; font-weight: 600; line-height: 1.3; } .ds-plate dl { margin: 0; } .ds-plate-row { display: grid; grid-template-columns: 13.75rem 1fr; column-gap: 16px; padding: 10px 0; border-block-start: 1px solid var(--color-hairline, #c3c9ce); } .ds-plate-row:first-child { border-block-start-color: var(--color-ink, #14181d); } .ds-plate-row dt { padding-block-start: 2px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: var(--color-ink-soft, #4a5159); } .ds-plate-row dd { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1rem; line-height: 1.45; font-variant-numeric: lining-nums tabular-nums; } .ds-plate-row dd:lang(ja) { font-family: 'Noto Serif JP', serif; word-break: keep-all; } .ds-plate-foot { padding: 10px 0; border-block-start: 1px solid var(--color-ink, #14181d); font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; } .ds-plate-foot a { color: inherit; text-decoration: underline 1px; text-underline-offset: 0.22em; transition: color 150ms ease-out; } .ds-plate-foot a:hover { color: var(--color-navy, #1f3a5f); } .ds-plate-foot a:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Margin Note",
+      "kind": "custom",
+      "refersTo": "margin-note",
+      "description": "The proof beside a claim, marked by a hairline inline-start rule.",
+      "html": "<aside class=\"ds-note\"><p>National interpreter-guide examination languages: ten. Arabic is not among them.</p><p><a href=\"#\">Source</a></p></aside>",
+      "css": ".ds-note { max-width: 16rem; border-inline-start: 2px solid var(--color-hairline, #c3c9ce); padding-inline-start: 16px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: var(--color-ink-soft, #4a5159); } .ds-note p { margin: 0; } .ds-note p + p { margin-block-start: 8px; } .ds-note a { color: var(--color-ink, #14181d); text-decoration: underline 1px; text-underline-offset: 0.22em; } .ds-note a:hover { color: var(--color-navy, #1f3a5f); } .ds-note a:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Entry Point",
+      "kind": "custom",
+      "refersTo": "entry-point",
+      "description": "A whole-block link under a hairline; no card, no border box.",
+      "html": "<a class=\"ds-entry\" href=\"#\"><h2>Summer Journeys</h2><p>Hokkaido, Okinawa and the Japan Alps in July and August.</p></a>",
+      "css": ".ds-entry { display: block; max-width: 36rem; border-block-start: 1px solid var(--color-hairline, #c3c9ce); padding-block-start: 20px; color: var(--color-ink, #14181d); text-decoration: none; } .ds-entry h2 { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 2.125rem; font-weight: 450; line-height: 1.18; letter-spacing: -0.01em; } .ds-entry p { margin: 8px 0 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.125rem; line-height: 1.68; } .ds-entry:hover h2 { color: var(--color-navy, #1f3a5f); text-decoration: underline 1px; text-underline-offset: 0.18em; } .ds-entry:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Tinted Section",
+      "kind": "card",
+      "refersTo": "tinted-section",
+      "description": "Separation by surface, not by line; the footer's ground.",
+      "html": "<section class=\"ds-tint\"><p>[[BRAND]] is a trading name of [[ENTITY_NAME_EN]].</p></section>",
+      "css": ".ds-tint { background: var(--color-mist, #e2e7ea); padding: 64px 80px; border-radius: 0; } .ds-tint p { margin: 0; max-width: 28rem; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.4375rem; line-height: 1.5; color: var(--color-ink, #14181d); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Registration Plate",
+    "overview": "A registered Japanese travel agency must display its registration plate: a framed, ruled table of facts (registration number, authority, entity, managers, memberships). The site borrows that object and nothing else. The facts sit in a ruled plate; the brand sits beside and beneath them. The plate is enamel-white on a cool grey ground, framed by a black double rule, with hairline rows; navy is the only accent. The site is a credential, and the plate is how it shows its credentials.\n\nThe governing idea, unchanged since the first specification: the main column says; the margin proves. Claims are made in a reading column of Source Serif; the evidence that backs them (registration, named policy, source of a number) sits beside them in the margin, set in BIZ UDPGothic, the Universal Design face of Japanese official documents. A due-diligence reader can read the margin alone.\n\nThe world is deliberately less rigid than its first drafts. The framed double-rule plate is a signature, used on only three surfaces: Home's hero, About's credentials, and the footer. Everywhere else the page breathes: more space, fewer and lighter rules, and separation by a tinted surface (mist) rather than by lines. The layout looks finished without photographs, because type, rules and the plate carry it. One light theme only; no dark mode. Refused: the photo-led luxury hero, cards, shadows, gradients, icons, Japan clichés.",
+    "keyCharacteristics": [
+      "Cool grey ground, enamel-white plate, near-black ink, navy as the single accent.",
+      "Source Serif 4 (with optical sizing) for everything read; BIZ UDPGothic for labels, nav, notes and legal lines; Noto Serif JP for Japanese.",
+      "The framed plate appears on three surfaces only; elsewhere, space and tint separate.",
+      "Every rule separates two facts. No rule is decoration.",
+      "Start-aligned asymmetric 12-column grid; nothing centred.",
+      "Square plate, softened controls (6px).",
+      "One motion moment, on Home: rules draw from inline-start, values ink in."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Navy is the only colour that is not a neutral. It marks interaction (hover, focus, selection) and the two summer months. Nothing else is navy, and no second accent is introduced.", "section": "colors" },
+      { "name": "The Tint Before Line Rule", "body": "To separate a zone, reach for mist first. A rule is drawn only where it separates two facts.", "section": "colors" },
+      { "name": "The Sentence Case Rule", "body": "Sentence case everywhere. No all-caps, no letter-spaced labels, no small caps, no eyebrows above headings, no italic or coloured word inside a heading. No italic is loaded and synthesis is switched off.", "section": "typography" },
+      { "name": "The Two Numeral Rule", "body": "Reading text uses oldstyle proportional numerals; anything tabular (plate values, the season band) uses lining tabular numerals. Japanese uses lining numerals.", "section": "typography" },
+      { "name": "The Unbroken Japanese Rule", "body": "Japanese runs carry lang=\"ja\", are set in Noto Serif JP, and never break inside a word (word-break: keep-all; line-break: strict). Headings are balanced and paragraphs are wrapped pretty.", "section": "typography" },
+      { "name": "The Main Says, Margin Proves Rule", "body": "Claims go in the main column; their evidence goes level with them in the margin (or directly after them on narrow screens). Proof is never buried in the body or moved to a separate page alone.", "section": "layout" },
+      { "name": "The Finished Without Photographs Rule", "body": "No layout may depend on an image to look complete. Photographs, when licensed, are an enhancement.", "section": "layout" },
+      { "name": "The Flat Plate Rule", "body": "Surfaces never lift. If something needs to stand apart, change its surface tone or frame it as the plate; never cast a shadow.", "section": "elevation" },
+      { "name": "The Signature Frame Rule", "body": "The double-rule frame appears on exactly three surfaces: Home's hero plate, About's credentials, and the footer's plate. Anywhere else, use rows without a frame, or a tint.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do put facts in the plate or the margin and claims in the main column.",
+      "Do separate zones with mist and space first; draw a rule only between two facts.",
+      "Do keep the framed double-rule plate to Home's hero, About's credentials and the footer.",
+      "Do set the headline over a single 1px ink rule, not a double rule.",
+      "Do keep the plate and all ruled objects square; give controls 6px.",
+      "Do use navy only for interaction states and the summer months.",
+      "Do use lining tabular numerals in anything tabular and oldstyle numerals in reading text.",
+      "Do use logical properties only, and carry every visible string from /content.",
+      "Do keep the one motion moment to Home and switch it off under prefers-reduced-motion.",
+      "Do meet WCAG 2.2 AA: visible navy focus on everything focusable, a skip link, hairline and stone never used for text."
+    ],
+    "donts": [
+      "Don't use icons, arrows on links or buttons, cards, shadows or gradients.",
+      "Don't use all-caps, letter-spaced or eyebrow labels, or numbered markers.",
+      "Don't centre layouts.",
+      "Don't use Japan clichés (torii at sunset, geisha and the like).",
+      "Don't add a dark mode.",
+      "Don't show prices, \"book now\", pop-ups, badges or trust seals.",
+      "Don't build a photo-led hero, or any layout that looks unfinished without a photograph.",
+      "Don't animate anything else on load or scroll.",
+      "Don't introduce a second accent colour or a shadow scale."
+    ]
+  }
+}

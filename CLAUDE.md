@@ -24,7 +24,7 @@ Before any work in a session, read: `docs/PLAN.md` (where the build stands), `do
 
 - **Next.js**, latest stable, App Router, TypeScript `strict: true`, React Server Components by default; client components only where interaction requires it.
 - **Tailwind CSS v4**, tokens defined once in `src/styles/tokens.css` via `@theme` (values in `docs/DESIGN.md`). No component library, no icon library.
-- **Fonts** via `next/font/google`: `Newsreader` (variable, with `opsz`), `Zen Kaku Gothic New` (400, 500; `preload: false`). Nothing else at launch.
+- **Fonts** via `next/font/google` (changed 6 Oct 2026 with the Registration Plate redesign): `Source Serif 4` (variable, with `opsz`, upright only) for Latin text; `Noto Serif JP` (400; `preload: false`) for Japanese; `BIZ UDPGothic` (400, 700) for labels, navigation and notes. Nothing else at launch.
 - **Content**: typed TypeScript modules in `/content`. No CMS at launch — every copy change must pass through a reviewable diff because copy carries legal exposure under the Travel Agency Act.
 - **Supabase**, project region `ap-northeast-1` (Tokyo): `enquiries`, `advisor_requests`, `advisors`, `rate_downloads` tables; private storage bucket `rates`. RLS enabled on every table, no anon policies.
 - **Resend** for enquiry notification email. **Cloudflare Turnstile** on both forms.

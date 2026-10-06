@@ -9,10 +9,10 @@ Agreed 6 Oct 2026:
 - **Repo:** every finished step is committed and pushed to `sarahislam1711/japan-private-travel` (private).
 
 ## Phase 0 — Reset the foundations
-- [ ] Soften the visual system on `/styleguide` (tokens, spacing, rules, type) and review it together.
-- [ ] Apply the finish-review fixes that still apply: grid alignment, Japanese line breaking, margin-note link label, header advisor link weight, font fallback.
-- [ ] Decide the footer: dark band or framed plate on the light ground.
-- [ ] Replace `docs/DESIGN.md` with the new system; update the font line in `CLAUDE.md`.
+- [x] Soften the visual system on `/styleguide` (tokens, spacing, rules, type) and review it together.
+- [x] Apply the finish-review fixes that still apply: grid alignment, Japanese line breaking, margin-note link label, header advisor link weight, font fallback.
+- [x] Decide the footer: built as the framed plate on a tinted section (Sarah to confirm; the dark band can come back).
+- [x] Replace `docs/DESIGN.md` with the new system; update the font line in `CLAUDE.md`.
 
 ## Phase 1 — Positioning and structure
 - [ ] `docs/POSITIONING.md`: one positioning line, three or four proof points, the message for advisors and for families, voice rules.

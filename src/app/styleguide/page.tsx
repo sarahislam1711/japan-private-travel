@@ -20,11 +20,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = { title: "Styleguide", robots: { index: false, follow: false } };
 
 const palette = [
-  ["ground", "#E9EAE6", "bg-ground"],
-  ["plate", "#FAFAF7", "bg-plate"],
-  ["ink", "#121417", "bg-ink"],
-  ["ink-soft", "#464B52", "bg-ink-soft"],
-  ["hairline", "#A4A9AE", "bg-hairline"],
+  ["ground", "#EEF1F2", "bg-ground"],
+  ["mist", "#E2E7EA", "bg-mist"],
+  ["plate", "#FBFCFC", "bg-plate"],
+  ["ink", "#14181D", "bg-ink"],
+  ["ink-soft", "#4A5159", "bg-ink-soft"],
+  ["hairline", "#C3C9CE", "bg-hairline"],
   ["navy", "#1F3A5F", "bg-navy"],
 ] as const;
 
@@ -51,7 +52,7 @@ export default function StyleguidePage() {
         <EntryPoints />
 
         <Spec name="palette">
-          <ul className="grid grid-cols-2 gap-6 tablet:grid-cols-3 desktop:grid-cols-6">
+          <ul className="grid grid-cols-2 gap-6 tablet:grid-cols-3 desktop:grid-cols-7">
             {palette.map(([name, hex, cls]) => (
               <li key={name} className="font-gothic text-small">
                 <span className={`block aspect-[3/2] border border-hairline ${cls}`} />
