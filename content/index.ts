@@ -13,6 +13,7 @@ import type { Copy } from "./schema";
 
 export { site } from "./site";
 export { ui } from "./interface";
+export { mainNav } from "./navigation";
 export { routes, routeFor, privatePathPrefixes } from "./routes";
 export { claims } from "./claims";
 export { photographs } from "./photography.manifest";

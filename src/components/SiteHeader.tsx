@@ -1,65 +1,89 @@
 import Link from "next/link";
 import { ui } from "@content/interface";
-import { routes, type RouteKey } from "@content/routes";
+import { mainNav } from "@content/navigation";
+import { routeFor, type RouteKey } from "@content/routes";
+import type { ReactNode } from "react";
 import { CopyText } from "./CopyText";
+import { NavGroup } from "./NavGroup";
 import { Wordmark } from "./Wordmark";
 
-const primary = routes.filter((r) => r.navLabel && r.key !== "forTravelAdvisors");
-const advisors = routes.find((r) => r.key === "forTravelAdvisors")!;
+const linkClass = "no-underline hover:underline aria-[current=page]:underline aria-[current=page]:decoration-2";
+const ctaClass =
+  "inline-block rounded-(--radius-control) px-4 py-2 no-underline ring-1 ring-ink transition-colors hover:bg-ink hover:text-plate aria-[current=page]:bg-ink aria-[current=page]:text-plate";
 
-function NavLink({ href, current, children }: { href: string; current: boolean; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      aria-current={current ? "page" : undefined}
-      className="no-underline hover:underline aria-[current=page]:underline aria-[current=page]:decoration-2"
-    >
-      {children}
-    </Link>
-  );
-}
+const label = (key: RouteKey): ReactNode => <CopyText copy={routeFor(key).navLabel!} />;
 
-/** Skip link, wordmark at inline-start, navigation at inline-end. Not sticky. */
+/** Skip link, wordmark at inline-start, navigation at inline-end (docs/CONTENT.md §2). Not sticky. */
 export function SiteHeader({ current }: { current?: RouteKey }) {
   return (
     <>
       <a href="#main" className="skip-link">
         <CopyText copy={ui.skipLink} />
       </a>
-      <header className="mx-auto flex max-w-(--content-max) items-baseline justify-between gap-6 px-(--page-margin) pt-7 pb-5">
+      <header className="mx-auto flex max-w-(--content-max) items-center justify-between gap-6 px-(--page-margin) pt-6 pb-5">
         <Link href="/" className="no-underline">
           <Wordmark />
         </Link>
 
-        <nav aria-label="Main" className="hidden items-baseline gap-6 font-gothic text-label desktop:flex">
-          <ul className="flex gap-6">
-            {primary.map((r) => (
-              <li key={r.key}>
-                <NavLink href={r.path} current={current === r.key}>
-                  <CopyText copy={r.navLabel!} />
-                </NavLink>
+        <nav aria-label="Main" className="hidden font-gothic text-label desktop:block">
+          <ul className="flex items-center gap-8">
+            {mainNav.map((entry, i) => (
+              <li key={i}>
+                {entry.kind === "group" ? (
+                  <NavGroup
+                    label={<CopyText copy={entry.label} />}
+                    items={entry.items.map((key) => ({
+                      href: routeFor(key).path,
+                      label: label(key),
+                      current: current === key,
+                    }))}
+                  />
+                ) : (
+                  <Link
+                    href={routeFor(entry.route).path}
+                    aria-current={current === entry.route ? "page" : undefined}
+                    className={entry.kind === "cta" ? ctaClass : linkClass}
+                  >
+                    {label(entry.route)}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
-          {/* Advisors are the primary audience: same weight, set apart by space and a rule. */}
-          <span className="border-s border-hairline ps-6">
-            <NavLink href={advisors.path} current={current === "forTravelAdvisors"}>
-              <CopyText copy={advisors.navLabel!} />
-            </NavLink>
-          </span>
         </nav>
 
         <details className="relative font-gothic text-label desktop:hidden">
           <summary className="cursor-pointer list-none underline underline-offset-[0.22em] [&::-webkit-details-marker]:hidden">
             <CopyText copy={ui.menu} />
           </summary>
-          <nav aria-label="Main" className="absolute end-0 z-10 mt-3 min-w-60 rounded-(--radius-control) bg-plate px-5 py-4 ring-1 ring-hairline">
+          <nav aria-label="Main" className="absolute end-0 z-20 mt-3 min-w-64 rounded-(--radius-control) bg-plate px-5 py-4 ring-1 ring-hairline">
             <ul className="flex flex-col gap-3">
-              {[...primary, advisors].map((r) => (
-                <li key={r.key}>
-                  <NavLink href={r.path} current={current === r.key}>
-                    <CopyText copy={r.navLabel!} />
-                  </NavLink>
+              {mainNav.map((entry, i) => (
+                <li key={i}>
+                  {entry.kind === "group" ? (
+                    <>
+                      <span className="text-ink-soft">
+                        <CopyText copy={entry.label} />
+                      </span>
+                      <ul className="mt-2 flex flex-col gap-2 border-s border-hairline ps-4">
+                        {entry.items.map((key) => (
+                          <li key={key}>
+                            <Link href={routeFor(key).path} aria-current={current === key ? "page" : undefined} className={linkClass}>
+                              {label(key)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <Link
+                      href={routeFor(entry.route).path}
+                      aria-current={current === entry.route ? "page" : undefined}
+                      className={entry.kind === "cta" ? `${ctaClass} mt-1` : linkClass}
+                    >
+                      {label(entry.route)}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -42,9 +42,21 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `footer.terms` | Terms of business | DRAFT |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
 
-## 2. Navigation
+## 2. Navigation (`content/navigation.ts`)
 
-Summer Journeys · Private Japan · Family Services · Experiences · About · Contact — and "For travel advisors". Status: LOCKED (page names from strategy §5).
+Page names: Summer Journeys · Private Japan · Family Services · Experiences · About · Contact — and "For travel advisors". Status: LOCKED (page names from strategy §5).
+
+Header structure (set by Sarah, 6 Oct 2026):
+
+```
+HalaJapan        Trips   Family Services   Experiences   About   [ Contact ]
+                 ├ Summer Journeys
+                 └ Private Japan
+```
+
+- Group label: Trips. Status: LOCKED (Sarah, 6 Oct 2026).
+- Contact sits last, set as a boxed link.
+- "For travel advisors" is not in the header; it is linked from the footer.
 
 ## 3. Home (`/`)
 
