@@ -6,11 +6,11 @@ A nine-page English website for a registered Japanese travel agency (offices in 
 
 The site is a **credential asset, not an acquisition engine**. Its job is to survive a travel advisor's or family office's anonymous due diligence and keep the business on their shortlist. It is not built for SEO breadth, conversion funnels or form-fill volume. Judge every decision against that.
 
-Before any work in a session, read: `docs/PROJECT-GUIDE.md`, `docs/DECISIONS.md`, `docs/DESIGN.md` (and `docs/DESIGN-BRIEF.md`, the designer's brief; DESIGN.md wins where they differ), `docs/CONTENT.md`, `docs/COMPLIANCE.md`, and the current step in `docs/PROMPTS.md`.
+Before any work in a session, read: `docs/PLAN.md` (where the build stands), `docs/PROJECT-GUIDE.md`, `docs/DECISIONS.md`, `docs/DESIGN.md` (and `docs/DESIGN-BRIEF.md`, the designer's brief; DESIGN.md wins where they differ), `docs/CONTENT.md`, `docs/COMPLIANCE.md`, and the current step in `docs/PROMPTS.md`.
 
 ## Non-negotiable rules
 
-1. **Never write or edit user-facing copy.** Every visible string comes from `/content`, which mirrors `docs/CONTENT.md`. If a string is missing, render `<Placeholder name="…" />`. Do not paraphrase, tighten, "improve" or translate copy. If copy looks wrong, say so in your checkpoint report.
+1. **Copy goes through `docs/CONTENT.md` and Sarah's approval.** Every visible string comes from `/content`, which mirrors `docs/CONTENT.md`. Claude Code may draft new or missing copy into `docs/CONTENT.md`, always marked DRAFT, and present it for approval. LOCKED copy changes only when Sarah approves that specific rewrite; never mark anything LOCKED yourself. If a string has no draft yet, render `<Placeholder name="…" />`. Drafts never state a fact that is not supplied (rule 2).
 2. **Never invent facts.** No numbers, names, dates, temperatures, venues, practitioners, registration details, flight times, addresses or phone numbers. Unknown values are `[[KEY]]` placeholders defined in `content/placeholders.ts`.
 3. **The compliance guard is law.** `pnpm guard:prod` must pass for a production build. Never weaken a rule, add an allowlist entry, or skip the guard to get a build through. If it fails, report which rule and why.
 4. **No stock or AI-generated imagery.** Only images listed in `content/photography.manifest.ts` with photographer, licence, place and month. Until real images exist, use the `Plate` component's empty state.
