@@ -17,7 +17,7 @@ Agreed 6 Oct 2026:
 ## Phase 1 — Positioning and structure
 - [ ] `docs/POSITIONING.md`: one positioning line, three or four proof points, the message for advisors and for families, voice rules.
 - [ ] Sitemap and flow: each page's job, reader, questions it answers, and its one next step. Settle the ninth page.
-- [ ] Resolve the copy decisions: D2 ("no resellers"), D3 (desk hours), D5 (superlatives).
+- [ ] Resolve the copy decisions: D2 ("no resellers") resolved by the new Home copy; D3 (desk hours) and D5 (superlatives) open.
 
 ## Phase 2 — The shared shell
 - [ ] Header, mobile menu, skip link.
@@ -27,7 +27,7 @@ Agreed 6 Oct 2026:
 ## Phase 3 — Pages, one at a time
 Each page: brief → copy drafted in `CONTENT.md` → Sarah approves → build → screenshots at 390 / 834 / 1440 and `pnpm guard` → Sarah reviews → commit and push.
 
-- [ ] Home — built 6 Oct 2026 (hero, two ways in + Experiences, three points, advisors band, contact close; links to every page). Awaiting Sarah's approval of the drafted copy.
+- [x] Home — copy written and approved by Sarah (CONTENT.md §3, LOCKED); built with hero and registration plate, two ways in, how we work, and the navy contact close.
 - [ ] (next page chosen by Sarah)
 - [ ] Summer Journeys
 - [ ] Family Services

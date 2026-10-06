@@ -91,7 +91,7 @@ export default function StyleguidePage() {
         <Spec name="links, focus, button">
           <div className="flex flex-wrap items-center gap-8">
             <a href="/about#CL-06">
-              <CopyText copy={home.heroMargin.verify} />
+              <CopyText copy={home.margin.check} />
             </a>
             <button
               type="button"

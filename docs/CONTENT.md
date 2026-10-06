@@ -37,7 +37,7 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `skipLink` | Skip to content | DRAFT |
 | `menu` | Menu | DRAFT |
 | `sourceLink` | Source | DRAFT |
-| `whatsappButton` | Message us on WhatsApp | DRAFT |
+| `whatsappButton` | Message us on WhatsApp | LOCKED (Sarah, 6 Oct 2026) |
 | `footer.privacy` | Privacy | DRAFT |
 | `footer.terms` | Terms of business | DRAFT |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
@@ -56,53 +56,52 @@ HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ 
 
 - Group label: Trips. Status: LOCKED (Sarah, 6 Oct 2026).
 - Contact sits last, set as a boxed link.
+- Trips dropdown descriptions — DRAFT (the earlier Home entry-point lines, kept for the menu):
+  - Summer Journeys: "Hokkaido, Okinawa and the Japan Alps in July and August."
+  - Private Japan: "Year-round journeys for families and small groups who travel together."
 - Short header label for the For travel advisors page: Advisors. Status: LOCKED (Sarah, 6 Oct 2026). Set smaller and quieter, before Contact, after a thin divider. The footer keeps the full name.
 
 ## 3. Home (`/`)
 
-**Hero — LOCKED ⚑D2**
+All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026. It replaces the strategy's hero and resolves D2 (the "no resellers" line is gone).
+
+**Hero**
 
 > **Japan, planned for the whole household.**
 >
-> Families travel together — three generations, staff, children of different ages, one itinerary. We plan for that unit.
->
-> We work directly from Tokyo and Osaka, in English, Arabic and Japanese, and we specialise in the months most operators avoid: Hokkaido and Okinawa in summer, when Japan is cool, quiet and at its best for a family.
->
-> Enquiry only. No packages, no resellers.
+> We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.
 
-**Hero margin — DRAFT**
+**Margin** (set as the registration plate beside the hero)
 
-> Registered travel agency
+> We are a registered travel agency with offices in Tokyo and Osaka.
 > `registration.lineJa`
-> Verify our registration with the Japan Tourism Agency. {CL-06}
+> You can check our registration with [[REG_AUTHORITY_EN]].
 
-**Entry points — DRAFT**
+**Two ways in**
 
-- *Summer Journeys* — "Hokkaido, Okinawa and the Japan Alps in July and August."
-- *Private Japan* — "Year-round journeys for families and small groups who travel together."
-
-**Experiences line — reuses the Experiences intro (§7)**, linked to /experiences under the page name.
-
-**What we do for a household — LOCKED** (approved by Sarah, 6 Oct 2026; the margin notes stay DRAFT)
-
-> **What we do for a household**
+> **Summer Journeys**
+> In July and August, Tokyo is hot and crowded. Hokkaido and the Japan Alps stay cool, and Okinawa is by the sea. These are the places we plan for families in summer.
 >
-> **In your language.** We speak with you in Arabic, English or Japanese, without an interpreter in the middle.
-> *Margin:* Languages: Arabic, English, Japanese — `[[LANGUAGE_STAFF_NOTE]]` · *Link:* Contact
+> **Private Japan**
+> We also plan private trips across Japan in every other season, with rooms that connect, days paced for every age, and transport that keeps everyone together.
+
+**How we work**
+
+> **How we work**
 >
-> **Muslim needs, planned in.** Halal certification explained honestly, private bathing confirmed room by room, and prayer built into the day.
-> *Margin:* Japan has no national halal standard. {CL-07} · *Link:* Family Services
+> **We confirm before you commit.** We check every room one by one, not just the room type, and we tell you exactly what is confirmed before you agree to anything. *Link:* Private Japan
 >
-> **Everything checkable.** Our registration and both travel services managers are named at the foot of every page, and each claim we make links to its source.
-> *Margin:* `registration.lineJa` · *Link:* About
+> **You know who is looking after you.** We tell you your guide's name before you travel, and the managers responsible for our agency are named at the bottom of every page. *Link:* About
+>
+> **Your family's needs are planned in from the start.** Dining, private bathing, prayer times, guiding and transport for Muslim families are part of the first plan we send you, not extras added at the end. *Link:* Family Services
 
-**Advisors band** — heading and paragraph reuse the For Travel Advisors page (§9); link: For travel advisors.
+Each point links to its page under the page's name (internal linking).
 
-**Contact band — DRAFT**
+**Contact**
 
-> Tell us who is travelling and when.
-> [WhatsApp button] [DeskStatus] Email `[[EMAIL]]` · Telephone `[[PHONE]]`
-> Or use the enquiry form. *(LOCKED — Sarah, 6 Oct 2026)*
+> **Tell us who is travelling and when you would like to go.**
+> We will reply in your language.
+> [Message us on WhatsApp] · Email [[EMAIL]] · Telephone [[PHONE]]
 
 ## 4. Summer Journeys (`/summer-journeys`)
 

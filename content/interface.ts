@@ -1,11 +1,11 @@
 /* Interface strings — docs/CONTENT.md §1a. */
-import { draft } from "./schema";
+import { draft, locked } from "./schema";
 
 export const ui = {
   skipLink: draft("Skip to content"),
   menu: draft("Menu"),
   sourceLink: draft("Source"),
-  whatsappButton: draft("Message us on WhatsApp"),
+  whatsappButton: locked("Message us on WhatsApp"),
   footer: {
     privacy: draft("Privacy"),
     terms: draft("Terms of business"),

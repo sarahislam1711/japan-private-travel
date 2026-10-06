@@ -1,68 +1,65 @@
-/* Home (/) — docs/CONTENT.md §3. */
+/* Home (/) — docs/CONTENT.md §3. All copy written and approved by Sarah, 6 Oct 2026. */
 import type { RouteKey } from "../routes";
-import { draft, locked, ph, type Copy } from "../schema";
+import { locked, ph, type Copy } from "../schema";
 
 export const home = {
   hero: {
-    headline: locked("Japan, planned for the whole household.", { flags: ["D2"] }),
-    paragraphs: [
-      locked(
-        "Families travel together — three generations, staff, children of different ages, one itinerary. We plan for that unit.",
-        { flags: ["D2"] },
-      ),
-      locked(
-        "We work directly from Tokyo and Osaka, in English, Arabic and Japanese, and we specialise in the months most operators avoid: Hokkaido and Okinawa in summer, when Japan is cool, quiet and at its best for a family.",
-        { flags: ["D2"] },
-      ),
-      locked("Enquiry only. No packages, no resellers.", { flags: ["D2"] }),
-    ],
+    headline: locked("Japan, planned for the whole household."),
+    paragraph: locked(
+      "We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.",
+    ),
   },
-  heroMargin: {
-    label: draft("Registered travel agency"),
+  margin: {
+    statement: locked("We are a registered travel agency with offices in Tokyo and Osaka."),
     // The registration line itself renders from site.registration.lineJa.
-    verify: draft("Verify our registration with the Japan Tourism Agency.", { claims: ["CL-06"] }),
+    check: locked(["You can check our registration with ", ph("REG_AUTHORITY_EN"), "."], { claims: ["CL-06"] }),
   },
   entryPoints: {
     summerJourneys: {
       heading: locked("Summer Journeys"),
-      sentence: draft("Hokkaido, Okinawa and the Japan Alps in July and August."),
+      text: locked(
+        "In July and August, Tokyo is hot and crowded. Hokkaido and the Japan Alps stay cool, and Okinawa is by the sea. These are the places we plan for families in summer.",
+      ),
     },
     privateJapan: {
       heading: locked("Private Japan"),
-      sentence: draft("Year-round journeys for families and small groups who travel together."),
+      text: locked(
+        "We also plan private trips across Japan in every other season, with rooms that connect, days paced for every age, and transport that keeps everyone together.",
+      ),
     },
   },
-  household: {
-    heading: locked("What we do for a household"),
+  howWeWork: {
+    heading: locked("How we work"),
     points: [
       {
-        lead: locked("In your language."),
-        body: locked("We speak with you in Arabic, English or Japanese, without an interpreter in the middle."),
-        link: "contact",
-      },
-      {
-        lead: locked("Muslim needs, planned in."),
+        lead: locked("We confirm before you commit."),
         body: locked(
-          "Halal certification explained honestly, private bathing confirmed room by room, and prayer built into the day.",
+          "We check every room one by one, not just the room type, and we tell you exactly what is confirmed before you agree to anything.",
         ),
-        proof: draft("Japan has no national halal standard.", { claims: ["CL-07"] }),
-        link: "familyServices",
+        link: "privateJapan",
       },
       {
-        lead: locked("Everything checkable."),
+        lead: locked("You know who is looking after you."),
         body: locked(
-          "Our registration and both travel services managers are named at the foot of every page, and each claim we make links to its source.",
+          "We tell you your guide's name before you travel, and the managers responsible for our agency are named at the bottom of every page.",
         ),
         link: "about",
       },
-    ] satisfies { lead: Copy; body: Copy; proof?: Copy; link: RouteKey }[],
+      {
+        lead: locked("Your family's needs are planned in from the start."),
+        body: locked(
+          "Dining, private bathing, prayer times, guiding and transport for Muslim families are part of the first plan we send you, not extras added at the end.",
+        ),
+        link: "familyServices",
+      },
+    ] satisfies { lead: Copy; body: Copy; link: RouteKey }[],
   },
-  contactBand: {
-    sentence: draft("Tell us who is travelling and when."),
-    formLink: locked("Or use the enquiry form."),
-    emailLabel: draft("Email"),
+  contact: {
+    heading: locked("Tell us who is travelling and when you would like to go."),
+    reply: locked("We will reply in your language."),
+    emailLabel: locked("Email"),
     email: locked([ph("EMAIL")]),
-    phoneLabel: draft("Telephone"),
+    phoneLabel: locked("Telephone"),
     phone: locked([ph("PHONE")]),
   },
 };

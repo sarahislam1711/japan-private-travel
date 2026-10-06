@@ -5,7 +5,7 @@ Each item has a default the build uses until the team decides. "Blocks" says wha
 ## Problems in the strategy itself
 
 **D2 — "No resellers" contradicts the primary channel.** The hero ends "Enquiry only. No packages, no resellers." Section 4.1 makes travel advisors — who are resellers — the primary channel, and the site has a For Travel Advisors page with net rates. An advisor reading the homepage during due diligence sees the operator saying it does not work with them.
-*Default:* build as LOCKED. *Recommendation:* "Enquiry only. No packages." — or, if the intent was to exclude OTAs and wholesalers, "We do not sell through booking platforms." *Blocks:* launch.
+**Resolved 6 Oct 2026:** Sarah's new Home copy (CONTENT.md §3) drops the line. *Default:* build as LOCKED. *Recommendation:* "Enquiry only. No packages." — or, if the intent was to exclude OTAs and wholesalers, "We do not sell through booking platforms." *Blocks:* launch.
 
 **D3 — The response promise misses the hours when Gulf enquiries arrive.** Contact promises replies "within two hours during Japan business hours". 09:00–18:00 in Tokyo is 04:00–13:00 in Dubai and 03:00–12:00 in Riyadh. Gulf families message in the evening, which is 01:00–05:00 in Tokyo. The strategy's own evidence says latency is the top cause of lost business; as written, the promise excludes most of the Gulf day.
 *Default:* `desk.enabled = false`; locked copy renders as written. *Recommendation:* define desk hours in Gulf time (for example 09:00–23:00 Gulf time, staffed from Japan in shifts or with a Gulf-based team member) and rewrite the line to state those hours. *Blocks:* Contact copy lock; DeskStatus.
