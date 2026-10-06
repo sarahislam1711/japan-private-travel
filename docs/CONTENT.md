@@ -81,10 +81,28 @@ HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ 
 - *Summer Journeys* — "Hokkaido, Okinawa and the Japan Alps in July and August."
 - *Private Japan* — "Year-round journeys for families and small groups who travel together."
 
+**Experiences line — reuses the Experiences intro (§7)**, linked to /experiences under the page name.
+
+**What we do for a household — DRAFT** (drafted 6 Oct 2026; each point restates approved copy, no new facts)
+
+> **What we do for a household**
+>
+> **In your language.** We speak with you in Arabic, English or Japanese, without an interpreter in the middle.
+> *Margin:* Languages: Arabic, English, Japanese — `[[LANGUAGE_STAFF_NOTE]]` · *Link:* Contact
+>
+> **Muslim needs, planned in.** Halal certification explained honestly, private bathing confirmed room by room, and prayer built into the day.
+> *Margin:* Japan has no national halal standard. {CL-07} · *Link:* Family Services
+>
+> **Everything checkable.** Our registration and both travel services managers are named at the foot of every page, and each claim we make links to its source.
+> *Margin:* `registration.lineJa` · *Link:* About
+
+**Advisors band** — heading and paragraph reuse the For Travel Advisors page (§9); link: For travel advisors.
+
 **Contact band — DRAFT**
 
 > Tell us who is travelling and when.
 > [WhatsApp button] [DeskStatus] Email `[[EMAIL]]` · Telephone `[[PHONE]]`
+> Or use the enquiry form.
 
 ## 4. Summer Journeys (`/summer-journeys`)
 

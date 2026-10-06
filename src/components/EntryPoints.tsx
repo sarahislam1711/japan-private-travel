@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { experiences } from "@content/pages/experiences";
 import { home } from "@content/pages/home";
 import { routeFor } from "@content/routes";
 import { CopyText } from "./CopyText";
@@ -25,6 +26,17 @@ export function EntryPoints() {
           </p>
         </Link>
       ))}
+      <Link
+        href={routeFor("experiences").path}
+        className="group col-span-12 flex flex-col gap-x-6 gap-y-1 border-t border-hairline pt-5 no-underline tablet:flex-row tablet:items-baseline desktop:col-span-11 desktop:col-start-2"
+      >
+        <span className="shrink-0 font-serif text-h3 [font-variation-settings:'opsz'_24] group-hover:text-navy group-hover:underline group-hover:underline-offset-[0.18em]">
+          <CopyText copy={routeFor("experiences").navLabel!} />
+        </span>
+        <span className="max-w-(--measure-main) text-ink-soft">
+          <CopyText copy={experiences.intro} />
+        </span>
+      </Link>
     </section>
   );
 }

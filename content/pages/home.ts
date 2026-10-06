@@ -1,5 +1,6 @@
 /* Home (/) — docs/CONTENT.md §3. */
-import { draft, locked, ph } from "../schema";
+import type { RouteKey } from "../routes";
+import { draft, locked, ph, type Copy } from "../schema";
 
 export const home = {
   hero: {
@@ -31,8 +32,34 @@ export const home = {
       sentence: draft("Year-round journeys for families and small groups who travel together."),
     },
   },
+  household: {
+    heading: draft("What we do for a household"),
+    points: [
+      {
+        lead: draft("In your language."),
+        body: draft("We speak with you in Arabic, English or Japanese, without an interpreter in the middle."),
+        link: "contact",
+      },
+      {
+        lead: draft("Muslim needs, planned in."),
+        body: draft(
+          "Halal certification explained honestly, private bathing confirmed room by room, and prayer built into the day.",
+        ),
+        proof: draft("Japan has no national halal standard.", { claims: ["CL-07"] }),
+        link: "familyServices",
+      },
+      {
+        lead: draft("Everything checkable."),
+        body: draft(
+          "Our registration and both travel services managers are named at the foot of every page, and each claim we make links to its source.",
+        ),
+        link: "about",
+      },
+    ] satisfies { lead: Copy; body: Copy; proof?: Copy; link: RouteKey }[],
+  },
   contactBand: {
     sentence: draft("Tell us who is travelling and when."),
+    formLink: draft("Or use the enquiry form."),
     emailLabel: draft("Email"),
     email: locked([ph("EMAIL")]),
     phoneLabel: draft("Telephone"),

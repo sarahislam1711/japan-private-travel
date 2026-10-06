@@ -27,7 +27,7 @@ Agreed 6 Oct 2026:
 ## Phase 3 — Pages, one at a time
 Each page: brief → copy drafted in `CONTENT.md` → Sarah approves → build → screenshots at 390 / 834 / 1440 and `pnpm guard` → Sarah reviews → commit and push.
 
-- [ ] Home
+- [ ] Home — built 6 Oct 2026 (hero, two ways in + Experiences, three points, advisors band, contact close; links to every page). Awaiting Sarah's approval of the drafted copy.
 - [ ] (next page chosen by Sarah)
 - [ ] Summer Journeys
 - [ ] Family Services
