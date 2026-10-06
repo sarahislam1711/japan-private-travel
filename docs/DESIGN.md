@@ -1,6 +1,6 @@
 ---
 name: "HalaJapan"
-description: "One continuous page of paper, ink and space, with the proof beside every claim and a pine field at the end."
+description: "Screen-sized sections of paper, light serif and quiet gothic, with large Snow and Pine panels, the proof beside every claim, and a pine field at the end."
 colors:
   paper: "#F1F2EE"
   snow: "#FAFAF8"
@@ -13,36 +13,32 @@ colors:
 typography:
   display:
     fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
-    fontSize: "clamp(2.75rem, 3.6vw + 1.1rem, 4.625rem)"
-    fontWeight: 420
-    lineHeight: 1.04
-    letterSpacing: "-0.02em"
+    fontSize: "clamp(3rem, 4.4vw + 1rem, 5.5rem)"
+    fontWeight: 320
+    lineHeight: 1.0
+    letterSpacing: "-0.028em"
     fontVariation: "'opsz' 60"
   headline:
     fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
-    fontSize: "clamp(2.25rem, 2.4vw + 1.25rem, 3.5rem)"
-    fontWeight: 430
-    lineHeight: 1.08
-    letterSpacing: "-0.018em"
+    fontSize: "clamp(2.5rem, 3vw + 1.2rem, 4.25rem)"
+    fontWeight: 330
+    lineHeight: 1.04
+    letterSpacing: "-0.024em"
     fontVariation: "'opsz' 60"
   title:
     fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
-    fontSize: "clamp(1.625rem, 1vw + 1.25rem, 2.125rem)"
-    fontWeight: 450
-    lineHeight: 1.18
-    letterSpacing: "-0.01em"
+    fontSize: "clamp(1.875rem, 1.4vw + 1.25rem, 2.625rem)"
+    fontWeight: 360
+    lineHeight: 1.12
+    letterSpacing: "-0.016em"
     fontVariation: "'opsz' 36"
-  title-small:
-    fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
+  wordmark:
+    fontFamily: "Source Serif 4, Georgia, serif"
     fontSize: "1.375rem"
     fontWeight: 600
-    lineHeight: 1.3
+    lineHeight: 1
+    letterSpacing: "-0.015em"
     fontVariation: "'opsz' 24"
-  lede:
-    fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
-    fontSize: "clamp(1.25rem, 0.4vw + 1.15rem, 1.4375rem)"
-    fontWeight: 400
-    lineHeight: 1.5
   body:
     fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
     fontSize: "1.125rem"
@@ -56,6 +52,11 @@ typography:
     lineHeight: 1.45
     fontFeature: "\"lnum\", \"tnum\""
     fontVariation: "'opsz' 16"
+  copy:
+    fontFamily: "BIZ UDPGothic, system-ui, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.62
   label:
     fontFamily: "BIZ UDPGothic, system-ui, sans-serif"
     fontSize: "0.875rem"
@@ -72,22 +73,22 @@ typography:
     fontFeature: "\"lnum\""
   japanese-display:
     fontFamily: "Noto Serif JP, serif"
-    fontSize: "clamp(2.75rem, 4.2vw, 4.5rem)"
+    fontSize: "clamp(3rem, 5.6vw, 6.5rem)"
     fontWeight: 400
-    lineHeight: 1.05
+    lineHeight: 1.04
 rounded:
   control: "6px"
   menu: "10px"
-  panel: "14px"
+  panel: "20px"
 spacing:
   base: "4px"
   gutter: "24px"
   page-margin: "clamp(1.25rem, 5vw, 5rem)"
   content-max: "84rem"
-  measure-main: "36rem"
-  measure-note: "16rem"
-  section: "96px"
-  close: "144px"
+  panel-pad: "32px"
+  panel-pad-wide: "48px"
+  section: "128px"
+  section-wide: "160px"
 components:
   button-primary:
     backgroundColor: "{colors.ink}"
@@ -118,18 +119,21 @@ components:
   button-ringed-hover:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.snow}"
-  fact-panel:
+  panel-snow:
     backgroundColor: "{colors.snow}"
     textColor: "{colors.ink}"
     rounded: "{rounded.panel}"
-    padding: "24px"
-  input:
+    padding: "48px"
+  panel-pine:
+    backgroundColor: "{colors.pine}"
+    textColor: "{colors.snow}"
+    rounded: "{rounded.panel}"
+    padding: "48px"
+  proof-strip:
     backgroundColor: "{colors.snow}"
     textColor: "{colors.ink}"
-    typography: "{typography.body}"
-    rounded: "{rounded.control}"
-    padding: "0 12px"
-    height: "48px"
+    rounded: "{rounded.panel}"
+    padding: "24px 40px"
   nav-menu:
     backgroundColor: "{colors.snow}"
     textColor: "{colors.ink}"
@@ -150,169 +154,181 @@ components:
 
 ## Overview
 
-**Creative North Star: "One Page, Said and Proved"**
+**Creative North Star: "One Screen at a Time, Said and Proved"**
 
-The site reads as a single continuous page rather than a stack of separated sections. A cool paper ground runs from the header to the last section; nothing is boxed off by lines. Separation comes from three things only: space, the type scale, and a change of surface (a soft Snow panel for facts, a full Pine field at the close). Every page ends the same way: the closing section and the footer form one unbroken pine field.
+Each section is roughly one screen and says one thing. A big, light serif headline carries the statement; a short paragraph of grey gothic sits beneath or beside it, so no section reads as a wall of text. Layouts are split: text on one side, a large rounded panel or a column of points on the other. The section design, flow, scroll feel and text appearance follow getburnt.ai at Sarah's request; its photographs, icons, grain and frame lines were deliberately not taken.
 
-The governing idea is unchanged from the first specification: **the main column says; the margin proves.** Claims are made in a reading column of Source Serif 4; the evidence that backs them (registration, the source of a number, a named policy) sits beside them, set in BIZ UDPGothic, the Universal Design face of Japanese official documents, in soft ink. A due-diligence reader can read the margin alone.
+The founding idea still holds: **the main column says; the margin proves.** Claims are set in Source Serif 4; the evidence behind them (the registration line, the verify link, the legal facts) is set in BIZ UDPGothic, the Universal Design face of Japanese official documents. On Home the proof is a Snow strip directly under the hero, so the registration is visible on the first screen.
 
-The site is finished without photographs. Its imagery is type: large, pale, vertical Japanese place names set in Noto Serif JP (Summer Journeys' entry point on Home). One light theme; no dark mode. Refused, by the user and by the build: shadows, gradients, icons (the single exception is the functional disclosure chevron), all-caps and eyebrow labels, centred layouts, Japan clichés, prices.
+Separation is by space, surface and type, never by lines. Surfaces are Paper (the ground), Snow (soft panels) and Pine (the one accent, as whole panels and the closing field). Every page ends on one continuous Pine field: on Home the contact close runs into the footer without a gap. The site is finished without photographs; its imagery is type, the summer place names set vertically in Noto Serif JP on a Pine panel. Motion is weighted smooth scrolling and quiet scroll reveals, all off under reduced motion. One light theme; no shadows, gradients, icons (the Trips chevron excepted), all-caps, eyebrows, centred layouts, Japan clichés, dark mode or prices.
 
 **Key Characteristics:**
-- Paper ground, Snow surfaces, Ink text, Pine as the one accent; navy is retired.
-- Source Serif 4 with optical sizing for everything read; BIZ UDPGothic for labels, navigation, notes and legal lines; Noto Serif JP for Japanese.
-- Separation by space, scale and surface; almost no rules.
-- Facts sit in a soft Snow panel (14px radius, no border), rows separated by space.
-- Every page closes on one continuous pine field: contact close, then footer.
-- Start-aligned asymmetric 12-column grid; nothing centred.
-- One motion moment, on Home: the hero's text and values ink in; off under reduced motion.
+- Sections about one screen tall, split layouts, start-aligned on a 12-column grid.
+- Big light serif headlines (Source Serif 4, weights 320–400) over short grey gothic text (BIZ UDPGothic, Ink Soft).
+- Large 20px-radius panels on Snow and on Pine; panels are whole links where they lead somewhere.
+- Paper ground, Snow surfaces, Ink text, Pine as the only accent.
+- No section rules: separation by space, surface and type.
+- Every page closes on one continuous Pine field, footer included.
+- Lenis smooth scrolling site-wide; headings rise word by word, other blocks fade and lift; all off under reduced motion and nothing hidden without JavaScript.
 
 ## Colors
 
-A quiet, cool, near-neutral palette with a single deep green-teal accent; colour is almost entirely surface, not decoration.
+A quiet, cool, near-neutral palette with one deep green-teal accent; colour is surface, not decoration.
 
 ### Primary
-- **Pine** (#2C5F53): the only accent. Owns the closing field and the footer on every page; marks link hover, focus rings, text selection, caret, the current item in the Trips menu, and July and August in the season band. On Pine, primary text is Snow.
-- **Pine Soft** (#C7D8D1): secondary text on a Pine field (4.9:1), such as "We will reply in your language." and the contact labels; also the hover colour of the ghost place names. Never used on Paper.
+- **Pine** (#2C5F53): the only accent. Owns whole surfaces (the hero's place-name panel, the Private Japan panel, the contact close and the footer) and marks states: link hover on Paper, focus rings, selection, caret, the current Trips item, July and August in the season band.
+- **Pine Soft** (#C7D8D1): secondary text on Pine (4.9:1), standing in for Ink Soft inside any Pine surface; also the colour of the vertical place names on the hero panel. Never used on Paper.
 
 ### Neutral
-- **Paper** (#F1F2EE): the page ground, everywhere outside the pine field.
-- **Snow** (#FAFAF8): soft panels (the registration fact panel), form fields, the menus, and the solid button on Pine.
-- **Ink** (#1A2230): all primary text, the solid button, the ring of the Contact button.
-- **Ink Soft** (#4A5462): margin notes, field labels, captions, the quieter "Advisors" link, menu descriptions (6.8:1 on Paper).
-- **Mist** (#DADDD8): non-text only. The hover fill in the Trips menu and the few rules that remain (season band rows). Never text.
-- **Ghost** (#D2D7D0): the large decorative vertical Japanese place names only. Never meaningful text; always `aria-hidden`.
+- **Paper** (#F1F2EE): the page ground everywhere outside Pine.
+- **Snow** (#FAFAF8): soft panels (the proof strip, the Summer Journeys panel), the menus, form fields, and the solid button on Pine.
+- **Ink** (#1A2230): headlines and primary text, the solid button, the Contact ring.
+- **Ink Soft** (#4A5462): the gothic section text, field labels, footer column headings, the quieter Advisors link, menu descriptions (6.8:1 on Paper).
+- **Mist** (#DADDD8): non-text only. The Trips menu hover fill, the mobile menu's ring, the season band's row rules.
+- **Ghost** (#D2D7D0): reserved for large decorative Japanese type on Paper; never meaningful text. Not used on a shipped surface at present.
 
 A dev-only Stone (#6B7480) outlines placeholders and DRAFT marks; it is tooling, never part of a shipped page.
 
 ### Named Rules
-**The One Accent Rule.** Pine is the only hue. It either owns a whole field (the close and footer) or marks a state (hover, focus, current, the summer months). No second accent, no tints of Pine as decoration.
+**The One Accent Rule.** Pine is the only hue. It owns a whole surface (a panel, the close, the footer) or marks a state. No second accent; no Pine tints as decoration.
 
-**The Pine Field Rule.** On Pine, text is Snow, secondary text is Pine Soft, links stay Snow and thicken their underline to 2px on hover, the focus ring turns Snow, and the solid button inverts to Snow with Pine text.
+**The Pine Field Rule.** Inside any Pine surface, text is Snow, secondary text is Pine Soft, links stay Snow and thicken their underline to 2px on hover, the focus ring turns Snow, and the solid button inverts to Snow with Pine text.
 
 ## Typography
 
-**Display Font:** Source Serif 4, variable with `opsz` 8–60 (with Noto Serif JP, Georgia, serif)
-**Body Font:** Source Serif 4 (upright only; italic is never loaded or synthesised)
-**Label Font:** BIZ UDPGothic 400 and 700 (with system-ui, sans-serif)
+**Display Font:** Source Serif 4, variable with `opsz` 8–60 (with Noto Serif JP, Georgia, serif); upright only, italic never loaded or synthesised
+**Body Font:** BIZ UDPGothic 400 and 700 (with system-ui, sans-serif) for section text, labels and navigation; Source Serif 4 for the base reading size and fact values
 **Japanese:** Noto Serif JP 400 for every `lang="ja"` run
 
-**Character:** A bookish, optically sized serif carries the voice; a plain Japanese official-document gothic carries the evidence. The pairing is the says/proves split made visible.
+**Character:** A large, light, optically sized serif makes the statement; a plain official-document gothic in soft grey explains it in a few lines. The contrast in weight and colour is what keeps sections airy.
 
 ### Hierarchy
-- **Display** (420, clamp 2.75–4.625rem, 1.04, opsz 60): Home's headline only.
-- **Headline** (430, clamp 2.25–3.5rem, 1.08, opsz 60): page titles, Home's section heads ("How we work"), the Summer Journeys entry heading, the contact close heading.
-- **Title** (450, clamp 1.625–2.125rem, 1.18, opsz 36): the secondary entry point (Private Japan).
-- **Title small** (600, 1.375rem, 1.3, opsz 24): the fact panel's statement, how-we-work leads, the wordmark.
-- **Lede** (400, clamp 1.25–1.4375rem, 1.5): the first paragraph under a heading; the footer's trade-name line.
-- **Body** (400, 1.125rem, 1.68): the main column at a 36rem measure; oldstyle proportional numerals.
-- **Field** (400, 1rem, 1.45, opsz 16): fact values; lining tabular numerals.
-- **Label** (BIZ UDPGothic 400, 0.875rem, 1.5): field labels, navigation, margin notes, page links under how-we-work items, buttons (700).
-- **Small** (BIZ UDPGothic 400, 0.8125rem, 1.55): menu descriptions, the Advisors utility link, footer links, captions.
-- **Japanese display** (Noto Serif JP 400, clamp 2.75–4.5rem, 1.05, vertical-rl): the decorative place names.
+- **Display** (320, clamp 3–5.5rem, 1.0, -0.028em, opsz 60): Home's hero headline, the How we work heading, the contact close heading.
+- **Headline** (330, clamp 2.5–4.25rem, 1.04, -0.024em, opsz 60): the entry panel headings and page titles.
+- **Title** (360, clamp 1.875–2.625rem, 1.12, -0.016em, opsz 36): the leads of the How we work points.
+- **Wordmark** (600, 1.375rem, 1, -0.015em, opsz 24): the text-set brand name in header and footer.
+- **Body** (Source Serif 4 400, 1.125rem, 1.68): the base reading size; oldstyle proportional numerals.
+- **Field** (Source Serif 4 400, 1rem, 1.45, opsz 16): fact values, the proof strip's statement, the footer's trade-name line; lining tabular numerals in values.
+- **Copy** (BIZ UDPGothic 400, 1.0625rem, 1.62, Ink Soft): the short text under every section heading, kept to about 30–32rem.
+- **Label** (BIZ UDPGothic 400, 0.875rem, 1.5): navigation, buttons (700), field labels, page links under points and panels, footer links and column headings.
+- **Small** (BIZ UDPGothic 400, 0.8125rem, 1.55): menu descriptions, the Advisors utility link, captions.
+- **Japanese display** (Noto Serif JP 400, clamp 3–6.5rem, 1.04, vertical-rl): the hero panel's place names.
 
 ### Named Rules
-**The Says and Proves Rule.** Claims are serif; evidence is gothic in soft ink. Never set a claim in the gothic or a proof in the reading serif.
+**The Light Headline Rule.** Headlines are big and light (320–400), never bold; the wordmark is the only heavy serif. Size and optical size carry hierarchy.
 
-**The Sentence Case Rule.** No all-caps, no letter-spaced labels, no eyebrows above headings. Hierarchy is carried by size, weight and optical size alone.
+**The Short Grey Text Rule.** Under a headline, the explanation is gothic in Ink Soft at copy size, a few lines long. If it runs past one short paragraph, the section is doing too much.
+
+**The Says and Proves Rule.** Claims are serif; evidence (labels, the registration line, verify links) is gothic. Never set a proof in the display serif.
+
+**The Sentence Case Rule.** No all-caps, no letter-spaced labels, no eyebrows above headings.
 
 **The Japanese Line Rule.** Every `lang="ja"` run uses `word-break: keep-all` and strict line breaking, so 北海道 or 北アルプス never splits.
 
 ## Layout
 
-A 12-column grid, 24px gutter, inside an 84rem container with a fluid page margin (clamp 1.25rem–5rem). On desktop (≥1024px) content starts at column 2, leaving column 1 as breathing room; tablet begins at 640px. Everything is start-aligned; nothing is centred.
+A 12-column grid with a 24px gutter inside an 84rem container and a fluid page margin (clamp 1.25rem–5rem). Breakpoints: tablet 640px, desktop 1024px. Everything is start-aligned; nothing is centred. Below desktop every split stacks, text first.
 
-The says/proves split is spatial: on Home's hero the welcome takes columns 2–6 and the fact panel columns 7–12; on narrow screens the proof follows the claim. Margin notes sit level with their paragraph at a 16rem measure.
+Each Home section is roughly one screen and split in two:
+- **Hero** fills the first screen at desktop (100svh less the header): headline, gothic paragraph and actions in columns 1–6, bottom-aligned; the Pine place-name panel in columns 7–12. A Snow proof strip runs the full width beneath, in three columns from tablet.
+- **Two ways in**: a Snow panel (7 columns) and a Pine panel (5 columns), each at least 26rem tall, heading at the top and text plus link at the bottom.
+- **How we work**: the heading in columns 1–5 stays sticky (top 7rem) while three points scroll past in columns 7–12, 96px apart (64px on narrow screens).
+- **Close**: the display heading in columns 1–7, the reply line, WhatsApp button and contact list in columns 9–12, aligned to its foot; then the footer on the same Pine.
 
-Rhythm is on a 4px base. Sections are separated by space, not lines: 96px between Home's sections, 144px before the pine close. Inside the pine field, the close and the footer run on without a gap or divider.
+Rhythm is on a 4px base. Sections are separated by large space: 128px on narrow screens, 160–192px at desktop, 160–224px before the Pine close. Panel padding is 32px, 48px from tablet.
 
-The Summer Journeys entry point is the one composition with imagery: on tablet and up the vertical place names sit at the inline-end of its block, behind the text column; below tablet they follow the text.
+**The Space Not Lines Rule.** Sections, panels, points, header and footer are separated by space, surface and type. No rule between sections, under a headline, above a point or around the footer.
 
-**The Space Not Lines Rule.** Sections, entry points, how-we-work items, the header and the footer are separated by space, scale and surface. No rule under the headline, above an entry point or item, before Advisors, or around the footer.
-
-All direction-dependent styling uses logical properties (`ms-`, `pe-`, `start-`, `end-`, `inset-inline-*`), including the vertical place-name row, so a right-to-left set works without rework.
+All direction-dependent styling uses logical properties (`ms-`, `pe-`, `start-`, `end-`, `inset-inline-*`), including the right-to-left order of the vertical place names, so a right-to-left set works without rework.
 
 ## Elevation & Depth
 
-Flat. No shadows anywhere; Tailwind's shadow scales are cleared in the tokens. Depth is conveyed by surface alone: Snow lifts a panel off Paper by tone, and Pine closes the page. Floating menus are separated by a faint 1px ring (Ink at 20% for the Trips menu, Mist for the mobile Menu) because they overlap content and must read as separate; this is a functional edge, not a frame.
+Flat. No shadows anywhere; Tailwind's shadow scales are cleared in the tokens. Depth is tonal: Snow lifts a panel off Paper, Pine sets a panel or field apart. Floating menus carry a faint 1px ring (Ink at 20% for the Trips menu, Mist for the mobile menu) because they overlap content; this is a functional edge, not a frame.
 
-**The Tone Not Shadow Rule.** A surface is raised by being lighter (Snow on Paper), never by a shadow or gradient.
+**The Tone Not Shadow Rule.** A surface is raised by tone (Snow on Paper, Pine on Paper), never by a shadow or gradient.
 
 ## Shapes
 
-Softened, never square-cornered panels and never pills. Controls (buttons, menu items, inputs, skip link) take 6px; the Trips menu 10px; content panels 14px. Panels carry no border. The only line forms left in the system are the link underline (1px, 0.22em offset), the focus outline (2px Pine, 3px offset) and the season band's table rules.
+Softly rounded, never square and never pill. Content panels take a generous 20px radius (hero panel, proof strip, entry panels); the Trips menu 10px; controls (buttons, menu items, the mobile menu, inputs, skip link) 6px. Panels carry no border. The only line forms are the link underline (1px, 0.22em offset; 2px on hover in Pine surfaces and for the current page), the focus outline (2px Pine, 3px offset) and the season band's table rules.
 
 ## Components
 
 ### Buttons
 - **Shape:** gently softened (6px).
-- **Primary (solid):** Ink with Snow text, BIZ UDPGothic label at 700, 48px tall, 24px inline padding. Hover turns Pine. The one solid button on the site is the WhatsApp link.
-- **On Pine:** the same button inverts to Snow with Pine text; hover settles to Paper.
-- **Ringed (Contact):** transparent with a 1px Ink ring, 8px by 16px. Hover and current page fill Ink with Snow text.
+- **Primary (solid):** Ink with Snow text, BIZ UDPGothic label at 700, 48px tall, 24px inline padding; hover turns Pine. The one solid button is the WhatsApp link.
+- **On Pine:** inverts to Snow with Pine text; hover settles to Paper.
+- **Ringed (Contact, header):** transparent with a 1px Ink ring, 8px by 16px; hover and current page fill Ink with Snow text.
 - **Focus:** 2px Pine outline at 3px offset (Snow on Pine).
 
 ### Cards / Containers
-- **Fact panel:** Snow, 14px radius, no border, 24px padding (32px by 28px from tablet). A title-small statement, then label/value rows separated by 16px of space (label column 13.75rem from tablet), then a gothic foot line such as the verify link. There are no cards elsewhere: entry points are whole-block links with no surface or border.
-- **Bare facts:** the same rows with no surface, used for the legal block in the footer on Pine.
+- **Entry panels:** the whole panel is the link. Snow or Pine, 20px radius, no border, 32px padding (48px from tablet), minimum 26rem tall. A headline at the top; copy text and an underlined label link at the bottom. Hover shifts the surface tone over 300ms (Snow toward white, Pine slightly deeper) and thickens the link underline to 2px.
+- **Hero place-name panel:** Pine, 20px radius, decorative and `aria-hidden`; the place names are pinned inside it and wrap to its height.
+- **Proof strip:** Snow, 20px radius, 24px by 28–40px; the registration statement in field serif, the registration label (Ink Soft) and Japanese registration line (Ink) in gothic, and the verify link.
+- **Bare facts:** label and value rows with no surface, rows 16px apart, a 13.75rem label column from tablet; used for the legal block in the footer.
 
 ### Inputs / Fields
-- **Style:** Snow, 48px tall, 6px radius, body serif in Ink, a 1px Ink Soft stroke (styleguide only; the form pages are not yet built).
+- **Style:** Snow, 48px tall, 6px radius, body serif in Ink, a 1px Ink Soft stroke. Evidenced on the styleguide only; the forms are not built.
 - **Focus:** 2px Pine outline.
 
 ### Navigation
-- Wordmark at inline-start (text-set, title-small weight 600); navigation at inline-end in BIZ UDPGothic label size. Not sticky.
-- Order: Trips (disclosure), Family Services, Experiences, About, a quieter small "Advisors" in Ink Soft, then Contact as the ringed button.
-- Links have no underline at rest; underline on hover; current page carries a 2px underline.
+- Wordmark at inline-start; navigation at inline-end in BIZ UDPGothic label size. Not sticky.
+- Order: Trips (disclosure), Family Services, Experiences, About, a quieter small Advisors in Ink Soft, then Contact as the ringed button.
+- Links have no underline at rest, underline on hover; the current page carries a 2px underline.
 - **Trips menu:** opens on click or hover, closes on Escape, outside click or focus leaving. The chevron (10 by 6, 1.5 stroke) turns 180° when open. A 320px Snow panel, 10px radius, faint ring; each item shows its page name and a one-line Ink Soft description. Hover fills Mist; the current item is bold Pine. Opens with a 150ms fade-and-settle.
-- **Mobile:** a "Menu" disclosure opening a Snow panel at inline-end listing the same entries, with Trips' pages indented under the group label.
+- **Mobile:** a "Menu" disclosure opening a Snow panel at inline-end with the same entries, Trips' pages indented under the group label.
 
 ### Links
-Underlined at 1px, 0.22em offset, in the current colour. Hover turns Pine on Paper; on Pine, hover thickens the underline. Entry-point headings underline and turn Pine when their block is hovered.
-
-### Margin Note
-The proof beside a claim: BIZ UDPGothic label in Ink Soft, 16rem measure, no rule, with an optional "source" link in Ink to the claim's entry on About.
+Underlined at 1px, 0.22em offset, in the current colour. On Paper, hover turns Pine; on Pine, hover thickens the underline to 2px.
 
 ### Vertical Place Names (signature)
-The site's imagery. The Summer Journeys regions set in Noto Serif JP, `writing-mode: vertical-rl`, in Ghost, read from the page edge inward, wrapping into a further column when long. Decorative and `aria-hidden`; on hover of the entry block they deepen to Pine Soft over 300ms.
-
-### Season Band
-Twelve month cells in one row that never wraps; July and August filled Pine with Snow text, their data cells tinted Pine at 8%. As a data table it keeps rules: an Ink rule above and below the month head and Mist rules between rows. This is the one sanctioned use of rules.
+The site's imagery: the summer regions in Noto Serif JP, `writing-mode: vertical-rl`, Pine Soft on the hero's Pine panel, read from the inline-end edge inward. Decorative and hidden from assistive technology.
 
 ### Pine Close and Footer
-Every page ends on one Pine field. On Home the contact close (headline, Pine Soft reply line, the inverted WhatsApp button, email and telephone) runs straight into the footer: the trade-name line in lede, the legal facts as bare rows, and a row of gothic small links. No frame, no rules, no tonal variants.
+Every page ends on one Pine field. On Home the close (display heading, Pine Soft reply line, the inverted WhatsApp button, email and telephone as a gothic label list) runs straight into the footer. The footer holds the wordmark and the trade-name line, a site map in three gothic columns (Trips, HalaJapan, Legal; headings in Pine Soft), and the legal facts as bare rows. No rules, no frame.
+
+### Season Band and Margin Note (built, not yet on a page)
+The season band is twelve month cells that never wrap, July and August filled Pine, with an Ink rule above and below the head and Mist row rules: the one sanctioned use of rules, because it is a data table. The margin note is gothic label text in Ink Soft at a 16rem measure with an optional source link. Both are evidenced on the styleguide only.
 
 ### Motion
-One moment, on Home only: the headline, welcome and fact panel values ink in (opacity and a 3px blur clearing over 600ms, ease-out-expo, 90ms stagger). Link colour transitions take 150ms. Everything is cut to near zero under `prefers-reduced-motion`.
+- **Smooth scroll:** Lenis site-wide (lerp 0.09, wheel smoothing, anchors handled).
+- **Heading reveal:** each word rises from its own clipped line box (translateY 110% to rest), 1100ms ease-out-expo `cubic-bezier(0.16, 1, 0.3, 1)`, 45ms per word.
+- **Block reveal:** other blocks fade (900ms) and lift 1.5rem (1100ms), staggered 110ms per step via `--d`.
+- Reveals fire once as the block enters view (12% threshold, 12% bottom inset).
+- **Interaction:** link colour 150ms; menu fade-and-settle 150ms; chevron turn 150ms; panel tone 300ms.
+- **Safety:** under `prefers-reduced-motion` Lenis and reveals do not start and all durations collapse to near zero. Content is hidden only once the observer has run (`html.reveal-ready`), so without JavaScript everything is visible.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** separate with space, type scale and surface: 96px between sections, a Snow panel for facts, the Pine field to close.
-- **Do** put facts in the Snow fact panel (14px radius, no border) with rows separated by 16px of space.
+- **Do** make each section about one screen, split in two, with one big light serif headline and a short paragraph of gothic Ink Soft copy text.
+- **Do** use large 20px-radius panels on Snow and Pine for content that leads somewhere, and make the whole panel the link.
+- **Do** separate with space, surface and type: 128–224px between sections, Snow or Pine surfaces, no rules.
+- **Do** put the proof beside or directly under the claim, in gothic: on Home, the Snow proof strip under the hero.
 - **Do** end every page on the continuous Pine field, footer included.
-- **Do** keep Pine the only accent: a whole field or a state, nothing in between.
-- **Do** set claims in Source Serif 4 and their proof beside them in BIZ UDPGothic, Ink Soft.
-- **Do** use large vertical Japanese place names in Ghost as the imagery, decorative and hidden from assistive technology.
+- **Do** keep Pine the only accent: a whole surface or a state.
+- **Do** reveal headings word by word and blocks by fade-and-lift, gate them behind `html.reveal-ready`, and switch all motion off under reduced motion.
 - **Do** use CSS logical properties for every direction-dependent value.
-- **Do** keep Home's ink-in as the site's only load motion, and switch it off under reduced motion.
 
 ### Don't:
-- **Don't** draw rules between sections, under headlines, above entry points or list items, before the Advisors link, or around the footer. Rules belong only to data tables such as the season band.
-- **Don't** frame panels with borders or double rules, or set facts in hairline rows.
-- **Don't** use navy or any second hue.
-- **Don't** use shadows or gradients.
-- **Don't** use icons; the disclosure chevron is the single functional exception.
+- **Don't** draw rules between sections, under headlines, above points or around the footer; rules belong only to data tables such as the season band.
+- **Don't** set bold or heavy headlines, or let section text run into long paragraphs.
+- **Don't** use shadows, gradients, grain or frame lines.
+- **Don't** use photographs as decoration or any stock imagery; the photograph frame is not yet designed.
+- **Don't** use icons; the Trips disclosure chevron is the single functional exception.
 - **Don't** use all-caps, letter-spaced labels or eyebrows above headings.
 - **Don't** centre layouts or text blocks.
 - **Don't** use Japan clichés (torii, cherry blossom, red suns, brush strokes, wave patterns).
-- **Don't** add a dark mode, or show prices.
-- **Don't** use Ghost or Mist for meaningful text.
+- **Don't** add a second hue, a dark mode, or prices.
+- **Don't** hide content in a way that depends on JavaScript or ignores reduced motion.
 
 ## Unresolved in the build
 
-- The photograph frame is not built; the `Plate` empty state and its treatment within this world are still to be designed.
-- In the footer's bare facts at desktop, the labels "Travel services manager, Tokyo" and "Travel services manager, Osaka" wrap onto two lines within the 13.75rem label column.
-- The season band still uses rules (Ink head rules, Mist row rules); accepted because it is a data table, but it is the one place the no-lines direction does not hold.
-- `src/styles/tokens.css` still carries retired tokens from the plate world (`--rule-frame`, `--rule-row`, `--duration-rule`, the `--color-hairline` alias, a "Registration Plate" header comment), and `globals.css` still defines the unused `draw-rule` animation. They are not part of this system and should be removed.
-- CLAUDE.md names Newsreader and Zen Kaku Gothic New; the build ships Source Serif 4, Noto Serif JP and BIZ UDPGothic. This file records the build.
-- The input style is evidenced only on the styleguide; enquiry and advisor forms are not yet built.
+- `src/styles/tokens.css` still carries retired tokens (`--rule-frame`, `--rule-row`, `--duration-rule`, `--duration-ink`, `--stagger`, a "Registration Plate" header comment, and "one moment" motion comment), and `globals.css` still defines the unused `draw-rule` and `ink-in` classes and keyframes. `FieldTable` still has an `animate` prop that applies `ink-in`. None of these are part of the system.
+- The entry panels' hover tones are literal hex (`#ffffff` on Snow, `#28574c` on Pine), not tokens.
+- `FieldTable`'s panel variant still uses a 14px radius; every shipped panel is 20px. The variant is not used on a page.
+- The reveal durations (900ms, 1100ms), per-step delays (110ms, 45ms) and the 20px panel radius are literal values in `globals.css` and components, not tokens.
+- The hero paragraph is set at a one-off 1.1875rem gothic rather than the copy step.
+- Ghost has no use on a shipped surface since the place names moved onto Pine.
+- The photograph frame is not built; the `Plate` empty state and its treatment in this world are still to be designed.
+- Inner pages are title-only stand-ins; the margin note, season band and input are evidenced on the styleguide only.
+- DRAFT and placeholder markers are dev-only and do not ship.

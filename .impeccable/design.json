@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-06T12:00:00Z",
+  "generatedAt": "2026-10-06T18:00:00Z",
   "title": "Design System: HalaJapan",
   "extensions": {
     "colorMeta": {
@@ -21,7 +21,7 @@
       },
       "pine-soft": {
         "role": "primary",
-        "displayName": "Pine Soft (secondary text on Pine)",
+        "displayName": "Pine Soft (secondary text on Pine, place names)",
         "canonical": "#C7D8D1",
         "tonalRamp": [
           "oklch(15% 0.02 165)",
@@ -111,7 +111,7 @@
       },
       "ghost": {
         "role": "neutral",
-        "displayName": "Ghost (decorative Japanese type only)",
+        "displayName": "Ghost (reserved decorative Japanese type; unused at present)",
         "canonical": "#D2D7D0",
         "tonalRamp": [
           "oklch(15% 0.01 140)",
@@ -128,39 +128,39 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Home's headline only."
+        "purpose": "Hero headline, How we work heading, contact close heading."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Page titles, Home's section heads, the Summer Journeys entry heading, the contact close heading."
+        "purpose": "Entry panel headings and page titles."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "The secondary entry point (Private Japan)."
+        "purpose": "Leads of the How we work points."
       },
-      "title-small": {
-        "displayName": "Title small",
-        "purpose": "Fact panel statement, how-we-work leads, the wordmark."
-      },
-      "lede": {
-        "displayName": "Lede",
-        "purpose": "First paragraph under a heading; the footer's trade-name line."
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Text-set brand name in header and footer."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Main column at a 36rem measure; oldstyle numerals."
+        "purpose": "Base reading size; oldstyle numerals."
       },
       "field": {
         "displayName": "Field",
-        "purpose": "Fact values; lining tabular numerals."
+        "purpose": "Fact values, proof statement, trade-name line."
+      },
+      "copy": {
+        "displayName": "Copy",
+        "purpose": "Short grey gothic text under every section heading."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Field labels, navigation, margin notes, buttons (BIZ UDPGothic)."
+        "purpose": "Navigation, buttons, field labels, page links, footer links."
       },
       "small": {
         "displayName": "Small",
-        "purpose": "Menu descriptions, Advisors link, footer links, captions."
+        "purpose": "Menu descriptions, Advisors link, captions."
       },
       "japanese": {
         "displayName": "Japanese",
@@ -168,7 +168,7 @@
       },
       "japanese-display": {
         "displayName": "Japanese display",
-        "purpose": "Vertical decorative place names in Ghost; aria-hidden."
+        "purpose": "Vertical place names on the hero's Pine panel; aria-hidden."
       }
     },
     "shadows": [],
@@ -176,12 +176,27 @@
       {
         "name": "ease-out-expo",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Home's ink-in and the menu panel settle."
+        "purpose": "All reveals and the menu settle."
       },
       {
-        "name": "ink-in",
-        "value": "opacity 0 and blur(3px) to rest, 600ms, 90ms stagger",
-        "purpose": "Home's one load moment: headline, welcome and fact values."
+        "name": "smooth-scroll",
+        "value": "Lenis, lerp 0.09, smoothWheel, anchors",
+        "purpose": "Weighted scrolling site-wide; off under reduced motion."
+      },
+      {
+        "name": "reveal-words",
+        "value": "translateY(110%) to rest from a clipped line, 1100ms, 45ms per word + 110ms per --d",
+        "purpose": "Section headings rise word by word."
+      },
+      {
+        "name": "reveal-block",
+        "value": "opacity 900ms, translateY(1.5rem) 1100ms, 110ms per --d",
+        "purpose": "Paragraphs, panels, points fade and lift."
+      },
+      {
+        "name": "reveal-trigger",
+        "value": "IntersectionObserver threshold 0.12, rootMargin 0 0 -12% 0; gated by html.reveal-ready",
+        "purpose": "Fire once on entry; nothing hidden without JavaScript."
       },
       {
         "name": "panel-in",
@@ -194,13 +209,13 @@
         "purpose": "Link hover colour."
       },
       {
-        "name": "ghost-hover",
-        "value": "color 300ms",
-        "purpose": "Vertical place names deepen to Pine Soft on entry hover."
+        "name": "panel-tone",
+        "value": "background-color 300ms",
+        "purpose": "Entry panel hover tone shift."
       },
       {
         "name": "reduced-motion",
-        "value": "all durations 0.01ms",
+        "value": "Lenis and reveals not started; all durations 0.01ms",
         "purpose": "Everything off under prefers-reduced-motion."
       }
     ],
@@ -241,18 +256,10 @@
       "css": ".ds-btn-ring{display:inline-block;padding:8px 16px;border-radius:6px;box-shadow:inset 0 0 0 1px #1A2230;color:#1A2230;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;text-decoration:none;transition:background-color 150ms ease-out,color 150ms ease-out}.ds-btn-ring:hover{background:#1A2230;color:#FAFAF8}.ds-btn-ring:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
     {
-      "name": "Fact Panel",
-      "kind": "card",
-      "refersTo": "fact-panel",
-      "description": "The proof beside a claim: a soft Snow panel, no border, rows separated by space.",
-      "html": "<div class=\"ds-panel\"><div class=\"ds-panel-title\">We are a registered travel agency with offices in Tokyo and Osaka.</div><dl class=\"ds-panel-rows\"><div class=\"ds-row\"><dt>Registration</dt><dd>観光庁長官登録旅行業 第0000号</dd></div></dl><div class=\"ds-panel-foot\"><a href=\"#\">You can check our registration</a></div></div>",
-      "css": ".ds-panel{background:#FAFAF8;border-radius:14px;padding:28px 32px;color:#1A2230;max-width:520px}.ds-panel-title{font-family:'Source Serif 4',Georgia,serif;font-size:1.375rem;font-weight:600;line-height:1.3}.ds-panel-rows{display:grid;gap:16px;margin:20px 0 0}.ds-row{display:grid;grid-template-columns:13.75rem 1fr;column-gap:16px}.ds-row dt{font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;color:#4A5462}.ds-row dd{margin:0;font-family:'Noto Serif JP','Source Serif 4',serif;font-size:1rem;font-variant-numeric:lining-nums tabular-nums}.ds-panel-foot{margin-top:20px;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem}.ds-panel-foot a{color:inherit;text-decoration:underline;text-underline-offset:.22em}.ds-panel-foot a:hover{color:#2C5F53}.ds-panel-foot a:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
-    },
-    {
       "name": "Text Input",
       "kind": "input",
       "refersTo": "input",
-      "description": "Form field on Snow (styleguide only so far).",
+      "description": "Form field on Snow (styleguide only; forms not built).",
       "html": "<input class=\"ds-input\" placeholder=\"\" aria-label=\"Name\">",
       "css": ".ds-input{min-height:48px;width:288px;padding:0 12px;border:1px solid #4A5462;border-radius:6px;background:#FAFAF8;color:#1A2230;font-family:'Source Serif 4',Georgia,serif;font-size:1.125rem}.ds-input:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
@@ -265,61 +272,79 @@
       "css": ".ds-nav{font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;color:#1A2230}.ds-nav-trigger{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;font:inherit;color:#2C5F53;cursor:pointer}.ds-nav-menu{list-style:none;margin:10px 0 0;width:320px;padding:6px;border-radius:10px;background:#FAFAF8;box-shadow:0 0 0 1px rgba(26,34,48,.2)}.ds-nav-menu a{display:block;padding:10px 12px;border-radius:6px;color:#1A2230;text-decoration:none;transition:background-color 150ms ease-out}.ds-nav-menu a:hover,.ds-nav-menu a:focus-visible{background:#DADDD8;outline:none}.ds-nav-name{display:block}.ds-nav-menu a[aria-current=page] .ds-nav-name{font-weight:700;color:#2C5F53}.ds-nav-desc{display:block;margin-top:2px;font-size:.8125rem;color:#4A5462}"
     },
     {
-      "name": "Margin Note",
-      "kind": "custom",
-      "refersTo": "",
-      "description": "The proof beside a claim: gothic, soft ink, no rule.",
-      "html": "<aside class=\"ds-note\"><p>Registered with the Japan Tourism Agency.</p><p class=\"ds-note-src\"><a href=\"#\">Source</a></p></aside>",
-      "css": ".ds-note{max-width:16rem;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;line-height:1.5;color:#4A5462}.ds-note p{margin:0}.ds-note-src{margin-top:8px}.ds-note a{color:#1A2230;text-decoration:underline;text-underline-offset:.22em}.ds-note a:hover{color:#2C5F53}.ds-note a:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
+      "name": "Entry Panels",
+      "kind": "card",
+      "refersTo": "panel-snow",
+      "description": "Two ways in: large Snow and Pine panels, 20px radius, each panel the whole link.",
+      "html": "<div class=\"ds-entries\"><a class=\"ds-entry ds-entry-snow\" href=\"#\"><h2>Summer Journeys</h2><div><p>In July and August, Tokyo is hot and crowded. Hokkaido and the Japan Alps stay cool.</p><span class=\"ds-entry-link\">Summer Journeys</span></div></a><a class=\"ds-entry ds-entry-pine\" href=\"#\"><h2>Private Japan</h2><div><p>We also plan private trips across Japan in every other season.</p><span class=\"ds-entry-link\">Private Japan</span></div></a></div>",
+      "css": ".ds-entries{display:grid;grid-template-columns:7fr 5fr;gap:24px;background:#F1F2EE;padding:24px}.ds-entry{display:flex;flex-direction:column;justify-content:space-between;min-height:22rem;padding:48px;border-radius:20px;text-decoration:none;transition:background-color 300ms}.ds-entry h2{margin:0;max-width:14ch;font-family:'Source Serif 4',Georgia,serif;font-size:3rem;font-weight:330;line-height:1.04;letter-spacing:-.024em}.ds-entry p{margin:0;max-width:30rem;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:1.0625rem;line-height:1.62}.ds-entry-link{display:inline-block;margin-top:24px;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-entry:hover .ds-entry-link{text-decoration-thickness:2px}.ds-entry-snow{background:#FAFAF8;color:#1A2230}.ds-entry-snow p{color:#4A5462}.ds-entry-snow:hover{background:#ffffff}.ds-entry-pine{background:#2C5F53;color:#FAFAF8}.ds-entry-pine p{color:#C7D8D1}.ds-entry-pine:hover{background:#28574c}.ds-entry-snow:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}.ds-entry-pine:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
     {
-      "name": "Vertical Place Names",
+      "name": "Proof Strip",
+      "kind": "card",
+      "refersTo": "proof-strip",
+      "description": "The registration margin as a Snow strip under the hero: claim in serif, proof in gothic.",
+      "html": "<div class=\"ds-proof\"><p class=\"ds-proof-claim\">We are a registered travel agency with offices in Tokyo and Osaka.</p><p class=\"ds-proof-reg\"><span>Registration</span><span lang=\"ja\">観光庁長官登録旅行業 第0000号</span></p><p class=\"ds-proof-link\"><a href=\"#\">You can check our registration</a></p></div>",
+      "css": ".ds-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 40px;padding:24px 40px;border-radius:20px;background:#FAFAF8;color:#1A2230}.ds-proof p{margin:0}.ds-proof-claim{font-family:'Source Serif 4',Georgia,serif;font-size:1rem;line-height:1.45}.ds-proof-reg{font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;color:#4A5462}.ds-proof-reg span{display:block}.ds-proof-reg span[lang]{margin-top:4px;color:#1A2230;font-family:'Noto Serif JP',serif}.ds-proof-link{align-self:center;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem}.ds-proof a{color:inherit;text-decoration:underline;text-underline-offset:.22em;transition:color 150ms ease-out}.ds-proof a:hover{color:#2C5F53}.ds-proof a:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
+    },
+    {
+      "name": "Place-name Panel",
       "kind": "custom",
-      "refersTo": "",
-      "description": "The site's imagery: Ghost vertical Japanese, deepening to Pine Soft on hover.",
-      "html": "<a class=\"ds-vert\" href=\"#\"><span aria-hidden=\"true\"><span lang=\"ja\">北海道</span><span lang=\"ja\">沖縄</span><span lang=\"ja\">北アルプス</span></span></a>",
-      "css": ".ds-vert{display:inline-block;text-decoration:none;background:#F1F2EE;padding:16px}.ds-vert>span{display:flex;flex-direction:row-reverse;gap:.2em;height:16rem;font-family:'Noto Serif JP',serif;font-size:3.5rem;line-height:1.05;color:#D2D7D0;transition:color 300ms}.ds-vert span[lang]{writing-mode:vertical-rl;word-break:keep-all}.ds-vert:hover>span{color:#C7D8D1}.ds-vert:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
+      "refersTo": "panel-pine",
+      "description": "The site's imagery: vertical Japanese place names in Pine Soft on a 20px Pine panel; decorative.",
+      "html": "<div class=\"ds-places\" aria-hidden=\"true\"><span lang=\"ja\">北海道</span><span lang=\"ja\">沖縄</span><span lang=\"ja\">北アルプス</span></div>",
+      "css": ".ds-places{display:flex;flex-direction:row-reverse;gap:.22em;height:22rem;padding:48px;border-radius:20px;background:#2C5F53;color:#C7D8D1;font-family:'Noto Serif JP',serif;font-size:4rem;line-height:1.04;overflow:hidden}.ds-places span{writing-mode:vertical-rl;word-break:keep-all}"
     },
     {
       "name": "Pine Close",
       "kind": "custom",
       "refersTo": "pine-field",
-      "description": "The continuous Pine field that ends every page.",
-      "html": "<section class=\"ds-close\"><h2>Tell us who is travelling and when you would like to go.</h2><p>We will reply in your language.</p><a href=\"#\">Contact</a></section>",
-      "css": ".ds-close{background:#2C5F53;color:#FAFAF8;padding:64px 48px}.ds-close h2{margin:0;max-width:20ch;font-family:'Source Serif 4',Georgia,serif;font-size:2.5rem;font-weight:430;line-height:1.08;letter-spacing:-.018em}.ds-close p{margin:16px 0 0;font-family:'Source Serif 4',Georgia,serif;font-size:1.3rem;color:#C7D8D1}.ds-close a{display:inline-block;margin-top:24px;color:#FAFAF8;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-close a:hover{text-decoration-thickness:2px}.ds-close a:focus-visible{outline:2px solid #FAFAF8;outline-offset:3px}"
+      "description": "The continuous Pine field that ends every page: display heading, Pine Soft reply, inverted button.",
+      "html": "<section class=\"ds-close\"><h2>Tell us who is travelling and when you would like to go.</h2><div><p>We will reply in your language.</p><a class=\"ds-close-btn\" href=\"#\">Message us on WhatsApp</a></div></section>",
+      "css": ".ds-close{display:grid;grid-template-columns:7fr 4fr;gap:40px;align-items:end;background:#2C5F53;color:#FAFAF8;padding:112px 48px 80px}.ds-close h2{margin:0;max-width:16ch;font-family:'Source Serif 4',Georgia,serif;font-size:4rem;font-weight:320;line-height:1;letter-spacing:-.028em}.ds-close p{margin:0 0 28px;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:1.0625rem;color:#C7D8D1}.ds-close-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:6px;background:#FAFAF8;color:#2C5F53;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;font-weight:700;text-decoration:none;transition:background-color 150ms ease-out}.ds-close-btn:hover{background:#F1F2EE}.ds-close-btn:focus-visible{outline:2px solid #FAFAF8;outline-offset:3px}"
     }
   ],
   "narrative": {
-    "northStar": "One Page, Said and Proved",
-    "overview": "**Creative North Star: \"One Page, Said and Proved\"**\n\nThe site reads as a single continuous page rather than a stack of separated sections. A cool paper ground runs from the header to the last section; nothing is boxed off by lines. Separation comes from three things only: space, the type scale, and a change of surface (a soft Snow panel for facts, a full Pine field at the close). Every page ends the same way: the closing section and the footer form one unbroken pine field.\n\nThe governing idea is unchanged from the first specification: **the main column says; the margin proves.** Claims are made in a reading column of Source Serif 4; the evidence that backs them (registration, the source of a number, a named policy) sits beside them, set in BIZ UDPGothic, the Universal Design face of Japanese official documents, in soft ink. A due-diligence reader can read the margin alone.\n\nThe site is finished without photographs. Its imagery is type: large, pale, vertical Japanese place names set in Noto Serif JP (Summer Journeys' entry point on Home). One light theme; no dark mode. Refused, by the user and by the build: shadows, gradients, icons (the single exception is the functional disclosure chevron), all-caps and eyebrow labels, centred layouts, Japan clichés, prices.",
+    "northStar": "One Screen at a Time, Said and Proved",
+    "overview": "**Creative North Star: \"One Screen at a Time, Said and Proved\"**\n\nEach section is roughly one screen and says one thing. A big, light serif headline carries the statement; a short paragraph of grey gothic sits beneath or beside it, so no section reads as a wall of text. Layouts are split: text on one side, a large rounded panel or a column of points on the other. The section design, flow, scroll feel and text appearance follow getburnt.ai at Sarah's request; its photographs, icons, grain and frame lines were deliberately not taken.\n\nThe founding idea still holds: **the main column says; the margin proves.** Claims are set in Source Serif 4; the evidence behind them (the registration line, the verify link, the legal facts) is set in BIZ UDPGothic, the Universal Design face of Japanese official documents. On Home the proof is a Snow strip directly under the hero, so the registration is visible on the first screen.\n\nSeparation is by space, surface and type, never by lines. Surfaces are Paper (the ground), Snow (soft panels) and Pine (the one accent, as whole panels and the closing field). Every page ends on one continuous Pine field: on Home the contact close runs into the footer without a gap. The site is finished without photographs; its imagery is type, the summer place names set vertically in Noto Serif JP on a Pine panel. Motion is weighted smooth scrolling and quiet scroll reveals, all off under reduced motion. One light theme; no shadows, gradients, icons (the Trips chevron excepted), all-caps, eyebrows, centred layouts, Japan clichés, dark mode or prices.",
     "keyCharacteristics": [
-      "Paper ground, Snow surfaces, Ink text, Pine as the one accent; navy is retired.",
-      "Source Serif 4 with optical sizing for everything read; BIZ UDPGothic for labels, navigation, notes and legal lines; Noto Serif JP for Japanese.",
-      "Separation by space, scale and surface; almost no rules.",
-      "Facts sit in a soft Snow panel (14px radius, no border), rows separated by space.",
-      "Every page closes on one continuous pine field: contact close, then footer.",
-      "Start-aligned asymmetric 12-column grid; nothing centred.",
-      "One motion moment, on Home: the hero's text and values ink in; off under reduced motion."
+      "Sections about one screen tall, split layouts, start-aligned on a 12-column grid.",
+      "Big light serif headlines (Source Serif 4, weights 320–400) over short grey gothic text (BIZ UDPGothic, Ink Soft).",
+      "Large 20px-radius panels on Snow and on Pine; panels are whole links where they lead somewhere.",
+      "Paper ground, Snow surfaces, Ink text, Pine as the only accent.",
+      "No section rules: separation by space, surface and type.",
+      "Every page closes on one continuous Pine field, footer included.",
+      "Lenis smooth scrolling site-wide; headings rise word by word, other blocks fade and lift; all off under reduced motion and nothing hidden without JavaScript."
     ],
     "rules": [
       {
         "name": "The One Accent Rule",
-        "body": "Pine is the only hue. It either owns a whole field (the close and footer) or marks a state (hover, focus, current, the summer months). No second accent, no tints of Pine as decoration.",
+        "body": "Pine is the only hue. It owns a whole surface (a panel, the close, the footer) or marks a state. No second accent; no Pine tints as decoration.",
         "section": "colors"
       },
       {
         "name": "The Pine Field Rule",
-        "body": "On Pine, text is Snow, secondary text is Pine Soft, links stay Snow and thicken their underline to 2px on hover, the focus ring turns Snow, and the solid button inverts to Snow with Pine text.",
+        "body": "Inside any Pine surface, text is Snow, secondary text is Pine Soft, links stay Snow and thicken their underline to 2px on hover, the focus ring turns Snow, and the solid button inverts to Snow with Pine text.",
         "section": "colors"
       },
       {
+        "name": "The Light Headline Rule",
+        "body": "Headlines are big and light (320–400), never bold; the wordmark is the only heavy serif. Size and optical size carry hierarchy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Short Grey Text Rule",
+        "body": "Under a headline, the explanation is gothic in Ink Soft at copy size, a few lines long. If it runs past one short paragraph, the section is doing too much.",
+        "section": "typography"
+      },
+      {
         "name": "The Says and Proves Rule",
-        "body": "Claims are serif; evidence is gothic in soft ink. Never set a claim in the gothic or a proof in the reading serif.",
+        "body": "Claims are serif; evidence (labels, the registration line, verify links) is gothic. Never set a proof in the display serif.",
         "section": "typography"
       },
       {
         "name": "The Sentence Case Rule",
-        "body": "No all-caps, no letter-spaced labels, no eyebrows above headings. Hierarchy is carried by size, weight and optical size alone.",
+        "body": "No all-caps, no letter-spaced labels, no eyebrows above headings.",
         "section": "typography"
       },
       {
@@ -329,36 +354,36 @@
       },
       {
         "name": "The Space Not Lines Rule",
-        "body": "Sections, entry points, how-we-work items, the header and the footer are separated by space, scale and surface. No rule under the headline, above an entry point or item, before Advisors, or around the footer.",
+        "body": "Sections, panels, points, header and footer are separated by space, surface and type. No rule between sections, under a headline, above a point or around the footer.",
         "section": "layout"
       },
       {
         "name": "The Tone Not Shadow Rule",
-        "body": "A surface is raised by being lighter (Snow on Paper), never by a shadow or gradient.",
+        "body": "A surface is raised by tone (Snow on Paper, Pine on Paper), never by a shadow or gradient.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** separate with space, type scale and surface: 96px between sections, a Snow panel for facts, the Pine field to close.",
-      "**Do** put facts in the Snow fact panel (14px radius, no border) with rows separated by 16px of space.",
+      "**Do** make each section about one screen, split in two, with one big light serif headline and a short paragraph of gothic Ink Soft copy text.",
+      "**Do** use large 20px-radius panels on Snow and Pine for content that leads somewhere, and make the whole panel the link.",
+      "**Do** separate with space, surface and type: 128–224px between sections, Snow or Pine surfaces, no rules.",
+      "**Do** put the proof beside or directly under the claim, in gothic: on Home, the Snow proof strip under the hero.",
       "**Do** end every page on the continuous Pine field, footer included.",
-      "**Do** keep Pine the only accent: a whole field or a state, nothing in between.",
-      "**Do** set claims in Source Serif 4 and their proof beside them in BIZ UDPGothic, Ink Soft.",
-      "**Do** use large vertical Japanese place names in Ghost as the imagery, decorative and hidden from assistive technology.",
-      "**Do** use CSS logical properties for every direction-dependent value.",
-      "**Do** keep Home's ink-in as the site's only load motion, and switch it off under reduced motion."
+      "**Do** keep Pine the only accent: a whole surface or a state.",
+      "**Do** reveal headings word by word and blocks by fade-and-lift, gate them behind `html.reveal-ready`, and switch all motion off under reduced motion.",
+      "**Do** use CSS logical properties for every direction-dependent value."
     ],
     "donts": [
-      "**Don't** draw rules between sections, under headlines, above entry points or list items, before the Advisors link, or around the footer. Rules belong only to data tables such as the season band.",
-      "**Don't** frame panels with borders or double rules, or set facts in hairline rows.",
-      "**Don't** use navy or any second hue.",
-      "**Don't** use shadows or gradients.",
-      "**Don't** use icons; the disclosure chevron is the single functional exception.",
+      "**Don't** draw rules between sections, under headlines, above points or around the footer; rules belong only to data tables such as the season band.",
+      "**Don't** set bold or heavy headlines, or let section text run into long paragraphs.",
+      "**Don't** use shadows, gradients, grain or frame lines.",
+      "**Don't** use photographs as decoration or any stock imagery; the photograph frame is not yet designed.",
+      "**Don't** use icons; the Trips disclosure chevron is the single functional exception.",
       "**Don't** use all-caps, letter-spaced labels or eyebrows above headings.",
       "**Don't** centre layouts or text blocks.",
       "**Don't** use Japan clichés (torii, cherry blossom, red suns, brush strokes, wave patterns).",
-      "**Don't** add a dark mode, or show prices.",
-      "**Don't** use Ghost or Mist for meaningful text."
+      "**Don't** add a second hue, a dark mode, or prices.",
+      "**Don't** hide content in a way that depends on JavaScript or ignores reduced motion."
     ]
   }
 }
