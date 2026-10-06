@@ -35,9 +35,10 @@ export function SiteHeader() {
                 {entry.kind === "group" ? (
                   <NavGroup
                     label={<CopyText copy={entry.label} />}
-                    items={entry.items.map((key) => ({
-                      href: routeFor(key).path,
-                      label: label(key),
+                    items={entry.items.map((item) => ({
+                      href: routeFor(item.route).path,
+                      label: label(item.route),
+                      description: <CopyText copy={item.description} />,
                     }))}
                   />
                 ) : (
@@ -67,7 +68,7 @@ export function SiteHeader() {
                         <CopyText copy={entry.label} />
                       </span>
                       <ul className="mt-2 flex flex-col gap-2 border-s border-hairline ps-4">
-                        {entry.items.map((key) => (
+                        {entry.items.map(({ route: key }) => (
                           <li key={key}>
                             <NavLink href={routeFor(key).path} className={linkClass}>
                               {label(key)}
