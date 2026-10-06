@@ -156,6 +156,14 @@ Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa 
 - **Transport.** Private vehicles sized for the whole group and its luggage, so no one travels separately. *Margin:* Vehicles and drivers are supplied by `[[TRANSPORT_OPERATOR]]`, a licensed hire operator.
 - **Privacy.** Private dining rooms, private bathing and a guide who works for your household alone, planned from the first draft.
 
+**Page sections — DRAFT** (drafted 6 Oct 2026 for approval; restates approved copy, no new facts)
+
+- Title: "Japan in spring, autumn and winter, planned for the whole family."
+- Hero image, set vertically in the pine panel (decorative): 春 · 秋 · 冬
+- Sections heading: "Planned for the unit."
+- Onward panels reuse approved text: Summer Journeys (Home §3 entry text) and Family Services (§6 title and intro).
+- Close reuses the Home contact heading (§3, LOCKED).
+
 ## 6. Family Services (`/family-services`)
 
 **All copy — LOCKED.** Page title: **For Muslim families**

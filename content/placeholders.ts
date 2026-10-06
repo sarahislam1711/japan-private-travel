@@ -72,7 +72,6 @@ export const placeholderKeys = [
   "ALPS_STATION",
 
   // Team — copy not yet in docs/CONTENT.md
-  "PRIVATE_JAPAN_TITLE",
   "EXPERIENCES_TITLE",
   "ABOUT_TITLE",
   "PRIVACY_TITLE",
@@ -156,7 +155,6 @@ export const placeholders: Record<PlaceholderKey, Placeholder> = {
   DESK_HOURS: fact("team", "Desk hours in the reference zone (D3)"),
   ALPS_STATION: fact("team", "JMA station for the Japan Alps row of the season band (CL-05)"),
 
-  PRIVATE_JAPAN_TITLE: copy("Page title for /private-japan — not defined in CONTENT.md"),
   EXPERIENCES_TITLE: copy("Page title for /experiences — not defined in CONTENT.md"),
   ABOUT_TITLE: copy("Page title for /about — not defined in CONTENT.md"),
   PRIVACY_TITLE: copy("Page title for /privacy — not defined in CONTENT.md"),

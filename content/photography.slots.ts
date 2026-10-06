@@ -14,6 +14,10 @@ export const photoSlots = {
     photoId: null,
     brief: "A family moving together in Japan outside summer; shot at a distance or from behind; no faces of real clients.",
   },
+  "private-japan-hero": {
+    photoId: null,
+    brief: "A household together in Japan in spring, autumn or winter; at a distance or from behind; natural light.",
+  },
 } satisfies Record<string, PhotoSlot>;
 
 export type PhotoSlotId = keyof typeof photoSlots;

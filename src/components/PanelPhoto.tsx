@@ -9,14 +9,14 @@ const isDev = process.env.NODE_ENV !== "production";
  * manifest (rule 4, COMPLIANCE C6), with its place and month as a caption.
  * With no photo: a quiet dev-only note; nothing in production.
  */
-export function PanelPhoto({ slot, tone }: { slot: PhotoSlotId; tone: "snow" | "pine" }) {
+export function PanelPhoto({ slot, tone, note = "top" }: { slot: PhotoSlotId; tone: "snow" | "pine"; note?: "top" | "bottom" }) {
   const { photoId, brief } = photoSlots[slot];
   const photo = photoId ? photographs.find((p) => p.id === photoId) : undefined;
 
   if (!photo) {
     if (!isDev) return null;
     return (
-      <span className="pointer-events-none absolute end-6 top-6 hidden max-w-[16rem] tablet:block rounded-(--radius-control) px-2 py-1 text-end font-gothic text-[0.6875rem] leading-snug opacity-70 outline-1 outline-dashed [outline-color:color-mix(in_oklab,currentColor_40%,transparent)]">
+      <span className={`pointer-events-none absolute hidden max-w-[16rem] tablet:block ${note === "top" ? "end-6 top-6" : "start-6 bottom-6 text-start"} rounded-(--radius-control) px-2 py-1 font-gothic text-[0.6875rem] leading-snug opacity-70 outline-1 outline-dashed [outline-color:color-mix(in_oklab,currentColor_40%,transparent)] ${note === "top" ? "text-end" : ""}`}>
         Photograph to come: {brief}
       </span>
     );
