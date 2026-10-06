@@ -1,10 +1,10 @@
 # CONTENT.md — the single source of copy
 
 Status markers:
-- **LOCKED** — taken verbatim from the strategy v2 §6. Claude Code reproduces exactly. Faris may change it here; Claude Code may not.
+- **LOCKED** — taken verbatim from the strategy v2 §6. Claude Code reproduces exactly. The team may change it here; Claude Code may not.
 - **LOCKED ⚑Dn** — locked, but flagged by an open decision in DECISIONS.md. Build as written; expect a change.
-- **DRAFT** — written for this package. Renders with a DRAFT marker in dev; blocks production until Faris changes the marker to LOCKED.
-- `[[KEY]]` — a fact only Faris or the operator can supply. Defined in `content/placeholders.ts`. Blocks production.
+- **DRAFT** — written for this package. Renders with a DRAFT marker in dev; blocks production until the team changes the marker to LOCKED.
+- `[[KEY]]` — a fact only the team or the operator can supply. Defined in `content/placeholders.ts`. Blocks production.
 - `{CL-nn}` — a claim that must have a source in the claims register (§12) before production.
 
 ---
@@ -13,13 +13,13 @@ Status markers:
 
 | Key | Value | Status |
 |---|---|---|
-| `brand.name` | `[[BRAND]]` | ⚑D1 |
+| `brand.name` | `HalaJapan` | ⚑D1 |
 | `entity.nameEn` | `[[ENTITY_NAME_EN]]` | |
 | `entity.nameJa` | `[[ENTITY_NAME_JA]]` | |
 | `entity.address` | `[[ENTITY_ADDRESS]]` (Tokyo) and `[[OSAKA_ADDRESS]]` | |
 | `registration.lineJa` | `[[REG_AUTHORITY_JA]]登録旅行業 第[[REG_NUMBER]]号` — the prescribed form, e.g. 東京都知事登録旅行業第3-0000号 or 観光庁長官登録旅行業第0000号. Exact form to be confirmed by the 行政書士. | |
 | `registration.lineEn` | `[[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]` | DRAFT |
-| `tradeNameLine` | `[[BRAND]] is a trading name of [[ENTITY_NAME_EN]].` | DRAFT (COMPLIANCE C2) |
+| `tradeNameLine` | `HalaJapan is a trading name of [[ENTITY_NAME_EN]].` | DRAFT (COMPLIANCE C2) |
 | `memberships` | `Member, [[ASSOCIATION]]` — one line per membership, never "licensed", "accredited" or "certified by". | LOCKED rule |
 | `whatsapp` | `[[WHATSAPP_E164]]` | |
 | `phone` | `[[PHONE]]` | |
@@ -74,7 +74,7 @@ Summer Journeys · Private Japan · Family Services · Experiences · About · C
 Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."
 Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa row — Okinawa's case is coastal, not cool, and a Naha row would undercut the page (⚑D6).
 
-**Region sections — BRIEF, not copy.** The strategy calls this the page with "the most specific content". Only the operator can write it truthfully. For each region Faris/the operator supplies, and Claude Code renders:
+**Region sections — BRIEF, not copy.** The strategy calls this the page with "the most specific content". Only the operator can write it truthfully. For each region the team/the operator supplies, and Claude Code renders:
 
 | Slot | Hokkaido | Okinawa | Hokuriku and the Japan Alps ⚑D6 |
 |---|---|---|---|

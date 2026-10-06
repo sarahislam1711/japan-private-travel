@@ -1,6 +1,6 @@
 # DECISIONS.md — open decisions and problems found
 
-Each item has a default the build uses until Faris decides. "Blocks" says what it holds up.
+Each item has a default the build uses until the team decides. "Blocks" says what it holds up.
 
 ## Problems in the strategy itself
 

@@ -14,7 +14,7 @@ Do not write any code or create any files yet.
 Report back:
 1. In five sentences: what this site is for, who judges it, and what "done" means.
 2. The design concept in your own words, and the one place it spends its boldness.
-3. Every placeholder key in CONTENT.md, grouped by who must supply it (legal, operator, photography, Faris).
+3. Every placeholder key in CONTENT.md, grouped by who must supply it (legal, operator, photography, team).
 4. Anything in the docs that contradicts anything else in the docs. Quote both sides.
 5. Anything you would need to invent to complete a step — list it so I can supply it instead.
 6. Your questions for me, numbered.

@@ -1,4 +1,4 @@
-# CLAUDE.md — [[BRAND]] website
+# CLAUDE.md — HalaJapan website
 
 ## What this project is
 
@@ -6,7 +6,7 @@ A nine-page English website for a registered Japanese travel agency (offices in 
 
 The site is a **credential asset, not an acquisition engine**. Its job is to survive a travel advisor's or family office's anonymous due diligence and keep the business on their shortlist. It is not built for SEO breadth, conversion funnels or form-fill volume. Judge every decision against that.
 
-Before any work in a session, read: `docs/DECISIONS.md`, `docs/DESIGN.md`, `docs/CONTENT.md`, `docs/COMPLIANCE.md`, and the current step in `docs/PROMPTS.md`.
+Before any work in a session, read: `docs/PROJECT-GUIDE.md`, `docs/DECISIONS.md`, `docs/DESIGN.md` (and `docs/DESIGN-BRIEF.md`, the designer's brief; DESIGN.md wins where they differ), `docs/CONTENT.md`, `docs/COMPLIANCE.md`, and the current step in `docs/PROMPTS.md`.
 
 ## Non-negotiable rules
 
@@ -71,7 +71,7 @@ Guard: (pnpm guard output summary: errors / warnings by rule ID)
 Tests: (pass/fail counts)
 New dependencies: (name — reason) or none
 Copy problems noticed: (quote the string, say what is wrong; do not fix)
-Questions for Faris: (numbered, or none)
+Questions for the team: (numbered, or none)
 ```
 
 ## Commits

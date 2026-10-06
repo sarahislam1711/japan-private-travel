@@ -11,7 +11,7 @@ The legal judgements here come from the strategy, not from Claude Code. The 行�
 1. **Source scan** — reads `/content`, `/src` and `/src/styles`. Fast; runs on every `pnpm guard`.
 2. **Render crawl** — builds, starts the server, visits every route in `content/routes.ts` with Playwright, and checks the rendered HTML and visible text. This catches copy that reaches the page by any path.
 
-Modes: `pnpm guard` reports errors and warnings and exits 0. `pnpm guard:prod` exits 1 on any error. Warnings require an entry in `content/approvals.ts` (rule ID, the exact string, reason, approver "Faris", date) — **Claude Code never writes to `approvals.ts`**; it proposes entries in the checkpoint report.
+Modes: `pnpm guard` reports errors and warnings and exits 0. `pnpm guard:prod` exits 1 on any error. Warnings require an entry in `content/approvals.ts` (rule ID, the exact string, reason, approver (the team member approving), date) — **Claude Code never writes to `approvals.ts`**; it proposes entries in the checkpoint report.
 
 Output: a table per rule — rule ID, severity, route or file, the matched string, and the fix the rule expects.
 
