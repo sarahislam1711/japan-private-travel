@@ -46,7 +46,7 @@ export default function StyleguidePage() {
 
   return (
     <>
-      <SiteHeader current="home" />
+      <SiteHeader />
       <main id="main">
         <HomeHero />
         <EntryPoints />

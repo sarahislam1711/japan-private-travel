@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 
-type Item = { href: string; label: ReactNode; current: boolean };
+type Item = { href: string; label: ReactNode };
 
 /**
  * A header group that discloses its pages (Trips → Summer Journeys, Private
@@ -15,7 +16,8 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
   const root = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const panelId = useId();
-  const active = items.some((i) => i.current);
+  const pathname = usePathname();
+  const active = items.some((i) => i.href === pathname);
 
   useEffect(() => {
     if (!open) return;
@@ -63,7 +65,7 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
             <li key={item.href}>
               <Link
                 href={item.href}
-                aria-current={item.current ? "page" : undefined}
+                aria-current={item.href === pathname ? "page" : undefined}
                 className="block py-1.5 no-underline hover:underline aria-[current=page]:underline aria-[current=page]:decoration-2"
               >
                 {item.label}

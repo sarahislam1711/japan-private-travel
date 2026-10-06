@@ -5,6 +5,7 @@ import { routeFor, type RouteKey } from "@content/routes";
 import type { ReactNode } from "react";
 import { CopyText } from "./CopyText";
 import { NavGroup } from "./NavGroup";
+import { NavLink } from "./NavLink";
 import { Wordmark } from "./Wordmark";
 
 const linkClass = "no-underline hover:underline aria-[current=page]:underline aria-[current=page]:decoration-2";
@@ -16,7 +17,7 @@ const utilityClass = `${linkClass} text-small text-ink-soft hover:text-ink`;
 const label = (key: RouteKey): ReactNode => <CopyText copy={routeFor(key).navLabel!} />;
 
 /** Skip link, wordmark at inline-start, navigation at inline-end (docs/CONTENT.md §2). Not sticky. */
-export function SiteHeader({ current }: { current?: RouteKey }) {
+export function SiteHeader() {
   return (
     <>
       <a href="#main" className="skip-link">
@@ -37,17 +38,15 @@ export function SiteHeader({ current }: { current?: RouteKey }) {
                     items={entry.items.map((key) => ({
                       href: routeFor(key).path,
                       label: label(key),
-                      current: current === key,
                     }))}
                   />
                 ) : (
-                  <Link
+                  <NavLink
                     href={routeFor(entry.route).path}
-                    aria-current={current === entry.route ? "page" : undefined}
                     className={entry.kind === "cta" ? ctaClass : entry.kind === "utility" ? utilityClass : linkClass}
                   >
                     {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
-                  </Link>
+                  </NavLink>
                 )}
               </li>
             ))}
@@ -70,21 +69,20 @@ export function SiteHeader({ current }: { current?: RouteKey }) {
                       <ul className="mt-2 flex flex-col gap-2 border-s border-hairline ps-4">
                         {entry.items.map((key) => (
                           <li key={key}>
-                            <Link href={routeFor(key).path} aria-current={current === key ? "page" : undefined} className={linkClass}>
+                            <NavLink href={routeFor(key).path} className={linkClass}>
                               {label(key)}
-                            </Link>
+                            </NavLink>
                           </li>
                         ))}
                       </ul>
                     </>
                   ) : (
-                    <Link
+                    <NavLink
                       href={routeFor(entry.route).path}
-                      aria-current={current === entry.route ? "page" : undefined}
                       className={entry.kind === "cta" ? `${ctaClass} mt-1` : entry.kind === "utility" ? utilityClass : linkClass}
                     >
                       {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
-                    </Link>
+                    </NavLink>
                   )}
                 </li>
               ))}
