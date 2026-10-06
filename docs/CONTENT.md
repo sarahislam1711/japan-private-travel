@@ -83,7 +83,7 @@ HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ 
 
 **Experiences line — reuses the Experiences intro (§7)**, linked to /experiences under the page name.
 
-**What we do for a household — DRAFT** (drafted 6 Oct 2026; each point restates approved copy, no new facts)
+**What we do for a household — LOCKED** (approved by Sarah, 6 Oct 2026; the margin notes stay DRAFT)
 
 > **What we do for a household**
 >
@@ -102,7 +102,7 @@ HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ 
 
 > Tell us who is travelling and when.
 > [WhatsApp button] [DeskStatus] Email `[[EMAIL]]` · Telephone `[[PHONE]]`
-> Or use the enquiry form.
+> Or use the enquiry form. *(LOCKED — Sarah, 6 Oct 2026)*
 
 ## 4. Summer Journeys (`/summer-journeys`)
 
