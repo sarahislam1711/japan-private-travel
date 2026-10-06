@@ -11,6 +11,8 @@ const linkClass = "no-underline hover:underline aria-[current=page]:underline ar
 const ctaClass =
   "inline-block rounded-(--radius-control) px-4 py-2 no-underline ring-1 ring-ink transition-colors hover:bg-ink hover:text-plate aria-[current=page]:bg-ink aria-[current=page]:text-plate";
 
+const utilityClass = `${linkClass} text-small text-ink-soft hover:text-ink`;
+
 const label = (key: RouteKey): ReactNode => <CopyText copy={routeFor(key).navLabel!} />;
 
 /** Skip link, wordmark at inline-start, navigation at inline-end (docs/CONTENT.md §2). Not sticky. */
@@ -28,7 +30,7 @@ export function SiteHeader({ current }: { current?: RouteKey }) {
         <nav aria-label="Main" className="hidden font-gothic text-label desktop:block">
           <ul className="flex items-center gap-8">
             {mainNav.map((entry, i) => (
-              <li key={i}>
+              <li key={i} className={entry.kind === "utility" ? "border-s border-hairline ps-8" : undefined}>
                 {entry.kind === "group" ? (
                   <NavGroup
                     label={<CopyText copy={entry.label} />}
@@ -42,9 +44,9 @@ export function SiteHeader({ current }: { current?: RouteKey }) {
                   <Link
                     href={routeFor(entry.route).path}
                     aria-current={current === entry.route ? "page" : undefined}
-                    className={entry.kind === "cta" ? ctaClass : linkClass}
+                    className={entry.kind === "cta" ? ctaClass : entry.kind === "utility" ? utilityClass : linkClass}
                   >
-                    {label(entry.route)}
+                    {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
                   </Link>
                 )}
               </li>
@@ -79,9 +81,9 @@ export function SiteHeader({ current }: { current?: RouteKey }) {
                     <Link
                       href={routeFor(entry.route).path}
                       aria-current={current === entry.route ? "page" : undefined}
-                      className={entry.kind === "cta" ? `${ctaClass} mt-1` : linkClass}
+                      className={entry.kind === "cta" ? `${ctaClass} mt-1` : entry.kind === "utility" ? utilityClass : linkClass}
                     >
-                      {label(entry.route)}
+                      {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
                     </Link>
                   )}
                 </li>

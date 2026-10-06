@@ -49,14 +49,14 @@ Page names: Summer Journeys · Private Japan · Family Services · Experiences �
 Header structure (set by Sarah, 6 Oct 2026):
 
 ```
-HalaJapan        Trips   Family Services   Experiences   About   [ Contact ]
+HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ Contact ]
                  ├ Summer Journeys
                  └ Private Japan
 ```
 
 - Group label: Trips. Status: LOCKED (Sarah, 6 Oct 2026).
 - Contact sits last, set as a boxed link.
-- "For travel advisors" is not in the header; it is linked from the footer.
+- Short header label for the For travel advisors page: Advisors. Status: LOCKED (Sarah, 6 Oct 2026). Set smaller and quieter, before Contact, after a thin divider. The footer keeps the full name.
 
 ## 3. Home (`/`)
 

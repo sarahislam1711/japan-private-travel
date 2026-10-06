@@ -151,7 +151,7 @@ A cool, low-chroma neutral world with one deep navy accent; colour is almost ent
 - **Enamel Plate** (plate): the plate's surface, form fields, the mobile menu panel, and text on ink or navy.
 - **Plate Ink** (ink): all body text and headings, the plate's double-rule frame, the single 1px rule under the headline, the plate's title and foot rules, the season band's head rules, and the solid button. 15.7:1 on ground.
 - **Soft Ink** (ink-soft): plate field labels, margin notes, form labels, captions, row headings in the season band. 7.1:1 on ground, 6.5:1 on mist.
-- **Hairline** (hairline): plate row rules, the rule above each entry point, the footer's link-row rule, the margin note's inline-start rule, the mobile Trips indent rule, the mobile menu outline. 1.5:1 on ground: **non-text only.**
+- **Hairline** (hairline): plate row rules, the rule above each entry point, the footer's link-row rule, the margin note's inline-start rule, the mobile Trips indent rule, the divider before Advisors, the mobile menu outline. 1.5:1 on ground: **non-text only.**
 - **Stone** (stone): dev-only outlines for placeholder and DRAFT markers and styleguide scaffolding. 4.2:1 on ground: **never production text.**
 
 ### Named Rules
@@ -233,7 +233,7 @@ Sober and singular: there is one solid button on the site.
 Underlined at 1px with a 0.22em offset in the current colour; hover shifts colour to navy over 150ms. The verify link inside the plate is set in the label face. Focus styles are never removed.
 
 ### Navigation
-Structure set by Sarah (docs/CONTENT.md §2): HalaJapan wordmark at inline-start; at inline-end **Trips** (a group that discloses Summer Journeys and Private Japan), Family Services, Experiences, About, and **Contact** as a boxed link. "For travel advisors" is not in the header; the footer links it.
+Structure set by Sarah (docs/CONTENT.md §2): HalaJapan wordmark at inline-start; at inline-end **Trips** (a group that discloses Summer Journeys and Private Japan), Family Services, Experiences, About, a quieter **Advisors** link (the For travel advisors page: small size, soft ink, after a hairline divider), and **Contact** as a boxed link. The footer keeps the full "For travel advisors" name.
 
 Wordmark: Source Serif 600, 22px, opsz 24, text-set from content until a drawn mark exists. Navigation: BIZ UDPGothic label size; links are not underlined at rest, underline on hover, and the current page carries a 2px underline (Trips carries it when either of its pages is current). The Trips panel opens on click or hover, closes on Escape, outside click or focus leaving; it is a plate panel with a hairline ring and 6px radius, no chevron (icons and arrows are banned). Contact is a 1px ink ring with 6px radius that fills ink on hover and when current. Not sticky. Below 1024px a "Menu" text disclosure (no hamburger icon) opens a plate panel at inline-end listing the same structure, Trips' pages indented under a hairline inline-start rule. A skip link (ink, plate text, 6px radius) appears on keyboard focus.
 
