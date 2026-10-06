@@ -9,16 +9,16 @@ export const metadata = pageMetadata("home");
 
 /**
  * Home maps the site: hero (→ About), two ways in plus Experiences,
- * three points (→ Contact, Family Services, About), advisors (→ For travel
- * advisors), and the contact close (→ WhatsApp, Contact).
+ * advisors on navy (→ For travel advisors), three points (→ Contact, Family
+ * Services, About), and the contact close on navy (→ WhatsApp, Contact).
  */
 export default function HomePage() {
   return (
     <main id="main">
       <HomeHero />
       <EntryPoints />
-      <HouseholdPoints />
       <AdvisorBand />
+      <HouseholdPoints />
       <ContactBand />
     </main>
   );

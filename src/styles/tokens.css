@@ -22,7 +22,9 @@
   --color-ink: #14181d; /* text, the plate frame, the solid button */
   --color-ink-soft: #4a5159; /* field labels, notes, captions */
   --color-hairline: #c3c9ce; /* light row rules — non-text only */
-  --color-navy: #1f3a5f; /* the only accent: links, focus, July and August */
+  --color-navy: #1f3a5f; /* the brand colour: whole navy fields, links, focus, July and August */
+  --color-navy-soft: #b8c5d6; /* secondary text on navy fields — 6.6:1 */
+  --color-ghost: #cdd6de; /* large decorative Japanese type only — never meaningful text */
   --color-stone: #6b7480; /* dev-only placeholder and DRAFT outlines — never text */
 
   /* Type scale — base 18px */

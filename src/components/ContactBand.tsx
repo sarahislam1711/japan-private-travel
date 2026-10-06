@@ -13,12 +13,13 @@ export function ContactBand() {
   const tel = isResolved(site.phone) ? `tel:${copyText(site.phone).replace(/[^\d+]/g, "")}` : undefined;
   const mail = isResolved(site.email) ? `mailto:${copyText(site.email)}` : undefined;
   return (
-    <section aria-labelledby="contact-title" className="mx-auto mt-32 grid max-w-(--content-max) grid-cols-12 gap-x-6 px-(--page-margin)">
+    <section aria-labelledby="contact-title" className="on-navy mt-32">
+      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 px-(--page-margin) py-24">
       <h2 id="contact-title" className="col-span-12 max-w-[20ch] font-serif text-h1 [font-variation-settings:'opsz'_60] desktop:col-span-6 desktop:col-start-2">
         <CopyText copy={band.sentence} />
       </h2>
       <div className="col-span-12 mt-8 flex flex-col items-start gap-6 desktop:col-span-5 desktop:col-start-8 desktop:mt-3">
-        <WhatsAppLink />
+        <WhatsAppLink tone="light" />
         <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 font-gothic text-label">
           <dt className="text-ink-soft">
             <CopyText copy={band.emailLabel} />
@@ -42,6 +43,7 @@ export function ContactBand() {
             <CopyText copy={band.formLink} />
           </Link>
         </p>
+      </div>
       </div>
     </section>
   );

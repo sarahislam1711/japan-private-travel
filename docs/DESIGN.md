@@ -155,7 +155,9 @@ A cool, low-chroma neutral world with one deep navy accent; colour is almost ent
 - **Stone** (stone): dev-only outlines for placeholder and DRAFT markers and styleguide scaffolding. 4.2:1 on ground: **never production text.**
 
 ### Named Rules
-**The One Accent Rule.** Navy is the only colour that is not a neutral. It marks interaction (hover, focus, selection) and the two summer months. Nothing else is navy, and no second accent is introduced.
+**The Navy Field Rule.** Navy is the brand colour and the only hue. It owns whole sections as full-width fields (Home's advisors band and contact close), and otherwise marks interaction (hover, focus, selection) and the two summer months. On a navy field, text is plate (11.2:1), secondary text is Navy Soft #b8c5d6 (6.6:1), links stay plate with a thicker underline on hover, the focus ring turns plate, and the solid button inverts to plate with navy text. No second hue is introduced (changed 6 Oct 2026 at Sarah's request to make the site less bland; the earlier "navy as accent only" rule is retired).
+
+**The Japanese Type Rule.** With no photography, large Japanese type is the imagery. On Home, the Summer Journeys entry point carries its three place names (北海道, 沖縄, 北陸 / 北アルプス) set vertically, read from the inline-end edge inward, in Ghost #cdd6de at clamp(2.75rem, 4.2vw, 4.5rem); long names wrap into a further column as Japanese vertical setting does, and words never split. The type is decorative and aria-hidden (the English sentence says the same thing), darkens to Navy Soft on hover, and below 640px moves after the text instead of behind it. Ghost is never used for meaningful text.
 
 **The Tint Before Line Rule.** To separate a zone, reach for mist first. A rule is drawn only where it separates two facts.
 

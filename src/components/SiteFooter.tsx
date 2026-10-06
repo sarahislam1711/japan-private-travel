@@ -20,7 +20,7 @@ export function SiteFooter() {
   const advisors = routeFor("forTravelAdvisors");
   const contact = routeFor("contact");
   return (
-    <footer className="mt-36 bg-mist">
+    <footer className="bg-mist">
       <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) py-16">
         <FieldTable
           className="col-span-12 desktop:col-span-6 desktop:col-start-7 desktop:row-start-1"

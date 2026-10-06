@@ -60,7 +60,7 @@
     transition: color var(--duration-link) ease-out;
   }
   a:hover {
-    color: var(--color-navy);
+    color: var(--link-hover, var(--color-navy));
   }
 
   :focus-visible {
@@ -81,6 +81,21 @@
 }
 
 @layer components {
+  /* A full navy field: light text, light links, light focus ring. */
+  .on-navy {
+    background-color: var(--color-navy);
+    color: var(--color-plate);
+    --link-hover: var(--color-plate);
+    --color-ink-soft: var(--color-navy-soft);
+    --color-hairline: color-mix(in oklab, var(--color-plate) 30%, var(--color-navy));
+  }
+  .on-navy a:hover {
+    text-decoration-thickness: 2px;
+  }
+  .on-navy :focus-visible {
+    outline-color: var(--color-plate);
+  }
+
   /* Visible only when focused by keyboard. */
   .skip-link {
     position: absolute;
