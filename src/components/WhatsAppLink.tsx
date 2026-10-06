@@ -16,8 +16,8 @@ export function WhatsAppLink({ tone = "ink" }: { tone?: "ink" | "light" }) {
       href={href}
       className={`inline-flex min-h-12 items-center rounded-(--radius-control) px-6 font-gothic text-label font-bold no-underline transition-colors ${
         tone === "light"
-          ? "bg-plate text-navy hover:bg-ground hover:text-navy"
-          : "bg-ink text-plate hover:bg-navy hover:text-plate"
+          ? "bg-plate text-pine hover:bg-ground hover:text-pine"
+          : "bg-ink text-plate hover:bg-pine hover:text-plate"
       }`}
     >
       <CopyText copy={ui.whatsappButton} />

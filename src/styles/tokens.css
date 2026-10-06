@@ -15,16 +15,16 @@
   --drop-shadow-*: initial;
   --breakpoint-*: initial;
 
-  /* Colour — a cool, airy ground; the plate is the one framed object; navy the one accent */
-  --color-ground: #eef1f2; /* page */
-  --color-mist: #e2e7ea; /* tinted sections: separation by surface, not by line */
-  --color-plate: #fbfcfc; /* the plate, form fields */
-  --color-ink: #14181d; /* text, the plate frame, the solid button */
-  --color-ink-soft: #4a5159; /* field labels, notes, captions */
-  --color-hairline: #c3c9ce; /* light row rules — non-text only */
-  --color-navy: #1f3a5f; /* the brand colour: whole navy fields, links, focus, July and August */
-  --color-navy-soft: #b8c5d6; /* secondary text on navy fields — 6.6:1 */
-  --color-ghost: #cdd6de; /* large decorative Japanese type only — never meaningful text */
+  /* Colour — the HalaJapan brand palette (Sarah, 6 Oct 2026): paper, snow, ink, mist, and pine as the one accent */
+  --color-ground: #f1f2ee; /* Paper — page background */
+  --color-plate: #fafaf8; /* Snow — form fields and soft panels */
+  --color-ink: #1a2230; /* Ink — text and the solid button */
+  --color-ink-soft: #4a5462; /* Ink soft — margin notes and captions (6.8:1 on paper) */
+  --color-mist: #daddd8; /* Mist — the few information rules that remain; non-text only */
+  --color-hairline: #daddd8; /* alias of Mist for rules */
+  --color-pine: #2c5f53; /* Pine — the only accent: the closing field, links on hover, focus, July and August */
+  --color-pine-soft: #c7d8d1; /* secondary text on pine (4.9:1) */
+  --color-ghost: #d2d7d0; /* large decorative Japanese type only — never meaningful text */
   --color-stone: #6b7480; /* dev-only placeholder and DRAFT outlines — never text */
 
   /* Type scale — base 18px */

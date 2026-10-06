@@ -31,7 +31,7 @@ export function SiteHeader() {
         <nav aria-label="Main" className="hidden font-gothic text-label desktop:block">
           <ul className="flex items-center gap-8">
             {mainNav.map((entry, i) => (
-              <li key={i} className={entry.kind === "utility" ? "border-s border-hairline ps-8" : undefined}>
+              <li key={i} className={entry.kind === "utility" ? "ps-4" : undefined}>
                 {entry.kind === "group" ? (
                   <NavGroup
                     label={<CopyText copy={entry.label} />}
@@ -67,7 +67,7 @@ export function SiteHeader() {
                       <span className="text-ink-soft">
                         <CopyText copy={entry.label} />
                       </span>
-                      <ul className="mt-2 flex flex-col gap-2 border-s border-hairline ps-4">
+                      <ul className="mt-2 flex flex-col gap-2 ps-4">
                         {entry.items.map(({ route: key }) => (
                           <li key={key}>
                             <NavLink href={routeFor(key).path} className={linkClass}>

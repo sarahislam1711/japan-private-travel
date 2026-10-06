@@ -7,7 +7,7 @@ import { CopyText } from "./CopyText";
 export function HowWeWork() {
   const { heading, points } = home.howWeWork;
   return (
-    <section aria-labelledby="how-title" className="mx-auto mt-32 grid max-w-(--content-max) grid-cols-12 gap-x-6 px-(--page-margin)">
+    <section aria-labelledby="how-title" className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 gap-x-6 px-(--page-margin)">
       <h2 id="how-title" className="col-span-12 font-serif text-h1 [font-variation-settings:'opsz'_60] desktop:col-span-10 desktop:col-start-2">
         <CopyText copy={heading} />
       </h2>
@@ -15,7 +15,7 @@ export function HowWeWork() {
         {points.map((point, i) => {
           const route = routeFor(point.link);
           return (
-            <li key={i} className="flex flex-col border-t border-ink pt-5">
+            <li key={i} className="flex flex-col">
               <h3 className="font-serif text-h3 [font-variation-settings:'opsz'_24]">
                 <CopyText copy={point.lead} />
               </h3>

@@ -70,7 +70,7 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((o) => !o)}
-        className={`inline-flex cursor-pointer items-center gap-1.5 transition-colors hover:text-navy aria-expanded:text-navy ${
+        className={`inline-flex cursor-pointer items-center gap-1.5 transition-colors hover:text-pine aria-expanded:text-pine ${
           active ? "underline decoration-2 underline-offset-[0.22em]" : ""
         }`}
       >
@@ -102,7 +102,7 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
                   aria-current={current ? "page" : undefined}
                   className="group/item block rounded-(--radius-control) px-3 py-2.5 no-underline transition-colors hover:bg-mist focus-visible:bg-mist"
                 >
-                  <span className="block text-ink group-aria-[current=page]/item:font-bold group-aria-[current=page]/item:text-navy">
+                  <span className="block text-ink group-aria-[current=page]/item:font-bold group-aria-[current=page]/item:text-pine">
                     {item.label}
                   </span>
                   <span className="mt-0.5 block text-small text-ink-soft">{item.description}</span>

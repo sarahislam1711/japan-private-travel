@@ -13,17 +13,21 @@ const label = (text: string) => {
 };
 
 /**
- * The legal block on every route (COMPLIANCE C1, C2): the registration plate
- * on a tinted section, with the brand's trade-name line beneath the facts.
+ * The legal block on every route (COMPLIANCE C1, C2), on pine. On Home it
+ * continues the contact close, so the page ends in one field.
  */
 export function SiteFooter() {
   const advisors = routeFor("forTravelAdvisors");
   const contact = routeFor("contact");
   return (
-    <footer className="bg-mist">
-      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) py-16">
+    <footer className="on-pine">
+      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) pt-16 pb-20">
+        <p className="col-span-12 font-serif text-lede desktop:col-span-4 desktop:col-start-2">
+          <CopyText copy={site.tradeNameLine} />
+        </p>
         <FieldTable
-          className="col-span-12 desktop:col-span-6 desktop:col-start-7 desktop:row-start-1"
+          variant="bare"
+          className="col-span-12 desktop:col-span-6 desktop:col-start-7"
           fields={[
             {
               key: "entity",
@@ -42,10 +46,7 @@ export function SiteFooter() {
             { key: "memberships", label: label("Memberships"), value: site.memberships.map((m, i) => <CopyText key={i} copy={m} />) },
           ]}
         />
-        <p className="col-span-12 self-start pt-3 font-serif text-lede desktop:col-span-4 desktop:col-start-2 desktop:row-start-1">
-          <CopyText copy={site.tradeNameLine} />
-        </p>
-        <ul className="col-span-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-hairline pt-5 font-gothic text-small desktop:col-span-11 desktop:col-start-2">
+        <ul className="col-span-12 flex flex-wrap gap-x-6 gap-y-2 pt-4 font-gothic text-small desktop:col-span-11 desktop:col-start-2">
           <li>
             <Link href={advisors.path}>
               <CopyText copy={advisors.navLabel!} />

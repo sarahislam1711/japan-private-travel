@@ -4,14 +4,14 @@ import { copyText, isResolved } from "@/lib/copy";
 import { CopyText } from "./CopyText";
 import { WhatsAppLink } from "./WhatsAppLink";
 
-/** Home's closing step on a navy field: the invitation, the WhatsApp button, email and telephone. */
+/** Home's closing step on a pine field: the invitation, the WhatsApp button, email and telephone. */
 export function ContactBand() {
   const c = home.contact;
   const tel = isResolved(site.phone) ? `tel:${copyText(site.phone).replace(/[^\d+]/g, "")}` : undefined;
   const mail = isResolved(site.email) ? `mailto:${copyText(site.email)}` : undefined;
   return (
-    <section aria-labelledby="contact-title" className="on-navy mt-32">
-      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) py-24">
+    <section aria-labelledby="contact-title" className="on-pine mt-36">
+      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) pt-24 pb-16">
         <div className="col-span-12 desktop:col-span-6 desktop:col-start-2">
           <h2 id="contact-title" className="max-w-[20ch] font-serif text-h1 [font-variation-settings:'opsz'_60]">
             <CopyText copy={c.heading} />

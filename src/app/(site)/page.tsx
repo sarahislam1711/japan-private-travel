@@ -9,7 +9,7 @@ export const metadata = pageMetadata("home");
 /**
  * Home (CONTENT.md §3): hero with the registration plate (→ About), two ways
  * in (→ Summer Journeys, Private Japan), how we work (→ Private Japan, About,
- * Family Services), and the contact close on navy (→ WhatsApp, email, phone).
+ * Family Services), and the contact close on pine (→ WhatsApp, email, phone).
  */
 export default function HomePage() {
   return (

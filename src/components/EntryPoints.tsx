@@ -13,12 +13,12 @@ export function EntryPoints() {
   const sj = routeFor("summerJourneys");
   const pj = routeFor("privateJapan");
   return (
-    <section className="mx-auto mt-16 grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-12 px-(--page-margin) desktop:mt-12">
+    <section className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-12 px-(--page-margin) desktop:mt-12">
       <Link
         href={sj.path}
-        className="group relative col-span-12 flex flex-col overflow-hidden tablet:min-h-[28rem] border-t border-ink pt-5 no-underline tablet:col-span-7 desktop:col-span-6 desktop:col-start-2"
+        className="group relative col-span-12 flex flex-col overflow-hidden tablet:min-h-[28rem] no-underline tablet:col-span-7 desktop:col-span-6 desktop:col-start-2"
       >
-        <h2 className="relative z-10 font-serif text-h1 [font-variation-settings:'opsz'_60] group-hover:text-navy group-hover:underline group-hover:decoration-2 group-hover:underline-offset-[0.14em]">
+        <h2 className="relative z-10 font-serif text-h1 [font-variation-settings:'opsz'_60] group-hover:text-pine group-hover:underline group-hover:decoration-2 group-hover:underline-offset-[0.14em]">
           <CopyText copy={home.entryPoints.summerJourneys.heading} />
         </h2>
         <p className="relative z-10 mt-3 max-w-[26ch] font-serif text-lede">
@@ -31,7 +31,7 @@ export function EntryPoints() {
             text instead of behind it. */}
         <span
           aria-hidden
-          className="pointer-events-none mt-8 flex h-64 flex-row-reverse gap-[0.2em] self-end font-mincho leading-[1.05] text-ghost transition-colors duration-300 text-[clamp(2.75rem,4.2vw,4.5rem)] group-hover:text-navy-soft tablet:absolute tablet:end-0 tablet:top-24 tablet:mt-0 tablet:h-[calc(100%-6.5rem)]"
+          className="pointer-events-none mt-8 flex h-64 flex-row-reverse gap-[0.2em] self-end font-mincho leading-[1.05] text-ghost transition-colors duration-300 text-[clamp(2.75rem,4.2vw,4.5rem)] group-hover:text-pine-soft tablet:absolute tablet:end-0 tablet:top-20 tablet:mt-0 tablet:h-[calc(100%-5.5rem)]"
         >
           {summerJourneys.regions.map((r, i) => (
             <span key={i} lang="ja" className="h-full [writing-mode:vertical-rl]">
@@ -43,9 +43,9 @@ export function EntryPoints() {
 
       <Link
         href={pj.path}
-        className="group col-span-12 self-start border-t border-ink pt-5 no-underline tablet:col-span-5 desktop:col-span-5 desktop:col-start-8"
+        className="group col-span-12 self-start no-underline tablet:col-span-5 desktop:col-span-5 desktop:col-start-8"
       >
-        <h2 className="font-serif text-h2 [font-variation-settings:'opsz'_36] group-hover:text-navy group-hover:underline group-hover:decoration-1 group-hover:underline-offset-[0.18em]">
+        <h2 className="font-serif text-h2 [font-variation-settings:'opsz'_36] group-hover:text-pine group-hover:underline group-hover:decoration-1 group-hover:underline-offset-[0.18em]">
           <CopyText copy={home.entryPoints.privateJapan.heading} />
         </h2>
         <p className="mt-3 max-w-(--measure-main)">

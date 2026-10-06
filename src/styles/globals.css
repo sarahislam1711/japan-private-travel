@@ -17,8 +17,8 @@
     -webkit-text-size-adjust: 100%;
     /* No italic is loaded; never let the browser fake one. */
     font-synthesis-style: none;
-    caret-color: var(--color-navy);
-    accent-color: var(--color-navy);
+    caret-color: var(--color-pine);
+    accent-color: var(--color-pine);
     scrollbar-color: var(--color-hairline) var(--color-ground);
   }
 
@@ -30,7 +30,7 @@
   }
 
   ::selection {
-    background-color: var(--color-navy);
+    background-color: var(--color-pine);
     color: var(--color-plate);
   }
 
@@ -60,11 +60,11 @@
     transition: color var(--duration-link) ease-out;
   }
   a:hover {
-    color: var(--link-hover, var(--color-navy));
+    color: var(--link-hover, var(--color-pine));
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-navy);
+    outline: 2px solid var(--color-pine);
     outline-offset: 3px;
   }
 
@@ -81,18 +81,18 @@
 }
 
 @layer components {
-  /* A full navy field: light text, light links, light focus ring. */
-  .on-navy {
-    background-color: var(--color-navy);
+  /* A full pine field: light text, light links, light focus ring. */
+  .on-pine {
+    background-color: var(--color-pine);
     color: var(--color-plate);
     --link-hover: var(--color-plate);
-    --color-ink-soft: var(--color-navy-soft);
-    --color-hairline: color-mix(in oklab, var(--color-plate) 30%, var(--color-navy));
+    --color-ink-soft: var(--color-pine-soft);
+    --color-hairline: color-mix(in oklab, var(--color-plate) 30%, var(--color-pine));
   }
-  .on-navy a:hover {
+  .on-pine a:hover {
     text-decoration-thickness: 2px;
   }
-  .on-navy :focus-visible {
+  .on-pine :focus-visible {
     outline-color: var(--color-plate);
   }
 
@@ -112,7 +112,7 @@
   }
   .skip-link:focus-visible {
     transform: none;
-    outline-color: var(--color-navy);
+    outline-color: var(--color-pine);
   }
 
   /* Home's one moment: rules draw from inline-start, then ink settles. */

@@ -20,13 +20,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 export const metadata: Metadata = { title: "Styleguide", robots: { index: false, follow: false } };
 
 const palette = [
-  ["ground", "#EEF1F2", "bg-ground"],
-  ["mist", "#E2E7EA", "bg-mist"],
-  ["plate", "#FBFCFC", "bg-plate"],
-  ["ink", "#14181D", "bg-ink"],
-  ["ink-soft", "#4A5159", "bg-ink-soft"],
-  ["hairline", "#C3C9CE", "bg-hairline"],
-  ["navy", "#1F3A5F", "bg-navy"],
+  ["Paper", "#F1F2EE", "bg-ground"],
+  ["Snow", "#FAFAF8", "bg-plate"],
+  ["Ink", "#1A2230", "bg-ink"],
+  ["Ink soft", "#4A5462", "bg-ink-soft"],
+  ["Mist", "#DADDD8", "bg-mist"],
+  ["Pine", "#2C5F53", "bg-pine"],
 ] as const;
 
 function Spec({ name, children }: { name: string; children: ReactNode }) {
@@ -52,7 +51,7 @@ export default function StyleguidePage() {
         <EntryPoints />
 
         <Spec name="palette">
-          <ul className="grid grid-cols-2 gap-6 tablet:grid-cols-3 desktop:grid-cols-7">
+          <ul className="grid grid-cols-2 gap-6 tablet:grid-cols-3 desktop:grid-cols-6">
             {palette.map(([name, hex, cls]) => (
               <li key={name} className="font-gothic text-small">
                 <span className={`block aspect-[3/2] border border-hairline ${cls}`} />
@@ -95,7 +94,7 @@ export default function StyleguidePage() {
             </a>
             <button
               type="button"
-              className="min-h-12 rounded-(--radius-control) bg-ink px-6 font-gothic text-label font-bold text-plate transition-colors hover:bg-navy"
+              className="min-h-12 rounded-(--radius-control) bg-ink px-6 font-gothic text-label font-bold text-plate transition-colors hover:bg-pine"
             >
               <CopyText copy={contact.form.submit} />
             </button>
