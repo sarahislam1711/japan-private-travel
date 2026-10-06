@@ -9,6 +9,7 @@ export const ui = {
   footer: {
     privacy: draft("Privacy"),
     terms: draft("Terms of business"),
+    legal: draft("Legal"),
   },
   seasonBandPending: draft("Temperatures to be added from the cited source."),
 };

@@ -1,26 +1,28 @@
+import type { CSSProperties } from "react";
 import { home } from "@content/pages/home";
 import { site } from "@content/site";
 import { copyText, isResolved } from "@/lib/copy";
 import { CopyText } from "./CopyText";
+import { SplitWords } from "./SplitWords";
 import { WhatsAppLink } from "./WhatsAppLink";
 
-/** Home's closing step on a pine field: the invitation, the WhatsApp button, email and telephone. */
+const d = (n: number) => ({ "--d": n }) as CSSProperties;
+
+/** Home's close on pine, flowing into the pine footer: the invitation, WhatsApp, email and telephone. */
 export function ContactBand() {
   const c = home.contact;
   const tel = isResolved(site.phone) ? `tel:${copyText(site.phone).replace(/[^\d+]/g, "")}` : undefined;
   const mail = isResolved(site.email) ? `mailto:${copyText(site.email)}` : undefined;
   return (
-    <section aria-labelledby="contact-title" className="on-pine mt-36">
-      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) pt-24 pb-16">
-        <div className="col-span-12 desktop:col-span-6 desktop:col-start-2">
-          <h2 id="contact-title" className="max-w-[20ch] font-serif text-h1 [font-variation-settings:'opsz'_60]">
-            <CopyText copy={c.heading} />
-          </h2>
-          <p className="mt-4 font-serif text-lede text-ink-soft">
+    <section aria-labelledby="contact-title" className="on-pine mt-40 desktop:mt-56">
+      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) pt-28 pb-20">
+        <h2 id="contact-title" data-reveal="words" className="col-span-12 max-w-[16ch] font-serif text-display [font-variation-settings:'opsz'_60] desktop:col-span-7">
+          <SplitWords copy={c.heading} />
+        </h2>
+        <div data-reveal style={d(2)} className="col-span-12 flex flex-col items-start gap-7 desktop:col-span-4 desktop:col-start-9 desktop:self-end">
+          <p className="font-gothic text-copy text-ink-soft">
             <CopyText copy={c.reply} />
           </p>
-        </div>
-        <div className="col-span-12 flex flex-col items-start gap-6 desktop:col-span-5 desktop:col-start-8 desktop:pt-3">
           <WhatsAppLink tone="light" />
           <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 font-gothic text-label">
             <dt className="text-ink-soft">

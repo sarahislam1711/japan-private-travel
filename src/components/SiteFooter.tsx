@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { ui } from "@content/interface";
+import { mainNav } from "@content/navigation";
 import { about } from "@content/pages/about";
-import { routeFor } from "@content/routes";
+import { routeFor, type RouteKey } from "@content/routes";
 import { site } from "@content/site";
 import { CopyText } from "./CopyText";
 import { FieldTable } from "./FieldTable";
+import { Wordmark } from "./Wordmark";
 
 const label = (text: string) => {
   const row = about.credentials.rows.find((r) => r.label.body[0] === text);
@@ -12,22 +14,69 @@ const label = (text: string) => {
   return <CopyText copy={row.label} />;
 };
 
+const trips = mainNav.find((e) => e.kind === "group");
+const companyRoutes: RouteKey[] = ["familyServices", "experiences", "about", "forTravelAdvisors", "contact"];
+
+function Column({ heading, children }: { heading: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="font-gothic text-label text-ink-soft">{heading}</p>
+      <ul className="mt-4 flex flex-col gap-2.5 font-gothic text-label">{children}</ul>
+    </div>
+  );
+}
+
 /**
- * The legal block on every route (COMPLIANCE C1, C2), on pine. On Home it
- * continues the contact close, so the page ends in one field.
+ * Every page ends on pine: the site map in columns, then the legal block
+ * (COMPLIANCE C1, C2) with the brand's trading-name line.
  */
 export function SiteFooter() {
-  const advisors = routeFor("forTravelAdvisors");
-  const contact = routeFor("contact");
   return (
     <footer className="on-pine">
-      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) pt-16 pb-20">
-        <p className="col-span-12 font-serif text-lede desktop:col-span-4 desktop:col-start-2">
-          <CopyText copy={site.tradeNameLine} />
-        </p>
+      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-14 px-(--page-margin) pt-16 pb-16">
+        <div className="col-span-12 desktop:col-span-4">
+          <Wordmark />
+          <p className="mt-5 max-w-[22rem] font-serif text-field text-ink-soft">
+            <CopyText copy={site.tradeNameLine} />
+          </p>
+        </div>
+        <nav aria-label="Footer" className="col-span-12 grid grid-cols-2 gap-10 tablet:grid-cols-3 desktop:col-span-7 desktop:col-start-6">
+          {trips && trips.kind === "group" ? (
+            <Column heading={<CopyText copy={trips.label} />}>
+              {trips.items.map(({ route }) => (
+                <li key={route}>
+                  <Link href={routeFor(route).path}>
+                    <CopyText copy={routeFor(route).navLabel!} />
+                  </Link>
+                </li>
+              ))}
+            </Column>
+          ) : null}
+          <Column heading={<CopyText copy={site.brand.name} />}>
+            {companyRoutes.map((key) => (
+              <li key={key}>
+                <Link href={routeFor(key).path}>
+                  <CopyText copy={routeFor(key).navLabel!} />
+                </Link>
+              </li>
+            ))}
+          </Column>
+          <Column heading={<CopyText copy={ui.footer.legal} />}>
+            <li>
+              <Link href="/privacy">
+                <CopyText copy={ui.footer.privacy} />
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms">
+                <CopyText copy={ui.footer.terms} />
+              </Link>
+            </li>
+          </Column>
+        </nav>
         <FieldTable
           variant="bare"
-          className="col-span-12 desktop:col-span-6 desktop:col-start-7"
+          className="col-span-12 pt-6 desktop:col-span-7 desktop:col-start-6"
           fields={[
             {
               key: "entity",
@@ -46,28 +95,6 @@ export function SiteFooter() {
             { key: "memberships", label: label("Memberships"), value: site.memberships.map((m, i) => <CopyText key={i} copy={m} />) },
           ]}
         />
-        <ul className="col-span-12 flex flex-wrap gap-x-6 gap-y-2 pt-4 font-gothic text-small desktop:col-span-11 desktop:col-start-2">
-          <li>
-            <Link href={advisors.path}>
-              <CopyText copy={advisors.navLabel!} />
-            </Link>
-          </li>
-          <li>
-            <Link href="/privacy">
-              <CopyText copy={ui.footer.privacy} />
-            </Link>
-          </li>
-          <li>
-            <Link href="/terms">
-              <CopyText copy={ui.footer.terms} />
-            </Link>
-          </li>
-          <li>
-            <Link href={contact.path}>
-              <CopyText copy={contact.navLabel!} />
-            </Link>
-          </li>
-        </ul>
       </div>
     </footer>
   );

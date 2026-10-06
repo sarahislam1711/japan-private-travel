@@ -5,6 +5,8 @@ import { site } from "@content/site";
 import { copyText } from "@/lib/copy";
 import { isIndexable } from "@/lib/indexing";
 import { siteUrl } from "@/lib/site-url";
+import { RevealObserver } from "@/components/RevealObserver";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import "@/styles/globals.css";
 
 // Latin text and display. Upright only: no copy needs italic.
@@ -44,7 +46,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${sourceSerif.variable} ${notoSerifJp.variable} ${bizUd.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        <RevealObserver />
+        {children}
+      </body>
     </html>
   );
 }

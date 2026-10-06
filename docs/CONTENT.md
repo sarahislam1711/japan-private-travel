@@ -40,6 +40,7 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `whatsappButton` | Message us on WhatsApp | LOCKED (Sarah, 6 Oct 2026) |
 | `footer.privacy` | Privacy | DRAFT |
 | `footer.terms` | Terms of business | DRAFT |
+| `footer.legal` | Legal | DRAFT (footer column heading) |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
 
 ## 2. Navigation (`content/navigation.ts`)

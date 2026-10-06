@@ -1,47 +1,218 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-06T00:00:00Z",
-  "title": "Design System: [[BRAND]]",
+  "generatedAt": "2026-10-06T12:00:00Z",
+  "title": "Design System: HalaJapan",
   "extensions": {
     "colorMeta": {
-      "navy": { "role": "primary", "displayName": "Registry Navy", "canonical": "#1f3a5f", "tonalRamp": ["oklch(15% 0.06 255)", "oklch(25% 0.07 255)", "oklch(35% 0.07 255)", "oklch(45% 0.07 255)", "oklch(57% 0.06 255)", "oklch(70% 0.045 255)", "oklch(83% 0.03 255)", "oklch(95% 0.012 255)"] },
-      "ground": { "role": "neutral", "displayName": "Cool Ground", "canonical": "#eef1f2", "tonalRamp": ["oklch(15% 0.005 220)", "oklch(27% 0.005 220)", "oklch(39% 0.005 220)", "oklch(51% 0.005 220)", "oklch(63% 0.005 220)", "oklch(75% 0.005 220)", "oklch(87% 0.005 220)", "oklch(95.5% 0.004 220)"] },
-      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#e2e7ea", "tonalRamp": ["oklch(15% 0.008 230)", "oklch(27% 0.008 230)", "oklch(39% 0.008 230)", "oklch(51% 0.008 230)", "oklch(63% 0.008 230)", "oklch(75% 0.008 230)", "oklch(87% 0.008 230)", "oklch(92.5% 0.007 230)"] },
-      "plate": { "role": "neutral", "displayName": "Enamel Plate", "canonical": "#fbfcfc", "tonalRamp": ["oklch(15% 0.002 200)", "oklch(27% 0.002 200)", "oklch(39% 0.002 200)", "oklch(51% 0.002 200)", "oklch(63% 0.002 200)", "oklch(75% 0.002 200)", "oklch(87% 0.002 200)", "oklch(99% 0.001 200)"] },
-      "ink": { "role": "neutral", "displayName": "Plate Ink", "canonical": "#14181d", "tonalRamp": ["oklch(20% 0.01 250)", "oklch(30% 0.01 250)", "oklch(40% 0.01 250)", "oklch(50% 0.01 250)", "oklch(62% 0.01 250)", "oklch(74% 0.008 250)", "oklch(86% 0.006 250)", "oklch(95% 0.004 250)"] },
-      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#4a5159", "tonalRamp": ["oklch(20% 0.012 250)", "oklch(30% 0.012 250)", "oklch(40% 0.014 250)", "oklch(50% 0.014 250)", "oklch(62% 0.012 250)", "oklch(74% 0.01 250)", "oklch(86% 0.008 250)", "oklch(95% 0.004 250)"] },
-      "hairline": { "role": "neutral", "displayName": "Hairline (non-text only)", "canonical": "#c3c9ce", "tonalRamp": ["oklch(20% 0.01 240)", "oklch(30% 0.01 240)", "oklch(42% 0.01 240)", "oklch(54% 0.01 240)", "oklch(66% 0.01 240)", "oklch(78% 0.01 240)", "oklch(84% 0.009 240)", "oklch(95% 0.004 240)"] },
-      "stone": { "role": "neutral", "displayName": "Stone (dev-only outlines, never text)", "canonical": "#6b7480", "tonalRamp": ["oklch(20% 0.015 255)", "oklch(30% 0.015 255)", "oklch(42% 0.018 255)", "oklch(55% 0.02 255)", "oklch(66% 0.016 255)", "oklch(77% 0.012 255)", "oklch(87% 0.008 255)", "oklch(95% 0.004 255)"] }
+      "pine": {
+        "role": "primary",
+        "displayName": "Pine",
+        "canonical": "#2C5F53",
+        "tonalRamp": [
+          "oklch(15% 0.05 172)",
+          "oklch(27% 0.05 172)",
+          "oklch(39% 0.05 172)",
+          "oklch(51% 0.05 172)",
+          "oklch(63% 0.05 172)",
+          "oklch(75% 0.05 172)",
+          "oklch(87% 0.05 172)",
+          "oklch(95% 0.05 172)"
+        ]
+      },
+      "pine-soft": {
+        "role": "primary",
+        "displayName": "Pine Soft (secondary text on Pine)",
+        "canonical": "#C7D8D1",
+        "tonalRamp": [
+          "oklch(15% 0.02 165)",
+          "oklch(27% 0.02 165)",
+          "oklch(39% 0.02 165)",
+          "oklch(51% 0.02 165)",
+          "oklch(63% 0.02 165)",
+          "oklch(75% 0.02 165)",
+          "oklch(87% 0.02 165)",
+          "oklch(95% 0.02 165)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#F1F2EE",
+        "tonalRamp": [
+          "oklch(15% 0.005 120)",
+          "oklch(27% 0.005 120)",
+          "oklch(39% 0.005 120)",
+          "oklch(51% 0.005 120)",
+          "oklch(63% 0.005 120)",
+          "oklch(75% 0.005 120)",
+          "oklch(87% 0.005 120)",
+          "oklch(95% 0.005 120)"
+        ]
+      },
+      "snow": {
+        "role": "neutral",
+        "displayName": "Snow",
+        "canonical": "#FAFAF8",
+        "tonalRamp": [
+          "oklch(15% 0.003 110)",
+          "oklch(27% 0.003 110)",
+          "oklch(39% 0.003 110)",
+          "oklch(51% 0.003 110)",
+          "oklch(63% 0.003 110)",
+          "oklch(75% 0.003 110)",
+          "oklch(87% 0.003 110)",
+          "oklch(95% 0.003 110)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1A2230",
+        "tonalRamp": [
+          "oklch(15% 0.03 260)",
+          "oklch(27% 0.03 260)",
+          "oklch(39% 0.03 260)",
+          "oklch(51% 0.03 260)",
+          "oklch(63% 0.03 260)",
+          "oklch(75% 0.03 260)",
+          "oklch(87% 0.03 260)",
+          "oklch(95% 0.03 260)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#4A5462",
+        "tonalRamp": [
+          "oklch(15% 0.025 255)",
+          "oklch(27% 0.025 255)",
+          "oklch(39% 0.025 255)",
+          "oklch(51% 0.025 255)",
+          "oklch(63% 0.025 255)",
+          "oklch(75% 0.025 255)",
+          "oklch(87% 0.025 255)",
+          "oklch(95% 0.025 255)"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist (non-text only)",
+        "canonical": "#DADDD8",
+        "tonalRamp": [
+          "oklch(15% 0.006 130)",
+          "oklch(27% 0.006 130)",
+          "oklch(39% 0.006 130)",
+          "oklch(51% 0.006 130)",
+          "oklch(63% 0.006 130)",
+          "oklch(75% 0.006 130)",
+          "oklch(87% 0.006 130)",
+          "oklch(95% 0.006 130)"
+        ]
+      },
+      "ghost": {
+        "role": "neutral",
+        "displayName": "Ghost (decorative Japanese type only)",
+        "canonical": "#D2D7D0",
+        "tonalRamp": [
+          "oklch(15% 0.01 140)",
+          "oklch(27% 0.01 140)",
+          "oklch(39% 0.01 140)",
+          "oklch(51% 0.01 140)",
+          "oklch(63% 0.01 140)",
+          "oklch(75% 0.01 140)",
+          "oklch(87% 0.01 140)",
+          "oklch(95% 0.01 140)"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Home's headline only, set over a single 1px ink rule." },
-      "headline": { "displayName": "Headline", "purpose": "Page titles." },
-      "title": { "displayName": "Title", "purpose": "Section heads and entry-point headings." },
-      "title-small": { "displayName": "Title small", "purpose": "The plate's own title; sub-heads." },
-      "lede": { "displayName": "Lede", "purpose": "First paragraph under a title; the footer's trade-name line." },
-      "body": { "displayName": "Body", "purpose": "Main column at a 36rem measure; oldstyle numerals." },
-      "field": { "displayName": "Field", "purpose": "Plate values; lining tabular numerals." },
-      "label": { "displayName": "Label", "purpose": "Plate labels, navigation, form labels, margin notes (BIZ UDPGothic)." },
-      "small": { "displayName": "Small", "purpose": "Captions, footer links and legal lines." },
-      "japanese": { "displayName": "Japanese", "purpose": "Every lang=\"ja\" run; keep-all, strict line breaking." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home's headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles, Home's section heads, the Summer Journeys entry heading, the contact close heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "The secondary entry point (Private Japan)."
+      },
+      "title-small": {
+        "displayName": "Title small",
+        "purpose": "Fact panel statement, how-we-work leads, the wordmark."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "First paragraph under a heading; the footer's trade-name line."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Main column at a 36rem measure; oldstyle numerals."
+      },
+      "field": {
+        "displayName": "Field",
+        "purpose": "Fact values; lining tabular numerals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, navigation, margin notes, buttons (BIZ UDPGothic)."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Menu descriptions, Advisors link, footer links, captions."
+      },
+      "japanese": {
+        "displayName": "Japanese",
+        "purpose": "Every lang=\"ja\" run; keep-all, strict line breaking."
+      },
+      "japanese-display": {
+        "displayName": "Japanese display",
+        "purpose": "Vertical decorative place names in Ghost; aria-hidden."
+      }
     },
     "shadows": [],
-    "rules": [
-      { "name": "frame", "value": "4px double var(--color-ink)", "purpose": "The plate's frame; Home hero, About credentials and footer only." },
-      { "name": "title-rule", "value": "1px solid var(--color-ink)", "purpose": "Under the headline and the plate title, above the plate foot, the season band head." },
-      { "name": "row-rule", "value": "1px solid var(--color-hairline)", "purpose": "Between plate rows, above entry points, above the footer link row." },
-      { "name": "note-rule", "value": "2px solid var(--color-hairline) on the inline-start edge", "purpose": "Marks a margin note as evidence." }
-    ],
     "motion": [
-      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Home's one moment." },
-      { "name": "duration-rule", "value": "900ms", "purpose": "A rule draws from inline-start (scaleX 0 to 1)." },
-      { "name": "duration-ink", "value": "600ms", "purpose": "A value inks in (opacity 0 and blur 3px to rest)." },
-      { "name": "stagger", "value": "90ms", "purpose": "Per-step delay across headline, intro, plate rows and foot." },
-      { "name": "duration-link", "value": "150ms", "purpose": "Link colour shift to navy on hover." }
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Home's ink-in and the menu panel settle."
+      },
+      {
+        "name": "ink-in",
+        "value": "opacity 0 and blur(3px) to rest, 600ms, 90ms stagger",
+        "purpose": "Home's one load moment: headline, welcome and fact values."
+      },
+      {
+        "name": "panel-in",
+        "value": "opacity 0, translateY(-4px) to rest, 150ms",
+        "purpose": "Trips menu open feedback."
+      },
+      {
+        "name": "link",
+        "value": "color 150ms ease-out",
+        "purpose": "Link hover colour."
+      },
+      {
+        "name": "ghost-hover",
+        "value": "color 300ms",
+        "purpose": "Vertical place names deepen to Pine Soft on entry hover."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 0.01ms",
+        "purpose": "Everything off under prefers-reduced-motion."
+      }
     ],
     "breakpoints": [
-      { "name": "tablet", "value": "640px" },
-      { "name": "desktop", "value": "1024px" }
+      {
+        "name": "tablet",
+        "value": "640px"
+      },
+      {
+        "name": "desktop",
+        "value": "1024px"
+      }
     ]
   },
   "components": [
@@ -49,112 +220,145 @@
       "name": "Solid Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The site's one solid button. No icon, no arrow.",
-      "html": "<button class=\"ds-btn\">Send enquiry</button>",
-      "css": ".ds-btn { min-height: 48px; padding: 0 24px; border: 0; border-radius: 6px; background: var(--color-ink, #14181d); color: var(--color-plate, #fbfcfc); font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; font-weight: 700; cursor: pointer; transition: background-color 150ms ease-out; } .ds-btn:hover { background: var(--color-navy, #1f3a5f); } .ds-btn:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+      "description": "The one solid button (WhatsApp) on Paper.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Message us on WhatsApp</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:6px;background:#1A2230;color:#FAFAF8;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;font-weight:700;text-decoration:none;transition:background-color 150ms ease-out}.ds-btn:hover{background:#2C5F53}.ds-btn:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
+    },
+    {
+      "name": "Button on Pine",
+      "kind": "button",
+      "refersTo": "button-on-pine",
+      "description": "The solid button inverted inside the Pine field.",
+      "html": "<div class=\"ds-pine-wrap\"><a class=\"ds-btn-pine\" href=\"#\">Message us on WhatsApp</a></div>",
+      "css": ".ds-pine-wrap{background:#2C5F53;padding:32px}.ds-btn-pine{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:6px;background:#FAFAF8;color:#2C5F53;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;font-weight:700;text-decoration:none;transition:background-color 150ms ease-out}.ds-btn-pine:hover{background:#F1F2EE}.ds-btn-pine:focus-visible{outline:2px solid #FAFAF8;outline-offset:3px}"
+    },
+    {
+      "name": "Ringed Contact Button",
+      "kind": "button",
+      "refersTo": "button-ringed",
+      "description": "Contact in the header; fills Ink on hover or when current.",
+      "html": "<a class=\"ds-btn-ring\" href=\"#\">Contact</a>",
+      "css": ".ds-btn-ring{display:inline-block;padding:8px 16px;border-radius:6px;box-shadow:inset 0 0 0 1px #1A2230;color:#1A2230;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;text-decoration:none;transition:background-color 150ms ease-out,color 150ms ease-out}.ds-btn-ring:hover{background:#1A2230;color:#FAFAF8}.ds-btn-ring:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
+    },
+    {
+      "name": "Fact Panel",
+      "kind": "card",
+      "refersTo": "fact-panel",
+      "description": "The proof beside a claim: a soft Snow panel, no border, rows separated by space.",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-panel-title\">We are a registered travel agency with offices in Tokyo and Osaka.</div><dl class=\"ds-panel-rows\"><div class=\"ds-row\"><dt>Registration</dt><dd>観光庁長官登録旅行業 第0000号</dd></div></dl><div class=\"ds-panel-foot\"><a href=\"#\">You can check our registration</a></div></div>",
+      "css": ".ds-panel{background:#FAFAF8;border-radius:14px;padding:28px 32px;color:#1A2230;max-width:520px}.ds-panel-title{font-family:'Source Serif 4',Georgia,serif;font-size:1.375rem;font-weight:600;line-height:1.3}.ds-panel-rows{display:grid;gap:16px;margin:20px 0 0}.ds-row{display:grid;grid-template-columns:13.75rem 1fr;column-gap:16px}.ds-row dt{font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;color:#4A5462}.ds-row dd{margin:0;font-family:'Noto Serif JP','Source Serif 4',serif;font-size:1rem;font-variant-numeric:lining-nums tabular-nums}.ds-panel-foot{margin-top:20px;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem}.ds-panel-foot a{color:inherit;text-decoration:underline;text-underline-offset:.22em}.ds-panel-foot a:hover{color:#2C5F53}.ds-panel-foot a:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
     {
       "name": "Text Input",
       "kind": "input",
       "refersTo": "input",
-      "description": "Label above, plate field, soft-ink border, 6px radius.",
-      "html": "<label class=\"ds-field\">Your name<input class=\"ds-input\" /></label>",
-      "css": ".ds-field { display: grid; gap: 6px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: var(--color-ink-soft, #4a5159); } .ds-input { min-height: 48px; width: 18rem; padding: 0 12px; border: 1px solid var(--color-ink-soft, #4a5159); border-radius: 6px; background: var(--color-plate, #fbfcfc); color: var(--color-ink, #14181d); font-family: 'Source Serif 4', Georgia, serif; font-size: 1.125rem; caret-color: var(--color-navy, #1f3a5f); } .ds-input:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+      "description": "Form field on Snow (styleguide only so far).",
+      "html": "<input class=\"ds-input\" placeholder=\"\" aria-label=\"Name\">",
+      "css": ".ds-input{min-height:48px;width:288px;padding:0 12px;border:1px solid #4A5462;border-radius:6px;background:#FAFAF8;color:#1A2230;font-family:'Source Serif 4',Georgia,serif;font-size:1.125rem}.ds-input:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
     {
-      "name": "Text Link",
-      "kind": "custom",
-      "refersTo": "link",
-      "description": "Underlined at 1px, navy on hover. Every action other than the one button.",
-      "html": "<a class=\"ds-link\" href=\"#\">Verify our registration with the Japan Tourism Agency.</a>",
-      "css": ".ds-link { color: var(--color-ink, #14181d); text-decoration: underline 1px currentColor; text-underline-offset: 0.22em; font-family: 'Source Serif 4', Georgia, serif; transition: color 150ms ease-out; } .ds-link:hover { color: var(--color-navy, #1f3a5f); } .ds-link:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
-    },
-    {
-      "name": "Navigation",
+      "name": "Trips Menu",
       "kind": "nav",
-      "refersTo": "nav",
-      "description": "Wordmark at inline-start, label-face links at inline-end, advisors set apart by a hairline divider.",
-      "html": "<header class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">[[BRAND]]</a><nav class=\"ds-nav-links\"><a href=\"#\" aria-current=\"page\">Summer Journeys</a><a href=\"#\">Private Japan</a><a href=\"#\">About</a><a href=\"#\">Contact</a><span class=\"ds-nav-adv\"><a href=\"#\">For travel advisors</a></span></nav></header>",
-      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 28px 0 20px; background: var(--color-ground, #eef1f2); } .ds-wordmark { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.375rem; font-weight: 600; letter-spacing: -0.015em; line-height: 1; color: var(--color-ink, #14181d); text-decoration: none; } .ds-nav-links { display: flex; align-items: baseline; gap: 24px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; } .ds-nav-links a { color: var(--color-ink, #14181d); text-decoration: none; text-underline-offset: 0.22em; } .ds-nav-links a:hover { text-decoration: underline 1px; color: var(--color-navy, #1f3a5f); } .ds-nav-links a[aria-current=page] { text-decoration: underline 2px; } .ds-nav-links a:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; } .ds-nav-adv { border-inline-start: 1px solid var(--color-hairline, #c3c9ce); padding-inline-start: 24px; }"
-    },
-    {
-      "name": "Registration Plate",
-      "kind": "custom",
-      "refersTo": "plate",
-      "description": "The signature: a double-rule framed table of checkable facts. Home hero, About credentials and footer only.",
-      "html": "<div class=\"ds-plate\"><div class=\"ds-plate-title\">Registered travel agency</div><dl><div class=\"ds-plate-row\"><dt>Registration</dt><dd lang=\"ja\">[[REG_AUTHORITY_JA]]登録旅行業 第[[REG_NUMBER]]号</dd></div><div class=\"ds-plate-row\"><dt>Registered entity</dt><dd>[[ENTITY_NAME_EN]]</dd></div><div class=\"ds-plate-row\"><dt>Memberships</dt><dd>Member, [[ASSOCIATION]]</dd></div></dl><div class=\"ds-plate-foot\"><a href=\"#\">Verify our registration with the Japan Tourism Agency.</a></div></div>",
-      "css": ".ds-plate { max-width: 36rem; border: 4px double var(--color-ink, #14181d); border-radius: 0; background: var(--color-plate, #fbfcfc); padding: 0 20px 4px; color: var(--color-ink, #14181d); } .ds-plate-title { padding: 12px 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.375rem; font-weight: 600; line-height: 1.3; } .ds-plate dl { margin: 0; } .ds-plate-row { display: grid; grid-template-columns: 13.75rem 1fr; column-gap: 16px; padding: 10px 0; border-block-start: 1px solid var(--color-hairline, #c3c9ce); } .ds-plate-row:first-child { border-block-start-color: var(--color-ink, #14181d); } .ds-plate-row dt { padding-block-start: 2px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: var(--color-ink-soft, #4a5159); } .ds-plate-row dd { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1rem; line-height: 1.45; font-variant-numeric: lining-nums tabular-nums; } .ds-plate-row dd:lang(ja) { font-family: 'Noto Serif JP', serif; word-break: keep-all; } .ds-plate-foot { padding: 10px 0; border-block-start: 1px solid var(--color-ink, #14181d); font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; } .ds-plate-foot a { color: inherit; text-decoration: underline 1px; text-underline-offset: 0.22em; transition: color 150ms ease-out; } .ds-plate-foot a:hover { color: var(--color-navy, #1f3a5f); } .ds-plate-foot a:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+      "refersTo": "nav-menu",
+      "description": "Header disclosure with the one functional chevron; items carry a one-line description.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-trigger\" aria-expanded=\"true\">Trips <svg viewBox=\"0 0 10 6\" width=\"10\" height=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"transform:rotate(180deg)\"><path d=\"M1 1l4 4 4-4\"/></svg></button><ul class=\"ds-nav-menu\"><li><a href=\"#\" aria-current=\"page\"><span class=\"ds-nav-name\">Summer Journeys</span><span class=\"ds-nav-desc\">Hokkaido, Okinawa and the Japan Alps in July and August</span></a></li><li><a href=\"#\"><span class=\"ds-nav-name\">Private Japan</span><span class=\"ds-nav-desc\">Private trips in every other season</span></a></li></ul></nav>",
+      "css": ".ds-nav{font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;color:#1A2230}.ds-nav-trigger{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;font:inherit;color:#2C5F53;cursor:pointer}.ds-nav-menu{list-style:none;margin:10px 0 0;width:320px;padding:6px;border-radius:10px;background:#FAFAF8;box-shadow:0 0 0 1px rgba(26,34,48,.2)}.ds-nav-menu a{display:block;padding:10px 12px;border-radius:6px;color:#1A2230;text-decoration:none;transition:background-color 150ms ease-out}.ds-nav-menu a:hover,.ds-nav-menu a:focus-visible{background:#DADDD8;outline:none}.ds-nav-name{display:block}.ds-nav-menu a[aria-current=page] .ds-nav-name{font-weight:700;color:#2C5F53}.ds-nav-desc{display:block;margin-top:2px;font-size:.8125rem;color:#4A5462}"
     },
     {
       "name": "Margin Note",
       "kind": "custom",
-      "refersTo": "margin-note",
-      "description": "The proof beside a claim, marked by a hairline inline-start rule.",
-      "html": "<aside class=\"ds-note\"><p>National interpreter-guide examination languages: ten. Arabic is not among them.</p><p><a href=\"#\">Source</a></p></aside>",
-      "css": ".ds-note { max-width: 16rem; border-inline-start: 2px solid var(--color-hairline, #c3c9ce); padding-inline-start: 16px; font-family: 'BIZ UDPGothic', system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: var(--color-ink-soft, #4a5159); } .ds-note p { margin: 0; } .ds-note p + p { margin-block-start: 8px; } .ds-note a { color: var(--color-ink, #14181d); text-decoration: underline 1px; text-underline-offset: 0.22em; } .ds-note a:hover { color: var(--color-navy, #1f3a5f); } .ds-note a:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+      "refersTo": "",
+      "description": "The proof beside a claim: gothic, soft ink, no rule.",
+      "html": "<aside class=\"ds-note\"><p>Registered with the Japan Tourism Agency.</p><p class=\"ds-note-src\"><a href=\"#\">Source</a></p></aside>",
+      "css": ".ds-note{max-width:16rem;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;line-height:1.5;color:#4A5462}.ds-note p{margin:0}.ds-note-src{margin-top:8px}.ds-note a{color:#1A2230;text-decoration:underline;text-underline-offset:.22em}.ds-note a:hover{color:#2C5F53}.ds-note a:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
     {
-      "name": "Entry Point",
+      "name": "Vertical Place Names",
       "kind": "custom",
-      "refersTo": "entry-point",
-      "description": "A whole-block link under a hairline; no card, no border box.",
-      "html": "<a class=\"ds-entry\" href=\"#\"><h2>Summer Journeys</h2><p>Hokkaido, Okinawa and the Japan Alps in July and August.</p></a>",
-      "css": ".ds-entry { display: block; max-width: 36rem; border-block-start: 1px solid var(--color-hairline, #c3c9ce); padding-block-start: 20px; color: var(--color-ink, #14181d); text-decoration: none; } .ds-entry h2 { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 2.125rem; font-weight: 450; line-height: 1.18; letter-spacing: -0.01em; } .ds-entry p { margin: 8px 0 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.125rem; line-height: 1.68; } .ds-entry:hover h2 { color: var(--color-navy, #1f3a5f); text-decoration: underline 1px; text-underline-offset: 0.18em; } .ds-entry:focus-visible { outline: 2px solid var(--color-navy, #1f3a5f); outline-offset: 3px; }"
+      "refersTo": "",
+      "description": "The site's imagery: Ghost vertical Japanese, deepening to Pine Soft on hover.",
+      "html": "<a class=\"ds-vert\" href=\"#\"><span aria-hidden=\"true\"><span lang=\"ja\">北海道</span><span lang=\"ja\">沖縄</span><span lang=\"ja\">北アルプス</span></span></a>",
+      "css": ".ds-vert{display:inline-block;text-decoration:none;background:#F1F2EE;padding:16px}.ds-vert>span{display:flex;flex-direction:row-reverse;gap:.2em;height:16rem;font-family:'Noto Serif JP',serif;font-size:3.5rem;line-height:1.05;color:#D2D7D0;transition:color 300ms}.ds-vert span[lang]{writing-mode:vertical-rl;word-break:keep-all}.ds-vert:hover>span{color:#C7D8D1}.ds-vert:focus-visible{outline:2px solid #2C5F53;outline-offset:3px}"
     },
     {
-      "name": "Tinted Section",
-      "kind": "card",
-      "refersTo": "tinted-section",
-      "description": "Separation by surface, not by line; the footer's ground.",
-      "html": "<section class=\"ds-tint\"><p>[[BRAND]] is a trading name of [[ENTITY_NAME_EN]].</p></section>",
-      "css": ".ds-tint { background: var(--color-mist, #e2e7ea); padding: 64px 80px; border-radius: 0; } .ds-tint p { margin: 0; max-width: 28rem; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.4375rem; line-height: 1.5; color: var(--color-ink, #14181d); }"
+      "name": "Pine Close",
+      "kind": "custom",
+      "refersTo": "pine-field",
+      "description": "The continuous Pine field that ends every page.",
+      "html": "<section class=\"ds-close\"><h2>Tell us who is travelling and when you would like to go.</h2><p>We will reply in your language.</p><a href=\"#\">Contact</a></section>",
+      "css": ".ds-close{background:#2C5F53;color:#FAFAF8;padding:64px 48px}.ds-close h2{margin:0;max-width:20ch;font-family:'Source Serif 4',Georgia,serif;font-size:2.5rem;font-weight:430;line-height:1.08;letter-spacing:-.018em}.ds-close p{margin:16px 0 0;font-family:'Source Serif 4',Georgia,serif;font-size:1.3rem;color:#C7D8D1}.ds-close a{display:inline-block;margin-top:24px;color:#FAFAF8;font-family:'BIZ UDPGothic',system-ui,sans-serif;font-size:.875rem;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-close a:hover{text-decoration-thickness:2px}.ds-close a:focus-visible{outline:2px solid #FAFAF8;outline-offset:3px}"
     }
   ],
   "narrative": {
-    "northStar": "The Registration Plate",
-    "overview": "A registered Japanese travel agency must display its registration plate: a framed, ruled table of facts (registration number, authority, entity, managers, memberships). The site borrows that object and nothing else. The facts sit in a ruled plate; the brand sits beside and beneath them. The plate is enamel-white on a cool grey ground, framed by a black double rule, with hairline rows; navy is the only accent. The site is a credential, and the plate is how it shows its credentials.\n\nThe governing idea, unchanged since the first specification: the main column says; the margin proves. Claims are made in a reading column of Source Serif; the evidence that backs them (registration, named policy, source of a number) sits beside them in the margin, set in BIZ UDPGothic, the Universal Design face of Japanese official documents. A due-diligence reader can read the margin alone.\n\nThe world is deliberately less rigid than its first drafts. The framed double-rule plate is a signature, used on only three surfaces: Home's hero, About's credentials, and the footer. Everywhere else the page breathes: more space, fewer and lighter rules, and separation by a tinted surface (mist) rather than by lines. The layout looks finished without photographs, because type, rules and the plate carry it. One light theme only; no dark mode. Refused: the photo-led luxury hero, cards, shadows, gradients, icons, Japan clichés.",
+    "northStar": "One Page, Said and Proved",
+    "overview": "**Creative North Star: \"One Page, Said and Proved\"**\n\nThe site reads as a single continuous page rather than a stack of separated sections. A cool paper ground runs from the header to the last section; nothing is boxed off by lines. Separation comes from three things only: space, the type scale, and a change of surface (a soft Snow panel for facts, a full Pine field at the close). Every page ends the same way: the closing section and the footer form one unbroken pine field.\n\nThe governing idea is unchanged from the first specification: **the main column says; the margin proves.** Claims are made in a reading column of Source Serif 4; the evidence that backs them (registration, the source of a number, a named policy) sits beside them, set in BIZ UDPGothic, the Universal Design face of Japanese official documents, in soft ink. A due-diligence reader can read the margin alone.\n\nThe site is finished without photographs. Its imagery is type: large, pale, vertical Japanese place names set in Noto Serif JP (Summer Journeys' entry point on Home). One light theme; no dark mode. Refused, by the user and by the build: shadows, gradients, icons (the single exception is the functional disclosure chevron), all-caps and eyebrow labels, centred layouts, Japan clichés, prices.",
     "keyCharacteristics": [
-      "Cool grey ground, enamel-white plate, near-black ink, navy as the single accent.",
-      "Source Serif 4 (with optical sizing) for everything read; BIZ UDPGothic for labels, nav, notes and legal lines; Noto Serif JP for Japanese.",
-      "The framed plate appears on three surfaces only; elsewhere, space and tint separate.",
-      "Every rule separates two facts. No rule is decoration.",
+      "Paper ground, Snow surfaces, Ink text, Pine as the one accent; navy is retired.",
+      "Source Serif 4 with optical sizing for everything read; BIZ UDPGothic for labels, navigation, notes and legal lines; Noto Serif JP for Japanese.",
+      "Separation by space, scale and surface; almost no rules.",
+      "Facts sit in a soft Snow panel (14px radius, no border), rows separated by space.",
+      "Every page closes on one continuous pine field: contact close, then footer.",
       "Start-aligned asymmetric 12-column grid; nothing centred.",
-      "Square plate, softened controls (6px).",
-      "One motion moment, on Home: rules draw from inline-start, values ink in."
+      "One motion moment, on Home: the hero's text and values ink in; off under reduced motion."
     ],
     "rules": [
-      { "name": "The One Accent Rule", "body": "Navy is the only colour that is not a neutral. It marks interaction (hover, focus, selection) and the two summer months. Nothing else is navy, and no second accent is introduced.", "section": "colors" },
-      { "name": "The Tint Before Line Rule", "body": "To separate a zone, reach for mist first. A rule is drawn only where it separates two facts.", "section": "colors" },
-      { "name": "The Sentence Case Rule", "body": "Sentence case everywhere. No all-caps, no letter-spaced labels, no small caps, no eyebrows above headings, no italic or coloured word inside a heading. No italic is loaded and synthesis is switched off.", "section": "typography" },
-      { "name": "The Two Numeral Rule", "body": "Reading text uses oldstyle proportional numerals; anything tabular (plate values, the season band) uses lining tabular numerals. Japanese uses lining numerals.", "section": "typography" },
-      { "name": "The Unbroken Japanese Rule", "body": "Japanese runs carry lang=\"ja\", are set in Noto Serif JP, and never break inside a word (word-break: keep-all; line-break: strict). Headings are balanced and paragraphs are wrapped pretty.", "section": "typography" },
-      { "name": "The Main Says, Margin Proves Rule", "body": "Claims go in the main column; their evidence goes level with them in the margin (or directly after them on narrow screens). Proof is never buried in the body or moved to a separate page alone.", "section": "layout" },
-      { "name": "The Finished Without Photographs Rule", "body": "No layout may depend on an image to look complete. Photographs, when licensed, are an enhancement.", "section": "layout" },
-      { "name": "The Flat Plate Rule", "body": "Surfaces never lift. If something needs to stand apart, change its surface tone or frame it as the plate; never cast a shadow.", "section": "elevation" },
-      { "name": "The Signature Frame Rule", "body": "The double-rule frame appears on exactly three surfaces: Home's hero plate, About's credentials, and the footer's plate. Anywhere else, use rows without a frame, or a tint.", "section": "shapes" }
+      {
+        "name": "The One Accent Rule",
+        "body": "Pine is the only hue. It either owns a whole field (the close and footer) or marks a state (hover, focus, current, the summer months). No second accent, no tints of Pine as decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pine Field Rule",
+        "body": "On Pine, text is Snow, secondary text is Pine Soft, links stay Snow and thicken their underline to 2px on hover, the focus ring turns Snow, and the solid button inverts to Snow with Pine text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Says and Proves Rule",
+        "body": "Claims are serif; evidence is gothic in soft ink. Never set a claim in the gothic or a proof in the reading serif.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "No all-caps, no letter-spaced labels, no eyebrows above headings. Hierarchy is carried by size, weight and optical size alone.",
+        "section": "typography"
+      },
+      {
+        "name": "The Japanese Line Rule",
+        "body": "Every `lang=\"ja\"` run uses `word-break: keep-all` and strict line breaking, so 北海道 or 北アルプス never splits.",
+        "section": "typography"
+      },
+      {
+        "name": "The Space Not Lines Rule",
+        "body": "Sections, entry points, how-we-work items, the header and the footer are separated by space, scale and surface. No rule under the headline, above an entry point or item, before Advisors, or around the footer.",
+        "section": "layout"
+      },
+      {
+        "name": "The Tone Not Shadow Rule",
+        "body": "A surface is raised by being lighter (Snow on Paper), never by a shadow or gradient.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do put facts in the plate or the margin and claims in the main column.",
-      "Do separate zones with mist and space first; draw a rule only between two facts.",
-      "Do keep the framed double-rule plate to Home's hero, About's credentials and the footer.",
-      "Do set the headline over a single 1px ink rule, not a double rule.",
-      "Do keep the plate and all ruled objects square; give controls 6px.",
-      "Do use navy only for interaction states and the summer months.",
-      "Do use lining tabular numerals in anything tabular and oldstyle numerals in reading text.",
-      "Do use logical properties only, and carry every visible string from /content.",
-      "Do keep the one motion moment to Home and switch it off under prefers-reduced-motion.",
-      "Do meet WCAG 2.2 AA: visible navy focus on everything focusable, a skip link, hairline and stone never used for text."
+      "**Do** separate with space, type scale and surface: 96px between sections, a Snow panel for facts, the Pine field to close.",
+      "**Do** put facts in the Snow fact panel (14px radius, no border) with rows separated by 16px of space.",
+      "**Do** end every page on the continuous Pine field, footer included.",
+      "**Do** keep Pine the only accent: a whole field or a state, nothing in between.",
+      "**Do** set claims in Source Serif 4 and their proof beside them in BIZ UDPGothic, Ink Soft.",
+      "**Do** use large vertical Japanese place names in Ghost as the imagery, decorative and hidden from assistive technology.",
+      "**Do** use CSS logical properties for every direction-dependent value.",
+      "**Do** keep Home's ink-in as the site's only load motion, and switch it off under reduced motion."
     ],
     "donts": [
-      "Don't use icons, arrows on links or buttons, cards, shadows or gradients.",
-      "Don't use all-caps, letter-spaced or eyebrow labels, or numbered markers.",
-      "Don't centre layouts.",
-      "Don't use Japan clichés (torii at sunset, geisha and the like).",
-      "Don't add a dark mode.",
-      "Don't show prices, \"book now\", pop-ups, badges or trust seals.",
-      "Don't build a photo-led hero, or any layout that looks unfinished without a photograph.",
-      "Don't animate anything else on load or scroll.",
-      "Don't introduce a second accent colour or a shadow scale."
+      "**Don't** draw rules between sections, under headlines, above entry points or list items, before the Advisors link, or around the footer. Rules belong only to data tables such as the season band.",
+      "**Don't** frame panels with borders or double rules, or set facts in hairline rows.",
+      "**Don't** use navy or any second hue.",
+      "**Don't** use shadows or gradients.",
+      "**Don't** use icons; the disclosure chevron is the single functional exception.",
+      "**Don't** use all-caps, letter-spaced labels or eyebrows above headings.",
+      "**Don't** centre layouts or text blocks.",
+      "**Don't** use Japan clichés (torii, cherry blossom, red suns, brush strokes, wave patterns).",
+      "**Don't** add a dark mode, or show prices.",
+      "**Don't** use Ghost or Mist for meaningful text."
     ]
   }
 }

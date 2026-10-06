@@ -128,6 +128,36 @@
     }
   }
 
+  /* Scroll reveals. Hidden only once RevealObserver has run (html.reveal-ready). */
+  .reveal-ready [data-reveal]:not([data-reveal="words"]) {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 900ms var(--ease-out-expo),
+      transform 1100ms var(--ease-out-expo);
+    transition-delay: calc(var(--d, 0) * 110ms);
+  }
+  .reveal-ready [data-reveal][data-in] {
+    opacity: 1;
+    transform: none;
+  }
+  /* Headings: each word rises out of its own clipped line box. */
+  .split-word {
+    display: inline-block;
+    overflow: clip;
+    vertical-align: top;
+    padding-block-end: 0.14em;
+    margin-block-end: -0.14em;
+  }
+  .split-word > span {
+    display: inline-block;
+    transition: transform 1100ms var(--ease-out-expo);
+    transition-delay: calc(var(--w, 0) * 45ms + var(--d, 0) * 110ms);
+  }
+  .reveal-ready [data-reveal]:not([data-in]) .split-word > span {
+    transform: translateY(110%);
+  }
+
   /* Menu panel: a quick fade and settle on open (interaction feedback, not decoration). */
   @media (prefers-reduced-motion: no-preference) {
     .nav-panel {
