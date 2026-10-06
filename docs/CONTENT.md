@@ -72,7 +72,7 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026.
 >
 > We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.
 
-**Margin** (set as the registration plate beside the hero)
+**Margin** (set as a seal at the foot of the hero's pine panel, Sarah 6 Oct 2026)
 
 > We are a registered travel agency with offices in Tokyo and Osaka.
 > `registration.lineJa`

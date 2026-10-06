@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { about } from "@content/pages/about";
 import { home } from "@content/pages/home";
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { routeFor } from "@content/routes";
@@ -10,12 +9,11 @@ import { SplitWords } from "./SplitWords";
 import { WhatsAppLink } from "./WhatsAppLink";
 
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
-const registrationLabel = about.credentials.rows.find((r) => r.label.body[0] === "Registration")!.label;
 
 /**
- * Home's first screen: the welcome and actions on one side, a pine field
- * carrying the summer place names on the other, and the registration proof
- * as a strip beneath (main column says, margin proves).
+ * Home's first screen: the welcome and actions on one side; on the other a
+ * pine field carrying the summer place names, with the registration set into
+ * its foot as a seal (main column says, margin proves).
  */
 export function HomeHero() {
   const contact = routeFor("contact");
@@ -37,42 +35,36 @@ export function HomeHero() {
           </div>
         </div>
 
-        {/* The image: the summer place names in vertical Japanese on a pine field (decorative). */}
+        {/* The image and the seal: summer place names in vertical Japanese on a pine field, with the
+            registration set into its foot like an official stamp (main says, margin proves). */}
         <div
-          aria-hidden
           data-reveal
           style={d(1)}
-          className="on-pine relative col-span-12 h-80 overflow-hidden rounded-[20px] tablet:h-[26rem] desktop:col-span-6 desktop:h-auto desktop:min-h-[30rem]"
+          className="on-pine relative col-span-12 flex min-h-[34rem] flex-col overflow-hidden rounded-[20px] p-8 tablet:min-h-[30rem] desktop:col-span-6 desktop:p-12"
         >
-          {/* Pinned inside the panel, so the names wrap to the panel's height instead of setting it. */}
-          <span className="absolute inset-8 flex flex-row-reverse gap-[0.22em] font-mincho leading-[1.04] text-pine-soft text-[clamp(3rem,5.6vw,6.5rem)] desktop:inset-12">
-            {summerJourneys.regions.map((r, i) => (
-              <span key={i} lang="ja" className="h-full [writing-mode:vertical-rl]">
-                <CopyText copy={r.verticalName} />
-              </span>
-            ))}
-          </span>
+          <div aria-hidden className="relative min-h-0 flex-1">
+            <span className="absolute inset-0 flex flex-row-reverse gap-[0.22em] font-mincho leading-[1.04] text-pine-soft text-[clamp(2.5rem,5.2vw,6rem)]">
+              {summerJourneys.regions.map((r, i) => (
+                <span key={i} lang="ja" className="h-full [writing-mode:vertical-rl]">
+                  <CopyText copy={r.verticalName} />
+                </span>
+              ))}
+            </span>
+          </div>
+          <div className="mt-8 max-w-[26rem]">
+            <p className="font-mincho text-[1.125rem] leading-snug text-plate">
+              <CopyText copy={site.registration.lineJa} />
+            </p>
+            <p className="mt-2 font-gothic text-label text-ink-soft">
+              <CopyText copy={home.margin.statement} />
+            </p>
+            <p className="mt-3 font-gothic text-label">
+              <a href="/about#CL-06">
+                <CopyText copy={home.margin.check} />
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-
-      {/* Proof strip: the registration margin, at a glance. */}
-      <div data-reveal style={d(5)} className="mt-6 grid gap-x-10 gap-y-5 rounded-[20px] bg-plate px-7 py-6 tablet:grid-cols-3 desktop:px-10">
-        <p className="font-serif text-field leading-[1.45]">
-          <CopyText copy={home.margin.statement} />
-        </p>
-        <p className="font-gothic text-label text-ink-soft">
-          <span className="block">
-            <CopyText copy={registrationLabel} />
-          </span>
-          <span className="mt-1 block text-ink">
-            <CopyText copy={site.registration.lineJa} />
-          </span>
-        </p>
-        <p className="font-gothic text-label tablet:self-center">
-          <a href="/about#CL-06">
-            <CopyText copy={home.margin.check} />
-          </a>
-        </p>
       </div>
     </section>
   );

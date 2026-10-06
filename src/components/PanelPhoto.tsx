@@ -16,7 +16,7 @@ export function PanelPhoto({ slot, tone }: { slot: PhotoSlotId; tone: "snow" | "
   if (!photo) {
     if (!isDev) return null;
     return (
-      <span className="pointer-events-none absolute end-6 top-6 max-w-[16rem] rounded-(--radius-control) px-2 py-1 text-end font-gothic text-[0.6875rem] leading-snug opacity-70 outline-1 outline-dashed [outline-color:color-mix(in_oklab,currentColor_40%,transparent)]">
+      <span className="pointer-events-none absolute end-6 top-6 hidden max-w-[16rem] tablet:block rounded-(--radius-control) px-2 py-1 text-end font-gothic text-[0.6875rem] leading-snug opacity-70 outline-1 outline-dashed [outline-color:color-mix(in_oklab,currentColor_40%,transparent)]">
         Photograph to come: {brief}
       </span>
     );
