@@ -28,8 +28,7 @@ Agreed 6 Oct 2026:
 Each page: brief → copy drafted in `CONTENT.md` → Sarah approves → build → screenshots at 390 / 834 / 1440 and `pnpm guard` → Sarah reviews → commit and push.
 
 - [x] Home — copy written and approved by Sarah (CONTENT.md §3, LOCKED); built with hero and registration plate, two ways in, how we work, and the navy contact close.
-- [ ] (next page chosen by Sarah)
-- [ ] Summer Journeys
+- [ ] Summer Journeys — built 6 Oct 2026 in the Home flow (hero with 七月 八月, months, three regions, pine close). Drafted copy in CONTENT.md §4 awaiting Sarah's approval; region facts await the operator; "best"/"finest" kept by Sarah (approval entries hers to add).
 - [ ] Family Services
 - [ ] About
 - [ ] Contact

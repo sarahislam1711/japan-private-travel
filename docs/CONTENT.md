@@ -106,7 +106,7 @@ Each point links to its page under the page's name (internal linking).
 
 ## 4. Summer Journeys (`/summer-journeys`)
 
-**Title and lede — LOCKED ⚑D5**
+**Title and lede — LOCKED ⚑D5** (Sarah chose to keep "best" and "finest", 6 Oct 2026; the C4 approval entries are hers to add in `content/approvals.ts`)
 
 > **July and August are the best months to bring a family to Japan — in the right places.**
 >
@@ -133,6 +133,15 @@ Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa 
 
 > Summer dates go first. Tell us the household and the weeks you are weighing.
 > [WhatsApp button]
+
+**Page sections — DRAFT** (drafted 6 Oct 2026 for approval; restates approved copy, no new facts)
+
+- Hero image, set vertically in the pine panel (decorative): 七月 · 八月
+- Below the lede: "Travelling at another time of year?" — *Link:* Private Japan
+- Months section heading: "Two months, three places."
+- Months section text: "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea."
+- Region fact labels: "Weeks we recommend" · "Suggested length" · "Getting there from Tokyo" · "Properties with private bathing we use"
+- Under each region: "Planning for Muslim families:" — *Link:* Family Services
 
 ## 5. Private Japan (`/private-japan`)
 

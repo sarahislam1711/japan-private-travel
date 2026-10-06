@@ -60,4 +60,20 @@ export const summerJourneys = {
     },
   ] satisfies Region[],
   closing: draft("Summer dates go first. Tell us the household and the weeks you are weighing."),
+  // Page sections drafted 6 Oct 2026 (CONTENT.md §4).
+  heroImage: [draft("七月", { lang: "ja" }), draft("八月", { lang: "ja" })],
+  otherSeasons: draft("Travelling at another time of year?"),
+  months: {
+    heading: draft("Two months, three places."),
+    text: draft(
+      "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea.",
+    ),
+  },
+  factLabels: {
+    bestWeeks: draft("Weeks we recommend"),
+    length: draft("Suggested length"),
+    fromTokyo: draft("Getting there from Tokyo"),
+    privateBathCount: draft("Properties with private bathing we use"),
+  },
+  familyLink: draft("Planning for Muslim families:"),
 };
