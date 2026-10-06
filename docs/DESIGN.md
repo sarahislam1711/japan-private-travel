@@ -181,7 +181,7 @@ A quiet, cool, near-neutral palette with one deep green-teal accent; colour is s
 
 ### Neutral
 - **Paper** (#F1F2EE): the page ground everywhere outside Pine.
-- **Snow** (#FAFAF8): soft panels (the registration seal, the Summer Journeys panel), the menus, form fields, and the solid button on Pine.
+- **Snow** (#FAFAF8): soft panels (the Summer Journeys entry panel, the region panels), the menus, form fields, and the solid button on Pine.
 - **Ink** (#1A2230): headlines and primary text, the solid button, the Contact ring.
 - **Ink Soft** (#4A5462): the gothic section text, field labels, footer column headings, the quieter Advisors link, menu descriptions (6.8:1 on Paper).
 - **Mist** (#DADDD8): non-text only. The Trips menu hover fill, the mobile menu's ring, the season band's row rules.
@@ -208,7 +208,7 @@ A dev-only Stone (#6B7480) outlines placeholders and DRAFT marks; it is tooling,
 - **Title** (360, clamp 1.875–2.625rem, 1.12, -0.016em, opsz 36): the leads of the How we work points.
 - **Wordmark** (600, 1.375rem, 1, -0.015em, opsz 24): the text-set brand name in header and footer.
 - **Body** (Source Serif 4 400, 1.125rem, 1.68): the base reading size; oldstyle proportional numerals.
-- **Field** (Source Serif 4 400, 1rem, 1.45, opsz 16): fact values, the registration seal's statement, the footer's trade-name line; lining tabular numerals in values.
+- **Field** (Source Serif 4 400, 1rem, 1.45, opsz 16): fact values and the footer's trade-name line; lining tabular numerals in values.
 - **Copy** (BIZ UDPGothic 400, 1.0625rem, 1.62, Ink Soft): the short text under every section heading, kept to about 30–32rem.
 - **Label** (BIZ UDPGothic 400, 0.875rem, 1.5): navigation, buttons (700), field labels, page links under points and panels, footer links and column headings.
 - **Small** (BIZ UDPGothic 400, 0.8125rem, 1.55): menu descriptions, the Advisors utility link, captions.
@@ -230,7 +230,7 @@ A dev-only Stone (#6B7480) outlines placeholders and DRAFT marks; it is tooling,
 A 12-column grid with a 24px gutter inside an 84rem container and a fluid page margin (clamp 1.25rem–5rem). Breakpoints: tablet 640px, desktop 1024px. Everything is start-aligned; nothing is centred. Below desktop every split stacks, text first.
 
 Each Home section is roughly one screen and split in two:
-- **Hero** fills the first screen at desktop (100svh less the header): headline, gothic paragraph and actions in columns 1–6, bottom-aligned; the Pine place-name panel in columns 7–12. A Snow registration seal runs the full width beneath, in three columns from tablet.
+- **Hero** fills the first screen at desktop (100svh less the header): headline, gothic paragraph and actions in columns 1–6, bottom-aligned; the Pine panel in columns 7–12, its place names filling the space above a registration seal set into its foot.
 - **Two ways in**: a Snow panel (7 columns) and a Pine panel (5 columns), each at least 26rem tall, heading at the top and text plus link at the bottom.
 - **How we work**: the heading in columns 1–5 stays sticky (top 7rem) while three points scroll past in columns 7–12, 96px apart (64px on narrow screens).
 - **Close**: the display heading in columns 1–7, the reply line, WhatsApp button and contact list in columns 9–12, aligned to its foot; then the footer on the same Pine.
@@ -249,7 +249,7 @@ Flat. No shadows anywhere; Tailwind's shadow scales are cleared in the tokens. D
 
 ## Shapes
 
-Softly rounded, never square and never pill. Content panels take a generous 20px radius (hero panel, registration seal, entry panels); the Trips menu 10px; controls (buttons, menu items, the mobile menu, inputs, skip link) 6px. Panels carry no border. The only line forms are the link underline (1px, 0.22em offset; 2px on hover in Pine surfaces and for the current page), the focus outline (2px Pine, 3px offset) and the season band's table rules.
+Softly rounded, never square and never pill. Content panels take a generous 20px radius (hero panel, entry panels, region panels); the Trips menu 10px; controls (buttons, menu items, the mobile menu, inputs, skip link) 6px. Panels carry no border. The only line forms are the link underline (1px, 0.22em offset; 2px on hover in Pine surfaces and for the current page), the focus outline (2px Pine, 3px offset) and the season band's table rules.
 
 ## Components
 
@@ -263,7 +263,7 @@ Softly rounded, never square and never pill. Content panels take a generous 20px
 ### Cards / Containers
 - **Entry panels:** the whole panel is the link. Snow or Pine, 20px radius, no border, 32px padding (48px from tablet), minimum 26rem tall. A headline at the top; copy text and an underlined label link at the bottom. Hover shifts the surface tone over 300ms (Snow toward white, Pine slightly deeper) and thickens the link underline to 2px.
 - **Hero place-name panel:** Pine, 20px radius, decorative and `aria-hidden`; the place names are pinned inside it and wrap to its height.
-- **registration seal:** Snow, 20px radius, 24px by 28–40px; the registration statement in field serif, the registration label (Ink Soft) and Japanese registration line (Ink) in gothic, and the verify link.
+- **Registration seal:** set into the foot of the hero's Pine panel, beneath the place names, like a stamp on a document: the Japanese registration line in Noto Serif JP (1.125rem, Snow), the agency statement in gothic Pine Soft, and the check link (Snow, underlined). No box or border; the panel is the ground.
 - **Bare facts:** label and value rows with no surface, rows 16px apart, a 13.75rem label column from tablet; used for the legal block in the footer.
 
 ### Inputs / Fields
@@ -303,7 +303,7 @@ The season band is twelve month cells that never wrap, July and August filled Pi
 - **Do** make each section about one screen, split in two, with one big light serif headline and a short paragraph of gothic Ink Soft copy text.
 - **Do** use large 20px-radius panels on Snow and Pine for content that leads somewhere, and make the whole panel the link.
 - **Do** separate with space, surface and type: 128–224px between sections, Snow or Pine surfaces, no rules.
-- **Do** put the proof beside or directly under the claim, in gothic: on Home, the Snow registration seal under the hero.
+- **Do** put the proof beside or directly under the claim, in gothic: on Home, the registration seal at the foot of the hero's pine panel.
 - **Do** end every page on the continuous Pine field, footer included.
 - **Do** keep Pine the only accent: a whole surface or a state.
 - **Do** reveal headings word by word and blocks by fade-and-lift, gate them behind `html.reveal-ready`, and switch all motion off under reduced motion.
