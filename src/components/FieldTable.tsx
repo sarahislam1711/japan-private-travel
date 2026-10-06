@@ -38,7 +38,7 @@ export function FieldTable({ fields, title, foot, variant = "plate", animate = f
       ) : null}
       <dl>
         {fields.map((field, n) => (
-          <div key={field.key} className="relative grid gap-x-4 gap-y-0.5 py-2.5 tablet:grid-cols-[minmax(6.5rem,2fr)_3fr]">
+          <div key={field.key} className="relative grid gap-x-4 gap-y-0.5 py-2.5 tablet:grid-cols-[13.75rem_1fr]">
             <span
               aria-hidden
               className={`absolute inset-x-0 top-0 h-px ${n === 0 && title ? "bg-ink" : "bg-hairline"} ${animate ? "draw-rule" : ""}`}

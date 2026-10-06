@@ -12,6 +12,7 @@ import type { RouteKey } from "./routes";
 import type { Copy } from "./schema";
 
 export { site } from "./site";
+export { ui } from "./interface";
 export { routes, routeFor, privatePathPrefixes } from "./routes";
 export { claims } from "./claims";
 export { photographs } from "./photography.manifest";

@@ -1,3 +1,4 @@
+import { ui } from "@content/interface";
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { CopyText } from "./CopyText";
 
@@ -6,7 +7,8 @@ const summer = new Set([7, 8]);
 
 /**
  * Twelve month cells in one row that scales and never wraps. July and August
- * are the only filled cells. Data cells stay empty until CL-05 is sourced.
+ * are the only filled cells. Until CL-05 is sourced each data cell shows a
+ * dash, the tabular sign for "not available", and the caption says so.
  */
 export function SeasonBand() {
   const { caption, rows } = summerJourneys.seasonBand;
@@ -14,10 +16,11 @@ export function SeasonBand() {
     <div>
       <table className="w-full table-fixed border-collapse font-gothic text-small tablet:text-label [font-variant-numeric:lining-nums_tabular-nums]">
         <caption className="pb-3 text-start text-small text-ink-soft caption-bottom pt-3">
-          <CopyText copy={caption} />
+          <CopyText copy={caption} />{" "}
+          <CopyText copy={ui.seasonBandPending} />
         </caption>
         <thead>
-          <tr className="border-y-4 border-double border-ink">
+          <tr className="border-y border-ink">
             <td className="w-[24%] tablet:w-[18%]" />
             {months.map((m) => (
               <th
@@ -37,7 +40,9 @@ export function SeasonBand() {
                 <CopyText copy={row} />
               </th>
               {months.map((m) => (
-                <td key={m} className={`py-2.5 ${summer.has(m) ? "bg-navy/8" : ""}`} />
+                <td key={m} className={`py-2.5 text-center text-hairline ${summer.has(m) ? "bg-navy/8" : ""}`}>
+                  –
+                </td>
               ))}
             </tr>
           ))}

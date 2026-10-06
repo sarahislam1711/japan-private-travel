@@ -47,6 +47,9 @@
   :lang(ja) {
     font-family: var(--font-mincho);
     font-variant-numeric: lining-nums;
+    /* Never split a Japanese word (北海道, 北アルプス) across lines. */
+    word-break: keep-all;
+    line-break: strict;
   }
 
   a {
@@ -78,9 +81,23 @@
 }
 
 @layer components {
-  /* The double rule that frames a plate and underlines its title. */
-  .rule-double {
-    border-block-end: var(--rule-frame) double var(--color-ink);
+  /* Visible only when focused by keyboard. */
+  .skip-link {
+    position: absolute;
+    inset-block-start: 0.75rem;
+    inset-inline-start: 0.75rem;
+    z-index: 50;
+    transform: translateY(-200%);
+    background: var(--color-ink);
+    color: var(--color-plate);
+    padding: 0.5rem 0.875rem;
+    border-radius: var(--radius-control);
+    font-family: var(--font-gothic);
+    font-size: var(--text-label);
+  }
+  .skip-link:focus-visible {
+    transform: none;
+    outline-color: var(--color-navy);
   }
 
   /* Home's one moment: rules draw from inline-start, then ink settles. */

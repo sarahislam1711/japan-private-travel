@@ -15,35 +15,36 @@
   --drop-shadow-*: initial;
   --breakpoint-*: initial;
 
-  /* Colour — enamel plate on a cool grey ground, black rules, one navy accent */
-  --color-ground: #e9eae6; /* page */
-  --color-plate: #fafaf7; /* the plate, form fields */
-  --color-ink: #121417; /* text, frame rules, footer ground, the solid button */
-  --color-ink-soft: #464b52; /* field labels, notes, captions */
-  --color-hairline: #a4a9ae; /* row rules inside a plate — non-text only */
+  /* Colour — a cool, airy ground; the plate is the one framed object; navy the one accent */
+  --color-ground: #eef1f2; /* page */
+  --color-mist: #e2e7ea; /* tinted sections: separation by surface, not by line */
+  --color-plate: #fbfcfc; /* the plate, form fields */
+  --color-ink: #14181d; /* text, the plate frame, the solid button */
+  --color-ink-soft: #4a5159; /* field labels, notes, captions */
+  --color-hairline: #c3c9ce; /* light row rules — non-text only */
   --color-navy: #1f3a5f; /* the only accent: links, focus, July and August */
   --color-stone: #6b7480; /* dev-only placeholder and DRAFT outlines — never text */
 
   /* Type scale — base 18px */
   --text-display: clamp(2.75rem, 3.6vw + 1.1rem, 4.625rem);
   --text-display--line-height: 1.04;
-  --text-display--letter-spacing: -0.022em;
-  --text-display--font-weight: 500;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 420;
   --text-h1: clamp(2.25rem, 2.4vw + 1.25rem, 3.5rem);
   --text-h1--line-height: 1.08;
   --text-h1--letter-spacing: -0.018em;
-  --text-h1--font-weight: 500;
+  --text-h1--font-weight: 430;
   --text-h2: clamp(1.625rem, 1vw + 1.25rem, 2.125rem);
   --text-h2--line-height: 1.18;
   --text-h2--letter-spacing: -0.01em;
-  --text-h2--font-weight: 500;
+  --text-h2--font-weight: 450;
   --text-h3: 1.375rem;
   --text-h3--line-height: 1.3;
   --text-h3--font-weight: 600;
   --text-lede: clamp(1.25rem, 0.4vw + 1.15rem, 1.4375rem);
   --text-lede--line-height: 1.5;
   --text-body: 1.125rem;
-  --text-body--line-height: 1.62;
+  --text-body--line-height: 1.68;
   --text-field: 1rem; /* plate values */
   --text-field--line-height: 1.45;
   --text-label: 0.875rem; /* plate labels, nav, form labels, notes */
@@ -75,8 +76,8 @@
   --rule-frame: 4px; /* drawn as a double rule */
   --rule-row: 1px;
 
-  /* Radius — the plate is square; inputs and the one button 2px */
-  --radius-control: 2px;
+  /* Radius — the plate stays square; controls are softened */
+  --radius-control: 6px;
 
   /* Motion — one moment, on Home */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -88,7 +89,7 @@
 
 /* Fonts come from next/font CSS variables on <html>, so they are inlined. */
 @theme inline {
-  --font-serif: var(--font-source-serif), "Noto Serif JP", Georgia, serif;
+  --font-serif: var(--font-source-serif), var(--font-noto-serif-jp), Georgia, serif;
   --font-mincho: var(--font-noto-serif-jp), serif;
   --font-gothic: var(--font-biz-ud), system-ui, sans-serif;
 }

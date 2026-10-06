@@ -15,7 +15,7 @@ export function EntryPoints() {
         <Link
           key={route.key}
           href={route.path}
-          className={`group col-span-12 border-t border-ink pt-4 no-underline tablet:col-span-6 ${i === 0 ? "desktop:col-span-5 desktop:col-start-2" : "desktop:col-span-5 desktop:col-start-8"}`}
+          className={`group col-span-12 border-t border-hairline pt-5 no-underline tablet:col-span-6 ${i === 0 ? "desktop:col-span-5 desktop:col-start-2" : "desktop:col-span-6 desktop:col-start-7"}`}
         >
           <h2 className="font-serif text-h2 [font-variation-settings:'opsz'_36] group-hover:text-navy group-hover:underline group-hover:decoration-1 group-hover:underline-offset-[0.18em]">
             <CopyText copy={heading} />

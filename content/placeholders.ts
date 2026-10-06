@@ -77,8 +77,6 @@ export const placeholderKeys = [
   "ABOUT_TITLE",
   "PRIVACY_TITLE",
   "TERMS_TITLE",
-  "MENU_LABEL",
-  "SKIP_LINK_LABEL",
 ] as const;
 
 export type PlaceholderKey = (typeof placeholderKeys)[number];
@@ -163,6 +161,4 @@ export const placeholders: Record<PlaceholderKey, Placeholder> = {
   ABOUT_TITLE: copy("Page title for /about — not defined in CONTENT.md"),
   PRIVACY_TITLE: copy("Page title for /privacy — not defined in CONTENT.md"),
   TERMS_TITLE: copy("Page title for /terms — not defined in CONTENT.md"),
-  MENU_LABEL: copy("Label of the mobile navigation button (DESIGN.md says \"Menu\") — not in CONTENT.md"),
-  SKIP_LINK_LABEL: copy("Skip-to-content link text — not in CONTENT.md"),
 };

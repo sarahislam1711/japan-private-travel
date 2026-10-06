@@ -28,6 +28,20 @@ Status markers:
 | `desk.zone` / `desk.hours` | `[[DESK_ZONE]]` / `[[DESK_HOURS]]` | ⚑D3 |
 | `whatsapp.prefill` | "Hello, I would like to plan a trip to Japan for my family." | DRAFT |
 
+## 1a. Interface strings (`content/interface.ts`)
+
+Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were specified but never listed here.
+
+| Key | Value | Status |
+|---|---|---|
+| `skipLink` | Skip to content | DRAFT |
+| `menu` | Menu | DRAFT |
+| `sourceLink` | Source | DRAFT |
+| `whatsappButton` | Message us on WhatsApp | DRAFT |
+| `footer.privacy` | Privacy | DRAFT |
+| `footer.terms` | Terms of business | DRAFT |
+| `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
+
 ## 2. Navigation
 
 Summer Journeys · Private Japan · Family Services · Experiences · About · Contact — and "For travel advisors". Status: LOCKED (page names from strategy §5).

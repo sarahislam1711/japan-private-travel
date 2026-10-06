@@ -28,9 +28,9 @@ export function HomeHero() {
       >
         <CopyText copy={home.hero.headline} />
       </h1>
-      <div aria-hidden className="draw-rule rule-double col-span-12 desktop:col-span-11 desktop:col-start-2" style={step(1)} />
+      <div aria-hidden className="draw-rule col-span-12 h-px bg-ink desktop:col-span-11 desktop:col-start-2" style={step(1)} />
 
-      <div className="col-span-12 mt-6 max-w-(--measure-main) space-y-4 desktop:col-span-5 desktop:col-start-2">
+      <div className="col-span-12 mt-8 max-w-(--measure-main) space-y-5 desktop:col-span-5 desktop:col-start-2">
         <p className="ink-in font-serif text-lede [font-variation-settings:'opsz'_24]" style={step(3)}>
           <CopyText copy={lede} />
         </p>
@@ -44,7 +44,7 @@ export function HomeHero() {
       <FieldTable
         animate
         startIndex={5}
-        className="col-span-12 mt-10 desktop:col-span-6 desktop:col-start-7 desktop:mt-6"
+        className="col-span-12 mt-10 desktop:col-span-6 desktop:col-start-7 desktop:mt-8"
         title={<CopyText copy={home.heroMargin.label} />}
         fields={[
           { key: "registration", label: label("Registration"), value: <CopyText copy={site.registration.lineJa} /> },
