@@ -30,7 +30,13 @@ export function RevealObserver() {
       },
       { rootMargin: "0px 0px -12% 0px", threshold: 0.12 },
     );
-    document.querySelectorAll("[data-reveal]:not([data-in])").forEach((el) => io.observe(el));
+    // Anything already on screen when the page opens (the hero and its buttons) rises in at once;
+    // the -12% margin is only for what scrolls into view later.
+    document.querySelectorAll("[data-reveal]:not([data-in])").forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.setAttribute("data-in", "");
+      else io.observe(el);
+    });
     return () => io.disconnect();
   }, [pathname]);
   return null;

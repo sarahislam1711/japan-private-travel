@@ -56,14 +56,14 @@
 
   /* Home's hero headline: the site's one heavier, larger headline (Sarah, 7 Oct 2026). */
   .hero-display {
-    font-size: clamp(3.5rem, 5.4vw + 1.1rem, 6.75rem);
+    font-size: clamp(3.875rem, 6.3vw + 1.1rem, 7.875rem);
     font-weight: 460;
     line-height: 1;
     letter-spacing: -0.03em;
   }
   @media (min-width: 64rem) and (max-height: 820px) {
     .hero-display {
-      font-size: clamp(3.1rem, 4vw + 1rem, 5.25rem);
+      font-size: clamp(3.4rem, 4.7vw + 1rem, 6rem);
     }
   }
   :root:lang(ar) .hero-display {

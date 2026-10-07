@@ -91,7 +91,7 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026.
 
 > **Japan, planned for the whole family.**
 >
-> We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.
+> Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese. **DRAFT** (shorter rewrite requested by Sarah, 7 Oct 2026; awaiting approval. Previous locked text: "We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.")
 
 **Margin** (set as a seal at the foot of the hero's pine panel, Sarah 6 Oct 2026)
 

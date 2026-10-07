@@ -6,9 +6,8 @@ import { homeAr } from "./home.ar";
 export const home = {
   hero: {
     headline: locked("Japan, planned for the whole family."),
-    paragraph: locked(
-      "We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.",
-    ),
+    // DRAFT rewrite at Sarah's request (7 Oct 2026): shorter; replaces her locked paragraph once approved.
+    paragraph: draft("Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese."),
   },
   margin: {
     statement: locked("We are a registered travel agency with offices in Tokyo and Osaka."),

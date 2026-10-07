@@ -97,7 +97,7 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `home.hero.headline` | Japan, planned for the whole family. | <span dir="rtl" lang="ar">اليابان، بتخطيطٍ يشمل العائلة كلّها.</span> | draft |
-| `home.hero.paragraph` | We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">نخطّط رحلات خاصة إلى اليابان للعائلات التي تسافر معًا، من الأجداد إلى الأطفال الصغار. تبدأ كل رحلة بمحادثة، ونخطّطها من البداية لعائلتكم، بالعربية أو الإنجليزية أو اليابانية.</span> | draft |
+| `home.hero.paragraph` | Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">رحلات خاصة لكل الأجيال، من الأجداد إلى الأطفال الصغار. نخطّط كل رحلة من البداية معكم، بالعربية أو الإنجليزية أو اليابانية.</span> | draft |
 | `home.margin.statement` | We are a registered travel agency with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">نحن وكالة سفر مسجّلة، ولنا مكتبان في طوكيو وأوساكا.</span> | draft |
 | `home.margin.check` | You can check our registration with [[REG_AUTHORITY_EN]]. | <span dir="rtl" lang="ar">يمكنكم التحقق من تسجيلنا لدى [[REG_AUTHORITY_EN]].</span> | draft |
 | `home.entryPoints.summerJourneys.heading` | Summer Journeys | <span dir="rtl" lang="ar">رحلات الصيف</span> | draft |
