@@ -1,5 +1,6 @@
 /* For Travel Advisors (/for-travel-advisors) — docs/CONTENT.md §9. All copy DRAFT, flagged D9. */
-import { draft } from "../schema";
+import { attachArabic, draft } from "../schema";
+import { forTravelAdvisorsAr } from "./for-travel-advisors.ar";
 
 const d9 = { flags: ["D9" as const] };
 
@@ -51,3 +52,5 @@ export const forTravelAdvisors = {
     },
   },
 };
+
+attachArabic(forTravelAdvisors, forTravelAdvisorsAr);

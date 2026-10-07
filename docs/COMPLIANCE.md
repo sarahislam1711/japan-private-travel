@@ -66,6 +66,14 @@ Output: a table per rule — rule ID, severity, route or file, the matched strin
 ### C12 — Contact routes
 **Error** if Home or Contact lacks a working `wa.me` link, or if the WhatsApp number, phone or email differ between pages and footer.
 
+## Arabic (added 7 Oct 2026)
+
+The site is bilingual. The guard checks the Arabic as well as the English:
+- **C7:** every string that needs Arabic must have it, and Arabic marked `ard` (draft) blocks production until a native reviewer approves it (`arl`).
+- **C3, C3a, C4:** Arabic equivalents of the banned claims, the halal-proximity check and the superlatives run on the Arabic text. They are meaning-level mirrors of the English rules; the 行政書士 should confirm the Arabic patterns.
+- **SYNC:** the Arabic in /content must match `docs/CONTENT.ar.md` (regenerate with `pnpm content:ar`).
+- Approvals in `content/approvals.ts` match Arabic strings the same way as English.
+
 ## What the guard cannot check
 
 Whether a claim is *true*. The guard proves a claim has a source and that the source was checked recently; a person must still read the source. It also cannot confirm the registration type fits what is sold (§7.1), that two managers are in post (§7.3), or that transport contracts are signed (§7.7). Those stay on the human launch checklist produced in Prompt 8.

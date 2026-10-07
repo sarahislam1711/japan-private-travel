@@ -94,7 +94,8 @@
 
 /* Fonts come from next/font CSS variables on <html>, so they are inlined. */
 @theme inline {
-  --font-serif: var(--font-source-serif), var(--font-noto-serif-jp), Georgia, serif;
+  /* Per-language faces, set in globals.css: Latin and Japanese by default, Arabic under :lang(ar). */
+  --font-serif: var(--face-serif), Georgia, serif;
   --font-mincho: var(--font-noto-serif-jp), serif;
-  --font-gothic: var(--font-biz-ud), system-ui, sans-serif;
+  --font-gothic: var(--face-gothic), system-ui, sans-serif;
 }

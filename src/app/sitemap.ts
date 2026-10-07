@@ -1,12 +1,16 @@
 import type { MetadataRoute } from "next";
 import { routes } from "@content/routes";
-import { siteUrl } from "@/lib/site-url";
+import { absolute } from "@/lib/metadata";
 
-// From content/routes.ts only: the portal is never listed (C9).
-// No lastModified: there are no real dates to give yet.
+// Every route in both languages, each listing its alternates (hreflang in the sitemap).
+// The portal is never listed (C9). No lastModified: there are no real dates to give yet.
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
-    url: new URL(route.path, siteUrl()).toString(),
-    priority: route.priority,
-  }));
+  return routes.flatMap((route) => {
+    const languages = { en: absolute(route.key, "en"), ar: absolute(route.key, "ar"), "x-default": absolute(route.key, "en") };
+    return (["en", "ar"] as const).map((locale) => ({
+      url: absolute(route.key, locale),
+      priority: route.priority,
+      alternates: { languages },
+    }));
+  });
 }

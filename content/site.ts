@@ -1,5 +1,6 @@
 /* Site-wide content — docs/CONTENT.md §1. */
-import { draft, locked, ph } from "./schema";
+import { attachArabic, draft, locked, ph } from "./schema";
+import { siteAr } from "./site.ar";
 
 export const site = {
   /** Production domain, apex form (no www). www redirects to it. */
@@ -40,3 +41,5 @@ export const site = {
     hours: locked([ph("DESK_HOURS")], { flags: ["D3"] }),
   },
 } as const;
+
+attachArabic(site, siteAr);

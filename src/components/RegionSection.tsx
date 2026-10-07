@@ -1,7 +1,8 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { summerJourneys } from "@content/pages/summer-journeys";
-import { routeFor } from "@content/routes";
+import { routeFor, localePath } from "@content/routes";
 import { CopyText } from "./CopyText";
 import { FieldTable } from "./FieldTable";
 
@@ -13,7 +14,8 @@ type Region = (typeof summerJourneys.regions)[number];
  * practical facts (the proof), beside the region's description (the claim).
  * Panels alternate sides down the page.
  */
-export function RegionSection({ region, index }: { region: Region; index: number }) {
+export async function RegionSection({ region, index }: { region: Region; index: number }) {
+  const locale = await getLocale();
   const labels = summerJourneys.factLabels;
   const fs = routeFor("familyServices");
   const flip = index % 2 === 1;
@@ -53,7 +55,7 @@ export function RegionSection({ region, index }: { region: Region; index: number
         </p>
         <p className="mt-7 font-gothic text-label text-ink-soft">
           <CopyText copy={summerJourneys.familyLink} />{" "}
-          <Link href={fs.path} className="text-ink">
+          <Link href={localePath(fs.key, locale)} className="text-ink">
             <CopyText copy={fs.navLabel!} />
           </Link>
         </p>

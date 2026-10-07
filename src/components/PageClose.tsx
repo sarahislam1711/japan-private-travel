@@ -1,7 +1,8 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { Copy } from "@content/schema";
-import { routeFor } from "@content/routes";
+import { routeFor, localePath } from "@content/routes";
 import { CopyText } from "./CopyText";
 import { SplitWords } from "./SplitWords";
 import { WhatsAppLink } from "./WhatsAppLink";
@@ -9,7 +10,8 @@ import { WhatsAppLink } from "./WhatsAppLink";
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
 
 /** A page's closing invitation on pine, flowing into the pine footer. */
-export function PageClose({ heading }: { heading: Copy }) {
+export async function PageClose({ heading }: { heading: Copy }) {
+  const locale = await getLocale();
   const contact = routeFor("contact");
   return (
     <section aria-labelledby="close-title" className="on-pine mt-40 desktop:mt-56">
@@ -19,7 +21,7 @@ export function PageClose({ heading }: { heading: Copy }) {
         </h2>
         <div data-reveal style={d(2)} className="col-span-12 flex flex-wrap items-center gap-x-6 gap-y-4 desktop:col-span-4 desktop:col-start-9 desktop:self-end">
           <WhatsAppLink tone="light" />
-          <Link href={contact.path} className="font-gothic text-label">
+          <Link href={localePath(contact.key, locale)} className="font-gothic text-label">
             <CopyText copy={contact.navLabel!} />
           </Link>
         </div>

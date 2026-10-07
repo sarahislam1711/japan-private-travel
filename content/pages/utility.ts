@@ -1,5 +1,6 @@
 /* Utility pages — docs/CONTENT.md §11. */
-import { draft, locked, missing, ph } from "../schema";
+import { attachArabic, draft, locked, missing, ph } from "../schema";
+import { notFoundAr, privacyAr, termsAr } from "./utility.ar";
 
 export const privacy = {
   title: missing("PRIVACY_TITLE"),
@@ -14,3 +15,7 @@ export const terms = {
 export const notFound = {
   title: draft("There is no page at this address."),
 };
+
+attachArabic(privacy, privacyAr);
+attachArabic(terms, termsAr);
+attachArabic(notFound, notFoundAr);

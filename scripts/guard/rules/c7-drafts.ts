@@ -3,7 +3,7 @@ import { routes } from "../../../content/routes";
 import { placeholders } from "../../../content/placeholders";
 import type { Finding } from "../types";
 import { lineOf, type SourceFile } from "../files";
-import { at, flatten, type CopyLocation } from "../walk";
+import { at, flatten, flattenAr, needsArabic, type CopyLocation } from "../walk";
 
 export function c7(copy: CopyLocation[], files: SourceFile[]): Finding[] {
   const findings: Finding[] = [];
@@ -19,6 +19,22 @@ export function c7(copy: CopyLocation[], files: SourceFile[]): Finding[] {
         where: at(loc),
         match: `DRAFT: ${flatten(loc.copy)}`,
         fix: "The team locks or rewrites it in docs/CONTENT.md; then sync.",
+      });
+    if (needsArabic(loc.copy) && !loc.copy.ar)
+      findings.push({
+        rule: "C7",
+        severity: "error",
+        where: `${at(loc)} (ar)`,
+        match: `Arabic missing: ${flatten(loc.copy)}`,
+        fix: "Draft the Arabic in the module's .ar.ts mirror and docs/CONTENT.ar.md.",
+      });
+    if (loc.copy.ar?.status === "draft")
+      findings.push({
+        rule: "C7",
+        severity: "error",
+        where: `${at(loc)} (ar)`,
+        match: `Arabic DRAFT: ${flattenAr(loc.copy)}`,
+        fix: "A native Arabic reviewer approves it (ard → arl) in the .ar.ts mirror and docs/CONTENT.ar.md.",
       });
     if (unfilled.length)
       findings.push({

@@ -1,7 +1,8 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { home } from "@content/pages/home";
-import { routeFor } from "@content/routes";
+import { routeFor, localePath } from "@content/routes";
 import { CopyText } from "./CopyText";
 import { SplitWords } from "./SplitWords";
 
@@ -11,7 +12,8 @@ const d = (n: number) => ({ "--d": n }) as CSSProperties;
  * Home's three working promises. The heading holds its place while the
  * points scroll past it; each point links to the page with the detail.
  */
-export function HowWeWork() {
+export async function HowWeWork() {
+  const locale = await getLocale();
   const { heading, points } = home.howWeWork;
   return (
     <section aria-labelledby="how-title" className="mx-auto mt-32 grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-12 px-(--page-margin) desktop:mt-48">
@@ -32,7 +34,7 @@ export function HowWeWork() {
                 <CopyText copy={point.body} />
               </p>
               <p className="mt-5 font-gothic text-label">
-                <Link href={route.path}>
+                <Link href={localePath(route.key, locale)}>
                   <CopyText copy={route.navLabel!} />
                 </Link>
               </p>

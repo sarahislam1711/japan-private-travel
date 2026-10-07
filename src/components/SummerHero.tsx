@@ -1,11 +1,13 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import { summerJourneys } from "@content/pages/summer-journeys";
-import { routeFor } from "@content/routes";
+import { routeFor, localePath } from "@content/routes";
 import { CopyText } from "./CopyText";
 import { SplitHero } from "./SplitHero";
 
 /** Summer Journeys' first screen: the case for summer beside a pine field set with 七月 八月. */
-export function SummerHero() {
+export async function SummerHero() {
+  const locale = await getLocale();
   const pj = routeFor("privateJapan");
   return (
     <SplitHero id="sj-title" title={summerJourneys.title} verticals={summerJourneys.heroImage}>
@@ -18,7 +20,7 @@ export function SummerHero() {
       </div>
       <p className="mt-8 font-gothic text-label text-ink-soft">
         <CopyText copy={summerJourneys.otherSeasons} />{" "}
-        <Link href={pj.path} className="text-ink">
+        <Link href={localePath(pj.key, locale)} className="text-ink">
           <CopyText copy={pj.navLabel!} />
         </Link>
       </p>

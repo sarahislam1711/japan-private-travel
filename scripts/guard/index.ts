@@ -15,9 +15,9 @@ import { c7 } from "./rules/c7-drafts";
 import { c8 } from "./rules/c8-logical";
 import { c10 } from "./rules/c10-scripts";
 import type { Target } from "./rules/scan";
-import { sync } from "./rules/sync";
+import { sync, syncAr } from "./rules/sync";
 import type { Finding, Mode } from "./types";
-import { allCopy, at, flatten } from "./walk";
+import { allCopy, at, flatten, flattenAr } from "./walk";
 
 const mode: Mode = process.argv.includes("--prod") ? "prod" : "dev";
 
@@ -28,6 +28,10 @@ const codeFiles = files.filter((f) => !f.path.startsWith("content/"));
 // Wording rules read content as rendered text, and /src with comments removed.
 const wording: Target[] = [
   ...copy.map((loc) => ({ where: at(loc), text: flatten(loc.copy) })),
+  ...copy.flatMap((loc) => {
+    const text = flattenAr(loc.copy);
+    return text ? [{ where: `${at(loc)} (ar)`, text }] : [];
+  }),
   ...codeFiles.map((f) => ({ where: f.path, text: f.code })),
 ];
 
@@ -41,6 +45,7 @@ const findings: Finding[] = [
   ...c8(files),
   ...c10(files),
   ...sync(copy),
+  ...syncAr(copy),
 ];
 
 async function main() {

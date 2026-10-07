@@ -1,5 +1,6 @@
 /* Family Services (/family-services) — docs/CONTENT.md §6. All copy LOCKED. */
-import { draft, ja, locked } from "../schema";
+import { attachArabic, draft, ja, locked } from "../schema";
+import { familyServicesAr } from "./family-services.ar";
 
 export const familyServices = {
   title: locked("For Muslim families"),
@@ -50,3 +51,5 @@ export const familyServices = {
     },
   ],
 };
+
+attachArabic(familyServices, familyServicesAr);

@@ -1,6 +1,7 @@
 /* Header navigation — docs/CONTENT.md §2. Labels come from routes.ts navLabel unless a group sets its own. */
 import type { RouteKey } from "./routes";
-import { draft, locked, type Copy } from "./schema";
+import { mainNavAr } from "./navigation.ar";
+import { attachArabic, draft, locked, type Copy } from "./schema";
 
 export type NavEntry =
   | { kind: "group"; label: Copy; items: { route: RouteKey; description: Copy }[] }
@@ -25,3 +26,5 @@ export const mainNav: NavEntry[] = [
   { kind: "utility", route: "forTravelAdvisors", label: locked("Advisors") },
   { kind: "cta", route: "contact" },
 ];
+
+attachArabic(mainNav, mainNavAr);

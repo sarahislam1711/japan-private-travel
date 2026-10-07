@@ -41,6 +41,7 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `footer.privacy` | Privacy | DRAFT |
 | `footer.terms` | Terms of business | DRAFT |
 | `footer.legal` | Legal | DRAFT (footer column heading) |
+| `languageSwitch.label` | العربية on English pages · English on Arabic pages (each language named in its own script) | DRAFT |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
 
 ## 2. Navigation (`content/navigation.ts`)

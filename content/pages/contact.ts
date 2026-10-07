@@ -1,5 +1,6 @@
 /* Contact (/contact) — docs/CONTENT.md §10. */
-import { draft, locked, ph } from "../schema";
+import { attachArabic, draft, locked, ph } from "../schema";
+import { contactAr } from "./contact.ar";
 
 export const contact = {
   title: locked("Tell us the household, the dates you are weighing, and what the trip needs to do.", {
@@ -37,3 +38,5 @@ export const contact = {
     privacyLine: draft("We use these details only to reply to you and plan your trip. See our privacy notice."),
   },
 };
+
+attachArabic(contact, contactAr);

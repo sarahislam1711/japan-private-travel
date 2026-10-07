@@ -1,8 +1,9 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { home } from "@content/pages/home";
 import { summerJourneys } from "@content/pages/summer-journeys";
-import { routeFor } from "@content/routes";
+import { routeFor, localePath } from "@content/routes";
 import { site } from "@content/site";
 import { CopyText } from "./CopyText";
 import { SplitWords } from "./SplitWords";
@@ -15,7 +16,8 @@ const d = (n: number) => ({ "--d": n }) as CSSProperties;
  * pine field carrying the summer place names, with the registration set into
  * its foot as a seal (main column says, margin proves).
  */
-export function HomeHero() {
+export async function HomeHero() {
+  const locale = await getLocale();
   const contact = routeFor("contact");
   return (
     <section aria-labelledby="home-title" className="mx-auto flex max-w-(--content-max) flex-col px-(--page-margin) desktop:min-h-[calc(100svh-5.5rem)]">
@@ -29,7 +31,7 @@ export function HomeHero() {
           </p>
           <div data-reveal style={d(4)} className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
             <WhatsAppLink />
-            <Link href={contact.path} className="font-gothic text-label">
+            <Link href={localePath(contact.key, locale)} className="font-gothic text-label">
               <CopyText copy={contact.navLabel!} />
             </Link>
           </div>
@@ -43,7 +45,7 @@ export function HomeHero() {
           className="on-pine relative col-span-12 flex min-h-[34rem] flex-col overflow-hidden rounded-[20px] p-8 tablet:min-h-[30rem] desktop:col-span-6 desktop:p-12"
         >
           <div aria-hidden className="relative min-h-0 flex-1">
-            <span className="absolute inset-0 flex flex-row-reverse gap-[0.22em] font-mincho leading-[1.04] text-pine-soft text-[clamp(2.5rem,5.2vw,6rem)]">
+            <span dir="ltr" className="absolute inset-0 flex flex-row-reverse gap-[0.22em] font-mincho leading-[1.04] text-pine-soft text-[clamp(2.5rem,5.2vw,6rem)]">
               {summerJourneys.regions.map((r, i) => (
                 <span key={i} lang="ja" className="h-full [writing-mode:vertical-rl]">
                   <CopyText copy={r.verticalName} />
@@ -59,7 +61,7 @@ export function HomeHero() {
               <CopyText copy={home.margin.statement} />
             </p>
             <p className="mt-3 font-gothic text-label">
-              <a href="/about#CL-06">
+              <a href={`${localePath("about", locale)}#CL-06`}>
                 <CopyText copy={home.margin.check} />
               </a>
             </p>

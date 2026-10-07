@@ -39,6 +39,7 @@ export function SplitHero({ id, title, children, verticals, slot }: Props) {
         {/* Short names set large; three or more columns step down so every column fits the panel. */}
         <span
           aria-hidden
+          dir="ltr"
           className={`absolute inset-8 flex flex-row-reverse gap-[0.25em] font-mincho leading-[1.04] text-pine-soft desktop:inset-12 ${
             verticals.length >= 3 ? "text-[clamp(3.5rem,7vw,7rem)]" : "text-[clamp(4rem,9vw,10rem)]"
           }`}

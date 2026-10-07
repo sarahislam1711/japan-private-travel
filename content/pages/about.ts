@@ -1,5 +1,6 @@
 /* About (/about) — docs/CONTENT.md §8. */
-import { draft, ja, locked, missing, ph } from "../schema";
+import { attachArabic, draft, ja, locked, missing, ph } from "../schema";
+import { aboutAr } from "./about.ar";
 
 export const about = {
   title: missing("ABOUT_TITLE"),
@@ -55,3 +56,5 @@ export const about = {
     heading: draft("Sources"),
   },
 };
+
+attachArabic(about, aboutAr);

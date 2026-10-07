@@ -14,6 +14,13 @@ Agreed 6 Oct 2026:
 - [x] Decide the footer: built as the framed plate on a tinted section (Sarah to confirm; the dark band can come back).
 - [x] Replace `docs/DESIGN.md` with the new system; update the font line in `CLAUDE.md`.
 
+## Bilingual foundation (7 Oct 2026)
+- [x] English at the root, Arabic under /ar/ with Arabic slugs; proxy, hreflang (en, ar, x-default), canonicals, bilingual sitemap, RTL, Arabic fonts, language switch to the same page, localised 404s.
+- [x] Arabic drafted for every string (`.ar.ts` mirrors) and the review sheet `docs/CONTENT.ar.md`.
+- [ ] Native Arabic review of all 159 strings (Family Services first), then approve (`ard` → `arl`).
+- [ ] Arabic page titles and meta descriptions (Phase 5, with the English ones), researched for Arabic search terms.
+- [ ] Arabic form of the brand name and of the registering authority's name (D1, legal).
+
 ## Phase 1 — Positioning and structure
 - [ ] `docs/POSITIONING.md`: one positioning line, three or four proof points, the message for advisors and for families, voice rules.
 - [ ] Sitemap and flow: each page's job, reader, questions it answers, and its one next step. Settle the ninth page.

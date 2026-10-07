@@ -1,8 +1,9 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { home } from "@content/pages/home";
 import type { PhotoSlotId } from "@content/photography.slots";
-import { routeFor } from "@content/routes";
+import { routeFor, localePath } from "@content/routes";
 import { CopyText } from "./CopyText";
 import { PanelPhoto } from "./PanelPhoto";
 import { SplitWords } from "./SplitWords";
@@ -14,7 +15,8 @@ const d = (n: number) => ({ "--d": n }) as CSSProperties;
  * Japan on pine. Each panel is the link, with a faded licensed photograph
  * behind its text once one is logged in the manifest.
  */
-export function EntryPoints() {
+export async function EntryPoints() {
+  const locale = await getLocale();
   const sj = routeFor("summerJourneys");
   const pj = routeFor("privateJapan");
   const items: {
@@ -34,7 +36,7 @@ export function EntryPoints() {
       {items.map(({ route, heading, text, slot, tone, surface, span }, i) => (
         <Link
           key={route.key}
-          href={route.path}
+          href={localePath(route.key, locale)}
           data-reveal
           style={d(i)}
           className={`group relative isolate col-span-12 flex min-h-[26rem] flex-col justify-between overflow-hidden rounded-[20px] p-8 no-underline transition-colors duration-300 tablet:p-12 ${span} ${surface}`}

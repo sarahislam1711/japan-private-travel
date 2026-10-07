@@ -1,5 +1,6 @@
 /* Private Japan (/private-japan) — docs/CONTENT.md §5. */
-import { draft, locked, ph } from "../schema";
+import { attachArabic, draft, locked, ph } from "../schema";
+import { privateJapanAr } from "./private-japan.ar";
 
 export const privateJapan = {
   // Page sections drafted 6 Oct 2026 (CONTENT.md §5).
@@ -41,3 +42,5 @@ export const privateJapan = {
     },
   ],
 };
+
+attachArabic(privateJapan, privateJapanAr);

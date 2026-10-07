@@ -1,11 +1,13 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import { ui } from "@content/interface";
 import { mainNav } from "@content/navigation";
 import { about } from "@content/pages/about";
-import { routeFor, type RouteKey } from "@content/routes";
+import { routeFor, type RouteKey, localePath } from "@content/routes";
 import { site } from "@content/site";
 import { CopyText } from "./CopyText";
 import { FieldTable } from "./FieldTable";
+import { LanguageSwitch } from "./LanguageSwitch";
 import { Wordmark } from "./Wordmark";
 
 const label = (text: string) => {
@@ -30,7 +32,8 @@ function Column({ heading, children }: { heading: React.ReactNode; children: Rea
  * Every page ends on pine: the site map in columns, then the legal block
  * (COMPLIANCE C1, C2) with the brand's trading-name line.
  */
-export function SiteFooter() {
+export async function SiteFooter() {
+  const locale = await getLocale();
   return (
     <footer className="on-pine">
       <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-14 px-(--page-margin) pt-16 pb-16">
@@ -45,7 +48,7 @@ export function SiteFooter() {
             <Column heading={<CopyText copy={trips.label} />}>
               {trips.items.map(({ route }) => (
                 <li key={route}>
-                  <Link href={routeFor(route).path}>
+                  <Link href={localePath(route, locale)}>
                     <CopyText copy={routeFor(route).navLabel!} />
                   </Link>
                 </li>
@@ -55,7 +58,7 @@ export function SiteFooter() {
           <Column heading={<CopyText copy={site.brand.name} />}>
             {companyRoutes.map((key) => (
               <li key={key}>
-                <Link href={routeFor(key).path}>
+                <Link href={localePath(key, locale)}>
                   <CopyText copy={routeFor(key).navLabel!} />
                 </Link>
               </li>
@@ -63,14 +66,17 @@ export function SiteFooter() {
           </Column>
           <Column heading={<CopyText copy={ui.footer.legal} />}>
             <li>
-              <Link href="/privacy">
+              <Link href={localePath("privacy", locale)}>
                 <CopyText copy={ui.footer.privacy} />
               </Link>
             </li>
             <li>
-              <Link href="/terms">
+              <Link href={localePath("terms", locale)}>
                 <CopyText copy={ui.footer.terms} />
               </Link>
+            </li>
+            <li>
+              <LanguageSwitch />
             </li>
           </Column>
         </nav>

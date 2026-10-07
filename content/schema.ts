@@ -21,6 +21,13 @@ export const SegmentSchema = z.union([
 ]);
 export type Segment = z.infer<typeof SegmentSchema>;
 
+/** The Arabic version of a string: its own status, so unreviewed Arabic never reaches production. */
+export const ArTextSchema = z.object({
+  status: z.enum(["locked", "draft"]),
+  body: z.array(SegmentSchema).min(1),
+});
+export type ArText = z.infer<typeof ArTextSchema>;
+
 export const CopySchema = z.object({
   kind: z.literal("copy"),
   status: z.enum(["locked", "draft"]),
@@ -31,6 +38,8 @@ export const CopySchema = z.object({
   flags: z.array(z.enum(decisionIds)).optional(),
   /** Claims in claims.ts this string relies on. */
   claims: z.array(z.enum(claimIds)).optional(),
+  /** Arabic version, attached from the module's .ar.ts mirror. */
+  ar: ArTextSchema.optional(),
 });
 export type Copy = z.infer<typeof CopySchema>;
 
@@ -63,4 +72,46 @@ export function isCopy(value: unknown): value is Copy {
     value !== null &&
     (value as { kind?: unknown }).kind === "copy"
   );
+}
+
+/* ---------- Arabic ---------- */
+
+const toBody = (body: Body): Segment[] => (typeof body === "string" ? [body] : body);
+
+/** Arabic drafted, awaiting native review. Blocks production. */
+export const ard = (body: Body): ArText => ({ status: "draft", body: toBody(body) });
+/** Arabic approved by a native reviewer. */
+export const arl = (body: Body): ArText => ({ status: "locked", body: toBody(body) });
+
+/**
+ * The shape of a module's Arabic mirror: every Copy becomes an ArText at the
+ * same path; arrays and objects mirror the English structure. Non-copy fields
+ * (route keys, numbers) are not translated.
+ */
+export type Translation<T> = T extends Copy
+  ? ArText
+  : T extends readonly (infer U)[]
+    ? Translation<U>[]
+    : T extends object
+      ? { [K in keyof T]?: Translation<T[K]> }
+      : never;
+
+/** Attaches each Arabic string to its English Copy node, walking both structures in step. */
+export function attachArabic<T>(en: T, ar: Translation<T>): T {
+  const walk = (e: unknown, a: unknown) => {
+    if (a === undefined || a === null) return;
+    if (isCopy(e)) {
+      (e as Copy).ar = ArTextSchema.parse(a);
+      return;
+    }
+    if (Array.isArray(e) && Array.isArray(a)) {
+      e.forEach((item, i) => walk(item, a[i]));
+      return;
+    }
+    if (typeof e === "object" && e !== null && typeof a === "object") {
+      for (const key of Object.keys(a as object)) walk((e as Record<string, unknown>)[key], (a as Record<string, unknown>)[key]);
+    }
+  };
+  walk(en, ar);
+  return en;
 }

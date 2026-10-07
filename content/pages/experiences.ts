@@ -1,6 +1,7 @@
 /* Experiences (/experiences) — docs/CONTENT.md §7. */
 import { z } from "zod";
-import { CopySchema, draft, missing } from "../schema";
+import { attachArabic, CopySchema, draft, missing } from "../schema";
+import { experiencesAr } from "./experiences.ar";
 
 /** Fixed entry format, strategy §6 (LOCKED). Supplied by the operator, 8 to 12 entries. */
 export const ExperienceSchema = z.object({
@@ -22,3 +23,5 @@ export const experiences = {
   ),
   entries: z.array(ExperienceSchema).parse([]),
 };
+
+attachArabic(experiences, experiencesAr);

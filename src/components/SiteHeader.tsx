@@ -1,9 +1,11 @@
+import { getLocale } from "@/lib/locale";
 import Link from "next/link";
 import { ui } from "@content/interface";
 import { mainNav } from "@content/navigation";
-import { routeFor, type RouteKey } from "@content/routes";
+import { routeFor, type RouteKey, localePath } from "@content/routes";
 import type { ReactNode } from "react";
 import { CopyText } from "./CopyText";
+import { LanguageSwitch } from "./LanguageSwitch";
 import { NavGroup } from "./NavGroup";
 import { NavLink } from "./NavLink";
 import { Wordmark } from "./Wordmark";
@@ -17,40 +19,53 @@ const utilityClass = `${linkClass} text-small text-ink-soft hover:text-ink`;
 const label = (key: RouteKey): ReactNode => <CopyText copy={routeFor(key).navLabel!} />;
 
 /** Skip link, wordmark at inline-start, navigation at inline-end (docs/CONTENT.md §2). Not sticky. */
-export function SiteHeader() {
+export async function SiteHeader() {
+  const locale = await getLocale();
   return (
     <>
       <a href="#main" className="skip-link">
         <CopyText copy={ui.skipLink} />
       </a>
       <header className="mx-auto flex max-w-(--content-max) items-center justify-between gap-6 px-(--page-margin) pt-6 pb-5">
-        <Link href="/" className="no-underline">
+        <Link href={localePath("home", locale)} className="no-underline">
           <Wordmark />
         </Link>
 
         <nav aria-label="Main" className="hidden font-gothic text-label desktop:block">
           <ul className="flex items-center gap-8">
-            {mainNav.map((entry, i) => (
+            {mainNav.filter((e) => e.kind !== "cta").map((entry, i) => (
               <li key={i} className={entry.kind === "utility" ? "ps-4" : undefined}>
                 {entry.kind === "group" ? (
                   <NavGroup
                     label={<CopyText copy={entry.label} />}
                     items={entry.items.map((item) => ({
-                      href: routeFor(item.route).path,
+                      href: localePath(item.route, locale),
                       label: label(item.route),
                       description: <CopyText copy={item.description} />,
                     }))}
                   />
                 ) : (
                   <NavLink
-                    href={routeFor(entry.route).path}
-                    className={entry.kind === "cta" ? ctaClass : entry.kind === "utility" ? utilityClass : linkClass}
+                    href={localePath(entry.route, locale)}
+                    className={entry.kind === "utility" ? utilityClass : linkClass}
                   >
                     {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
                   </NavLink>
                 )}
               </li>
             ))}
+            <li>
+              <LanguageSwitch className={utilityClass} />
+            </li>
+            {mainNav
+              .filter((e) => e.kind === "cta")
+              .map((entry) => (
+                <li key={entry.route}>
+                  <NavLink href={localePath(entry.route, locale)} className={ctaClass}>
+                    {label(entry.route)}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </nav>
 
@@ -70,7 +85,7 @@ export function SiteHeader() {
                       <ul className="mt-2 flex flex-col gap-2 ps-4">
                         {entry.items.map(({ route: key }) => (
                           <li key={key}>
-                            <NavLink href={routeFor(key).path} className={linkClass}>
+                            <NavLink href={localePath(key, locale)} className={linkClass}>
                               {label(key)}
                             </NavLink>
                           </li>
@@ -79,7 +94,7 @@ export function SiteHeader() {
                     </>
                   ) : (
                     <NavLink
-                      href={routeFor(entry.route).path}
+                      href={localePath(entry.route, locale)}
                       className={entry.kind === "cta" ? `${ctaClass} mt-1` : entry.kind === "utility" ? utilityClass : linkClass}
                     >
                       {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
@@ -87,6 +102,9 @@ export function SiteHeader() {
                   )}
                 </li>
               ))}
+              <li>
+                <LanguageSwitch className={utilityClass} />
+              </li>
             </ul>
           </nav>
         </details>

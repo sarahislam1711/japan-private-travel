@@ -321,6 +321,16 @@ The season band is twelve month cells that never wrap, July and August filled Pi
 - **Don't** add a second hue, a dark mode, or prices.
 - **Don't** hide content in a way that depends on JavaScript or ignores reduced motion.
 
+## Arabic and right to left (7 Oct 2026)
+
+The site is bilingual. Arabic pages set `<html lang="ar" dir="rtl">`; because every layout uses logical properties, the whole page mirrors: the hero text sits on the right and its pine panel on the left, navigation runs right to left, the Trips menu opens from the inline start.
+
+- **Faces:** Markazi Text for Arabic reading and headlines (the serif voice), Noto Kufi Arabic for labels, navigation and notes (the gothic voice). The per-language face variables (`--face-serif`, `--face-gothic`) switch under `:lang(ar)`; Latin words inside Arabic fall back to Source Serif and BIZ UDPGothic.
+- **Arabic typography:** no letter-spacing on any step (tracking breaks the joins); looser leading (display 1.25, body and copy 1.85); reading sizes lifted a step (body 1.3125rem) because Markazi sets small. Western digits, as the English uses.
+- **Mixed scripts:** Japanese segments always carry `dir="ltr"`, so the registration line reads in order inside Arabic; Latin placeholder keys are isolated left to right. The vertical Japanese place names keep their right-to-left column order on both sites (`dir="ltr"` on the column row).
+- **Motion:** word reveals split Arabic on spaces, so each word keeps its letter joins.
+- **Language switch:** in the header between Advisors and Contact, in the mobile menu and in the footer; it names the other language in its own script (العربية on English pages, English on Arabic pages) and goes to the same page.
+
 ## Unresolved in the build
 
 - `src/styles/tokens.css` still carries retired tokens (`--rule-frame`, `--rule-row`, `--duration-rule`, `--duration-ink`, `--stagger`, a "Registration Plate" header comment, and "one moment" motion comment), and `globals.css` still defines the unused `draw-rule` and `ink-in` classes and keyframes. `FieldTable` still has an `animate` prop that applies `ink-in`. None of these are part of the system.

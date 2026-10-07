@@ -1,5 +1,6 @@
 /* Summer Journeys (/summer-journeys) — docs/CONTENT.md §4. */
-import { draft, locked, ph, type Copy } from "../schema";
+import { attachArabic, draft, locked, ph, type Copy } from "../schema";
+import { summerJourneysAr } from "./summer-journeys.ar";
 
 type Region = {
   heading: Copy;
@@ -77,3 +78,5 @@ export const summerJourneys = {
   },
   familyLink: draft("Planning for Muslim families:"),
 };
+
+attachArabic(summerJourneys, summerJourneysAr);

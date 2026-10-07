@@ -8,7 +8,7 @@ import { join } from "node:path";
 import { placeholders } from "../../../content/placeholders";
 import type { Finding } from "../types";
 import { root } from "../files";
-import { at, type CopyLocation } from "../walk";
+import { at, flattenAr, needsArabic, type CopyLocation } from "../walk";
 
 const doc = readFileSync(join(root, "docs/CONTENT.md"), "utf8")
   .replace(/^>\s?/gm, "")
@@ -16,6 +16,31 @@ const doc = readFileSync(join(root, "docs/CONTENT.md"), "utf8")
   .replace(/\s+/g, " ");
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, " ");
+
+const arSheet = (() => {
+  try {
+    return readFileSync(join(root, "docs/CONTENT.ar.md"), "utf8").replace(/\\\|/g, "|").replace(/\s+/g, " ");
+  } catch {
+    return "";
+  }
+})();
+
+/** Arabic must appear in docs/CONTENT.ar.md exactly as in /content (regenerate with pnpm content:ar). */
+export function syncAr(copy: CopyLocation[]): Finding[] {
+  return copy.flatMap((loc) => {
+    const ar = flattenAr(loc.copy);
+    if (!ar || !needsArabic(loc.copy) || arSheet.includes(ar.replace(/\s+/g, " "))) return [];
+    return [
+      {
+        rule: "SYNC",
+        severity: "error" as const,
+        where: `${at(loc)} (ar)`,
+        match: ar,
+        fix: "Not in docs/CONTENT.ar.md. Run pnpm content:ar to regenerate the review sheet.",
+      },
+    ];
+  });
+}
 
 export function sync(copy: CopyLocation[]): Finding[] {
   return copy.flatMap((loc) => {

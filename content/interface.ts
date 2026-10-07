@@ -1,5 +1,6 @@
 /* Interface strings — docs/CONTENT.md §1a. */
-import { draft, locked } from "./schema";
+import { uiAr } from "./interface.ar";
+import { attachArabic, draft, locked } from "./schema";
 
 export const ui = {
   skipLink: draft("Skip to content"),
@@ -13,3 +14,5 @@ export const ui = {
   },
   seasonBandPending: draft("Temperatures to be added from the cited source."),
 };
+
+attachArabic(ui, uiAr);

@@ -1,6 +1,7 @@
 /* Home (/) — docs/CONTENT.md §3. All copy written and approved by Sarah, 6 Oct 2026. */
 import type { RouteKey } from "../routes";
-import { locked, ph, type Copy } from "../schema";
+import { attachArabic, locked, ph, type Copy } from "../schema";
+import { homeAr } from "./home.ar";
 
 export const home = {
   hero: {
@@ -63,3 +64,5 @@ export const home = {
     phone: locked([ph("PHONE")]),
   },
 };
+
+attachArabic(home, homeAr);
