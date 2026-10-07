@@ -16,11 +16,11 @@ export function ContactBand() {
   return (
     <section aria-labelledby="contact-title" className="mx-auto mt-40 mb-24 max-w-(--content-max) px-(--page-margin) desktop:mt-56 desktop:mb-32">
       {/* An inset pine panel on paper: the page's close, clearly apart from the footer. */}
-      <div className="on-pine grid grid-cols-12 gap-x-6 gap-y-10 rounded-[24px] px-8 py-14 tablet:px-14 tablet:py-20 desktop:px-20">
-        <h2 id="contact-title" data-reveal="words" className="col-span-12 max-w-[16ch] font-serif text-display [font-variation-settings:'opsz'_60] desktop:col-span-7">
+      <div className="on-pine grid grid-cols-12 items-center gap-x-10 gap-y-10 rounded-[24px] px-8 py-14 tablet:px-14 tablet:py-16 desktop:px-16">
+        <h2 id="contact-title" data-reveal="words" className="col-span-12 max-w-[20ch] font-serif text-display [font-variation-settings:'opsz'_60] desktop:col-span-8">
           <SplitWords copy={c.heading} />
         </h2>
-        <div data-reveal style={d(2)} className="col-span-12 flex flex-col items-start gap-7 desktop:col-span-4 desktop:col-start-9 desktop:self-end">
+        <div data-reveal style={d(2)} className="col-span-12 flex flex-col items-start gap-6 desktop:col-span-4">
           <p className="font-gothic text-copy text-ink-soft">
             <CopyText copy={c.reply} />
           </p>

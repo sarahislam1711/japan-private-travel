@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { isBot } from "./RevealObserver";
 
-export type ShowcaseItem = { lead: ReactNode; body: ReactNode; link: ReactNode };
+export type ShowcaseItem = { lead: ReactNode; body: ReactNode; proof?: ReactNode; link?: ReactNode };
 
 const SEGMENT_VH = 70; // scroll distance per item while pinned
 
@@ -18,6 +18,8 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
   const [pinned, setPinned] = useState(false);
   const [active, setActive] = useState(0);
   const n = items.length;
+  // Four or more items step the type down a size so the pinned screen still fits short laptops.
+  const dense = n >= 4;
 
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 64rem)");
@@ -74,7 +76,8 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
             <li key={i} data-reveal>
               <h3 className="font-serif text-h2 [font-variation-settings:'opsz'_36]">{item.lead}</h3>
               <p className="mt-3 max-w-[32rem] font-gothic text-copy text-ink-soft">{item.body}</p>
-              <p className="mt-4 font-gothic text-label">{item.link}</p>
+              {item.proof ? <div className="mt-4">{item.proof}</div> : null}
+              {item.link ? <p className="mt-4 font-gothic text-label">{item.link}</p> : null}
             </li>
           ))}
         </ul>
@@ -88,10 +91,10 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
         <div className="sticky top-0 mx-auto grid h-svh max-w-(--content-max) grid-cols-12 items-center gap-x-6 px-(--page-margin)">
           <div className="col-span-5">
             {/* No scroll reveal here: this layout replaces the first render after the reveal observer has run. */}
-            <h2 id={id} className="font-serif text-display [font-variation-settings:'opsz'_60]">
+            <h2 id={id} className={`font-serif [font-variation-settings:'opsz'_60] ${dense ? "text-h1" : "text-display"}`}>
               {heading}
             </h2>
-            <div role="tablist" aria-orientation="vertical" className="mt-10 flex flex-col gap-5">
+            <div role="tablist" aria-orientation="vertical" className={`flex flex-col ${dense ? "mt-8 gap-3" : "mt-10 gap-5"}`}>
               {items.map((item, i) => (
                 <button
                   key={i}
@@ -101,7 +104,7 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
                   aria-selected={active === i}
                   aria-controls={`${id}-panel-${i}`}
                   onClick={() => jumpTo(i)}
-                  className={`cursor-pointer text-start font-serif text-h2 transition-[color,opacity] duration-500 [font-variation-settings:'opsz'_36] ${
+                  className={`cursor-pointer text-start font-serif transition-[color,opacity] duration-500 [font-variation-settings:'opsz'_36] ${dense ? "text-h3" : "text-h2"} ${
                     active === i ? "text-ink opacity-100" : "text-ink-soft opacity-35 hover:opacity-70"
                   }`}
                 >
@@ -126,7 +129,8 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
                   }`}
                 >
                   <p className="max-w-[28rem] font-serif text-h2 [font-variation-settings:'opsz'_36]">{item.body}</p>
-                  <p className="mt-auto font-gothic text-label">{item.link}</p>
+                  {item.proof ? <div className="mt-6 [&_aside]:text-ink-soft">{item.proof}</div> : null}
+                  {item.link ? <p className="mt-auto font-gothic text-label">{item.link}</p> : null}
                 </div>
               ))}
             </div>

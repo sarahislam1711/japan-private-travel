@@ -329,6 +329,9 @@ On desktop with motion allowed, Home's How we work pins for one screen while the
 - **Footer:** a quiet Mist band, Ink text. Top row: wordmark and trading-name line beside one row of page links. Below a faint rule (ink at 15%): the legal facts required on every page (COMPLIANCE C1, C2) as inline small print, "Label: value" separated by dots that stay with the fact before them, with Privacy and Terms of business beside it. About 315px tall on desktop.
 - **Language menu:** a globe button (44px, a functional icon, like the Trips chevron) opens a two-item list: "English" with the United States flag and "Arabic" with the Saudi flag, named in English on both sites, by Sarah's choice. Flags are inline SVG from flag-icons (MIT; src/assets/flags/SOURCE.md). Each item goes to the current page in that language; the current one is bold Pine. On mobile the globe sits beside Menu.
 
+### Every section fits the screen (7 Oct 2026, Sarah)
+On desktop and tablet each section, or each pinned screen, fits one viewport from 1280×720 up to 1920×1080; on phones every panel fits the screen and text runs naturally above or below it. Short laptop screens (≤ 820px tall, ≥ 1024px wide) step the display, h1 and h2 sizes down. Private Japan's principles use the same pinned showcase as Home's How we work; with four or more items the showcase sets its heading and promises one size smaller. The page close keeps a wide three-line headline with the contact details centred beside it.
+
 ## Arabic and right to left (7 Oct 2026)
 
 The site is bilingual. Arabic pages set `<html lang="ar" dir="rtl">`; because every layout uses logical properties, the whole page mirrors: the hero text sits on the right and its pine panel on the left, navigation runs right to left, the Trips menu opens from the inline start.

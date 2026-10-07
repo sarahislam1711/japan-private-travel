@@ -33,6 +33,15 @@
     --text-body: 1.3125rem;
     --text-lede: clamp(1.4375rem, 0.4vw + 1.3rem, 1.625rem);
   }
+  /* Short laptop screens (≤ 820px tall): headlines step down so every section fits one screen. */
+  @media (min-width: 64rem) and (max-height: 820px) {
+    :root {
+      --text-display: clamp(2.75rem, 3.2vw + 1rem, 4.25rem);
+      --text-h1: clamp(2.25rem, 2vw + 1.1rem, 3.25rem);
+      --text-h2: clamp(1.625rem, 1vw + 1.1rem, 2.25rem);
+    }
+  }
+
   :root:lang(ar) body {
     font-variant-numeric: lining-nums;
   }

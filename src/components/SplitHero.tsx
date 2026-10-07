@@ -33,7 +33,7 @@ export function SplitHero({ id, title, children, verticals, slot }: Props) {
       <div
         data-reveal
         style={d(1)}
-        className="on-pine group relative isolate col-span-12 h-72 overflow-hidden rounded-[20px] tablet:h-[24rem] desktop:col-span-5 desktop:h-auto desktop:min-h-[30rem]"
+        className="on-pine group relative isolate col-span-12 h-72 overflow-hidden rounded-[20px] tablet:h-[24rem] desktop:col-span-5 desktop:h-auto desktop:min-h-[24rem]"
       >
         {slot ? <PanelPhoto slot={slot} tone="pine" note="bottom" /> : null}
         {/* Short names set large; three or more columns step down so every column fits the panel. */}

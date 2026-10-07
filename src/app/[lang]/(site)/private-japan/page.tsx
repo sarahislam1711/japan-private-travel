@@ -5,7 +5,8 @@ import { CopyText } from "@/components/CopyText";
 import { MarginNote } from "@/components/MarginNote";
 import { OnwardPanels } from "@/components/OnwardPanels";
 import { PageClose } from "@/components/PageClose";
-import { PrinciplesSection } from "@/components/PrinciplesSection";
+import { Showcase } from "@/components/Showcase";
+import { SplitWords } from "@/components/SplitWords";
 import { SplitHero } from "@/components/SplitHero";
 import { pageMetadata } from "@/lib/metadata";
 import { StructuredData } from "@/components/StructuredData";
@@ -14,7 +15,7 @@ export const generateMetadata = () => pageMetadata("privateJapan");
 
 /**
  * Private Japan (CONTENT.md §5): the year-round offer, four principles for
- * the household (→ proof on transport), onward to Summer Journeys and Family
+ * the household as a pinned showcase (→ proof on transport), onward to Summer Journeys and Family
  * Services, and the close (→ WhatsApp, Contact).
  */
 export default function PrivateJapanPage() {
@@ -26,12 +27,12 @@ export default function PrivateJapanPage() {
           <CopyText copy={privateJapan.lede} />
         </p>
       </SplitHero>
-      <PrinciplesSection
+      <Showcase
         id="pj-principles"
-        heading={privateJapan.sectionsHeading}
+        heading={<SplitWords copy={privateJapan.sectionsHeading} />}
         items={privateJapan.sections.map((s) => ({
-          lead: s.lead,
-          body: s.body,
+          lead: <CopyText copy={s.lead} />,
+          body: <CopyText copy={s.body} />,
           proof: "margin" in s && s.margin ? <MarginNote>{<CopyText copy={s.margin} />}</MarginNote> : undefined,
         }))}
       />
