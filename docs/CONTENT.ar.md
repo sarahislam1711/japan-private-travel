@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**226** draft,
-**0** missing — of 228 strings.
+**238** draft,
+**0** missing — of 240 strings.
 
 ## content/site.ts
 
@@ -116,6 +116,18 @@ Status: **2** approved,
 | `home.contact.reply` | We will reply in your language. | <span dir="rtl" lang="ar">سنردّ عليكم بلغتكم.</span> | draft |
 | `home.contact.emailLabel` | Email | <span dir="rtl" lang="ar">البريد الإلكتروني</span> | draft |
 | `home.contact.phoneLabel` | Telephone | <span dir="rtl" lang="ar">الهاتف</span> | draft |
+| `home.faq.heading` | Frequently asked questions | <span dir="rtl" lang="ar">الأسئلة الشائعة</span> | draft |
+| `home.faq.items[0].question` | Is HalaJapan a registered travel agency in Japan? | <span dir="rtl" lang="ar">هل HalaJapan وكالة سفر مسجّلة في اليابان؟</span> | draft |
+| `home.faq.items[0].answer` | Yes. We are registered as [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]], with offices in Tokyo and Osaka. You can verify our registration with [[REG_AUTHORITY_EN]]. | <span dir="rtl" lang="ar">نعم. نحن وكالة سفر مسجّلة لدى [[REG_AUTHORITY_EN]] برقم [[REG_NUMBER]]، ولنا مكتبان في طوكيو وأوساكا. يمكنكم التحقق من تسجيلنا لدى [[REG_AUTHORITY_EN]].</span> | draft |
+| `home.faq.items[1].question` | What kind of trips does HalaJapan plan? | <span dir="rtl" lang="ar">ما نوع الرحلات التي تخطّطها HalaJapan؟</span> | draft |
+| `home.faq.items[1].answer` | Private trips for families and small groups who travel together. Each one is planned from scratch after an enquiry. We do not sell fixed packages. | <span dir="rtl" lang="ar">رحلات خاصة للعائلات والمجموعات الصغيرة التي تسافر معًا. نخطّط كل رحلة من البداية بعد استفساركم. لا نبيع باقات جاهزة.</span> | draft |
+| `home.faq.items[2].question` | What are the best months to travel to Japan? | <span dir="rtl" lang="ar">ما أفضل الأشهر للسفر إلى اليابان؟</span> | draft |
+| `home.faq.items[2].answer` | July and August, in Hokkaido, the Japan Alps and Okinawa, when these regions are cool or coastal and the cities are not. We also plan private trips year-round. | <span dir="rtl" lang="ar">يوليو وأغسطس، في هوكايدو وجبال الألب اليابانية وأوكيناوا، حين يكون الجو في هذه المناطق معتدلًا أو تكون على الساحل، بخلاف المدن. كما نخطّط رحلات خاصة على مدار العام.</span> | draft |
+| `home.faq.items[3].question` | Does HalaJapan arrange halal dining and prayer? | <span dir="rtl" lang="ar">هل ترتّب HalaJapan الطعام الحلال وأوقات الصلاة؟</span> | draft |
+| `home.faq.items[3].answer` | Yes. We tell you which certification a restaurant holds and whether your authority recognises it, and we arrange prayer time and space within the day. We say plainly what is certified and what is prepared to your requirements. | <span dir="rtl" lang="ar">نعم. نخبركم بشهادة الحلال التي يحملها كل مطعم، وما إذا كانت الجهة التي تتبعونها تعترف بها، ونرتّب وقتًا ومكانًا للصلاة خلال اليوم. ونوضّح بصراحة ما هو معتمد وما يُحضَّر وفق متطلباتكم.</span> | draft |
+| `home.faq.items[4].question` | We are a travel advisor. Can we work with you? | <span dir="rtl" lang="ar">نحن مستشارو سفر. هل يمكننا العمل معكم؟</span> | draft |
+| `home.faq.items[4].answer` | Yes. You keep the client relationship; we plan and run the trip in Japan. | <span dir="rtl" lang="ar">نعم. تبقى علاقتكم بالعميل كما هي، ونحن نخطّط الرحلة وننفّذها في اليابان.</span> | draft |
+| `home.faq.items[4].link.text` | Learn more about how we can partner | <span dir="rtl" lang="ar">تعرّفوا على كيفية الشراكة معنا</span> | draft |
 
 ## content/pages/summer-journeys.ts
 

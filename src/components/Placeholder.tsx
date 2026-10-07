@@ -1,13 +1,13 @@
 import type { PlaceholderKey } from "@content/placeholders";
 
-const isDev = process.env.NODE_ENV !== "production";
+const showMarkers = process.env.NODE_ENV !== "production" && process.env.NEXT_PUBLIC_SHOW_DRAFTS === "1";
 
 /**
- * A value nobody has supplied yet. Dev: dashed outline in the surrounding ink, with the key.
- * Production: the bare [[KEY]] text, which the guard's render crawl fails on (C7).
+ * A value nobody has supplied yet: the bare [[KEY]] text, which the guard's
+ * render crawl fails on (C7). With pnpm dev:drafts: a dashed outline as well.
  */
 export function Placeholder({ name }: { name: PlaceholderKey }) {
-  if (!isDev) return <span data-placeholder={name} dir="ltr">{`[[${name}]]`}</span>;
+  if (!showMarkers) return <span data-placeholder={name} dir="ltr">{`[[${name}]]`}</span>;
   return (
     <span
       data-placeholder={name}

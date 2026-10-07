@@ -276,6 +276,23 @@
     transform: rotate(-45deg);
   }
 
+  /* FAQ: answers open smoothly where the browser can animate to auto height. */
+  @media (prefers-reduced-motion: no-preference) {
+    .faq {
+      interpolate-size: allow-keywords;
+    }
+    .faq::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition:
+        block-size 400ms var(--ease-out-expo),
+        content-visibility 400ms allow-discrete;
+    }
+    .faq[open]::details-content {
+      block-size: auto;
+    }
+  }
+
   /* Trip planner: each step and each new line of the plan settles in. */
   @media (prefers-reduced-motion: no-preference) {
     .planner-step {

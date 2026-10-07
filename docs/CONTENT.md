@@ -124,6 +124,23 @@ Each point links to its page under the page's name (internal linking).
 
 Step symbols, set large under each promise in the How we work stage — DRAFT (drafted 7 Oct 2026; decorative Japanese, each the meaning of its promise): 確 (certain, confirmed) · 名 (name) · 家 (family, household).
 
+**FAQ** (before the contact close; each answer opens on a toggle; marked up as FAQPage. Questions and answers written by Sarah, 7 Oct 2026, LOCKED; heading DRAFT: "Frequently asked questions")
+
+> **Is HalaJapan a registered travel agency in Japan?**
+> Yes. We are registered as [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]], with offices in Tokyo and Osaka. You can verify our registration with [[REG_AUTHORITY_EN]]. {CL-06}
+>
+> **What kind of trips does HalaJapan plan?**
+> Private trips for families and small groups who travel together. Each one is planned from scratch after an enquiry. We do not sell fixed packages.
+>
+> **What are the best months to travel to Japan?**
+> July and August, in Hokkaido, the Japan Alps and Okinawa, when these regions are cool or coastal and the cities are not. We also plan private trips year-round.
+>
+> **Does HalaJapan arrange halal dining and prayer?**
+> Yes. We tell you which certification a restaurant holds and whether your authority recognises it, and we arrange prayer time and space within the day. We say plainly what is certified and what is prepared to your requirements.
+>
+> **We are a travel advisor. Can we work with you?**
+> Yes. You keep the client relationship; we plan and run the trip in Japan. Learn more about how we can partner (→ For travel advisors)
+
 **Contact**
 
 > **Tell us who is travelling and when you would like to go.**

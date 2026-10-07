@@ -1,5 +1,6 @@
 import { ContactBand } from "@/components/ContactBand";
 import { EntryPoints } from "@/components/EntryPoints";
+import { Faq } from "@/components/Faq";
 import { HomeHero } from "@/components/HomeHero";
 import { HowWeWork } from "@/components/HowWeWork";
 import { pageMetadata } from "@/lib/metadata";
@@ -10,7 +11,7 @@ export const generateMetadata = () => pageMetadata("home");
 /**
  * Home (CONTENT.md §3): hero with the registration plate (→ About), two ways
  * in (→ Summer Journeys, Private Japan), how we work (→ Private Japan, About,
- * Family Services), and the contact close on pine (→ WhatsApp, email, phone).
+ * Family Services), the FAQ (→ For travel advisors), and the contact close on pine (→ WhatsApp, email, phone).
  */
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <HomeHero />
       <EntryPoints />
       <HowWeWork />
+      <Faq />
       <ContactBand />
     </main>
   );

@@ -3,6 +3,7 @@ import { placeholders, type PlaceholderKey } from "@content/placeholders";
 import { localePath, type RouteKey } from "@content/routes";
 import { site } from "@content/site";
 import { summerJourneys } from "@content/pages/summer-journeys";
+import { home as homeContent } from "@content/pages/home";
 import { copyText, isPublishable } from "@/lib/copy";
 import { getLocale } from "@/lib/locale";
 import { siteUrl } from "@/lib/site-url";
@@ -135,6 +136,21 @@ export async function StructuredData({ page }: { page: RouteKey }) {
             },
     },
     ...(offer ? [offer] : []),
+    // Home's FAQ: each question with its answer, as on the page.
+    ...(page === "home"
+      ? [
+          {
+            "@type": "FAQPage",
+            "@id": `${pageUrl}#faq`,
+            inLanguage: locale,
+            isPartOf: { "@id": pageId },
+            mainEntity: homeContent.faq.items
+              .map((q) => ({ name: text(q.question), answer: text(q.answer) }))
+              .filter((q) => q.name && q.answer)
+              .map((q) => ({ "@type": "Question", name: q.name, acceptedAnswer: { "@type": "Answer", text: q.answer } })),
+          },
+        ]
+      : []),
   ];
 
   const json = JSON.stringify(clean({ "@context": "https://schema.org", "@graph": graph })).replace(/</g, "\\u003c");

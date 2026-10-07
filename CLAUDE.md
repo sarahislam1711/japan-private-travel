@@ -53,7 +53,8 @@ Before any work in a session, read: `docs/PLAN.md` (where the build stands), `do
 
 | Command | Does |
 |---|---|
-| `pnpm dev` | Local dev. DRAFT and placeholder content is visibly marked. |
+| `pnpm dev` | Local dev. Pages read clean: no DRAFT tags (Sarah, 7 Oct 2026); missing facts show as `[[KEY]]`. |
+| `pnpm dev:drafts` | Local dev with DRAFT tags and placeholder outlines visible, for reviewing copy. |
 | `pnpm build` | Runs `guard:prod` first, then `next build`. |
 | `pnpm guard` | Guard in warning mode (dev). |
 | `pnpm guard:prod` | Guard in failing mode. |

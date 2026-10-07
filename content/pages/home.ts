@@ -66,6 +66,50 @@ export const home = {
     phoneLabel: locked("Telephone"),
     phone: locked([ph("PHONE")]),
   },
+  // FAQ (Sarah, 7 Oct 2026): questions and answers written by Sarah; the heading is a draft.
+  faq: {
+    heading: draft("Frequently asked questions"),
+    items: [
+      {
+        question: locked(["Is ", ph("BRAND"), " a registered travel agency in Japan?"]),
+        answer: locked(
+          [
+            "Yes. We are registered as ",
+            ph("REG_AUTHORITY_EN"),
+            " Registered Travel Agency No. ",
+            ph("REG_NUMBER"),
+            ", with offices in Tokyo and Osaka. You can verify our registration with ",
+            ph("REG_AUTHORITY_EN"),
+            ".",
+          ],
+          { claims: ["CL-06"] },
+        ),
+      },
+      {
+        question: locked(["What kind of trips does ", ph("BRAND"), " plan?"]),
+        answer: locked(
+          "Private trips for families and small groups who travel together. Each one is planned from scratch after an enquiry. We do not sell fixed packages.",
+        ),
+      },
+      {
+        question: locked("What are the best months to travel to Japan?"),
+        answer: locked(
+          "July and August, in Hokkaido, the Japan Alps and Okinawa, when these regions are cool or coastal and the cities are not. We also plan private trips year-round.",
+        ),
+      },
+      {
+        question: locked(["Does ", ph("BRAND"), " arrange halal dining and prayer?"]),
+        answer: locked(
+          "Yes. We tell you which certification a restaurant holds and whether your authority recognises it, and we arrange prayer time and space within the day. We say plainly what is certified and what is prepared to your requirements.",
+        ),
+      },
+      {
+        question: locked("We are a travel advisor. Can we work with you?"),
+        answer: locked("Yes. You keep the client relationship; we plan and run the trip in Japan."),
+        link: { text: locked("Learn more about how we can partner"), route: "forTravelAdvisors" as RouteKey },
+      },
+    ] satisfies { question: Copy; answer: Copy; link?: { text: Copy; route: RouteKey } }[],
+  },
 };
 
 attachArabic(home, homeAr);

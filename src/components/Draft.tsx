@@ -1,13 +1,15 @@
 import type { ReactNode } from "react";
 
-const isDev = process.env.NODE_ENV !== "production";
+/** Visible markers only on request (pnpm dev:drafts); Sarah, 7 Oct 2026: pages read clean by default. */
+const showMarkers = process.env.NODE_ENV !== "production" && process.env.NEXT_PUBLIC_SHOW_DRAFTS === "1";
 
 /**
- * Copy marked DRAFT in docs/CONTENT.md. Dev: dashed outline and a DRAFT tag.
- * Production: unmarked text carrying data-draft, which the guard's render crawl fails on (C7).
+ * Copy marked DRAFT in docs/CONTENT.md. Always unmarked text carrying data-draft,
+ * which the guard's render crawl fails on (C7). With pnpm dev:drafts: a dashed
+ * outline and a DRAFT tag, for reviewing copy.
  */
 export function Draft({ children }: { children: ReactNode }) {
-  if (!isDev) return <span data-draft="">{children}</span>;
+  if (!showMarkers) return <span data-draft="">{children}</span>;
   return (
     <span
       data-draft=""
