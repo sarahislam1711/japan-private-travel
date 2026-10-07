@@ -219,6 +219,19 @@
     transition-duration: 300ms;
   }
 
+  /* Showcase stage: the step's Japanese symbol settles in after its words. */
+  @media (prefers-reduced-motion: no-preference) {
+    .stage-item .symbol-in {
+      transition:
+        opacity 900ms var(--ease-out-expo) 250ms,
+        transform 900ms var(--ease-out-expo) 250ms;
+    }
+    .reveal-ready .stage-item:not([data-active]) .symbol-in {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+  }
+
   /* Menu panel: a quick fade and settle on open (interaction feedback, not decoration). */
   @media (prefers-reduced-motion: no-preference) {
     .nav-panel {

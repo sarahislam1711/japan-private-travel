@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { isBot } from "./RevealObserver";
 
-export type ShowcaseItem = { lead: ReactNode; body: ReactNode; proof?: ReactNode; link?: ReactNode };
+export type ShowcaseItem = { lead: ReactNode; body: ReactNode; proof?: ReactNode; link?: ReactNode; symbol?: ReactNode };
+
+/** Step number, e.g. "01 / 03": these promises are done one by one. */
+const stepLabel = (i: number, n: number) => `${String(i + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}`;
 
 const SEGMENT_VH = 70; // scroll distance per item while pinned
 
@@ -70,8 +73,16 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
         </h2>
         <ul className="mt-8 flex flex-col gap-4">
           {items.map((item, i) => (
-            <li key={i} data-reveal className="on-pine rounded-[20px] p-7">
-              <h3 className="font-serif text-h2 [font-variation-settings:'opsz'_36]">{item.lead}</h3>
+            <li key={i} data-reveal className="on-pine relative overflow-hidden rounded-[20px] p-7">
+              {item.symbol ? (
+                <span aria-hidden className="pointer-events-none absolute end-6 bottom-5 font-mincho text-[3.25rem] leading-none text-pine-soft/40">
+                  {item.symbol}
+                </span>
+              ) : null}
+              <p className="font-gothic text-small text-ink-soft [font-variant-numeric:lining-nums_tabular-nums]">
+                <span dir="ltr">{stepLabel(i, n)}</span>
+              </p>
+              <h3 className="mt-2 font-serif text-h2 [font-variation-settings:'opsz'_36]">{item.lead}</h3>
               <p className="mt-3 font-gothic text-copy text-ink-soft">{item.body}</p>
               {item.proof ? <div className="mt-4 [&_aside]:text-ink-soft">{item.proof}</div> : null}
               {item.link ? <p className="mt-4 font-gothic text-label">{item.link}</p> : null}
@@ -115,7 +126,7 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
             </div>
           </div>
 
-          <div className="on-pine relative min-h-[min(62svh,32rem)] overflow-hidden rounded-[24px]">
+          <div className="on-pine relative min-h-[min(64svh,40rem)] overflow-hidden rounded-[24px]">
             {items.map((item, i) => {
               const state = i === active ? "current" : i < active ? "past" : "next";
               return (
@@ -130,10 +141,22 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
                     state === "current" ? "translate-y-0 opacity-100" : state === "past" ? "pointer-events-none -translate-y-10 opacity-0" : "pointer-events-none translate-y-10 opacity-0"
                   }`}
                 >
-                  {/* The promise top-left, its detail and link bottom-right: one statement, balanced across the stage. */}
-                  <p id={`${id}-lead-${i}`} className="self-start font-serif text-display [font-variation-settings:'opsz'_60]">
-                    {item.lead}
-                  </p>
+                  {/* Number and promise top-left with its symbol beneath; detail and link bottom-right. */}
+                  <div className="flex min-h-0 flex-col justify-between gap-6">
+                    <div>
+                      <p className="font-gothic text-label text-ink-soft [font-variant-numeric:lining-nums_tabular-nums]">
+                        <span dir="ltr">{stepLabel(i, n)}</span>
+                      </p>
+                      <p id={`${id}-lead-${i}`} className="mt-4 font-serif text-h1 [font-variation-settings:'opsz'_60]">
+                        {item.lead}
+                      </p>
+                    </div>
+                    {item.symbol ? (
+                      <span aria-hidden className="symbol-in block font-mincho text-[clamp(4.5rem,7.5vw,8rem)] leading-none text-pine-soft/45">
+                        {item.symbol}
+                      </span>
+                    ) : null}
+                  </div>
                   <div className="flex max-w-[30rem] flex-col gap-5 self-end justify-self-end">
                     <p className="font-gothic text-copy text-ink-soft">{item.body}</p>
                     {item.proof ? <div className="[&_aside]:text-ink-soft">{item.proof}</div> : null}

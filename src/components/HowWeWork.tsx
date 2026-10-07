@@ -17,6 +17,7 @@ export async function HowWeWork() {
       items={points.map((point) => ({
         lead: <SplitWords copy={point.lead} />,
         body: <CopyText copy={point.body} />,
+        symbol: <CopyText copy={point.symbol} />,
         link: (
           <Link href={localePath(point.link, locale)} className="tap">
             <CopyText copy={routeFor(point.link).navLabel!} />

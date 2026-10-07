@@ -118,6 +118,8 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026.
 
 Each point links to its page under the page's name (internal linking).
 
+Step symbols, set large under each promise in the How we work stage — DRAFT (drafted 7 Oct 2026; decorative Japanese, each the meaning of its promise): 確 (certain, confirmed) · 名 (name) · 家 (family, household).
+
 **Contact**
 
 > **Tell us who is travelling and when you would like to go.**
@@ -181,6 +183,7 @@ Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa 
 - Title: "Japan in spring, autumn and winter, planned for the whole family."
 - Hero image, set vertically in the pine panel (decorative): 春 · 秋 · 冬
 - Sections heading: "Planned for the unit."
+- Step symbols under each principle (decorative Japanese): 室 (room) · 歩 (pace) · 車 (vehicle) · 静 (quiet, private)
 - Onward panels reuse approved text: Summer Journeys (Home §3 entry text) and Family Services (§6 title and intro).
 - Close reuses the Home contact heading (§3, LOCKED).
 

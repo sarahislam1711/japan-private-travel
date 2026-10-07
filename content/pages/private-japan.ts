@@ -13,18 +13,21 @@ export const privateJapan = {
   sections: [
     {
       lead: draft("Rooms."),
+      symbol: draft("室", { lang: "ja" }),
       body: draft(
         "Connecting rooms, or rooms on one floor, confirmed room by room rather than by category. We tell you what is confirmed before you commit.",
       ),
     },
     {
       lead: draft("Pacing."),
+      symbol: draft("歩", { lang: "ja" }),
       body: draft(
         "Days planned so that the grandparent and the six-year-old both finish them well: fewer stops, longer at each, rest written into the day.",
       ),
     },
     {
       lead: draft("Transport."),
+      symbol: draft("車", { lang: "ja" }),
       body: draft(
         "Private vehicles sized for the whole group and its luggage, so no one travels separately.",
       ),
@@ -36,6 +39,7 @@ export const privateJapan = {
     },
     {
       lead: draft("Privacy."),
+      symbol: draft("静", { lang: "ja" }),
       body: draft(
         "Private dining rooms, private bathing and a guide who works for your household alone, planned from the first draft.",
       ),

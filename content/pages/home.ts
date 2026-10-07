@@ -1,6 +1,6 @@
 /* Home (/) — docs/CONTENT.md §3. All copy written and approved by Sarah, 6 Oct 2026. */
 import type { RouteKey } from "../routes";
-import { attachArabic, locked, ph, type Copy } from "../schema";
+import { attachArabic, draft, locked, ph, type Copy } from "../schema";
 import { homeAr } from "./home.ar";
 
 export const home = {
@@ -38,6 +38,7 @@ export const home = {
           "We check every room one by one, not just the room type, and we tell you exactly what is confirmed before you agree to anything.",
         ),
         link: "privateJapan",
+        symbol: draft("確", { lang: "ja" }),
       },
       {
         lead: locked("You know who is looking after you."),
@@ -45,6 +46,7 @@ export const home = {
           "We tell you your guide's name before you travel, and the managers responsible for our agency are named at the bottom of every page.",
         ),
         link: "about",
+        symbol: draft("名", { lang: "ja" }),
       },
       {
         lead: locked("Your family's needs are planned in from the start."),
@@ -52,8 +54,9 @@ export const home = {
           "Dining, private bathing, prayer times, guiding and transport for Muslim families are part of the first plan we send you, not extras added at the end.",
         ),
         link: "familyServices",
+        symbol: draft("家", { lang: "ja" }),
       },
-    ] satisfies { lead: Copy; body: Copy; link: RouteKey }[],
+    ] satisfies { lead: Copy; body: Copy; link: RouteKey; symbol: Copy }[],
   },
   contact: {
     heading: locked("Tell us who is travelling and when you would like to go."),
