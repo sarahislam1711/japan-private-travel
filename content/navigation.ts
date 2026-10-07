@@ -16,8 +16,8 @@ export const mainNav: NavEntry[] = [
     label: locked("Trips"),
     // Short menu descriptions (CONTENT.md §2), drafts.
     items: [
-      { route: "summerJourneys", description: draft("Hokkaido, Okinawa and the Japan Alps in July and August.") },
-      { route: "privateJapan", description: draft("Year-round journeys for families and small groups who travel together.") },
+      { route: "summerJourneys", description: draft("Hokkaido, Okinawa and the Japan Alps.") },
+      { route: "privateJapan", description: draft("Year-round, planned for your family.") },
     ],
   },
   { kind: "link", route: "familyServices" },

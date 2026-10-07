@@ -256,6 +256,25 @@
     border-radius: 12px;
     box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-ink) 14%, transparent);
   }
+  /* The pointer: a small notch on the panel's top edge, aimed at the button that
+     opened it (--pointer-start / --pointer-end), so the menu reads as coming out of it. */
+  .menu-surface[data-pointer]::before {
+    content: "";
+    position: absolute;
+    inset-block-start: -6px;
+    inset-inline-start: var(--pointer-start, auto);
+    inset-inline-end: var(--pointer-end, auto);
+    width: 11px;
+    height: 11px;
+    background: var(--color-plate);
+    border-block-start: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent);
+    border-inline-start: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent);
+    border-start-start-radius: 2px;
+    transform: rotate(45deg);
+  }
+  :root:dir(rtl) .menu-surface[data-pointer]::before {
+    transform: rotate(-45deg);
+  }
 
   /* Menu panel: a quick fade and settle on open (interaction feedback, not decoration). */
   @media (prefers-reduced-motion: no-preference) {

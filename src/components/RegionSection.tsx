@@ -20,7 +20,7 @@ export async function RegionSection({ region, index }: { region: Region; index: 
   const fs = routeFor("familyServices");
   const flip = index % 2 === 1;
   return (
-    <section className="mx-auto mt-28 grid max-w-(--content-max) grid-cols-12 items-center gap-x-6 gap-y-10 px-(--page-margin) desktop:mt-40">
+    <section className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 items-center gap-x-6 gap-y-10 px-(--page-margin) desktop:mt-32">
       <div
         data-reveal
         className={`relative col-span-12 flex min-h-[34rem] flex-col overflow-hidden rounded-[20px] bg-plate p-8 tablet:p-10 desktop:col-span-6 desktop:min-h-[40rem] ${flip ? "desktop:order-2 desktop:col-start-7" : "desktop:order-1"}`}

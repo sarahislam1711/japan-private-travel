@@ -9,7 +9,7 @@ const d = (n: number) => ({ "--d": n }) as CSSProperties;
 export function MonthsSection() {
   const { heading, text } = summerJourneys.months;
   return (
-    <section aria-labelledby="months-title" className="mx-auto mt-32 grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) desktop:mt-48">
+    <section aria-labelledby="months-title" className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) desktop:mt-40">
       <div className="col-span-12 desktop:col-span-4">
         <h2 id="months-title" data-reveal className="font-serif text-h1 [font-variation-settings:'opsz'_60]">
           <CopyText copy={heading} />

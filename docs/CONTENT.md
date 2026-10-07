@@ -79,8 +79,8 @@ HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ 
 - Group label: Trips. Status: LOCKED (Sarah, 6 Oct 2026).
 - Contact sits last, set as a boxed link.
 - Trips dropdown descriptions — DRAFT (the earlier Home entry-point lines, kept for the menu):
-  - Summer Journeys: "Hokkaido, Okinawa and the Japan Alps in July and August."
-  - Private Japan: "Year-round journeys for families and small groups who travel together."
+  - Summer Journeys: "Hokkaido, Okinawa and the Japan Alps."
+  - Private Japan: "Year-round, planned for your family."
 - Short header label for the For travel advisors page: Advisors. Status: LOCKED (Sarah, 6 Oct 2026). Set smaller and quieter, before Contact, after a thin divider. The footer keeps the full name.
 
 ## 3. Home (`/`)

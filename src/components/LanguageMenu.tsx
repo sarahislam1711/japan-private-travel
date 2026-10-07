@@ -82,7 +82,7 @@ export function LanguageMenu({
         </svg>
       </button>
       <div id={panelId} hidden={!open} className="absolute end-0 top-full z-30 pt-2">
-        <ul className="nav-panel menu-surface flex w-40 flex-col p-1 font-gothic text-small">
+        <ul data-pointer className="nav-panel menu-surface relative flex w-40 flex-col p-1 font-gothic text-small [--pointer-end:1rem]">
           {(["en", "ar"] as const).map((l) => (
             <li key={l}>
               <Link

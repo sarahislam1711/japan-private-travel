@@ -43,8 +43,8 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `mainNav[0].label` | Trips | <span dir="rtl" lang="ar">الرحلات</span> | draft |
-| `mainNav[0].items[0].description` | Hokkaido, Okinawa and the Japan Alps in July and August. | <span dir="rtl" lang="ar">هوكايدو وأوكيناوا وجبال الألب اليابانية في يوليو وأغسطس.</span> | draft |
-| `mainNav[0].items[1].description` | Year-round journeys for families and small groups who travel together. | <span dir="rtl" lang="ar">رحلات على مدار العام للعائلات والمجموعات الصغيرة التي تسافر معًا.</span> | draft |
+| `mainNav[0].items[0].description` | Hokkaido, Okinawa and the Japan Alps. | <span dir="rtl" lang="ar">هوكايدو وأوكيناوا وجبال الألب اليابانية.</span> | draft |
+| `mainNav[0].items[1].description` | Year-round, planned for your family. | <span dir="rtl" lang="ar">على مدار العام، بتخطيطٍ لعائلتكم.</span> | draft |
 | `mainNav[4].label` | Advisors | <span dir="rtl" lang="ar">المستشارون</span> | draft |
 
 ## content/languages.ts

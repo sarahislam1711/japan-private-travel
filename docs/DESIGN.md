@@ -243,7 +243,7 @@ All direction-dependent styling uses logical properties (`ms-`, `pe-`, `start-`,
 
 ## Elevation & Depth
 
-Flat. No shadows anywhere; Tailwind's shadow scales are cleared in the tokens. Depth is tonal: Snow lifts a panel off Paper, Pine sets a panel or field apart. Floating menus carry a faint 1px ring (Ink at 20% for the Trips menu, Mist for the mobile menu) because they overlap content; this is a functional edge, not a frame.
+Flat. No shadows anywhere; Tailwind's shadow scales are cleared in the tokens. Depth is tonal: Snow lifts a panel off Paper, Pine sets a panel or field apart. Floating menus (Trips, language) are compact Snow panels with a faint 1px Ink edge (14%) and a small pointer notch aimed at the button that opened them, so each reads as coming out of its trigger; this is a functional edge, not a frame. Their item descriptions are one short line. On small screens the menu opens as a full-screen sheet on Paper (brand, globe and Close in the bar; big serif page links; Advisors and a full-width Contact button at the foot), which locks page scroll and closes once a link is followed.
 
 **The Tone Not Shadow Rule.** A surface is raised by tone (Snow on Paper, Pine on Paper), never by a shadow or gradient.
 

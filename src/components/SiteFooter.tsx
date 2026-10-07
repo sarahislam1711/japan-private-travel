@@ -90,7 +90,7 @@ export async function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-ink/15 pt-6 desktop:flex-row desktop:items-end desktop:justify-between desktop:gap-12">
+        <div className="mt-10 flex flex-col gap-4 border-t border-ink/15 pt-6 desktop:flex-row desktop:items-start desktop:justify-between desktop:gap-12">
           <p className="max-w-[62rem] font-gothic text-small leading-[1.8]">
             {facts.map((f, i) => (
               <span key={f.key}>
@@ -104,7 +104,7 @@ export async function SiteFooter() {
               </span>
             ))}
           </p>
-          <ul className="flex shrink-0 gap-x-6 font-gothic text-small">
+          <ul className="flex shrink-0 gap-x-6 font-gothic text-small desktop:-mt-2.5">
             <li>
               <Link href={localePath("privacy", locale)} className="flex min-h-11 items-center">
                 <CopyText copy={ui.footer.privacy} />

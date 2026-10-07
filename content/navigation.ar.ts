@@ -6,8 +6,8 @@ export const mainNavAr: Translation<typeof mainNav> = [
   {
     label: ard("الرحلات"),
     items: [
-      { description: ard("هوكايدو وأوكيناوا وجبال الألب اليابانية في يوليو وأغسطس.") },
-      { description: ard("رحلات على مدار العام للعائلات والمجموعات الصغيرة التي تسافر معًا.") },
+      { description: ard("هوكايدو وأوكيناوا وجبال الألب اليابانية.") },
+      { description: ard("على مدار العام، بتخطيطٍ لعائلتكم.") },
     ],
   },
   {},
