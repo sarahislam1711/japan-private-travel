@@ -12,7 +12,10 @@ const SEGMENT_VH = 70; // scroll distance per item while pinned
 
 /**
  * A pinned, scroll-driven stage. On desktop with motion allowed, the section
- * holds one screen while scrolling moves through the items, one at a time:
+ * holds one screen while scrolling moves through the items, one at a time.
+ * Each wheel gesture moves exactly one step (a fast flick never skips through
+ * the stage; its leftover momentum is absorbed), and scrolling on from the
+ * last step carries on down the page:
  * the current promise leaves upwards, the next one's words rise in, and a
  * progress bar fills continuously. Bar segments are buttons that jump to an
  * item. Otherwise (phones, reduced motion, crawlers): a compact stacked list.
@@ -58,12 +61,90 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
     };
   }, [pinned]);
 
-  const jumpTo = (i: number) => {
+  // Where each step rests: the first at the top of the pinned range, the last at its end, the rest centred in their segment.
+  const stepTop = (i: number) => {
     const el = root.current;
-    if (!el) return;
+    if (!el) return 0;
+    const start = el.getBoundingClientRect().top + window.scrollY;
     const travel = el.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + (travel * (i + 0.35)) / n, behavior: "smooth" });
+    return start + travel * (i === 0 ? 0 : i === n - 1 ? 1 : (i + 0.5) / n);
   };
+
+  const jumpTo = (i: number) => {
+    const lenis = window.__lenis;
+    if (lenis) lenis.scrollTo(stepTop(i), { duration: 1 });
+    else window.scrollTo({ top: stepTop(i), behavior: "smooth" });
+  };
+
+  // One gesture, one step.
+  useEffect(() => {
+    if (!pinned) return;
+    const lenis = window.__lenis;
+    if (!lenis) return;
+    const MOVE_S = 0.9; // seconds per step
+    const QUIET_MS = 140; // a pause this long ends a gesture (trackpad momentum included)
+    const THRESHOLD = 24; // px of intent before a step moves
+    let lockedUntil = 0;
+    let armed = true;
+    let lastWheel = 0;
+    let intent = 0;
+
+    const go = (y: number) => {
+      lenis.scrollTo(y, { duration: MOVE_S, lock: true, easing: (t) => 1 - Math.pow(1 - t, 4) });
+      lockedUntil = performance.now() + MOVE_S * 1000 + 50;
+      armed = false;
+      intent = 0;
+    };
+
+    window.__scrollGate = ({ deltaY, event }) => {
+      if (!event.type.includes("wheel") || event.ctrlKey) return true;
+      const now = performance.now();
+      const gap = now - lastWheel;
+      lastWheel = now;
+      if (!armed && now > lockedUntil && gap > QUIET_MS) {
+        armed = true;
+        intent = 0;
+      }
+      const block = () => {
+        if (event.cancelable) event.preventDefault();
+        return false;
+      };
+      const start = stepTop(0);
+      const end = stepTop(n - 1);
+      const at = lenis.targetScroll;
+      const TOL = 2;
+
+      // Outside the stage: catch a gesture that would carry into (or across) it, and land on its first or last step.
+      if (at < start - TOL || at > end + TOL) {
+        if (deltaY > 0 && at < start && at + deltaY >= start - TOL) {
+          go(start);
+          return block();
+        }
+        if (deltaY < 0 && at > end && at + deltaY <= end + TOL) {
+          go(end);
+          return block();
+        }
+        return true;
+      }
+
+      // Inside: wait out a move and the rest of its gesture, then take one step.
+      if (now < lockedUntil || !armed) return block();
+      intent += deltaY;
+      if (Math.abs(intent) < THRESHOLD) return block();
+      let current = 0;
+      for (let i = 1; i < n; i++) if (Math.abs(stepTop(i) - at) < Math.abs(stepTop(current) - at)) current = i;
+      const next = current + Math.sign(intent);
+      if (next < 0 || next >= n) {
+        intent = 0;
+        return true; // past the first or last step: carry on along the page
+      }
+      go(stepTop(next));
+      return block();
+    };
+    return () => {
+      delete window.__scrollGate;
+    };
+  }, [pinned, n]);
 
   if (!pinned) {
     return (
