@@ -181,9 +181,9 @@ export function TripPlanner({
   };
 
   return (
-    <div className="grid grid-cols-12 gap-4 desktop:gap-6">
+    <div className="grid grid-cols-12 gap-4 desktop:h-full desktop:gap-6">
       {/* The step */}
-      <div className="col-span-12 flex flex-col rounded-[24px] bg-plate p-6 tablet:p-10 desktop:col-span-8 desktop:min-h-[36rem]">
+      <div className="col-span-12 flex flex-col rounded-[24px] bg-plate p-6 tablet:p-10 desktop:col-span-8 desktop:h-full desktop:min-h-0 desktop:p-8">
         {/* Progress: six segments; finished steps can be revisited. */}
         <ol className="grid grid-cols-6 gap-1.5" aria-label={t["planner.summary.title"].text}>
           {STEPS.map((s, i) => {
@@ -211,7 +211,7 @@ export function TripPlanner({
           })}
         </ol>
 
-        <div key={step} className="planner-step mt-10 flex flex-1 flex-col">
+        <div key={step} className="planner-step mt-8 flex min-h-0 flex-1 flex-col desktop:mt-6">
           <p className="font-gothic text-small text-ink-soft" dir="ltr">
             <span className="tabular-nums">
               {String(index + 1).padStart(2, "0")} / {String(STEPS.length).padStart(2, "0")}
@@ -220,11 +220,12 @@ export function TripPlanner({
           <h2 ref={headingRef} tabIndex={-1} id={`${uid}-q`} className="mt-3 font-serif text-h2 outline-none [font-variation-settings:'opsz'_36]">
             {question[step].node}
           </h2>
-          <p className="mt-3 max-w-[34rem] font-gothic text-copy text-ink-soft">{t[`planner.hints.${step}`].node}</p>
+          <p className="mt-2 max-w-[34rem] font-gothic text-copy text-ink-soft">{t[`planner.hints.${step}`].node}</p>
 
-          <div className="mt-8 flex-1">
+          {/* On desktop the answers scroll inside the card if a step runs long; the buttons stay put. */}
+          <div data-lenis-prevent className="mt-6 flex-1 desktop:-mx-2 desktop:min-h-0 desktop:overflow-y-auto desktop:px-2 desktop:pb-1">
             {step === "who" && (
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 <Counter label={t["planner.people.adults"]} value={plan.adults} onChange={(v) => set("adults", v)} t={t} />
                 <Counter label={t["planner.people.grandparents"]} value={plan.grandparents} onChange={(v) => set("grandparents", v)} t={t} />
                 <Counter
@@ -290,13 +291,13 @@ export function TripPlanner({
                     type="button"
                     aria-pressed={plan.places.includes(p.id)}
                     onClick={() => set("places", toggle(plan.places, p.id))}
-                    className="group flex min-h-24 cursor-pointer flex-col justify-between gap-3 rounded-[16px] bg-ground p-5 text-start transition-colors hover:bg-mist aria-pressed:bg-pine aria-pressed:text-plate"
+                    className="group flex min-h-24 cursor-pointer flex-col justify-between gap-3 rounded-[16px] bg-ground p-5 text-start desktop:min-h-0 desktop:gap-1.5 desktop:px-5 desktop:py-3.5 transition-colors hover:bg-mist aria-pressed:bg-pine aria-pressed:text-plate"
                   >
                     <span className="flex items-center justify-between gap-3 font-gothic text-small text-ink-soft group-aria-pressed:text-pine-soft">
                       {places[i - 1]?.group.text === p.group.text ? <span /> : p.group.node}
                       <Tick />
                     </span>
-                    <span className="font-serif text-[1.375rem] leading-tight">{p.label.node}</span>
+                    <span className="font-serif text-[1.375rem] leading-tight desktop:text-[1.25rem]">{p.label.node}</span>
                   </button>
                 ))}
               </div>
@@ -396,12 +397,12 @@ export function TripPlanner({
           </div>
 
           {error && (
-            <p role="alert" className="mt-6 font-gothic text-small text-pine">
+            <p role="alert" className="mt-4 font-gothic text-small text-pine">
               {error}
             </p>
           )}
 
-          <div className="mt-8 flex items-center justify-between gap-4">
+          <div className="mt-5 flex shrink-0 items-center justify-between gap-4">
             {index > 0 ? (
               <button type="button" onClick={() => go(index - 1)} className="tap cursor-pointer font-gothic text-label underline hover:text-pine">
                 {t["planner.buttons.back"].node}
@@ -430,10 +431,10 @@ export function TripPlanner({
       </div>
 
       {/* The plan, building up live. */}
-      <aside aria-live="polite" className="on-pine col-span-12 flex flex-col rounded-[24px] p-6 tablet:p-10 desktop:col-span-4">
+      <aside aria-live="polite" className="on-pine col-span-12 flex flex-col rounded-[24px] p-6 tablet:p-10 desktop:col-span-4 desktop:h-full desktop:min-h-0 desktop:p-8">
         <h2 className="font-serif text-h3 [font-variation-settings:'opsz'_24]">{t["planner.summary.title"].node}</h2>
         {lines.some((l) => l.value) ? (
-          <dl className="mt-6 flex flex-col gap-5">
+          <dl data-lenis-prevent className="mt-6 flex flex-col gap-5 desktop:min-h-0 desktop:overflow-y-auto">
             {lines
               .filter((l) => l.value)
               .map((l) => (
@@ -446,7 +447,7 @@ export function TripPlanner({
         ) : (
           <p className="mt-6 font-gothic text-small text-pine-soft">{t["planner.summary.empty"].node}</p>
         )}
-        <p className="mt-auto pt-10 font-gothic text-[0.8125rem] text-pine-soft">{t["planner.saved"].node}</p>
+        <p className="mt-auto shrink-0 pt-6 font-gothic text-[0.8125rem] text-pine-soft">{t["planner.saved"].node}</p>
       </aside>
     </div>
   );
@@ -467,7 +468,7 @@ function Counter({ label, value, onChange, t }: { label: T; value: number; onCha
   const btn =
     "inline-flex size-11 cursor-pointer items-center justify-center rounded-full bg-plate text-ink ring-1 ring-ink/15 ring-inset transition-colors hover:bg-pine hover:text-plate disabled:cursor-default disabled:opacity-35 disabled:hover:bg-plate disabled:hover:text-ink";
   return (
-    <div className="flex items-center justify-between gap-4 rounded-[16px] bg-ground py-3 ps-5 pe-3">
+    <div className="flex items-center justify-between gap-4 rounded-[16px] bg-ground py-2 ps-5 pe-2">
       <span className="font-gothic text-label">{label.node}</span>
       <div className="flex items-center gap-3">
         <button type="button" className={btn} disabled={value <= 0} onClick={() => onChange(value - 1)} aria-label={`${t["planner.people.remove"].text}: ${label.text}`}>

@@ -73,25 +73,26 @@ export default async function ContactPage() {
   const number = isResolved(site.whatsapp.e164) ? copyText(site.whatsapp.e164).replace(/\D/g, "") : "";
 
   return (
-    <main id="main">
+    // Desktop: the title row and the planner share one screen; only the inside of the planner scrolls.
+    <main id="main" className="desktop:flex desktop:h-[calc(100svh-5.5rem)] desktop:min-h-[40rem] desktop:flex-col">
       <StructuredData page="contact" />
-      <section aria-labelledby="contact-page-title" className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) pt-10 desktop:pt-16">
-        <div className="col-span-12 desktop:col-span-8">
-          <h1 id="contact-page-title" data-reveal="words" className="max-w-[24ch] font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
+      <section aria-labelledby="contact-page-title" className="mx-auto grid w-full max-w-(--content-max) shrink-0 grid-cols-12 items-end gap-x-6 gap-y-8 px-(--page-margin) pt-10 desktop:pt-2">
+        <div className="col-span-12 desktop:col-span-6">
+          <h1 id="contact-page-title" data-reveal="words" className="max-w-[24ch] font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60] desktop:text-[clamp(2rem,1.6vw+1.2rem,3rem)] desktop:leading-[1.08]">
             <SplitWords copy={contact.title} />
           </h1>
         </div>
         {/* The direct routes as three tap-to-act buttons (Sarah, 7 Oct 2026). */}
-        <div data-reveal className="col-span-12 self-end desktop:col-span-4">
-          <ul className="grid grid-cols-3 gap-2">
+        <div data-reveal className="col-span-12 desktop:col-span-6">
+          <ul className="grid grid-cols-3 gap-2 desktop:flex desktop:flex-wrap desktop:justify-end">
             {routes.map((r) => (
               <li key={r.key}>
                 <a
                   href={r.href}
                   {...(r.key === "whatsapp" ? { target: "_blank", rel: "noopener" } : {})}
-                  className="group flex min-h-28 flex-col items-center justify-center gap-3 rounded-[20px] bg-plate px-2 py-5 text-ink no-underline transition-colors hover:bg-pine hover:text-plate"
+                  className="group flex min-h-28 flex-col items-center justify-center gap-3 rounded-[20px] bg-plate px-2 py-5 text-ink no-underline transition-colors hover:bg-pine hover:text-plate desktop:min-h-14 desktop:flex-row desktop:gap-2.5 desktop:rounded-full desktop:py-2 desktop:ps-2 desktop:pe-5 desktop:whitespace-nowrap"
                 >
-                  <span aria-hidden className="inline-flex size-12 items-center justify-center rounded-full bg-ground text-pine transition-colors group-hover:bg-plate/15 group-hover:text-plate">
+                  <span aria-hidden className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-ground text-pine transition-colors group-hover:bg-plate/15 group-hover:text-plate desktop:size-9">
                     {r.icon}
                   </span>
                   <span className="font-gothic text-small">
@@ -104,7 +105,7 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <section aria-label={t["planner.steps.review"].text} className="mx-auto mt-12 mb-24 max-w-(--content-max) px-(--page-margin) desktop:mb-32">
+      <section aria-label={t["planner.steps.review"].text} className="mx-auto mt-8 mb-24 w-full max-w-(--content-max) px-(--page-margin) desktop:mt-6 desktop:mb-0 desktop:min-h-0 desktop:flex-1 desktop:pb-6">
         <TripPlanner t={t} locale={locale} places={places} whatsappNumber={number} />
       </section>
     </main>
