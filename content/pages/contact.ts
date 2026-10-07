@@ -3,8 +3,8 @@ import { attachArabic, draft, locked, ph } from "../schema";
 import { contactAr } from "./contact.ar";
 
 export const contact = {
-  // Shorter rewrite at Sarah's request (7 Oct 2026), DRAFT until approved.
-  title: draft("Tell us who is coming, when, and what the trip should do.", { flags: ["D3"] }),
+  // Shortest form at Sarah's request (8 Oct 2026): the words of the button that leads here. DRAFT until approved.
+  title: draft("Plan your trip.", { flags: ["D3"] }),
   routes: [
     locked(["Telephone: ", ph("PHONE")], { flags: ["D3"] }),
     locked(["Email: ", ph("EMAIL")], { flags: ["D3"] }),

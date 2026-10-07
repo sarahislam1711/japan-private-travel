@@ -255,7 +255,7 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `contact.title` | Tell us who is coming, when, and what the trip should do. | <span dir="rtl" lang="ar">أخبرونا مَن سيسافر، ومتى، وما الذي تريدونه من الرحلة.</span> | draft |
+| `contact.title` | Plan your trip. | <span dir="rtl" lang="ar">خطّطوا رحلتكم.</span> | draft |
 | `contact.routes[0]` | Telephone: [[PHONE]] | <span dir="rtl" lang="ar">الهاتف: [[PHONE]]</span> | draft |
 | `contact.routes[1]` | Email: [[EMAIL]] | <span dir="rtl" lang="ar">البريد الإلكتروني: [[EMAIL]]</span> | draft |
 | `contact.arabicLine` | يسعدنا التواصل معكم باللغة العربية عبر واتساب. | <span dir="rtl" lang="ar">يسعدنا التواصل معكم باللغة العربية عبر واتساب.</span> | draft |

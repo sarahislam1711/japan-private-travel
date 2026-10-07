@@ -3,7 +3,7 @@ import { ard, ph, type Translation } from "../schema";
 import type { contact } from "./contact";
 
 export const contactAr: Translation<typeof contact> = {
-  title: ard("أخبرونا مَن سيسافر، ومتى، وما الذي تريدونه من الرحلة."),
+  title: ard("خطّطوا رحلتكم."),
   routes: [
     ard(["الهاتف: ", ph("PHONE")]),
     ard(["البريد الإلكتروني: ", ph("EMAIL")]),

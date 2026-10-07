@@ -190,28 +190,23 @@ export function TripPlanner({
             const done = i < index;
             return (
               <li key={s}>
+                {/* The bar alone shows progress; each segment keeps its step name for screen readers. */}
                 <button
                   type="button"
                   disabled={i > index}
                   aria-current={i === index ? "step" : undefined}
+                  aria-label={t[`planner.steps.${s}`].text}
                   onClick={() => go(i)}
-                  className="group flex w-full cursor-pointer flex-col gap-2 text-start disabled:cursor-default"
+                  className="group flex h-6 w-full cursor-pointer items-center disabled:cursor-default"
                 >
-                  <span className={`h-1 rounded-full transition-colors duration-500 ${i <= index ? "bg-pine" : "bg-mist"}`} />
-                  <span
-                    className={`hidden font-gothic text-[0.8125rem] tablet:block ${
-                      i === index ? "text-ink" : done ? "text-ink-soft group-hover:text-pine" : "text-ink-soft/60"
-                    }`}
-                  >
-                    {t[`planner.steps.${s}`].node}
-                  </span>
+                  <span className={`h-1 w-full rounded-full transition-colors duration-500 ${i <= index ? "bg-pine" : "bg-mist"} ${done ? "group-hover:bg-ink" : ""}`} />
                 </button>
               </li>
             );
           })}
         </ol>
 
-        <div key={step} className="planner-step mt-8 flex min-h-0 flex-1 flex-col desktop:mt-6">
+        <div key={step} className="planner-step mt-6 flex min-h-0 flex-1 flex-col desktop:mt-5">
           <p className="font-gothic text-small text-ink-soft" dir="ltr">
             <span className="tabular-nums">
               {String(index + 1).padStart(2, "0")} / {String(STEPS.length).padStart(2, "0")}

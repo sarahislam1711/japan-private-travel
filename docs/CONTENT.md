@@ -301,7 +301,7 @@ Sections:
 
 **LOCKED ⚑D3**
 
-> **Tell us who is coming, when, and what the trip should do.** (DRAFT, shorter rewrite requested by Sarah, 7 Oct 2026. Previous locked text: "Tell us the household, the dates you are weighing, and what the trip needs to do.")
+> **Plan your trip.** (DRAFT, 8 Oct 2026: Sarah asked for a less crowded page top; the heading repeats the button that leads here. Earlier texts: "Tell us who is coming, when, and what the trip should do." and the locked "Tell us the household, the dates you are weighing, and what the trip needs to do.")
 >
 > Telephone: `[[PHONE]]`
 > Email: `[[EMAIL]]`

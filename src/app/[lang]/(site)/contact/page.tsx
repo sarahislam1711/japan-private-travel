@@ -78,24 +78,25 @@ export default async function ContactPage() {
       <StructuredData page="contact" />
       <section aria-labelledby="contact-page-title" className="mx-auto grid w-full max-w-(--content-max) shrink-0 grid-cols-12 items-end gap-x-6 gap-y-8 px-(--page-margin) pt-10 desktop:pt-2">
         <div className="col-span-12 desktop:col-span-6">
-          <h1 id="contact-page-title" data-reveal="words" className="max-w-[24ch] font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60] desktop:text-[clamp(2rem,1.6vw+1.2rem,3rem)] desktop:leading-[1.08]">
+          <h1 id="contact-page-title" data-reveal="words" className="max-w-[24ch] font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
             <SplitWords copy={contact.title} />
           </h1>
         </div>
         {/* The direct routes as three tap-to-act buttons (Sarah, 7 Oct 2026). */}
         <div data-reveal className="col-span-12 desktop:col-span-6">
-          <ul className="grid grid-cols-3 gap-2 desktop:flex desktop:flex-wrap desktop:justify-end">
+          <ul className="grid grid-cols-3 gap-2 desktop:flex desktop:justify-end desktop:gap-3">
             {routes.map((r) => (
               <li key={r.key}>
                 <a
                   href={r.href}
                   {...(r.key === "whatsapp" ? { target: "_blank", rel: "noopener" } : {})}
-                  className="group flex min-h-28 flex-col items-center justify-center gap-3 rounded-[20px] bg-plate px-2 py-5 text-ink no-underline transition-colors hover:bg-pine hover:text-plate desktop:min-h-14 desktop:flex-row desktop:gap-2.5 desktop:rounded-full desktop:py-2 desktop:ps-2 desktop:pe-5 desktop:whitespace-nowrap"
+                  className="group relative flex min-h-28 flex-col items-center justify-center gap-3 rounded-[20px] bg-plate px-2 py-5 text-ink no-underline transition-colors hover:bg-pine hover:text-plate desktop:size-16 desktop:min-h-0 desktop:rounded-full desktop:p-0"
                 >
-                  <span aria-hidden className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-ground text-pine transition-colors group-hover:bg-plate/15 group-hover:text-plate desktop:size-9">
+                  <span aria-hidden className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-ground text-pine transition-colors group-hover:bg-plate/15 group-hover:text-plate desktop:bg-transparent desktop:size-auto">
                     {r.icon}
                   </span>
-                  <span className="font-gothic text-small">
+                  {/* Phones: the name under the icon. Desktop: icon only, the name in a small label on hover or focus. */}
+                  <span className="font-gothic text-small desktop:pointer-events-none desktop:absolute desktop:top-full desktop:mt-2 desktop:rounded-full desktop:bg-ink desktop:px-3 desktop:py-1 desktop:text-[0.8125rem] desktop:whitespace-nowrap desktop:text-plate desktop:opacity-0 desktop:transition-opacity desktop:group-hover:opacity-100 desktop:group-focus-visible:opacity-100">
                     <CopyText copy={r.label} />
                   </span>
                 </a>
