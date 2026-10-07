@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**180** draft,
-**0** missing — of 182 strings.
+**181** draft,
+**0** missing — of 183 strings.
 
 ## content/site.ts
 
@@ -29,6 +29,7 @@ Status: **2** approved,
 |---|---|---|---|
 | `ui.skipLink` | Skip to content | <span dir="rtl" lang="ar">انتقل إلى المحتوى</span> | draft |
 | `ui.menu` | Menu | <span dir="rtl" lang="ar">القائمة</span> | draft |
+| `ui.close` | Close | <span dir="rtl" lang="ar">إغلاق</span> | draft |
 | `ui.sourceLink` | Source | <span dir="rtl" lang="ar">المصدر</span> | draft |
 | `ui.whatsappButton` | Message us on WhatsApp | <span dir="rtl" lang="ar">راسلنا عبر واتساب</span> | draft |
 | `ui.footer.privacy` | Privacy | <span dir="rtl" lang="ar">الخصوصية</span> | draft |
@@ -95,7 +96,7 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `home.hero.headline` | Japan, planned for the whole household. | <span dir="rtl" lang="ar">اليابان، بتخطيطٍ يشمل العائلة كلّها.</span> | draft |
+| `home.hero.headline` | Japan, planned for the whole family. | <span dir="rtl" lang="ar">اليابان، بتخطيطٍ يشمل العائلة كلّها.</span> | draft |
 | `home.hero.paragraph` | We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">نخطّط رحلات خاصة إلى اليابان للعائلات التي تسافر معًا، من الأجداد إلى الأطفال الصغار. تبدأ كل رحلة بمحادثة، ونخطّطها من البداية لعائلتكم، بالعربية أو الإنجليزية أو اليابانية.</span> | draft |
 | `home.margin.statement` | We are a registered travel agency with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">نحن وكالة سفر مسجّلة، ولنا مكتبان في طوكيو وأوساكا.</span> | draft |
 | `home.margin.check` | You can check our registration with [[REG_AUTHORITY_EN]]. | <span dir="rtl" lang="ar">يمكنكم التحقق من تسجيلنا لدى [[REG_AUTHORITY_EN]].</span> | draft |

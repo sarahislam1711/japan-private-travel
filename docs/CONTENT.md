@@ -36,6 +36,7 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 |---|---|---|
 | `skipLink` | Skip to content | DRAFT |
 | `menu` | Menu | DRAFT |
+| `close` | Close (the mobile menu button while the menu is open) | DRAFT |
 | `sourceLink` | Source | DRAFT |
 | `whatsappButton` | Message us on WhatsApp | LOCKED (Sarah, 6 Oct 2026) |
 | `footer.privacy` | Privacy | DRAFT |
@@ -88,7 +89,7 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026.
 
 **Hero**
 
-> **Japan, planned for the whole household.**
+> **Japan, planned for the whole family.**
 >
 > We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.
 

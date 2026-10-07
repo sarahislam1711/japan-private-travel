@@ -50,6 +50,8 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
   }, [open]);
 
   useEffect(() => cancelClose, []);
+  // A link inside was followed: put the menu away.
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <div
@@ -91,21 +93,22 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
       </button>
 
       {/* The top padding bridges trigger and panel so hover survives the gap. */}
-      <div id={panelId} hidden={!open} className="absolute -start-3 top-full z-20 pt-2.5">
-        <ul className="nav-panel w-80 rounded-[10px] bg-plate p-1.5 ring-1 ring-ink/20">
+      <div id={panelId} hidden={!open} className="absolute -start-3 top-full z-30 pt-2.5">
+        <ul className="nav-panel menu-surface flex w-72 flex-col p-1">
           {items.map((item) => {
             const current = item.href === pathname;
             return (
-              <li key={item.href}>
+              <li key={item.href} className="flex">
                 <Link
                   href={item.href}
                   aria-current={current ? "page" : undefined}
-                  className="group/item block rounded-(--radius-control) px-3 py-2.5 no-underline transition-colors hover:bg-mist focus-visible:bg-mist"
+                  onClick={() => setOpen(false)}
+                  className="group/item flex w-full flex-col gap-0.5 rounded-[8px] px-3 py-2.5 no-underline transition-colors duration-200 hover:bg-ground focus-visible:bg-ground aria-[current=page]:bg-ground"
                 >
-                  <span className="block text-ink group-aria-[current=page]/item:font-bold group-aria-[current=page]/item:text-pine">
+                  <span className="text-label text-ink group-hover/item:text-pine group-aria-[current=page]/item:text-pine">
                     {item.label}
                   </span>
-                  <span className="mt-0.5 block text-small text-ink-soft">{item.description}</span>
+                  <span className="text-small leading-snug text-ink-soft">{item.description}</span>
                 </Link>
               </li>
             );

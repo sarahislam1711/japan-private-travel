@@ -5,7 +5,7 @@ import { homeAr } from "./home.ar";
 
 export const home = {
   hero: {
-    headline: locked("Japan, planned for the whole household."),
+    headline: locked("Japan, planned for the whole family."),
     paragraph: locked(
       "We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.",
     ),

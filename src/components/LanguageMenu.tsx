@@ -81,8 +81,8 @@ export function LanguageMenu({
           <path d="M2.5 10h15M10 2.5c2.2 2.3 3.3 4.8 3.3 7.5S12.2 15.2 10 17.5M10 2.5C7.8 4.8 6.7 7.3 6.7 10s1.1 5.2 3.3 7.5" />
         </svg>
       </button>
-      <div id={panelId} hidden={!open} className="absolute end-0 top-full z-20 pt-2">
-        <ul className="nav-panel min-w-40 rounded-[10px] bg-plate p-1.5 font-gothic text-label ring-1 ring-ink/20">
+      <div id={panelId} hidden={!open} className="absolute end-0 top-full z-30 pt-2">
+        <ul className="nav-panel menu-surface flex w-40 flex-col p-1 font-gothic text-small">
           {(["en", "ar"] as const).map((l) => (
             <li key={l}>
               <Link
@@ -90,9 +90,15 @@ export function LanguageMenu({
                 hrefLang={l}
                 aria-current={l === current ? "true" : undefined}
                 onClick={() => setOpen(false)}
-                className="flex min-h-11 items-center gap-3 rounded-(--radius-control) px-3 py-2.5 text-start no-underline transition-colors hover:bg-mist focus-visible:bg-mist aria-[current=true]:font-bold aria-[current=true]:text-pine"
+                className="flex min-h-10 items-center gap-2.5 rounded-[8px] px-2.5 text-start no-underline transition-colors hover:bg-ground focus-visible:bg-ground aria-[current=true]:text-pine"
               >
                 {names[l]}
+                {/* A tick marks the language in use (a functional sign, like the chevron). */}
+                {l === current ? (
+                  <svg aria-hidden viewBox="0 0 16 16" className="ms-auto size-3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 8.5l3.2 3L13 4.5" />
+                  </svg>
+                ) : null}
               </Link>
             </li>
           ))}

@@ -23,7 +23,7 @@ export async function HomeHero() {
     <section aria-labelledby="home-title" className="mx-auto flex max-w-(--content-max) flex-col px-(--page-margin) desktop:min-h-[calc(100svh-5.5rem)]">
       <div className="grid flex-1 grid-cols-12 gap-x-6 gap-y-10 pt-6 desktop:pt-2">
         <div className="col-span-12 flex flex-col justify-end desktop:col-span-6 desktop:pb-10">
-          <h1 id="home-title" data-reveal="words" className="max-w-[12ch] font-serif text-display [font-variation-settings:'opsz'_60]">
+          <h1 id="home-title" data-reveal="words" className="hero-display max-w-[12ch] font-serif [font-variation-settings:'opsz'_60]">
             <SplitWords copy={home.hero.headline} />
           </h1>
           <p data-reveal style={d(3)} className="mt-7 max-w-[34rem] font-gothic text-[1.1875rem] leading-[1.6] text-ink-soft">

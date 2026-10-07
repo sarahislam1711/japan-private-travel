@@ -5,6 +5,7 @@ import { ard, type Translation } from "./schema";
 export const uiAr: Translation<typeof ui> = {
   skipLink: ard("انتقل إلى المحتوى"),
   menu: ard("القائمة"),
+  close: ard("إغلاق"),
   sourceLink: ard("المصدر"),
   whatsappButton: ard("راسلنا عبر واتساب"),
   footer: {

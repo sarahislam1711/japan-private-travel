@@ -5,6 +5,7 @@ import { attachArabic, draft, locked } from "./schema";
 export const ui = {
   skipLink: draft("Skip to content"),
   menu: draft("Menu"),
+  close: draft("Close"),
   sourceLink: draft("Source"),
   whatsappButton: locked("Message us on WhatsApp"),
   footer: {

@@ -54,6 +54,23 @@
     }
   }
 
+  /* Home's hero headline: the site's one heavier, larger headline (Sarah, 7 Oct 2026). */
+  .hero-display {
+    font-size: clamp(3.5rem, 5.4vw + 1.1rem, 6.75rem);
+    font-weight: 460;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  @media (min-width: 64rem) and (max-height: 820px) {
+    .hero-display {
+      font-size: clamp(3.1rem, 4vw + 1rem, 5.25rem);
+    }
+  }
+  :root:lang(ar) .hero-display {
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
   :root:lang(ar) body {
     font-variant-numeric: lining-nums;
   }
@@ -230,6 +247,14 @@
       opacity: 0;
       transform: translateY(1rem);
     }
+  }
+
+  /* Floating menus: Snow raised off the page by tone, with a faint Ink edge. No shadow
+     (DESIGN.md, The Tone Not Shadow Rule). */
+  .menu-surface {
+    background-color: var(--color-plate);
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-ink) 14%, transparent);
   }
 
   /* Menu panel: a quick fade and settle on open (interaction feedback, not decoration). */
