@@ -4,6 +4,7 @@ import { PageClose } from "@/components/PageClose";
 import { RegionSection } from "@/components/RegionSection";
 import { SummerHero } from "@/components/SummerHero";
 import { pageMetadata } from "@/lib/metadata";
+import { StructuredData } from "@/components/StructuredData";
 
 export const generateMetadata = () => pageMetadata("summerJourneys");
 
@@ -15,6 +16,7 @@ export const generateMetadata = () => pageMetadata("summerJourneys");
 export default function SummerJourneysPage() {
   return (
     <main id="main">
+      <StructuredData page="summerJourneys" />
       <SummerHero />
       <MonthsSection />
       {summerJourneys.regions.map((region, i) => (

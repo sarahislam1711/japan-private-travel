@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { localePath, routeFor, type RouteKey } from "@content/routes";
+import { pageMeta } from "@content/meta";
+import { localePath, type RouteKey } from "@content/routes";
 import { copyText } from "./copy";
 import { getLocale } from "./locale";
-import { siteUrl } from "./site-url";
-
-/** Absolute URL of a route in a language. */
-export const absolute = (key: RouteKey, locale: "en" | "ar") => new URL(localePath(key, locale), siteUrl()).toString();
 
 /**
  * Per-page metadata in the page's language: title and description from
- * content/routes.ts (null until written in Prompt 7), a self-referencing
+ * content/meta.ts, a self-referencing
  * canonical, and reciprocal hreflang for English, Arabic and x-default (English).
  */
 export async function pageMetadata(key: RouteKey): Promise<Metadata> {
   const locale = await getLocale();
-  const route = routeFor(key);
+  const meta = pageMeta[key];
+  const title = copyText(meta.title, locale);
+  const description = copyText(meta.description, locale);
   return {
-    title: route.meta.title ? copyText(route.meta.title, locale) : `[[META_TITLE ${key} ${locale}]]`,
-    description: route.meta.description ? copyText(route.meta.description, locale) : undefined,
+    title,
+    description,
     alternates: {
       canonical: localePath(key, locale),
       languages: {
@@ -26,6 +25,13 @@ export async function pageMetadata(key: RouteKey): Promise<Metadata> {
         "x-default": localePath(key, "en"),
       },
     },
-    openGraph: { url: localePath(key, locale) },
+    openGraph: {
+      type: "website",
+      url: localePath(key, locale),
+      title,
+      description,
+      images: [{ url: `/og/${locale}/${key}`, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [`/og/${locale}/${key}`] },
   };
 }

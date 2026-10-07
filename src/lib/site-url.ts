@@ -1,3 +1,4 @@
+import { localePath, type Locale, type RouteKey } from "@content/routes";
 import { site } from "@content/site";
 import { isResolved, copyText } from "./copy";
 
@@ -14,3 +15,6 @@ export function siteUrl(): URL {
 export function canonicalDomain(): string | null {
   return isResolved(site.domain) ? copyText(site.domain) : null;
 }
+
+/** Absolute URL of a route in a language. */
+export const absolute = (key: RouteKey, locale: Locale) => new URL(localePath(key, locale), siteUrl()).toString();

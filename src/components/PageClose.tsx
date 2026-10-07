@@ -21,7 +21,7 @@ export async function PageClose({ heading }: { heading: Copy }) {
         </h2>
         <div data-reveal style={d(2)} className="col-span-12 flex flex-wrap items-center gap-x-6 gap-y-4 desktop:col-span-4 desktop:col-start-9 desktop:self-end">
           <WhatsAppLink tone="light" />
-          <Link href={localePath(contact.key, locale)} className="font-gothic text-label">
+          <Link href={localePath(contact.key, locale)} className="tap font-gothic text-label">
             <CopyText copy={contact.navLabel!} />
           </Link>
         </div>

@@ -1,6 +1,7 @@
 /* Walks every content module and yields each Copy node with its location. */
 import { mainNav, pages, notFoundPage, routes, site, ui } from "../../content/index";
-import { languageSwitch } from "../../content/languages";
+import { languageMenu, languageNames } from "../../content/languages";
+import { pageMeta } from "../../content/meta";
 import { CopySchema, isCopy, type Copy } from "../../content/schema";
 import { placeholders } from "../../content/placeholders";
 
@@ -21,7 +22,7 @@ function* walk(value: unknown, file: string, path: string): Generator<CopyLocati
 }
 
 export function allCopy(): CopyLocation[] {
-  const found: CopyLocation[] = [...walk(site, "content/site.ts", "site"), ...walk(ui, "content/interface.ts", "ui"), ...walk(mainNav, "content/navigation.ts", "mainNav"), ...walk(languageSwitch, "content/languages.ts", "languageSwitch")];
+  const found: CopyLocation[] = [...walk(site, "content/site.ts", "site"), ...walk(ui, "content/interface.ts", "ui"), ...walk(mainNav, "content/navigation.ts", "mainNav"), ...walk(languageMenu, "content/languages.ts", "languageMenu"), ...walk(languageNames, "content/languages.ts", "languageNames"), ...walk(pageMeta, "content/meta.ts", "pageMeta")];
   for (const route of routes) found.push(...walk(route, "content/routes.ts", `routes.${route.key}`));
   for (const [key, page] of Object.entries(pages)) found.push(...walk(page.content, page.file, key));
   found.push(...walk(notFoundPage.content, notFoundPage.file, "notFound"));

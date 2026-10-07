@@ -17,7 +17,7 @@ export async function MarginNote({ children, claims = [] }: { children: ReactNod
       <p>{children}</p>
       {claims.length ? (
         <p className="mt-2">
-          <a href={`${localePath("about", locale)}#${claims[0]}`} className="text-ink">
+          <a href={`${localePath("about", locale)}#${claims[0]}`} className="tap text-ink">
             <CopyText copy={ui.sourceLink} />
           </a>
         </p>

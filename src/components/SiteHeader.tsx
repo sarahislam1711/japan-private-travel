@@ -12,7 +12,7 @@ import { Wordmark } from "./Wordmark";
 
 const linkClass = "no-underline hover:underline aria-[current=page]:underline aria-[current=page]:decoration-2";
 const ctaClass =
-  "inline-block rounded-(--radius-control) px-4 py-2 no-underline ring-1 ring-ink transition-colors hover:bg-ink hover:text-plate aria-[current=page]:bg-ink aria-[current=page]:text-plate";
+  "inline-flex min-h-11 items-center rounded-(--radius-control) px-4 no-underline ring-1 ring-ink transition-colors hover:bg-ink hover:text-plate aria-[current=page]:bg-ink aria-[current=page]:text-plate";
 
 const utilityClass = `${linkClass} text-small text-ink-soft hover:text-ink`;
 
@@ -27,7 +27,7 @@ export async function SiteHeader() {
         <CopyText copy={ui.skipLink} />
       </a>
       <header className="mx-auto flex max-w-(--content-max) items-center justify-between gap-6 px-(--page-margin) pt-6 pb-5">
-        <Link href={localePath("home", locale)} className="no-underline">
+        <Link href={localePath("home", locale)} className="tap no-underline">
           <Wordmark />
         </Link>
 
@@ -55,7 +55,7 @@ export async function SiteHeader() {
               </li>
             ))}
             <li>
-              <LanguageSwitch className={utilityClass} />
+              <LanguageSwitch />
             </li>
             {mainNav
               .filter((e) => e.kind === "cta")
@@ -69,23 +69,26 @@ export async function SiteHeader() {
           </ul>
         </nav>
 
-        <details className="relative font-gothic text-label desktop:hidden">
-          <summary className="cursor-pointer list-none underline underline-offset-[0.22em] [&::-webkit-details-marker]:hidden">
+        {/* Mobile: the globe sits in the bar beside Menu, never nested inside it. */}
+        <div className="flex items-center gap-3 desktop:hidden">
+          <LanguageSwitch />
+        <details className="relative font-gothic text-label">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center underline underline-offset-[0.22em] [&::-webkit-details-marker]:hidden">
             <CopyText copy={ui.menu} />
           </summary>
           <nav aria-label="Main" className="absolute end-0 z-20 mt-3 min-w-64 rounded-(--radius-control) bg-plate px-5 py-4 ring-1 ring-hairline">
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col">
               {mainNav.map((entry, i) => (
                 <li key={i}>
                   {entry.kind === "group" ? (
                     <>
-                      <span className="text-ink-soft">
+                      <span className="flex min-h-11 items-center text-ink-soft">
                         <CopyText copy={entry.label} />
                       </span>
-                      <ul className="mt-2 flex flex-col gap-2 ps-4">
+                      <ul className="flex flex-col ps-4">
                         {entry.items.map(({ route: key }) => (
                           <li key={key}>
-                            <NavLink href={localePath(key, locale)} className={linkClass}>
+                            <NavLink href={localePath(key, locale)} className={`${linkClass} flex min-h-11 items-center`}>
                               {label(key)}
                             </NavLink>
                           </li>
@@ -95,19 +98,17 @@ export async function SiteHeader() {
                   ) : (
                     <NavLink
                       href={localePath(entry.route, locale)}
-                      className={entry.kind === "cta" ? `${ctaClass} mt-1` : entry.kind === "utility" ? utilityClass : linkClass}
+                      className={entry.kind === "cta" ? `${ctaClass} mt-2` : `${entry.kind === "utility" ? utilityClass : linkClass} flex min-h-11 items-center`}
                     >
                       {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
                     </NavLink>
                   )}
                 </li>
               ))}
-              <li>
-                <LanguageSwitch className={utilityClass} />
-              </li>
             </ul>
           </nav>
         </details>
+        </div>
       </header>
     </>
   );

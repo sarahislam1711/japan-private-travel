@@ -31,7 +31,7 @@ export async function HomeHero() {
           </p>
           <div data-reveal style={d(4)} className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
             <WhatsAppLink />
-            <Link href={localePath(contact.key, locale)} className="font-gothic text-label">
+            <Link href={localePath(contact.key, locale)} className="tap font-gothic text-label">
               <CopyText copy={contact.navLabel!} />
             </Link>
           </div>
@@ -61,7 +61,7 @@ export async function HomeHero() {
               <CopyText copy={home.margin.statement} />
             </p>
             <p className="mt-3 font-gothic text-label">
-              <a href={`${localePath("about", locale)}#CL-06`}>
+              <a href={`${localePath("about", locale)}#CL-06`} className="tap">
                 <CopyText copy={home.margin.check} />
               </a>
             </p>

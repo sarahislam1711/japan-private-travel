@@ -18,7 +18,7 @@ export async function HowWeWork() {
         lead: <CopyText copy={point.lead} />,
         body: <CopyText copy={point.body} />,
         link: (
-          <Link href={localePath(point.link, locale)}>
+          <Link href={localePath(point.link, locale)} className="tap">
             <CopyText copy={routeFor(point.link).navLabel!} />
           </Link>
         ),

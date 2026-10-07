@@ -1,5 +1,4 @@
 /* C7 (source side) — DRAFT nodes, unfilled placeholders, unwritten metadata, literal [[KEY]] strings. */
-import { routes } from "../../../content/routes";
 import { placeholders } from "../../../content/placeholders";
 import type { Finding } from "../types";
 import { lineOf, type SourceFile } from "../files";
@@ -45,17 +44,6 @@ export function c7(copy: CopyLocation[], files: SourceFile[]): Finding[] {
         fix: `Fill in content/placeholders.ts (owner: ${[...new Set(unfilled.map((k) => placeholders[k].owner))].join(", ")}).`,
       });
   }
-
-  for (const route of routes)
-    for (const field of ["title", "description"] as const)
-      if (route.meta[field] === null)
-        findings.push({
-          rule: "C7",
-          severity: "error",
-          where: `content/routes.ts › routes.${route.key}.meta.${field}`,
-          match: `meta ${field} not written`,
-          fix: "Written in Prompt 7 and approved by the team.",
-        });
 
   for (const f of files)
     for (const m of f.code.matchAll(/\[\[[A-Z][A-Z0-9_]*\]\]/g))

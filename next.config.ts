@@ -6,6 +6,15 @@ const domain = placeholders.DOMAIN.value;
 const indexable = process.env.VERCEL_ENV === "production" && domain !== null;
 const noindex = { key: "X-Robots-Tag", value: "noindex, nofollow" };
 
+// Security headers on every response: trust signals for browsers and search engines.
+const security = [
+  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+];
+
 const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: false,
@@ -13,8 +22,10 @@ const nextConfig: NextConfig = {
 
   async headers() {
     return [
+      { source: "/:path*", headers: security },
       // The advisor portal is never indexed, whatever the environment (C9).
       { source: "/advisors/portal/:path*", headers: [noindex] },
+      { source: "/ar/advisors/portal/:path*", headers: [noindex] },
       // Previews, local builds and pre-domain builds are never indexed.
       ...(indexable ? [] : [{ source: "/:path*", headers: [noindex] }]),
     ];

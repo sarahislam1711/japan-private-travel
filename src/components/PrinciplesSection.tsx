@@ -32,7 +32,7 @@ export async function PrinciplesSection({ id, heading, items }: { id: string; he
             {item.proof ? <div className="mt-5">{item.proof}</div> : null}
             {item.link ? (
               <p className="mt-5 font-gothic text-label">
-                <Link href={localePath(item.link, locale)}>
+                <Link href={localePath(item.link, locale)} className="tap">
                   <CopyText copy={routeFor(item.link).navLabel!} />
                 </Link>
               </p>

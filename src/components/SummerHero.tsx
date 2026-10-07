@@ -20,7 +20,7 @@ export async function SummerHero() {
       </div>
       <p className="mt-8 font-gothic text-label text-ink-soft">
         <CopyText copy={summerJourneys.otherSeasons} />{" "}
-        <Link href={localePath(pj.key, locale)} className="text-ink">
+        <Link href={localePath(pj.key, locale)} className="tap text-ink">
           <CopyText copy={pj.navLabel!} />
         </Link>
       </p>

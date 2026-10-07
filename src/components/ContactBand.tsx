@@ -29,7 +29,7 @@ export function ContactBand() {
               <CopyText copy={c.emailLabel} />
             </dt>
             <dd>
-              <a href={mail}>
+              <a href={mail} className="tap">
                 <CopyText copy={c.email} />
               </a>
             </dd>
@@ -37,7 +37,7 @@ export function ContactBand() {
               <CopyText copy={c.phoneLabel} />
             </dt>
             <dd className="[font-variant-numeric:lining-nums]">
-              <a href={tel}>
+              <a href={tel} className="tap">
                 <CopyText copy={c.phone} />
               </a>
             </dd>

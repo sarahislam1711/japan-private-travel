@@ -41,8 +41,26 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `footer.privacy` | Privacy | DRAFT |
 | `footer.terms` | Terms of business | DRAFT |
 | `footer.legal` | Legal | DRAFT (footer column heading) |
-| `languageSwitch.label` | العربية on English pages · English on Arabic pages (each language named in its own script) | DRAFT |
+| `languageMenu.label` | Language (accessible name of the globe button; Arabic: اللغة) | DRAFT |
+| `languageNames` | English · العربية (each language named in its own script) | DRAFT |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
+
+## 1b. Page titles and meta descriptions (`content/meta.ts`)
+
+Drafted 7 Oct 2026 for approval, for search intent in each language; Arabic in `content/meta.ts` and `docs/CONTENT.ar.md`. Titles render as "Title — HalaJapan" (under 60 characters); descriptions under 160.
+
+| Page | Title | Description | Status |
+|---|---|---|---|
+| home | Private family trips to Japan | A registered Japanese travel agency in Tokyo and Osaka, planning private trips for families who travel together, in Arabic, English or Japanese. | DRAFT |
+| summerJourneys | Summer in Japan: Hokkaido, Okinawa and the Alps | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips planned for July and August. | DRAFT |
+| privateJapan | Private Japan trips in spring, autumn and winter | Private trips across Japan outside summer, planned for the whole family: connecting rooms, days paced for every age, transport that keeps you together. | DRAFT |
+| familyServices | Japan for Muslim families: halal and prayer | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic. | DRAFT |
+| experiences | Experiences in Japan, arranged with named people | Each experience is arranged with a named person, in a stated season, with a stated lead time. | DRAFT |
+| about | About us: a registered travel agency in Japan | A registered Japanese travel agency working from Tokyo and Osaka. Our registration and travel services managers are named on every page. | DRAFT |
+| forTravelAdvisors | For travel advisors: private Japan for families | A registered Japanese agency for clients who travel as a household. You hold the client relationship; we plan and operate the trip in Japan. | DRAFT |
+| contact | Plan a private family trip to Japan | Tell us who is travelling and when. Message us on WhatsApp, email or call, and we will reply in your language. | DRAFT |
+| privacy | Privacy notice | How HalaJapan uses the details you send us. | DRAFT |
+| terms | Terms of business | Terms of business for trips arranged by HalaJapan. | DRAFT |
 
 ## 2. Navigation (`content/navigation.ts`)
 

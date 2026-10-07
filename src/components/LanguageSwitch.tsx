@@ -1,17 +1,21 @@
-import { languageSwitch } from "@content/languages";
+import { languageMenu, languageNames } from "@content/languages";
 import { localePath, routes } from "@content/routes";
+import { copyText } from "@/lib/copy";
 import { getLocale } from "@/lib/locale";
 import { CopyText } from "./CopyText";
-import { LanguageLink } from "./LanguageLink";
+import { LanguageMenu } from "./LanguageMenu";
 
 const pairs = routes.map((r) => ({ en: localePath(r.key, "en"), ar: localePath(r.key, "ar") }));
 
-/** The switch to the other language, for the header, mobile menu and footer. */
-export async function LanguageSwitch({ className }: { className?: string }) {
+/** The language menu (globe and dropdown), for the header and the mobile menu. */
+export async function LanguageSwitch() {
   const locale = await getLocale();
   return (
-    <LanguageLink pairs={pairs} target={locale === "ar" ? "en" : "ar"} className={className}>
-      <CopyText copy={languageSwitch.label} />
-    </LanguageLink>
+    <LanguageMenu
+      pairs={pairs}
+      current={locale}
+      label={copyText(languageMenu.label, locale)}
+      names={{ en: <CopyText copy={languageNames.en} />, ar: <CopyText copy={languageNames.ar} /> }}
+    />
   );
 }

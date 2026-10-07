@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **0** approved,
-**159** draft,
-**0** missing — of 159 strings.
+**181** draft,
+**0** missing — of 181 strings.
 
 ## content/site.ts
 
@@ -49,7 +49,34 @@ Status: **0** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `languageSwitch.label` | العربية | <span dir="rtl" lang="ar">English</span> | draft |
+| `languageMenu.label` | Language | <span dir="rtl" lang="ar">اللغة</span> | draft |
+| `languageNames.en` | English | <span dir="rtl" lang="ar">English</span> | draft |
+| `languageNames.ar` | العربية | <span dir="rtl" lang="ar">العربية</span> | draft |
+
+## content/meta.ts
+
+| Where | English | Arabic | Status |
+|---|---|---|---|
+| `pageMeta.home.title` | Private family trips to Japan | <span dir="rtl" lang="ar">رحلات خاصة إلى اليابان للعائلات</span> | draft |
+| `pageMeta.home.description` | A registered Japanese travel agency in Tokyo and Osaka, planning private trips for families who travel together, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">وكالة سفر يابانية مسجّلة في طوكيو وأوساكا، نخطّط رحلات خاصة للعائلات التي تسافر معًا، بالعربية والإنجليزية واليابانية.</span> | draft |
+| `pageMeta.summerJourneys.title` | Summer in Japan: Hokkaido, Okinawa and the Alps | <span dir="rtl" lang="ar">صيف اليابان: هوكايدو وأوكيناوا وجبال الألب</span> | draft |
+| `pageMeta.summerJourneys.description` | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips planned for July and August. | <span dir="rtl" lang="ar">صيف اليابان للعائلات: هوكايدو وجبال الألب اليابانية معتدلة، وأوكيناوا على البحر. رحلات خاصة نخطّطها لشهري يوليو وأغسطس.</span> | draft |
+| `pageMeta.privateJapan.title` | Private Japan trips in spring, autumn and winter | <span dir="rtl" lang="ar">رحلات خاصة في اليابان في الربيع والخريف والشتاء</span> | draft |
+| `pageMeta.privateJapan.description` | Private trips across Japan outside summer, planned for the whole family: connecting rooms, days paced for every age, transport that keeps you together. | <span dir="rtl" lang="ar">رحلات خاصة في أنحاء اليابان خارج الصيف، مخطّطة للعائلة كلها: غرف متصلة، وأيام بإيقاع يناسب كل الأعمار، وتنقّل يُبقي الجميع معًا.</span> | draft |
+| `pageMeta.familyServices.title` | Japan for Muslim families: halal and prayer | <span dir="rtl" lang="ar">اليابان للعائلات المسلمة: الحلال والصلاة</span> | draft |
+| `pageMeta.familyServices.description` | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic. | <span dir="rtl" lang="ar">نشرح شهادات الحلال بوضوح، ونؤكّد الاستحمام الخاص غرفةً غرفة، ونُدرج أوقات الصلاة في اليوم، مع مرشدين يعملون بالعربية.</span> | draft |
+| `pageMeta.experiences.title` | Experiences in Japan, arranged with named people | <span dir="rtl" lang="ar">تجارب في اليابان مع أشخاص بأسمائهم</span> | draft |
+| `pageMeta.experiences.description` | Each experience is arranged with a named person, in a stated season, with a stated lead time. | <span dir="rtl" lang="ar">كل تجربة نرتّبها مع شخص محدّد بالاسم، في موسم محدّد، وبمهلة حجز محدّدة.</span> | draft |
+| `pageMeta.about.title` | About us: a registered travel agency in Japan | <span dir="rtl" lang="ar">من نحن: وكالة سفر مسجّلة في اليابان</span> | draft |
+| `pageMeta.about.description` | A registered Japanese travel agency working from Tokyo and Osaka. Our registration and travel services managers are named on every page. | <span dir="rtl" lang="ar">وكالة سفر يابانية مسجّلة تعمل من طوكيو وأوساكا. تسجيلنا وأسماء مديري خدمات السفر لدينا مذكورة في كل صفحة.</span> | draft |
+| `pageMeta.forTravelAdvisors.title` | For travel advisors: private Japan for families | <span dir="rtl" lang="ar">لمستشاري السفر: رحلات خاصة إلى اليابان للعائلات</span> | draft |
+| `pageMeta.forTravelAdvisors.description` | A registered Japanese agency for clients who travel as a household. You hold the client relationship; we plan and operate the trip in Japan. | <span dir="rtl" lang="ar">وكالة يابانية مسجّلة لعملائكم الذين يسافرون كعائلة. تحتفظون بعلاقتكم مع العميل، ونخطّط الرحلة وننفّذها في اليابان.</span> | draft |
+| `pageMeta.contact.title` | Plan a private family trip to Japan | <span dir="rtl" lang="ar">خطّطوا رحلة عائلية خاصة إلى اليابان</span> | draft |
+| `pageMeta.contact.description` | Tell us who is travelling and when. Message us on WhatsApp, email or call, and we will reply in your language. | <span dir="rtl" lang="ar">أخبرونا مَن سيسافر ومتى. راسلونا عبر واتساب أو البريد الإلكتروني أو الهاتف، وسنردّ عليكم بلغتكم.</span> | draft |
+| `pageMeta.privacy.title` | Privacy notice | <span dir="rtl" lang="ar">سياسة الخصوصية</span> | draft |
+| `pageMeta.privacy.description` | How HalaJapan uses the details you send us. | <span dir="rtl" lang="ar">كيف تستخدم HalaJapan البيانات التي ترسلونها إلينا.</span> | draft |
+| `pageMeta.terms.title` | Terms of business | <span dir="rtl" lang="ar">شروط التعامل</span> | draft |
+| `pageMeta.terms.description` | Terms of business for trips arranged by HalaJapan. | <span dir="rtl" lang="ar">شروط التعامل للرحلات التي ترتّبها HalaJapan.</span> | draft |
 
 ## content/routes.ts
 

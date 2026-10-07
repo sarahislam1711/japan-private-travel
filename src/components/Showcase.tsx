@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { isBot } from "./RevealObserver";
 
 export type ShowcaseItem = { lead: ReactNode; body: ReactNode; link: ReactNode };
 
@@ -21,7 +22,8 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 64rem)");
     const still = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setPinned(wide.matches && !still.matches);
+    // Crawlers always get the plain list, with every promise visible.
+    const update = () => setPinned(wide.matches && !still.matches && !isBot());
     update();
     wide.addEventListener("change", update);
     still.addEventListener("change", update);

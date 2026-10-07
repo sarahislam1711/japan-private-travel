@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routes } from "@content/routes";
-import { absolute } from "@/lib/metadata";
+import { absolute } from "@/lib/site-url";
 
 // Every route in both languages, each listing its alternates (hreflang in the sitemap).
 // The portal is never listed (C9). No lastModified: there are no real dates to give yet.

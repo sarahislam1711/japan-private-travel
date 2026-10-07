@@ -55,7 +55,7 @@ export async function RegionSection({ region, index }: { region: Region; index: 
         </p>
         <p className="mt-7 font-gothic text-label text-ink-soft">
           <CopyText copy={summerJourneys.familyLink} />{" "}
-          <Link href={localePath(fs.key, locale)} className="text-ink">
+          <Link href={localePath(fs.key, locale)} className="tap text-ink">
             <CopyText copy={fs.navLabel!} />
           </Link>
         </p>

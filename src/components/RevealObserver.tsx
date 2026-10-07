@@ -8,10 +8,16 @@ import { useEffect } from "react";
  * hidden once this has run (html.reveal-ready), so without JavaScript or with
  * reduced motion everything is simply visible.
  */
+/** Search and AI crawlers, link previewers and headless renderers. */
+export const isBot = () =>
+  typeof navigator !== "undefined" &&
+  /bot|crawl|spider|slurp|preview|facebookexternalhit|embedly|headless|lighthouse|chrome-lighthouse|gpt|claude|perplexity/i.test(navigator.userAgent);
+
 export function RevealObserver() {
   const pathname = usePathname();
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Crawlers and reduced-motion visitors get the content as it is: nothing hidden, nothing animated.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || isBot()) return;
     const root = document.documentElement;
     root.classList.add("reveal-ready");
     const io = new IntersectionObserver(

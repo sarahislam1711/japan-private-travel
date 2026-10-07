@@ -7,7 +7,6 @@ import { routeFor, type RouteKey, localePath } from "@content/routes";
 import { site } from "@content/site";
 import { CopyText } from "./CopyText";
 import { FieldTable } from "./FieldTable";
-import { LanguageSwitch } from "./LanguageSwitch";
 import { Wordmark } from "./Wordmark";
 
 const label = (text: string) => {
@@ -23,7 +22,7 @@ function Column({ heading, children }: { heading: React.ReactNode; children: Rea
   return (
     <div>
       <p className="font-gothic text-label text-ink-soft">{heading}</p>
-      <ul className="mt-4 flex flex-col gap-2.5 font-gothic text-label">{children}</ul>
+      <ul className="mt-2 flex flex-col font-gothic text-label [&_a]:flex [&_a]:min-h-11 [&_a]:items-center">{children}</ul>
     </div>
   );
 }
@@ -75,9 +74,7 @@ export async function SiteFooter() {
                 <CopyText copy={ui.footer.terms} />
               </Link>
             </li>
-            <li>
-              <LanguageSwitch />
-            </li>
+
           </Column>
         </nav>
         <FieldTable

@@ -108,6 +108,13 @@
 }
 
 @layer components {
+  /* A 44px touch area around a text link without moving the layout (WCAG 2.5.5, Google's mobile guidance). */
+  .tap {
+    display: inline-block;
+    padding-block: 0.75rem;
+    margin-block: -0.75rem;
+  }
+
   /* A full pine field: light text, light links, light focus ring. */
   .on-pine {
     background-color: var(--color-pine);
@@ -132,7 +139,7 @@
     transform: translateY(-200%);
     background: var(--color-ink);
     color: var(--color-plate);
-    padding: 0.5rem 0.875rem;
+    padding: 0.75rem 1rem;
     border-radius: var(--radius-control);
     font-family: var(--font-gothic);
     font-size: var(--text-label);

@@ -3,6 +3,7 @@ import { EntryPoints } from "@/components/EntryPoints";
 import { HomeHero } from "@/components/HomeHero";
 import { HowWeWork } from "@/components/HowWeWork";
 import { pageMetadata } from "@/lib/metadata";
+import { StructuredData } from "@/components/StructuredData";
 
 export const generateMetadata = () => pageMetadata("home");
 
@@ -14,6 +15,7 @@ export const generateMetadata = () => pageMetadata("home");
 export default function HomePage() {
   return (
     <main id="main">
+      <StructuredData page="home" />
       <HomeHero />
       <EntryPoints />
       <HowWeWork />

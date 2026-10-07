@@ -54,6 +54,6 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals, metadata files and anything with a file extension.
-  matcher: ["/((?!_next/|api/|robots\\.txt|sitemap\\.xml|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
+  // Skip Next internals, share images, icons, metadata files and anything with a file extension.
+  matcher: ["/((?!_next/|api/|og/|icon|apple-icon|robots\\.txt|sitemap\\.xml|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
 };

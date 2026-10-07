@@ -10,6 +10,7 @@
  * Japanese placeholder value changes.
  */
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+const mkdir = (d) => mkdirSync(d, { recursive: true });
 import { join } from "node:path";
 
 const root = process.cwd();
@@ -56,5 +57,17 @@ for (const fam of families) {
     n++;
   }
   if (!n) throw new Error(`No files for ${fam.file}`);
+}
+// Share images (next/og) need TrueType, static weights: requested without a browser user agent.
+mkdir(join(out, "og"));
+for (const [file, query] of [
+  ["source-serif-4-400.ttf", "family=Source+Serif+4:wght@400"],
+  ["markazi-text-500.ttf", "family=Markazi+Text:wght@500"],
+]) {
+  const css = await (await fetch(`https://fonts.googleapis.com/css2?${query}`)).text();
+  const url = css.match(/url\(([^)]+\.ttf)\)/)?.[1];
+  if (!url) throw new Error(`No TTF for ${file}`);
+  writeFileSync(join(out, "og", file), Buffer.from(await (await fetch(url)).arrayBuffer()));
+  console.log(`  og/${file}  ${(statSync(join(out, "og", file)).size / 1024).toFixed(0)} KB`);
 }
 console.log(`Japanese subset: ${chars.size} characters`);

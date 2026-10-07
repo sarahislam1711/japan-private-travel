@@ -8,6 +8,7 @@ import { PageClose } from "@/components/PageClose";
 import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { SplitHero } from "@/components/SplitHero";
 import { pageMetadata } from "@/lib/metadata";
+import { StructuredData } from "@/components/StructuredData";
 
 export const generateMetadata = () => pageMetadata("privateJapan");
 
@@ -19,6 +20,7 @@ export const generateMetadata = () => pageMetadata("privateJapan");
 export default function PrivateJapanPage() {
   return (
     <main id="main">
+      <StructuredData page="privateJapan" />
       <SplitHero id="pj-title" title={privateJapan.title} verticals={privateJapan.heroImage} slot="private-japan-hero">
         <p className="font-gothic text-copy text-ink-soft">
           <CopyText copy={privateJapan.lede} />

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { locales } from "@content/routes";
@@ -69,6 +69,9 @@ const notoKufi = localFont({
   preload: false,
   variable: "--font-noto-kufi",
 });
+
+/** Browser chrome takes the page's paper colour; light scheme only. */
+export const viewport: Viewport = { themeColor: "#F1F2EE", colorScheme: "light" };
 
 /** Both languages are built for every page; any other language code is a 404. */
 export function generateStaticParams() {
