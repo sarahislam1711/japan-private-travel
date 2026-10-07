@@ -143,7 +143,7 @@ Step symbols, set large under each promise in the How we work stage — DRAFT (d
 
 **Contact**
 
-> **Tell us who is travelling and when you would like to go.**
+> **Start with a conversation. We plan the rest.** (DRAFT, value-led rewrite requested by Sarah, 8 Oct 2026. Previous locked text: "Tell us who is travelling and when you would like to go.")
 > We will reply in your language.
 > [Message us on WhatsApp] · Email [[EMAIL]] · Telephone [[PHONE]]
 

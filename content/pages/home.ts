@@ -59,7 +59,8 @@ export const home = {
     ] satisfies { lead: Copy; body: Copy; link: RouteKey; symbol: Copy }[],
   },
   contact: {
-    heading: locked("Tell us who is travelling and when you would like to go."),
+    // Value-led rewrite at Sarah's request (8 Oct 2026), DRAFT until approved.
+    heading: draft("Start with a conversation. We plan the rest."),
     reply: locked("We will reply in your language."),
     emailLabel: locked("Email"),
     email: locked([ph("EMAIL")]),

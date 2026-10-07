@@ -52,7 +52,7 @@ export const homeAr: Translation<typeof home> = {
     ],
   },
   contact: {
-    heading: ard("أخبرونا مَن سيسافر، ومتى تودّون السفر."),
+    heading: ard("ابدؤوا بمحادثة، ونحن نخطّط الباقي."),
     reply: ard("سنردّ عليكم بلغتكم."),
     emailLabel: ard("البريد الإلكتروني"),
     phoneLabel: ard("الهاتف"),

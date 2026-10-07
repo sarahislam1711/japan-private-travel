@@ -226,19 +226,20 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
           {split ? (
             // Split stage (Sarah, 8 Oct 2026): text on pine at inline-start, a crisp full-colour photo at inline-end.
             // Unlike the faded panel photos elsewhere, these are sharp and contained; each step's photo wipes up into place.
-            <div className="on-pine relative grid min-h-[min(64svh,40rem)] grid-cols-2 overflow-hidden rounded-[24px]">
-              <div className="relative">
-                {items.map((item, i) => {
-                  const state = i === active ? "current" : i < active ? "past" : "next";
-                  return (
+            <div className="on-pine relative min-h-[min(64svh,40rem)] overflow-hidden rounded-[24px]">
+              {/* Sides alternate step by step: photo at inline-end, then inline-start, then inline-end again. */}
+              {items.map((item, i) => {
+                const state = i === active ? "current" : i < active ? "past" : "next";
+                const flipped = i % 2 === 1;
+                return (
+                  <div key={i}>
                     <div
-                      key={i}
                       role="tabpanel"
                       id={`${id}-panel-${i}`}
                       aria-hidden={state !== "current"}
                       inert={state !== "current"}
                       data-active={state === "current" ? "" : undefined}
-                      className={`stage-item absolute inset-0 flex flex-col justify-between gap-6 p-12 transition-[opacity,transform] duration-700 ease-[var(--ease-out-expo)] ${
+                      className={`stage-item absolute inset-y-0 flex w-1/2 flex-col justify-between gap-6 p-12 transition-[opacity,transform] duration-700 ease-[var(--ease-out-expo)] ${flipped ? "end-0" : "start-0"} ${
                         state === "current" ? "translate-y-0 opacity-100" : state === "past" ? "pointer-events-none -translate-y-10 opacity-0" : "pointer-events-none translate-y-10 opacity-0"
                       }`}
                     >
@@ -250,31 +251,25 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
                           {item.lead}
                         </p>
                       </div>
-                      <div className="flex items-end gap-8">
-                        {item.symbol ? (
-                          <span aria-hidden className="symbol-in block shrink-0 font-mincho text-[clamp(3.5rem,5vw,5.5rem)] leading-none text-pine-soft/45">
-                            {item.symbol}
-                          </span>
-                        ) : null}
-                        <div className="flex max-w-[24rem] flex-col gap-4">
-                          <p className="font-gothic text-copy text-ink-soft">{item.body}</p>
-                          {item.link ? <p className="font-gothic text-label">{item.link}</p> : null}
-                        </div>
+                      {/* Promise, detail and link share one start edge; the kanji sits apart in the bottom-end corner. */}
+                      <div className="flex max-w-[26rem] flex-col gap-4 pe-24">
+                        <p className="font-gothic text-copy text-ink-soft">{item.body}</p>
+                        {item.link ? <p className="font-gothic text-label">{item.link}</p> : null}
                       </div>
+                      {item.symbol ? (
+                        <span aria-hidden className="symbol-in pointer-events-none absolute end-10 bottom-8 block font-mincho text-[clamp(4.5rem,6vw,6.5rem)] leading-none text-pine-soft/40">
+                          {item.symbol}
+                        </span>
+                      ) : null}
                     </div>
-                  );
-                })}
-              </div>
-              <div aria-hidden className="relative">
-                {items.map((item, i) => {
-                  const state = i === active ? "current" : i < active ? "past" : "next";
-                  return item.photo ? (
-                    <div key={i} data-state={state} className="stage-photo absolute inset-0 overflow-hidden">
-                      <Image src={item.photo} alt="" fill sizes="50vw" className="object-cover" style={{ objectPosition: item.photoFocus }} priority={i === 0} />
-                    </div>
-                  ) : null;
-                })}
-              </div>
+                    {item.photo ? (
+                      <div aria-hidden data-state={state} className={`stage-photo absolute inset-y-0 w-1/2 overflow-hidden ${flipped ? "start-0" : "end-0"}`}>
+                        <Image src={item.photo} alt="" fill sizes="50vw" className="object-cover" style={{ objectPosition: item.photoFocus }} priority={i === 0} />
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
           ) : (
           <div className="on-pine relative min-h-[min(64svh,40rem)] overflow-hidden rounded-[24px]">

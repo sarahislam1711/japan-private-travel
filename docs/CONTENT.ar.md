@@ -112,7 +112,7 @@ Status: **2** approved,
 | `home.howWeWork.points[1].body` | We tell you your guide's name before you travel, and the managers responsible for our agency are named at the bottom of every page. | <span dir="rtl" lang="ar">نخبركم باسم مرشدكم قبل السفر، وأسماء المديرين المسؤولين عن وكالتنا مذكورة أسفل كل صفحة.</span> | draft |
 | `home.howWeWork.points[2].lead` | Your family's needs are planned in from the start. | <span dir="rtl" lang="ar">احتياجات عائلتكم جزء من التخطيط منذ البداية.</span> | draft |
 | `home.howWeWork.points[2].body` | Dining, private bathing, prayer times, guiding and transport for Muslim families are part of the first plan we send you, not extras added at the end. | <span dir="rtl" lang="ar">الطعام، والاستحمام الخاص، وأوقات الصلاة، والإرشاد، والتنقّل للعائلات المسلمة، كلها جزء من أول خطة نرسلها إليكم، لا إضافات تُلحق في النهاية.</span> | draft |
-| `home.contact.heading` | Tell us who is travelling and when you would like to go. | <span dir="rtl" lang="ar">أخبرونا مَن سيسافر، ومتى تودّون السفر.</span> | draft |
+| `home.contact.heading` | Start with a conversation. We plan the rest. | <span dir="rtl" lang="ar">ابدؤوا بمحادثة، ونحن نخطّط الباقي.</span> | draft |
 | `home.contact.reply` | We will reply in your language. | <span dir="rtl" lang="ar">سنردّ عليكم بلغتكم.</span> | draft |
 | `home.contact.emailLabel` | Email | <span dir="rtl" lang="ar">البريد الإلكتروني</span> | draft |
 | `home.contact.phoneLabel` | Telephone | <span dir="rtl" lang="ar">الهاتف</span> | draft |
