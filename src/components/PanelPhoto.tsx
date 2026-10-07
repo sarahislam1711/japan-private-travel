@@ -9,7 +9,21 @@ const showNotes = process.env.NODE_ENV !== "production" && process.env.NEXT_PUBL
  * A faded photograph behind a panel's text, from the manifest. Its place and
  * month show as a small caption when the manifest gives them.
  */
-export function PanelPhoto({ slot, tone, note = "top" }: { slot: PhotoSlotId; tone: "snow" | "pine"; note?: "top" | "bottom" }) {
+export function PanelPhoto({
+  slot,
+  tone,
+  note = "top",
+  position,
+  strength,
+}: {
+  slot: PhotoSlotId;
+  tone: "snow" | "pine";
+  note?: "top" | "bottom";
+  /** CSS object-position, to keep the subject in view. */
+  position?: string;
+  /** "soft" for a quieter photo behind type that must stay strong (the hero's place names). */
+  strength?: "soft";
+}) {
   const { photoId, brief } = photoSlots[slot];
   const photo = photoId ? photographs.find((p) => p.id === photoId) : undefined;
 
@@ -29,8 +43,9 @@ export function PanelPhoto({ slot, tone, note = "top" }: { slot: PhotoSlotId; to
         alt=""
         fill
         sizes="(min-width: 1024px) 58vw, 100vw"
+        style={position ? { objectPosition: position } : undefined}
         className={`pointer-events-none object-cover transition-opacity duration-500 ${
-          tone === "pine" ? "opacity-40 grayscale group-hover:opacity-50" : "opacity-35 grayscale-[20%] group-hover:opacity-45"
+          tone === "pine" ? (strength === "soft" ? "opacity-25 grayscale" : "opacity-40 grayscale group-hover:opacity-50") : "opacity-35 grayscale-[20%] group-hover:opacity-45"
         }`}
       />
       {photo.place && photo.monthTaken ? (

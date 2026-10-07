@@ -20,4 +20,5 @@ export type Photo = z.infer<typeof PhotoSchema>;
 export const photographs: Photo[] = z.array(PhotoSchema).parse([
   { id: "japan-summer", src: "/photos/japan-summer.jpg", alt: "" },
   { id: "japan-private-tours", src: "/photos/japan-private-tours.jpg", alt: "" },
+  { id: "japan-summer-family", src: "/photos/japan-summer-family.jpg", alt: "" },
 ]);

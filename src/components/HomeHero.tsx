@@ -6,6 +6,7 @@ import { summerJourneys } from "@content/pages/summer-journeys";
 import { routeFor, localePath } from "@content/routes";
 import { site } from "@content/site";
 import { CopyText } from "./CopyText";
+import { PanelPhoto } from "./PanelPhoto";
 import { SplitWords } from "./SplitWords";
 import { WhatsAppLink } from "./WhatsAppLink";
 
@@ -48,6 +49,8 @@ export async function HomeHero() {
           style={d(1)}
           className="on-pine relative col-span-12 flex min-h-[34rem] flex-col overflow-hidden rounded-[20px] p-8 tablet:min-h-[30rem] desktop:col-span-6 desktop:p-12"
         >
+          {/* Depth: the family summer photo, tinted into the pine behind the place names (Sarah, 7 Oct 2026). */}
+          <PanelPhoto slot="home-hero" tone="pine" position="50% 100%" strength="soft" />
           <div aria-hidden className="relative min-h-0 flex-1">
             <span dir="ltr" className="absolute inset-0 flex flex-row-reverse gap-[0.22em] font-mincho leading-[1.04] text-pine-soft text-[clamp(2.5rem,5.2vw,6rem)]">
               {summerJourneys.regions.map((r, i) => (
@@ -57,7 +60,7 @@ export async function HomeHero() {
               ))}
             </span>
           </div>
-          <div className="mt-8 max-w-[26rem]">
+          <div className="relative mt-8 max-w-[26rem] self-start rounded-[16px] bg-pine/85 p-5 -m-5">
             <p className="font-mincho text-[1.125rem] leading-snug text-plate">
               <CopyText copy={site.registration.lineJa} />
             </p>

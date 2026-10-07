@@ -6,6 +6,10 @@
 export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
+  "home-hero": {
+    photoId: "japan-summer-family",
+    brief: "Behind the place names in the hero's pine panel: a family together in summer, from behind.",
+  },
   "home-summer-journeys": {
     photoId: "japan-summer",
     brief: "Hokkaido or the Japan Alps in July or August; a household at a distance or from behind; natural, overcast light.",
