@@ -85,13 +85,13 @@ HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ 
 
 ## 3. Home (`/`)
 
-All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026. It replaces the strategy's hero and resolves D2 (the "no resellers" line is gone).
+All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026 (hero headline and paragraph revised and approved 7 Oct 2026). It replaces the strategy's hero and resolves D2 (the "no resellers" line is gone).
 
 **Hero**
 
 > **Japan, planned for the whole family.**
 >
-> Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese. **DRAFT** (shorter rewrite requested by Sarah, 7 Oct 2026; awaiting approval. Previous locked text: "We plan private trips to Japan for families who travel together, from grandparents to young children. Every trip starts with a conversation and is planned from scratch for your family, in Arabic, English or Japanese.")
+> Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese.
 
 **Margin** (set as a seal at the foot of the hero's pine panel, Sarah 6 Oct 2026)
 
