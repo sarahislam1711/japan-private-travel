@@ -42,7 +42,7 @@ export async function EntryPoints() {
           className={`group relative isolate col-span-12 flex min-h-[26rem] flex-col justify-between overflow-hidden rounded-[20px] p-8 no-underline transition-colors duration-300 tablet:p-12 ${span} ${surface}`}
         >
           <PanelPhoto slot={slot} tone={tone} />
-          <h2 data-reveal="words" className="relative max-w-[14ch] font-serif text-h1 [font-variation-settings:'opsz'_60]">
+          <h2 data-reveal="words" className="relative max-w-[14ch] font-serif text-h1 font-[460] [font-variation-settings:'opsz'_60]">
             <SplitWords copy={heading} />
           </h2>
           <div className="relative">

@@ -30,7 +30,7 @@ export function PanelPhoto({ slot, tone, note = "top" }: { slot: PhotoSlotId; to
         fill
         sizes="(min-width: 1024px) 58vw, 100vw"
         className={`pointer-events-none object-cover transition-opacity duration-500 ${
-          tone === "pine" ? "opacity-30 grayscale group-hover:opacity-40" : "opacity-25 grayscale-[30%] group-hover:opacity-35"
+          tone === "pine" ? "opacity-40 grayscale group-hover:opacity-50" : "opacity-35 grayscale-[20%] group-hover:opacity-45"
         }`}
       />
       {photo.place && photo.monthTaken ? (
