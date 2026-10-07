@@ -301,13 +301,12 @@ Sections:
 
 **LOCKED ⚑D3**
 
-> **Tell us the household, the dates you are weighing, and what the trip needs to do.**
+> **Tell us who is coming, when, and what the trip should do.** (DRAFT, shorter rewrite requested by Sarah, 7 Oct 2026. Previous locked text: "Tell us the household, the dates you are weighing, and what the trip needs to do.")
 >
-> WhatsApp: `[[WHATSAPP_DISPLAY]]` — answered in Arabic or English, within two hours during Japan business hours.
 > Telephone: `[[PHONE]]`
 > Email: `[[EMAIL]]`
->
-> Or use the form: who is travelling (and ages), dates you are considering, language preference.
+
+(Removed by Sarah, 7 Oct 2026: the "Or use the form: …" line and the WhatsApp reply-time line. WhatsApp, telephone and email now show as three icon buttons.)
 
 **Arabic line — DRAFT ⚑D10, requires native review before LOCK**
 

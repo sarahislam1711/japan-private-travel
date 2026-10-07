@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
+import { samePath } from "./NavLink";
 
 type Item = { href: string; label: ReactNode; description: ReactNode };
 
@@ -20,7 +21,7 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const panelId = useId();
   const pathname = usePathname();
-  const active = items.some((i) => i.href === pathname);
+  const active = items.some((i) => samePath(i.href, pathname));
 
   const cancelClose = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -96,7 +97,7 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
       <div id={panelId} hidden={!open} className="absolute -start-3 top-full z-30 pt-2.5">
         <ul data-pointer className="nav-panel menu-surface relative flex w-80 flex-col p-1 [--pointer-start:2.75rem]">
           {items.map((item) => {
-            const current = item.href === pathname;
+            const current = samePath(item.href, pathname);
             return (
               <li key={item.href} className="flex">
                 <Link

@@ -3,17 +3,11 @@ import { ard, ph, type Translation } from "../schema";
 import type { contact } from "./contact";
 
 export const contactAr: Translation<typeof contact> = {
-  title: ard("أخبرونا عن أفراد العائلة، والتواريخ التي تفكّرون فيها، وما تريدون أن تحقّقه الرحلة."),
+  title: ard("أخبرونا مَن سيسافر، ومتى، وما الذي تريدونه من الرحلة."),
   routes: [
-    ard([
-      "واتساب: ",
-      ph("WHATSAPP_DISPLAY"),
-      " — نردّ بالعربية أو الإنجليزية خلال ساعتين في أوقات العمل في اليابان.",
-    ]),
     ard(["الهاتف: ", ph("PHONE")]),
     ard(["البريد الإلكتروني: ", ph("EMAIL")]),
   ],
-  formIntro: ard("أو استخدموا النموذج: مَن سيسافر (وأعمارهم)، والتواريخ التي تفكّرون فيها، واللغة المفضّلة."),
   arabicLine: ard("يسعدنا التواصل معكم باللغة العربية عبر واتساب."),
   form: {
     fields: {

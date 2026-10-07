@@ -3,21 +3,12 @@ import { attachArabic, draft, locked, ph } from "../schema";
 import { contactAr } from "./contact.ar";
 
 export const contact = {
-  title: locked("Tell us the household, the dates you are weighing, and what the trip needs to do.", {
-    flags: ["D3"],
-  }),
+  // Shorter rewrite at Sarah's request (7 Oct 2026), DRAFT until approved.
+  title: draft("Tell us who is coming, when, and what the trip should do.", { flags: ["D3"] }),
   routes: [
-    locked(
-      ["WhatsApp: ", ph("WHATSAPP_DISPLAY"), " — answered in Arabic or English, within two hours during Japan business hours."],
-      { flags: ["D3"] },
-    ),
     locked(["Telephone: ", ph("PHONE")], { flags: ["D3"] }),
     locked(["Email: ", ph("EMAIL")], { flags: ["D3"] }),
   ],
-  formIntro: locked(
-    "Or use the form: who is travelling (and ages), dates you are considering, language preference.",
-    { flags: ["D3"] },
-  ),
   arabicLine: draft("يسعدنا التواصل معكم باللغة العربية عبر واتساب.", { lang: "ar", flags: ["D10"] }),
   form: {
     // Field labels are not marked LOCKED in CONTENT.md, so they are draft.

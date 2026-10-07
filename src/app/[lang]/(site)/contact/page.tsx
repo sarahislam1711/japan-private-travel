@@ -77,14 +77,11 @@ export default async function ContactPage() {
       <StructuredData page="contact" />
       <section aria-labelledby="contact-page-title" className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) pt-10 desktop:pt-16">
         <div className="col-span-12 desktop:col-span-8">
-          <h1 id="contact-page-title" data-reveal="words" className="max-w-[24ch] font-serif text-h1 [font-variation-settings:'opsz'_60]">
+          <h1 id="contact-page-title" data-reveal="words" className="max-w-[24ch] font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
             <SplitWords copy={contact.title} />
           </h1>
-          <p data-reveal className="mt-5 max-w-[36rem] font-gothic text-copy text-ink-soft">
-            <CopyText copy={contact.formIntro} />
-          </p>
         </div>
-        {/* The direct routes as three tap-to-act buttons (Sarah, 7 Oct 2026), the WhatsApp promise beneath. */}
+        {/* The direct routes as three tap-to-act buttons (Sarah, 7 Oct 2026). */}
         <div data-reveal className="col-span-12 self-end desktop:col-span-4">
           <ul className="grid grid-cols-3 gap-2">
             {routes.map((r) => (
@@ -104,9 +101,6 @@ export default async function ContactPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 font-gothic text-small text-ink-soft">
-            <CopyText copy={contact.routes[0]} />
-          </p>
         </div>
       </section>
 

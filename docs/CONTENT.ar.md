@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**238** draft,
-**0** missing — of 240 strings.
+**236** draft,
+**0** missing — of 238 strings.
 
 ## content/site.ts
 
@@ -255,11 +255,9 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `contact.title` | Tell us the household, the dates you are weighing, and what the trip needs to do. | <span dir="rtl" lang="ar">أخبرونا عن أفراد العائلة، والتواريخ التي تفكّرون فيها، وما تريدون أن تحقّقه الرحلة.</span> | draft |
-| `contact.routes[0]` | WhatsApp: [[WHATSAPP_DISPLAY]] — answered in Arabic or English, within two hours during Japan business hours. | <span dir="rtl" lang="ar">واتساب: [[WHATSAPP_DISPLAY]] — نردّ بالعربية أو الإنجليزية خلال ساعتين في أوقات العمل في اليابان.</span> | draft |
-| `contact.routes[1]` | Telephone: [[PHONE]] | <span dir="rtl" lang="ar">الهاتف: [[PHONE]]</span> | draft |
-| `contact.routes[2]` | Email: [[EMAIL]] | <span dir="rtl" lang="ar">البريد الإلكتروني: [[EMAIL]]</span> | draft |
-| `contact.formIntro` | Or use the form: who is travelling (and ages), dates you are considering, language preference. | <span dir="rtl" lang="ar">أو استخدموا النموذج: مَن سيسافر (وأعمارهم)، والتواريخ التي تفكّرون فيها، واللغة المفضّلة.</span> | draft |
+| `contact.title` | Tell us who is coming, when, and what the trip should do. | <span dir="rtl" lang="ar">أخبرونا مَن سيسافر، ومتى، وما الذي تريدونه من الرحلة.</span> | draft |
+| `contact.routes[0]` | Telephone: [[PHONE]] | <span dir="rtl" lang="ar">الهاتف: [[PHONE]]</span> | draft |
+| `contact.routes[1]` | Email: [[EMAIL]] | <span dir="rtl" lang="ar">البريد الإلكتروني: [[EMAIL]]</span> | draft |
 | `contact.arabicLine` | يسعدنا التواصل معكم باللغة العربية عبر واتساب. | <span dir="rtl" lang="ar">يسعدنا التواصل معكم باللغة العربية عبر واتساب.</span> | draft |
 | `contact.form.fields.name` | Your name | <span dir="rtl" lang="ar">الاسم</span> | draft |
 | `contact.form.fields.replyChannel` | How should we reply? | <span dir="rtl" lang="ar">كيف تفضّلون أن نردّ عليكم؟</span> | draft |
