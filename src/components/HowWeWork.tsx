@@ -4,17 +4,23 @@ import { localePath, routeFor } from "@content/routes";
 import { getLocale } from "@/lib/locale";
 import { CopyText } from "./CopyText";
 import { Showcase } from "./Showcase";
+import { photographs } from "@content/photography.manifest";
+import { photoSlots } from "@content/photography.slots";
 import { SplitWords } from "./SplitWords";
 
 /** Home's three working promises as a pinned, scroll-driven showcase; each links to the page with the detail. */
 export async function HowWeWork() {
   const locale = await getLocale();
   const { heading, points } = home.howWeWork;
+  const slots = ["how-step-1", "how-step-2", "how-step-3"] as const;
+  const photoFor = (i: number) => photographs.find((p) => p.id === photoSlots[slots[i]]?.photoId);
   return (
     <Showcase
       id="how-title"
       heading={<SplitWords copy={heading} />}
-      items={points.map((point) => ({
+      items={points.map((point, i) => ({
+        photo: photoFor(i)?.src,
+        photoFocus: photoFor(i)?.focus,
         lead: <SplitWords copy={point.lead} />,
         body: <CopyText copy={point.body} />,
         symbol: <CopyText copy={point.symbol} />,

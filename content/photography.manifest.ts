@@ -14,11 +14,15 @@ export const PhotoSchema = z.object({
   credit: z.string().optional(),
   place: z.string().optional(),
   monthTaken: z.string().optional(),
+  /** Where the subject sits (CSS object-position), so cropping keeps it in view. */
+  focus: z.string().optional(),
 });
 export type Photo = z.infer<typeof PhotoSchema>;
 
 export const photographs: Photo[] = z.array(PhotoSchema).parse([
   { id: "japan-summer", src: "/photos/japan-summer.jpg", alt: "" },
   { id: "japan-private-tours", src: "/photos/japan-private-tours.jpg", alt: "" },
-  { id: "japan-summer-family", src: "/photos/japan-summer-family.jpg", alt: "" },
+  { id: "japan-summer-family", src: "/photos/japan-summer-family.jpg", alt: "", focus: "50% 92%" },
+  { id: "japan-alps", src: "/photos/japan-alps.jpg", alt: "" },
+  { id: "japan-trips-mountains", src: "/photos/japan-trips-mountains.jpg", alt: "" },
 ]);

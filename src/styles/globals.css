@@ -243,6 +243,25 @@
     transition-duration: 300ms;
   }
 
+  /* Split stage photos: the current step's photo wipes up into place, the last one wipes away above it. */
+  .stage-photo {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1000ms var(--ease-out-expo);
+  }
+  .stage-photo[data-state="current"] {
+    clip-path: inset(0 0 0 0);
+  }
+  .stage-photo[data-state="past"] {
+    clip-path: inset(0 0 100% 0);
+  }
+  .stage-photo img {
+    transform: scale(1.08);
+    transition: transform 1600ms var(--ease-out-expo);
+  }
+  .stage-photo[data-state="current"] img {
+    transform: none;
+  }
+
   /* Showcase stage: the step's Japanese symbol settles in after its words. */
   @media (prefers-reduced-motion: no-preference) {
     .stage-item .symbol-in {

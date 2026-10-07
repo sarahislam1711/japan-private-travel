@@ -6,6 +6,10 @@
 export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
+  // How we work: one crisp photo per promise, shown in the split stage (Sarah, 8 Oct 2026). Stand-ins until matched photos arrive.
+  "how-step-1": { photoId: "japan-alps", brief: "We confirm before you commit: a checked room, a ryokan interior, a quiet arrival." },
+  "how-step-2": { photoId: "japan-trips-mountains", brief: "You know who is looking after you: your planner or guide with a family, from behind or at a distance." },
+  "how-step-3": { photoId: "japan-summer-family", brief: "Your family's needs are planned in: generations together, unhurried." },
   "home-hero": {
     photoId: "japan-summer-family",
     brief: "Behind the place names in the hero's pine panel: a family together in summer, from behind.",

@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { isBot } from "./RevealObserver";
 
-export type ShowcaseItem = { lead: ReactNode; body: ReactNode; proof?: ReactNode; link?: ReactNode; symbol?: ReactNode };
+export type ShowcaseItem = { lead: ReactNode; body: ReactNode; proof?: ReactNode; link?: ReactNode; symbol?: ReactNode; photo?: string; photoFocus?: string };
 
 /** Step number, e.g. "01 / 03": these promises are done one by one. */
 const stepLabel = (i: number, n: number) => `${String(i + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}`;
@@ -25,6 +26,7 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
   const [pinned, setPinned] = useState(false);
   const [active, setActive] = useState(0);
   const n = items.length;
+  const split = items.every((item) => item.photo);
 
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 64rem)");
@@ -162,6 +164,11 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
         <ul className="mt-8 flex flex-col gap-4">
           {items.map((item, i) => (
             <li key={i} data-reveal className="on-pine relative overflow-hidden rounded-[20px] p-7">
+              {item.photo ? (
+                <div className="relative -mx-7 -mt-7 mb-6 aspect-[16/10]">
+                  <Image src={item.photo} alt="" fill sizes="100vw" className="object-cover" style={{ objectPosition: item.photoFocus }} />
+                </div>
+              ) : null}
               {item.symbol ? (
                 <span aria-hidden className="pointer-events-none absolute end-6 bottom-5 font-mincho text-[3.25rem] leading-none text-pine-soft/40">
                   {item.symbol}
@@ -216,6 +223,60 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
             </div>
           </div>
 
+          {split ? (
+            // Split stage (Sarah, 8 Oct 2026): text on pine at inline-start, a crisp full-colour photo at inline-end.
+            // Unlike the faded panel photos elsewhere, these are sharp and contained; each step's photo wipes up into place.
+            <div className="on-pine relative grid min-h-[min(64svh,40rem)] grid-cols-2 overflow-hidden rounded-[24px]">
+              <div className="relative">
+                {items.map((item, i) => {
+                  const state = i === active ? "current" : i < active ? "past" : "next";
+                  return (
+                    <div
+                      key={i}
+                      role="tabpanel"
+                      id={`${id}-panel-${i}`}
+                      aria-hidden={state !== "current"}
+                      inert={state !== "current"}
+                      data-active={state === "current" ? "" : undefined}
+                      className={`stage-item absolute inset-0 flex flex-col justify-between gap-6 p-12 transition-[opacity,transform] duration-700 ease-[var(--ease-out-expo)] ${
+                        state === "current" ? "translate-y-0 opacity-100" : state === "past" ? "pointer-events-none -translate-y-10 opacity-0" : "pointer-events-none translate-y-10 opacity-0"
+                      }`}
+                    >
+                      <div>
+                        <p className="font-gothic text-label text-ink-soft [font-variant-numeric:lining-nums_tabular-nums]">
+                          <span dir="ltr">{stepLabel(i, n)}</span>
+                        </p>
+                        <p id={`${id}-lead-${i}`} className="mt-4 font-serif text-[clamp(2rem,1.9vw+1rem,3.25rem)] leading-[1.08] [font-variation-settings:'opsz'_48]">
+                          {item.lead}
+                        </p>
+                      </div>
+                      <div className="flex items-end gap-8">
+                        {item.symbol ? (
+                          <span aria-hidden className="symbol-in block shrink-0 font-mincho text-[clamp(3.5rem,5vw,5.5rem)] leading-none text-pine-soft/45">
+                            {item.symbol}
+                          </span>
+                        ) : null}
+                        <div className="flex max-w-[24rem] flex-col gap-4">
+                          <p className="font-gothic text-copy text-ink-soft">{item.body}</p>
+                          {item.link ? <p className="font-gothic text-label">{item.link}</p> : null}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div aria-hidden className="relative">
+                {items.map((item, i) => {
+                  const state = i === active ? "current" : i < active ? "past" : "next";
+                  return item.photo ? (
+                    <div key={i} data-state={state} className="stage-photo absolute inset-0 overflow-hidden">
+                      <Image src={item.photo} alt="" fill sizes="50vw" className="object-cover" style={{ objectPosition: item.photoFocus }} priority={i === 0} />
+                    </div>
+                  ) : null;
+                })}
+              </div>
+            </div>
+          ) : (
           <div className="on-pine relative min-h-[min(64svh,40rem)] overflow-hidden rounded-[24px]">
             {items.map((item, i) => {
               const state = i === active ? "current" : i < active ? "past" : "next";
@@ -256,6 +317,7 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
               );
             })}
           </div>
+          )}
         </div>
       </div>
     </section>
