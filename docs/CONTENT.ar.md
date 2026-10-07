@@ -352,7 +352,7 @@ Status: **2** approved,
 | `privacy.sections[8].body[0]` | If we change this notice, we will publish the new version on this page. | <span dir="rtl" lang="ar">إذا غيّرنا هذا الإشعار، فسننشر النسخة الجديدة على هذه الصفحة.</span> | draft |
 | `terms.title` | Terms of business | <span dir="rtl" lang="ar">شروط التعامل</span> | draft |
 | `terms.contents` | On this page | <span dir="rtl" lang="ar">في هذه الصفحة</span> | draft |
-| `terms.intro` | These terms explain how HalaJapan works with you, from your first enquiry to your journey home. HalaJapan is a trading name of [[ENTITY_NAME_EN]], [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]. | <span dir="rtl" lang="ar">توضّح هذه الشروط كيف تعمل HalaJapan معكم، من أول استفسار حتى عودتكم إلى دياركم. HalaJapan اسم تجاري لشركة [[ENTITY_NAME_EN]]، وكالة سفر مسجّلة لدى [[REG_AUTHORITY_EN]] برقم [[REG_NUMBER]].</span> | draft |
+| `terms.intro` | How we work with you, from your first enquiry to your journey home. | <span dir="rtl" lang="ar">كيف نعمل معكم، من أول استفسار حتى عودتكم إلى دياركم.</span> | draft |
 | `terms.sections[0].heading` | Enquiries and plans | <span dir="rtl" lang="ar">الاستفسارات والخطط</span> | draft |
 | `terms.sections[0].body[0]` | An enquiry, and the plans we send in reply, do not commit you to anything. A plan becomes a booking only when you accept our written quotation. | <span dir="rtl" lang="ar">الاستفسار والخطط التي نرسلها ردًّا عليه لا تُلزمكم بشيء. ولا تصبح الخطة حجزًا إلا عندما توافقون على عرض السعر المكتوب الذي نقدّمه لكم.</span> | draft |
 | `terms.sections[1].heading` | Your booking and conditions of travel | <span dir="rtl" lang="ar">حجزكم وشروط السفر</span> | draft |

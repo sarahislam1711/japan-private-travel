@@ -71,7 +71,7 @@ export const privacyAr: Translation<typeof privacy> = {
 export const termsAr: Translation<typeof terms> = {
   title: ard("شروط التعامل"),
   contents: ard("في هذه الصفحة"),
-  intro: ard(["توضّح هذه الشروط كيف تعمل ", ph("BRAND"), " معكم، من أول استفسار حتى عودتكم إلى دياركم. ", ph("BRAND"), " اسم تجاري لشركة ", ph("ENTITY_NAME_EN"), "، وكالة سفر مسجّلة لدى ", ph("REG_AUTHORITY_EN"), " برقم ", ph("REG_NUMBER"), "."]),
+  intro: ard("كيف نعمل معكم، من أول استفسار حتى عودتكم إلى دياركم."),
   sections: [
     {
       heading: ard("الاستفسارات والخطط"),

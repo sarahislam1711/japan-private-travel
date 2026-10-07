@@ -427,7 +427,7 @@ Contents label: "On this page"
 
 **Terms of business** (DRAFT, 7 Oct 2026; for review by the 行政書士 / a lawyer before launch, ⚑D11)
 
-> These terms explain how [[BRAND]] works with you, from your first enquiry to your journey home. [[BRAND]] is a trading name of [[ENTITY_NAME_EN]], [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]].
+> How we work with you, from your first enquiry to your journey home.
 
 > **Enquiries and plans**
 > An enquiry, and the plans we send in reply, do not commit you to anything. A plan becomes a booking only when you accept our written quotation.

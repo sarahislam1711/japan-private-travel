@@ -82,7 +82,7 @@ export const privacy = {
 export const terms = {
   title: draft("Terms of business"),
   contents: draft("On this page"),
-  intro: draft(["These terms explain how ", ph("BRAND"), " works with you, from your first enquiry to your journey home. ", ph("BRAND"), " is a trading name of ", ph("ENTITY_NAME_EN"), ", ", ph("REG_AUTHORITY_EN"), " Registered Travel Agency No. ", ph("REG_NUMBER"), "."]),
+  intro: draft("How we work with you, from your first enquiry to your journey home."),
   sections: [
     {
       id: "enquiries",
