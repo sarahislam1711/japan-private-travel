@@ -74,6 +74,7 @@ export const placeholderKeys = [
   // Team — copy not yet in docs/CONTENT.md
   "EXPERIENCES_TITLE",
   "ABOUT_TITLE",
+  "RETENTION_PERIOD",
   "PRIVACY_TITLE",
   "TERMS_TITLE",
 ] as const;
@@ -157,6 +158,7 @@ export const placeholders: Record<PlaceholderKey, Placeholder> = {
 
   EXPERIENCES_TITLE: copy("Page title for /experiences — not defined in CONTENT.md"),
   ABOUT_TITLE: copy("Page title for /about — not defined in CONTENT.md"),
+  RETENTION_PERIOD: fact("legal", "How long enquiry details are kept after the last contact (privacy notice)"),
   PRIVACY_TITLE: copy("Page title for /privacy — not defined in CONTENT.md"),
   TERMS_TITLE: copy("Page title for /terms — not defined in CONTENT.md"),
 };

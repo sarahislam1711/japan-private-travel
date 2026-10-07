@@ -382,8 +382,91 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 
 ## 11. Utility pages
 
-- `/privacy` — `[[PRIVACY_NOTICE]]`. APPI-compliant notice, to be supplied by the 行政書士 (⚑D11).
-- `/terms` — `[[TERMS_OF_BUSINESS]]` (旅行業約款 / 取引条件 as advised, ⚑D11).
+- `/privacy` and `/terms`: drafted by Claude at Sarah's request, 7 Oct 2026 (below). DRAFT; the 行政書士 or a lawyer reviews both before launch (⚑D11). Deposits, payment schedules and cancellation charges are not stated here: they belong in the written conditions of travel (取引条件説明書面) given before each booking.
+
+### Privacy notice (`/privacy`)
+
+**Privacy notice** (DRAFT, 7 Oct 2026; for review by the 行政書士 / a lawyer before launch, ⚑D11)
+
+> This notice explains how [[BRAND]] handles the personal information you share with us when you plan a trip. It is written for Japan's Act on the Protection of Personal Information, and for the EU and UK GDPR where they apply to you.
+
+> **Who we are**
+> [[BRAND]] is a trading name of [[ENTITY_NAME_EN]], a registered travel agency in Japan: [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]. Our offices are at [[ENTITY_ADDRESS]] (Tokyo) and [[OSAKA_ADDRESS]] (Osaka).
+> For anything in this notice, write to [[EMAIL]].
+>
+> **What we collect**
+> Only what you choose to tell us: your name; how to reach you (WhatsApp, telephone or email); who is travelling and their ages; the dates and places you are considering; what the trip needs to do; and the language you would like us to reply in.
+> If you tell us about dietary, religious, medical or mobility needs, we use that information only to plan your trip, and only with your consent.
+>
+> **How we use it**
+> To reply to you, plan and quote your trip, make the bookings you ask for, and look after you while you travel. We do not sell your information, and we do not use it for advertising.
+>
+> **The trip planner**
+> Your answers in the trip planner stay in your browser, on your device, until you send them. Sending opens WhatsApp with your plan written out; once you send it, WhatsApp's own privacy terms also apply.
+>
+> **Who we share it with**
+> Only the people who make your trip happen: the hotels, ryokan, restaurants, drivers, guides and other suppliers you have agreed to, and the services that run this website and our messages (hosting, email and spam protection). Each receives only what it needs.
+> Where a supplier or service holds information outside Japan, we use it only with the safeguards the law requires.
+>
+> **Cookies and visit counts**
+> This website sets no advertising or tracking cookies. We count visits with Plausible, which uses no cookies and collects no personal information.
+>
+> **How long we keep it**
+> We keep enquiry details for [[RETENTION_PERIOD]] after our last contact with you, and booking records for as long as the law requires. Then we delete them.
+>
+> **Your rights**
+> You can ask to see the information we hold about you, to correct it, to stop us using it, or to delete it. Write to [[EMAIL]] and we will reply within the time the law allows.
+> If you live in the EU or the UK, you can also complain to your local data protection authority.
+>
+> **Changes to this notice**
+> If we change this notice, we will publish the new version on this page.
+
+Contents label: "On this page"
+
+### Terms of business (`/terms`)
+
+**Terms of business** (DRAFT, 7 Oct 2026; for review by the 行政書士 / a lawyer before launch, ⚑D11)
+
+> These terms explain how [[BRAND]] works with you, from your first enquiry to your journey home. [[BRAND]] is a trading name of [[ENTITY_NAME_EN]], [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]].
+
+> **Enquiries and plans**
+> An enquiry, and the plans we send in reply, do not commit you to anything. A plan becomes a booking only when you accept our written quotation.
+>
+> **Your booking and conditions of travel**
+> Before you book, we give you our written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your contract with us, alongside these terms.
+>
+> **Prices and payment**
+> Each quotation states its price, what is included and the payment schedule. Prices are confirmed only when we confirm your booking in writing.
+>
+> **Changes and cancellations**
+> If you need to change or cancel your trip, please tell us in writing. Any charges are those set out in your conditions of travel.
+> If we or a supplier must change your trip, we will tell you as soon as we can and offer you alternatives.
+>
+> **Booking through a travel advisor**
+> When you book through a travel advisor, the advisor keeps the relationship with you; we plan and run the trip in Japan under these terms.
+>
+> **What we ask of you**
+> Please make sure that everyone travelling has a valid passport, any visa they need, and meets any health requirements, and that the names, ages and needs you give us are accurate.
+> We strongly recommend travel insurance that covers cancellation, medical care and repatriation for everyone travelling.
+>
+> **Dietary and religious requirements**
+> We tell you plainly which certification a restaurant holds and what is prepared to your requirements without certification. We cannot guarantee any supplier's preparation beyond what it is certified for.
+>
+> **Our responsibility**
+> We plan and arrange your trip with reasonable care, and our responsibility to you is as set out in the Travel Agency Act and your conditions of travel.
+>
+> **Your personal information**
+> We handle the information you share with us as our privacy notice describes.
+> (links to the privacy notice)
+>
+> **The law that applies**
+> These terms are governed by the laws of Japan.
+>
+> **Questions**
+> For any question about these terms, write to [[EMAIL]].
+
+Contents label: "On this page"
+
 - 404 — DRAFT: "There is no page at this address." followed by the site navigation.
 - Page titles and meta descriptions: DRAFT, one per page, written in Prompt 7 and listed in the checkpoint for approval.
 

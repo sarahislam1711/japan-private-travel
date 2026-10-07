@@ -1,7 +1,7 @@
-import { pageTitles } from "@content/index";
-import { pageMetadata } from "@/lib/metadata";
+import { terms } from "@content/pages/utility";
+import { LegalPage } from "@/components/LegalPage";
 import { StructuredData } from "@/components/StructuredData";
-import { PageTitle } from "@/components/PageTitle";
+import { pageMetadata } from "@/lib/metadata";
 
 export const generateMetadata = () => pageMetadata("terms");
 
@@ -9,7 +9,7 @@ export default function TermsPage() {
   return (
     <>
       <StructuredData page="terms" />
-      <PageTitle copy={pageTitles.terms} />
+      <LegalPage doc={terms} />
     </>
   );
 }
