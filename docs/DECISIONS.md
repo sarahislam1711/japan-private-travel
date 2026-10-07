@@ -33,7 +33,7 @@ Each item has a default the build uses until the team decides. "Blocks" says wha
 **D9 — Advisor portal scope and pricing currency.** *Default in the build:* manually approved advisors download rate sheets (PDF) from private storage; no online booking, no live rates, no admin UI; portal switched off in production until you enable it. Rates quoted in yen, per strategy §8's FX warning.
 *Decision:* confirm that scope, and whether rates are in yen with an FX clause or in USD. *Blocks:* Advisors page copy.
 
-**D10 — One Arabic line on Contact.** The strategy defers Arabic pages until evidence justifies them, but the Arabic desk is its main differentiator. One Arabic sentence beside the WhatsApp button signals the desk without starting an Arabic tree. Draft in CONTENT.md; needs native review.
+**D10 — One Arabic line on Contact.** *Superseded 7 Oct 2026 (Sarah): the site now has a full Arabic version, so the lone Arabic line is no longer shown on the English Contact page; the string stays in content for reference.* The strategy defers Arabic pages until evidence justifies them, but the Arabic desk is its main differentiator. One Arabic sentence beside the WhatsApp button signals the desk without starting an Arabic tree. Draft in CONTENT.md; needs native review.
 *Decision:* include or not. *Blocks:* Contact copy lock.
 
 **D11 — Privacy notice and terms of business.** Collecting names, contact details and family composition requires an APPI-compliant privacy notice, and GDPR applies to European enquirers. Whether the 旅行業約款 and 取引条件 must appear online for an enquiry-only business is a question for the 行政書士. These are two utility pages outside the nine.

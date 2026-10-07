@@ -41,6 +41,35 @@ export default async function ContactPage() {
     { id: "suggest", label: t["planner.where.suggest"], group: anywhere },
   ];
 
+  const opts = contact.form.fields.replyChannelOptions; // WhatsApp, Email, Telephone
+  const digits = (c: Copy) => (isResolved(c) ? copyText(c).replace(/[^\d+]/g, "") : "");
+  const icon = (d: string) => (
+    <svg viewBox="0 0 24 24" className="size-[1.375rem]" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d={d} />
+    </svg>
+  );
+  const routes = [
+    {
+      key: "whatsapp",
+      label: opts[0],
+      href: `https://wa.me/${digits(site.whatsapp.e164).replace("+", "")}?text=${encodeURIComponent(copyText(site.whatsapp.prefill, locale))}`,
+      // A speech bubble with a handset: the conventional sign for WhatsApp, drawn in line.
+      icon: icon("M4.5 19.5l1.1-3.6A8 8 0 1 1 8.4 18.6zM9.2 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.5 1 1.3 1.8 2.3 2.3l.6-.5c.2-.1.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3-.1.6-.4.8-.5.3-1.1.5-1.8.3-2.2-.6-3.9-2.3-4.5-4.5-.2-.7 0-1.3.3-1.8z"),
+    },
+    {
+      key: "phone",
+      label: opts[2],
+      href: digits(site.phone) ? `tel:${digits(site.phone)}` : "#",
+      icon: icon("M6.6 3.5h2.6l1.3 4-2 1.3a11 11 0 0 0 6.7 6.7l1.3-2 4 1.3v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"),
+    },
+    {
+      key: "email",
+      label: opts[1],
+      href: isResolved(site.email) ? `mailto:${copyText(site.email)}` : "#",
+      icon: icon("M3.5 6.5h17v11h-17zM3.8 7l8.2 6.5L20.2 7"),
+    },
+  ];
+
   const number = isResolved(site.whatsapp.e164) ? copyText(site.whatsapp.e164).replace(/\D/g, "") : "";
 
   return (
@@ -55,18 +84,30 @@ export default async function ContactPage() {
             <CopyText copy={contact.formIntro} />
           </p>
         </div>
-        <ul data-reveal className="col-span-12 flex flex-col gap-2 self-end font-gothic text-small text-ink-soft desktop:col-span-4 desktop:pb-1">
-          {contact.routes.map((r, i) => (
-            <li key={i}>
-              <CopyText copy={r} />
-            </li>
-          ))}
-          {locale === "en" ? (
-            <li className="pt-2 text-ink" lang="ar" dir="rtl">
-              <CopyText copy={contact.arabicLine} />
-            </li>
-          ) : null}
-        </ul>
+        {/* The direct routes as three tap-to-act buttons (Sarah, 7 Oct 2026), the WhatsApp promise beneath. */}
+        <div data-reveal className="col-span-12 self-end desktop:col-span-4">
+          <ul className="grid grid-cols-3 gap-2">
+            {routes.map((r) => (
+              <li key={r.key}>
+                <a
+                  href={r.href}
+                  {...(r.key === "whatsapp" ? { target: "_blank", rel: "noopener" } : {})}
+                  className="group flex min-h-28 flex-col items-center justify-center gap-3 rounded-[20px] bg-plate px-2 py-5 text-ink no-underline transition-colors hover:bg-pine hover:text-plate"
+                >
+                  <span aria-hidden className="inline-flex size-12 items-center justify-center rounded-full bg-ground text-pine transition-colors group-hover:bg-plate/15 group-hover:text-plate">
+                    {r.icon}
+                  </span>
+                  <span className="font-gothic text-small">
+                    <CopyText copy={r.label} />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 font-gothic text-small text-ink-soft">
+            <CopyText copy={contact.routes[0]} />
+          </p>
+        </div>
       </section>
 
       <section aria-label={t["planner.steps.review"].text} className="mx-auto mt-12 mb-24 max-w-(--content-max) px-(--page-margin) desktop:mb-32">

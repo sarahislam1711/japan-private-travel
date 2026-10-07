@@ -20,7 +20,7 @@ export async function HomeHero() {
   const locale = await getLocale();
   const contact = routeFor("contact");
   return (
-    <section aria-labelledby="home-title" className="mx-auto flex max-w-(--content-max) flex-col px-(--page-margin) desktop:min-h-[calc(100svh-5.5rem)]">
+    <section aria-labelledby="home-title" className="mx-auto flex max-w-(--content-max) flex-col px-(--page-margin) desktop:min-h-[calc(100svh-5.5rem)] desktop:pb-6">
       <div className="grid flex-1 grid-cols-12 gap-x-6 gap-y-10 pt-6 desktop:pt-2">
         <div className="col-span-12 flex flex-col justify-end desktop:col-span-6 desktop:pb-10">
           <h1 id="home-title" data-reveal="words" className="hero-display max-w-[12ch] font-serif [font-variation-settings:'opsz'_60]">

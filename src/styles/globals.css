@@ -56,18 +56,25 @@
 
   /* Home's hero headline: the site's one heavier, larger headline (Sarah, 7 Oct 2026). */
   .hero-display {
-    font-size: clamp(3.875rem, 6.3vw + 1.1rem, 7.875rem);
+    /* As large as the width allows, but never taller than the screen can hold. */
+    font-size: min(clamp(4.25rem, 7.1vw + 1.1rem, 8rem), 13.5svh);
     font-weight: 460;
     line-height: 1;
     letter-spacing: -0.03em;
   }
   @media (min-width: 64rem) and (max-height: 820px) {
     .hero-display {
-      font-size: clamp(3.4rem, 4.7vw + 1rem, 6rem);
+      font-size: min(clamp(3.4rem, 4.9vw + 1rem, 6.25rem), 13.5svh);
     }
   }
   :root:lang(ar) .hero-display {
     line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  /* An Arabic phrase inside an English page takes the brand's Arabic faces, never a system font. */
+  :root:not(:lang(ar)) :lang(ar) {
+    font-family: var(--font-noto-kufi), var(--font-markazi), sans-serif;
     letter-spacing: 0;
   }
 
