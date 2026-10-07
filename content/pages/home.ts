@@ -7,6 +7,7 @@ export const home = {
   hero: {
     headline: locked("Japan, planned for the whole family."),
     // Shorter rewrite approved by Sarah, 7 Oct 2026.
+    planButton: draft("Plan your trip"),
     paragraph: locked("Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese."),
   },
   margin: {

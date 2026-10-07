@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**181** draft,
-**0** missing — of 183 strings.
+**182** draft,
+**0** missing — of 184 strings.
 
 ## content/site.ts
 
@@ -97,6 +97,7 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `home.hero.headline` | Japan, planned for the whole family. | <span dir="rtl" lang="ar">اليابان، بتخطيطٍ يشمل العائلة كلّها.</span> | draft |
+| `home.hero.planButton` | Plan your trip | <span dir="rtl" lang="ar">خطّطوا رحلتكم</span> | draft |
 | `home.hero.paragraph` | Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">رحلات خاصة لكل الأجيال، من الأجداد إلى الأطفال الصغار. نخطّط كل رحلة من البداية معكم، بالعربية أو الإنجليزية أو اليابانية.</span> | draft |
 | `home.margin.statement` | We are a registered travel agency with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">نحن وكالة سفر مسجّلة، ولنا مكتبان في طوكيو وأوساكا.</span> | draft |
 | `home.margin.check` | You can check our registration with [[REG_AUTHORITY_EN]]. | <span dir="rtl" lang="ar">يمكنكم التحقق من تسجيلنا لدى [[REG_AUTHORITY_EN]].</span> | draft |

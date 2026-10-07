@@ -4,6 +4,7 @@ import type { home } from "./home";
 
 export const homeAr: Translation<typeof home> = {
   hero: {
+    planButton: ard("خطّطوا رحلتكم"),
     headline: ard("اليابان، بتخطيطٍ يشمل العائلة كلّها."),
     paragraph: ard(
       "رحلات خاصة لكل الأجيال، من الأجداد إلى الأطفال الصغار. نخطّط كل رحلة من البداية معكم، بالعربية أو الإنجليزية أو اليابانية.",

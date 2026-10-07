@@ -92,6 +92,10 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026 
 > **Japan, planned for the whole family.**
 >
 > Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese.
+>
+> Buttons: **Plan your trip** (solid, to Contact) · Message us on WhatsApp (outlined)
+
+`hero.planButton` "Plan your trip" is **DRAFT** (Sarah chose the button pair, 7 Oct 2026; label awaiting approval).
 
 **Margin** (set as a seal at the foot of the hero's pine panel, Sarah 6 Oct 2026)
 

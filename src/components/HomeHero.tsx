@@ -29,11 +29,15 @@ export async function HomeHero() {
           <p data-reveal style={d(3)} className="mt-7 max-w-[34rem] font-gothic text-[1.1875rem] leading-[1.6] text-ink-soft">
             <CopyText copy={home.hero.paragraph} />
           </p>
-          <div data-reveal style={d(4)} className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <WhatsAppLink />
-            <Link href={localePath(contact.key, locale)} className="tap font-gothic text-label">
-              <CopyText copy={contact.navLabel!} />
+          <div data-reveal style={d(4)} className="mt-9 flex flex-col gap-3 tablet:flex-row tablet:items-center">
+            {/* Two equal ways to begin: the enquiry, or a chat (Sarah, 7 Oct 2026). */}
+            <Link
+              href={localePath(contact.key, locale)}
+              className="inline-flex min-h-12 items-center justify-center rounded-(--radius-control) bg-ink px-6 font-gothic text-label font-bold text-plate no-underline transition-colors hover:bg-pine hover:text-plate"
+            >
+              <CopyText copy={home.hero.planButton} />
             </Link>
+            <WhatsAppLink tone="outline" className="tablet:w-auto" />
           </div>
         </div>
 
