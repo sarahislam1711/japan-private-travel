@@ -1,12 +1,12 @@
-import { getLocale } from "@/lib/locale";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ui } from "@content/interface";
 import { mainNav } from "@content/navigation";
 import { about } from "@content/pages/about";
-import { routeFor, type RouteKey, localePath } from "@content/routes";
+import { localePath, routeFor, type RouteKey } from "@content/routes";
 import { site } from "@content/site";
+import { getLocale } from "@/lib/locale";
 import { CopyText } from "./CopyText";
-import { FieldTable } from "./FieldTable";
 import { Wordmark } from "./Wordmark";
 
 const label = (text: string) => {
@@ -16,88 +16,99 @@ const label = (text: string) => {
 };
 
 const trips = mainNav.find((e) => e.kind === "group");
-const companyRoutes: RouteKey[] = ["familyServices", "experiences", "about", "forTravelAdvisors", "contact"];
+const pageLinks: RouteKey[] = [
+  ...(trips && trips.kind === "group" ? trips.items.map((i) => i.route) : []),
+  "familyServices",
+  "experiences",
+  "about",
+  "forTravelAdvisors",
+  "contact",
+];
 
-function Column({ heading, children }: { heading: React.ReactNode; children: React.ReactNode }) {
+/** One legal fact, set inline: "Label: value". */
+function Fact({ name, children }: { name: ReactNode; children: ReactNode }) {
   return (
-    <div>
-      <p className="font-gothic text-label text-ink-soft">{heading}</p>
-      <ul className="mt-2 flex flex-col font-gothic text-label [&_a]:flex [&_a]:min-h-11 [&_a]:items-center">{children}</ul>
-    </div>
+    <span className="inline">
+      <span className="text-ink-soft">{name}:</span> <span className="text-plate">{children}</span>
+    </span>
   );
 }
 
 /**
- * Every page ends on pine: the site map in columns, then the legal block
- * (COMPLIANCE C1, C2) with the brand's trading-name line.
+ * Every page ends on pine. Above: the brand and the page links in one row.
+ * Below: the legal block required on every page (COMPLIANCE C1, C2), set as a
+ * few lines of small print rather than a table.
  */
 export async function SiteFooter() {
   const locale = await getLocale();
+  const facts: { key: string; name: ReactNode; value: ReactNode }[] = [
+    {
+      key: "entity",
+      name: label("Registered entity"),
+      value: (
+        <>
+          <CopyText copy={site.entity.nameEn} /> (<CopyText copy={site.entity.nameJa} />)
+        </>
+      ),
+    },
+    { key: "registration", name: label("Registration"), value: <CopyText copy={site.registration.lineJa} /> },
+    { key: "tokyo", name: label("Tokyo office"), value: <CopyText copy={site.entity.address} /> },
+    { key: "osaka", name: label("Osaka office"), value: <CopyText copy={site.entity.osakaAddress} /> },
+    { key: "mgr-tokyo", name: label("Travel services manager, Tokyo"), value: <CopyText copy={site.managers.tokyo} /> },
+    { key: "mgr-osaka", name: label("Travel services manager, Osaka"), value: <CopyText copy={site.managers.osaka} /> },
+    { key: "memberships", name: label("Memberships"), value: site.memberships.map((m, i) => <CopyText key={i} copy={m} />) },
+  ];
+
   return (
     <footer className="on-pine">
-      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-14 px-(--page-margin) pt-16 pb-16">
-        <div className="col-span-12 desktop:col-span-4">
-          <Wordmark />
-          <p className="mt-5 max-w-[22rem] font-serif text-field text-ink-soft">
-            <CopyText copy={site.tradeNameLine} />
-          </p>
-        </div>
-        <nav aria-label="Footer" className="col-span-12 grid grid-cols-2 gap-10 tablet:grid-cols-3 desktop:col-span-7 desktop:col-start-6">
-          {trips && trips.kind === "group" ? (
-            <Column heading={<CopyText copy={trips.label} />}>
-              {trips.items.map(({ route }) => (
-                <li key={route}>
-                  <Link href={localePath(route, locale)}>
-                    <CopyText copy={routeFor(route).navLabel!} />
+      <div className="mx-auto max-w-(--content-max) px-(--page-margin) pt-14 pb-10">
+        <div className="flex flex-col gap-8 desktop:flex-row desktop:items-start desktop:justify-between">
+          <div className="max-w-[18rem] shrink-0">
+            <Wordmark />
+            <p className="mt-3 font-gothic text-small text-ink-soft">
+              <CopyText copy={site.tradeNameLine} />
+            </p>
+          </div>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap gap-x-5 font-gothic text-label desktop:justify-end">
+              {pageLinks.map((key) => (
+                <li key={key}>
+                  <Link href={localePath(key, locale)} className="flex min-h-11 items-center">
+                    <CopyText copy={routeFor(key).navLabel!} />
                   </Link>
                 </li>
               ))}
-            </Column>
-          ) : null}
-          <Column heading={<CopyText copy={site.brand.name} />}>
-            {companyRoutes.map((key) => (
-              <li key={key}>
-                <Link href={localePath(key, locale)}>
-                  <CopyText copy={routeFor(key).navLabel!} />
-                </Link>
-              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-6 desktop:flex-row desktop:items-end desktop:justify-between desktop:gap-12">
+          <p className="max-w-[62rem] font-gothic text-small leading-[1.8]">
+            {facts.map((f, i) => (
+              <span key={f.key}>
+                <Fact name={f.name}>{f.value}</Fact>
+                {/* The dot stays with the fact before it, so a line never starts with a separator. */}
+                {i < facts.length - 1 ? (
+                  <>
+                    <span aria-hidden className="text-ink-soft">{"\u00a0\u00a0·"}</span>{" "}
+                  </>
+                ) : null}
+              </span>
             ))}
-          </Column>
-          <Column heading={<CopyText copy={ui.footer.legal} />}>
+          </p>
+          <ul className="flex shrink-0 gap-x-6 font-gothic text-small">
             <li>
-              <Link href={localePath("privacy", locale)}>
+              <Link href={localePath("privacy", locale)} className="flex min-h-11 items-center">
                 <CopyText copy={ui.footer.privacy} />
               </Link>
             </li>
             <li>
-              <Link href={localePath("terms", locale)}>
+              <Link href={localePath("terms", locale)} className="flex min-h-11 items-center">
                 <CopyText copy={ui.footer.terms} />
               </Link>
             </li>
-
-          </Column>
-        </nav>
-        <FieldTable
-          variant="bare"
-          className="col-span-12 pt-6 desktop:col-span-7 desktop:col-start-6"
-          fields={[
-            {
-              key: "entity",
-              label: label("Registered entity"),
-              value: (
-                <>
-                  <CopyText copy={site.entity.nameEn} /> (<CopyText copy={site.entity.nameJa} />)
-                </>
-              ),
-            },
-            { key: "registration", label: label("Registration"), value: <CopyText copy={site.registration.lineJa} /> },
-            { key: "tokyo", label: label("Tokyo office"), value: <CopyText copy={site.entity.address} /> },
-            { key: "osaka", label: label("Osaka office"), value: <CopyText copy={site.entity.osakaAddress} /> },
-            { key: "mgr-tokyo", label: label("Travel services manager, Tokyo"), value: <CopyText copy={site.managers.tokyo} /> },
-            { key: "mgr-osaka", label: label("Travel services manager, Osaka"), value: <CopyText copy={site.managers.osaka} /> },
-            { key: "memberships", label: label("Memberships"), value: site.memberships.map((m, i) => <CopyText key={i} copy={m} />) },
-          ]}
-        />
+          </ul>
+        </div>
       </div>
     </footer>
   );
