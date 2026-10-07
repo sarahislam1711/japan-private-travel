@@ -79,7 +79,7 @@ export async function SiteFooter() {
                 <ul className="mt-1 font-gothic text-label">
                   {col.links.map((key) => (
                     <li key={key}>
-                      <Link href={localePath(key, locale)} className="flex min-h-10 items-center">
+                      <Link href={localePath(key, locale)} className="flex min-h-10 items-center no-underline hover:underline">
                         <CopyText copy={routeFor(key).navLabel!} />
                       </Link>
                     </li>
@@ -106,12 +106,12 @@ export async function SiteFooter() {
           </p>
           <ul className="flex shrink-0 gap-x-6 font-gothic text-small desktop:-mt-2.5">
             <li>
-              <Link href={localePath("privacy", locale)} className="flex min-h-11 items-center">
+              <Link href={localePath("privacy", locale)} className="flex min-h-11 items-center no-underline hover:underline">
                 <CopyText copy={ui.footer.privacy} />
               </Link>
             </li>
             <li>
-              <Link href={localePath("terms", locale)} className="flex min-h-11 items-center">
+              <Link href={localePath("terms", locale)} className="flex min-h-11 items-center no-underline hover:underline">
                 <CopyText copy={ui.footer.terms} />
               </Link>
             </li>
