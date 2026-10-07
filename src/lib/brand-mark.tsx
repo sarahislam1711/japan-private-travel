@@ -1,33 +1,20 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { BRAND_HEX, NOREN_PATHS } from "./noren";
 
-/**
- * The interim brand mark for favicons and app icons: "H" in Source Serif on
- * Pine. A placeholder until a drawn mark exists (DECISIONS D1).
- */
-export async function brandMark(size: number, radius: number) {
-  const serif = await readFile(join(process.cwd(), "src/fonts/og/source-serif-4-400.ttf"));
+/** The app icon: the noren mark in Snow on a Pine square, at three-quarters scale. */
+export function brandMark(size: number, radius: number) {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "#2C5F53",
-          color: "#FAFAF8",
-          borderRadius: radius,
-          fontFamily: "Serif",
-          fontSize: size * 0.68,
-          paddingBottom: size * 0.04,
-        }}
-      >
-        H
+      <div style={{ width: "100%", height: "100%", display: "flex", background: BRAND_HEX.pine, borderRadius: radius }}>
+        <svg width={size} height={size} viewBox="0 0 64 64">
+          <g transform="translate(8 8) scale(0.75)">
+            {NOREN_PATHS.map((d) => (
+              <path key={d} d={d} fill={BRAND_HEX.snow} />
+            ))}
+          </g>
+        </svg>
       </div>
     ),
-    { width: size, height: size, fonts: [{ name: "Serif", data: serif, weight: 400, style: "normal" }] },
+    { width: size, height: size },
   );
 }

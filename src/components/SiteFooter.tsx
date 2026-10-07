@@ -65,7 +65,7 @@ export async function SiteFooter() {
       <div className="mx-auto max-w-(--content-max) px-(--page-margin) pt-14 pb-10">
         <div className="flex flex-col gap-8 desktop:flex-row desktop:items-start desktop:justify-between">
           <div className="max-w-[18rem] shrink-0">
-            <Wordmark />
+            <Wordmark stacked />
             <p className="mt-3 font-gothic text-small text-ink-soft">
               <CopyText copy={site.tradeNameLine} />
             </p>

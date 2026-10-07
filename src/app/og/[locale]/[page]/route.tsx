@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { BRAND_HEX, NOREN_PATHS, splitBrand } from "@/lib/noren";
 import { pageMeta } from "@content/meta";
 import { home } from "@content/pages/home";
 import { isLocale, routeKeys, type RouteKey } from "@content/routes";
@@ -45,7 +46,17 @@ export async function GET(_: Request, { params }: { params: Promise<{ locale: st
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: ar ? "row-reverse" : "row", background: "#F1F2EE", color: "#1A2230" }}>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "64px 72px", textAlign: ar ? "right" : "left", alignItems: ar ? "flex-end" : "flex-start" }}>
-          <div style={{ fontFamily: "Serif", fontSize: 34 }}>{brand}</div>
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: 14 }}>
+            <svg width={44} height={44} viewBox="0 0 64 64">
+              {NOREN_PATHS.map((d) => (
+                <path key={d} d={d} fill={BRAND_HEX.pine} />
+              ))}
+            </svg>
+            <div style={{ display: "flex", fontFamily: "Serif", fontSize: 36 }}>
+              <span style={{ color: BRAND_HEX.pine }}>{splitBrand(brand)[0]}</span>
+              <span>{splitBrand(brand)[1]}</span>
+            </div>
+          </div>
           {words(title ?? brand, ar ? 74 : 64, ar ? 1.3 : 1.08)}
           {statement ? words(statement, ar ? 30 : 24, 1.4, "#4A5462") : <div style={{ display: "flex" }} />}
         </div>

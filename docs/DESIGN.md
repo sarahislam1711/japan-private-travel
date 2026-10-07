@@ -34,10 +34,10 @@ typography:
     fontVariation: "'opsz' 36"
   wordmark:
     fontFamily: "Source Serif 4, Georgia, serif"
-    fontSize: "1.375rem"
-    fontWeight: 600
+    fontSize: "1.5rem"
+    fontWeight: 450
     lineHeight: 1
-    letterSpacing: "-0.015em"
+    letterSpacing: "-0.01em"
     fontVariation: "'opsz' 24"
   body:
     fontFamily: "Source Serif 4, Noto Serif JP, Georgia, serif"
@@ -206,7 +206,7 @@ A dev-only Stone (#6B7480) outlines placeholders and DRAFT marks; it is tooling,
 - **Display** (320, clamp 3–5.5rem, 1.0, -0.028em, opsz 60): Home's hero headline, the How we work heading, the contact close heading.
 - **Headline** (330, clamp 2.5–4.25rem, 1.04, -0.024em, opsz 60): the entry panel headings and page titles.
 - **Title** (360, clamp 1.875–2.625rem, 1.12, -0.016em, opsz 36): the leads of the How we work points.
-- **Wordmark** (600, 1.375rem, 1, -0.015em, opsz 24): the text-set brand name in header and footer.
+- **Wordmark** (450, 1.5rem, 1, -0.01em, opsz 32): "Hala" in Pine, "Japan" in Ink, beside the noren mark. See Logo.
 - **Body** (Source Serif 4 400, 1.125rem, 1.68): the base reading size; oldstyle proportional numerals.
 - **Field** (Source Serif 4 400, 1rem, 1.45, opsz 16): fact values and the footer's trade-name line; lining tabular numerals in values.
 - **Copy** (BIZ UDPGothic 400, 1.0625rem, 1.62, Ink Soft): the short text under every section heading, kept to about 30–32rem.
@@ -327,6 +327,7 @@ On desktop with motion allowed, the section pins for one screen (about 70vh of s
 ### Close, footer and language menu (7 Oct 2026, Sarah)
 - **Page close:** an inset Pine panel (24px radius) on the paper ground at the end of the page (Home's contact close and the shared PageClose), followed by 96–128px of paper. It is never joined to the footer.
 - **Footer:** a quiet Mist band, Ink text. Top row: wordmark and trading-name line beside one row of page links. Below a faint rule (ink at 15%): the legal facts required on every page (COMPLIANCE C1, C2) as inline small print, "Label: value" separated by dots that stay with the fact before them, with Privacy and Terms of business beside it. About 315px tall on desktop.
+- **Logo** (docs/HalaJapan logo and favicon.html, applied 7 Oct 2026): the noren mark (a doorway curtain, three panels under one rod, the middle one lifted: the door is open) beside the wordmark. Mark paths live once in `src/lib/noren.ts`. Header: horizontal lockup, mark 30px. Footer: stacked lockup. On the Arabic site the lockup stays Latin and left to right. On Pine the mark is Snow and "Hala" Pine Soft; on Ink, mark and "Hala" are Pine Soft. Favicon `src/app/icon.svg` is the 16-grid pixel-snapped mark on Pine; the Apple touch icon is the drawn mark in Snow at three-quarters scale on a Pine square. The OG images carry the lockup at top. The mark is a logo, not an icon, so the no-icons rule stands.
 - **Language menu:** a globe button (44px, a functional icon, like the Trips chevron) opens a two-item list: "English" with the United States flag and "Arabic" with the Saudi flag, named in English on both sites, by Sarah's choice. Flags are inline SVG from flag-icons (MIT; src/assets/flags/SOURCE.md). Each item goes to the current page in that language; the current one is bold Pine. On mobile the globe sits beside Menu.
 
 ### Every section fits the screen (7 Oct 2026, Sarah)

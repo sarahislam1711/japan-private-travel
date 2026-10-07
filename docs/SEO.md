@@ -21,7 +21,7 @@ Audited and set up 7 Oct 2026. Keep every item here true when changing routing, 
 - **Titles and descriptions** in both languages (`content/meta.ts`, DRAFT until approved): titles under 60 characters with the brand, descriptions under 160, written for search intent in each language.
 - **Structured data** (`src/components/StructuredData.tsx`): TravelAgency, WebSite, WebPage and BreadcrumbList per page and language. Legal name, address, phone, email, registration and membership appear automatically once their placeholders are filled; placeholder text is never emitted.
 - **Share previews:** Open Graph and Twitter cards with a generated 1200×630 image per page and language (`/og/[locale]/[page]`; Arabic laid out right to left).
-- Favicon, Apple touch icon (interim "H" mark until the logo exists), web manifest, theme colour.
+- Favicon (`src/app/icon.svg`, the noren mark), Apple touch icon, web manifest, theme colour.
 
 ## Mobile (mobile-first indexing)
 - Viewport set; no horizontal scroll at 390px in either language.
