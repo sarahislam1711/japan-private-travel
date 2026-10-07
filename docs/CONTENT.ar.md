@@ -327,7 +327,7 @@ Status: **2** approved,
 |---|---|---|---|
 | `privacy.title` | Privacy notice | <span dir="rtl" lang="ar">إشعار الخصوصية</span> | draft |
 | `privacy.contents` | On this page | <span dir="rtl" lang="ar">في هذه الصفحة</span> | draft |
-| `privacy.intro` | This notice explains how HalaJapan handles the personal information you share with us when you plan a trip. It is written for Japan's Act on the Protection of Personal Information, and for the EU and UK GDPR where they apply to you. | <span dir="rtl" lang="ar">يوضّح هذا الإشعار كيف تتعامل HalaJapan مع البيانات الشخصية التي تشاركونها معنا عند التخطيط لرحلة. وهو مكتوب وفق قانون حماية المعلومات الشخصية في اليابان، ووفق اللائحة العامة لحماية البيانات في الاتحاد الأوروبي والمملكة المتحدة حين تنطبق عليكم.</span> | draft |
+| `privacy.intro` | How we look after the personal information you share when you plan a trip. | <span dir="rtl" lang="ar">كيف نحافظ على البيانات الشخصية التي تشاركونها معنا عند التخطيط لرحلة.</span> | draft |
 | `privacy.sections[0].heading` | Who we are | <span dir="rtl" lang="ar">مَن نحن</span> | draft |
 | `privacy.sections[0].body[0]` | HalaJapan is a trading name of [[ENTITY_NAME_EN]], a registered travel agency in Japan: [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]. Our offices are at [[ENTITY_ADDRESS]] (Tokyo) and [[OSAKA_ADDRESS]] (Osaka). | <span dir="rtl" lang="ar">HalaJapan اسم تجاري لشركة [[ENTITY_NAME_EN]]، وهي وكالة سفر مسجّلة في اليابان لدى [[REG_AUTHORITY_EN]] برقم [[REG_NUMBER]]. مكتبانا في [[ENTITY_ADDRESS]] (طوكيو) و[[OSAKA_ADDRESS]] (أوساكا).</span> | draft |
 | `privacy.sections[0].body[1]` | For anything in this notice, write to [[EMAIL]]. | <span dir="rtl" lang="ar">لأي استفسار يتعلق بهذا الإشعار، راسلونا على [[EMAIL]].</span> | draft |

@@ -7,7 +7,7 @@ import { notFoundAr, privacyAr, termsAr } from "./utility.ar";
 export const privacy = {
   title: draft("Privacy notice"),
   contents: draft("On this page"),
-  intro: draft(["This notice explains how ", ph("BRAND"), " handles the personal information you share with us when you plan a trip. It is written for Japan's Act on the Protection of Personal Information, and for the EU and UK GDPR where they apply to you."]),
+  intro: draft("How we look after the personal information you share when you plan a trip."),
   sections: [
     {
       id: "who",

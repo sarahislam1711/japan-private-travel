@@ -388,7 +388,7 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 
 **Privacy notice** (DRAFT, 7 Oct 2026; for review by the 行政書士 / a lawyer before launch, ⚑D11)
 
-> This notice explains how [[BRAND]] handles the personal information you share with us when you plan a trip. It is written for Japan's Act on the Protection of Personal Information, and for the EU and UK GDPR where they apply to you.
+> How we look after the personal information you share when you plan a trip.
 
 > **Who we are**
 > [[BRAND]] is a trading name of [[ENTITY_NAME_EN]], a registered travel agency in Japan: [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]. Our offices are at [[ENTITY_ADDRESS]] (Tokyo) and [[OSAKA_ADDRESS]] (Osaka).
