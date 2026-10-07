@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**182** draft,
-**0** missing — of 184 strings.
+**226** draft,
+**0** missing — of 228 strings.
 
 ## content/site.ts
 
@@ -266,6 +266,50 @@ Status: **2** approved,
 | `contact.form.submit` | Send enquiry | <span dir="rtl" lang="ar">إرسال الاستفسار</span> | draft |
 | `contact.form.confirmation` | Enquiry received. We will reply in the language you chose, by the route you chose. | <span dir="rtl" lang="ar">تمّ استلام استفساركم. سنردّ عليكم باللغة والوسيلة اللتين اخترتموهما.</span> | draft |
 | `contact.form.privacyLine` | We use these details only to reply to you and plan your trip. See our privacy notice. | <span dir="rtl" lang="ar">نستخدم هذه البيانات فقط للردّ عليكم وتخطيط رحلتكم. اطّلعوا على إشعار الخصوصية.</span> | draft |
+| `contact.planner.steps.who` | Who | <span dir="rtl" lang="ar">المسافرون</span> | draft |
+| `contact.planner.steps.when` | When | <span dir="rtl" lang="ar">الموعد</span> | draft |
+| `contact.planner.steps.where` | Where | <span dir="rtl" lang="ar">الوجهة</span> | draft |
+| `contact.planner.steps.needs` | The trip | <span dir="rtl" lang="ar">الرحلة</span> | draft |
+| `contact.planner.steps.reply` | Reply | <span dir="rtl" lang="ar">الردّ</span> | draft |
+| `contact.planner.steps.review` | Your plan | <span dir="rtl" lang="ar">خطّتكم</span> | draft |
+| `contact.planner.questions.who` | Who is coming? | <span dir="rtl" lang="ar">مَن سيسافر؟</span> | draft |
+| `contact.planner.questions.when` | When are you thinking of travelling? | <span dir="rtl" lang="ar">متى تفكّرون في السفر؟</span> | draft |
+| `contact.planner.questions.where` | Where would you like to go? | <span dir="rtl" lang="ar">إلى أين تودّون الذهاب؟</span> | draft |
+| `contact.planner.questions.needs` | What does the trip need to do? | <span dir="rtl" lang="ar">ما الذي تريدون أن تحقّقه الرحلة؟</span> | draft |
+| `contact.planner.hints.who` | Everyone travelling, from grandparents to the youngest. | <span dir="rtl" lang="ar">كل المسافرين، من الأجداد إلى أصغر الأطفال.</span> | draft |
+| `contact.planner.hints.when` | Pick the months you are weighing. A rough idea is enough. | <span dir="rtl" lang="ar">اختاروا الأشهر التي تفكّرون فيها. تكفي فكرة تقريبية.</span> | draft |
+| `contact.planner.hints.where` | Choose as many as you like, or let us suggest. | <span dir="rtl" lang="ar">اختاروا ما تشاؤون، أو دعونا نقترح عليكم.</span> | draft |
+| `contact.planner.hints.needs` | A celebration, a first visit, slower days for older travellers: whatever matters to you. Optional. | <span dir="rtl" lang="ar">مناسبة خاصة، أو زيارة أولى، أو أيام أهدأ لكبار السن: كل ما يهمّكم. اختياري.</span> | draft |
+| `contact.planner.hints.reply` | We reply in your language, by the route you choose. | <span dir="rtl" lang="ar">نردّ بلغتكم، وبالوسيلة التي تختارونها.</span> | draft |
+| `contact.planner.hints.review` | Check your plan, then send it to us. | <span dir="rtl" lang="ar">راجعوا خطّتكم، ثم أرسلوها إلينا.</span> | draft |
+| `contact.planner.people.adults` | Adults | <span dir="rtl" lang="ar">البالغون</span> | draft |
+| `contact.planner.people.grandparents` | Grandparents | <span dir="rtl" lang="ar">الأجداد</span> | draft |
+| `contact.planner.people.children` | Children | <span dir="rtl" lang="ar">الأطفال</span> | draft |
+| `contact.planner.people.age` | Age | <span dir="rtl" lang="ar">العمر</span> | draft |
+| `contact.planner.people.under1` | Under 1 | <span dir="rtl" lang="ar">أقل من سنة</span> | draft |
+| `contact.planner.people.add` | Add | <span dir="rtl" lang="ar">إضافة</span> | draft |
+| `contact.planner.people.remove` | Remove | <span dir="rtl" lang="ar">إزالة</span> | draft |
+| `contact.planner.when.notSure` | Not sure yet | <span dir="rtl" lang="ar">لم نحدّد بعد</span> | draft |
+| `contact.planner.when.datesNote` | Anything else about dates? (optional) | <span dir="rtl" lang="ar">أي تفاصيل أخرى عن التواريخ؟ (اختياري)</span> | draft |
+| `contact.planner.where.anywhere` | Elsewhere in Japan, any season | <span dir="rtl" lang="ar">أماكن أخرى في اليابان، في أي موسم</span> | draft |
+| `contact.planner.where.suggest` | Not sure yet: suggest somewhere | <span dir="rtl" lang="ar">لم نحدّد بعد: اقترحوا علينا</span> | draft |
+| `contact.planner.buttons.next` | Continue | <span dir="rtl" lang="ar">متابعة</span> | draft |
+| `contact.planner.buttons.back` | Back | <span dir="rtl" lang="ar">رجوع</span> | draft |
+| `contact.planner.buttons.edit` | Edit | <span dir="rtl" lang="ar">تعديل</span> | draft |
+| `contact.planner.buttons.startOver` | Start again | <span dir="rtl" lang="ar">البدء من جديد</span> | draft |
+| `contact.planner.buttons.sendWhatsApp` | Send on WhatsApp | <span dir="rtl" lang="ar">إرسال عبر واتساب</span> | draft |
+| `contact.planner.enquirySoon` | Sending by email opens soon. For now, send your plan on WhatsApp. | <span dir="rtl" lang="ar">الإرسال عبر البريد الإلكتروني متاح قريبًا. يمكنكم الآن إرسال خطّتكم عبر واتساب.</span> | draft |
+| `contact.planner.summary.title` | Your plan so far | <span dir="rtl" lang="ar">خطّتكم حتى الآن</span> | draft |
+| `contact.planner.summary.empty` | Your answers appear here as you go. | <span dir="rtl" lang="ar">تظهر إجاباتكم هنا خطوة بخطوة.</span> | draft |
+| `contact.planner.summary.travelling` | Travelling | <span dir="rtl" lang="ar">المسافرون</span> | draft |
+| `contact.planner.summary.months` | Months | <span dir="rtl" lang="ar">الأشهر</span> | draft |
+| `contact.planner.summary.places` | Places | <span dir="rtl" lang="ar">الأماكن</span> | draft |
+| `contact.planner.whatsappIntro` | Hello, here is our trip plan: | <span dir="rtl" lang="ar">مرحبًا، هذه خطّة رحلتنا:</span> | draft |
+| `contact.planner.errors.needTraveller` | Add at least one adult or grandparent. | <span dir="rtl" lang="ar">أضيفوا بالغًا واحدًا أو أحد الأجداد على الأقل.</span> | draft |
+| `contact.planner.errors.needWhen` | Choose a month, or Not sure yet. | <span dir="rtl" lang="ar">اختاروا شهرًا، أو «لم نحدّد بعد».</span> | draft |
+| `contact.planner.errors.needName` | Please add your name. | <span dir="rtl" lang="ar">يُرجى كتابة الاسم.</span> | draft |
+| `contact.planner.errors.needContact` | Please add a number or email so we can reply. | <span dir="rtl" lang="ar">يُرجى إضافة رقم أو بريد إلكتروني لنتمكّن من الردّ.</span> | draft |
+| `contact.planner.saved` | Your answers stay on this device until you send them. | <span dir="rtl" lang="ar">تُحفظ إجاباتكم على هذا الجهاز حتى ترسلوها.</span> | draft |
 
 ## content/pages/utility.ts
 

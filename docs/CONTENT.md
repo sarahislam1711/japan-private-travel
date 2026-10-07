@@ -95,7 +95,6 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026 
 >
 > Buttons: **Plan your trip** (solid, to Contact) · Message us on WhatsApp (outlined)
 
-`hero.planButton` "Plan your trip" is **DRAFT** (Sarah chose the button pair, 7 Oct 2026; label awaiting approval).
 
 **Margin** (set as a seal at the foot of the hero's pine panel, Sarah 6 Oct 2026)
 
@@ -313,6 +312,57 @@ Sections:
 Submit: "Send enquiry" (DRAFT). Confirmation (DRAFT): "Enquiry received. We will reply in the language you chose, by the route you chose."
 
 Privacy line under the form (DRAFT): "We use these details only to reply to you and plan your trip. See our privacy notice."
+
+**Trip planner** (Sarah, 7 Oct 2026: the Contact page becomes a six-step planner built on the form fields above; "Plan your trip" on Home links here. Same LOCKED rule: no budget step, no traveller-type step. Plans are sent on WhatsApp until the enquiry form's backend exists.) All DRAFT.
+
+Steps: Who → When → Where → The trip → Reply → Your plan. Month names come from the browser's own calendar names; place options reuse the Summer Journeys region names and the Private Japan label.
+
+| Key | Text | Status |
+|---|---|---|
+| `planner.steps.who` | Who | DRAFT |
+| `planner.steps.when` | When | DRAFT |
+| `planner.steps.where` | Where | DRAFT |
+| `planner.steps.needs` | The trip | DRAFT |
+| `planner.steps.reply` | Reply | DRAFT |
+| `planner.steps.review` | Your plan | DRAFT |
+| `planner.questions.who` | Who is coming? | DRAFT |
+| `planner.questions.when` | When are you thinking of travelling? | DRAFT |
+| `planner.questions.where` | Where would you like to go? | DRAFT |
+| `planner.questions.needs` | What does the trip need to do? | DRAFT |
+| `planner.hints.who` | Everyone travelling, from grandparents to the youngest. | DRAFT |
+| `planner.hints.when` | Pick the months you are weighing. A rough idea is enough. | DRAFT |
+| `planner.hints.where` | Choose as many as you like, or let us suggest. | DRAFT |
+| `planner.hints.needs` | A celebration, a first visit, slower days for older travellers: whatever matters to you. Optional. | DRAFT |
+| `planner.hints.reply` | We reply in your language, by the route you choose. | DRAFT |
+| `planner.hints.review` | Check your plan, then send it to us. | DRAFT |
+| `planner.people.adults` | Adults | DRAFT |
+| `planner.people.grandparents` | Grandparents | DRAFT |
+| `planner.people.children` | Children | DRAFT |
+| `planner.people.age` | Age | DRAFT |
+| `planner.people.under1` | Under 1 | DRAFT |
+| `planner.people.add` | Add | DRAFT |
+| `planner.people.remove` | Remove | DRAFT |
+| `planner.when.notSure` | Not sure yet | DRAFT |
+| `planner.when.datesNote` | Anything else about dates? (optional) | DRAFT |
+| `planner.where.anywhere` | Elsewhere in Japan, any season | DRAFT |
+| `planner.where.suggest` | Not sure yet: suggest somewhere | DRAFT |
+| `planner.buttons.next` | Continue | DRAFT |
+| `planner.buttons.back` | Back | DRAFT |
+| `planner.buttons.edit` | Edit | DRAFT |
+| `planner.buttons.startOver` | Start again | DRAFT |
+| `planner.buttons.sendWhatsApp` | Send on WhatsApp | DRAFT |
+| `planner.enquirySoon` | Sending by email opens soon. For now, send your plan on WhatsApp. | DRAFT |
+| `planner.summary.title` | Your plan so far | DRAFT |
+| `planner.summary.empty` | Your answers appear here as you go. | DRAFT |
+| `planner.summary.travelling` | Travelling | DRAFT |
+| `planner.summary.months` | Months | DRAFT |
+| `planner.summary.places` | Places | DRAFT |
+| `planner.whatsappIntro` | Hello, here is our trip plan: | DRAFT |
+| `planner.errors.needTraveller` | Add at least one adult or grandparent. | DRAFT |
+| `planner.errors.needWhen` | Choose a month, or Not sure yet. | DRAFT |
+| `planner.errors.needName` | Please add your name. | DRAFT |
+| `planner.errors.needContact` | Please add a number or email so we can reply. | DRAFT |
+| `planner.saved` | Your answers stay on this device until you send them. | DRAFT |
 
 ## 11. Utility pages
 

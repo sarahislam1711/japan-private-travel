@@ -276,6 +276,22 @@
     transform: rotate(-45deg);
   }
 
+  /* Trip planner: each step and each new line of the plan settles in. */
+  @media (prefers-reduced-motion: no-preference) {
+    .planner-step {
+      animation: planner-in 450ms var(--ease-out-expo) both;
+    }
+    .planner-line {
+      animation: planner-in 500ms var(--ease-out-expo) both;
+    }
+  }
+  @keyframes planner-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+  }
+
   /* Menu panel: a quick fade and settle on open (interaction feedback, not decoration). */
   @media (prefers-reduced-motion: no-preference) {
     .nav-panel {
