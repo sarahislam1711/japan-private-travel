@@ -42,6 +42,18 @@
     }
   }
 
+  /* Home's headings, one step larger than the rest of the site (Sarah, 7 Oct 2026). */
+  .home-scale {
+    --text-display: clamp(3.25rem, 4.9vw + 1.1rem, 6.125rem);
+    --text-h1: clamp(2.75rem, 3.4vw + 1.3rem, 4.75rem);
+  }
+  @media (min-width: 64rem) and (max-height: 820px) {
+    .home-scale {
+      --text-display: clamp(2.9rem, 3.6vw + 1rem, 4.75rem);
+      --text-h1: clamp(2.4rem, 2.3vw + 1.1rem, 3.6rem);
+    }
+  }
+
   :root:lang(ar) body {
     font-variant-numeric: lining-nums;
   }

@@ -14,7 +14,7 @@ export const generateMetadata = () => pageMetadata("home");
  */
 export default function HomePage() {
   return (
-    <main id="main">
+    <main id="main" className="home-scale">
       <StructuredData page="home" />
       <HomeHero />
       <EntryPoints />
