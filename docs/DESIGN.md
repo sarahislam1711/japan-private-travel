@@ -324,6 +324,11 @@ The season band is twelve month cells that never wrap, July and August filled Pi
 ### How we work: the scroll showcase (7 Oct 2026)
 On desktop with motion allowed, Home's How we work pins for one screen while the page scrolls through its three promises (about 70vh of scroll each). The promises are listed large on the inline-start side as tab buttons: the active one in Ink, the others at 35% Ink Soft. A Pine panel on the inline-end side crossfades (700ms, expo ease, 1rem lift) to the active promise's detail, set large in the serif, with its page link; three slim Snow bars beneath show progress. Clicking a promise scrolls to it. Below 1024px or with reduced motion it is a compact stacked list, with no pinning and no empty space. Mirrors fully on Arabic pages.
 
+### Close, footer and language menu (7 Oct 2026, Sarah)
+- **Page close:** an inset Pine panel (24px radius) on the paper ground at the end of the page (Home's contact close and the shared PageClose), followed by 96–128px of paper. It is never joined to the footer.
+- **Footer:** a quiet Mist band, Ink text. Top row: wordmark and trading-name line beside one row of page links. Below a faint rule (ink at 15%): the legal facts required on every page (COMPLIANCE C1, C2) as inline small print, "Label: value" separated by dots that stay with the fact before them, with Privacy and Terms of business beside it. About 315px tall on desktop.
+- **Language menu:** a globe button (44px, a functional icon, like the Trips chevron) opens a two-item list: "English" with the United States flag and "Arabic" with the Saudi flag, named in English on both sites, by Sarah's choice. Flags are inline SVG from flag-icons (MIT; src/assets/flags/SOURCE.md). Each item goes to the current page in that language; the current one is bold Pine. On mobile the globe sits beside Menu.
+
 ## Arabic and right to left (7 Oct 2026)
 
 The site is bilingual. Arabic pages set `<html lang="ar" dir="rtl">`; because every layout uses logical properties, the whole page mirrors: the hero text sits on the right and its pine panel on the left, navigation runs right to left, the Trips menu opens from the inline start.

@@ -1,5 +1,5 @@
-/* The language menu — docs/CONTENT.md §1a. Each language is named in its own script. */
-import { ard, attachArabic, draft } from "./schema";
+/* The language menu — docs/CONTENT.md §1a. */
+import { ard, arl, attachArabic, draft, locked } from "./schema";
 
 export const languageMenu = attachArabic(
   {
@@ -9,8 +9,9 @@ export const languageMenu = attachArabic(
   { label: ard("اللغة") },
 );
 
-/** Language names, always in their own script, identical on both sites. */
+/** Language names in the menu: English on both sites, beside a flag (Sarah, 7 Oct 2026). */
 export const languageNames = attachArabic(
-  { en: draft("English"), ar: draft("العربية", { lang: "ar" }) },
-  { en: ard("English"), ar: ard("العربية") },
+  { en: locked("English"), ar: locked("Arabic") },
+  // The same English names on the Arabic site, by Sarah's choice: approved as they are.
+  { en: arl("English"), ar: arl("Arabic") },
 );

@@ -10,8 +10,8 @@ you approve it. To approve, the line changes from `ard(...)` to `arl(...)` in it
 Read Family Services first (halal, bathing, guiding, transport: legal and religious
 weight), then the Summer Journeys title and lede.
 
-Status: **0** approved,
-**181** draft,
+Status: **2** approved,
+**179** draft,
 **0** missing — of 181 strings.
 
 ## content/site.ts
@@ -50,8 +50,8 @@ Status: **0** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `languageMenu.label` | Language | <span dir="rtl" lang="ar">اللغة</span> | draft |
-| `languageNames.en` | English | <span dir="rtl" lang="ar">English</span> | draft |
-| `languageNames.ar` | العربية | <span dir="rtl" lang="ar">العربية</span> | draft |
+| `languageNames.en` | English | <span dir="rtl" lang="ar">English</span> | approved |
+| `languageNames.ar` | Arabic | <span dir="rtl" lang="ar">Arabic</span> | approved |
 
 ## content/meta.ts
 

@@ -14,8 +14,9 @@ export function ContactBand() {
   const tel = isResolved(site.phone) ? `tel:${copyText(site.phone).replace(/[^\d+]/g, "")}` : undefined;
   const mail = isResolved(site.email) ? `mailto:${copyText(site.email)}` : undefined;
   return (
-    <section aria-labelledby="contact-title" className="on-pine mt-40 desktop:mt-56">
-      <div className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) pt-28 pb-20">
+    <section aria-labelledby="contact-title" className="mx-auto mt-40 mb-24 max-w-(--content-max) px-(--page-margin) desktop:mt-56 desktop:mb-32">
+      {/* An inset pine panel on paper: the page's close, clearly apart from the footer. */}
+      <div className="on-pine grid grid-cols-12 gap-x-6 gap-y-10 rounded-[24px] px-8 py-14 tablet:px-14 tablet:py-20 desktop:px-20">
         <h2 id="contact-title" data-reveal="words" className="col-span-12 max-w-[16ch] font-serif text-display [font-variation-settings:'opsz'_60] desktop:col-span-7">
           <SplitWords copy={c.heading} />
         </h2>

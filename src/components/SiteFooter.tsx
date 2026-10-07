@@ -29,13 +29,14 @@ const pageLinks: RouteKey[] = [
 function Fact({ name, children }: { name: ReactNode; children: ReactNode }) {
   return (
     <span className="inline">
-      <span className="text-ink-soft">{name}:</span> <span className="text-plate">{children}</span>
+      <span className="text-ink-soft">{name}:</span> <span className="text-ink">{children}</span>
     </span>
   );
 }
 
 /**
- * Every page ends on pine. Above: the brand and the page links in one row.
+ * A quiet sign-off on mist, apart from the page's pine close. Above: the
+ * brand and the page links in one row.
  * Below: the legal block required on every page (COMPLIANCE C1, C2), set as a
  * few lines of small print rather than a table.
  */
@@ -60,7 +61,7 @@ export async function SiteFooter() {
   ];
 
   return (
-    <footer className="on-pine">
+    <footer className="bg-mist text-ink">
       <div className="mx-auto max-w-(--content-max) px-(--page-margin) pt-14 pb-10">
         <div className="flex flex-col gap-8 desktop:flex-row desktop:items-start desktop:justify-between">
           <div className="max-w-[18rem] shrink-0">
@@ -82,7 +83,7 @@ export async function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-6 desktop:flex-row desktop:items-end desktop:justify-between desktop:gap-12">
+        <div className="mt-10 flex flex-col gap-4 border-t border-ink/15 pt-6 desktop:flex-row desktop:items-end desktop:justify-between desktop:gap-12">
           <p className="max-w-[62rem] font-gothic text-small leading-[1.8]">
             {facts.map((f, i) => (
               <span key={f.key}>

@@ -88,11 +88,9 @@ export function LanguageMenu({
               <Link
                 href={hrefFor(l)}
                 hrefLang={l}
-                lang={l}
-                dir={l === "ar" ? "rtl" : "ltr"}
                 aria-current={l === current ? "true" : undefined}
                 onClick={() => setOpen(false)}
-                className="flex min-h-11 items-center justify-between gap-4 rounded-(--radius-control) px-3 py-2.5 text-start no-underline transition-colors hover:bg-mist focus-visible:bg-mist aria-[current=true]:font-bold aria-[current=true]:text-pine"
+                className="flex min-h-11 items-center gap-3 rounded-(--radius-control) px-3 py-2.5 text-start no-underline transition-colors hover:bg-mist focus-visible:bg-mist aria-[current=true]:font-bold aria-[current=true]:text-pine"
               >
                 {names[l]}
               </Link>
