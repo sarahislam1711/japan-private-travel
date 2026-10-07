@@ -94,7 +94,7 @@ The main column makes the claim; the margin beside it proves it. That is the one
 - **Layout:** 12-column grid, everything start-aligned. On mobile, margin notes drop under their paragraph.
 - **Motion:** one moment only, the Home hero fading in.
 - **Photos:** none at launch; the site must look finished without them.
-- **Banned:** icons, arrows, cards, shadows, gradients, all-caps, centred layouts, stock or AI images.
+- **Banned:** icons, arrows, cards, shadows, gradients, all-caps, centred layouts. (Stock and AI images: ban removed by Sarah, 7 Oct 2026.)
 - **Arabic-ready:** layouts use start and end, never left and right, so they mirror cleanly later.
 - **Quality floor:** WCAG 2.2 AA; Lighthouse mobile 95 for performance and 100 for the rest; under 2 seconds to load on 4G.
 
@@ -106,7 +106,7 @@ The copy carries legal risk under Japan's Travel Agency Act, so the build runs u
 
 1. All text lives in `/content`, mirroring `docs/CONTENT.md`. You write copy there; Claude Code never edits it.
 2. No invented facts. Unknown values stay as placeholders like `[[REG_NUMBER]]`.
-3. No stock or AI images; only licensed photos logged with photographer, licence, place and month.
+3. Photos: listed in the photography manifest; the photographer/licence/no-stock rule was removed by Sarah, 7 Oct 2026.
 4. Never hard-code left or right in CSS: `ms-`, `me-`, `text-start`, not `ml-`, `mr-`, `text-left`.
 5. British English in code comments and commits.
 6. Stop at every checkpoint; check screenshots, not just code.

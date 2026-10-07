@@ -46,7 +46,7 @@ Output: a table per rule — rule ID, severity, route or file, the matched strin
 **Error** if any `{CL-nn}` referenced by rendered content lacks `sourceUrl`, `publisher` and `verifiedOn` in `content/claims.ts`, or if `verifiedOn` is more than 180 days old.
 
 ### C6 — Photography manifest
-**Error** if any rendered `<img>` (other than the wordmark, if it becomes an SVG) is not in `content/photography.manifest.ts` with `photographer`, `licence`, `licenceExpires` (or `perpetual`), `place`, `prefecture`, `monthTaken`, `releaseOnFile` (boolean, required true if identifiable people). **Error** if `licenceExpires` is past.
+*Removed by Sarah, 7 Oct 2026.* Photos are listed in `content/photography.manifest.ts` for tidiness only; no photographer, licence, place or month is required, and stock images are allowed.
 
 ### C7 — Placeholders and drafts
 **Error** in production if any `[[KEY]]` string, `<Placeholder>`, `<Draft>`, or content node with `status: "draft"` reaches a rendered page.

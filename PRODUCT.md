@@ -53,7 +53,7 @@ The site is a credential asset, not an acquisition engine. Its one job is to pas
 
 - Real copy in `docs/CONTENT.md` (LOCKED and DRAFT).
 - Claims register CL-01 to CL-07 (`content/claims.ts`); none sourced yet, and CL-01 and CL-03 have no source at all.
-- No photographs. None may be stock or AI-generated; summer photography cannot be shot before July 2027. The site must look finished without images.
+- Photographs as faded backgrounds in the Home entry panels (Sarah, 7 Oct 2026; the no-stock rule was removed). The site must still look finished without them.
 - Registration details, managers, addresses, insurance and experiences are not yet supplied; they must never be fabricated.
 
 ## Product Principles

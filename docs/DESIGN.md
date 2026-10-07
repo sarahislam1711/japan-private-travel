@@ -313,7 +313,7 @@ The season band is twelve month cells that never wrap, July and August filled Pi
 - **Don't** draw rules between sections, under headlines, above points or around the footer; rules belong only to data tables such as the season band.
 - **Don't** set bold or heavy headlines, or let section text run into long paragraphs.
 - **Don't** use shadows, gradients, grain or frame lines.
-- **Don't** use photographs as decoration or any stock imagery; the photograph frame is not yet designed.
+- **Photographs** sit faded behind the Home entry panels' text (see Entry panels); not as standalone decoration.
 - **Don't** use icons; the Trips disclosure chevron is the single functional exception.
 - **Don't** use all-caps, letter-spaced labels or eyebrows above headings.
 - **Don't** centre layouts or text blocks.

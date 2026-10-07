@@ -23,9 +23,8 @@ const SEGMENT_VH = 70; // scroll distance per item while pinned
 export function Showcase({ id, heading, items }: { id: string; heading: ReactNode; items: ShowcaseItem[] }) {
   const root = useRef<HTMLDivElement>(null);
   const [pinned, setPinned] = useState(false);
-  const [progress, setProgress] = useState(0); // 0..1 across the whole section
+  const [active, setActive] = useState(0);
   const n = items.length;
-  const active = Math.min(n - 1, Math.floor(progress * n));
 
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 64rem)");
@@ -50,7 +49,10 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
         const el = root.current;
         if (!el) return;
         const travel = el.offsetHeight - window.innerHeight;
-        setProgress(Math.min(1, Math.max(0, -el.getBoundingClientRect().top / Math.max(1, travel))));
+        const progress = Math.min(1, Math.max(0, -el.getBoundingClientRect().top / Math.max(1, travel)));
+        // The bar fills through a CSS variable (no re-render per frame); React re-renders only when the step changes.
+        el.style.setProperty("--progress", String(progress * n));
+        setActive(Math.min(n - 1, Math.floor(progress * n)));
       });
     };
     onScroll();
@@ -81,17 +83,18 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
     if (!pinned) return;
     const lenis = window.__lenis;
     if (!lenis) return;
-    const MOVE_S = 0.9; // seconds per step
-    const QUIET_MS = 140; // a pause this long ends a gesture (trackpad momentum included)
+    const MOVE_S = 0.65; // seconds per step
+    const QUIET_MS = 90; // a pause this long ends a gesture
     const THRESHOLD = 24; // px of intent before a step moves
     let lockedUntil = 0;
     let armed = true;
     let lastWheel = 0;
+    let lastAbs = 0;
     let intent = 0;
 
     const go = (y: number) => {
       lenis.scrollTo(y, { duration: MOVE_S, lock: true, easing: (t) => 1 - Math.pow(1 - t, 4) });
-      lockedUntil = performance.now() + MOVE_S * 1000 + 50;
+      lockedUntil = performance.now() + MOVE_S * 1000 + 250; // a short rest on each step
       armed = false;
       intent = 0;
     };
@@ -100,8 +103,12 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
       if (!event.type.includes("wheel") || event.ctrlKey) return true;
       const now = performance.now();
       const gap = now - lastWheel;
+      const abs = Math.abs(deltaY);
+      // Momentum after a flick only ever fades; anything else (a pause, or a fresh or steady push) is the visitor still scrolling.
+      const fading = abs < lastAbs * 0.97;
       lastWheel = now;
-      if (!armed && now > lockedUntil && gap > QUIET_MS) {
+      lastAbs = abs;
+      if (!armed && now > lockedUntil && (gap > QUIET_MS || !fading)) {
         armed = true;
         intent = 0;
       }
@@ -186,7 +193,6 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
             {/* Progress: fills continuously as you scroll; each segment jumps to its item. */}
             <div role="tablist" aria-orientation="horizontal" className="flex w-[min(26rem,40%)] gap-2">
               {items.map((_, i) => {
-                const fill = Math.min(1, Math.max(0, progress * n - i));
                 return (
                   <button
                     key={i}
@@ -199,7 +205,10 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
                     className="group flex h-11 flex-1 cursor-pointer items-center"
                   >
                     <span className="relative h-[3px] w-full overflow-hidden rounded-full bg-ink/15 transition-[height] group-hover:h-[5px]">
-                      <span className="absolute inset-y-0 start-0 rounded-full bg-pine" style={{ width: `${fill * 100}%` }} />
+                      <span
+                        className="absolute inset-y-0 start-0 rounded-full bg-pine"
+                        style={{ width: `calc(clamp(0, var(--progress, 0) - ${i}, 1) * 100%)` }}
+                      />
                     </span>
                   </button>
                 );

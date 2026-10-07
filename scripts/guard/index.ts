@@ -81,7 +81,7 @@ const count = (list: Finding[]) =>
 console.log(`\nGuard (${mode}) — source scan`);
 console.log(`  errors:   ${errors.length} (${count(errors)})`);
 console.log(`  warnings: ${warnings.length} unapproved (${count(warnings)})`);
-console.log(`  render crawl: ${rendered.ran ? "ran" : "not implemented yet (Prompt 8) — C1, C6, C9, C11, C12 unchecked"}`);
+console.log(`  render crawl: ${rendered.ran ? "ran" : "not implemented yet (Prompt 8) — C1, C9, C11, C12 unchecked"}`);
 
 if (mode === "prod" && (errors.length || warnings.length)) {
   console.log("\nguard:prod FAILED — production build blocked.");
