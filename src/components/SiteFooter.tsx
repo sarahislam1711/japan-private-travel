@@ -4,6 +4,7 @@ import { ui } from "@content/interface";
 import { mainNav } from "@content/navigation";
 import { about } from "@content/pages/about";
 import { localePath, routeFor, type RouteKey } from "@content/routes";
+import type { Copy } from "@content/schema";
 import { site } from "@content/site";
 import { getLocale } from "@/lib/locale";
 import { CopyText } from "./CopyText";
@@ -16,13 +17,12 @@ const label = (text: string) => {
 };
 
 const trips = mainNav.find((e) => e.kind === "group");
-const pageLinks: RouteKey[] = [
-  ...(trips && trips.kind === "group" ? trips.items.map((i) => i.route) : []),
-  "familyServices",
-  "experiences",
-  "about",
-  "forTravelAdvisors",
-  "contact",
+
+/** The page links in three labelled columns. */
+const columns: { heading: Copy; links: RouteKey[] }[] = [
+  { heading: trips && trips.kind === "group" ? trips.label : site.brand.name, links: trips && trips.kind === "group" ? trips.items.map((i) => i.route) : [] },
+  { heading: site.brand.name, links: ["familyServices", "experiences", "about"] },
+  { heading: ui.footer.talkToUs, links: ["contact", "forTravelAdvisors"] },
 ];
 
 /** One legal fact, set inline: "Label: value". */
@@ -70,16 +70,23 @@ export async function SiteFooter() {
               <CopyText copy={site.tradeNameLine} />
             </p>
           </div>
-          <nav aria-label="Footer">
-            <ul className="flex flex-wrap gap-x-5 font-gothic text-label desktop:justify-end">
-              {pageLinks.map((key) => (
-                <li key={key}>
-                  <Link href={localePath(key, locale)} className="flex min-h-11 items-center">
-                    <CopyText copy={routeFor(key).navLabel!} />
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-10 gap-y-6 tablet:grid-cols-3 desktop:gap-x-16">
+            {columns.map((col, c) => (
+              <div key={c}>
+                <p className="font-gothic text-small text-ink-soft">
+                  <CopyText copy={col.heading} />
+                </p>
+                <ul className="mt-1 font-gothic text-label">
+                  {col.links.map((key) => (
+                    <li key={key}>
+                      <Link href={localePath(key, locale)} className="flex min-h-10 items-center">
+                        <CopyText copy={routeFor(key).navLabel!} />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
 

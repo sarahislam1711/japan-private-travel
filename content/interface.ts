@@ -11,6 +11,7 @@ export const ui = {
     privacy: draft("Privacy"),
     terms: draft("Terms of business"),
     legal: draft("Legal"),
+    talkToUs: draft("Talk to us"),
   },
   seasonBandPending: draft("Temperatures to be added from the cited source."),
 };

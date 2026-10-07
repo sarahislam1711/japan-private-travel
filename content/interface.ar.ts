@@ -11,6 +11,7 @@ export const uiAr: Translation<typeof ui> = {
     privacy: ard("الخصوصية"),
     terms: ard("شروط التعامل"),
     legal: ard("قانوني"),
+    talkToUs: ard("تواصلوا معنا"),
   },
   seasonBandPending: ard("ستُضاف درجات الحرارة من المصدر المذكور."),
 };

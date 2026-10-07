@@ -41,6 +41,7 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `footer.privacy` | Privacy | DRAFT |
 | `footer.terms` | Terms of business | DRAFT |
 | `footer.legal` | Legal | DRAFT (footer column heading) |
+| `footer.talkToUs` | Talk to us | DRAFT (footer column heading) |
 | `languageMenu.label` | Language (accessible name of the globe button; Arabic: اللغة) | DRAFT |
 | `languageNames` | English · Arabic (in English on both sites, each beside a flag: United States, Saudi Arabia) | LOCKED (Sarah, 7 Oct 2026) |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
