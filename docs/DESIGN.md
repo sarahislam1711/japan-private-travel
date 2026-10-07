@@ -321,8 +321,8 @@ The season band is twelve month cells that never wrap, July and August filled Pi
 - **Don't** add a second hue, a dark mode, or prices.
 - **Don't** hide content in a way that depends on JavaScript or ignores reduced motion.
 
-### How we work: the scroll showcase (7 Oct 2026)
-On desktop with motion allowed, Home's How we work pins for one screen while the page scrolls through its three promises (about 70vh of scroll each). The promises are listed large on the inline-start side as tab buttons: the active one in Ink, the others at 35% Ink Soft. A Pine panel on the inline-end side crossfades (700ms, expo ease, 1rem lift) to the active promise's detail, set large in the serif, with its page link; three slim Snow bars beneath show progress. Clicking a promise scrolls to it. Below 1024px or with reduced motion it is a compact stacked list, with no pinning and no empty space. Mirrors fully on Arabic pages.
+### How we work: the scroll stage (7 Oct 2026, revised at Sarah's request)
+On desktop with motion allowed, the section pins for one screen (about 70vh of scroll per item). "How we work" sits above a single Pine stage (24px radius), with a progress bar beside it: one segment per promise, filling continuously as you scroll; each segment is also a button that jumps to its promise. The stage shows one promise at a time, said once: the promise in display serif at the inline-start top, its detail (gothic, Pine Soft) and page link at the inline-end bottom. On change, the outgoing promise lifts away and fades while the incoming one's words rise in one by one (700ms expo, 45ms per word). Phones, reduced motion and crawlers get a compact stack of Pine panels instead. Used by Home's How we work and Private Japan's principles; mirrors fully on Arabic pages.
 
 ### Close, footer and language menu (7 Oct 2026, Sarah)
 - **Page close:** an inset Pine panel (24px radius) on the paper ground at the end of the page (Home's contact close and the shared PageClose), followed by 96–128px of paper. It is never joined to the footer.

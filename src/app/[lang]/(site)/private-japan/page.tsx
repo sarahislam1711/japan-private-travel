@@ -31,7 +31,7 @@ export default function PrivateJapanPage() {
         id="pj-principles"
         heading={<SplitWords copy={privateJapan.sectionsHeading} />}
         items={privateJapan.sections.map((s) => ({
-          lead: <CopyText copy={s.lead} />,
+          lead: <SplitWords copy={s.lead} />,
           body: <CopyText copy={s.body} />,
           proof: "margin" in s && s.margin ? <MarginNote>{<CopyText copy={s.margin} />}</MarginNote> : undefined,
         }))}

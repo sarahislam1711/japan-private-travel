@@ -8,23 +8,23 @@ export type ShowcaseItem = { lead: ReactNode; body: ReactNode; proof?: ReactNode
 const SEGMENT_VH = 70; // scroll distance per item while pinned
 
 /**
- * A pinned, scroll-driven showcase. On desktop with motion allowed, the
- * section holds one screen while scrolling moves through the items: the
- * active lead lights up and the pine panel crossfades to its detail. Leads
- * are also buttons (click or keyboard). Otherwise: a compact stacked list.
+ * A pinned, scroll-driven stage. On desktop with motion allowed, the section
+ * holds one screen while scrolling moves through the items, one at a time:
+ * the current promise leaves upwards, the next one's words rise in, and a
+ * progress bar fills continuously. Bar segments are buttons that jump to an
+ * item. Otherwise (phones, reduced motion, crawlers): a compact stacked list.
  */
 export function Showcase({ id, heading, items }: { id: string; heading: ReactNode; items: ShowcaseItem[] }) {
   const root = useRef<HTMLDivElement>(null);
   const [pinned, setPinned] = useState(false);
-  const [active, setActive] = useState(0);
+  const [progress, setProgress] = useState(0); // 0..1 across the whole section
   const n = items.length;
-  // Four or more items step the type down a size so the pinned screen still fits short laptops.
-  const dense = n >= 4;
+  const active = Math.min(n - 1, Math.floor(progress * n));
 
   useEffect(() => {
     const wide = window.matchMedia("(min-width: 64rem)");
     const still = window.matchMedia("(prefers-reduced-motion: reduce)");
-    // Crawlers always get the plain list, with every promise visible.
+    // Crawlers always get the plain list, with every item visible.
     const update = () => setPinned(wide.matches && !still.matches && !isBot());
     update();
     wide.addEventListener("change", update);
@@ -43,10 +43,8 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
       frame = requestAnimationFrame(() => {
         const el = root.current;
         if (!el) return;
-        const rect = el.getBoundingClientRect();
         const travel = el.offsetHeight - window.innerHeight;
-        const progress = Math.min(1, Math.max(0, -rect.top / Math.max(1, travel)));
-        setActive(Math.min(n - 1, Math.floor(progress * n)));
+        setProgress(Math.min(1, Math.max(0, -el.getBoundingClientRect().top / Math.max(1, travel))));
       });
     };
     onScroll();
@@ -55,28 +53,27 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
     };
-  }, [pinned, n]);
+  }, [pinned]);
 
   const jumpTo = (i: number) => {
     const el = root.current;
-    if (!el) return setActive(i);
+    if (!el) return;
     const travel = el.offsetHeight - window.innerHeight;
-    const top = el.getBoundingClientRect().top + window.scrollY + (travel * (i + 0.5)) / n;
-    window.scrollTo({ top, behavior: "smooth" });
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + (travel * (i + 0.35)) / n, behavior: "smooth" });
   };
 
   if (!pinned) {
     return (
       <section aria-labelledby={id} className="mx-auto mt-28 max-w-(--content-max) px-(--page-margin) desktop:mt-40">
-        <h2 id={id} data-reveal="words" className="font-serif text-display [font-variation-settings:'opsz'_60]">
+        <h2 id={id} data-reveal="words" className="font-serif text-h1 [font-variation-settings:'opsz'_60]">
           {heading}
         </h2>
-        <ul className="mt-10 flex flex-col gap-10">
+        <ul className="mt-8 flex flex-col gap-4">
           {items.map((item, i) => (
-            <li key={i} data-reveal>
+            <li key={i} data-reveal className="on-pine rounded-[20px] p-7">
               <h3 className="font-serif text-h2 [font-variation-settings:'opsz'_36]">{item.lead}</h3>
-              <p className="mt-3 max-w-[32rem] font-gothic text-copy text-ink-soft">{item.body}</p>
-              {item.proof ? <div className="mt-4">{item.proof}</div> : null}
+              <p className="mt-3 font-gothic text-copy text-ink-soft">{item.body}</p>
+              {item.proof ? <div className="mt-4 [&_aside]:text-ink-soft">{item.proof}</div> : null}
               {item.link ? <p className="mt-4 font-gothic text-label">{item.link}</p> : null}
             </li>
           ))}
@@ -88,58 +85,63 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
   return (
     <section aria-labelledby={id} className="mt-40">
       <div ref={root} style={{ height: `${100 + (n - 1) * SEGMENT_VH}vh` }}>
-        <div className="sticky top-0 mx-auto grid h-svh max-w-(--content-max) grid-cols-12 items-center gap-x-6 px-(--page-margin)">
-          <div className="col-span-5">
+        <div className="sticky top-0 mx-auto flex h-svh max-w-(--content-max) flex-col justify-center gap-8 px-(--page-margin) py-10">
+          <div className="flex items-end justify-between gap-10">
             {/* No scroll reveal here: this layout replaces the first render after the reveal observer has run. */}
-            <h2 id={id} className={`font-serif [font-variation-settings:'opsz'_60] ${dense ? "text-h1" : "text-display"}`}>
+            <h2 id={id} className="font-serif text-h1 [font-variation-settings:'opsz'_60]">
               {heading}
             </h2>
-            <div role="tablist" aria-orientation="vertical" className={`flex flex-col ${dense ? "mt-8 gap-3" : "mt-10 gap-5"}`}>
-              {items.map((item, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  role="tab"
-                  id={`${id}-tab-${i}`}
-                  aria-selected={active === i}
-                  aria-controls={`${id}-panel-${i}`}
-                  onClick={() => jumpTo(i)}
-                  className={`cursor-pointer text-start font-serif transition-[color,opacity] duration-500 [font-variation-settings:'opsz'_36] ${dense ? "text-h3" : "text-h2"} ${
-                    active === i ? "text-ink opacity-100" : "text-ink-soft opacity-35 hover:opacity-70"
-                  }`}
-                >
-                  {item.lead}
-                </button>
-              ))}
+            {/* Progress: fills continuously as you scroll; each segment jumps to its item. */}
+            <div role="tablist" aria-orientation="horizontal" className="flex w-[min(26rem,40%)] gap-2">
+              {items.map((_, i) => {
+                const fill = Math.min(1, Math.max(0, progress * n - i));
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    role="tab"
+                    aria-selected={active === i}
+                    aria-controls={`${id}-panel-${i}`}
+                    aria-labelledby={`${id}-lead-${i}`}
+                    onClick={() => jumpTo(i)}
+                    className="group flex h-11 flex-1 cursor-pointer items-center"
+                  >
+                    <span className="relative h-[3px] w-full overflow-hidden rounded-full bg-ink/15 transition-[height] group-hover:h-[5px]">
+                      <span className="absolute inset-y-0 start-0 rounded-full bg-pine" style={{ width: `${fill * 100}%` }} />
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <div className="on-pine relative col-span-6 col-start-7 flex min-h-[28rem] flex-col justify-between overflow-hidden rounded-[20px] p-12">
-            <div className="relative min-h-[14rem] flex-1">
-              {items.map((item, i) => (
+          <div className="on-pine relative min-h-[min(62svh,32rem)] overflow-hidden rounded-[24px]">
+            {items.map((item, i) => {
+              const state = i === active ? "current" : i < active ? "past" : "next";
+              return (
                 <div
                   key={i}
                   role="tabpanel"
                   id={`${id}-panel-${i}`}
-                  aria-labelledby={`${id}-tab-${i}`}
-                  aria-hidden={active !== i}
-                  inert={active !== i}
-                  className={`absolute inset-0 flex flex-col transition-[opacity,transform] duration-700 ease-[var(--ease-out-expo)] ${
-                    active === i ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+                  aria-hidden={state !== "current"}
+                  inert={state !== "current"}
+                  data-active={state === "current" ? "" : undefined}
+                  className={`stage-item absolute inset-0 grid grid-cols-2 gap-12 p-12 transition-[opacity,transform] duration-700 ease-[var(--ease-out-expo)] desktop:p-16 ${
+                    state === "current" ? "translate-y-0 opacity-100" : state === "past" ? "pointer-events-none -translate-y-10 opacity-0" : "pointer-events-none translate-y-10 opacity-0"
                   }`}
                 >
-                  <p className="max-w-[28rem] font-serif text-h2 [font-variation-settings:'opsz'_36]">{item.body}</p>
-                  {item.proof ? <div className="mt-6 [&_aside]:text-ink-soft">{item.proof}</div> : null}
-                  {item.link ? <p className="mt-auto font-gothic text-label">{item.link}</p> : null}
+                  {/* The promise top-left, its detail and link bottom-right: one statement, balanced across the stage. */}
+                  <p id={`${id}-lead-${i}`} className="self-start font-serif text-display [font-variation-settings:'opsz'_60]">
+                    {item.lead}
+                  </p>
+                  <div className="flex max-w-[30rem] flex-col gap-5 self-end justify-self-end">
+                    <p className="font-gothic text-copy text-ink-soft">{item.body}</p>
+                    {item.proof ? <div className="[&_aside]:text-ink-soft">{item.proof}</div> : null}
+                    {item.link ? <p className="font-gothic text-label">{item.link}</p> : null}
+                  </div>
                 </div>
-              ))}
-            </div>
-            {/* Progress through the promises: one bar per item, the current ones filled. */}
-            <div aria-hidden className="mt-10 flex gap-2">
-              {items.map((_, i) => (
-                <span key={i} className={`h-[3px] flex-1 rounded-full transition-colors duration-500 ${i <= active ? "bg-plate" : "bg-plate/25"}`} />
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

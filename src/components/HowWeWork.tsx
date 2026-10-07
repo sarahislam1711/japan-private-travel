@@ -15,7 +15,7 @@ export async function HowWeWork() {
       id="how-title"
       heading={<SplitWords copy={heading} />}
       items={points.map((point) => ({
-        lead: <CopyText copy={point.lead} />,
+        lead: <SplitWords copy={point.lead} />,
         body: <CopyText copy={point.body} />,
         link: (
           <Link href={localePath(point.link, locale)} className="tap">

@@ -201,6 +201,12 @@
     transform: translateY(110%);
   }
 
+  /* Showcase stage: a promise's words rise each time it becomes the current one. */
+  .reveal-ready .stage-item:not([data-active]) .split-word > span {
+    transform: translateY(110%);
+    transition-duration: 300ms;
+  }
+
   /* Menu panel: a quick fade and settle on open (interaction feedback, not decoration). */
   @media (prefers-reduced-motion: no-preference) {
     .nav-panel {
