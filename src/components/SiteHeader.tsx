@@ -38,8 +38,8 @@ export async function SiteHeader() {
 
         <nav aria-label="Main" className="hidden font-gothic text-label desktop:block">
           <ul className="flex items-center gap-8">
-            {mainNav.filter((e) => e.kind !== "cta").map((entry, i) => (
-              <li key={i} className={entry.kind === "utility" ? "ps-4" : undefined}>
+            {mainNav.filter((e) => e.kind === "group" || e.kind === "link").map((entry, i) => (
+              <li key={i}>
                 {entry.kind === "group" ? (
                   <NavGroup
                     label={<CopyText copy={entry.label} />}
@@ -52,16 +52,26 @@ export async function SiteHeader() {
                 ) : (
                   <NavLink
                     href={localePath(entry.route, locale)}
-                    className={entry.kind === "utility" ? utilityClass : linkClass}
+                    className={linkClass}
                   >
-                    {entry.kind === "utility" ? <CopyText copy={entry.label} /> : label(entry.route)}
+                    {label(entry.route)}
                   </NavLink>
                 )}
               </li>
             ))}
-            <li>
+            {/* Language, then Advisors, then Contact (Sarah, 7 Oct 2026). */}
+            <li className="ps-4">
               <LanguageSwitch />
             </li>
+            {mainNav.map((entry, i) =>
+              entry.kind === "utility" ? (
+                <li key={`u${i}`}>
+                  <NavLink href={localePath(entry.route, locale)} className={utilityClass}>
+                    <CopyText copy={entry.label} />
+                  </NavLink>
+                </li>
+              ) : null,
+            )}
             {mainNav
               .filter((e) => e.kind === "cta")
               .map((entry) => (

@@ -16,7 +16,7 @@ const norm = (p: string) => {
 };
 
 /**
- * A globe button that opens a short list of languages. Each choice goes to
+ * A globe button that opens a short list of languages, on hover or click. Each choice goes to
  * the current page in that language; the current language is marked.
  * Closes on Escape, outside click or when focus leaves.
  */
@@ -35,6 +35,16 @@ export function LanguageMenu({
   const root = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const panelId = useId();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
+  // A short delay lets the pointer travel from the globe to the panel without it closing.
+  const closeSoon = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 140);
+  };
+  useEffect(() => cancelClose, []);
   const here = norm(usePathname());
   const pair = pairs.find((p) => norm(p.en) === here || norm(p.ar) === here);
   const hrefFor = (l: Locale) => (pair ? pair[l] : l === "ar" ? "/ar" : "/");
@@ -62,6 +72,11 @@ export function LanguageMenu({
     <div
       ref={root}
       className="relative"
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={closeSoon}
       onBlur={(e) => {
         if (!root.current?.contains(e.relatedTarget as Node)) setOpen(false);
       }}
