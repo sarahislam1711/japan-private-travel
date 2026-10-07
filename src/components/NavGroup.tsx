@@ -94,7 +94,7 @@ export function NavGroup({ label, items }: { label: ReactNode; items: Item[] }) 
       </button>
 
       {/* The top padding bridges trigger and panel so hover survives the gap. */}
-      <div id={panelId} hidden={!open} className="absolute -start-3 top-full z-30 pt-2.5">
+      <div id={panelId} hidden={!open} className="absolute -start-3 top-full z-30 pt-1.5">
         <ul data-pointer className="nav-panel menu-surface relative flex w-80 flex-col p-1 [--pointer-start:2.75rem]">
           {items.map((item) => {
             const current = samePath(item.href, pathname);
