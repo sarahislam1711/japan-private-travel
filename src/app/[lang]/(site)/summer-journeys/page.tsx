@@ -1,7 +1,7 @@
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { MonthsSection } from "@/components/MonthsSection";
 import { PageClose } from "@/components/PageClose";
-import { RegionSection } from "@/components/RegionSection";
+import { RegionsTrio } from "@/components/RegionsTrio";
 import { SummerHero } from "@/components/SummerHero";
 import { pageMetadata } from "@/lib/metadata";
 import { StructuredData } from "@/components/StructuredData";
@@ -18,10 +18,8 @@ export default function SummerJourneysPage() {
     <main id="main">
       <StructuredData page="summerJourneys" />
       <SummerHero />
+      <RegionsTrio />
       <MonthsSection />
-      {summerJourneys.regions.map((region, i) => (
-        <RegionSection key={i} region={region} index={i} />
-      ))}
       <PageClose heading={summerJourneys.closing} />
     </main>
   );
