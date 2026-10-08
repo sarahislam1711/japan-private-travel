@@ -9,9 +9,10 @@ import { CopyText } from "./CopyText";
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
 
 /**
- * The three summer regions as one joined block (Sarah, 8 Oct 2026): side by
- * side on desktop, alternating snow, pine, snow, each with its Japanese name,
- * its story and its facts. One heading above, one Family Services link below.
+ * The three summer regions under one heading, as compact zig-zag rows (Sarah,
+ * 8 Oct 2026): each region's story beside a pine panel of its facts, the
+ * panel swapping sides row by row, its Japanese name set large across the
+ * top. One Family Services link below.
  */
 export async function RegionsTrio() {
   const locale = await getLocale();
@@ -23,9 +24,11 @@ export async function RegionsTrio() {
         <CopyText copy={summerJourneys.months.heading} />
       </h2>
 
-      <div data-reveal className="mt-10 grid overflow-hidden rounded-[24px] desktop:grid-cols-3">
+      {/* Zig-zag rows (Sarah, 8 Oct 2026): story on one side, a pine panel of facts on the other,
+          swapping sides each row; the region's Japanese name set large and vertical in the panel. */}
+      <div className="mt-10 flex flex-col gap-6 desktop:gap-8">
         {summerJourneys.regions.map((region, i) => {
-          const pine = i === 1;
+          const flip = i % 2 === 1;
           const facts = [
             { key: "weeks", label: labels.bestWeeks, value: region.bestWeeks },
             { key: "length", label: labels.length, value: region.length },
@@ -33,30 +36,38 @@ export async function RegionsTrio() {
             { key: "bath", label: labels.privateBathCount, value: region.privateBathCount },
           ];
           return (
-            <article key={i} style={d(i)} className={`flex flex-col gap-6 p-8 tablet:p-10 ${pine ? "on-pine" : "bg-plate"}`}>
-              <div>
-                <p lang="ja" className={`font-mincho text-[1.75rem] leading-none ${pine ? "text-pine-soft" : "text-pine"}`}>
-                  {copyText(region.verticalName, locale).replace(/\s*\/\s*/g, "・")}
+            <article key={i} data-reveal style={d(i)} className="grid grid-cols-12 items-center gap-x-6 gap-y-5 desktop:gap-x-12">
+              <div className={`col-span-12 desktop:col-span-7 ${flip ? "desktop:order-2" : ""}`}>
+                <p className="font-gothic text-small text-ink-soft tabular-nums">
+                  <span dir="ltr">
+                    {String(i + 1).padStart(2, "0")} / {String(summerJourneys.regions.length).padStart(2, "0")}
+                  </span>
                 </p>
-                <h3 className="mt-4 font-serif text-h2 font-[450] [font-variation-settings:'opsz'_36]">
+                <h3 className="mt-2 font-serif text-h2 font-[450] [font-variation-settings:'opsz'_36]">
                   <CopyText copy={region.heading} />
                 </h3>
+                <p className="mt-4 max-w-[38rem] font-serif text-[1.1875rem] leading-[1.6] text-ink [font-variation-settings:'opsz'_18]">
+                  <CopyText copy={region.body} />
+                </p>
               </div>
-              <p className={`flex-1 font-serif text-[1.125rem] leading-[1.65] [font-variation-settings:'opsz'_18] ${pine ? "text-plate" : "text-ink"}`}>
-                <CopyText copy={region.body} />
-              </p>
-              <dl className="grid grid-cols-2 gap-x-5 gap-y-4">
-                {facts.map((f) => (
-                  <div key={f.key} className="min-w-0">
-                    <dt className="font-gothic text-[0.8125rem] leading-snug text-ink-soft">
-                      <CopyText copy={f.label} />
-                    </dt>
-                    <dd className="mt-1 font-gothic text-small leading-snug [overflow-wrap:anywhere]">
-                      <CopyText copy={f.value} />
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <div className={`on-pine col-span-12 rounded-[20px] p-7 desktop:col-span-5 ${flip ? "desktop:order-1" : ""}`}>
+                {/* The region's Japanese name, large across the top of the panel. */}
+                <p aria-hidden lang="ja" className="mb-6 font-mincho text-[clamp(2rem,2.4vw,2.75rem)] leading-none text-pine-soft/70">
+                  {copyText(region.verticalName, locale).replace(/\s*\/\s*/g, "・")}
+                </p>
+                <dl className="grid grid-cols-2 gap-x-6 gap-y-5">
+                  {facts.map((f) => (
+                    <div key={f.key} className="min-w-0">
+                      <dt className="font-gothic text-[0.8125rem] leading-snug text-pine-soft">
+                        <CopyText copy={f.label} />
+                      </dt>
+                      <dd className="mt-1 font-serif text-[1.125rem] leading-snug text-plate [overflow-wrap:anywhere]">
+                        <CopyText copy={f.value} />
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </article>
           );
         })}
