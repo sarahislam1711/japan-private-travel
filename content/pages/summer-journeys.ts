@@ -33,13 +33,15 @@ export const summerJourneys = {
   },
   regions: [
     {
-      heading: draft("Hokkaido"),
-      verticalName: draft("北海道", { lang: "ja" }),
-      body: draft([ph("HOKKAIDO_BODY")]),
-      bestWeeks: draft([ph("HOKKAIDO_BEST_WEEKS")]),
-      length: draft([ph("HOKKAIDO_LENGTH")]),
-      fromTokyo: draft([ph("HOKKAIDO_FROM_TOKYO")]),
-      privateBathCount: draft([ph("HOKKAIDO_PRIVATE_BATH_COUNT")]),
+      heading: locked("Hokkaido"),
+      verticalName: locked("北海道", { lang: "ja" }),
+      // Body written by Sarah (8 Oct 2026). The margin facts came in a table headed "Example":
+      // DRAFT until Sarah confirms they are the real values.
+      body: locked("In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day."),
+      bestWeeks: draft("Mid-July to late August"),
+      length: draft("4–5 nights"),
+      fromTokyo: draft("90 minutes by air to Sapporo"),
+      privateBathCount: draft("6"),
     },
     {
       heading: draft("Okinawa"),
@@ -70,11 +72,12 @@ export const summerJourneys = {
       "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea.",
     ),
   },
+  // Labels as Sarah set them (8 Oct 2026).
   factLabels: {
-    bestWeeks: draft("Weeks we recommend"),
-    length: draft("Suggested length"),
-    fromTokyo: draft("Getting there from Tokyo"),
-    privateBathCount: draft("Properties with private bathing we use"),
+    bestWeeks: locked("Best weeks"),
+    length: locked("Suggested length"),
+    fromTokyo: locked("Getting there from Tokyo"),
+    privateBathCount: locked("Properties with private bathing"),
   },
   familyLink: draft("Planning for Muslim families:"),
 };

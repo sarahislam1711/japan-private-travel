@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**288** draft,
-**0** missing — of 290 strings.
+**293** draft,
+**0** missing — of 295 strings.
 
 ## content/site.ts
 
@@ -140,16 +140,21 @@ Status: **2** approved,
 | `summerJourneys.seasonBand.rows[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
 | `summerJourneys.seasonBand.rows[1]` | Sapporo | <span dir="rtl" lang="ar">سابورو</span> | draft |
 | `summerJourneys.regions[0].heading` | Hokkaido | <span dir="rtl" lang="ar">هوكايدو</span> | draft |
+| `summerJourneys.regions[0].body` | In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day. | <span dir="rtl" lang="ar">في يوليو وأغسطس، هوكايدو هي المكان الذي تهدأ فيه العائلة. صباحات في حقول اللافندر حول فورانو، وعصريات عند بحيرات شيكوتسو-تويا، وعشاء يستطيع المطبخ تحضيره دون توابل تحتوي على الكحول عندما تطلبون ذلك. المسافات قصيرة، والهواء منعش، ويمكن للجدّ والطفل أن يتشاركا اليوم الهادئ نفسه.</span> | draft |
+| `summerJourneys.regions[0].bestWeeks` | Mid-July to late August | <span dir="rtl" lang="ar">من منتصف يوليو إلى أواخر أغسطس</span> | draft |
+| `summerJourneys.regions[0].length` | 4–5 nights | <span dir="rtl" lang="ar">4–5 ليالٍ</span> | draft |
+| `summerJourneys.regions[0].fromTokyo` | 90 minutes by air to Sapporo | <span dir="rtl" lang="ar">90 دقيقة بالطائرة إلى سابورو</span> | draft |
+| `summerJourneys.regions[0].privateBathCount` | 6 | <span dir="rtl" lang="ar">6</span> | draft |
 | `summerJourneys.regions[1].heading` | Okinawa | <span dir="rtl" lang="ar">أوكيناوا</span> | draft |
 | `summerJourneys.regions[2].heading` | Hokuriku and the Japan Alps | <span dir="rtl" lang="ar">هوكوريكو وجبال الألب اليابانية</span> | draft |
 | `summerJourneys.closing` | Summer dates go first. Tell us the household and the weeks you are weighing. | <span dir="rtl" lang="ar">مواعيد الصيف تُحجز أولًا. أخبرونا عن أفراد العائلة والأسابيع التي تفكّرون فيها.</span> | draft |
 | `summerJourneys.otherSeasons` | Travelling at another time of year? | <span dir="rtl" lang="ar">هل تسافرون في وقت آخر من السنة؟</span> | draft |
 | `summerJourneys.months.heading` | Two months, three places. | <span dir="rtl" lang="ar">شهران، وثلاثة أماكن.</span> | draft |
 | `summerJourneys.months.text` | Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea. | <span dir="rtl" lang="ar">صيف طوكيو حارّ ومزدحم. أما الأماكن التي نخطّط لها للعائلات في يوليو وأغسطس فتقع أبعد شمالًا، أو أعلى ارتفاعًا، أو على البحر.</span> | draft |
-| `summerJourneys.factLabels.bestWeeks` | Weeks we recommend | <span dir="rtl" lang="ar">الأسابيع التي نوصي بها</span> | draft |
+| `summerJourneys.factLabels.bestWeeks` | Best weeks | <span dir="rtl" lang="ar">أفضل الأسابيع</span> | draft |
 | `summerJourneys.factLabels.length` | Suggested length | <span dir="rtl" lang="ar">المدة المقترحة</span> | draft |
 | `summerJourneys.factLabels.fromTokyo` | Getting there from Tokyo | <span dir="rtl" lang="ar">الوصول من طوكيو</span> | draft |
-| `summerJourneys.factLabels.privateBathCount` | Properties with private bathing we use | <span dir="rtl" lang="ar">أماكن الإقامة ذات الاستحمام الخاص التي نعتمدها</span> | draft |
+| `summerJourneys.factLabels.privateBathCount` | Properties with private bathing | <span dir="rtl" lang="ar">أماكن إقامة بحمّامات خاصة</span> | draft |
 | `summerJourneys.familyLink` | Planning for Muslim families: | <span dir="rtl" lang="ar">التخطيط للعائلات المسلمة:</span> | draft |
 
 ## content/pages/private-japan.ts

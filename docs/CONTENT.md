@@ -165,12 +165,19 @@ Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa 
 
 | Slot | Hokkaido | Okinawa | Hokuriku and the Japan Alps ⚑D6 |
 |---|---|---|---|
-| Body, 80–120 words: what a household does here in July–August, named places | `[[HOKKAIDO_BODY]]` | `[[OKINAWA_BODY]]` | `[[ALPS_BODY]]` |
+| Body, 80–120 words: what a household does here in July–August, named places | written (below) | `[[OKINAWA_BODY]]` | `[[ALPS_BODY]]` |
 | Margin: vertical name | 北海道 | 沖縄 | 北陸 / 北アルプス |
-| Margin: best weeks | `[[..]]` | `[[..]]` | `[[..]]` |
-| Margin: suggested length | `[[..]]` | `[[..]]` | `[[..]]` |
-| Margin: getting there from Tokyo | `[[..]]` | `[[..]]` | `[[..]]` |
-| Margin: properties with private bathing we use | count `[[..]]` | `[[..]]` | `[[..]]` |
+| Margin: best weeks | Mid-July to late August | `[[..]]` | `[[..]]` |
+| Margin: suggested length | 4–5 nights | `[[..]]` | `[[..]]` |
+| Margin: getting there from Tokyo | 90 minutes by air to Sapporo | `[[..]]` | `[[..]]` |
+| Margin: properties with private bathing we use | 6 | `[[..]]` | `[[..]]` |
+
+**Hokkaido** (Sarah, 8 Oct 2026; layout: the story in the main column, the proof in a margin beside it)
+
+> **Hokkaido** — LOCKED
+> In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day. — LOCKED
+>
+> Margin (DRAFT: supplied in a table headed "Example"; confirm these are the real values): 北海道 · Best weeks: Mid-July to late August · Suggested length: 4–5 nights · Getting there from Tokyo: 90 minutes by air to Sapporo · Properties with private bathing: 6
 
 **Closing — DRAFT**
 
@@ -183,7 +190,7 @@ Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa 
 - Below the lede: "Travelling at another time of year?" — *Link:* Private Japan
 - Months section heading: "Two months, three places."
 - Months section text: "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea."
-- Region fact labels: "Weeks we recommend" · "Suggested length" · "Getting there from Tokyo" · "Properties with private bathing we use"
+- Region fact labels (LOCKED, Sarah 8 Oct 2026): "Best weeks" · "Suggested length" · "Getting there from Tokyo" · "Properties with private bathing"
 - Under each region: "Planning for Muslim families:" — *Link:* Family Services
 
 ## 5. Private Japan (`/private-japan`)

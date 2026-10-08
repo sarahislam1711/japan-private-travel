@@ -18,7 +18,16 @@ export const summerJourneysAr: Translation<typeof summerJourneys> = {
     rows: [ard("طوكيو"), ard("سابورو")],
   },
   regions: [
-    { heading: ard("هوكايدو") },
+    {
+      heading: ard("هوكايدو"),
+      body: ard(
+        "في يوليو وأغسطس، هوكايدو هي المكان الذي تهدأ فيه العائلة. صباحات في حقول اللافندر حول فورانو، وعصريات عند بحيرات شيكوتسو-تويا، وعشاء يستطيع المطبخ تحضيره دون توابل تحتوي على الكحول عندما تطلبون ذلك. المسافات قصيرة، والهواء منعش، ويمكن للجدّ والطفل أن يتشاركا اليوم الهادئ نفسه.",
+      ),
+      bestWeeks: ard("من منتصف يوليو إلى أواخر أغسطس"),
+      length: ard("4–5 ليالٍ"),
+      fromTokyo: ard("90 دقيقة بالطائرة إلى سابورو"),
+      privateBathCount: ard("6"),
+    },
     { heading: ard("أوكيناوا") },
     { heading: ard("هوكوريكو وجبال الألب اليابانية") },
   ],
@@ -31,10 +40,10 @@ export const summerJourneysAr: Translation<typeof summerJourneys> = {
     ),
   },
   factLabels: {
-    bestWeeks: ard("الأسابيع التي نوصي بها"),
+    bestWeeks: ard("أفضل الأسابيع"),
     length: ard("المدة المقترحة"),
     fromTokyo: ard("الوصول من طوكيو"),
-    privateBathCount: ard("أماكن الإقامة ذات الاستحمام الخاص التي نعتمدها"),
+    privateBathCount: ard("أماكن إقامة بحمّامات خاصة"),
   },
   familyLink: ard("التخطيط للعائلات المسلمة:"),
 };
