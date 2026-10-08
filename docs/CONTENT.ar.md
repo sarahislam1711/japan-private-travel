@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**298** draft,
-**0** missing — of 300 strings.
+**297** draft,
+**0** missing — of 299 strings.
 
 ## content/site.ts
 
@@ -139,7 +139,6 @@ Status: **2** approved,
 | `summerJourneys.story.places[0].line` | Hokkaido is cool | <span dir="rtl" lang="ar">هوكايدو معتدلة الحرارة</span> | draft |
 | `summerJourneys.story.places[1].line` | The Japan Alps are cool up high | <span dir="rtl" lang="ar">جبال الألب اليابانية معتدلة على ارتفاعاتها</span> | draft |
 | `summerJourneys.story.places[2].line` | Okinawa is by the sea | <span dir="rtl" lang="ar">أوكيناوا على البحر</span> | draft |
-| `summerJourneys.story.why` | These are also the months Gulf and southern European families most want to travel. | <span dir="rtl" lang="ar">وهذان أيضًا الشهران اللذان تفضّل فيهما العائلات من الخليج وجنوب أوروبا السفر أكثر من غيرهما.</span> | draft |
 | `summerJourneys.story.payoff` | We build your tour around that. | <span dir="rtl" lang="ar">ونحن نبني رحلتكم حول ذلك.</span> | draft |
 | `summerJourneys.seasonBand.caption` | Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals. | <span dir="rtl" lang="ar">متوسط درجة الحرارة العظمى اليومية حسب الشهر. المصدر: وكالة الأرصاد الجوية اليابانية، المعدلات المناخية للفترة 1991–2020.</span> | draft |
 | `summerJourneys.seasonBand.rows[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |

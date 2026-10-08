@@ -23,7 +23,6 @@ export const summerJourneys = {
       { name: draft("北アルプス", { lang: "ja" }), line: locked("The Japan Alps are cool up high") },
       { name: draft("沖縄", { lang: "ja" }), line: locked("Okinawa is by the sea") },
     ],
-    why: locked("These are also the months Gulf and southern European families most want to travel."),
     payoff: locked("We build your tour around that."),
   },
   seasonBand: {

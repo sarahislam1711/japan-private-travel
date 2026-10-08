@@ -156,9 +156,9 @@ Step symbols, set large under each promise in the How we work stage — DRAFT (d
 (Title changed by Sarah, 8 Oct 2026, from "July and August are the months to bring a family to Japan, in the right places.". "best" is hers; the C4 approval entry is hers to add.)
 >
 >
-> In summer the big cities are hot and crowded. The north is not. Hokkaido is cool, the Japan Alps are cool up high, and Okinawa is by the sea. These are also the months Gulf and southern European families most want to travel. We build your tour around that.
+> In summer the big cities are hot and crowded. The north is not. Hokkaido is cool, the Japan Alps are cool up high, and Okinawa is by the sea. We build your tour around that.
 
-Beats as set on the page: "In summer the big cities are hot and crowded." → "The north is not." → three places, each with its Japanese name (DRAFT, decorative: 北海道 · 北アルプス · 沖縄): "Hokkaido is cool" · "The Japan Alps are cool up high" · "Okinawa is by the sea" → "These are also the months Gulf and southern European families most want to travel." → "We build your tour around that."
+Beats as set on the page: "In summer the big cities are hot and crowded." → "The north is not." → three places, each with its Japanese name (DRAFT, decorative: 北海道 · 北アルプス · 沖縄): "Hokkaido is cool" · "The Japan Alps are cool up high" · "Okinawa is by the sea" → "We build your tour around that." ("These are also the months Gulf and southern European families most want to travel." removed by Sarah, 8 Oct 2026.)
 
 **Season band — needs data** {CL-05}
 Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."

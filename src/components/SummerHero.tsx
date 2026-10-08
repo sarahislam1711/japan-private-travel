@@ -21,7 +21,7 @@ export async function SummerHero() {
   // on paper ink and pine, on the pine panel white and pine soft.
   // The pine panel holds only the three places and sizes to them (Sarah, 8 Oct 2026).
   const panel = (
-    <ul className="flex flex-col gap-7 p-8 tablet:p-10 desktop:p-12">
+    <ul className="flex h-full flex-col justify-center gap-7 p-8 tablet:p-10 desktop:p-12">
       {s.places.map((place, i) => (
         <li key={i}>
           <span lang="ja" className="block font-mincho text-[1.0625rem] leading-none tracking-[0.12em] text-pine-soft">
@@ -34,24 +34,21 @@ export async function SummerHero() {
       ))}
     </ul>
   );
-  // Two matched pairs on the left: a quiet line, then the serif statement it leads to.
-  const pair = (lead: typeof s.before, statement: typeof s.turn, tone: "pine" | "ink") => (
-    <div>
-      <p className="font-gothic text-copy text-ink-soft">
-        <CopyText copy={lead} />
-      </p>
-      <p className={`mt-2 font-serif text-[clamp(1.625rem,1vw+1.1rem,2.125rem)] leading-[1.15] font-[480] [font-variation-settings:'opsz'_36] ${tone === "pine" ? "text-pine" : "text-ink"}`}>
-        <CopyText copy={statement} />
-      </p>
-    </div>
-  );
   return (
     <SplitHero id="sj-title" title={summerJourneys.title} verticals={summerJourneys.heroImage} titleClass="sj-title" align="top" panel={panel} titleAccent={accent}>
-      <div className="flex flex-col gap-8">
-        {pair(s.before, s.turn, "pine")}
-        {pair(s.why, s.payoff, "ink")}
+      <div>
+        <p className="font-gothic text-copy text-ink-soft">
+          <CopyText copy={s.before} />
+        </p>
+        <p className="mt-2 font-serif text-[clamp(1.625rem,1vw+1.1rem,2.125rem)] leading-[1.15] font-[480] text-pine [font-variation-settings:'opsz'_36]">
+          <CopyText copy={s.turn} />
+        </p>
       </div>
-      <p className="mt-10 font-gothic text-label text-ink-soft">
+      {/* The payoff on a soft pine highlight, so it reads as the promise. */}
+      <p className="mt-8 inline-block rounded-[14px] bg-pine/10 px-5 py-3 font-serif text-[clamp(1.375rem,0.8vw+1rem,1.75rem)] leading-[1.2] font-[480] text-ink [font-variation-settings:'opsz'_36]">
+        <CopyText copy={s.payoff} />
+      </p>
+      <p className="mt-8 font-gothic text-label text-ink-soft">
         <CopyText copy={summerJourneys.otherSeasons} />{" "}
         <Link href={localePath(pj.key, locale)} className="tap text-ink">
           <CopyText copy={pj.navLabel!} />

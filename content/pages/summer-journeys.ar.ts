@@ -12,7 +12,6 @@ export const summerJourneysAr: Translation<typeof summerJourneys> = {
       { line: ard("جبال الألب اليابانية معتدلة على ارتفاعاتها") },
       { line: ard("أوكيناوا على البحر") },
     ],
-    why: ard("وهذان أيضًا الشهران اللذان تفضّل فيهما العائلات من الخليج وجنوب أوروبا السفر أكثر من غيرهما."),
     payoff: ard("ونحن نبني رحلتكم حول ذلك."),
   },
   seasonBand: {
