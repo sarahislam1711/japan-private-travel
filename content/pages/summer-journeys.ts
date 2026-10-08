@@ -7,9 +7,12 @@ type Region = {
   verticalName: Copy;
   body: Copy;
   bestWeeks: Copy;
-  length: Copy;
+  stay: Copy;
   fromTokyo: Copy;
-  privateBathCount: Copy;
+  /** The fourth fact differs by region (private bathing, private pools, the route in). */
+  extra: { label: Copy; value: Copy };
+  /** A short line under the facts. */
+  note?: Copy;
 };
 
 export const summerJourneys = {
@@ -40,27 +43,31 @@ export const summerJourneys = {
       // DRAFT until Sarah confirms they are the real values.
       body: locked("In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day."),
       bestWeeks: draft("Mid-July to late August"),
-      length: draft("4–5 nights"),
+      stay: draft("4–5 nights"),
       fromTokyo: draft("90 minutes by air to Sapporo"),
-      privateBathCount: draft("6"),
+      extra: { label: locked("Properties with private bathing"), value: draft("6") },
     },
     {
-      heading: draft("Okinawa"),
-      verticalName: draft("沖縄", { lang: "ja" }),
-      body: draft([ph("OKINAWA_BODY")]),
-      bestWeeks: draft([ph("OKINAWA_BEST_WEEKS")]),
-      length: draft([ph("OKINAWA_LENGTH")]),
-      fromTokyo: draft([ph("OKINAWA_FROM_TOKYO")]),
-      privateBathCount: draft([ph("OKINAWA_PRIVATE_BATH_COUNT")]),
+      heading: locked("Okinawa"),
+      verticalName: locked("沖縄", { lang: "ja" }),
+      // Body and margin written by Sarah (8 Oct 2026).
+      body: locked("Warm sea and quiet islands while the mainland is busy. Calm water for children, slow beach days, and resorts with private pools. Dinners cooked the way you ask."),
+      bestWeeks: locked("July to September"),
+      stay: locked("4 to 5 nights"),
+      fromTokyo: locked("2.5 hours by air"),
+      extra: { label: locked("Private-pool stays"), value: locked("5") },
+      note: locked("The case here is the sea, not cooler air."),
     },
     {
       heading: draft("Hokuriku and the Japan Alps", { flags: ["D6"] }),
-      verticalName: draft("北陸 / 北アルプス", { lang: "ja" }),
-      body: draft([ph("ALPS_BODY")], { flags: ["D6"] }),
-      bestWeeks: draft([ph("ALPS_BEST_WEEKS")]),
-      length: draft([ph("ALPS_LENGTH")]),
-      fromTokyo: draft([ph("ALPS_FROM_TOKYO")]),
-      privateBathCount: draft([ph("ALPS_PRIVATE_BATH_COUNT")]),
+      verticalName: locked("北アルプス", { lang: "ja" }),
+      // Body and margin written by Sarah (8 Oct 2026).
+      body: locked("Cool mountain air, a few hours from Tokyo. Green valleys, clear rivers, and gentle walks that suit every age. A quiet change from the heat below."),
+      bestWeeks: locked("July to August"),
+      stay: locked("3 to 4 nights"),
+      fromTokyo: locked("3 hours by rail"),
+      extra: { label: locked("Reached via"), value: locked("Hokuriku / Nagano") },
+      note: locked("The cool is the altitude: Tateyama-Kurobe, Kamikochi."),
     },
   ] satisfies Region[],
   closing: draft("Summer dates go first. Tell us the household and the weeks you are weighing."),
@@ -73,12 +80,11 @@ export const summerJourneys = {
       "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea.",
     ),
   },
-  // Labels as Sarah set them (8 Oct 2026).
+  // Labels as Sarah set them (8 Oct 2026; shortened to her margin mock-ups).
   factLabels: {
     bestWeeks: locked("Best weeks"),
-    length: locked("Suggested length"),
-    fromTokyo: locked("Getting there from Tokyo"),
-    privateBathCount: locked("Properties with private bathing"),
+    stay: locked("Suggested stay"),
+    fromTokyo: locked("From Tokyo"),
   },
   familyLink: draft("Planning for Muslim families:"),
 };

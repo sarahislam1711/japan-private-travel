@@ -31,9 +31,9 @@ export async function RegionsTrio() {
           const flip = i % 2 === 1;
           const facts = [
             { key: "weeks", label: labels.bestWeeks, value: region.bestWeeks },
-            { key: "length", label: labels.length, value: region.length },
+            { key: "stay", label: labels.stay, value: region.stay },
             { key: "tokyo", label: labels.fromTokyo, value: region.fromTokyo },
-            { key: "bath", label: labels.privateBathCount, value: region.privateBathCount },
+            { key: "extra", label: region.extra.label, value: region.extra.value },
           ];
           return (
             <article key={i} data-reveal style={d(i)} className="grid grid-cols-12 items-center gap-x-6 gap-y-5 desktop:gap-x-12">
@@ -67,6 +67,11 @@ export async function RegionsTrio() {
                     </div>
                   ))}
                 </dl>
+                {"note" in region && region.note ? (
+                  <p className="mt-5 font-gothic text-small leading-relaxed text-pine-soft">
+                    <CopyText copy={region.note} />
+                  </p>
+                ) : null}
               </div>
             </article>
           );

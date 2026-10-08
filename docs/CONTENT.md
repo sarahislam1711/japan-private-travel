@@ -164,23 +164,29 @@ Beats as set on the page: "In summer the big cities are hot and crowded." → "T
 Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."
 Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa row — Okinawa's case is coastal, not cool, and a Naha row would undercut the page (⚑D6).
 
-**Region sections — BRIEF, not copy.** The strategy calls this the page with "the most specific content". Only the operator can write it truthfully. For each region the team/the operator supplies, and Claude Code renders:
+**Region sections** (stories and margins written by Sarah, 8 Oct 2026; set as zig-zag rows: story beside a pine panel with the Japanese name and the facts)
 
-| Slot | Hokkaido | Okinawa | Hokuriku and the Japan Alps ⚑D6 |
-|---|---|---|---|
-| Body, 80–120 words: what a household does here in July–August, named places | written (below) | `[[OKINAWA_BODY]]` | `[[ALPS_BODY]]` |
-| Margin: vertical name | 北海道 | 沖縄 | 北陸 / 北アルプス |
-| Margin: best weeks | Mid-July to late August | `[[..]]` | `[[..]]` |
-| Margin: suggested length | 4–5 nights | `[[..]]` | `[[..]]` |
-| Margin: getting there from Tokyo | 90 minutes by air to Sapporo | `[[..]]` | `[[..]]` |
-| Margin: properties with private bathing we use | 6 | `[[..]]` | `[[..]]` |
+Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". The fourth fact and the note differ by region.
 
-**Hokkaido** (Sarah, 8 Oct 2026; layout: the story in the main column, the proof in a margin beside it)
+**Hokkaido** — heading and body LOCKED; margin values DRAFT (supplied in a table headed "Example"; confirm)
 
-> **Hokkaido** — LOCKED
-> In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day. — LOCKED
+> In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day.
 >
-> Margin (DRAFT: supplied in a table headed "Example"; confirm these are the real values): 北海道 · Best weeks: Mid-July to late August · Suggested length: 4–5 nights · Getting there from Tokyo: 90 minutes by air to Sapporo · Properties with private bathing: 6
+> 北海道 · Best weeks: Mid-July to late August · Suggested stay: 4–5 nights · From Tokyo: 90 minutes by air to Sapporo · Properties with private bathing: 6
+
+**Okinawa** — LOCKED
+
+> Warm sea and quiet islands while the mainland is busy. Calm water for children, slow beach days, and resorts with private pools. Dinners cooked the way you ask.
+>
+> 沖縄 · Best weeks: July to September · Suggested stay: 4 to 5 nights · From Tokyo: 2.5 hours by air · Private-pool stays: 5
+> Note: The case here is the sea, not cooler air.
+
+**Hokuriku and the Japan Alps** — body and margin LOCKED; heading DRAFT ⚑D6
+
+> Cool mountain air, a few hours from Tokyo. Green valleys, clear rivers, and gentle walks that suit every age. A quiet change from the heat below.
+>
+> 北アルプス · Best weeks: July to August · Suggested stay: 3 to 4 nights · From Tokyo: 3 hours by rail · Reached via: Hokuriku / Nagano
+> Note: The cool is the altitude: Tateyama-Kurobe, Kamikochi.
 
 **Closing — DRAFT**
 
@@ -193,7 +199,7 @@ Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa 
 - Below the lede: "Travelling at another time of year?" — *Link:* Private Japan
 - Months section heading: "Two months, three places."
 - Months section text: "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea."
-- Region fact labels (LOCKED, Sarah 8 Oct 2026): "Best weeks" · "Suggested length" · "Getting there from Tokyo" · "Properties with private bathing"
+- Region fact labels: see Region sections above.
 - Under each region: "Planning for Muslim families:" — *Link:* Family Services
 
 ## 5. Private Japan (`/private-japan`)
