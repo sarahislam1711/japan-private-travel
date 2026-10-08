@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { routeFor, localePath } from "@content/routes";
+import { copyText } from "@/lib/copy";
 import { CopyText } from "./CopyText";
 
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
@@ -44,8 +45,15 @@ export async function RegionSection({ region }: { region: Region; index: number 
 
       {/* Margin: the proof. The Japanese name set vertically, then the facts. */}
       <aside data-reveal style={d(1)} className="col-span-12 rounded-[20px] bg-plate p-8 tablet:p-10 desktop:col-span-4 desktop:col-start-9">
-        <span aria-hidden lang="ja" className="block font-mincho text-[clamp(2.75rem,3.4vw,3.75rem)] leading-[1.05] text-pine [writing-mode:vertical-rl]">
-          <CopyText copy={region.verticalName} />
+        {/* A two-part name (北陸 / 北アルプス) is set as two vertical columns, read right to left. */}
+        <span aria-hidden lang="ja" dir="ltr" className="flex flex-row-reverse justify-end gap-3 font-mincho text-[clamp(2.75rem,3.4vw,3.75rem)] leading-[1.05] text-pine">
+          {copyText(region.verticalName, locale)
+            .split("/")
+            .map((part) => (
+              <span key={part} className="[writing-mode:vertical-rl]">
+                {part.trim()}
+              </span>
+            ))}
         </span>
         <dl className="mt-8 flex flex-col gap-5">
           {facts.map((f) => (
