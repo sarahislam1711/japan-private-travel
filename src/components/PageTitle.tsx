@@ -5,7 +5,7 @@ import { CopyText } from "./CopyText";
 export function PageTitle({ copy }: { copy: Copy }) {
   return (
     <main id="main" className="mx-auto max-w-(--content-max) px-(--page-margin) py-24">
-      <h1 className="max-w-(--measure-main) font-serif text-h1 [font-variation-settings:'opsz'_60]">
+      <h1 className="max-w-(--measure-main) font-serif text-h1 [overflow-wrap:anywhere] [font-variation-settings:'opsz'_60]">
         <CopyText copy={copy} />
       </h1>
     </main>

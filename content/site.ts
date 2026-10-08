@@ -1,5 +1,5 @@
 /* Site-wide content — docs/CONTENT.md §1. */
-import { attachArabic, draft, locked, ph } from "./schema";
+import { attachArabic, draft, ja, locked, ph } from "./schema";
 import { siteAr } from "./site.ar";
 
 export const site = {
@@ -16,17 +16,16 @@ export const site = {
     osakaAddress: locked([ph("OSAKA_ADDRESS")]),
   },
   registration: {
-    lineJa: locked([ph("REG_AUTHORITY_JA"), "登録旅行業 第", ph("REG_NUMBER"), "号"], {
+    // Corrected 8 Oct 2026: the company is a travel agency agent (旅行業者代理業), not a travel agency.
+    lineJa: draft([ph("REG_AUTHORITY_JA"), "登録旅行業者代理業 第", ph("REG_NUMBER"), "号"], {
       lang: "ja",
     }),
-    lineEn: draft([ph("REG_AUTHORITY_EN"), " Registered Travel Agency No. ", ph("REG_NUMBER")]),
+    lineEn: draft(["Travel Agency Agent, registered with the Governor of Tokyo, No. ", ph("REG_NUMBER")]),
   },
-  tradeNameLine: draft([ph("BRAND"), " is a trading name of ", ph("ENTITY_NAME_EN"), "."]),
-  memberships: [locked(["Member, ", ph("ASSOCIATION")])],
-  managers: {
-    tokyo: locked([ph("MANAGER_TOKYO")]),
-    osaka: locked([ph("MANAGER_OSAKA")]),
-  },
+  /** The licensed travel company the agent sells for; JATA membership is Air World's, not ours. */
+  principal: locked(["Air World Co., Ltd. (", ja("観光庁長官登録旅行業第961号"), "), JATA member"]),
+  // No closing full stop: the entity name ("Travel World Co., Ltd.") ends with one.
+  tradeNameLine: draft([ph("BRAND"), " is a trading name of ", ph("ENTITY_NAME_EN")]),
   whatsapp: {
     e164: locked([ph("WHATSAPP_E164")]),
     display: locked([ph("WHATSAPP_DISPLAY")]),

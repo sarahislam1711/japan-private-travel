@@ -98,20 +98,21 @@ const fact = (owner: PlaceholderOwner, note: string): Placeholder => ({
 });
 const copy = (note: string): Placeholder => ({ owner: "team", kind: "copy", note, value: null });
 
+// Entity facts supplied by Sarah, 8 Oct 2026 (Travel World Co., Ltd., formerly A.T.S; agent of Air World Co., Ltd.).
 export const placeholders: Record<PlaceholderKey, Placeholder> = {
-  ENTITY_NAME_EN: fact("legal", "Registered entity name in English"),
+  ENTITY_NAME_EN: { ...fact("legal", "Registered entity name in English"), value: "Travel World Co., Ltd." },
   ENTITY_NAME_JA: fact("legal", "Registered entity name in Japanese"),
-  ENTITY_ADDRESS: fact("legal", "Tokyo office address as registered"),
-  OSAKA_ADDRESS: fact("legal", "Osaka office address"),
-  REG_AUTHORITY_JA: fact("legal", "Registering authority, prescribed Japanese form"),
-  REG_AUTHORITY_EN: fact("legal", "Registering authority in English"),
-  REG_NUMBER: fact("legal", "Registration number"),
+  ENTITY_ADDRESS: { ...fact("legal", "Tokyo office address as registered"), value: "〒106-0031 Kasumicho Corp 302, 3-21-20 Nishi-Azabu, Minato-ku, Tokyo" },
+  OSAKA_ADDRESS: { ...fact("legal", "Osaka office address"), value: "〒540-0026 2-2-14-206 Uchihonmachi, Chuo-ku, Osaka" },
+  REG_AUTHORITY_JA: { ...fact("legal", "Registering authority, prescribed Japanese form"), value: "東京都知事" },
+  REG_AUTHORITY_EN: { ...fact("legal", "Registering authority in English"), value: "the Tokyo Metropolitan Government" },
+  REG_NUMBER: { ...fact("legal", "Registration number"), value: "11300" },
   PRIVACY_NOTICE: fact("legal", "APPI-compliant privacy notice (D11)"),
   TERMS_OF_BUSINESS: fact("legal", "旅行業約款 / 取引条件 as advised (D11)"),
 
   WHATSAPP_E164: fact("operator", "WhatsApp number, E.164 digits only, for wa.me links"),
   WHATSAPP_DISPLAY: fact("operator", "WhatsApp number as displayed"),
-  PHONE: fact("operator", "Telephone number"),
+  PHONE: { ...fact("operator", "Telephone number"), value: "03-6432-9234" },
   EMAIL: fact("operator", "Public email address"),
   DESK_EMAIL: fact("operator", "Address that receives enquiry notifications"),
 

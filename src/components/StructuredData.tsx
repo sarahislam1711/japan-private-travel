@@ -102,8 +102,13 @@ export async function StructuredData({ page }: { page: RouteKey }) {
           : undefined,
       areaServed: { "@type": "Country", name: "Japan" },
       knowsLanguage: ["ar", "en", "ja"],
-      identifier: fact("REG_NUMBER") ? { "@type": "PropertyValue", name: "Travel agency registration", value: fact("REG_NUMBER") } : undefined,
-      memberOf: fact("ASSOCIATION") ? { "@type": "Organization", name: fact("ASSOCIATION") } : undefined,
+      identifier: fact("REG_NUMBER")
+        ? { "@type": "PropertyValue", name: "Travel Agency Agent registration, Governor of Tokyo (東京都知事登録旅行業者代理業)", value: fact("REG_NUMBER") }
+        : undefined,
+      foundingDate: "2016-09-23",
+      founder: { "@type": "Person", name: "Fathy Mohamed Mohamed Ismail Ahmed" },
+      brand: { "@type": "Brand", name: copyText(site.brand.name) },
+      // Agent of Air World Co., Ltd. (Japan Tourism Agency Registered Travel Agency No. 961, JATA member).
     },
     {
       "@type": "WebSite",

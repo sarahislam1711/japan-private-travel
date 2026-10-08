@@ -13,7 +13,7 @@ export const privacy = {
       id: "who",
       heading: draft("Who we are"),
       body: [
-        draft([ph("BRAND"), " is a trading name of ", ph("ENTITY_NAME_EN"), ", a registered travel agency in Japan: ", ph("REG_AUTHORITY_EN"), " Registered Travel Agency No. ", ph("REG_NUMBER"), ". Our offices are at ", ph("ENTITY_ADDRESS"), " (Tokyo) and ", ph("OSAKA_ADDRESS"), " (Osaka)."]),
+        draft([ph("BRAND"), " is a trading name of ", ph("ENTITY_NAME_EN"), ", a travel agency agent registered with the Governor of Tokyo, No. ", ph("REG_NUMBER"), ". The trips we sell are organised and operated by Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961. Our offices are at ", ph("ENTITY_ADDRESS"), " (Tokyo) and ", ph("OSAKA_ADDRESS"), " (Osaka)."]),
         draft(["For anything in this notice, write to ", ph("EMAIL"), "."]),
       ],
     },
@@ -43,6 +43,7 @@ export const privacy = {
       id: "share",
       heading: draft("Who we share it with"),
       body: [
+        draft("To book your trip, we share the details it needs with Air World Co., Ltd., the licensed travel company that organises and operates it."),
         draft("Only the people who make your trip happen: the hotels, ryokan, restaurants, drivers, guides and other suppliers you have agreed to, and the services that run this website and our messages (hosting, email and spam protection). Each receives only what it needs."),
         draft("Where a supplier or service holds information outside Japan, we use it only with the safeguards the law requires."),
       ],
@@ -92,10 +93,17 @@ export const terms = {
       ],
     },
     {
+      id: "contract",
+      heading: draft("Who your contract is with"),
+      body: [
+        draft("We are a travel agency agent. Your travel contract is with Air World Co., Ltd. (Japan Tourism Agency Registered Travel Agency No. 961), which organises and operates your trip; we arrange it with you on Air World's behalf."),
+      ],
+    },
+    {
       id: "conditions",
       heading: draft("Your booking and conditions of travel"),
       body: [
-        draft("Before you book, we give you our written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your contract with us, alongside these terms."),
+        draft("Before you book, you receive Air World's written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your travel contract, alongside these terms."),
       ],
     },
     {
@@ -117,7 +125,7 @@ export const terms = {
       id: "advisors",
       heading: draft("Booking through a travel advisor"),
       body: [
-        draft("When you book through a travel advisor, the advisor keeps the relationship with you; we plan and run the trip in Japan under these terms."),
+        draft("When you book through a travel advisor, the advisor keeps the relationship with you; we arrange the trip, and Air World operates it in Japan."),
       ],
     },
     {
@@ -139,7 +147,7 @@ export const terms = {
       id: "ours",
       heading: draft("Our responsibility"),
       body: [
-        draft("We plan and arrange your trip with reasonable care, and our responsibility to you is as set out in the Travel Agency Act and your conditions of travel."),
+        draft("We arrange your trip with reasonable care as Air World's agent. Air World is responsible for operating it, as set out in the Travel Agency Act and your conditions of travel."),
       ],
     },
     {

@@ -10,11 +10,6 @@ import { getLocale } from "@/lib/locale";
 import { CopyText } from "./CopyText";
 import { Wordmark } from "./Wordmark";
 
-const label = (text: string) => {
-  const row = about.credentials.rows.find((r) => r.label.body[0] === text);
-  if (!row) throw new Error(`No credentials label "${text}"`);
-  return <CopyText copy={row.label} />;
-};
 
 const trips = mainNav.find((e) => e.kind === "group");
 
@@ -42,22 +37,23 @@ function Fact({ name, children }: { name: ReactNode; children: ReactNode }) {
  */
 export async function SiteFooter() {
   const locale = await getLocale();
+  const L = about.footer;
+  // The legal block (COMPLIANCE C1, C2), corrected 8 Oct 2026: we are a travel agency agent, and Air World is the principal.
   const facts: { key: string; name: ReactNode; value: ReactNode }[] = [
     {
       key: "entity",
-      name: label("Registered entity"),
+      name: <CopyText copy={L.entity} />,
       value: (
         <>
           <CopyText copy={site.entity.nameEn} /> (<CopyText copy={site.entity.nameJa} />)
         </>
       ),
     },
-    { key: "registration", name: label("Registration"), value: <CopyText copy={site.registration.lineJa} /> },
-    { key: "tokyo", name: label("Tokyo office"), value: <CopyText copy={site.entity.address} /> },
-    { key: "osaka", name: label("Osaka office"), value: <CopyText copy={site.entity.osakaAddress} /> },
-    { key: "mgr-tokyo", name: label("Travel services manager, Tokyo"), value: <CopyText copy={site.managers.tokyo} /> },
-    { key: "mgr-osaka", name: label("Travel services manager, Osaka"), value: <CopyText copy={site.managers.osaka} /> },
-    { key: "memberships", name: label("Memberships"), value: site.memberships.map((m, i) => <CopyText key={i} copy={m} />) },
+    { key: "registration", name: <CopyText copy={L.registration} />, value: <CopyText copy={site.registration.lineJa} /> },
+    { key: "tokyo", name: <CopyText copy={L.tokyo} />, value: <CopyText copy={site.entity.address} /> },
+    { key: "osaka", name: <CopyText copy={L.osaka} />, value: <CopyText copy={site.entity.osakaAddress} /> },
+    { key: "managers", name: <CopyText copy={L.managers} />, value: <CopyText copy={about.people.managers} /> },
+    { key: "principal", name: <CopyText copy={L.principal} />, value: <CopyText copy={site.principal} /> },
   ];
 
   return (

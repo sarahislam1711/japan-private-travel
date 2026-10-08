@@ -11,7 +11,8 @@ export const home = {
     paragraph: locked("Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese."),
   },
   margin: {
-    statement: locked("We are a registered travel agency with offices in Tokyo and Osaka."),
+    // Corrected 8 Oct 2026 (agent of Air World): DRAFT for Sarah and the 行政書士.
+    statement: draft("We are a registered travel agency agent for Air World, a JATA member, with offices in Tokyo and Osaka."),
     // The registration line itself renders from site.registration.lineJa.
     check: locked(["You can check our registration with ", ph("REG_AUTHORITY_EN"), "."], { claims: ["CL-06"] }),
   },
@@ -72,16 +73,17 @@ export const home = {
     heading: draft("Frequently asked questions"),
     items: [
       {
-        question: locked(["Is ", ph("BRAND"), " a registered travel agency in Japan?"]),
-        answer: locked(
+        // Corrected 8 Oct 2026 (agent of Air World): DRAFT for Sarah and the 行政書士.
+        question: draft(["Is ", ph("BRAND"), " registered in Japan?"]),
+        answer: draft(
           [
-            "Yes. We are registered as ",
-            ph("REG_AUTHORITY_EN"),
-            " Registered Travel Agency No. ",
+            "Yes. ",
+            ph("BRAND"),
+            " is run by ",
+            ph("ENTITY_NAME_EN"),
+            ", a travel agency agent registered with the Governor of Tokyo, No. ",
             ph("REG_NUMBER"),
-            ", with offices in Tokyo and Osaka. You can verify our registration with ",
-            ph("REG_AUTHORITY_EN"),
-            ".",
+            ", with offices in Tokyo and Osaka. The trips we sell are organised and operated by Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 and a full member of JATA. You can verify both registrations.",
           ],
           { claims: ["CL-06"] },
         ),
@@ -106,7 +108,8 @@ export const home = {
       },
       {
         question: locked("We are a travel advisor. Can we work with you?"),
-        answer: locked("Yes. You keep the client relationship; we plan and run the trip in Japan."),
+        // Corrected 8 Oct 2026 (agent of Air World): DRAFT for Sarah and the 行政書士.
+        answer: draft("Yes. You keep the client relationship. We arrange the trip, and Air World Co., Ltd., the licensed travel company we sell for, operates it in Japan."),
         link: { text: locked("Learn more about how we can partner"), route: "forTravelAdvisors" as RouteKey },
       },
     ] satisfies { question: Copy; answer: Copy; link?: { text: Copy; route: RouteKey } }[],

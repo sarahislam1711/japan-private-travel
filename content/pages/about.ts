@@ -1,59 +1,86 @@
-/* About (/about) — docs/CONTENT.md §8. */
-import { attachArabic, draft, ja, locked, missing, ph } from "../schema";
+/* About (/about) — docs/CONTENT.md §8. Copy approved by Sarah, 8 Oct 2026. */
+import { attachArabic, ja, locked, ph } from "../schema";
 import { aboutAr } from "./about.ar";
 
 export const about = {
-  title: missing("ABOUT_TITLE"),
-  whoWeAre: {
-    heading: draft("Who we are"),
-    paragraphs: [
-      locked(
-        "We are a registered Japanese travel agency working from Tokyo and Osaka. Our registration and the name of our certified travel services manager appear at the foot of every page — you can verify both with the Japan Tourism Agency.",
+  title: locked(["About ", ph("BRAND")]),
+  intro: locked([ph("BRAND"), " is run by ", ph("ENTITY_NAME_EN"), ", founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka."]),
+  keyFacts: [locked("Since 2016"), locked("Tokyo and Osaka"), locked(["Tokyo Governor Registration No. ", ph("REG_NUMBER")])],
+  people: {
+    heading: locked("The people"),
+    director: {
+      name: locked("Fathy Mohamed Mohamed Ismail Ahmed"),
+      nameJa: locked("ファトヒー・モハメド・モハメド・イスマイル・アフメド", { lang: "ja" }),
+      role: locked("Representative Director"),
+      bio: locked(
+        "A graduate of Cairo University's Japanese department, he worked as a Japanese-speaking guide in Egypt for more than twenty years before founding the company in Tokyo, where he is based.",
       ),
-      locked(
-        "The company is led by an Egyptian founder who works in Japanese, alongside a team that covers Arabic, Japanese and English as first languages. Client conversations happen in the client's own language, without an interpreter in the middle.",
-      ),
-      locked("Our work is enquiry-only. Most of what we arrange, we arrange once."),
-    ],
+    },
+    managersLabel: locked(["Licensed travel managers (", ja("総合旅行業務取扱管理者"), ")"]),
+    managers: locked("Mariko Kajiwara and Takashi Mino"),
+    managersNote: locked("Japan's Travel Agency Act requires a licensed manager at each office."),
   },
-  credentials: {
-    heading: draft("Credentials"),
-    // Registration, entity and office values render from site.ts.
+  registration: {
+    heading: locked("How we are registered"),
+    intro: locked("Japan licenses travel companies in tiers. This is exactly where we sit, and who stands behind your booking."),
+    steps: [
+      { title: locked("You"), text: locked("You plan your trip with us.") },
+      {
+        title: locked([ph("BRAND"), " · ", ph("ENTITY_NAME_EN")]),
+        text: locked([
+          "Travel Agency Agent, registered with the Governor of Tokyo, No. ",
+          ph("REG_NUMBER"),
+          " (",
+          ja("東京都知事登録旅行業者代理業 第"),
+          ph("REG_NUMBER"),
+          ja("号"),
+          "). We sell on behalf of one licensed travel company.",
+        ]),
+      },
+      {
+        title: locked(["Air World Co., Ltd. (", ja("エアーワールド株式会社"), ")"]),
+        text: locked([
+          "Registered Travel Agency No. 961 with the Commissioner of the Japan Tourism Agency (",
+          ja("観光庁長官登録旅行業第961号"),
+          "), and a full member of JATA, the Japan Association of Travel Agents. Air World organises and operates the trips we sell, and your travel contract is with Air World.",
+        ]),
+      },
+    ],
+    check: locked("You can check both registrations with the Tokyo Metropolitan Government and the Japan Tourism Agency.", { claims: ["CL-06"] }),
+  },
+  offices: {
+    heading: locked("Offices"),
+    list: [
+      { name: locked("Tokyo (head office)"), address: locked([ph("ENTITY_ADDRESS")]), tel: "03-6432-9234", fax: "03-6432-9134" },
+      { name: locked("Osaka"), address: locked([ph("OSAKA_ADDRESS")]), tel: "06-6585-0136", fax: "06-6585-0640" },
+    ],
+    telLabel: locked("Tel"),
+    faxLabel: locked("Fax"),
+    hours: locked("Monday to Friday, 10:00–17:00 Japan time. Closed at weekends and on public holidays."),
+  },
+  facts: {
+    heading: locked("Company facts"),
     rows: [
-      { label: locked("Registration") },
-      { label: locked("Registering authority"), value: locked([ph("REG_AUTHORITY_EN")]) },
-      { label: locked("Registered entity") },
-      { label: locked("Tokyo office") },
-      { label: locked("Osaka office") },
+      { label: locked("Company"), value: locked([ph("ENTITY_NAME_EN"), " (", ph("ENTITY_NAME_JA"), ")"]) },
+      { label: locked("Founded"), value: locked("23 September 2016, Tokyo") },
+      { label: locked("Capital"), value: locked("¥5,000,000") },
+      { label: locked("Representative Director"), value: locked("Fathy Mohamed Mohamed Ismail Ahmed") },
+      { label: locked("Licensed travel managers"), value: locked("Mariko Kajiwara, Takashi Mino") },
+      { label: locked("Registration"), value: locked(["Governor of Tokyo, Travel Agency Agent No. ", ph("REG_NUMBER")]) },
       {
-        label: locked("Travel services manager, Tokyo"),
-        value: locked([ph("MANAGER_TOKYO"), ", ", ja("旅行業務取扱管理者"), " (", ph("MANAGER_TOKYO_GRADE"), ")"]),
-      },
-      {
-        label: locked("Travel services manager, Osaka"),
-        value: locked([ph("MANAGER_OSAKA"), ", ", ja("旅行業務取扱管理者"), " (", ph("MANAGER_OSAKA_GRADE"), ")"]),
-      },
-      { label: locked("Memberships") },
-      {
-        label: locked("Public liability insurance"),
-        value: locked([ph("INSURER"), ", cover ", ph("COVER_LEVEL")]),
-      },
-      {
-        label: locked("Languages"),
-        value: locked(["Arabic, English, Japanese — ", ph("LANGUAGE_STAFF_NOTE")]),
-      },
-      {
-        label: locked("How we quote"),
-        value: locked("Net supplier rates plus a stated service margin."),
-      },
-      {
-        label: locked("Founder"),
-        value: locked(["Our founder has worked in Japanese inbound travel since ", ph("FOUNDER_YEAR"), "."]),
+        label: locked("Principal travel company"),
+        value: locked("Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 (JATA member)"),
       },
     ],
   },
-  sources: {
-    heading: draft("Sources"),
+  /** Labels for the legal block in the footer of every page. */
+  footer: {
+    entity: locked("Registered entity"),
+    registration: locked("Registration"),
+    tokyo: locked("Tokyo office"),
+    osaka: locked("Osaka office"),
+    managers: locked("Licensed travel managers"),
+    principal: locked("Principal travel company"),
   },
 };
 

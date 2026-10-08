@@ -17,10 +17,10 @@ Status markers:
 | `entity.nameEn` | `[[ENTITY_NAME_EN]]` | |
 | `entity.nameJa` | `[[ENTITY_NAME_JA]]` | |
 | `entity.address` | `[[ENTITY_ADDRESS]]` (Tokyo) and `[[OSAKA_ADDRESS]]` | |
-| `registration.lineJa` | `[[REG_AUTHORITY_JA]]登録旅行業 第[[REG_NUMBER]]号` — the prescribed form, e.g. 東京都知事登録旅行業第3-0000号 or 観光庁長官登録旅行業第0000号. Exact form to be confirmed by the 行政書士. | |
-| `registration.lineEn` | `[[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]` | DRAFT |
-| `tradeNameLine` | `HalaJapan is a trading name of [[ENTITY_NAME_EN]].` | DRAFT (COMPLIANCE C2) |
-| `memberships` | `Member, [[ASSOCIATION]]` — one line per membership, never "licensed", "accredited" or "certified by". | LOCKED rule |
+| `registration.lineJa` | `[[REG_AUTHORITY_JA]]登録旅行業者代理業 第[[REG_NUMBER]]号` → 東京都知事登録旅行業者代理業 第11300号 (corrected 8 Oct 2026: Travel World is a travel agency agent of Air World; DRAFT for Sarah and the 行政書士) | DRAFT |
+| `registration.lineEn` | `Travel Agency Agent, registered with the Governor of Tokyo, No. [[REG_NUMBER]]` | DRAFT |
+| `tradeNameLine` | `HalaJapan is a trading name of [[ENTITY_NAME_EN]]` (no closing full stop: the name ends with one) | DRAFT (COMPLIANCE C2) |
+| `principal` | `Air World Co., Ltd. (観光庁長官登録旅行業第961号), JATA member` — the licensed travel company we sell for. JATA membership is Air World's, never shown as ours (replaces `memberships`, 8 Oct 2026). | LOCKED |
 | `whatsapp` | `[[WHATSAPP_E164]]` | |
 | `phone` | `[[PHONE]]` | |
 | `email` | `[[EMAIL]]` | |
@@ -53,13 +53,13 @@ Drafted 7 Oct 2026 for approval, for search intent in each language; Arabic in `
 
 | Page | Title | Description | Status |
 |---|---|---|---|
-| home | Private family trips to Japan | A registered Japanese travel agency in Tokyo and Osaka, planning private trips for families who travel together, in Arabic, English or Japanese. | DRAFT |
+| home | Private family trips to Japan | Private trips to Japan for families who travel together, planned in Arabic, English or Japanese, from offices in Tokyo and Osaka. | DRAFT |
 | summerJourneys | Summer in Japan: Hokkaido, Okinawa and the Alps | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips planned for July and August. | DRAFT |
 | privateJapan | Private Japan trips in spring, autumn and winter | Private trips across Japan outside summer, planned for the whole family: connecting rooms, days paced for every age, transport that keeps you together. | DRAFT |
 | familyServices | Japan for Muslim families: halal and prayer | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic. | DRAFT |
 | experiences | Experiences in Japan, arranged with named people | Each experience is arranged with a named person, in a stated season, with a stated lead time. | DRAFT |
-| about | About us: a registered travel agency in Japan | A registered Japanese travel agency working from Tokyo and Osaka. Our registration and travel services managers are named on every page. | DRAFT |
-| forTravelAdvisors | For travel advisors: private Japan for families | A registered Japanese agency for clients who travel as a household. You hold the client relationship; we plan and operate the trip in Japan. | DRAFT |
+| about | About HalaJapan: who we are and how we are registered | HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member. | DRAFT |
+| forTravelAdvisors | For travel advisors: private Japan for families | For clients who travel as a household. You hold the client relationship; we arrange the trip, and Air World, our licensed principal, operates it in Japan. | DRAFT |
 | contact | Plan a private family trip to Japan | Tell us who is travelling and when. Message us on WhatsApp, email or call, and we will reply in your language. | DRAFT |
 | privacy | Privacy notice | How HalaJapan uses the details you send us. | DRAFT |
 | terms | Terms of business | Terms of business for trips arranged by HalaJapan. | DRAFT |
@@ -98,7 +98,7 @@ All Home copy below is **LOCKED** — written and approved by Sarah, 6 Oct 2026 
 
 **Margin** (set as a seal at the foot of the hero's pine panel, Sarah 6 Oct 2026)
 
-> We are a registered travel agency with offices in Tokyo and Osaka.
+> We are a registered travel agency agent for Air World, a JATA member, with offices in Tokyo and Osaka. (corrected 8 Oct 2026: Travel World is a travel agency agent of Air World; DRAFT for Sarah and the 行政書士)
 > `registration.lineJa`
 > You can check our registration with [[REG_AUTHORITY_EN]].
 
@@ -126,8 +126,8 @@ Step symbols, set large under each promise in the How we work stage — DRAFT (d
 
 **FAQ** (before the contact close; each answer opens on a toggle; marked up as FAQPage. Questions and answers written by Sarah, 7 Oct 2026, LOCKED; heading DRAFT: "Frequently asked questions")
 
-> **Is HalaJapan a registered travel agency in Japan?**
-> Yes. We are registered as [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]], with offices in Tokyo and Osaka. You can verify our registration with [[REG_AUTHORITY_EN]]. {CL-06}
+> **Is HalaJapan registered in Japan?**
+> Yes. HalaJapan is run by [[ENTITY_NAME_EN]], a travel agency agent registered with the Governor of Tokyo, No. [[REG_NUMBER]], with offices in Tokyo and Osaka. The trips we sell are organised and operated by Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 and a full member of JATA. You can verify both registrations. {CL-06} (corrected 8 Oct 2026: Travel World is a travel agency agent of Air World; DRAFT for Sarah and the 行政書士)
 >
 > **What kind of trips does HalaJapan plan?**
 > Private trips for families and small groups who travel together. Each one is planned from scratch after an enquiry. We do not sell fixed packages.
@@ -139,7 +139,7 @@ Step symbols, set large under each promise in the How we work stage — DRAFT (d
 > Yes. We tell you which certification a restaurant holds and whether your authority recognises it, and we arrange prayer time and space within the day. We say plainly what is certified and what is prepared to your requirements.
 >
 > **We are a travel advisor. Can we work with you?**
-> Yes. You keep the client relationship; we plan and run the trip in Japan. Learn more about how we can partner (→ For travel advisors)
+> Yes. You keep the client relationship. We arrange the trip, and Air World Co., Ltd., the licensed travel company we sell for, operates it in Japan. (corrected 8 Oct 2026: Travel World is a travel agency agent of Air World; DRAFT for Sarah and the 行政書士) Learn more about how we can partner (→ For travel advisors)
 
 **Contact**
 
@@ -268,34 +268,43 @@ Banned in any entry (COMPLIANCE C3): "private access", "exclusive", "arranged th
 
 ## 8. About (`/about`)
 
-**Who we are — LOCKED**
+**LOCKED** — approved by Sarah, 8 Oct 2026 (built from the company details she supplied; Travel World Co., Ltd. was formerly A.T.S). Layout: hero with three key facts; the people; "How we are registered" as a three-step chain (You → HalaJapan · Travel World → Air World); two office cards; a company facts table.
 
-> We are a registered Japanese travel agency working from Tokyo and Osaka. Our registration and the name of our certified travel services manager appear at the foot of every page — you can verify both with the Japan Tourism Agency.
+> **About [[BRAND]]**
+> [[BRAND]] is run by [[ENTITY_NAME_EN]], founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka.
 >
-> The company is led by an Egyptian founder who works in Japanese, alongside a team that covers Arabic, Japanese and English as first languages. Client conversations happen in the client's own language, without an interpreter in the middle.
+> Key facts: Since 2016 · Tokyo and Osaka · Tokyo Governor Registration No. [[REG_NUMBER]]
 >
-> Our work is enquiry-only. Most of what we arrange, we arrange once.
+> **The people**
+> Fathy Mohamed Mohamed Ismail Ahmed · ファトヒー・モハメド・モハメド・イスマイル・アフメド · Representative Director
+> A graduate of Cairo University's Japanese department, he worked as a Japanese-speaking guide in Egypt for more than twenty years before founding the company in Tokyo, where he is based.
+> Licensed travel managers (総合旅行業務取扱管理者): Mariko Kajiwara and Takashi Mino
+> Japan's Travel Agency Act requires a licensed manager at each office.
+>
+> **How we are registered**
+> Japan licenses travel companies in tiers. This is exactly where we sit, and who stands behind your booking.
+> You — You plan your trip with us.
+> [[BRAND]] · [[ENTITY_NAME_EN]] — Travel Agency Agent, registered with the Governor of Tokyo, No. [[REG_NUMBER]] (東京都知事登録旅行業者代理業 第[[REG_NUMBER]]号). We sell on behalf of one licensed travel company.
+> Air World Co., Ltd. (エアーワールド株式会社) — Registered Travel Agency No. 961 with the Commissioner of the Japan Tourism Agency (観光庁長官登録旅行業第961号), and a full member of JATA, the Japan Association of Travel Agents. Air World organises and operates the trips we sell, and your travel contract is with Air World.
+> You can check both registrations with the Tokyo Metropolitan Government and the Japan Tourism Agency. {CL-06}
+>
+> **Offices**
+> Tokyo (head office): [[ENTITY_ADDRESS]] · Tel 03-6432-9234 · Fax 03-6432-9134
+> Osaka: [[OSAKA_ADDRESS]] · Tel 06-6585-0136 · Fax 06-6585-0640
+> Monday to Friday, 10:00–17:00 Japan time. Closed at weekends and on public holidays.
+>
+> **Company facts**
+> Company: [[ENTITY_NAME_EN]] ([[ENTITY_NAME_JA]])
+> Founded: 23 September 2016, Tokyo
+> Capital: ¥5,000,000
+> Representative Director: Fathy Mohamed Mohamed Ismail Ahmed
+> Licensed travel managers: Mariko Kajiwara, Takashi Mino
+> Registration: Governor of Tokyo, Travel Agency Agent No. [[REG_NUMBER]]
+> Principal travel company: Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 (JATA member)
 
-Note: the copy says the manager's name appears at the foot of every page. Strategy §7.5 puts the manager on About only. **Build it in the footer** so the copy is true (COMPLIANCE C1).
+Footer labels (LOCKED): Registered entity · Registration · Tokyo office · Osaka office · Licensed travel managers · Principal travel company
 
-**Credentials — FactList, labels LOCKED, values placeholders**
-
-| Label | Value |
-|---|---|
-| Registration | `registration.lineJa` / `registration.lineEn` |
-| Registering authority | `[[REG_AUTHORITY_EN]]` |
-| Registered entity | `[[ENTITY_NAME_EN]]` (`[[ENTITY_NAME_JA]]`) |
-| Tokyo office | `[[ENTITY_ADDRESS]]` |
-| Osaka office | `[[OSAKA_ADDRESS]]` |
-| Travel services manager, Tokyo | `[[MANAGER_TOKYO]]`, 旅行業務取扱管理者 (`[[MANAGER_TOKYO_GRADE]]`) |
-| Travel services manager, Osaka | `[[MANAGER_OSAKA]]`, 旅行業務取扱管理者 (`[[MANAGER_OSAKA_GRADE]]`) |
-| Memberships | `Member, [[ASSOCIATION]]` |
-| Public liability insurance | `[[INSURER]]`, cover `[[COVER_LEVEL]]` |
-| Languages | Arabic, English, Japanese — `[[LANGUAGE_STAFF_NOTE]]` (who speaks each natively) |
-| How we quote | "Net supplier rates plus a stated service margin." (LOCKED) |
-| Founder | "Our founder has worked in Japanese inbound travel since `[[FOUNDER_YEAR]]`." — attributed to the person, never the entity (LOCKED rule) |
-
-**Sources — DRAFT heading "Sources"**: the claims register rendered as a numbered list.
+Left out by choice (8 Oct 2026): the Cairo office, bank names and the registered business scope. Still to supply: the Japanese company name; which manager is at which office.
 
 ## 9. For Travel Advisors (`/for-travel-advisors`)
 
@@ -407,7 +416,7 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 > How we look after the personal information you share when you plan a trip.
 
 > **Who we are**
-> [[BRAND]] is a trading name of [[ENTITY_NAME_EN]], a registered travel agency in Japan: [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]. Our offices are at [[ENTITY_ADDRESS]] (Tokyo) and [[OSAKA_ADDRESS]] (Osaka).
+> [[BRAND]] is a trading name of [[ENTITY_NAME_EN]], a travel agency agent registered with the Governor of Tokyo, No. [[REG_NUMBER]]. The trips we sell are organised and operated by Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961. Our offices are at [[ENTITY_ADDRESS]] (Tokyo) and [[OSAKA_ADDRESS]] (Osaka).
 > For anything in this notice, write to [[EMAIL]].
 >
 > **What we collect**
@@ -421,6 +430,7 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 > Your answers in the trip planner stay in your browser, on your device, until you send them. Sending opens WhatsApp with your plan written out; once you send it, WhatsApp's own privacy terms also apply.
 >
 > **Who we share it with**
+> To book your trip, we share the details it needs with Air World Co., Ltd., the licensed travel company that organises and operates it.
 > Only the people who make your trip happen: the hotels, ryokan, restaurants, drivers, guides and other suppliers you have agreed to, and the services that run this website and our messages (hosting, email and spam protection). Each receives only what it needs.
 > Where a supplier or service holds information outside Japan, we use it only with the safeguards the law requires.
 >
@@ -448,8 +458,11 @@ Contents label: "On this page"
 > **Enquiries and plans**
 > An enquiry, and the plans we send in reply, do not commit you to anything. A plan becomes a booking only when you accept our written quotation.
 >
+> **Who your contract is with**
+> We are a travel agency agent. Your travel contract is with Air World Co., Ltd. (Japan Tourism Agency Registered Travel Agency No. 961), which organises and operates your trip; we arrange it with you on Air World's behalf.
+>
 > **Your booking and conditions of travel**
-> Before you book, we give you our written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your contract with us, alongside these terms.
+> Before you book, you receive Air World's written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your travel contract, alongside these terms.
 >
 > **Prices and payment**
 > Each quotation states its price, what is included and the payment schedule. Prices are confirmed only when we confirm your booking in writing.
@@ -459,7 +472,7 @@ Contents label: "On this page"
 > If we or a supplier must change your trip, we will tell you as soon as we can and offer you alternatives.
 >
 > **Booking through a travel advisor**
-> When you book through a travel advisor, the advisor keeps the relationship with you; we plan and run the trip in Japan under these terms.
+> When you book through a travel advisor, the advisor keeps the relationship with you; we arrange the trip, and Air World operates it in Japan.
 >
 > **What we ask of you**
 > Please make sure that everyone travelling has a valid passport, any visa they need, and meets any health requirements, and that the names, ages and needs you give us are accurate.
@@ -469,7 +482,7 @@ Contents label: "On this page"
 > We tell you plainly which certification a restaurant holds and what is prepared to your requirements without certification. We cannot guarantee any supplier's preparation beyond what it is certified for.
 >
 > **Our responsibility**
-> We plan and arrange your trip with reasonable care, and our responsibility to you is as set out in the Travel Agency Act and your conditions of travel.
+> We arrange your trip with reasonable care as Air World's agent. Air World is responsible for operating it, as set out in the Travel Agency Act and your conditions of travel.
 >
 > **Your personal information**
 > We handle the information you share with us as our privacy notice describes.

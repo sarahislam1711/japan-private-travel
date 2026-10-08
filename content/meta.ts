@@ -13,7 +13,7 @@ const en: Record<RouteKey, Meta> = {
   home: {
     title: draft("Private family trips to Japan"),
     description: draft(
-      "A registered Japanese travel agency in Tokyo and Osaka, planning private trips for families who travel together, in Arabic, English or Japanese.",
+      "Private trips to Japan for families who travel together, planned in Arabic, English or Japanese, from offices in Tokyo and Osaka.",
     ),
   },
   summerJourneys: {
@@ -39,15 +39,15 @@ const en: Record<RouteKey, Meta> = {
     description: draft("Each experience is arranged with a named person, in a stated season, with a stated lead time."),
   },
   about: {
-    title: draft("About us: a registered travel agency in Japan"),
+    title: draft("About HalaJapan: who we are and how we are registered"),
     description: draft(
-      "A registered Japanese travel agency working from Tokyo and Osaka. Our registration and travel services managers are named on every page.",
+      "HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member.",
     ),
   },
   forTravelAdvisors: {
     title: draft("For travel advisors: private Japan for families"),
     description: draft(
-      "A registered Japanese agency for clients who travel as a household. You hold the client relationship; we plan and operate the trip in Japan.",
+      "For clients who travel as a household. You hold the client relationship; we arrange the trip, and Air World, our licensed principal, operates it in Japan.",
     ),
   },
   contact: {
@@ -67,7 +67,7 @@ const en: Record<RouteKey, Meta> = {
 export const pageMeta = attachArabic(en, {
   home: {
     title: ard("رحلات خاصة إلى اليابان للعائلات"),
-    description: ard("وكالة سفر يابانية مسجّلة في طوكيو وأوساكا، نخطّط رحلات خاصة للعائلات التي تسافر معًا، بالعربية والإنجليزية واليابانية."),
+    description: ard("رحلات خاصة إلى اليابان للعائلات التي تسافر معًا، نخطّطها بالعربية والإنجليزية واليابانية، من مكتبينا في طوكيو وأوساكا."),
   },
   summerJourneys: {
     title: ard("صيف اليابان: هوكايدو وأوكيناوا وجبال الألب"),
@@ -86,12 +86,12 @@ export const pageMeta = attachArabic(en, {
     description: ard("كل تجربة نرتّبها مع شخص محدّد بالاسم، في موسم محدّد، وبمهلة حجز محدّدة."),
   },
   about: {
-    title: ard("من نحن: وكالة سفر مسجّلة في اليابان"),
-    description: ard("وكالة سفر يابانية مسجّلة تعمل من طوكيو وأوساكا. تسجيلنا وأسماء مديري خدمات السفر لدينا مذكورة في كل صفحة."),
+    title: ard("عن HalaJapan: مَن نحن وكيف نحن مسجّلون"),
+    description: ard("تديرها شركة Travel World المحدودة، وكيل وكالة سفر مسجّل في طوكيو وأوساكا، تبيع رحلات تنفّذها شركة Air World المحدودة، العضو في JATA."),
   },
   forTravelAdvisors: {
     title: ard("لمستشاري السفر: رحلات خاصة إلى اليابان للعائلات"),
-    description: ard("وكالة يابانية مسجّلة لعملائكم الذين يسافرون كعائلة. تحتفظون بعلاقتكم مع العميل، ونخطّط الرحلة وننفّذها في اليابان."),
+    description: ard("لعملائكم الذين يسافرون كعائلة. تحتفظون بعلاقتكم مع العميل، ونحن نرتّب الرحلة، وتنفّذها في اليابان Air World، شركتنا الأصيلة المرخَّصة."),
   },
   contact: {
     title: ard("خطّطوا رحلة عائلية خاصة إلى اليابان"),

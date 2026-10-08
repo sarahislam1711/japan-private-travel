@@ -11,16 +11,16 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**311** draft,
-**0** missing — of 313 strings.
+**338** draft,
+**0** missing — of 340 strings.
 
 ## content/site.ts
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `site.registration.lineEn` | [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]] | <span dir="rtl" lang="ar">وكالة سفر مسجّلة لدى [[REG_AUTHORITY_EN]] برقم [[REG_NUMBER]]</span> | draft |
-| `site.tradeNameLine` | HalaJapan is a trading name of [[ENTITY_NAME_EN]]. | <span dir="rtl" lang="ar">HalaJapan اسم تجاري لشركة [[ENTITY_NAME_EN]].</span> | draft |
-| `site.memberships[0]` | Member, [[ASSOCIATION]] | <span dir="rtl" lang="ar">عضو في [[ASSOCIATION]]</span> | draft |
+| `site.registration.lineEn` | Travel Agency Agent, registered with the Governor of Tokyo, No. 11300 | <span dir="rtl" lang="ar">وكيل وكالة سفر، مسجّل لدى حاكم طوكيو برقم 11300</span> | draft |
+| `site.principal` | Air World Co., Ltd. (観光庁長官登録旅行業第961号), JATA member | <span dir="rtl" lang="ar">شركة Air World المحدودة (観光庁長官登録旅行業第961号)، عضو في JATA</span> | draft |
+| `site.tradeNameLine` | HalaJapan is a trading name of Travel World Co., Ltd. | <span dir="rtl" lang="ar">HalaJapan اسم تجاري لشركة Travel World Co., Ltd.</span> | draft |
 | `site.whatsapp.prefill` | Hello, I would like to plan a trip to Japan for my family. | <span dir="rtl" lang="ar">مرحبًا، أودّ التخطيط لرحلة إلى اليابان لعائلتي.</span> | draft |
 
 ## content/interface.ts
@@ -60,7 +60,7 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `pageMeta.home.title` | Private family trips to Japan | <span dir="rtl" lang="ar">رحلات خاصة إلى اليابان للعائلات</span> | draft |
-| `pageMeta.home.description` | A registered Japanese travel agency in Tokyo and Osaka, planning private trips for families who travel together, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">وكالة سفر يابانية مسجّلة في طوكيو وأوساكا، نخطّط رحلات خاصة للعائلات التي تسافر معًا، بالعربية والإنجليزية واليابانية.</span> | draft |
+| `pageMeta.home.description` | Private trips to Japan for families who travel together, planned in Arabic, English or Japanese, from offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">رحلات خاصة إلى اليابان للعائلات التي تسافر معًا، نخطّطها بالعربية والإنجليزية واليابانية، من مكتبينا في طوكيو وأوساكا.</span> | draft |
 | `pageMeta.summerJourneys.title` | Summer in Japan: Hokkaido, Okinawa and the Alps | <span dir="rtl" lang="ar">صيف اليابان: هوكايدو وأوكيناوا وجبال الألب</span> | draft |
 | `pageMeta.summerJourneys.description` | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips planned for July and August. | <span dir="rtl" lang="ar">صيف اليابان للعائلات: هوكايدو وجبال الألب اليابانية معتدلة، وأوكيناوا على البحر. رحلات خاصة نخطّطها لشهري يوليو وأغسطس.</span> | draft |
 | `pageMeta.privateJapan.title` | Private Japan trips in spring, autumn and winter | <span dir="rtl" lang="ar">رحلات خاصة في اليابان في الربيع والخريف والشتاء</span> | draft |
@@ -69,10 +69,10 @@ Status: **2** approved,
 | `pageMeta.familyServices.description` | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic. | <span dir="rtl" lang="ar">نشرح شهادات الحلال بوضوح، ونؤكّد الاستحمام الخاص غرفةً غرفة، ونُدرج أوقات الصلاة في اليوم، مع مرشدين يعملون بالعربية.</span> | draft |
 | `pageMeta.experiences.title` | Experiences in Japan, arranged with named people | <span dir="rtl" lang="ar">تجارب في اليابان مع أشخاص بأسمائهم</span> | draft |
 | `pageMeta.experiences.description` | Each experience is arranged with a named person, in a stated season, with a stated lead time. | <span dir="rtl" lang="ar">كل تجربة نرتّبها مع شخص محدّد بالاسم، في موسم محدّد، وبمهلة حجز محدّدة.</span> | draft |
-| `pageMeta.about.title` | About us: a registered travel agency in Japan | <span dir="rtl" lang="ar">من نحن: وكالة سفر مسجّلة في اليابان</span> | draft |
-| `pageMeta.about.description` | A registered Japanese travel agency working from Tokyo and Osaka. Our registration and travel services managers are named on every page. | <span dir="rtl" lang="ar">وكالة سفر يابانية مسجّلة تعمل من طوكيو وأوساكا. تسجيلنا وأسماء مديري خدمات السفر لدينا مذكورة في كل صفحة.</span> | draft |
+| `pageMeta.about.title` | About HalaJapan: who we are and how we are registered | <span dir="rtl" lang="ar">عن HalaJapan: مَن نحن وكيف نحن مسجّلون</span> | draft |
+| `pageMeta.about.description` | HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member. | <span dir="rtl" lang="ar">تديرها شركة Travel World المحدودة، وكيل وكالة سفر مسجّل في طوكيو وأوساكا، تبيع رحلات تنفّذها شركة Air World المحدودة، العضو في JATA.</span> | draft |
 | `pageMeta.forTravelAdvisors.title` | For travel advisors: private Japan for families | <span dir="rtl" lang="ar">لمستشاري السفر: رحلات خاصة إلى اليابان للعائلات</span> | draft |
-| `pageMeta.forTravelAdvisors.description` | A registered Japanese agency for clients who travel as a household. You hold the client relationship; we plan and operate the trip in Japan. | <span dir="rtl" lang="ar">وكالة يابانية مسجّلة لعملائكم الذين يسافرون كعائلة. تحتفظون بعلاقتكم مع العميل، ونخطّط الرحلة وننفّذها في اليابان.</span> | draft |
+| `pageMeta.forTravelAdvisors.description` | For clients who travel as a household. You hold the client relationship; we arrange the trip, and Air World, our licensed principal, operates it in Japan. | <span dir="rtl" lang="ar">لعملائكم الذين يسافرون كعائلة. تحتفظون بعلاقتكم مع العميل، ونحن نرتّب الرحلة، وتنفّذها في اليابان Air World، شركتنا الأصيلة المرخَّصة.</span> | draft |
 | `pageMeta.contact.title` | Plan a private family trip to Japan | <span dir="rtl" lang="ar">خطّطوا رحلة عائلية خاصة إلى اليابان</span> | draft |
 | `pageMeta.contact.description` | Tell us who is travelling and when. Message us on WhatsApp, email or call, and we will reply in your language. | <span dir="rtl" lang="ar">أخبرونا مَن سيسافر ومتى. راسلونا عبر واتساب أو البريد الإلكتروني أو الهاتف، وسنردّ عليكم بلغتكم.</span> | draft |
 | `pageMeta.privacy.title` | Privacy notice | <span dir="rtl" lang="ar">سياسة الخصوصية</span> | draft |
@@ -99,8 +99,8 @@ Status: **2** approved,
 | `home.hero.headline` | Japan, planned for the whole family. | <span dir="rtl" lang="ar">اليابان، بتخطيطٍ يشمل العائلة كلّها.</span> | draft |
 | `home.hero.planButton` | Plan your trip | <span dir="rtl" lang="ar">خطّطوا رحلتكم</span> | draft |
 | `home.hero.paragraph` | Private trips for every generation, from grandparents to young children. Each one planned from scratch with you, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">رحلات خاصة لكل الأجيال، من الأجداد إلى الأطفال الصغار. نخطّط كل رحلة من البداية معكم، بالعربية أو الإنجليزية أو اليابانية.</span> | draft |
-| `home.margin.statement` | We are a registered travel agency with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">نحن وكالة سفر مسجّلة، ولنا مكتبان في طوكيو وأوساكا.</span> | draft |
-| `home.margin.check` | You can check our registration with [[REG_AUTHORITY_EN]]. | <span dir="rtl" lang="ar">يمكنكم التحقق من تسجيلنا لدى [[REG_AUTHORITY_EN]].</span> | draft |
+| `home.margin.statement` | We are a registered travel agency agent for Air World, a JATA member, with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">نحن وكيل وكالة سفر مسجّل لدى Air World، العضو في JATA، ولنا مكتبان في طوكيو وأوساكا.</span> | draft |
+| `home.margin.check` | You can check our registration with the Tokyo Metropolitan Government. | <span dir="rtl" lang="ar">يمكنكم التحقق من تسجيلنا لدى the Tokyo Metropolitan Government.</span> | draft |
 | `home.entryPoints.summerJourneys.heading` | Summer Journeys | <span dir="rtl" lang="ar">رحلات الصيف</span> | draft |
 | `home.entryPoints.summerJourneys.text` | In July and August, Tokyo is hot and crowded. Hokkaido and the Japan Alps stay cool, and Okinawa is by the sea. These are the places we plan for families in summer. | <span dir="rtl" lang="ar">في يوليو وأغسطس تكون طوكيو حارّة ومزدحمة، بينما يبقى الجو معتدلًا في هوكايدو وجبال الألب اليابانية، وتقع أوكيناوا على البحر. هذه هي الأماكن التي نخطّط لها للعائلات في الصيف.</span> | draft |
 | `home.entryPoints.privateJapan.heading` | Private Japan | <span dir="rtl" lang="ar">رحلات خاصة في اليابان</span> | draft |
@@ -117,8 +117,8 @@ Status: **2** approved,
 | `home.contact.emailLabel` | Email | <span dir="rtl" lang="ar">البريد الإلكتروني</span> | draft |
 | `home.contact.phoneLabel` | Telephone | <span dir="rtl" lang="ar">الهاتف</span> | draft |
 | `home.faq.heading` | Frequently asked questions | <span dir="rtl" lang="ar">الأسئلة الشائعة</span> | draft |
-| `home.faq.items[0].question` | Is HalaJapan a registered travel agency in Japan? | <span dir="rtl" lang="ar">هل HalaJapan وكالة سفر مسجّلة في اليابان؟</span> | draft |
-| `home.faq.items[0].answer` | Yes. We are registered as [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]], with offices in Tokyo and Osaka. You can verify our registration with [[REG_AUTHORITY_EN]]. | <span dir="rtl" lang="ar">نعم. نحن وكالة سفر مسجّلة لدى [[REG_AUTHORITY_EN]] برقم [[REG_NUMBER]]، ولنا مكتبان في طوكيو وأوساكا. يمكنكم التحقق من تسجيلنا لدى [[REG_AUTHORITY_EN]].</span> | draft |
+| `home.faq.items[0].question` | Is HalaJapan registered in Japan? | <span dir="rtl" lang="ar">هل HalaJapan مسجّلة في اليابان؟</span> | draft |
+| `home.faq.items[0].answer` | Yes. HalaJapan is run by Travel World Co., Ltd., a travel agency agent registered with the Governor of Tokyo, No. 11300, with offices in Tokyo and Osaka. The trips we sell are organised and operated by Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 and a full member of JATA. You can verify both registrations. | <span dir="rtl" lang="ar">نعم. HalaJapan تديرها شركة Travel World Co., Ltd.، وهي وكيل وكالة سفر مسجّل لدى حاكم طوكيو برقم 11300، ولها مكتبان في طوكيو وأوساكا. أما الرحلات التي نبيعها فتنظّمها وتنفّذها شركة Air World المحدودة، وهي وكالة سفر مسجّلة لدى وكالة السياحة اليابانية برقم 961 وعضو كامل في JATA. ويمكنكم التحقق من التسجيلين.</span> | draft |
 | `home.faq.items[1].question` | What kind of trips does HalaJapan plan? | <span dir="rtl" lang="ar">ما نوع الرحلات التي تخطّطها HalaJapan؟</span> | draft |
 | `home.faq.items[1].answer` | Private trips for families and small groups who travel together. Each one is planned from scratch after an enquiry. We do not sell fixed packages. | <span dir="rtl" lang="ar">رحلات خاصة للعائلات والمجموعات الصغيرة التي تسافر معًا. نخطّط كل رحلة من البداية بعد استفساركم. لا نبيع باقات جاهزة.</span> | draft |
 | `home.faq.items[2].question` | What are the best months to travel to Japan? | <span dir="rtl" lang="ar">ما أفضل الأشهر للسفر إلى اليابان؟</span> | draft |
@@ -126,7 +126,7 @@ Status: **2** approved,
 | `home.faq.items[3].question` | Does HalaJapan arrange halal dining and prayer? | <span dir="rtl" lang="ar">هل ترتّب HalaJapan الطعام الحلال وأوقات الصلاة؟</span> | draft |
 | `home.faq.items[3].answer` | Yes. We tell you which certification a restaurant holds and whether your authority recognises it, and we arrange prayer time and space within the day. We say plainly what is certified and what is prepared to your requirements. | <span dir="rtl" lang="ar">نعم. نخبركم بشهادة الحلال التي يحملها كل مطعم، وما إذا كانت الجهة التي تتبعونها تعترف بها، ونرتّب وقتًا ومكانًا للصلاة خلال اليوم. ونوضّح بصراحة ما هو معتمد وما يُحضَّر وفق متطلباتكم.</span> | draft |
 | `home.faq.items[4].question` | We are a travel advisor. Can we work with you? | <span dir="rtl" lang="ar">نحن مستشارو سفر. هل يمكننا العمل معكم؟</span> | draft |
-| `home.faq.items[4].answer` | Yes. You keep the client relationship; we plan and run the trip in Japan. | <span dir="rtl" lang="ar">نعم. تبقى علاقتكم بالعميل كما هي، ونحن نخطّط الرحلة وننفّذها في اليابان.</span> | draft |
+| `home.faq.items[4].answer` | Yes. You keep the client relationship. We arrange the trip, and Air World Co., Ltd., the licensed travel company we sell for, operates it in Japan. | <span dir="rtl" lang="ar">نعم. تبقى علاقتكم بالعميل كما هي. نحن نرتّب الرحلة، وتنفّذها في اليابان شركة Air World المحدودة، شركة السفر المرخَّصة التي نبيع نيابةً عنها.</span> | draft |
 | `home.faq.items[4].link.text` | Learn more about how we can partner | <span dir="rtl" lang="ar">تعرّفوا على كيفية الشراكة معنا</span> | draft |
 
 ## content/pages/summer-journeys.ts
@@ -220,30 +220,54 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `about.whoWeAre.heading` | Who we are | <span dir="rtl" lang="ar">من نحن</span> | draft |
-| `about.whoWeAre.paragraphs[0]` | We are a registered Japanese travel agency working from Tokyo and Osaka. Our registration and the name of our certified travel services manager appear at the foot of every page — you can verify both with the Japan Tourism Agency. | <span dir="rtl" lang="ar">نحن وكالة سفر يابانية مسجّلة نعمل من طوكيو وأوساكا. تظهر بيانات تسجيلنا واسم مدير خدمات السفر المعتمد لدينا أسفل كل صفحة — ويمكنكم التحقق من كليهما لدى وكالة السياحة اليابانية.</span> | draft |
-| `about.whoWeAre.paragraphs[1]` | The company is led by an Egyptian founder who works in Japanese, alongside a team that covers Arabic, Japanese and English as first languages. Client conversations happen in the client's own language, without an interpreter in the middle. | <span dir="rtl" lang="ar">يقود الشركة مؤسس مصري يعمل باللغة اليابانية، مع فريق لغاته الأم العربية واليابانية والإنجليزية. تجري المحادثات مع العملاء بلغتهم، من دون مترجم وسيط.</span> | draft |
-| `about.whoWeAre.paragraphs[2]` | Our work is enquiry-only. Most of what we arrange, we arrange once. | <span dir="rtl" lang="ar">نعمل بناءً على الاستفسارات فقط. ومعظم ما نرتّبه، نرتّبه مرة واحدة.</span> | draft |
-| `about.credentials.heading` | Credentials | <span dir="rtl" lang="ar">بيانات الاعتماد</span> | draft |
-| `about.credentials.rows[0].label` | Registration | <span dir="rtl" lang="ar">التسجيل</span> | draft |
-| `about.credentials.rows[1].label` | Registering authority | <span dir="rtl" lang="ar">جهة التسجيل</span> | draft |
-| `about.credentials.rows[2].label` | Registered entity | <span dir="rtl" lang="ar">الكيان المسجّل</span> | draft |
-| `about.credentials.rows[3].label` | Tokyo office | <span dir="rtl" lang="ar">مكتب طوكيو</span> | draft |
-| `about.credentials.rows[4].label` | Osaka office | <span dir="rtl" lang="ar">مكتب أوساكا</span> | draft |
-| `about.credentials.rows[5].label` | Travel services manager, Tokyo | <span dir="rtl" lang="ar">مدير خدمات السفر، طوكيو</span> | draft |
-| `about.credentials.rows[5].value` | [[MANAGER_TOKYO]], 旅行業務取扱管理者 ([[MANAGER_TOKYO_GRADE]]) | <span dir="rtl" lang="ar">[[MANAGER_TOKYO]]، 旅行業務取扱管理者 ([[MANAGER_TOKYO_GRADE]])</span> | draft |
-| `about.credentials.rows[6].label` | Travel services manager, Osaka | <span dir="rtl" lang="ar">مدير خدمات السفر، أوساكا</span> | draft |
-| `about.credentials.rows[6].value` | [[MANAGER_OSAKA]], 旅行業務取扱管理者 ([[MANAGER_OSAKA_GRADE]]) | <span dir="rtl" lang="ar">[[MANAGER_OSAKA]]، 旅行業務取扱管理者 ([[MANAGER_OSAKA_GRADE]])</span> | draft |
-| `about.credentials.rows[7].label` | Memberships | <span dir="rtl" lang="ar">العضويات</span> | draft |
-| `about.credentials.rows[8].label` | Public liability insurance | <span dir="rtl" lang="ar">تأمين المسؤولية العامة</span> | draft |
-| `about.credentials.rows[8].value` | [[INSURER]], cover [[COVER_LEVEL]] | <span dir="rtl" lang="ar">[[INSURER]]، بتغطية [[COVER_LEVEL]]</span> | draft |
-| `about.credentials.rows[9].label` | Languages | <span dir="rtl" lang="ar">اللغات</span> | draft |
-| `about.credentials.rows[9].value` | Arabic, English, Japanese — [[LANGUAGE_STAFF_NOTE]] | <span dir="rtl" lang="ar">العربية والإنجليزية واليابانية — [[LANGUAGE_STAFF_NOTE]]</span> | draft |
-| `about.credentials.rows[10].label` | How we quote | <span dir="rtl" lang="ar">طريقة التسعير</span> | draft |
-| `about.credentials.rows[10].value` | Net supplier rates plus a stated service margin. | <span dir="rtl" lang="ar">أسعار الموردين الصافية، مضافًا إليها هامش خدمة مُعلَن.</span> | draft |
-| `about.credentials.rows[11].label` | Founder | <span dir="rtl" lang="ar">المؤسس</span> | draft |
-| `about.credentials.rows[11].value` | Our founder has worked in Japanese inbound travel since [[FOUNDER_YEAR]]. | <span dir="rtl" lang="ar">يعمل مؤسسنا في مجال السياحة الوافدة إلى اليابان منذ [[FOUNDER_YEAR]].</span> | draft |
-| `about.sources.heading` | Sources | <span dir="rtl" lang="ar">المصادر</span> | draft |
+| `about.title` | About HalaJapan | <span dir="rtl" lang="ar">عن HalaJapan</span> | draft |
+| `about.intro` | HalaJapan is run by Travel World Co., Ltd., founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">HalaJapan تديرها شركة Travel World Co., Ltd.، التي تأسّست في طوكيو في 23 سبتمبر 2016، ولها مكتبان في طوكيو وأوساكا.</span> | draft |
+| `about.keyFacts[0]` | Since 2016 | <span dir="rtl" lang="ar">منذ 2016</span> | draft |
+| `about.keyFacts[1]` | Tokyo and Osaka | <span dir="rtl" lang="ar">طوكيو وأوساكا</span> | draft |
+| `about.keyFacts[2]` | Tokyo Governor Registration No. 11300 | <span dir="rtl" lang="ar">تسجيل حاكم طوكيو رقم 11300</span> | draft |
+| `about.people.heading` | The people | <span dir="rtl" lang="ar">فريقنا</span> | draft |
+| `about.people.director.name` | Fathy Mohamed Mohamed Ismail Ahmed | <span dir="rtl" lang="ar">فتحي محمد محمد إسماعيل أحمد</span> | draft |
+| `about.people.director.role` | Representative Director | <span dir="rtl" lang="ar">المدير التمثيلي</span> | draft |
+| `about.people.director.bio` | A graduate of Cairo University's Japanese department, he worked as a Japanese-speaking guide in Egypt for more than twenty years before founding the company in Tokyo, where he is based. | <span dir="rtl" lang="ar">تخرّج في قسم اللغة اليابانية بجامعة القاهرة، وعمل مرشدًا سياحيًا ناطقًا باليابانية في مصر لأكثر من عشرين عامًا قبل أن يؤسّس الشركة في طوكيو، حيث يقيم.</span> | draft |
+| `about.people.managersLabel` | Licensed travel managers (総合旅行業務取扱管理者) | <span dir="rtl" lang="ar">مديرا خدمات السفر المرخَّصان (総合旅行業務取扱管理者)</span> | draft |
+| `about.people.managers` | Mariko Kajiwara and Takashi Mino | <span dir="rtl" lang="ar">ماريكو كاجيوارا وتاكاشي مينو</span> | draft |
+| `about.people.managersNote` | Japan's Travel Agency Act requires a licensed manager at each office. | <span dir="rtl" lang="ar">يشترط قانون وكالات السفر في اليابان وجود مدير مرخَّص في كل مكتب.</span> | draft |
+| `about.registration.heading` | How we are registered | <span dir="rtl" lang="ar">كيف نحن مسجّلون</span> | draft |
+| `about.registration.intro` | Japan licenses travel companies in tiers. This is exactly where we sit, and who stands behind your booking. | <span dir="rtl" lang="ar">تُرخِّص اليابان شركات السفر على مستويات. هذا هو موقعنا بالضبط، ومَن يقف وراء حجزكم.</span> | draft |
+| `about.registration.steps[0].title` | You | <span dir="rtl" lang="ar">أنتم</span> | draft |
+| `about.registration.steps[0].text` | You plan your trip with us. | <span dir="rtl" lang="ar">تخطّطون رحلتكم معنا.</span> | draft |
+| `about.registration.steps[1].title` | HalaJapan · Travel World Co., Ltd. | <span dir="rtl" lang="ar">HalaJapan · Travel World Co., Ltd.</span> | draft |
+| `about.registration.steps[1].text` | Travel Agency Agent, registered with the Governor of Tokyo, No. 11300 (東京都知事登録旅行業者代理業 第11300号). We sell on behalf of one licensed travel company. | <span dir="rtl" lang="ar">وكيل وكالة سفر، مسجّل لدى حاكم طوكيو برقم 11300 (東京都知事登録旅行業者代理業 第11300号). نبيع نيابةً عن شركة سفر مرخَّصة واحدة.</span> | draft |
+| `about.registration.steps[2].title` | Air World Co., Ltd. (エアーワールド株式会社) | <span dir="rtl" lang="ar">شركة Air World المحدودة (エアーワールド株式会社)</span> | draft |
+| `about.registration.steps[2].text` | Registered Travel Agency No. 961 with the Commissioner of the Japan Tourism Agency (観光庁長官登録旅行業第961号), and a full member of JATA, the Japan Association of Travel Agents. Air World organises and operates the trips we sell, and your travel contract is with Air World. | <span dir="rtl" lang="ar">وكالة سفر مسجّلة برقم 961 لدى مفوّض وكالة السياحة اليابانية (観光庁長官登録旅行業第961号)، وعضو كامل في JATA، رابطة وكلاء السفر اليابانية. تنظّم Air World الرحلات التي نبيعها وتنفّذها، وعقد السفر الخاص بكم يكون مع Air World.</span> | draft |
+| `about.registration.check` | You can check both registrations with the Tokyo Metropolitan Government and the Japan Tourism Agency. | <span dir="rtl" lang="ar">يمكنكم التحقق من التسجيلين لدى حكومة طوكيو الحضرية ووكالة السياحة اليابانية.</span> | draft |
+| `about.offices.heading` | Offices | <span dir="rtl" lang="ar">المكاتب</span> | draft |
+| `about.offices.list[0].name` | Tokyo (head office) | <span dir="rtl" lang="ar">طوكيو (المكتب الرئيسي)</span> | draft |
+| `about.offices.list[1].name` | Osaka | <span dir="rtl" lang="ar">أوساكا</span> | draft |
+| `about.offices.telLabel` | Tel | <span dir="rtl" lang="ar">هاتف</span> | draft |
+| `about.offices.faxLabel` | Fax | <span dir="rtl" lang="ar">فاكس</span> | draft |
+| `about.offices.hours` | Monday to Friday, 10:00–17:00 Japan time. Closed at weekends and on public holidays. | <span dir="rtl" lang="ar">من الاثنين إلى الجمعة، من 10:00 إلى 17:00 بتوقيت اليابان. مغلق في عطلات نهاية الأسبوع والعطلات الرسمية.</span> | draft |
+| `about.facts.heading` | Company facts | <span dir="rtl" lang="ar">بيانات الشركة</span> | draft |
+| `about.facts.rows[0].label` | Company | <span dir="rtl" lang="ar">الشركة</span> | draft |
+| `about.facts.rows[0].value` | Travel World Co., Ltd. ([[ENTITY_NAME_JA]]) | <span dir="rtl" lang="ar">Travel World Co., Ltd. ([[ENTITY_NAME_JA]])</span> | draft |
+| `about.facts.rows[1].label` | Founded | <span dir="rtl" lang="ar">تاريخ التأسيس</span> | draft |
+| `about.facts.rows[1].value` | 23 September 2016, Tokyo | <span dir="rtl" lang="ar">23 سبتمبر 2016، طوكيو</span> | draft |
+| `about.facts.rows[2].label` | Capital | <span dir="rtl" lang="ar">رأس المال</span> | draft |
+| `about.facts.rows[2].value` | ¥5,000,000 | <span dir="rtl" lang="ar">5,000,000 ين</span> | draft |
+| `about.facts.rows[3].label` | Representative Director | <span dir="rtl" lang="ar">المدير التمثيلي</span> | draft |
+| `about.facts.rows[3].value` | Fathy Mohamed Mohamed Ismail Ahmed | <span dir="rtl" lang="ar">فتحي محمد محمد إسماعيل أحمد</span> | draft |
+| `about.facts.rows[4].label` | Licensed travel managers | <span dir="rtl" lang="ar">مديرا خدمات السفر المرخَّصان</span> | draft |
+| `about.facts.rows[4].value` | Mariko Kajiwara, Takashi Mino | <span dir="rtl" lang="ar">ماريكو كاجيوارا، تاكاشي مينو</span> | draft |
+| `about.facts.rows[5].label` | Registration | <span dir="rtl" lang="ar">التسجيل</span> | draft |
+| `about.facts.rows[5].value` | Governor of Tokyo, Travel Agency Agent No. 11300 | <span dir="rtl" lang="ar">حاكم طوكيو، وكيل وكالة سفر رقم 11300</span> | draft |
+| `about.facts.rows[6].label` | Principal travel company | <span dir="rtl" lang="ar">شركة السفر الأصيلة</span> | draft |
+| `about.facts.rows[6].value` | Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 (JATA member) | <span dir="rtl" lang="ar">شركة Air World المحدودة، وكالة سفر مسجّلة لدى وكالة السياحة اليابانية برقم 961 (عضو في JATA)</span> | draft |
+| `about.footer.entity` | Registered entity | <span dir="rtl" lang="ar">الكيان المسجّل</span> | draft |
+| `about.footer.registration` | Registration | <span dir="rtl" lang="ar">التسجيل</span> | draft |
+| `about.footer.tokyo` | Tokyo office | <span dir="rtl" lang="ar">مكتب طوكيو</span> | draft |
+| `about.footer.osaka` | Osaka office | <span dir="rtl" lang="ar">مكتب أوساكا</span> | draft |
+| `about.footer.managers` | Licensed travel managers | <span dir="rtl" lang="ar">مديرا خدمات السفر المرخَّصان</span> | draft |
+| `about.footer.principal` | Principal travel company | <span dir="rtl" lang="ar">شركة السفر الأصيلة</span> | draft |
 
 ## content/pages/for-travel-advisors.ts
 
@@ -279,7 +303,7 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `contact.title` | Plan your trip. | <span dir="rtl" lang="ar">خطّطوا رحلتكم.</span> | draft |
-| `contact.routes[0]` | Telephone: [[PHONE]] | <span dir="rtl" lang="ar">الهاتف: [[PHONE]]</span> | draft |
+| `contact.routes[0]` | Telephone: 03-6432-9234 | <span dir="rtl" lang="ar">الهاتف: 03-6432-9234</span> | draft |
 | `contact.routes[1]` | Email: [[EMAIL]] | <span dir="rtl" lang="ar">البريد الإلكتروني: [[EMAIL]]</span> | draft |
 | `contact.arabicLine` | يسعدنا التواصل معكم باللغة العربية عبر واتساب. | <span dir="rtl" lang="ar">يسعدنا التواصل معكم باللغة العربية عبر واتساب.</span> | draft |
 | `contact.form.fields.name` | Your name | <span dir="rtl" lang="ar">الاسم</span> | draft |
@@ -352,7 +376,7 @@ Status: **2** approved,
 | `privacy.contents` | On this page | <span dir="rtl" lang="ar">في هذه الصفحة</span> | draft |
 | `privacy.intro` | How we look after the personal information you share when you plan a trip. | <span dir="rtl" lang="ar">كيف نحافظ على البيانات الشخصية التي تشاركونها معنا عند التخطيط لرحلة.</span> | draft |
 | `privacy.sections[0].heading` | Who we are | <span dir="rtl" lang="ar">مَن نحن</span> | draft |
-| `privacy.sections[0].body[0]` | HalaJapan is a trading name of [[ENTITY_NAME_EN]], a registered travel agency in Japan: [[REG_AUTHORITY_EN]] Registered Travel Agency No. [[REG_NUMBER]]. Our offices are at [[ENTITY_ADDRESS]] (Tokyo) and [[OSAKA_ADDRESS]] (Osaka). | <span dir="rtl" lang="ar">HalaJapan اسم تجاري لشركة [[ENTITY_NAME_EN]]، وهي وكالة سفر مسجّلة في اليابان لدى [[REG_AUTHORITY_EN]] برقم [[REG_NUMBER]]. مكتبانا في [[ENTITY_ADDRESS]] (طوكيو) و[[OSAKA_ADDRESS]] (أوساكا).</span> | draft |
+| `privacy.sections[0].body[0]` | HalaJapan is a trading name of Travel World Co., Ltd., a travel agency agent registered with the Governor of Tokyo, No. 11300. The trips we sell are organised and operated by Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961. Our offices are at 〒106-0031 Kasumicho Corp 302, 3-21-20 Nishi-Azabu, Minato-ku, Tokyo (Tokyo) and 〒540-0026 2-2-14-206 Uchihonmachi, Chuo-ku, Osaka (Osaka). | <span dir="rtl" lang="ar">HalaJapan اسم تجاري لشركة Travel World Co., Ltd.، وهي وكيل وكالة سفر مسجّل لدى حاكم طوكيو برقم 11300. أما الرحلات التي نبيعها فتنظّمها وتنفّذها شركة Air World المحدودة، وكالة السفر المسجّلة لدى وكالة السياحة اليابانية برقم 961. مكتبانا في 〒106-0031 Kasumicho Corp 302, 3-21-20 Nishi-Azabu, Minato-ku, Tokyo (طوكيو) و〒540-0026 2-2-14-206 Uchihonmachi, Chuo-ku, Osaka (أوساكا).</span> | draft |
 | `privacy.sections[0].body[1]` | For anything in this notice, write to [[EMAIL]]. | <span dir="rtl" lang="ar">لأي استفسار يتعلق بهذا الإشعار، راسلونا على [[EMAIL]].</span> | draft |
 | `privacy.sections[1].heading` | What we collect | <span dir="rtl" lang="ar">البيانات التي نجمعها</span> | draft |
 | `privacy.sections[1].body[0]` | Only what you choose to tell us: your name; how to reach you (WhatsApp, telephone or email); who is travelling and their ages; the dates and places you are considering; what the trip needs to do; and the language you would like us to reply in. | <span dir="rtl" lang="ar">نجمع فقط ما تختارون إخبارنا به: الاسم، ووسيلة التواصل معكم (واتساب أو الهاتف أو البريد الإلكتروني)، ومَن سيسافر وأعمارهم، والتواريخ والأماكن التي تفكّرون فيها، وما تريدون أن تحقّقه الرحلة، واللغة التي تفضّلون أن نردّ بها.</span> | draft |
@@ -362,8 +386,9 @@ Status: **2** approved,
 | `privacy.sections[3].heading` | The trip planner | <span dir="rtl" lang="ar">مخطِّط الرحلة</span> | draft |
 | `privacy.sections[3].body[0]` | Your answers in the trip planner stay in your browser, on your device, until you send them. Sending opens WhatsApp with your plan written out; once you send it, WhatsApp's own privacy terms also apply. | <span dir="rtl" lang="ar">تبقى إجاباتكم في مخطِّط الرحلة داخل متصفّحكم على جهازكم حتى ترسلوها. عند الإرسال يُفتح واتساب وفيه خطّتكم مكتوبة، وبعد إرسالها تنطبق أيضًا شروط الخصوصية الخاصة بواتساب.</span> | draft |
 | `privacy.sections[4].heading` | Who we share it with | <span dir="rtl" lang="ar">مع مَن نشاركها</span> | draft |
-| `privacy.sections[4].body[0]` | Only the people who make your trip happen: the hotels, ryokan, restaurants, drivers, guides and other suppliers you have agreed to, and the services that run this website and our messages (hosting, email and spam protection). Each receives only what it needs. | <span dir="rtl" lang="ar">فقط مع مَن يجعلون رحلتكم ممكنة: الفنادق والنُّزُل اليابانية (ريوكان) والمطاعم والسائقون والمرشدون وغيرهم من المزوّدين الذين توافقون عليهم، والخدمات التي تشغّل هذا الموقع ورسائلنا (الاستضافة والبريد الإلكتروني والحماية من الرسائل المزعجة). ولا يتلقّى كلٌّ منهم إلا ما يحتاج إليه.</span> | draft |
-| `privacy.sections[4].body[1]` | Where a supplier or service holds information outside Japan, we use it only with the safeguards the law requires. | <span dir="rtl" lang="ar">وحين يحتفظ مزوّد أو خدمة بالبيانات خارج اليابان، لا نستخدمه إلا مع الضمانات التي يشترطها القانون.</span> | draft |
+| `privacy.sections[4].body[0]` | To book your trip, we share the details it needs with Air World Co., Ltd., the licensed travel company that organises and operates it. | <span dir="rtl" lang="ar">لحجز رحلتكم، نشارك ما تحتاج إليه من بيانات مع شركة Air World المحدودة، شركة السفر المرخَّصة التي تنظّمها وتنفّذها.</span> | draft |
+| `privacy.sections[4].body[1]` | Only the people who make your trip happen: the hotels, ryokan, restaurants, drivers, guides and other suppliers you have agreed to, and the services that run this website and our messages (hosting, email and spam protection). Each receives only what it needs. | <span dir="rtl" lang="ar">فقط مع مَن يجعلون رحلتكم ممكنة: الفنادق والنُّزُل اليابانية (ريوكان) والمطاعم والسائقون والمرشدون وغيرهم من المزوّدين الذين توافقون عليهم، والخدمات التي تشغّل هذا الموقع ورسائلنا (الاستضافة والبريد الإلكتروني والحماية من الرسائل المزعجة). ولا يتلقّى كلٌّ منهم إلا ما يحتاج إليه.</span> | draft |
+| `privacy.sections[4].body[2]` | Where a supplier or service holds information outside Japan, we use it only with the safeguards the law requires. | <span dir="rtl" lang="ar">وحين يحتفظ مزوّد أو خدمة بالبيانات خارج اليابان، لا نستخدمه إلا مع الضمانات التي يشترطها القانون.</span> | draft |
 | `privacy.sections[5].heading` | Cookies and visit counts | <span dir="rtl" lang="ar">ملفات تعريف الارتباط وإحصاء الزيارات</span> | draft |
 | `privacy.sections[5].body[0]` | This website sets no advertising or tracking cookies. We count visits with Plausible, which uses no cookies and collects no personal information. | <span dir="rtl" lang="ar">لا يضع هذا الموقع أي ملفات تعريف ارتباط للإعلان أو التتبّع. نحصي الزيارات باستخدام Plausible، الذي لا يستخدم ملفات تعريف الارتباط ولا يجمع أي بيانات شخصية.</span> | draft |
 | `privacy.sections[6].heading` | How long we keep it | <span dir="rtl" lang="ar">مدة الاحتفاظ بها</span> | draft |
@@ -378,26 +403,28 @@ Status: **2** approved,
 | `terms.intro` | How we work with you, from your first enquiry to your journey home. | <span dir="rtl" lang="ar">كيف نعمل معكم، من أول استفسار حتى عودتكم إلى دياركم.</span> | draft |
 | `terms.sections[0].heading` | Enquiries and plans | <span dir="rtl" lang="ar">الاستفسارات والخطط</span> | draft |
 | `terms.sections[0].body[0]` | An enquiry, and the plans we send in reply, do not commit you to anything. A plan becomes a booking only when you accept our written quotation. | <span dir="rtl" lang="ar">الاستفسار والخطط التي نرسلها ردًّا عليه لا تُلزمكم بشيء. ولا تصبح الخطة حجزًا إلا عندما توافقون على عرض السعر المكتوب الذي نقدّمه لكم.</span> | draft |
-| `terms.sections[1].heading` | Your booking and conditions of travel | <span dir="rtl" lang="ar">حجزكم وشروط السفر</span> | draft |
-| `terms.sections[1].body[0]` | Before you book, we give you our written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your contract with us, alongside these terms. | <span dir="rtl" lang="ar">قبل الحجز نقدّم لكم شروط السفر مكتوبةً، كما يشترط قانون وكالات السفر في اليابان. وتحدّد هذه الشروط السعر وما يشمله، وكيفية الدفع وموعده، والرسوم في حال التعديل أو الإلغاء. وهي جزء من عقدكم معنا إلى جانب شروط التعامل هذه.</span> | draft |
-| `terms.sections[2].heading` | Prices and payment | <span dir="rtl" lang="ar">الأسعار والدفع</span> | draft |
-| `terms.sections[2].body[0]` | Each quotation states its price, what is included and the payment schedule. Prices are confirmed only when we confirm your booking in writing. | <span dir="rtl" lang="ar">يحدّد كل عرض سعر قيمته وما يشمله وجدول الدفع. ولا تُثبَّت الأسعار إلا عند تأكيدنا حجزكم كتابيًّا.</span> | draft |
-| `terms.sections[3].heading` | Changes and cancellations | <span dir="rtl" lang="ar">التعديلات والإلغاء</span> | draft |
-| `terms.sections[3].body[0]` | If you need to change or cancel your trip, please tell us in writing. Any charges are those set out in your conditions of travel. | <span dir="rtl" lang="ar">إذا احتجتم إلى تعديل رحلتكم أو إلغائها، فيُرجى إبلاغنا كتابيًّا. وتُطبَّق أي رسوم وفق ما تحدّده شروط السفر الخاصة بكم.</span> | draft |
-| `terms.sections[3].body[1]` | If we or a supplier must change your trip, we will tell you as soon as we can and offer you alternatives. | <span dir="rtl" lang="ar">وإذا اضطررنا نحن أو أحد المزوّدين إلى تعديل رحلتكم، فسنبلغكم في أقرب وقت ممكن ونقدّم لكم بدائل.</span> | draft |
-| `terms.sections[4].heading` | Booking through a travel advisor | <span dir="rtl" lang="ar">الحجز عبر مستشار سفر</span> | draft |
-| `terms.sections[4].body[0]` | When you book through a travel advisor, the advisor keeps the relationship with you; we plan and run the trip in Japan under these terms. | <span dir="rtl" lang="ar">عند الحجز عبر مستشار سفر، تبقى علاقتكم مع المستشار كما هي، ونحن نخطّط الرحلة وننفّذها في اليابان وفق هذه الشروط.</span> | draft |
-| `terms.sections[5].heading` | What we ask of you | <span dir="rtl" lang="ar">ما نطلبه منكم</span> | draft |
-| `terms.sections[5].body[0]` | Please make sure that everyone travelling has a valid passport, any visa they need, and meets any health requirements, and that the names, ages and needs you give us are accurate. | <span dir="rtl" lang="ar">يُرجى التأكد من أن لكل مسافر جواز سفر ساريًا وأي تأشيرة يحتاج إليها، وأنه يستوفي أي متطلبات صحية، وأن الأسماء والأعمار والاحتياجات التي تقدّمونها لنا صحيحة.</span> | draft |
-| `terms.sections[5].body[1]` | We strongly recommend travel insurance that covers cancellation, medical care and repatriation for everyone travelling. | <span dir="rtl" lang="ar">ونوصي بشدّة بتأمين سفر يغطي الإلغاء والرعاية الطبية والإعادة إلى الوطن لجميع المسافرين.</span> | draft |
-| `terms.sections[6].heading` | Dietary and religious requirements | <span dir="rtl" lang="ar">متطلبات الطعام والدين</span> | draft |
-| `terms.sections[6].body[0]` | We tell you plainly which certification a restaurant holds and what is prepared to your requirements without certification. We cannot guarantee any supplier's preparation beyond what it is certified for. | <span dir="rtl" lang="ar">نخبركم بوضوح بالشهادة التي يحملها كل مطعم، وبما يُحضَّر وفق متطلباتكم دون شهادة. ولا يمكننا أن نضمن طريقة تحضير أي مزوّد بما يتجاوز ما هو معتمد له.</span> | draft |
-| `terms.sections[7].heading` | Our responsibility | <span dir="rtl" lang="ar">مسؤوليتنا</span> | draft |
-| `terms.sections[7].body[0]` | We plan and arrange your trip with reasonable care, and our responsibility to you is as set out in the Travel Agency Act and your conditions of travel. | <span dir="rtl" lang="ar">نخطّط رحلتكم ونرتّبها بعناية معقولة، وتكون مسؤوليتنا تجاهكم وفق ما يحدّده قانون وكالات السفر وشروط السفر الخاصة بكم.</span> | draft |
-| `terms.sections[8].heading` | Your personal information | <span dir="rtl" lang="ar">بياناتكم الشخصية</span> | draft |
-| `terms.sections[8].body[0]` | We handle the information you share with us as our privacy notice describes. | <span dir="rtl" lang="ar">نتعامل مع البيانات التي تشاركونها معنا كما يصف إشعار الخصوصية.</span> | draft |
-| `terms.sections[9].heading` | The law that applies | <span dir="rtl" lang="ar">القانون المعمول به</span> | draft |
-| `terms.sections[9].body[0]` | These terms are governed by the laws of Japan. | <span dir="rtl" lang="ar">تخضع هذه الشروط لقوانين اليابان.</span> | draft |
-| `terms.sections[10].heading` | Questions | <span dir="rtl" lang="ar">الأسئلة</span> | draft |
-| `terms.sections[10].body[0]` | For any question about these terms, write to [[EMAIL]]. | <span dir="rtl" lang="ar">لأي سؤال عن هذه الشروط، راسلونا على [[EMAIL]].</span> | draft |
+| `terms.sections[1].heading` | Who your contract is with | <span dir="rtl" lang="ar">مع مَن يكون عقدكم</span> | draft |
+| `terms.sections[1].body[0]` | We are a travel agency agent. Your travel contract is with Air World Co., Ltd. (Japan Tourism Agency Registered Travel Agency No. 961), which organises and operates your trip; we arrange it with you on Air World's behalf. | <span dir="rtl" lang="ar">نحن وكيل وكالة سفر. ويكون عقد السفر الخاص بكم مع شركة Air World المحدودة (وكالة سفر مسجّلة لدى وكالة السياحة اليابانية برقم 961)، التي تنظّم رحلتكم وتنفّذها؛ ونحن نرتّبها معكم نيابةً عنها.</span> | draft |
+| `terms.sections[2].heading` | Your booking and conditions of travel | <span dir="rtl" lang="ar">حجزكم وشروط السفر</span> | draft |
+| `terms.sections[2].body[0]` | Before you book, you receive Air World's written conditions of travel, as Japan's Travel Agency Act requires. They set out the price, what it includes, how and when to pay, and the charges if you change or cancel. They form part of your travel contract, alongside these terms. | <span dir="rtl" lang="ar">قبل الحجز تتلقّون شروط السفر المكتوبة الخاصة بـ Air World، كما يشترط قانون وكالات السفر في اليابان. وتحدّد هذه الشروط السعر وما يشمله، وكيفية الدفع وموعده، والرسوم في حال التعديل أو الإلغاء. وهي جزء من عقد السفر الخاص بكم إلى جانب شروط التعامل هذه.</span> | draft |
+| `terms.sections[3].heading` | Prices and payment | <span dir="rtl" lang="ar">الأسعار والدفع</span> | draft |
+| `terms.sections[3].body[0]` | Each quotation states its price, what is included and the payment schedule. Prices are confirmed only when we confirm your booking in writing. | <span dir="rtl" lang="ar">يحدّد كل عرض سعر قيمته وما يشمله وجدول الدفع. ولا تُثبَّت الأسعار إلا عند تأكيدنا حجزكم كتابيًّا.</span> | draft |
+| `terms.sections[4].heading` | Changes and cancellations | <span dir="rtl" lang="ar">التعديلات والإلغاء</span> | draft |
+| `terms.sections[4].body[0]` | If you need to change or cancel your trip, please tell us in writing. Any charges are those set out in your conditions of travel. | <span dir="rtl" lang="ar">إذا احتجتم إلى تعديل رحلتكم أو إلغائها، فيُرجى إبلاغنا كتابيًّا. وتُطبَّق أي رسوم وفق ما تحدّده شروط السفر الخاصة بكم.</span> | draft |
+| `terms.sections[4].body[1]` | If we or a supplier must change your trip, we will tell you as soon as we can and offer you alternatives. | <span dir="rtl" lang="ar">وإذا اضطررنا نحن أو أحد المزوّدين إلى تعديل رحلتكم، فسنبلغكم في أقرب وقت ممكن ونقدّم لكم بدائل.</span> | draft |
+| `terms.sections[5].heading` | Booking through a travel advisor | <span dir="rtl" lang="ar">الحجز عبر مستشار سفر</span> | draft |
+| `terms.sections[5].body[0]` | When you book through a travel advisor, the advisor keeps the relationship with you; we arrange the trip, and Air World operates it in Japan. | <span dir="rtl" lang="ar">عند الحجز عبر مستشار سفر، تبقى علاقتكم مع المستشار كما هي؛ ونحن نرتّب الرحلة، وتنفّذها Air World في اليابان.</span> | draft |
+| `terms.sections[6].heading` | What we ask of you | <span dir="rtl" lang="ar">ما نطلبه منكم</span> | draft |
+| `terms.sections[6].body[0]` | Please make sure that everyone travelling has a valid passport, any visa they need, and meets any health requirements, and that the names, ages and needs you give us are accurate. | <span dir="rtl" lang="ar">يُرجى التأكد من أن لكل مسافر جواز سفر ساريًا وأي تأشيرة يحتاج إليها، وأنه يستوفي أي متطلبات صحية، وأن الأسماء والأعمار والاحتياجات التي تقدّمونها لنا صحيحة.</span> | draft |
+| `terms.sections[6].body[1]` | We strongly recommend travel insurance that covers cancellation, medical care and repatriation for everyone travelling. | <span dir="rtl" lang="ar">ونوصي بشدّة بتأمين سفر يغطي الإلغاء والرعاية الطبية والإعادة إلى الوطن لجميع المسافرين.</span> | draft |
+| `terms.sections[7].heading` | Dietary and religious requirements | <span dir="rtl" lang="ar">متطلبات الطعام والدين</span> | draft |
+| `terms.sections[7].body[0]` | We tell you plainly which certification a restaurant holds and what is prepared to your requirements without certification. We cannot guarantee any supplier's preparation beyond what it is certified for. | <span dir="rtl" lang="ar">نخبركم بوضوح بالشهادة التي يحملها كل مطعم، وبما يُحضَّر وفق متطلباتكم دون شهادة. ولا يمكننا أن نضمن طريقة تحضير أي مزوّد بما يتجاوز ما هو معتمد له.</span> | draft |
+| `terms.sections[8].heading` | Our responsibility | <span dir="rtl" lang="ar">مسؤوليتنا</span> | draft |
+| `terms.sections[8].body[0]` | We arrange your trip with reasonable care as Air World's agent. Air World is responsible for operating it, as set out in the Travel Agency Act and your conditions of travel. | <span dir="rtl" lang="ar">نرتّب رحلتكم بعناية معقولة بصفتنا وكيلًا لـ Air World. وتتحمّل Air World مسؤولية تنفيذها، وفق ما يحدّده قانون وكالات السفر وشروط السفر الخاصة بكم.</span> | draft |
+| `terms.sections[9].heading` | Your personal information | <span dir="rtl" lang="ar">بياناتكم الشخصية</span> | draft |
+| `terms.sections[9].body[0]` | We handle the information you share with us as our privacy notice describes. | <span dir="rtl" lang="ar">نتعامل مع البيانات التي تشاركونها معنا كما يصف إشعار الخصوصية.</span> | draft |
+| `terms.sections[10].heading` | The law that applies | <span dir="rtl" lang="ar">القانون المعمول به</span> | draft |
+| `terms.sections[10].body[0]` | These terms are governed by the laws of Japan. | <span dir="rtl" lang="ar">تخضع هذه الشروط لقوانين اليابان.</span> | draft |
+| `terms.sections[11].heading` | Questions | <span dir="rtl" lang="ar">الأسئلة</span> | draft |
+| `terms.sections[11].body[0]` | For any question about these terms, write to [[EMAIL]]. | <span dir="rtl" lang="ar">لأي سؤال عن هذه الشروط، راسلونا على [[EMAIL]].</span> | draft |
 | `notFound.title` | There is no page at this address. | <span dir="rtl" lang="ar">لا توجد صفحة على هذا العنوان.</span> | draft |

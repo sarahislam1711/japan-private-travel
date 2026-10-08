@@ -27,7 +27,11 @@ export async function CopyText({ copy }: { copy: Copy }) {
 
   const segments = r.body.map((segment, i) => {
     if (typeof segment === "string") return segment;
-    if ("ph" in segment) return placeholderValue(segment.ph) ?? <Placeholder key={i} name={segment.ph} />;
+    if ("ph" in segment) {
+      const value = placeholderValue(segment.ph);
+      // A supplied value keeps its own direction inside the sentence (Latin names and addresses in Arabic text).
+      return value !== null ? <bdi key={i}>{value}</bdi> : <Placeholder key={i} name={segment.ph} />;
+    }
     return (
       // Japanese runs left to right even inside an Arabic page; Arabic right to left inside an English one.
       <span key={i} lang={segment.lang} dir={segment.lang === "ar" ? "rtl" : "ltr"}>
