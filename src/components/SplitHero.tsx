@@ -16,27 +16,37 @@ type Props = {
   verticals: Copy[];
   /** Optional photograph faded behind the panel. */
   slot?: PhotoSlotId;
+  /** Replaces the default title size and weight. */
+  titleClass?: string;
+  /** "top" sets the title higher in the screen (for a hero with more beneath it). */
+  align?: "end" | "top";
+  /** Content for the pine panel in place of the vertical Japanese (Summer Journeys' story). */
+  panel?: ReactNode;
+  /** Title words to set in pine with a Japanese note above (e.g. { July: "七月" }). */
+  titleAccent?: Record<string, string>;
 };
 
 /** An inner page's first screen: title and lede beside a pine panel set with vertical Japanese. */
-export function SplitHero({ id, title, children, verticals, slot }: Props) {
+export function SplitHero({ id, title, children, verticals, slot, titleClass, align = "end", panel, titleAccent }: Props) {
   return (
     <section aria-labelledby={id} className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) pt-6 desktop:min-h-[calc(100svh-5.5rem)] desktop:pt-2">
-      <div className="col-span-12 flex flex-col justify-end desktop:col-span-7 desktop:pb-10">
-        <h1 id={id} data-reveal="words" className="max-w-[17ch] font-serif text-h1 [font-variation-settings:'opsz'_60]">
-          <SplitWords copy={title} />
+      <div className={`col-span-12 flex flex-col desktop:col-span-7 desktop:pb-10 ${align === "top" ? "justify-center" : "justify-end"}`}>
+        <h1 id={id} data-reveal="words" className={`font-serif [font-variation-settings:'opsz'_60] ${titleClass ? `max-w-[20ch] ${titleClass}` : "max-w-[17ch] text-h1"}`}>
+          <SplitWords copy={title} accent={titleAccent} />
         </h1>
-        <div data-reveal style={d(3)} className="mt-8 max-w-[36rem]">
+        <div data-reveal style={d(3)} className="mt-10 max-w-[36rem]">
           {children}
         </div>
       </div>
       <div
         data-reveal
         style={d(1)}
-        className="on-pine group relative isolate col-span-12 h-72 overflow-hidden rounded-[20px] tablet:h-[24rem] desktop:col-span-5 desktop:h-auto desktop:min-h-[24rem]"
+        className={`on-pine group relative isolate col-span-12 overflow-hidden rounded-[20px] desktop:col-span-5 ${panel ? "desktop:self-center" : "h-72 tablet:h-[24rem] desktop:h-auto desktop:min-h-[24rem]"}`}
       >
+        {panel}
         {slot ? <PanelPhoto slot={slot} tone="pine" note="bottom" /> : null}
         {/* Short names set large; three or more columns step down so every column fits the panel. */}
+        {panel ? null : (
         <span
           aria-hidden
           dir="ltr"
@@ -50,6 +60,7 @@ export function SplitHero({ id, title, children, verticals, slot }: Props) {
             </span>
           ))}
         </span>
+        )}
       </div>
     </section>
   );

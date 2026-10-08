@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**293** draft,
-**0** missing — of 295 strings.
+**298** draft,
+**0** missing — of 300 strings.
 
 ## content/site.ts
 
@@ -133,9 +133,14 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `summerJourneys.title` | July and August are the best months to bring a family to Japan — in the right places. | <span dir="rtl" lang="ar">يوليو وأغسطس هما أفضل شهرين لاصطحاب العائلة إلى اليابان — في الأماكن المناسبة.</span> | draft |
-| `summerJourneys.lede[0]` | Honshu in high summer is hot and crowded. Hokkaido is not. Okinawa is coastal. The Japan Alps are cool at altitude. These are the months when Japan's finest properties are quietest and most available, and they are also the months when families from the Gulf and southern Europe most need to travel. | <span dir="rtl" lang="ar">هونشو في ذروة الصيف حارّة ومزدحمة. أما هوكايدو فلا. وأوكيناوا ساحلية. وجبال الألب اليابانية معتدلة الحرارة على ارتفاعاتها. في هذين الشهرين تكون أرقى أماكن الإقامة في اليابان في أهدأ أوقاتها وأكثرها توفّرًا، وهما أيضًا الشهران اللذان تكون فيهما العائلات من الخليج وجنوب أوروبا في أمسّ الحاجة إلى السفر.</span> | draft |
-| `summerJourneys.lede[1]` | We built this company around that overlap. | <span dir="rtl" lang="ar">وقد أسّسنا هذه الشركة على هذا التلاقي.</span> | draft |
+| `summerJourneys.title` | July and August are the best months a family can visit Japan | <span dir="rtl" lang="ar">يوليو وأغسطس هما أفضل شهرين لزيارة العائلة لليابان</span> | draft |
+| `summerJourneys.story.before` | In summer the big cities are hot and crowded. | <span dir="rtl" lang="ar">في الصيف تكون المدن الكبرى حارّة ومزدحمة.</span> | draft |
+| `summerJourneys.story.turn` | The north is not. | <span dir="rtl" lang="ar">أما الشمال فلا.</span> | draft |
+| `summerJourneys.story.places[0].line` | Hokkaido is cool | <span dir="rtl" lang="ar">هوكايدو معتدلة الحرارة</span> | draft |
+| `summerJourneys.story.places[1].line` | The Japan Alps are cool up high | <span dir="rtl" lang="ar">جبال الألب اليابانية معتدلة على ارتفاعاتها</span> | draft |
+| `summerJourneys.story.places[2].line` | Okinawa is by the sea | <span dir="rtl" lang="ar">أوكيناوا على البحر</span> | draft |
+| `summerJourneys.story.why` | These are also the months Gulf and southern European families most want to travel. | <span dir="rtl" lang="ar">وهذان أيضًا الشهران اللذان تفضّل فيهما العائلات من الخليج وجنوب أوروبا السفر أكثر من غيرهما.</span> | draft |
+| `summerJourneys.story.payoff` | We build your tour around that. | <span dir="rtl" lang="ar">ونحن نبني رحلتكم حول ذلك.</span> | draft |
 | `summerJourneys.seasonBand.caption` | Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals. | <span dir="rtl" lang="ar">متوسط درجة الحرارة العظمى اليومية حسب الشهر. المصدر: وكالة الأرصاد الجوية اليابانية، المعدلات المناخية للفترة 1991–2020.</span> | draft |
 | `summerJourneys.seasonBand.rows[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
 | `summerJourneys.seasonBand.rows[1]` | Sapporo | <span dir="rtl" lang="ar">سابورو</span> | draft |

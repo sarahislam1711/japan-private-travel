@@ -75,7 +75,7 @@ export default function StyleguidePage() {
               <CopyText copy={familyServices.intro} />
             </p>
             <p className="max-w-(--measure-main)">
-              <CopyText copy={summerJourneys.lede[0]} />
+              <CopyText copy={summerJourneys.story.before} />
             </p>
             <p className="font-gothic text-label text-ink-soft">
               <CopyText copy={contact.form.fields.household} />

@@ -149,13 +149,16 @@ Step symbols, set large under each promise in the How we work stage — DRAFT (d
 
 ## 4. Summer Journeys (`/summer-journeys`)
 
-**Title and lede — LOCKED ⚑D5** (Sarah chose to keep "best" and "finest", 6 Oct 2026; the C4 approval entries are hers to add in `content/approvals.ts`)
+**Title and hero story — LOCKED** (written by Sarah, 8 Oct 2026; replaces the earlier title and lede, so "best" and "finest" are gone. Set as a visual story, her words unchanged.)
 
-> **July and August are the best months to bring a family to Japan — in the right places.**
+> **July and August are the best months a family can visit Japan**
+
+(Title changed by Sarah, 8 Oct 2026, from "July and August are the months to bring a family to Japan, in the right places.". "best" is hers; the C4 approval entry is hers to add.)
 >
-> Honshu in high summer is hot and crowded. Hokkaido is not. Okinawa is coastal. The Japan Alps are cool at altitude. These are the months when Japan's finest properties are quietest and most available, and they are also the months when families from the Gulf and southern Europe most need to travel.
 >
-> We built this company around that overlap.
+> In summer the big cities are hot and crowded. The north is not. Hokkaido is cool, the Japan Alps are cool up high, and Okinawa is by the sea. These are also the months Gulf and southern European families most want to travel. We build your tour around that.
+
+Beats as set on the page: "In summer the big cities are hot and crowded." → "The north is not." → three places, each with its Japanese name (DRAFT, decorative: 北海道 · 北アルプス · 沖縄): "Hokkaido is cool" · "The Japan Alps are cool up high" · "Okinawa is by the sea" → "These are also the months Gulf and southern European families most want to travel." → "We build your tour around that."
 
 **Season band — needs data** {CL-05}
 Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."

@@ -67,6 +67,18 @@
       font-size: min(clamp(3.4rem, 4.9vw + 1rem, 6.25rem), 13.5svh);
     }
   }
+  /* Summer Journeys' title: larger and heavier than other inner-page titles (Sarah, 8 Oct 2026). */
+  .sj-title {
+    font-size: min(clamp(2.75rem, 2.6vw + 1.3rem, 4.5rem), 8svh);
+    font-weight: 460;
+    line-height: 1.04;
+    letter-spacing: -0.024em;
+  }
+  :root:lang(ar) .sj-title {
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+
   :root:lang(ar) .hero-display {
     line-height: 1.25;
     letter-spacing: 0;
@@ -235,6 +247,21 @@
   }
   .reveal-ready [data-reveal]:not([data-in]) .split-word > span {
     transform: translateY(110%);
+  }
+
+  /* An accented title word: room above it inside the rising word's clip for its ruby. */
+  .split-accent {
+    padding-block-start: 0.55em;
+    margin-block-start: -0.55em;
+  }
+  .split-accent rt {
+    font-family: var(--font-mincho);
+    font-size: 0.26em;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: color-mix(in oklab, var(--color-pine) 70%, transparent);
+    ruby-position: over;
+    ruby-align: center;
   }
 
   /* Showcase stage: a promise's words rise each time it becomes the current one. */

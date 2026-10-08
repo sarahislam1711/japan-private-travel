@@ -13,17 +13,19 @@ type Region = {
 };
 
 export const summerJourneys = {
-  title: locked(
-    "July and August are the best months to bring a family to Japan — in the right places.",
-    { flags: ["D5"] },
-  ),
-  lede: [
-    locked(
-      "Honshu in high summer is hot and crowded. Hokkaido is not. Okinawa is coastal. The Japan Alps are cool at altitude. These are the months when Japan's finest properties are quietest and most available, and they are also the months when families from the Gulf and southern Europe most need to travel.",
-      { flags: ["D5"] },
-    ),
-    locked("We built this company around that overlap.", { flags: ["D5"] }),
-  ],
+  // Title and the hero's story, written by Sarah (8 Oct 2026); set as a sequence of beats, her words unchanged.
+  title: locked("July and August are the best months a family can visit Japan"),
+  story: {
+    before: locked("In summer the big cities are hot and crowded."),
+    turn: locked("The north is not."),
+    places: [
+      { name: draft("北海道", { lang: "ja" }), line: locked("Hokkaido is cool") },
+      { name: draft("北アルプス", { lang: "ja" }), line: locked("The Japan Alps are cool up high") },
+      { name: draft("沖縄", { lang: "ja" }), line: locked("Okinawa is by the sea") },
+    ],
+    why: locked("These are also the months Gulf and southern European families most want to travel."),
+    payoff: locked("We build your tour around that."),
+  },
   seasonBand: {
     caption: draft(
       "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals.",
