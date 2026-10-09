@@ -166,6 +166,16 @@
 }
 
 @layer components {
+  /* One gap between sections, everywhere (Sarah, 10 Oct 2026): 80px on phones, 112px on desktop. */
+  .section-gap {
+    margin-block-start: 5rem;
+  }
+  @media (min-width: 64rem) {
+    .section-gap {
+      margin-block-start: 7rem;
+    }
+  }
+
   /* A 44px touch area around a text link without moving the layout (WCAG 2.5.5, Google's mobile guidance). */
   .tap {
     display: inline-block;

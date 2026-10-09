@@ -157,7 +157,7 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
 
   if (!pinned) {
     return (
-      <section aria-labelledby={id} className="mx-auto mt-24 max-w-(--content-max) px-(--page-margin) desktop:mt-32">
+      <section aria-labelledby={id} className="section-gap mx-auto max-w-(--content-max) px-(--page-margin)">
         <h2 id={id} data-reveal="words" className="font-serif text-h1 [font-variation-settings:'opsz'_60]">
           {heading}
         </h2>
@@ -189,7 +189,7 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
   }
 
   return (
-    <section aria-labelledby={id} className="mt-32">
+    <section aria-labelledby={id} className="section-gap">
       <div ref={root} style={{ height: `${100 + (n - 1) * SEGMENT_VH}vh` }}>
         <div className="sticky top-0 mx-auto flex h-svh max-w-(--content-max) flex-col justify-center gap-8 px-(--page-margin) py-10">
           <div className="flex items-end justify-between gap-10">

@@ -15,7 +15,7 @@ export type OnwardPanel = { route: RouteKey; heading: Copy; text: Copy; tone: "s
 export async function OnwardPanels({ items }: { items: OnwardPanel[] }) {
   const locale = await getLocale();
   return (
-    <section className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 gap-6 px-(--page-margin) desktop:mt-40">
+    <section className="mx-auto section-gap grid max-w-(--content-max) grid-cols-12 gap-6 px-(--page-margin)">
       {items.map((item, i) => {
         const route = routeFor(item.route);
         return (

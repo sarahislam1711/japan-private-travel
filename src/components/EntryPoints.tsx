@@ -32,7 +32,7 @@ export async function EntryPoints() {
     { route: pj, ...home.entryPoints.privateJapan, slot: "home-private-japan", tone: "pine", surface: "on-pine hover:bg-[#28574c]", span: "desktop:col-span-5" },
   ];
   return (
-    <section className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 gap-6 px-(--page-margin) desktop:mt-32">
+    <section className="mx-auto section-gap grid max-w-(--content-max) grid-cols-12 gap-6 px-(--page-margin)">
       {items.map(({ route, heading, text, slot, tone, surface, span }, i) => (
         <Link
           key={route.key}

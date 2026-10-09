@@ -15,7 +15,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const generateMetadata = () => pageMetadata("about");
 
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
-const section = "relative mt-24 desktop:mt-32 desktop:ps-24";
+const section = "section-gap relative desktop:ps-24";
 const h2 = "font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]";
 const label = "font-gothic text-small text-ink-soft";
 

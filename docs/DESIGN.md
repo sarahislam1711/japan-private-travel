@@ -202,6 +202,9 @@ A dev-only Stone (#6B7480) outlines placeholders and DRAFT marks; it is tooling,
 
 **Character:** A large, light, optically sized serif makes the statement; a plain official-document gothic in soft grey explains it in a few lines. The contrast in weight and colour is what keeps sections airy.
 
+### Spacing
+- **One gap between sections, site-wide** (`.section-gap`, 10 Oct 2026): 80px on phones, 112px on desktop. Every top-level section, the closing panel included, uses it; nothing else sets section spacing.
+
 ### Hierarchy
 - **Display** (320, clamp 3–5.5rem, 1.0, -0.028em, opsz 60): Home's hero headline, the How we work heading, the contact close heading.
 - **Headline** (330, clamp 2.5–4.25rem, 1.04, -0.024em, opsz 60): the entry panel headings and page titles.

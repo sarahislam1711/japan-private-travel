@@ -19,7 +19,7 @@ export async function RegionsTrio() {
   const labels = summerJourneys.factLabels;
   const fs = routeFor("familyServices");
   return (
-    <section aria-labelledby="regions-title" className="mx-auto mt-24 max-w-(--content-max) px-(--page-margin) desktop:mt-32">
+    <section aria-labelledby="regions-title" className="mx-auto section-gap max-w-(--content-max) px-(--page-margin)">
       <h2 id="regions-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
         <CopyText copy={summerJourneys.months.heading} />
       </h2>

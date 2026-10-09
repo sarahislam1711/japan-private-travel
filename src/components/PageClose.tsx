@@ -14,7 +14,7 @@ export async function PageClose({ heading }: { heading: Copy }) {
   const locale = await getLocale();
   const contact = routeFor("contact");
   return (
-    <section aria-labelledby="close-title" className="mx-auto mt-32 mb-24 max-w-(--content-max) px-(--page-margin) desktop:mt-44 desktop:mb-32">
+    <section aria-labelledby="close-title" className="mx-auto section-gap mb-24 max-w-(--content-max) px-(--page-margin) desktop:mb-32">
       {/* An inset pine panel on paper: the page's close, clearly apart from the footer. */}
       <div className="on-pine grid grid-cols-12 items-center gap-y-10 rounded-[24px] px-8 py-14 tablet:px-14 tablet:py-16 desktop:gap-x-10 desktop:px-16">
         <h2 id="close-title" data-reveal="words" className="col-span-12 max-w-[18ch] font-serif text-h1 [font-variation-settings:'opsz'_60] desktop:col-span-8">

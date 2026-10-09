@@ -15,7 +15,7 @@ export async function Faq() {
   const locale = await getLocale();
   const { heading, items } = home.faq;
   return (
-    <section aria-labelledby="faq-title" className="mx-auto mt-24 grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin) desktop:mt-40">
+    <section aria-labelledby="faq-title" className="mx-auto section-gap grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-8 px-(--page-margin)">
       <h2 id="faq-title" data-reveal="words" className="col-span-12 font-serif text-h1 [font-variation-settings:'opsz'_60] desktop:col-span-4">
         <SplitWords copy={heading} />
       </h2>
