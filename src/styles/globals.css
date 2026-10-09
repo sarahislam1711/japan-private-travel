@@ -363,6 +363,19 @@
     }
   }
 
+  /* Season chart: the lines draw in. */
+  @media (prefers-reduced-motion: no-preference) {
+    .season-line {
+      stroke-dasharray: 2000;
+      animation: season-draw 1600ms var(--ease-out-expo) both;
+    }
+  }
+  @keyframes season-draw {
+    from {
+      stroke-dashoffset: 2000;
+    }
+  }
+
   /* Summer regions: the chosen panel settles in. */
   @media (prefers-reduced-motion: no-preference) {
     .region-panel:not([hidden]) {

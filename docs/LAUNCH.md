@@ -25,7 +25,8 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 - [ ] Native Arabic review of every Arabic string (`docs/CONTENT.ar.md`), then mark them approved
 - [ ] Superlative approvals (C4), which only Sarah adds in `content/approvals.ts`: "best months" (title), "Best weeks" (region labels), "What are the best months…" (FAQ), "finest" if still used
 - [ ] Approve the guard fix for "WhatsApp" being read as pricing language (C3: `pp\b` to `\bpp\b`)
-- [ ] Attach a checked source for each claim in `content/claims.ts` (C5): CL-01 to CL-07, including the registration check (CL-06) and the temperature data (CL-05)
+- [ ] Attach a checked source for each claim in `content/claims.ts` (C5): CL-01 to CL-04, CL-06, CL-07 (CL-05 temperatures sourced from JMA, 10 Oct 2026)
+- [ ] Choose the Japan Alps weather station (D6) so its line joins the season chart; check it shows the Alps as cool in summer
 
 ## 3. Legal review (行政書士)
 

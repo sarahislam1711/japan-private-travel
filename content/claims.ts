@@ -48,8 +48,11 @@ export const claims: Claim[] = z.array(ClaimSchema).parse([
   {
     id: "CL-05",
     claim: "Monthly mean maximum temperatures (Season band)",
-    sourceStatus: "JMA 1991–2020 normals — to attach, with station names",
-    ...unsourced,
+    sourceStatus:
+      "JMA 1991–2020 normals, monthly mean of daily maximum: Tokyo (block 47662) and Sapporo (block 47412, https://www.data.jma.go.jp/obd/stats/etrn/view/nml_sfc_ym.php?prec_no=14&block_no=47412). Alps station still to choose (D6).",
+    sourceUrl: "https://www.data.jma.go.jp/obd/stats/etrn/view/nml_sfc_ym.php?prec_no=44&block_no=47662",
+    publisher: "Japan Meteorological Agency",
+    verifiedOn: "2026-10-10",
   },
   {
     id: "CL-06",

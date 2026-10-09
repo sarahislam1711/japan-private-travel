@@ -34,6 +34,12 @@ export const summerJourneys = {
       { claims: ["CL-05"] },
     ),
     rows: [draft("Tokyo"), draft("Sapporo"), draft([ph("ALPS_STATION")], { flags: ["D6"] })],
+    /** Monthly mean of daily maximum, °C, Jan–Dec. JMA 1991–2020 normals, verified 10 Oct 2026 (CL-05). Alps row awaits D6. */
+    data: [
+      [9.8, 10.9, 14.2, 19.4, 23.6, 26.1, 29.9, 31.3, 27.5, 22.0, 16.7, 12.0],
+      [-0.4, 0.4, 4.5, 11.7, 17.9, 21.8, 25.4, 26.4, 22.8, 16.4, 8.7, 2.0],
+    ] as number[][],
+    headline: draft("In August, Sapporo is about 5°C cooler than Tokyo.", { claims: ["CL-05"] }),
   },
   regions: [
     {

@@ -163,6 +163,8 @@ Beats as set on the page: "In summer the big cities are hot and crowded." → "T
 
 **Season band — needs data** {CL-05}
 Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."
+Headline (DRAFT, 10 Oct 2026): "In August, Sapporo is about 5°C cooler than Tokyo." (31.3 vs 26.4 °C.) Shown as a line chart, July and August shaded. Data sourced 10 Oct 2026 from JMA 1991–2020 normals (Tokyo 47662, Sapporo 47412); the Alps row appears once its station is chosen.
+
 Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa row — Okinawa's case is coastal, not cool, and a Naha row would undercut the page (⚑D6).
 
 **Region sections** (stories and margins written by Sarah, 8 Oct 2026; set as zig-zag rows: story beside a pine panel with the Japanese name and the facts)
