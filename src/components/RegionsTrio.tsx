@@ -20,20 +20,22 @@ export async function RegionsTrio() {
   const fs = routeFor("familyServices");
   return (
     <section aria-labelledby="regions-title" className="mx-auto section-gap max-w-(--content-max) px-(--page-margin)">
-      <h2 id="regions-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
+      <h2 id="regions-title" className="sr-only">
         <CopyText copy={summerJourneys.months.heading} />
       </h2>
 
       {/* The regions as one switcher: kanji tabs and a single feature panel (Sarah, 10 Oct 2026). */}
-      <div data-reveal className="mt-10">
+      <div data-reveal>
         <RegionSwitcher
           label={copyText(summerJourneys.months.heading, locale)}
+          months={summerJourneys.heroImage.map((m) => copyText(m, locale)).join("・")}
           regions={summerJourneys.regions.map((region, i) => {
             const slot = (["region-hokkaido", "region-okinawa", "region-alps"] as const)[i];
             const id = photoSlots[slot].photoId;
             const photo = id ? photographs.find((p) => p.id === id) : undefined;
             return {
-              id: slot.replace("region-", ""),
+              id: slot.replace("region-", "") as "hokkaido" | "okinawa" | "alps",
+              nameText: copyText(region.heading, locale),
               kanji: copyText(region.verticalName, locale).replace(/\s*\/\s*/g, "・"),
               name: <CopyText copy={region.heading} />,
               body: <CopyText copy={region.body} />,
