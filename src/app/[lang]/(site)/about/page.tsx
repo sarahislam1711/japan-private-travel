@@ -46,34 +46,37 @@ export default function AboutPage() {
     <main id="main">
       <StructuredData page="about" />
 
-      {/* Hero: title and intro beside the registration seal. */}
-      <section aria-labelledby="about-title" className="mx-auto grid max-w-(--content-max) grid-cols-12 gap-x-6 gap-y-10 px-(--page-margin) pt-10 desktop:pt-14">
-        <div className="col-span-12 flex flex-col justify-center desktop:col-span-7">
-          <h1 id="about-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60] desktop:text-[clamp(3rem,3.2vw+1.4rem,4.75rem)] desktop:leading-[1.02]">
+      {/* Hero: short and open. Title, intro and the key facts in one line; a small hanko-style stamp
+          (登録 in a pine ring) carries the registration, with no panel. */}
+      <section aria-labelledby="about-title" className="mx-auto grid max-w-(--content-max) items-center gap-x-12 gap-y-10 px-(--page-margin) pt-12 tablet:grid-cols-[1fr_auto] desktop:pt-20">
+        <div>
+          <h1 id="about-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60] desktop:text-[clamp(3rem,3.2vw+1.4rem,4.5rem)] desktop:leading-[1.02]">
             <SplitWords copy={about.title} />
           </h1>
-          <p data-reveal style={d(1)} className="mt-6 max-w-[36rem] font-gothic text-copy text-ink-soft">
+          <p data-reveal style={d(1)} className="mt-5 max-w-[36rem] font-gothic text-copy text-ink-soft">
             <CopyText copy={about.intro} />
           </p>
-        </div>
-        <div data-reveal style={d(1)} className="on-pine relative col-span-12 flex min-h-[22rem] flex-col justify-between overflow-hidden rounded-[24px] p-8 tablet:p-10 desktop:col-span-5 desktop:min-h-[30rem]">
-          <span lang="ja" aria-hidden className="font-mincho text-[clamp(6rem,10vw,9.5rem)] leading-none text-pine-soft/80 [writing-mode:vertical-rl] self-end">
-            <CopyText copy={registration.seal} />
-          </span>
-          {/* The key facts on the seal, then the registration as it is written in Japanese. */}
-          <div className="relative">
-            <ul className="flex flex-col gap-2">
-              {about.keyFacts.map((f, i) => (
-                <li key={i} className="font-serif text-[clamp(1.375rem,0.8vw+1.1rem,1.75rem)] leading-tight text-plate [font-variation-settings:'opsz'_24]">
+          <ul data-reveal style={d(2)} className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 font-serif text-[1.1875rem] text-ink [font-variation-settings:'opsz'_20]">
+            {about.keyFacts.map((f, i) => (
+              <li key={i} className="flex items-center gap-4">
+                {i > 0 ? <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-pine" /> : null}
+                <span>
                   <CopyText copy={f} />
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 font-mincho text-small leading-snug text-pine-soft">
-              <CopyText copy={site.registration.lineJa} />
-            </p>
-          </div>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
+        <figure data-reveal style={d(1)} className="flex flex-col items-start gap-4 tablet:items-center">
+          <span aria-hidden className="flex size-32 -rotate-6 items-center justify-center rounded-full ring-2 ring-pine ring-offset-4 ring-offset-ground tablet:size-40 desktop:size-44">
+            <span lang="ja" className="font-mincho text-[2.25rem] leading-[1.05] text-pine [writing-mode:vertical-rl] tablet:text-[2.75rem] desktop:text-[3rem]">
+              <CopyText copy={registration.seal} />
+            </span>
+          </span>
+          <figcaption className="max-w-[14rem] font-mincho text-[0.8125rem] leading-snug text-ink-soft tablet:text-center">
+            <CopyText copy={site.registration.lineJa} />
+          </figcaption>
+        </figure>
       </section>
 
       {/* The rest of the page is one story on one thread: people → registration → offices → facts. */}
