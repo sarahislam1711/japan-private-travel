@@ -8,7 +8,7 @@ export type PhotoSlot = { photoId: string | null; brief: string };
 export const photoSlots = {
   // Experiences: one photo per card, faded behind its text (10 Oct 2026). Stand-ins only where they truly match.
   "exp-disneyland": { photoId: "tokyo-disneyland", brief: "Tokyo Disneyland, a family at a distance or from behind." },
-  "exp-usj": { photoId: null, brief: "Universal Studios Japan, Osaka." },
+  "exp-usj": { photoId: "universal-studios", brief: "Universal Studios Japan, Osaka." },
   "exp-nara": { photoId: "nara-park", brief: "Deer in Nara Park, or Tōdai-ji." },
   "exp-tea": { photoId: "japan-summer", brief: "A tea ceremony or a Kyoto tea house garden." },
   "exp-hiroshima": { photoId: "miyajima", brief: "Miyajima's shrine gate in the sea." },
@@ -17,7 +17,7 @@ export const photoSlots = {
   "exp-ryokan": { photoId: null, brief: "A ryokan room or private open-air bath in Hakone." },
   "exp-nishiki": { photoId: null, brief: "Nishiki Market, Kyoto." },
   "exp-indigo": { photoId: "indigo-dyeing", brief: "Indigo dyeing, hands and cloth." },
-  "exp-sakura": { photoId: null, brief: "Cherry blossom along the Philosopher's Path." },
+  "exp-sakura": { photoId: "cherry-blossoms", brief: "Cherry blossom along the Philosopher's Path." },
   "exp-momiji": { photoId: "japan-private-tours", brief: "Red maples at a Kyoto temple in November." },
   // About: portraits (10 Oct 2026). Until supplied, each shows the person's initials.
   "about-founder": { photoId: null, brief: "Fathy Mohamed Mohamed Ismail Ahmed, Representative Director: portrait, natural light, 4:5." },
