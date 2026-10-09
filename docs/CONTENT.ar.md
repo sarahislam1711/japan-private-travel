@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**457** draft,
-**0** missing — of 459 strings.
+**456** draft,
+**0** missing — of 458 strings.
 
 ## content/site.ts
 
@@ -225,7 +225,6 @@ Status: **2** approved,
 | `experiences.ui.all` | All | <span dir="rtl" lang="ar">الكل</span> | draft |
 | `experiences.ui.seasonLabel` | Season | <span dir="rtl" lang="ar">الموسم</span> | draft |
 | `experiences.ui.categoryLabel` | Type | <span dir="rtl" lang="ar">النوع</span> | draft |
-| `experiences.ui.anySeason` | Any time | <span dir="rtl" lang="ar">أي وقت</span> | draft |
 | `experiences.ui.spring` | Spring | <span dir="rtl" lang="ar">الربيع</span> | draft |
 | `experiences.ui.summer` | Summer | <span dir="rtl" lang="ar">الصيف</span> | draft |
 | `experiences.ui.autumn` | Autumn | <span dir="rtl" lang="ar">الخريف</span> | draft |

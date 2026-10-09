@@ -22,7 +22,6 @@ export const experiences = {
     all: draft("All"),
     seasonLabel: draft("Season"),
     categoryLabel: draft("Type"),
-    anySeason: draft("Any time"),
     spring: draft("Spring"),
     summer: draft("Summer"),
     autumn: draft("Autumn"),

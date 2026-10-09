@@ -125,26 +125,28 @@ export function ExperiencesBrowser({
           <p id="exp-season-q" className="font-gothic text-small text-ink-soft">
             {ui.seasonQuestion.node}
           </p>
-          <div className="-mt-2 flex items-end justify-between gap-6 border-b border-ink/10">
-            <div role="group" aria-labelledby="exp-season-q" className="-mb-px flex gap-5 overflow-x-auto [scrollbar-width:none] tablet:gap-7">
-              {(["any", "spring", "summer", "autumn", "winter"] as const).map((s) => {
+          {/* The kanji dial: four seasons set large; the chosen one turns pine, the rest fade back. Choosing it again clears it. */}
+          <div className="flex items-end justify-between gap-6">
+            <div role="group" aria-labelledby="exp-season-q" className="flex items-end gap-1 tablet:gap-3">
+              {(["spring", "summer", "autumn", "winter"] as const).map((s) => {
                 const on = season === s;
                 return (
                   <button
                     key={s}
                     type="button"
                     aria-pressed={on}
-                    onClick={() => change({ season: s })}
-                    className={`inline-flex min-h-11 shrink-0 cursor-pointer items-center gap-2 border-b-2 font-gothic text-label transition-colors ${
-                      on ? "border-pine text-ink" : "border-transparent text-ink-soft hover:text-ink"
-                    }`}
+                    onClick={() => change({ season: on ? "any" : s })}
+                    className="group flex min-w-16 cursor-pointer flex-col items-center gap-1.5 px-2 pb-1 tablet:min-w-20"
                   >
-                    {s === "any" ? null : (
-                      <span lang="ja" aria-hidden className={`font-mincho text-[1.25rem] leading-none ${on ? "text-pine" : "text-pine/70"}`}>
-                        {SEASONS[s].kanji}
-                      </span>
-                    )}
-                    {(s === "any" ? ui.anySeason : ui[s]).node}
+                    <span
+                      lang="ja"
+                      aria-hidden
+                      className={`font-mincho text-[clamp(2.25rem,3vw,3rem)] leading-none transition-colors duration-300 ${on ? "text-pine" : "text-ink/25 group-hover:text-ink/50"}`}
+                    >
+                      {SEASONS[s].kanji}
+                    </span>
+                    <span className={`font-gothic text-small transition-colors ${on ? "text-ink" : "text-ink-soft"}`}>{ui[s].node}</span>
+                    <span aria-hidden className={`h-[3px] w-6 rounded-full transition-all duration-300 ${on ? "bg-pine" : "bg-transparent"}`} />
                   </button>
                 );
               })}

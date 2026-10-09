@@ -17,7 +17,6 @@ export const experiencesAr: Translation<typeof experiences> = {
     all: ard("الكل"),
     seasonLabel: ard("الموسم"),
     categoryLabel: ard("النوع"),
-    anySeason: ard("أي وقت"),
     spring: ard("الربيع"),
     summer: ard("الصيف"),
     autumn: ard("الخريف"),
