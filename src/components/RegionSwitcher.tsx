@@ -109,7 +109,8 @@ export function RegionSwitcher({ regions, label, months }: { regions: RegionPane
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 55vw, 100vw"
-                className="pointer-events-none object-cover opacity-25"
+                // Clear across the top, fading out before the story so the reading text sits on a plain panel.
+                className="pointer-events-none object-cover opacity-55 [mask-image:linear-gradient(to_bottom,black_0%,black_18%,transparent_42%)]"
                 style={{ objectPosition: r.photo.focus }}
               />
             ) : null}

@@ -21,7 +21,7 @@ export const summerJourneysAr: Translation<typeof summerJourneys> = {
     // The third row is a placeholder only and is reused as is.
     rows: [ard("طوكيو"), ard("سابورو")],
     headline: ard("في أغسطس، تكون سابورو أبرد من طوكيو بنحو 5 درجات مئوية."),
-    humidity: ard("وطوكيو رطبة أيضًا: 76% في المتوسط في يوليو، ما يجعل الحرّ أشدّ وطأة."),
+    humidity: { label: ard("رطوبة طوكيو · يوليو") },
   },
   regions: [
     {
@@ -70,5 +70,4 @@ export const summerJourneysAr: Translation<typeof summerJourneys> = {
     stay: ard("مدة الإقامة المقترحة"),
     fromTokyo: ard("من طوكيو"),
   },
-  familyLink: ard("التخطيط للعائلات المسلمة:"),
 };

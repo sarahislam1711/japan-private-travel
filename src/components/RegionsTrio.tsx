@@ -1,7 +1,5 @@
 import { getLocale } from "@/lib/locale";
-import Link from "next/link";
 import { summerJourneys } from "@content/pages/summer-journeys";
-import { routeFor, localePath } from "@content/routes";
 import { copyText } from "@/lib/copy";
 import { CopyText } from "./CopyText";
 import { RegionSwitcher } from "./RegionSwitcher";
@@ -12,12 +10,11 @@ import { photoSlots } from "@content/photography.slots";
 /**
  * The three summer regions under one heading, as a switcher (Sarah, 10 Oct
  * 2026): kanji tabs above one feature panel with the region's picture, story
- * and facts. One Family Services link below.
+ * and facts.
  */
 export async function RegionsTrio() {
   const locale = await getLocale();
   const labels = summerJourneys.factLabels;
-  const fs = routeFor("familyServices");
   return (
     <section aria-labelledby="regions-title" className="mx-auto section-gap max-w-(--content-max) px-(--page-margin)">
       <h2 id="regions-title" className="sr-only">
@@ -51,13 +48,6 @@ export async function RegionsTrio() {
           })}
         />
       </div>
-
-      <p data-reveal className="mt-6 font-gothic text-label text-ink-soft">
-        <CopyText copy={summerJourneys.familyLink} />{" "}
-        <Link href={localePath(fs.key, locale)} className="tap text-ink">
-          <CopyText copy={fs.navLabel!} />
-        </Link>
-      </p>
     </section>
   );
 }

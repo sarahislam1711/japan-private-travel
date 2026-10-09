@@ -33,20 +33,6 @@ export async function SeasonBand() {
         <CopyText copy={headline} />
       </p>
 
-      {/* Phones: the August values, large, where the chart's labels would be too small to read. */}
-      <dl className="grid grid-cols-2 gap-3 tablet:hidden">
-        {series.map((s, si) => (
-          <div key={si} className="rounded-[16px] bg-ground p-4">
-            <dt className="font-gothic text-small text-ink-soft">
-              <CopyText copy={s.row} /> · {monthNames[7]}
-            </dt>
-            <dd dir="ltr" className="mt-1 text-start font-serif text-[2rem] leading-none" style={{ color: colours[si] }}>
-              {fmt(s.values[7])}
-            </dd>
-          </div>
-        ))}
-      </dl>
-
       <div dir="ltr" className="overflow-hidden">
         <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label={copyText(headline, locale)}>
           {/* July and August, shaded. */}
@@ -114,11 +100,27 @@ export async function SeasonBand() {
       </table>
       </div>
 
-      {/* How the heat feels: one sourced note. */}
-      <p className="flex items-start gap-3 font-gothic text-copy text-ink">
-        <span aria-hidden className="mt-[0.55em] size-2 shrink-0 rounded-full bg-ink" />
-        <CopyText copy={humidity} />
-      </p>
+      {/* The figures that matter, as a row: August in each city, and Tokyo's July humidity. */}
+      <dl className="grid grid-cols-3 gap-2 tablet:gap-3">
+        {series.map((s, si) => (
+          <div key={si} className="rounded-[16px] bg-ground p-4 tablet:p-5">
+            <dt className="font-gothic text-[0.8125rem] text-ink-soft tablet:text-small">
+              <CopyText copy={s.row} /> · {monthNames[7]}
+            </dt>
+            <dd className="mt-1.5 font-serif text-[clamp(1.5rem,2vw+0.8rem,2.25rem)] leading-none" style={{ color: colours[si] }}>
+              <bdi>{fmt(s.values[7])}</bdi>
+            </dd>
+          </div>
+        ))}
+        <div className="rounded-[16px] bg-ground p-4 tablet:p-5">
+          <dt className="font-gothic text-[0.8125rem] text-ink-soft tablet:text-small">
+            <CopyText copy={humidity.label} />
+          </dt>
+          <dd className="mt-1.5 font-serif text-[clamp(1.5rem,2vw+0.8rem,2.25rem)] leading-none text-ink">
+            <bdi>{humidity.value}%</bdi>
+          </dd>
+        </div>
+      </dl>
 
       <figcaption className="font-gothic text-small text-ink-soft">
         <CopyText copy={caption} />

@@ -163,7 +163,7 @@ Beats as set on the page: "In summer the big cities are hot and crowded." → "T
 
 **Season band — needs data** {CL-05}
 Caption (DRAFT): "Average daily maximum temperature by month. Source: Japan Meteorological Agency, 1991–2020 normals."
-Headline (DRAFT, 10 Oct 2026): "In August, Sapporo is about 5°C cooler than Tokyo." Note under the chart (DRAFT): "Tokyo is humid too: 76% on average in July, which makes the heat feel stronger." (JMA, Tokyo mean relative humidity, July.) (31.3 vs 26.4 °C.) Shown as a line chart, July and August shaded. Data sourced 10 Oct 2026 from JMA 1991–2020 normals (Tokyo 47662, Sapporo 47412); the Alps row appears once its station is chosen.
+Headline (DRAFT, 10 Oct 2026): "In August, Sapporo is about 5°C cooler than Tokyo." Under the chart, three figures (DRAFT label): Tokyo · Aug 31.3° · Sapporo · Aug 26.4° · "Tokyo humidity · Jul" 76% (JMA, Tokyo mean relative humidity, July). (31.3 vs 26.4 °C.) Shown as a line chart, July and August shaded. Data sourced 10 Oct 2026 from JMA 1991–2020 normals (Tokyo 47662, Sapporo 47412); the Alps row appears once its station is chosen.
 
 Rows: Tokyo, Sapporo, and one Japan Alps station `[[ALPS_STATION]]`. No Okinawa row — Okinawa's case is coastal, not cool, and a Naha row would undercut the page (⚑D6).
 
@@ -203,7 +203,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 - Months section heading: "Two months, three places."
 - Months section text: "Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea."
 - Region fact labels: see Region sections above.
-- Under each region: "Planning for Muslim families:" — *Link:* Family Services
+- (Removed by Sarah, 10 Oct 2026: the "Planning for Muslim families: Family Services" line under the regions.)
 
 ## 5. Private Japan (`/private-japan`)
 
