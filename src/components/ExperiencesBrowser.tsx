@@ -188,12 +188,16 @@ export function ExperiencesBrowser({
             </div>
           </div>
 
-          <p aria-live="polite" className="font-gothic text-small text-ink-soft">
-            <span dir="ltr">{shown.length}</span> {(shown.length === 1 ? ui.countOne : ui.count).node}
-          </p>
         </aside>
 
         <div className="min-w-0">
+          {/* The results' count, heading the grid: it changes as the filters do. */}
+          <p aria-live="polite" className="mb-5 flex items-baseline gap-2.5">
+            <span dir="ltr" className="font-serif text-[2.5rem] leading-none text-pine tabular-nums [font-variation-settings:'opsz'_48]">
+              {shown.length}
+            </span>
+            <span className="font-gothic text-label text-ink-soft">{(shown.length === 1 ? ui.countOne : ui.count).node}</span>
+          </p>
       {shown.length === 0 ? (
         <p className="rounded-[20px] bg-plate p-8 text-center font-gothic text-copy text-ink-soft">{ui.empty.node}</p>
       ) : (
