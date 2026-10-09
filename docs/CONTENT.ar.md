@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**452** draft,
-**0** missing — of 454 strings.
+**455** draft,
+**0** missing — of 457 strings.
 
 ## content/site.ts
 
@@ -344,6 +344,9 @@ Status: **2** approved,
 | `about.people.director.bio` | A graduate of Cairo University's Japanese department, he worked as a Japanese-speaking guide in Egypt for more than twenty years before founding the company in Tokyo, where he is based. | <span dir="rtl" lang="ar">تخرّج في قسم اللغة اليابانية بجامعة القاهرة، وعمل مرشدًا سياحيًا ناطقًا باليابانية في مصر لأكثر من عشرين عامًا قبل أن يؤسّس الشركة في طوكيو، حيث يقيم.</span> | draft |
 | `about.people.managersLabel` | Licensed travel managers (総合旅行業務取扱管理者) | <span dir="rtl" lang="ar">مديرا خدمات السفر المرخَّصان (総合旅行業務取扱管理者)</span> | draft |
 | `about.people.managers` | Mariko Kajiwara and Takashi Mino | <span dir="rtl" lang="ar">ماريكو كاجيوارا وتاكاشي مينو</span> | draft |
+| `about.people.managerNames[0]` | Mariko Kajiwara | <span dir="rtl" lang="ar">ماريكو كاجيوارا</span> | draft |
+| `about.people.managerNames[1]` | Takashi Mino | <span dir="rtl" lang="ar">تاكاشي مينو</span> | draft |
+| `about.people.managerRole` | Licensed travel manager | <span dir="rtl" lang="ar">ترخيص إدارة خدمات السفر</span> | draft |
 | `about.people.managersNote` | Japan's Travel Agency Act requires a licensed manager at each office. | <span dir="rtl" lang="ar">يشترط قانون وكالات السفر في اليابان وجود مدير مرخَّص في كل مكتب.</span> | draft |
 | `about.registration.heading` | How we are registered | <span dir="rtl" lang="ar">كيف نحن مسجّلون</span> | draft |
 | `about.registration.intro` | Japan licenses travel companies in tiers. This is exactly where we sit, and who stands behind your booking. | <span dir="rtl" lang="ar">تُرخِّص اليابان شركات السفر على مستويات. هذا هو موقعنا بالضبط، ومَن يقف وراء حجزكم.</span> | draft |

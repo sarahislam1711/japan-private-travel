@@ -1,11 +1,18 @@
 /* About (/about) — docs/CONTENT.md §8. Copy approved by Sarah, 8 Oct 2026. */
-import { attachArabic, ja, locked, ph } from "../schema";
+import { attachArabic, draft, ja, locked, ph } from "../schema";
 import { aboutAr } from "./about.ar";
 
 export const about = {
   title: locked(["About ", ph("BRAND")]),
   intro: locked([ph("BRAND"), " is run by ", ph("ENTITY_NAME_EN"), ", founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka."]),
   keyFacts: [locked("Since 2016"), locked("Tokyo and Osaka"), locked(["Tokyo Governor Registration No. ", ph("REG_NUMBER")])],
+  /** The page's thread: one kanji per chapter, on the line down the page (decorative, DRAFT, 10 Oct 2026). */
+  chapters: {
+    people: draft("人", { lang: "ja" }),
+    registration: draft("証", { lang: "ja" }),
+    offices: draft("所", { lang: "ja" }),
+    facts: draft("記", { lang: "ja" }),
+  },
   people: {
     heading: locked("The people"),
     director: {
@@ -18,9 +25,14 @@ export const about = {
     },
     managersLabel: locked(["Licensed travel managers (", ja("総合旅行業務取扱管理者"), ")"]),
     managers: locked("Mariko Kajiwara and Takashi Mino"),
+    /** Each manager on their own portrait card (names as supplied, 8 Oct 2026). */
+    managerNames: [locked("Mariko Kajiwara"), locked("Takashi Mino")],
+    managerRole: draft("Licensed travel manager"),
     managersNote: locked("Japan's Travel Agency Act requires a licensed manager at each office."),
   },
   registration: {
+    /** The seal on the hero panel (decorative, DRAFT, 9 Oct 2026): "registration". */
+    seal: draft("登録", { lang: "ja" }),
     heading: locked("How we are registered"),
     intro: locked("Japan licenses travel companies in tiers. This is exactly where we sit, and who stands behind your booking."),
     steps: [
@@ -51,8 +63,9 @@ export const about = {
   offices: {
     heading: locked("Offices"),
     list: [
-      { name: locked("Tokyo (head office)"), address: locked([ph("ENTITY_ADDRESS")]), tel: "03-6432-9234", fax: "03-6432-9134" },
-      { name: locked("Osaka"), address: locked([ph("OSAKA_ADDRESS")]), tel: "06-6585-0136", fax: "06-6585-0640" },
+      // The city in Japanese heads each office (decorative, DRAFT, 9 Oct 2026).
+      { name: locked("Tokyo (head office)"), city: draft("東京", { lang: "ja" }), address: locked([ph("ENTITY_ADDRESS")]), tel: "03-6432-9234", fax: "03-6432-9134" },
+      { name: locked("Osaka"), city: draft("大阪", { lang: "ja" }), address: locked([ph("OSAKA_ADDRESS")]), tel: "06-6585-0136", fax: "06-6585-0640" },
     ],
     telLabel: locked("Tel"),
     faxLabel: locked("Fax"),

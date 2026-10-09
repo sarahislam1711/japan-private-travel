@@ -17,6 +17,8 @@ export const aboutAr: Translation<typeof about> = {
     },
     managersLabel: ard(["مديرا خدمات السفر المرخَّصان (", ja("総合旅行業務取扱管理者"), ")"]),
     managers: ard("ماريكو كاجيوارا وتاكاشي مينو"),
+    managerNames: [ard("ماريكو كاجيوارا"), ard("تاكاشي مينو")],
+    managerRole: ard("ترخيص إدارة خدمات السفر"),
     managersNote: ard("يشترط قانون وكالات السفر في اليابان وجود مدير مرخَّص في كل مكتب."),
   },
   registration: {

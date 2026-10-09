@@ -320,6 +320,10 @@ Banned in any entry (COMPLIANCE C3): "private access", "exclusive", "arranged th
 > Registration: Governor of Tokyo, Travel Agency Agent No. [[REG_NUMBER]]
 > Principal travel company: Air World Co., Ltd., Japan Tourism Agency Registered Travel Agency No. 961 (JATA member)
 
+Decorative Japanese (DRAFT): 登録 (registration) on the hero seal; 東京 and 大阪 heading the office columns; chapter marks on the page's thread: 人 (people) · 証 (registration) · 所 (offices) · 記 (facts).
+
+People cards (10 Oct 2026): Mariko Kajiwara · Takashi Mino (LOCKED, as supplied) · role line "Licensed travel manager" (DRAFT). Portraits to come; initials show until then.
+
 Footer labels (LOCKED): Registered entity · Registration · Tokyo office · Osaka office · Licensed travel managers · Principal travel company
 
 Left out by choice (8 Oct 2026): the Cairo office, bank names and the registered business scope. Still to supply: the Japanese company name; which manager is at which office.

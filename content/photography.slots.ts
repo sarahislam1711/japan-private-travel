@@ -6,6 +6,10 @@
 export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
+  // About: portraits (10 Oct 2026). Until supplied, each shows the person's initials.
+  "about-founder": { photoId: null, brief: "Fathy Mohamed Mohamed Ismail Ahmed, Representative Director: portrait, natural light, 4:5." },
+  "about-manager-1": { photoId: null, brief: "Mariko Kajiwara, licensed travel manager: portrait, natural light, square." },
+  "about-manager-2": { photoId: null, brief: "Takashi Mino, licensed travel manager: portrait, natural light, square." },
   // How we work: one crisp photo per promise, shown in the split stage (Sarah, 8 Oct 2026). Stand-ins until matched photos arrive.
   "how-step-1": { photoId: "japan-alps", brief: "We confirm before you commit: a checked room, a ryokan interior, a quiet arrival." },
   "how-step-2": { photoId: "japan-trips-mountains", brief: "You know who is looking after you: your planner or guide with a family, from behind or at a distance." },
