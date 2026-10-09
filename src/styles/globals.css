@@ -232,6 +232,11 @@
     opacity: 1;
     transform: none;
   }
+  /* On screen at load: shown as is, never animated (see RevealObserver). */
+  [data-in="instant"],
+  [data-in="instant"] .split-word > span {
+    transition: none !important;
+  }
   /* Headings: each word rises out of its own clipped line box. */
   .split-word {
     display: inline-block;
@@ -259,7 +264,7 @@
     font-size: 0.26em;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: color-mix(in oklab, var(--color-pine) 70%, transparent);
+    color: var(--color-pine); /* full pine: 7:1 on paper (WCAG AA for small text) */
     ruby-position: over;
     ruby-align: center;
   }

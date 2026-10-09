@@ -53,16 +53,16 @@ Drafted 7 Oct 2026 for approval, for search intent in each language; Arabic in `
 
 | Page | Title | Description | Status |
 |---|---|---|---|
-| home | Private family trips to Japan | Private trips to Japan for families who travel together, planned in Arabic, English or Japanese, from offices in Tokyo and Osaka. | DRAFT |
-| summerJourneys | Summer in Japan: Hokkaido, Okinawa and the Alps | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips planned for July and August. | DRAFT |
+| home | Private family trips to Japan for every age | Private trips to Japan for families who travel together, from grandparents to young children, planned in Arabic, English or Japanese from Tokyo and Osaka. | DRAFT |
+| summerJourneys | Summer in Japan: Hokkaido, Okinawa and the Alps | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips for July and August, planned around your family. | DRAFT |
 | privateJapan | Private Japan trips in spring, autumn and winter | Private trips across Japan outside summer, planned for the whole family: connecting rooms, days paced for every age, transport that keeps you together. | DRAFT |
-| familyServices | Japan for Muslim families: halal and prayer | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic. | DRAFT |
-| experiences | Experiences in Japan, arranged with named people | Each experience is arranged with a named person, in a stated season, with a stated lead time. | DRAFT |
-| about | About HalaJapan: who we are and how we are registered | HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member. | DRAFT |
+| familyServices | Japan for Muslim families: halal and prayer | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic, for the whole family. | DRAFT |
+| experiences | Experiences in Japan, arranged with named people | Experiences in Japan for families, each arranged with a named person, in a stated season and with a stated lead time, and planned around the rest of your trip. | DRAFT |
+| about | About HalaJapan and how we are registered | HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member. | DRAFT |
 | forTravelAdvisors | For travel advisors: private Japan for families | For clients who travel as a household. You hold the client relationship; we arrange the trip, and Air World, our licensed principal, operates it in Japan. | DRAFT |
-| contact | Plan a private family trip to Japan | Tell us who is travelling and when. Message us on WhatsApp, email or call, and we will reply in your language. | DRAFT |
-| privacy | Privacy notice | How HalaJapan uses the details you send us. | DRAFT |
-| terms | Terms of business | Terms of business for trips arranged by HalaJapan. | DRAFT |
+| contact | Plan your private family trip to Japan | Plan a private family trip to Japan in six short steps: who is coming, when, where and what the trip should do. We reply in Arabic, English or Japanese. | DRAFT |
+| privacy | Privacy notice | How HalaJapan collects, uses, shares and protects the details families send when planning a trip, under Japan's APPI and the EU and UK GDPR where they apply. | DRAFT |
+| terms | Terms of business | How HalaJapan works with you from first enquiry to journey home: plans, bookings, your travel contract with Air World, changes, cancellations, responsibility. | DRAFT |
 
 ## 2. Navigation (`content/navigation.ts`)
 
@@ -448,7 +448,7 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 > **Changes to this notice**
 > If we change this notice, we will publish the new version on this page.
 
-Contents label: "On this page"
+Contents label: "On this page" · Date line: "Last updated" (DRAFT; Arabic آخر تحديث), followed by the date the page last changed
 
 ### Terms of business (`/terms`)
 

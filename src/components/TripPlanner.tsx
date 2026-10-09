@@ -253,7 +253,7 @@ export function TripPlanner({
           <p className="mt-2 max-w-[34rem] font-gothic text-copy text-ink-soft">{t[`planner.hints.${step}`].node}</p>
 
           {/* On desktop the answers scroll inside the card if a step runs long; the buttons stay put. */}
-          <div data-lenis-prevent className="mt-6 flex-1 desktop:-mx-2 desktop:min-h-0 desktop:overflow-y-auto desktop:px-2 desktop:pb-1">
+          <div data-lenis-prevent tabIndex={-1} className="mt-6 flex-1 desktop:-mx-2 desktop:min-h-0 desktop:overflow-y-auto desktop:px-2 desktop:pb-1">
             {step === "who" && (
               <div className="flex flex-col gap-2">
                 <Counter label={t["planner.people.adults"]} value={plan.adults} onChange={(v) => set("adults", v)} t={t} />
@@ -472,7 +472,7 @@ export function TripPlanner({
       <aside aria-live="polite" className="on-pine col-span-12 flex flex-col rounded-[24px] p-6 tablet:p-10 desktop:col-span-4 desktop:h-full desktop:min-h-0 desktop:p-8">
         <h2 className="font-serif text-h3 [font-variation-settings:'opsz'_24]">{t["planner.summary.title"].node}</h2>
         {lines.some((l) => l.value) ? (
-          <dl data-lenis-prevent className="mt-6 flex flex-col gap-5 desktop:min-h-0 desktop:overflow-y-auto">
+          <dl data-lenis-prevent tabIndex={0} className="mt-6 flex flex-col gap-5 rounded-[8px] desktop:min-h-0 desktop:overflow-y-auto">
             {lines
               .filter((l) => l.value)
               .map((l) => (

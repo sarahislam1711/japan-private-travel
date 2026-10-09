@@ -19,6 +19,12 @@ export function RevealObserver() {
     // Crawlers and reduced-motion visitors get the content as it is: nothing hidden, nothing animated.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || isBot()) return;
     const root = document.documentElement;
+    // Whatever is on screen when the page opens shows at once, with no fade: it is never hidden, so the
+    // largest text paints with the first frame (LCP). Only what is further down waits to be revealed.
+    document.querySelectorAll("[data-reveal]:not([data-in])").forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.setAttribute("data-in", "instant");
+    });
     root.classList.add("reveal-ready");
     const io = new IntersectionObserver(
       (entries) => {
@@ -30,13 +36,7 @@ export function RevealObserver() {
       },
       { rootMargin: "0px 0px -12% 0px", threshold: 0.12 },
     );
-    // Anything already on screen when the page opens (the hero and its buttons) rises in at once;
-    // the -12% margin is only for what scrolls into view later.
-    document.querySelectorAll("[data-reveal]:not([data-in])").forEach((el) => {
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) el.setAttribute("data-in", "");
-      else io.observe(el);
-    });
+    document.querySelectorAll("[data-reveal]:not([data-in])").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, [pathname]);
   return null;

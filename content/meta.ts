@@ -1,7 +1,7 @@
 /*
  * Page titles and meta descriptions, both languages — docs/CONTENT.md §1b.
- * Titles stay within ~48 characters so " — HalaJapan" keeps them under 60;
- * descriptions within ~155. Drafted for search intent in each language
+ * Titles stay within ~48 characters so " | HalaJapan" keeps them at 50–60;
+ * descriptions 150–160 (search snippet length). Drafted for search intent in each language
  * (not word-for-word), restating approved facts only.
  */
 import type { RouteKey } from "./routes";
@@ -11,16 +11,12 @@ type Meta = { title: Copy; description: Copy };
 
 const en: Record<RouteKey, Meta> = {
   home: {
-    title: draft("Private family trips to Japan"),
-    description: draft(
-      "Private trips to Japan for families who travel together, planned in Arabic, English or Japanese, from offices in Tokyo and Osaka.",
-    ),
+    title: draft("Private family trips to Japan for every age"),
+    description: draft("Private trips to Japan for families who travel together, from grandparents to young children, planned in Arabic, English or Japanese from Tokyo and Osaka."),
   },
   summerJourneys: {
     title: draft("Summer in Japan: Hokkaido, Okinawa and the Alps"),
-    description: draft(
-      "Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips planned for July and August.",
-    ),
+    description: draft("Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips for July and August, planned around your family."),
   },
   privateJapan: {
     title: draft("Private Japan trips in spring, autumn and winter"),
@@ -30,16 +26,14 @@ const en: Record<RouteKey, Meta> = {
   },
   familyServices: {
     title: draft("Japan for Muslim families: halal and prayer"),
-    description: draft(
-      "Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic.",
-    ),
+    description: draft("Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic, for the whole family."),
   },
   experiences: {
     title: draft("Experiences in Japan, arranged with named people"),
-    description: draft("Each experience is arranged with a named person, in a stated season, with a stated lead time."),
+    description: draft("Experiences in Japan for families, each arranged with a named person, in a stated season and with a stated lead time, and planned around the rest of your trip."),
   },
   about: {
-    title: draft("About HalaJapan: who we are and how we are registered"),
+    title: draft("About HalaJapan and how we are registered"),
     description: draft(
       "HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member.",
     ),
@@ -51,22 +45,22 @@ const en: Record<RouteKey, Meta> = {
     ),
   },
   contact: {
-    title: draft("Plan a private family trip to Japan"),
-    description: draft("Tell us who is travelling and when. Message us on WhatsApp, email or call, and we will reply in your language."),
+    title: draft("Plan your private family trip to Japan"),
+    description: draft("Plan a private family trip to Japan in six short steps: who is coming, when, where and what the trip should do. We reply in Arabic, English or Japanese."),
   },
   privacy: {
     title: draft("Privacy notice"),
-    description: draft("How HalaJapan uses the details you send us."),
+    description: draft("How HalaJapan collects, uses, shares and protects the details families send when planning a trip, under Japan's APPI and the EU and UK GDPR where they apply."),
   },
   terms: {
     title: draft("Terms of business"),
-    description: draft("Terms of business for trips arranged by HalaJapan."),
+    description: draft("How HalaJapan works with you from first enquiry to journey home: plans, bookings, your travel contract with Air World, changes, cancellations, responsibility."),
   },
 };
 
 export const pageMeta = attachArabic(en, {
   home: {
-    title: ard("رحلات خاصة إلى اليابان للعائلات"),
+    title: ard("رحلات عائلية خاصة إلى اليابان لكل الأعمار"),
     description: ard("رحلات خاصة إلى اليابان للعائلات التي تسافر معًا، نخطّطها بالعربية والإنجليزية واليابانية، من مكتبينا في طوكيو وأوساكا."),
   },
   summerJourneys: {
@@ -83,10 +77,10 @@ export const pageMeta = attachArabic(en, {
   },
   experiences: {
     title: ard("تجارب في اليابان مع أشخاص بأسمائهم"),
-    description: ard("كل تجربة نرتّبها مع شخص محدّد بالاسم، في موسم محدّد، وبمهلة حجز محدّدة."),
+    description: ard("تجارب في اليابان للعائلات، نرتّب كلًّا منها مع شخص محدّد بالاسم، في موسم محدّد وبمهلة حجز محدّدة، ونخطّطها حول بقية رحلتكم."),
   },
   about: {
-    title: ard("عن HalaJapan: مَن نحن وكيف نحن مسجّلون"),
+    title: ard("عن HalaJapan وكيف نحن مسجّلون"),
     description: ard("تديرها شركة Travel World المحدودة، وكيل وكالة سفر مسجّل في طوكيو وأوساكا، تبيع رحلات تنفّذها شركة Air World المحدودة، العضو في JATA."),
   },
   forTravelAdvisors: {
@@ -95,8 +89,8 @@ export const pageMeta = attachArabic(en, {
   },
   contact: {
     title: ard("خطّطوا رحلة عائلية خاصة إلى اليابان"),
-    description: ard("أخبرونا مَن سيسافر ومتى. راسلونا عبر واتساب أو البريد الإلكتروني أو الهاتف، وسنردّ عليكم بلغتكم."),
+    description: ard("خطّطوا رحلة عائلية خاصة إلى اليابان في ست خطوات قصيرة: مَن سيسافر، ومتى، وإلى أين، وما الذي تريدونه من الرحلة. نردّ بالعربية أو الإنجليزية أو اليابانية."),
   },
-  privacy: { title: ard("سياسة الخصوصية"), description: ard("كيف تستخدم HalaJapan البيانات التي ترسلونها إلينا.") },
-  terms: { title: ard("شروط التعامل"), description: ard("شروط التعامل للرحلات التي ترتّبها HalaJapan.") },
+  privacy: { title: ard("سياسة الخصوصية"), description: ard("كيف تجمع HalaJapan البيانات التي ترسلها العائلات عند التخطيط لرحلة، وكيف تستخدمها وتشاركها وتحميها، وفق القانون الياباني ولائحة حماية البيانات الأوروبية.") },
+  terms: { title: ard("شروط التعامل"), description: ard("كيف نعمل معكم من أول استفسار حتى العودة: الخطط والحجوزات، وعقد السفر مع Air World، والتعديلات والإلغاء، والمسؤولية.") },
 });

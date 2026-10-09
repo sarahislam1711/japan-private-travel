@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@content/meta";
 import { localePath, type RouteKey } from "@content/routes";
+import { site } from "@content/site";
 import { copyText } from "./copy";
 import { getLocale } from "./locale";
 
 /**
  * Per-page metadata in the page's language: title and description from
  * content/meta.ts, a self-referencing
- * canonical, and reciprocal hreflang for English, Arabic and x-default (English).
+ * canonical, reciprocal hreflang for English, Arabic and x-default (English),
+ * and complete Open Graph and Twitter cards (the page's own 1200×630 image).
+ * Next replaces a layout's openGraph object wholesale, so everything is set here.
  */
+/** buildPageMetadata: the one place every page's metadata is made. */
 export async function pageMetadata(key: RouteKey): Promise<Metadata> {
   const locale = await getLocale();
   const meta = pageMeta[key];
@@ -27,6 +31,9 @@ export async function pageMetadata(key: RouteKey): Promise<Metadata> {
     },
     openGraph: {
       type: "website",
+      siteName: copyText(site.brand.name, locale),
+      locale: locale === "ar" ? "ar_AE" : "en_GB",
+      alternateLocale: locale === "ar" ? ["en_GB"] : ["ar_AE"],
       url: localePath(key, locale),
       title,
       description,

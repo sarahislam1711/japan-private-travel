@@ -1,9 +1,11 @@
 /* Utility pages — docs/CONTENT.md §11. */
 import type { RouteKey } from "../routes";
 import { attachArabic, draft, ph } from "../schema";
-import { notFoundAr, privacyAr, termsAr } from "./utility.ar";
+import { legalUpdatedAr, notFoundAr, privacyAr, termsAr } from "./utility.ar";
 
 // Privacy notice and terms of business: DRAFT for legal review before launch (D11).
+/** Shown above each legal page's sections, with the date its content last changed. */
+export const legalUpdated = draft("Last updated");
 export const privacy = {
   title: draft("Privacy notice"),
   contents: draft("On this page"),
@@ -182,3 +184,4 @@ export const notFound = {
 attachArabic(privacy, privacyAr);
 attachArabic(terms, termsAr);
 attachArabic(notFound, notFoundAr);
+attachArabic(legalUpdated, legalUpdatedAr);

@@ -3,7 +3,11 @@ import { privatePathPrefixes } from "@content/routes";
 import { isIndexable } from "@/lib/indexing";
 import { siteUrl } from "@/lib/site-url";
 
+// Search engines named explicitly alongside the wildcard.
+const searchCrawlers = ["Googlebot", "Bingbot", "Applebot", "DuckDuckBot", "YandexBot"];
+
 // AI crawlers named explicitly, so the site can be read and cited by AI search and assistants.
+// Decision (9 Oct 2026): allowed. Nothing here is paywalled or proprietary; being cited is the point.
 const aiCrawlers = [
   "GPTBot",
   "OAI-SearchBot",
@@ -16,6 +20,10 @@ const aiCrawlers = [
   "Google-Extended",
   "Applebot-Extended",
   "CCBot",
+  "Amazonbot",
+  "meta-externalagent",
+  "DuckAssistBot",
+  "MistralAI-User",
 ];
 
 // Never crawled: the gated portal (C9) and the dev-only styleguide, in both languages.
@@ -30,6 +38,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       { userAgent: "*", allow: "/", disallow: blocked },
+      { userAgent: searchCrawlers, allow: "/", disallow: blocked },
       { userAgent: aiCrawlers, allow: "/", disallow: blocked },
     ],
     sitemap: new URL("/sitemap.xml", siteUrl()).toString(),

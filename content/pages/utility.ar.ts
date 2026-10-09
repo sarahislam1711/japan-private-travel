@@ -1,6 +1,8 @@
 /* Utility pages — Arabic mirror of utility.ts. DRAFT, awaiting native review. */
 import { ard, ph, type Translation } from "../schema";
-import type { notFound, privacy, terms } from "./utility";
+import type { legalUpdated, notFound, privacy, terms } from "./utility";
+
+export const legalUpdatedAr: Translation<typeof legalUpdated> = ard("آخر تحديث");
 
 export const privacyAr: Translation<typeof privacy> = {
   title: ard("إشعار الخصوصية"),

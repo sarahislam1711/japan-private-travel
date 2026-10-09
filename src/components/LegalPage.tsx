@@ -3,6 +3,8 @@ import type { RouteKey } from "@content/routes";
 import { pageTitles } from "@content/index";
 import { localePath } from "@content/routes";
 import type { Copy } from "@content/schema";
+import lastmod from "@content/lastmod.json";
+import { legalUpdated } from "@content/pages/utility";
 import { getLocale } from "@/lib/locale";
 import { CopyText } from "./CopyText";
 
@@ -14,8 +16,9 @@ type Doc = { title: Copy; contents: Copy; intro: Copy; sections: Section[] };
  * intro, then the sections in a reading column, with "On this page" held in
  * view beside them on desktop. Plain type, no panels: it is read, not browsed.
  */
-export async function LegalPage({ doc }: { doc: Doc }) {
+export async function LegalPage({ doc, page }: { doc: Doc; page: "privacy" | "terms" }) {
   const locale = await getLocale();
+  const updated = (lastmod as Record<string, string>)[page];
   const anchor = (s: Section, i: number) => s.id ?? `section-${i + 1}`;
   return (
     <main id="main" className="mx-auto max-w-(--content-max) px-(--page-margin) pt-10 pb-24 desktop:pt-16 desktop:pb-32">
@@ -26,6 +29,14 @@ export async function LegalPage({ doc }: { doc: Doc }) {
         <p className="mt-6 font-gothic text-copy text-ink-soft">
           <CopyText copy={doc.intro} />
         </p>
+        {updated ? (
+          <p className="mt-4 font-gothic text-small text-ink-soft">
+            <CopyText copy={legalUpdated} />:{" "}
+            <time dateTime={updated.slice(0, 10)}>
+              {new Intl.DateTimeFormat(locale === "ar" ? "ar" : "en-GB", { dateStyle: "long", timeZone: "Asia/Tokyo" }).format(new Date(updated))}
+            </time>
+          </p>
+        ) : null}
       </header>
 
       <div className="mt-14 grid grid-cols-12 gap-x-6 gap-y-10 desktop:mt-20">

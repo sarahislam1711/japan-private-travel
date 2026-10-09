@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   return (
     <>
       <StructuredData page="privacy" />
-      <LegalPage doc={privacy} />
+      <LegalPage doc={privacy} page="privacy" />
     </>
   );
 }

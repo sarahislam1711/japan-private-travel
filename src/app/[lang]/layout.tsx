@@ -28,9 +28,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const brand = copyText(site.brand.name, locale);
   return {
     metadataBase: siteUrl(),
-    title: { default: brand, template: `%s — ${brand}` },
-    robots: isIndexable() ? { index: true, follow: true } : { index: false, follow: false },
-    openGraph: { locale: locale === "ar" ? "ar_AE" : "en_GB", alternateLocale: locale === "ar" ? ["en_GB"] : ["ar_AE"] },
+    title: { default: brand, template: `%s | ${brand}` },
+    applicationName: brand,
+    robots: isIndexable()
+      ? { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } }
+      : { index: false, follow: false },
   };
 }
 

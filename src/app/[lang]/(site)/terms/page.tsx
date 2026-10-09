@@ -9,7 +9,7 @@ export default function TermsPage() {
   return (
     <>
       <StructuredData page="terms" />
-      <LegalPage doc={terms} />
+      <LegalPage doc={terms} page="terms" />
     </>
   );
 }

@@ -120,7 +120,7 @@ export default function AboutPage() {
         </h2>
         <div data-reveal className="mt-8 grid gap-3 tablet:grid-cols-2">
           {offices.list.map((o, i) => (
-            <div key={i} className="rounded-[20px] bg-plate p-7">
+            <address key={i} className="rounded-[20px] bg-plate p-7 not-italic">
               <p className="font-serif text-[1.375rem] leading-tight [font-variation-settings:'opsz'_24]">
                 <CopyText copy={o.name} />
               </p>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   <span dir="ltr">{o.fax}</span>
                 </span>
               </p>
-            </div>
+            </address>
           ))}
         </div>
         <p data-reveal className="mt-5 font-gothic text-small text-ink-soft">
