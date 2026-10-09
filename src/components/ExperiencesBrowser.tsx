@@ -274,9 +274,11 @@ export function ExperiencesBrowser({
                 <Image src={open.photo.src} alt="" fill sizes="44rem" className="object-cover" style={{ objectPosition: open.photo.focus }} />
               </div>
             ) : null}
-            <span lang="ja" aria-hidden className="pointer-events-none absolute end-6 top-4 font-mincho text-[7rem] leading-none text-pine/[0.08]">
-              {cat(open.category).symbol.text}
-            </span>
+            {open.photo ? null : (
+              <span lang="ja" aria-hidden className="pointer-events-none absolute end-6 top-4 font-mincho text-[7rem] leading-none text-pine/[0.08]">
+                {cat(open.category).symbol.text}
+              </span>
+            )}
             <p className="relative font-gothic text-small text-ink-soft">
               {cat(open.category).label.node} · {open.city.node}
             </p>

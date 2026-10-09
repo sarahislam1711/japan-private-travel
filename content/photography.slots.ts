@@ -7,11 +7,11 @@ export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
   // Experiences: one photo per card, faded behind its text (10 Oct 2026). Stand-ins only where they truly match.
-  "exp-disneyland": { photoId: null, brief: "Tokyo Disneyland, a family at a distance or from behind." },
+  "exp-disneyland": { photoId: "tokyo-disneyland", brief: "Tokyo Disneyland, a family at a distance or from behind." },
   "exp-usj": { photoId: null, brief: "Universal Studios Japan, Osaka." },
-  "exp-nara": { photoId: null, brief: "Deer in Nara Park, or Tōdai-ji." },
+  "exp-nara": { photoId: "nara-park", brief: "Deer in Nara Park, or Tōdai-ji." },
   "exp-tea": { photoId: "japan-summer", brief: "A tea ceremony or a Kyoto tea house garden." },
-  "exp-hiroshima": { photoId: null, brief: "Miyajima's shrine gate in the sea." },
+  "exp-hiroshima": { photoId: "hiroshima", brief: "Miyajima's shrine gate in the sea." },
   "exp-fuji": { photoId: null, brief: "Mt Fuji from Lake Kawaguchi." },
   "exp-monkeys": { photoId: "japan-trips-mountains", brief: "Snow monkeys at Jigokudani, Nagano, in winter." },
   "exp-ryokan": { photoId: null, brief: "A ryokan room or private open-air bath in Hakone." },

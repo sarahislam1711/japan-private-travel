@@ -25,4 +25,7 @@ export const photographs: Photo[] = z.array(PhotoSchema).parse([
   { id: "japan-summer-family", src: "/photos/japan-summer-family.jpg", alt: "", focus: "50% 92%" },
   { id: "japan-alps", src: "/photos/japan-alps.jpg", alt: "" },
   { id: "japan-trips-mountains", src: "/photos/japan-trips-mountains.jpg", alt: "" },
+  { id: "tokyo-disneyland", src: "/photos/Tokyo-disneyland.jpg", alt: "", focus: "50% 45%" },
+  { id: "hiroshima", src: "/photos/hiroshima-japan.jpg", alt: "" },
+  { id: "nara-park", src: "/photos/nara-park-japan.jpg", alt: "", focus: "60% 70%" },
 ]);
