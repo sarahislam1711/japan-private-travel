@@ -23,6 +23,7 @@ export async function SplitWords({ copy, accent }: { copy: Copy; accent?: Record
       {words.map((word, i) => {
         // An accented word (July, August) is set in pine with its Japanese name above it as ruby.
         const note = accent ? Object.entries(accent).find(([k]) => word.includes(k))?.[1] : undefined;
+        const accented = note !== undefined;
         return (
           <span key={i}>
             <span className={note ? "split-word split-accent" : "split-word"}>
@@ -32,6 +33,9 @@ export async function SplitWords({ copy, accent }: { copy: Copy; accent?: Record
                     {word}
                     <rt lang="ja">{note}</rt>
                   </ruby>
+                ) : accented ? (
+                  // An accent with no note: the word in pine, on the line like the rest.
+                  <span className="text-pine">{word}</span>
                 ) : (
                   word
                 )}

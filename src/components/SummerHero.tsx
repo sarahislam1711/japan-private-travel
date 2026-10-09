@@ -15,8 +15,8 @@ export async function SummerHero() {
   const locale = await getLocale();
   const pj = routeFor("privateJapan");
   const s = summerJourneys.story;
-  // July and August stand out in the title: pine, with 七月 and 八月 set above them.
-  const accent: Record<string, string> = locale === "ar" ? { "يوليو": "七月", "أغسطس": "八月" } : { July: "七月", August: "八月" };
+  // July and August stand out in the title in pine, on the line with the rest (no notes above, Sarah 10 Oct 2026).
+  const accent: Record<string, string> = locale === "ar" ? { "يوليو": "", "أغسطس": "" } : { July: "", August: "" };
   return (
     <section aria-labelledby="sj-title" className="mx-auto max-w-(--content-max) px-(--page-margin) pt-12 pb-4 desktop:pt-16">
       <h1 id="sj-title" data-reveal="words" className="sj-title max-w-[20ch] font-serif [font-variation-settings:'opsz'_60]">
@@ -24,11 +24,10 @@ export async function SummerHero() {
       </h1>
 
       {/* The turn: a quiet line, then the answer in pine. */}
-      <p data-reveal className="mt-10 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <span className="font-gothic text-copy text-ink-soft">
-          <CopyText copy={s.before} />
-        </span>
-        <span className="font-serif text-[clamp(1.625rem,1vw+1.1rem,2.125rem)] leading-[1.15] font-[480] text-pine [font-variation-settings:'opsz'_36]">
+      {/* The turn, as one sentence at one size; the answer picked out in pine. */}
+      <p data-reveal className="mt-7 max-w-[40rem] font-gothic text-copy text-ink-soft">
+        <CopyText copy={s.before} />{" "}
+        <span className="font-bold text-pine">
           <CopyText copy={s.turn} />
         </span>
       </p>
