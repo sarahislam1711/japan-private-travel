@@ -16,7 +16,7 @@ export const photoSlots = {
   "exp-monkeys": { photoId: "japan-trips-mountains", brief: "Snow monkeys at Jigokudani, Nagano, in winter." },
   "exp-ryokan": { photoId: null, brief: "A ryokan room or private open-air bath in Hakone." },
   "exp-nishiki": { photoId: null, brief: "Nishiki Market, Kyoto." },
-  "exp-indigo": { photoId: null, brief: "Indigo dyeing, hands and cloth." },
+  "exp-indigo": { photoId: "indigo-dyeing", brief: "Indigo dyeing, hands and cloth." },
   "exp-sakura": { photoId: null, brief: "Cherry blossom along the Philosopher's Path." },
   "exp-momiji": { photoId: "japan-private-tours", brief: "Red maples at a Kyoto temple in November." },
   // About: portraits (10 Oct 2026). Until supplied, each shows the person's initials.
