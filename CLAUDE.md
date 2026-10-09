@@ -60,6 +60,7 @@ Before any work in a session, read: `docs/PLAN.md` (where the build stands), `do
 | `pnpm guard:prod` | Guard in failing mode. |
 | `pnpm test` | Playwright e2e. |
 | `pnpm test:a11y` | axe on every route. |
+| `/admin` | Team area for trip plans sent from the planner (sign-in with ADMIN_PASSWORD; never indexed). |
 | `pnpm shots` | Screenshots of every route at 390, 834 and 1440px widths into `/tests/shots/<date>/`. |
 
 ## Checkpoint report format

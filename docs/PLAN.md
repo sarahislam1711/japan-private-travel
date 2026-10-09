@@ -45,7 +45,8 @@ Each page: brief → copy drafted in `CONTENT.md` → Sarah approves → build �
 - [ ] Privacy, Terms, 404
 
 ## Phase 4 — Make it work
-- [ ] Enquiry form: Supabase (Tokyo), Resend notification, Turnstile, rate limit.
+- [x] Enquiry backend (9 Oct 2026): the planner's "Send enquiry" saves to /api/enquiries (zod checks, honeypot, per-address rate limit); team admin area at /admin (password sign-in, list with status tabs and search, plan detail with status and notes, CSV export). Local file store in development; Supabase table ready in supabase/migrations/0001_enquiries.sql.
+- [ ] Connect Supabase (Tokyo): create the project, run the migration, set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY, ADMIN_PASSWORD and ADMIN_SECRET in Vercel. Turnstile and email alerts (Resend) not built; email alerts declined for now.
 - [ ] Advisor request form and rate portal (off until enabled).
 - [ ] Plausible analytics.
 Needs accounts (DECISIONS D13); built against test stand-ins until then.

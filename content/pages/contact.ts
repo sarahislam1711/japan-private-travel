@@ -76,7 +76,8 @@ export const contact = {
       startOver: draft("Start again"),
       sendWhatsApp: draft("Send on WhatsApp"),
     },
-    enquirySoon: draft("Sending by email opens soon. For now, send your plan on WhatsApp."),
+    sending: draft("Sending…"),
+    sendError: draft("Your plan could not be sent just now. Please try again, or send it on WhatsApp."),
     summary: {
       title: draft("Your plan so far"),
       empty: draft("Your answers appear here as you go."),

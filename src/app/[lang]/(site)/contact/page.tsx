@@ -31,7 +31,7 @@ export default async function ContactPage() {
     else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${path}.${i}`));
     else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) walk(x, path ? `${path}.${k}` : k);
   };
-  walk({ planner: contact.planner, fields: contact.form.fields, submit: contact.form.submit, privacyLine: contact.form.privacyLine }, "");
+  walk({ planner: contact.planner, fields: contact.form.fields, submit: contact.form.submit, confirmation: contact.form.confirmation, privacyLine: contact.form.privacyLine }, "");
 
   const summer = pick(routeFor("summerJourneys").navLabel!);
   const anywhere = pick(routeFor("privateJapan").navLabel!);

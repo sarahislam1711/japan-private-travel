@@ -354,7 +354,7 @@ Submit: "Send enquiry" (DRAFT). Confirmation (DRAFT): "Enquiry received. We will
 
 Privacy line under the form (DRAFT): "We use these details only to reply to you and plan your trip. See our privacy notice."
 
-**Trip planner** (Sarah, 7 Oct 2026: the Contact page becomes a six-step planner built on the form fields above; "Plan your trip" on Home links here. Same LOCKED rule: no budget step, no traveller-type step. Plans are sent on WhatsApp until the enquiry form's backend exists.) All DRAFT.
+**Trip planner** (Sarah, 7 Oct 2026: the Contact page becomes a six-step planner built on the form fields above; "Plan your trip" on Home links here. Same LOCKED rule: no budget step, no traveller-type step. Plans are sent as an enquiry, saved for the team's admin area, or on WhatsApp; 9 Oct 2026.) All DRAFT.
 
 Steps: Who → When → Where → The trip → Reply → Your plan. Month names come from the browser's own calendar names; place options reuse the Summer Journeys region names and the Private Japan label.
 
@@ -392,7 +392,8 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 | `planner.buttons.edit` | Edit | DRAFT |
 | `planner.buttons.startOver` | Start again | DRAFT |
 | `planner.buttons.sendWhatsApp` | Send on WhatsApp | DRAFT |
-| `planner.enquirySoon` | Sending by email opens soon. For now, send your plan on WhatsApp. | DRAFT |
+| `planner.sending` | Sending… | DRAFT |
+| `planner.sendError` | Your plan could not be sent just now. Please try again, or send it on WhatsApp. | DRAFT |
 | `planner.summary.title` | Your plan so far | DRAFT |
 | `planner.summary.empty` | Your answers appear here as you go. | DRAFT |
 | `planner.summary.travelling` | Travelling | DRAFT |

@@ -55,5 +55,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Skip Next internals, share images, icons, metadata files and anything with a file extension.
-  matcher: ["/((?!_next/|api/|og/|icon|apple-icon|robots\\.txt|sitemap\\.xml|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
+  // The admin area (/admin) is English-only and outside the language routing.
+  matcher: ["/((?!_next/|api/|admin|og/|icon|apple-icon|robots\\.txt|sitemap\\.xml|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
 };

@@ -65,6 +65,7 @@ export function TripPlanner({
   const [step, setStep] = useState<Step>("who");
   const [error, setError] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [send, setSend] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const headingRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
   const uid = useId();
@@ -165,6 +166,40 @@ export function TripPlanner({
     .filter((l, i, all) => l !== "" || all[i - 1] !== "")
     .join("\n");
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  // Send the plan to the team's admin area (/api/enquiries); answers are cleared from the device once it arrives.
+  const submit = async () => {
+    setSend("sending");
+    try {
+      const res = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          locale,
+          name: plan.name,
+          reply: plan.reply,
+          contact: plan.contact,
+          language: plan.language,
+          adults: plan.adults,
+          grandparents: plan.grandparents,
+          childAges: plan.childAges,
+          months: plan.notSure ? [] : plan.months,
+          notSure: plan.notSure,
+          datesNote: plan.datesNote,
+          places: plan.places,
+          needs: plan.needs,
+          website: "",
+        }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setSend("sent");
+      try {
+        localStorage.removeItem(STORE);
+      } catch {}
+    } catch {
+      setSend("error");
+    }
+  };
 
   const startOver = () => {
     setPlan(EMPTY);
@@ -365,27 +400,35 @@ export function TripPlanner({
                     </div>
                   ))}
                 </dl>
-                <div className="flex flex-col gap-3 tablet:flex-row tablet:items-center">
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noopener"
-                    className="inline-flex min-h-12 items-center justify-center rounded-(--radius-control) bg-ink px-6 font-gothic text-label font-bold text-plate no-underline transition-colors hover:bg-pine hover:text-plate"
-                  >
-                    {t["planner.buttons.sendWhatsApp"].node}
-                  </a>
-                  <button
-                    type="button"
-                    disabled
-                    aria-describedby={`${uid}-soon`}
-                    className="inline-flex min-h-12 cursor-not-allowed items-center justify-center rounded-(--radius-control) px-6 font-gothic text-label text-ink-soft ring-1 ring-ink/20 ring-inset"
-                  >
-                    {t["submit"].node}
-                  </button>
-                </div>
-                <p id={`${uid}-soon`} className="font-gothic text-small text-ink-soft">
-                  {t["planner.enquirySoon"].node}
-                </p>
+                {send === "sent" ? (
+                  <p role="status" className="rounded-[16px] bg-pine/10 px-5 py-4 font-serif text-[1.25rem] leading-snug text-pine">
+                    {t["confirmation"].node}
+                  </p>
+                ) : (
+                  <div className="flex flex-col gap-3 tablet:flex-row tablet:items-center">
+                    <button
+                      type="button"
+                      onClick={submit}
+                      disabled={send === "sending"}
+                      className="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-(--radius-control) bg-ink px-6 font-gothic text-label font-bold text-plate transition-colors hover:bg-pine disabled:cursor-wait disabled:opacity-70"
+                    >
+                      {send === "sending" ? t["planner.sending"].node : t["submit"].node}
+                    </button>
+                    <a
+                      href={whatsappHref}
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex min-h-12 items-center justify-center rounded-(--radius-control) px-6 font-gothic text-label text-ink no-underline ring-1 ring-ink ring-inset transition-colors hover:bg-ink hover:text-plate"
+                    >
+                      {t["planner.buttons.sendWhatsApp"].node}
+                    </a>
+                  </div>
+                )}
+                {send === "error" ? (
+                  <p role="alert" className="font-gothic text-small text-pine">
+                    {t["planner.sendError"].node}
+                  </p>
+                ) : null}
                 <p className="font-gothic text-small text-ink-soft">{t["privacyLine"].node}</p>
               </div>
             )}

@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**338** draft,
-**0** missing — of 340 strings.
+**339** draft,
+**0** missing — of 341 strings.
 
 ## content/site.ts
 
@@ -355,7 +355,8 @@ Status: **2** approved,
 | `contact.planner.buttons.edit` | Edit | <span dir="rtl" lang="ar">تعديل</span> | draft |
 | `contact.planner.buttons.startOver` | Start again | <span dir="rtl" lang="ar">البدء من جديد</span> | draft |
 | `contact.planner.buttons.sendWhatsApp` | Send on WhatsApp | <span dir="rtl" lang="ar">إرسال عبر واتساب</span> | draft |
-| `contact.planner.enquirySoon` | Sending by email opens soon. For now, send your plan on WhatsApp. | <span dir="rtl" lang="ar">الإرسال عبر البريد الإلكتروني متاح قريبًا. يمكنكم الآن إرسال خطّتكم عبر واتساب.</span> | draft |
+| `contact.planner.sending` | Sending… | <span dir="rtl" lang="ar">جارٍ الإرسال…</span> | draft |
+| `contact.planner.sendError` | Your plan could not be sent just now. Please try again, or send it on WhatsApp. | <span dir="rtl" lang="ar">تعذّر إرسال خطّتكم الآن. يُرجى المحاولة مرة أخرى، أو إرسالها عبر واتساب.</span> | draft |
 | `contact.planner.summary.title` | Your plan so far | <span dir="rtl" lang="ar">خطّتكم حتى الآن</span> | draft |
 | `contact.planner.summary.empty` | Your answers appear here as you go. | <span dir="rtl" lang="ar">تظهر إجاباتكم هنا خطوة بخطوة.</span> | draft |
 | `contact.planner.summary.travelling` | Travelling | <span dir="rtl" lang="ar">المسافرون</span> | draft |

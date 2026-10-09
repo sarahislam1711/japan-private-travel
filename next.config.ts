@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
       // The advisor portal is never indexed, whatever the environment (C9).
       { source: "/advisors/portal/:path*", headers: [noindex] },
       { source: "/ar/advisors/portal/:path*", headers: [noindex] },
+      // The team's admin area and the API are never indexed, whatever the environment.
+      { source: "/admin/:path*", headers: [noindex] },
+      { source: "/admin", headers: [noindex] },
+      { source: "/api/:path*", headers: [noindex] },
       // Previews, local builds and pre-domain builds are never indexed.
       ...(indexable ? [] : [{ source: "/:path*", headers: [noindex] }]),
     ];

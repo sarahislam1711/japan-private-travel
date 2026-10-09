@@ -19,7 +19,7 @@ const aiCrawlers = [
 ];
 
 // Never crawled: the gated portal (C9) and the dev-only styleguide, in both languages.
-const blocked = [...privatePathPrefixes, ...privatePathPrefixes.map((p) => `/ar${p}`), "/styleguide", "/ar/styleguide"];
+const blocked = [...privatePathPrefixes, ...privatePathPrefixes.map((p) => `/ar${p}`), "/styleguide", "/ar/styleguide", "/admin", "/api"];
 
 /**
  * Production on the real domain: everything public is open to search engines

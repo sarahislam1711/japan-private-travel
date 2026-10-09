@@ -73,7 +73,8 @@ export const contactAr: Translation<typeof contact> = {
       startOver: ard("البدء من جديد"),
       sendWhatsApp: ard("إرسال عبر واتساب"),
     },
-    enquirySoon: ard("الإرسال عبر البريد الإلكتروني متاح قريبًا. يمكنكم الآن إرسال خطّتكم عبر واتساب."),
+    sending: ard("جارٍ الإرسال…"),
+    sendError: ard("تعذّر إرسال خطّتكم الآن. يُرجى المحاولة مرة أخرى، أو إرسالها عبر واتساب."),
     summary: {
       title: ard("خطّتكم حتى الآن"),
       empty: ard("تظهر إجاباتكم هنا خطوة بخطوة."),
