@@ -100,14 +100,20 @@ export function RegionSwitcher({ regions, label, months }: { regions: RegionPane
             id={`region-panel-${r.id}`}
             aria-labelledby={`region-tab-${r.id}`}
             hidden={i !== active}
-            className="region-panel overflow-hidden rounded-[24px] bg-plate"
+            className="region-panel relative overflow-hidden rounded-[24px] bg-plate"
           >
+            {/* The region's summer photo, faded behind the text. */}
             {r.photo ? (
-              <div className="relative h-52 tablet:h-64">
-                <Image src={r.photo.src} alt="" fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" style={{ objectPosition: r.photo.focus }} />
-              </div>
+              <Image
+                src={r.photo.src}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                className="pointer-events-none object-cover opacity-25"
+                style={{ objectPosition: r.photo.focus }}
+              />
             ) : null}
-            <div className="flex flex-col gap-6 p-7 tablet:p-10">
+            <div className="relative flex flex-col gap-6 p-7 tablet:p-10">
               <div>
                 <p lang="ja" aria-hidden className="font-mincho text-[1.5rem] leading-none text-pine">
                   {r.kanji}
