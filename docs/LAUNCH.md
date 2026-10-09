@@ -37,7 +37,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 
 ## 4. Pages still to finish
 
-- [ ] Experiences: content from Sarah's data
+- [ ] Experiences: the page is built (9 Oct 2026) with **12 SAMPLE entries** (real public places, hosts by role, no named people). Replace or confirm each with real details: host, place, season, length, group size, booking lead time
 - [ ] Family Services: refocus on families (decide how far to take the Muslim-focus change, including the Home How we work step 3, the FAQ halal answer, the Summer Journeys link label and the page's meta title)
 - [ ] For travel advisors: content, and agent terms (no public numbers; tiers via the rate portal)
 - [ ] Advisor rate portal (planned, gated, noindex)

@@ -5,6 +5,7 @@ import { site } from "@content/site";
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { home as homeContent } from "@content/pages/home";
 import { about } from "@content/pages/about";
+import { experiences as experienceContent } from "@content/pages/experiences";
 import lastmod from "@content/lastmod.json";
 import { copyText, isPublishable } from "@/lib/copy";
 import { getLocale } from "@/lib/locale";
@@ -94,6 +95,20 @@ export async function StructuredData({ page }: { page: RouteKey }) {
             description,
             provider: { "@id": orgId },
             areaServed: { "@type": "Country", name: "Japan" },
+            hasOfferCatalog:
+              page === "experiences"
+                ? {
+                    "@type": "OfferCatalog",
+                    name,
+                    itemListElement: experienceContent.entries
+                      .map((e) => ({ title: text(e.title), what: text(e.what), city: text(e.city) }))
+                      .filter((e) => e.title)
+                      .map((e) => ({
+                        "@type": "Offer",
+                        itemOffered: { "@type": "TouristAttraction", name: e.title, description: e.what, address: { "@type": "PostalAddress", addressLocality: e.city, addressCountry: "JP" } },
+                      })),
+                  }
+                : undefined,
             audience:
               page === "forTravelAdvisors"
                 ? { "@type": "BusinessAudience", audienceType: locale === "ar" ? "مستشارو السفر" : "Travel advisors" }

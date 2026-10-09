@@ -72,10 +72,15 @@ export function TripPlanner({
 
   // Restore and keep answers on this device only.
   useEffect(() => {
+    let base = EMPTY;
     try {
       const saved = localStorage.getItem(STORE);
-      if (saved) setPlan({ ...EMPTY, ...JSON.parse(saved) });
+      if (saved) base = { ...EMPTY, ...JSON.parse(saved) };
     } catch {}
+    // "Plan this into my trip" on Experiences arrives as ?add=<title>: write it into the trip's needs.
+    const add = new URLSearchParams(window.location.search).get("add")?.trim().slice(0, 160);
+    if (add && !base.needs.includes(add)) base = { ...base, needs: base.needs ? `${base.needs}\n${add}` : add };
+    setPlan(base);
     setLoaded(true);
   }, []);
   useEffect(() => {

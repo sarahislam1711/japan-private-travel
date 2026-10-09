@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**339** draft,
-**0** missing — of 341 strings.
+**452** draft,
+**0** missing — of 454 strings.
 
 ## content/site.ts
 
@@ -214,7 +214,120 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `experiences.intro` | Each of these is arranged with a named person, in a stated season, with a stated lead time. If an entry says six weeks, it needs six weeks. | <span dir="rtl" lang="ar">تُرتَّب كلٌّ من هذه التجارب مع شخص معروف بالاسم، في موسم محدّد، وبمهلة مسبقة محدّدة. إذا ذكرت التجربة ستة أسابيع، فهي تحتاج إلى ستة أسابيع.</span> | draft |
+| `experiences.title` | Experiences we build into the trip. | <span dir="rtl" lang="ar">تجارب نُدرجها في رحلتكم.</span> | draft |
+| `experiences.intro` | Each one is planned around your family's days, not sold on its own. Choose what catches your eye and we will fit it into the plan. | <span dir="rtl" lang="ar">نخطّط كلًّا منها حول أيام عائلتكم، ولا نبيعها منفصلة. اختاروا ما يلفت انتباهكم، وسندرجه في الخطة.</span> | draft |
+| `experiences.categories[0].label` | Family days | <span dir="rtl" lang="ar">أيام للعائلة</span> | draft |
+| `experiences.categories[1].label` | Culture | <span dir="rtl" lang="ar">ثقافة</span> | draft |
+| `experiences.categories[2].label` | Nature | <span dir="rtl" lang="ar">طبيعة</span> | draft |
+| `experiences.categories[3].label` | Ryokan and onsen | <span dir="rtl" lang="ar">ريوكان وينابيع حارة</span> | draft |
+| `experiences.categories[4].label` | Food | <span dir="rtl" lang="ar">طعام</span> | draft |
+| `experiences.categories[5].label` | Craft | <span dir="rtl" lang="ar">حِرَف</span> | draft |
+| `experiences.ui.all` | All | <span dir="rtl" lang="ar">الكل</span> | draft |
+| `experiences.ui.seasonLabel` | Season | <span dir="rtl" lang="ar">الموسم</span> | draft |
+| `experiences.ui.categoryLabel` | Type | <span dir="rtl" lang="ar">النوع</span> | draft |
+| `experiences.ui.anySeason` | Any time | <span dir="rtl" lang="ar">أي وقت</span> | draft |
+| `experiences.ui.spring` | Spring | <span dir="rtl" lang="ar">الربيع</span> | draft |
+| `experiences.ui.summer` | Summer | <span dir="rtl" lang="ar">الصيف</span> | draft |
+| `experiences.ui.autumn` | Autumn | <span dir="rtl" lang="ar">الخريف</span> | draft |
+| `experiences.ui.winter` | Winter | <span dir="rtl" lang="ar">الشتاء</span> | draft |
+| `experiences.ui.host` | Host | <span dir="rtl" lang="ar">المضيف</span> | draft |
+| `experiences.ui.where` | Where | <span dir="rtl" lang="ar">المكان</span> | draft |
+| `experiences.ui.duration` | Length | <span dir="rtl" lang="ar">المدة</span> | draft |
+| `experiences.ui.group` | Group | <span dir="rtl" lang="ar">المجموعة</span> | draft |
+| `experiences.ui.lead` | Book ahead | <span dir="rtl" lang="ar">الحجز مسبقًا</span> | draft |
+| `experiences.ui.weeks` | weeks | <span dir="rtl" lang="ar">أسابيع</span> | draft |
+| `experiences.ui.week` | week | <span dir="rtl" lang="ar">أسبوع</span> | draft |
+| `experiences.ui.months` | When | <span dir="rtl" lang="ar">متى</span> | draft |
+| `experiences.ui.yearRound` | All year | <span dir="rtl" lang="ar">طوال العام</span> | draft |
+| `experiences.ui.plan` | Plan this into my trip | <span dir="rtl" lang="ar">أدرِجوا هذا في رحلتي</span> | draft |
+| `experiences.ui.close` | Close | <span dir="rtl" lang="ar">إغلاق</span> | draft |
+| `experiences.ui.count` | experiences | <span dir="rtl" lang="ar">تجارب</span> | draft |
+| `experiences.ui.empty` | Nothing in that season yet. Try another, or ask us. | <span dir="rtl" lang="ar">لا شيء في هذا الموسم بعد. جرّبوا موسمًا آخر، أو اسألونا.</span> | draft |
+| `experiences.ui.details` | Details | <span dir="rtl" lang="ar">التفاصيل</span> | draft |
+| `experiences.entries[0].title` | Tokyo Disneyland, paced for every age | <span dir="rtl" lang="ar">طوكيو ديزني لاند بإيقاع يناسب كل الأعمار</span> | draft |
+| `experiences.entries[0].city` | Urayasu, Tokyo | <span dir="rtl" lang="ar">أوراياسو، طوكيو</span> | draft |
+| `experiences.entries[0].venue` | Tokyo Disneyland | <span dir="rtl" lang="ar">طوكيو ديزني لاند</span> | draft |
+| `experiences.entries[0].practitioner` | Your family's guide for the day | <span dir="rtl" lang="ar">مرشد عائلتكم طوال اليوم</span> | draft |
+| `experiences.entries[0].what` | A full day planned around the youngest and the oldest: rides chosen in advance, a quiet lunch booked, and a rest in the middle of the afternoon. | <span dir="rtl" lang="ar">يوم كامل مخطَّط حول الأصغر سنًّا والأكبر: ألعاب مختارة مسبقًا، وغداء هادئ محجوز، واستراحة في منتصف بعد الظهر.</span> | draft |
+| `experiences.entries[0].duration` | Full day | <span dir="rtl" lang="ar">يوم كامل</span> | draft |
+| `experiences.entries[0].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[1].title` | Universal Studios Japan, Osaka | <span dir="rtl" lang="ar">يونيفرسال ستوديوز اليابان، أوساكا</span> | draft |
+| `experiences.entries[1].city` | Osaka | <span dir="rtl" lang="ar">أوساكا</span> | draft |
+| `experiences.entries[1].venue` | Universal Studios Japan | <span dir="rtl" lang="ar">يونيفرسال ستوديوز اليابان</span> | draft |
+| `experiences.entries[1].practitioner` | Your family's guide for the day | <span dir="rtl" lang="ar">مرشد عائلتكم طوال اليوم</span> | draft |
+| `experiences.entries[1].what` | A day at the park with entry times planned ahead, so the children see what they came for and the adults are not left waiting. | <span dir="rtl" lang="ar">يوم في المتنزه بمواعيد دخول مخطّطة مسبقًا، ليرى الأطفال ما جاؤوا من أجله دون أن ينتظر الكبار.</span> | draft |
+| `experiences.entries[1].duration` | Full day | <span dir="rtl" lang="ar">يوم كامل</span> | draft |
+| `experiences.entries[1].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[2].title` | Deer, temples and Nara Park | <span dir="rtl" lang="ar">الغزلان والمعابد في متنزه نارا</span> | draft |
+| `experiences.entries[2].city` | Nara | <span dir="rtl" lang="ar">نارا</span> | draft |
+| `experiences.entries[2].venue` | Nara Park and Tōdai-ji | <span dir="rtl" lang="ar">متنزه نارا ومعبد تودايجي</span> | draft |
+| `experiences.entries[2].practitioner` | A guide who knows the park | <span dir="rtl" lang="ar">مرشد يعرف المتنزه جيدًا</span> | draft |
+| `experiences.entries[2].what` | A gentle half day among the deer of Nara Park and the great hall of Tōdai-ji, flat paths and short walks, easy for grandparents and small children. | <span dir="rtl" lang="ar">نصف يوم هادئ بين غزلان متنزه نارا والقاعة الكبرى لمعبد تودايجي، بممرات مستوية ومسافات قصيرة تناسب الأجداد والأطفال الصغار.</span> | draft |
+| `experiences.entries[2].duration` | Half day | <span dir="rtl" lang="ar">نصف يوم</span> | draft |
+| `experiences.entries[2].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[3].title` | A tea ceremony in a Kyoto tea house | <span dir="rtl" lang="ar">حفل الشاي في بيت شاي في كيوتو</span> | draft |
+| `experiences.entries[3].city` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `experiences.entries[3].venue` | A tea house in Kyoto | <span dir="rtl" lang="ar">بيت شاي في كيوتو</span> | draft |
+| `experiences.entries[3].practitioner` | A tea teacher | <span dir="rtl" lang="ar">معلّم فنّ الشاي</span> | draft |
+| `experiences.entries[3].what` | A tea teacher explains each step of the ceremony, then the family prepares and drinks matcha together. Chairs are available for anyone who cannot kneel. | <span dir="rtl" lang="ar">يشرح معلّم الشاي كل خطوة من خطوات الحفل، ثم تحضّر العائلة شاي الماتشا وتشربه معًا. وتتوفّر كراسٍ لمن لا يستطيع الجلوس على الركبتين.</span> | draft |
+| `experiences.entries[3].duration` | 90 minutes | <span dir="rtl" lang="ar">90 دقيقة</span> | draft |
+| `experiences.entries[3].groupLimit` | Up to 8 | <span dir="rtl" lang="ar">حتى 8 أشخاص</span> | draft |
+| `experiences.entries[4].title` | Hiroshima and the island of Miyajima | <span dir="rtl" lang="ar">هيروشيما وجزيرة مياجيما</span> | draft |
+| `experiences.entries[4].city` | Hiroshima | <span dir="rtl" lang="ar">هيروشيما</span> | draft |
+| `experiences.entries[4].venue` | Peace Memorial Park and Itsukushima Shrine | <span dir="rtl" lang="ar">حديقة السلام التذكارية ومزار إيتسوكوشيما</span> | draft |
+| `experiences.entries[4].practitioner` | A guide from Hiroshima | <span dir="rtl" lang="ar">مرشد من هيروشيما</span> | draft |
+| `experiences.entries[4].what` | The Peace Memorial Park in the morning, then a short ferry to Miyajima and the shrine gate that stands in the sea at high tide. | <span dir="rtl" lang="ar">حديقة السلام التذكارية صباحًا، ثم رحلة قصيرة بالعبّارة إلى مياجيما وبوّابة المزار التي تقف في البحر عند المدّ.</span> | draft |
+| `experiences.entries[4].duration` | Full day | <span dir="rtl" lang="ar">يوم كامل</span> | draft |
+| `experiences.entries[4].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[5].title` | Mt Fuji from Lake Kawaguchi | <span dir="rtl" lang="ar">جبل فوجي من بحيرة كاواغوتشي</span> | draft |
+| `experiences.entries[5].city` | Yamanashi | <span dir="rtl" lang="ar">ياماناشي</span> | draft |
+| `experiences.entries[5].venue` | Lake Kawaguchi | <span dir="rtl" lang="ar">بحيرة كاواغوتشي</span> | draft |
+| `experiences.entries[5].practitioner` | Your driver and guide | <span dir="rtl" lang="ar">سائقكم ومرشدكم</span> | draft |
+| `experiences.entries[5].what` | A day by the lake facing Mt Fuji: a slow walk along the shore, the ropeway for the view, and lunch with the mountain in sight. Winter mornings are often the clearest. | <span dir="rtl" lang="ar">يوم عند البحيرة في مواجهة جبل فوجي: نزهة هادئة على الشاطئ، والتلفريك لمشاهدة المنظر، وغداء والجبل أمامكم. وغالبًا ما تكون صباحات الشتاء الأصفى.</span> | draft |
+| `experiences.entries[5].duration` | Full day | <span dir="rtl" lang="ar">يوم كامل</span> | draft |
+| `experiences.entries[5].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[6].title` | Snow monkeys at Jigokudani | <span dir="rtl" lang="ar">قرود الثلج في جيغوكوداني</span> | draft |
+| `experiences.entries[6].city` | Nagano | <span dir="rtl" lang="ar">ناغانو</span> | draft |
+| `experiences.entries[6].venue` | Jigokudani Monkey Park | <span dir="rtl" lang="ar">متنزه قرود جيغوكوداني</span> | draft |
+| `experiences.entries[6].practitioner` | Your driver and guide | <span dir="rtl" lang="ar">سائقكم ومرشدكم</span> | draft |
+| `experiences.entries[6].what` | A forest walk of about thirty minutes to the hot springs where wild monkeys bathe in the snow. Boots and warm layers are arranged for the children. | <span dir="rtl" lang="ar">نزهة في الغابة لنحو ثلاثين دقيقة حتى الينابيع الحارة حيث تستحمّ القرود البرّية وسط الثلج. ونرتّب الأحذية والملابس الدافئة للأطفال.</span> | draft |
+| `experiences.entries[6].duration` | Full day | <span dir="rtl" lang="ar">يوم كامل</span> | draft |
+| `experiences.entries[6].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[7].title` | A night at a ryokan in Hakone | <span dir="rtl" lang="ar">ليلة في ريوكان في هاكوني</span> | draft |
+| `experiences.entries[7].city` | Hakone | <span dir="rtl" lang="ar">هاكوني</span> | draft |
+| `experiences.entries[7].venue` | A ryokan in Hakone | <span dir="rtl" lang="ar">ريوكان في هاكوني</span> | draft |
+| `experiences.entries[7].practitioner` | The ryokan's own staff | <span dir="rtl" lang="ar">فريق الريوكان نفسه</span> | draft |
+| `experiences.entries[7].what` | A traditional inn with a private open-air bath for the family, dinner served in the room, and futons laid out for the night. Bathing is confirmed private, room by room. | <span dir="rtl" lang="ar">نُزُل تقليدي بحمّام خاص في الهواء الطلق للعائلة، وعشاء يُقدَّم في الغرفة، وفُرش يابانية تُفرش للنوم. ونؤكّد خصوصية الاستحمام غرفةً غرفة.</span> | draft |
+| `experiences.entries[7].duration` | One night | <span dir="rtl" lang="ar">ليلة واحدة</span> | draft |
+| `experiences.entries[7].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[8].title` | Nishiki Market and a family cooking class | <span dir="rtl" lang="ar">سوق نيشيكي ودرس طبخ للعائلة</span> | draft |
+| `experiences.entries[8].city` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `experiences.entries[8].venue` | Nishiki Market | <span dir="rtl" lang="ar">سوق نيشيكي</span> | draft |
+| `experiences.entries[8].practitioner` | A Kyoto cook | <span dir="rtl" lang="ar">طاهٍ من كيوتو</span> | draft |
+| `experiences.entries[8].what` | A morning walk through Nishiki Market choosing ingredients, then a cooking class where the family makes lunch together. Dishes are adapted to your dietary needs. | <span dir="rtl" lang="ar">جولة صباحية في سوق نيشيكي لاختيار المكوّنات، ثم درس طبخ تعدّ فيه العائلة الغداء معًا. وتُكيَّف الأطباق وفق احتياجاتكم الغذائية.</span> | draft |
+| `experiences.entries[8].duration` | 3 hours | <span dir="rtl" lang="ar">3 ساعات</span> | draft |
+| `experiences.entries[8].groupLimit` | Up to 8 | <span dir="rtl" lang="ar">حتى 8 أشخاص</span> | draft |
+| `experiences.entries[9].title` | Indigo dyeing in Tokyo | <span dir="rtl" lang="ar">الصباغة بالنيلة في طوكيو</span> | draft |
+| `experiences.entries[9].city` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
+| `experiences.entries[9].venue` | An indigo dyeing workshop | <span dir="rtl" lang="ar">ورشة صباغة بالنيلة</span> | draft |
+| `experiences.entries[9].practitioner` | An indigo craftsman | <span dir="rtl" lang="ar">حِرَفي متخصّص في الصباغة بالنيلة</span> | draft |
+| `experiences.entries[9].what` | Each member of the family dyes a cotton cloth by hand in natural indigo, with the craftsman showing the folds and ties. The cloths are dried and ready to take home the same day. | <span dir="rtl" lang="ar">يصبغ كل فرد من العائلة قطعة قماش قطنية يدويًا بالنيلة الطبيعية، ويُريهم الحِرَفي طرق الطيّ والربط. وتجفّ القطع وتكون جاهزة للأخذ في اليوم نفسه.</span> | draft |
+| `experiences.entries[9].duration` | 2 hours | <span dir="rtl" lang="ar">ساعتان</span> | draft |
+| `experiences.entries[9].groupLimit` | Up to 10 | <span dir="rtl" lang="ar">حتى 10 أشخاص</span> | draft |
+| `experiences.entries[10].title` | Cherry blossom morning on the Philosopher's Path | <span dir="rtl" lang="ar">صباح أزهار الكرز على ممرّ الفيلسوف</span> | draft |
+| `experiences.entries[10].city` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `experiences.entries[10].venue` | The Philosopher's Path | <span dir="rtl" lang="ar">ممرّ الفيلسوف</span> | draft |
+| `experiences.entries[10].practitioner` | A Kyoto guide | <span dir="rtl" lang="ar">مرشد من كيوتو</span> | draft |
+| `experiences.entries[10].what` | An early walk along the canal under the cherry trees, before the crowds, ending with breakfast nearby. Blossom dates move each year, so we plan the week around the forecast. | <span dir="rtl" lang="ar">نزهة مبكّرة على طول القناة تحت أشجار الكرز قبل الازدحام، تنتهي بإفطار قريب. وتتغيّر مواعيد الإزهار كل عام، لذا نخطّط للأسبوع وفق التوقّعات.</span> | draft |
+| `experiences.entries[10].duration` | 3 hours | <span dir="rtl" lang="ar">3 ساعات</span> | draft |
+| `experiences.entries[10].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
+| `experiences.entries[11].title` | Autumn leaves at Eikan-dō | <span dir="rtl" lang="ar">أوراق الخريف في معبد إيكان-دو</span> | draft |
+| `experiences.entries[11].city` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `experiences.entries[11].venue` | Eikan-dō temple | <span dir="rtl" lang="ar">معبد إيكان-دو</span> | draft |
+| `experiences.entries[11].practitioner` | A Kyoto guide | <span dir="rtl" lang="ar">مرشد من كيوتو</span> | draft |
+| `experiences.entries[11].what` | A temple garden known for its red maples in November, visited at the quietest hour we can arrange, with a slow walk up to the pagoda for the view over the city. | <span dir="rtl" lang="ar">حديقة معبد معروفة بأشجار القيقب الحمراء في نوفمبر، نزورها في أهدأ ساعة نستطيع ترتيبها، مع صعود على مهل إلى الباغودا لمشاهدة المدينة.</span> | draft |
+| `experiences.entries[11].duration` | 3 hours | <span dir="rtl" lang="ar">3 ساعات</span> | draft |
+| `experiences.entries[11].groupLimit` | Your family | <span dir="rtl" lang="ar">عائلتكم</span> | draft |
 
 ## content/pages/about.ts
 

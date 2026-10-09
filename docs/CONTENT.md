@@ -246,23 +246,41 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 
 ## 7. Experiences (`/experiences`)
 
-**Intro — DRAFT**
+**Experiences** (rebuilt 9 Oct 2026). All DRAFT. **The twelve entries are SAMPLES** written at Sarah's request to design the page: real public places, hosts described by role, no named people. They must be replaced or confirmed before launch (the guard blocks drafts in production).
 
-> Each of these is arranged with a named person, in a stated season, with a stated lead time. If an entry says six weeks, it needs six weeks.
+> **Experiences we build into the trip.**
+> Each one is planned around your family's days, not sold on its own. Choose what catches your eye and we will fit it into the plan.
 
-**Entries — 8 to 12, supplied by the operator.** Fixed format (strategy §6, LOCKED):
+Categories: Family days (遊) · Culture (寺) · Nature (山) · Ryokan and onsen (湯) · Food (食) · Craft (匠)
 
-```ts
-{
-  venue: "[[VENUE]]", city: "[[CITY]]",
-  what: "[[WHAT_HAPPENS]]",
-  practitioner: "[[NAMED_PRACTITIONER]]",   // cleric, artisan, chef — a real name
-  season: "[[SEASON_OR_MONTHS]]",
-  duration: "[[DURATION]]",
-  groupLimit: "[[GROUP_LIMIT]]",
-  leadTimeWeeks: 0,                          // number
-}
-```
+Labels: "All" · "Season" · "Type" · "Any time" · "Spring" · "Summer" · "Autumn" · "Winter" · "Host" · "Where" · "Length" · "Group" · "Book ahead" · "weeks" · "week" · "When" · "All year" · "Plan this into my trip" · "Close" · "experiences" · "Nothing in that season yet. Try another, or ask us." · "Details"
+
+Entries (SAMPLE):
+
+- **Tokyo Disneyland, paced for every age** · Urayasu, Tokyo · Tokyo Disneyland · Host: Your family's guide for the day · Full day · Your family · book 4 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A full day planned around the youngest and the oldest: rides chosen in advance, a quiet lunch booked, and a rest in the middle of the afternoon.
+- **Universal Studios Japan, Osaka** · Osaka · Universal Studios Japan · Host: Your family's guide for the day · Full day · Your family · book 4 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A day at the park with entry times planned ahead, so the children see what they came for and the adults are not left waiting.
+- **Deer, temples and Nara Park** · Nara · Nara Park and Tōdai-ji · Host: A guide who knows the park · Half day · Your family · book 1 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A gentle half day among the deer of Nara Park and the great hall of Tōdai-ji, flat paths and short walks, easy for grandparents and small children.
+- **A tea ceremony in a Kyoto tea house** · Kyoto · A tea house in Kyoto · Host: A tea teacher · 90 minutes · Up to 8 · book 3 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A tea teacher explains each step of the ceremony, then the family prepares and drinks matcha together. Chairs are available for anyone who cannot kneel.
+- **Hiroshima and the island of Miyajima** · Hiroshima · Peace Memorial Park and Itsukushima Shrine · Host: A guide from Hiroshima · Full day · Your family · book 2 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  The Peace Memorial Park in the morning, then a short ferry to Miyajima and the shrine gate that stands in the sea at high tide.
+- **Mt Fuji from Lake Kawaguchi** · Yamanashi · Lake Kawaguchi · Host: Your driver and guide · Full day · Your family · book 3 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A day by the lake facing Mt Fuji: a slow walk along the shore, the ropeway for the view, and lunch with the mountain in sight. Winter mornings are often the clearest.
+- **Snow monkeys at Jigokudani** · Nagano · Jigokudani Monkey Park · Host: Your driver and guide · Full day · Your family · book 4 weeks ahead · months [11, 0, 1, 2]
+  A forest walk of about thirty minutes to the hot springs where wild monkeys bathe in the snow. Boots and warm layers are arranged for the children.
+- **A night at a ryokan in Hakone** · Hakone · A ryokan in Hakone · Host: The ryokan's own staff · One night · Your family · book 8 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A traditional inn with a private open-air bath for the family, dinner served in the room, and futons laid out for the night. Bathing is confirmed private, room by room.
+- **Nishiki Market and a family cooking class** · Kyoto · Nishiki Market · Host: A Kyoto cook · 3 hours · Up to 8 · book 3 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  A morning walk through Nishiki Market choosing ingredients, then a cooking class where the family makes lunch together. Dishes are adapted to your dietary needs.
+- **Indigo dyeing in Tokyo** · Tokyo · An indigo dyeing workshop · Host: An indigo craftsman · 2 hours · Up to 10 · book 2 weeks ahead · months [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  Each member of the family dyes a cotton cloth by hand in natural indigo, with the craftsman showing the folds and ties. The cloths are dried and ready to take home the same day.
+- **Cherry blossom morning on the Philosopher's Path** · Kyoto · The Philosopher's Path · Host: A Kyoto guide · 3 hours · Your family · book 10 weeks ahead · months [2, 3]
+  An early walk along the canal under the cherry trees, before the crowds, ending with breakfast nearby. Blossom dates move each year, so we plan the week around the forecast.
+- **Autumn leaves at Eikan-dō** · Kyoto · Eikan-dō temple · Host: A Kyoto guide · 3 hours · Your family · book 10 weeks ahead · months [10]
+  A temple garden known for its red maples in November, visited at the quietest hour we can arrange, with a slow walk up to the pagoda for the view over the city.
 
 Banned in any entry (COMPLIANCE C3): "private access", "exclusive", "arranged through a relationship", "after hours" at any Imperial Household Agency property.
 

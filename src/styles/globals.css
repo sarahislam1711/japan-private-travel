@@ -351,6 +351,17 @@
     }
   }
 
+  /* Experiences: the detail panel rises in; cards glide between filters (view transitions). */
+  @media (prefers-reduced-motion: no-preference) {
+    .exp-dialog[open] > div {
+      animation: planner-in 350ms var(--ease-out-expo) both;
+    }
+    ::view-transition-group(*) {
+      animation-duration: 450ms;
+      animation-timing-function: var(--ease-out-expo);
+    }
+  }
+
   /* Trip planner: each step and each new line of the plan settles in. */
   @media (prefers-reduced-motion: no-preference) {
     .planner-step {
