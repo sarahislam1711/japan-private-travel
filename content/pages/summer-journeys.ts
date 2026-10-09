@@ -70,7 +70,7 @@ export const summerJourneys = {
       note: locked("The cool is the altitude: Tateyama-Kurobe, Kamikochi."),
     },
   ] satisfies Region[],
-  closing: draft("Summer dates go first. Tell us the household and the weeks you are weighing."),
+  closing: draft("Summer books up early. Tell us who is coming and when."),
   // Page sections drafted 6 Oct 2026 (CONTENT.md §4).
   heroImage: [draft("七月", { lang: "ja" }), draft("八月", { lang: "ja" })],
   otherSeasons: draft("Travelling at another time of year?"),

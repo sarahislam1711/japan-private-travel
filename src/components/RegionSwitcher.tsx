@@ -51,11 +51,11 @@ export function RegionSwitcher({ regions, label }: { regions: RegionPanel[]; lab
               aria-controls={`region-panel-${r.id}`}
               tabIndex={on ? 0 : -1}
               onClick={() => setActive(i)}
-              className={`group flex cursor-pointer flex-col items-start gap-2 rounded-[20px] p-4 text-start transition-colors duration-300 tablet:p-6 ${
+              className={`group flex min-w-0 cursor-pointer flex-col items-start gap-2 overflow-hidden rounded-[20px] p-3.5 text-start transition-colors duration-300 tablet:p-6 ${
                 on ? "bg-pine text-plate" : "bg-plate text-ink hover:bg-white"
               }`}
             >
-              <span lang="ja" aria-hidden className={`font-mincho text-[clamp(1.5rem,2.6vw,2.5rem)] leading-none whitespace-nowrap ${on ? "text-pine-soft" : "text-pine"}`}>
+              <span lang="ja" aria-hidden className={`max-w-full font-mincho text-[1.125rem] leading-none whitespace-nowrap tablet:text-[clamp(1.5rem,2.6vw,2.5rem)] ${on ? "text-pine-soft" : "text-pine"}`}>
                 {r.kanji}
               </span>
               <span className="font-serif text-[clamp(1rem,1vw+0.7rem,1.5rem)] leading-tight [font-variation-settings:'opsz'_24]">{r.name}</span>
@@ -74,11 +74,13 @@ export function RegionSwitcher({ regions, label }: { regions: RegionPanel[]; lab
           className="region-panel mt-3 grid overflow-hidden rounded-[24px] bg-plate tablet:mt-4 desktop:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
         >
           {/* Picture side: the summer photo, or the name set vertically on pine soft until one exists. */}
-          <div className="relative min-h-56 bg-pine-soft desktop:min-h-[26rem]">
+          <div className="relative min-h-72 overflow-hidden bg-pine-soft desktop:min-h-[26rem]">
             {r.photo ? (
               <Image src={r.photo.src} alt="" fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" style={{ objectPosition: r.photo.focus }} />
             ) : (
-              <span lang="ja" aria-hidden dir="ltr" className="absolute inset-0 flex flex-row-reverse items-center justify-center gap-3 font-mincho text-[clamp(4rem,8vw,7.5rem)] leading-[1.02] text-pine">
+              <span lang="ja" aria-hidden dir="ltr" className={`absolute inset-0 flex flex-row-reverse items-center justify-center gap-3 font-mincho leading-[1.02] text-pine ${
+                  r.kanji.replace("・", "").length > 3 ? "text-[clamp(2.5rem,4.2vw,4.25rem)]" : "text-[clamp(3.5rem,8vw,7.5rem)]"
+                }`}>
                 {r.kanji.split("・").map((part) => (
                   <span key={part} className="[writing-mode:vertical-rl]">
                     {part}

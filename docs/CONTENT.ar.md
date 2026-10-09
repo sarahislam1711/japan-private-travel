@@ -166,7 +166,7 @@ Status: **2** approved,
 | `summerJourneys.regions[2].extra.label` | Reached via | <span dir="rtl" lang="ar">الوصول عبر</span> | draft |
 | `summerJourneys.regions[2].extra.value` | Hokuriku / Nagano | <span dir="rtl" lang="ar">هوكوريكو / ناغانو</span> | draft |
 | `summerJourneys.regions[2].note` | The cool is the altitude: Tateyama-Kurobe, Kamikochi. | <span dir="rtl" lang="ar">البرودة هنا سببها الارتفاع: تاتياما-كوروبي، كاميكوتشي.</span> | draft |
-| `summerJourneys.closing` | Summer dates go first. Tell us the household and the weeks you are weighing. | <span dir="rtl" lang="ar">مواعيد الصيف تُحجز أولًا. أخبرونا عن أفراد العائلة والأسابيع التي تفكّرون فيها.</span> | draft |
+| `summerJourneys.closing` | Summer books up early. Tell us who is coming and when. | <span dir="rtl" lang="ar">الصيف يُحجز مبكرًا. أخبرونا مَن سيسافر ومتى.</span> | draft |
 | `summerJourneys.otherSeasons` | Travelling at another time of year? | <span dir="rtl" lang="ar">هل تسافرون في وقت آخر من السنة؟</span> | draft |
 | `summerJourneys.months.heading` | Two months, three places. | <span dir="rtl" lang="ar">شهران، وثلاثة أماكن.</span> | draft |
 | `summerJourneys.months.text` | Tokyo's summer is hot and crowded. The places we plan for families in July and August sit further north, higher up, or by the sea. | <span dir="rtl" lang="ar">صيف طوكيو حارّ ومزدحم. أما الأماكن التي نخطّط لها للعائلات في يوليو وأغسطس فتقع أبعد شمالًا، أو أعلى ارتفاعًا، أو على البحر.</span> | draft |

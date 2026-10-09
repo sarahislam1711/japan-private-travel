@@ -191,7 +191,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 
 **Closing — DRAFT**
 
-> Summer dates go first. Tell us the household and the weeks you are weighing.
+> Summer books up early. Tell us who is coming and when. (DRAFT, simplified at Sarah's request, 10 Oct 2026)
 > [WhatsApp button]
 
 **Page sections — DRAFT** (drafted 6 Oct 2026 for approval; restates approved copy, no new facts)

@@ -55,7 +55,7 @@ export const summerJourneysAr: Translation<typeof summerJourneys> = {
       note: ard("البرودة هنا سببها الارتفاع: تاتياما-كوروبي، كاميكوتشي."),
     },
   ],
-  closing: ard("مواعيد الصيف تُحجز أولًا. أخبرونا عن أفراد العائلة والأسابيع التي تفكّرون فيها."),
+  closing: ard("الصيف يُحجز مبكرًا. أخبرونا مَن سيسافر ومتى."),
   otherSeasons: ard("هل تسافرون في وقت آخر من السنة؟"),
   months: {
     heading: ard("شهران، وثلاثة أماكن."),
