@@ -1,6 +1,8 @@
 import { experiences } from "@content/pages/experiences";
 import { home } from "@content/pages/home";
 import { localePath } from "@content/routes";
+import { photographs } from "@content/photography.manifest";
+import { photoSlots, type PhotoSlotId } from "@content/photography.slots";
 import type { Copy } from "@content/schema";
 import { CopyText } from "@/components/CopyText";
 import { ExperiencesBrowser, type T } from "@/components/ExperiencesBrowser";
@@ -25,19 +27,18 @@ export default async function ExperiencesPage() {
   return (
     <main id="main">
       <StructuredData page="experiences" />
-      <section aria-labelledby="exp-title" className="mx-auto max-w-(--content-max) px-(--page-margin) pt-10 desktop:pt-16">
-        <div className="flex flex-col gap-5">
-          <h1 id="exp-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
-            <SplitWords copy={experiences.title} />
-          </h1>
-          <p data-reveal className="max-w-[40rem] font-gothic text-copy text-ink-soft">
-            <CopyText copy={experiences.intro} />
-          </p>
-        </div>
-      </section>
-
-      <section aria-labelledby="exp-title" className="mx-auto mt-8 max-w-(--content-max) px-(--page-margin)">
+      <section aria-labelledby="exp-title" className="mx-auto max-w-(--content-max) px-(--page-margin)">
         <ExperiencesBrowser
+          header={
+            <>
+              <h1 id="exp-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
+                <SplitWords copy={experiences.title} />
+              </h1>
+              <p data-reveal className="mt-5 max-w-[36rem] font-gothic text-copy text-ink-soft">
+                <CopyText copy={experiences.intro} />
+              </p>
+            </>
+          }
           locale={locale}
           contactPath={localePath("contact", locale)}
           ui={ui}
@@ -47,6 +48,11 @@ export default async function ExperiencesPage() {
             category: e.category,
             months: e.months,
             leadTimeWeeks: e.leadTimeWeeks,
+            photo: (() => {
+              const id = photoSlots[`exp-${e.id}` as PhotoSlotId]?.photoId;
+              const p = id ? photographs.find((x) => x.id === id) : undefined;
+              return p ? { src: p.src, focus: p.focus } : undefined;
+            })(),
             title: pick(e.title),
             city: pick(e.city),
             venue: pick(e.venue),

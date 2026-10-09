@@ -253,7 +253,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 
 Categories: Family days (遊) · Culture (寺) · Nature (山) · Ryokan and onsen (湯) · Food (食) · Craft (匠)
 
-Labels: "All" · "Season" · "Type" · "Any time" · "Spring" · "Summer" · "Autumn" · "Winter" · "Host" · "Where" · "Length" · "Group" · "Book ahead" · "weeks" · "week" · "When" · "All year" · "Plan this into my trip" · "Close" · "experiences" · "Nothing in that season yet. Try another, or ask us." · "Details"
+Labels: "All" · "Season" · "Type" · "Any time" · "Spring" · "Summer" · "Autumn" · "Winter" · "Host" · "Where" · "Length" · "Group" · "Book ahead" · "weeks" · "week" · "When" · "All year" · "Plan this into my trip" · "Close" · "experiences" · "experience" · "When are you travelling?" · "Nothing in that season yet. Try another, or ask us." · "Details"
 
 Entries (SAMPLE):
 

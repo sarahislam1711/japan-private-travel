@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**455** draft,
-**0** missing — of 457 strings.
+**457** draft,
+**0** missing — of 459 strings.
 
 ## content/site.ts
 
@@ -242,6 +242,8 @@ Status: **2** approved,
 | `experiences.ui.plan` | Plan this into my trip | <span dir="rtl" lang="ar">أدرِجوا هذا في رحلتي</span> | draft |
 | `experiences.ui.close` | Close | <span dir="rtl" lang="ar">إغلاق</span> | draft |
 | `experiences.ui.count` | experiences | <span dir="rtl" lang="ar">تجارب</span> | draft |
+| `experiences.ui.countOne` | experience | <span dir="rtl" lang="ar">تجربة</span> | draft |
+| `experiences.ui.seasonQuestion` | When are you travelling? | <span dir="rtl" lang="ar">متى تسافرون؟</span> | draft |
 | `experiences.ui.empty` | Nothing in that season yet. Try another, or ask us. | <span dir="rtl" lang="ar">لا شيء في هذا الموسم بعد. جرّبوا موسمًا آخر، أو اسألونا.</span> | draft |
 | `experiences.ui.details` | Details | <span dir="rtl" lang="ar">التفاصيل</span> | draft |
 | `experiences.entries[0].title` | Tokyo Disneyland, paced for every age | <span dir="rtl" lang="ar">طوكيو ديزني لاند بإيقاع يناسب كل الأعمار</span> | draft |

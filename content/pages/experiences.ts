@@ -39,6 +39,8 @@ export const experiences = {
     plan: draft("Plan this into my trip"),
     close: draft("Close"),
     count: draft("experiences"),
+    countOne: draft("experience"),
+    seasonQuestion: draft("When are you travelling?"),
     empty: draft("Nothing in that season yet. Try another, or ask us."),
     details: draft("Details"),
   },

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { flushSync } from "react-dom";
 
@@ -12,6 +13,8 @@ export type Entry = {
   category: string;
   months: number[];
   leadTimeWeeks: number;
+  /** Optional photo: faded behind the card, full colour at the top of the detail panel. */
+  photo?: { src: string; focus?: string };
   title: T;
   city: T;
   venue: T;
@@ -41,12 +44,15 @@ export function ExperiencesBrowser({
   ui,
   locale,
   contactPath,
+  header,
 }: {
   categories: Category[];
   entries: Entry[];
   ui: Record<string, T>;
   locale: "en" | "ar";
   contactPath: string;
+  /** The page's title and intro, set beside the season tiles. */
+  header: ReactNode;
 }) {
   const [type, setType] = useState<string>("all");
   const [season, setSeason] = useState<Season>("any");
@@ -107,12 +113,62 @@ export function ExperiencesBrowser({
       active ? "bg-ink text-plate" : "bg-plate text-ink hover:bg-mist"
     }`;
 
+  const seasons = ["spring", "summer", "autumn", "winter"] as const;
   return (
     <>
-      {/* Filters: type, then season. Sticky under the header while browsing. */}
+      {/* Header: title and intro, with the season tiles beside them. Season first: it is what a family knows. */}
+      <div className="grid gap-x-12 gap-y-10 pt-10 desktop:grid-cols-12 desktop:items-end desktop:pt-16">
+        <div className="desktop:col-span-6">{header}</div>
+        <div role="group" aria-labelledby="exp-season-q" className="desktop:col-span-6">
+          <div className="flex items-baseline justify-between gap-4">
+            <p id="exp-season-q" className="font-gothic text-small text-ink-soft">
+              {ui.seasonQuestion.node}
+            </p>
+            <button
+              type="button"
+              aria-pressed={season === "any"}
+              onClick={() => change({ season: "any" })}
+              className={`tap cursor-pointer font-gothic text-small underline-offset-4 ${season === "any" ? "text-pine underline decoration-2" : "text-ink-soft underline hover:text-pine"}`}
+            >
+              {ui.anySeason.node}
+            </button>
+          </div>
+          {/* Four tiles in the year's order; each lights its three months, like the strip on every card. */}
+          <div className="mt-3 grid grid-cols-4 gap-2">
+            {seasons.map((s) => {
+              const on = season === s;
+              return (
+                <button
+                  key={s}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => change({ season: on ? "any" : s })}
+                  className={`group flex cursor-pointer flex-col items-start gap-2 rounded-[16px] p-3 text-start transition-colors tablet:p-4 ${on ? "bg-pine text-plate" : "bg-plate text-ink hover:bg-white"}`}
+                >
+                  <span lang="ja" aria-hidden className={`font-mincho text-[clamp(1.75rem,2.4vw,2.5rem)] leading-none ${on ? "text-plate" : "text-pine"}`}>
+                    {SEASONS[s].kanji}
+                  </span>
+                  <span className="font-gothic text-small">{ui[s].node}</span>
+                  <span aria-hidden className="grid w-full grid-cols-3 gap-[3px]">
+                    {SEASONS[s].months.map((m) => (
+                      <span key={m} className={`h-1 rounded-full ${on ? "bg-plate/70" : "bg-pine/30 group-hover:bg-pine/60"}`} />
+                    ))}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <p aria-live="polite" className="mt-3 font-gothic text-small text-ink-soft tablet:hidden">
+            <span dir="ltr">{shown.length}</span> {(shown.length === 1 ? ui.countOne : ui.count).node}
+          </p>
+        </div>
+      </div>
+
+      {/* Type filters: sticky under the header while browsing. */}
       <div className="sticky top-0 z-20 -mx-(--page-margin) bg-ground/95 px-(--page-margin) py-4 backdrop-blur-sm">
         <div className="flex flex-col gap-3">
-          <div role="group" aria-label={ui.categoryLabel.text} className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] desktop:flex-wrap desktop:overflow-visible">
+          <div className="flex items-center gap-4">
+          <div role="group" aria-label={ui.categoryLabel.text} className="-mx-1 flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] desktop:flex-wrap desktop:overflow-visible">
             <button type="button" aria-pressed={type === "all"} onClick={() => change({ type: "all" })} className={chip(type === "all")}>
               {ui.all.node}
             </button>
@@ -125,30 +181,9 @@ export function ExperiencesBrowser({
               </button>
             ))}
           </div>
-          <div className="flex flex-col-reverse gap-3 tablet:flex-row tablet:items-center tablet:justify-between">
-            <p aria-live="polite" className="font-gothic text-small text-ink-soft">
-              <span dir="ltr">{shown.length}</span> {ui.count.node}
+            <p aria-live="polite" className="hidden shrink-0 font-gothic text-small text-ink-soft tablet:block">
+              <span dir="ltr">{shown.length}</span> {(shown.length === 1 ? ui.countOne : ui.count).node}
             </p>
-            <div role="group" aria-label={ui.seasonLabel.text} className="flex max-w-full gap-1 self-start overflow-x-auto rounded-full bg-plate p-1 [scrollbar-width:none] tablet:shrink-0 tablet:self-auto">
-              {(["any", "spring", "summer", "autumn", "winter"] as const).map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  aria-pressed={season === s}
-                  onClick={() => change({ season: s })}
-                  className={`inline-flex min-h-10 shrink-0 cursor-pointer items-center gap-1.5 rounded-full px-3 font-gothic text-small transition-colors ${
-                    season === s ? "bg-pine text-plate" : "text-ink hover:bg-mist"
-                  }`}
-                >
-                  {s === "any" ? null : (
-                    <span lang="ja" aria-hidden className="font-mincho leading-none">
-                      {SEASONS[s].kanji}
-                    </span>
-                  )}
-                  {(s === "any" ? ui.anySeason : ui[s]).node}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -167,6 +202,16 @@ export function ExperiencesBrowser({
                   onClick={(ev) => show(e, ev.currentTarget)}
                   className="exp-card group relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-[20px] bg-plate p-6 text-start transition-colors duration-300 hover:bg-white focus-visible:bg-white"
                 >
+                  {e.photo ? (
+                    <Image
+                      src={e.photo.src}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 834px) 50vw, 100vw"
+                      className="pointer-events-none object-cover opacity-20 grayscale-[25%] transition-opacity duration-500 group-hover:opacity-30"
+                      style={{ objectPosition: e.photo.focus }}
+                    />
+                  ) : null}
                   {/* The category's kanji, large and faint: the site's motif. */}
                   <span
                     lang="ja"
@@ -216,6 +261,11 @@ export function ExperiencesBrowser({
       >
         {open ? (
           <div className="relative max-h-[88svh] overflow-y-auto rounded-[24px] bg-plate p-7 tablet:p-10 max-tablet:rounded-b-none" data-lenis-prevent>
+            {open.photo ? (
+              <div className="relative -mx-7 -mt-7 mb-7 h-48 overflow-hidden rounded-t-[24px] tablet:-mx-10 tablet:-mt-10 tablet:h-56">
+                <Image src={open.photo.src} alt="" fill sizes="44rem" className="object-cover" style={{ objectPosition: open.photo.focus }} />
+              </div>
+            ) : null}
             <span lang="ja" aria-hidden className="pointer-events-none absolute end-6 top-4 font-mincho text-[7rem] leading-none text-pine/[0.08]">
               {cat(open.category).symbol.text}
             </span>

@@ -6,6 +6,19 @@
 export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
+  // Experiences: one photo per card, faded behind its text (10 Oct 2026). Stand-ins only where they truly match.
+  "exp-disneyland": { photoId: null, brief: "Tokyo Disneyland, a family at a distance or from behind." },
+  "exp-usj": { photoId: null, brief: "Universal Studios Japan, Osaka." },
+  "exp-nara": { photoId: null, brief: "Deer in Nara Park, or Tōdai-ji." },
+  "exp-tea": { photoId: "japan-summer", brief: "A tea ceremony or a Kyoto tea house garden." },
+  "exp-hiroshima": { photoId: null, brief: "Miyajima's shrine gate in the sea." },
+  "exp-fuji": { photoId: null, brief: "Mt Fuji from Lake Kawaguchi." },
+  "exp-monkeys": { photoId: "japan-trips-mountains", brief: "Snow monkeys at Jigokudani, Nagano, in winter." },
+  "exp-ryokan": { photoId: null, brief: "A ryokan room or private open-air bath in Hakone." },
+  "exp-nishiki": { photoId: null, brief: "Nishiki Market, Kyoto." },
+  "exp-indigo": { photoId: null, brief: "Indigo dyeing, hands and cloth." },
+  "exp-sakura": { photoId: null, brief: "Cherry blossom along the Philosopher's Path." },
+  "exp-momiji": { photoId: "japan-private-tours", brief: "Red maples at a Kyoto temple in November." },
   // About: portraits (10 Oct 2026). Until supplied, each shows the person's initials.
   "about-founder": { photoId: null, brief: "Fathy Mohamed Mohamed Ismail Ahmed, Representative Director: portrait, natural light, 4:5." },
   "about-manager-1": { photoId: null, brief: "Mariko Kajiwara, licensed travel manager: portrait, natural light, square." },

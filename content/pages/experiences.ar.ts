@@ -34,6 +34,8 @@ export const experiencesAr: Translation<typeof experiences> = {
     plan: ard("أدرِجوا هذا في رحلتي"),
     close: ard("إغلاق"),
     count: ard("تجارب"),
+    countOne: ard("تجربة"),
+    seasonQuestion: ard("متى تسافرون؟"),
     empty: ard("لا شيء في هذا الموسم بعد. جرّبوا موسمًا آخر، أو اسألونا."),
     details: ard("التفاصيل"),
   },
