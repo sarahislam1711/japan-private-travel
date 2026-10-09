@@ -118,16 +118,16 @@ export function ExperiencesBrowser({
       {/* Header: just the title and intro. */}
       <div className="max-w-[48rem] pt-10 desktop:pt-16">{header}</div>
 
-      {/* Filters: season tabs, then type pills. Sticky under the header while browsing. */}
-      <div className="sticky top-0 z-20 -mx-(--page-margin) mt-8 bg-ground/95 px-(--page-margin) pt-2 pb-4 backdrop-blur-sm">
-        <div className="flex flex-col gap-3">
-          {/* When: text tabs with a pine underline, unlike the type pills below. */}
-          <p id="exp-season-q" className="font-gothic text-small text-ink-soft">
-            {ui.seasonQuestion.node}
-          </p>
-          {/* The kanji dial: four seasons set large; the chosen one turns pine, the rest fade back. Choosing it again clears it. */}
-          <div className="flex items-end justify-between gap-6">
-            <div role="group" aria-labelledby="exp-season-q" className="flex items-end gap-1 tablet:gap-3">
+      {/* Filters in a slim column beside the experiences (desktop, sticky); above them on phones.
+          The experiences keep the main width. */}
+      <div className="mt-10 grid gap-8 desktop:grid-cols-[12.5rem_1fr] desktop:gap-14">
+        <aside className="flex min-w-0 flex-col gap-6 desktop:sticky desktop:top-8 desktop:self-start desktop:gap-9">
+          {/* When: the kanji dial. Choosing the season again clears it. */}
+          <div>
+            <p id="exp-season-q" className="font-gothic text-small text-ink-soft">
+              {ui.seasonQuestion.node}
+            </p>
+            <div role="group" aria-labelledby="exp-season-q" className="mt-3 grid grid-cols-4 gap-1.5 desktop:grid-cols-2">
               {(["spring", "summer", "autumn", "winter"] as const).map((s) => {
                 const on = season === s;
                 return (
@@ -136,50 +136,68 @@ export function ExperiencesBrowser({
                     type="button"
                     aria-pressed={on}
                     onClick={() => change({ season: on ? "any" : s })}
-                    className="group flex min-w-16 cursor-pointer flex-col items-center gap-1.5 px-2 pb-1 tablet:min-w-20"
+                    className={`group flex cursor-pointer flex-col items-center gap-1.5 rounded-[14px] py-3 transition-colors ${on ? "bg-pine/10" : "hover:bg-plate"}`}
                   >
                     <span
                       lang="ja"
                       aria-hidden
-                      className={`font-mincho text-[clamp(2.25rem,3vw,3rem)] leading-none transition-colors duration-300 ${on ? "text-pine" : "text-ink/25 group-hover:text-ink/50"}`}
+                      className={`font-mincho text-[2.25rem] leading-none transition-colors duration-300 ${on ? "text-pine" : "text-ink/25 group-hover:text-ink/50"}`}
                     >
                       {SEASONS[s].kanji}
                     </span>
-                    <span className={`font-gothic text-small transition-colors ${on ? "text-ink" : "text-ink-soft"}`}>{ui[s].node}</span>
-                    <span aria-hidden className={`h-[3px] w-6 rounded-full transition-all duration-300 ${on ? "bg-pine" : "bg-transparent"}`} />
+                    <span className={`font-gothic text-[0.8125rem] ${on ? "text-pine" : "text-ink-soft"}`}>{ui[s].node}</span>
                   </button>
                 );
               })}
             </div>
-            <p aria-live="polite" className="hidden shrink-0 pb-3 font-gothic text-small text-ink-soft tablet:block">
-              <span dir="ltr">{shown.length}</span> {(shown.length === 1 ? ui.countOne : ui.count).node}
+          </div>
+
+          {/* What: the types, a list on desktop, a row on phones. */}
+          <div>
+            <p id="exp-type-q" className="font-gothic text-small text-ink-soft">
+              {ui.categoryLabel.node}
             </p>
+            <div
+              role="group"
+              aria-labelledby="exp-type-q"
+              className="-mx-1 mt-3 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] desktop:mx-0 desktop:flex-col desktop:gap-1 desktop:overflow-visible desktop:px-0"
+            >
+              {[{ id: "all", label: ui.all, symbol: null as T | null }, ...categories].map((c) => {
+                const on = type === c.id;
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    aria-pressed={on}
+                    onClick={() => change({ type: c.id })}
+                    className={`inline-flex min-h-11 shrink-0 cursor-pointer items-center gap-2.5 rounded-full px-4 font-gothic text-small transition-colors desktop:w-full desktop:justify-start ${
+                      on ? "bg-ink text-plate" : "bg-plate text-ink hover:bg-mist desktop:bg-transparent desktop:hover:bg-plate"
+                    }`}
+                  >
+                    {c.symbol ? (
+                      <span lang="ja" aria-hidden className={`w-5 font-mincho text-[1.0625rem] leading-none ${on ? "text-pine-soft" : "text-pine"}`}>
+                        {c.symbol.text}
+                      </span>
+                    ) : (
+                      <span aria-hidden className="hidden w-5 desktop:inline" />
+                    )}
+                    {c.label.node}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-          <div role="group" aria-label={ui.categoryLabel.text} className="-mx-1 flex min-w-0 flex-1 gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] desktop:flex-wrap desktop:overflow-visible">
-            <button type="button" aria-pressed={type === "all"} onClick={() => change({ type: "all" })} className={chip(type === "all")}>
-              {ui.all.node}
-            </button>
-            {categories.map((c) => (
-              <button key={c.id} type="button" aria-pressed={type === c.id} onClick={() => change({ type: c.id })} className={chip(type === c.id)}>
-                <span lang="ja" aria-hidden className={`font-mincho text-[1.0625rem] leading-none ${type === c.id ? "text-pine-soft" : "text-pine"}`}>
-                  {c.symbol.text}
-                </span>
-                {c.label.node}
-              </button>
-            ))}
-          </div>
-          </div>
-          <p aria-live="polite" className="font-gothic text-small text-ink-soft tablet:hidden">
+
+          <p aria-live="polite" className="font-gothic text-small text-ink-soft">
             <span dir="ltr">{shown.length}</span> {(shown.length === 1 ? ui.countOne : ui.count).node}
           </p>
-        </div>
-      </div>
+        </aside>
 
+        <div className="min-w-0">
       {shown.length === 0 ? (
-        <p className="mt-10 rounded-[20px] bg-plate p-8 text-center font-gothic text-copy text-ink-soft">{ui.empty.node}</p>
+        <p className="rounded-[20px] bg-plate p-8 text-center font-gothic text-copy text-ink-soft">{ui.empty.node}</p>
       ) : (
-        <ul className="mt-6 grid gap-4 tablet:grid-cols-2 desktop:grid-cols-3">
+        <ul className="grid gap-4 tablet:grid-cols-2">
           {shown.map((e) => {
             const c = cat(e.category);
             return (
@@ -233,6 +251,8 @@ export function ExperiencesBrowser({
           })}
         </ul>
       )}
+        </div>
+      </div>
 
       {/* Detail panel: a native dialog (focus trapped, Escape closes); a click outside closes too. */}
       <dialog

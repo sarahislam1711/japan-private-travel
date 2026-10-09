@@ -9,7 +9,7 @@ export type CategoryId = "family" | "culture" | "nature" | "onsen" | "food" | "c
 
 export const experiences = {
   title: draft("Experiences we build into the trip."),
-  intro: draft("Each one is planned around your family's days, not sold on its own. Choose what catches your eye and we will fit it into the plan."),
+  intro: draft("Planned around your family's days. Choose what catches your eye, and we fit it in."),
   categories: [
     { id: "family" as CategoryId, label: draft("Family days"), symbol: draft("遊", { lang: "ja" }) },
     { id: "culture" as CategoryId, label: draft("Culture"), symbol: draft("寺", { lang: "ja" }) },

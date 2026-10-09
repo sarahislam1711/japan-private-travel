@@ -249,7 +249,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 **Experiences** (rebuilt 9 Oct 2026). All DRAFT. **The twelve entries are SAMPLES** written at Sarah's request to design the page: real public places, hosts described by role, no named people. They must be replaced or confirmed before launch (the guard blocks drafts in production).
 
 > **Experiences we build into the trip.**
-> Each one is planned around your family's days, not sold on its own. Choose what catches your eye and we will fit it into the plan.
+> Planned around your family's days. Choose what catches your eye, and we fit it in.
 
 Categories: Family days (遊) · Culture (寺) · Nature (山) · Ryokan and onsen (湯) · Food (食) · Craft (匠)
 

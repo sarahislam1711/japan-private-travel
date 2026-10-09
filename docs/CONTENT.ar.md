@@ -215,7 +215,7 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `experiences.title` | Experiences we build into the trip. | <span dir="rtl" lang="ar">تجارب نُدرجها في رحلتكم.</span> | draft |
-| `experiences.intro` | Each one is planned around your family's days, not sold on its own. Choose what catches your eye and we will fit it into the plan. | <span dir="rtl" lang="ar">نخطّط كلًّا منها حول أيام عائلتكم، ولا نبيعها منفصلة. اختاروا ما يلفت انتباهكم، وسندرجه في الخطة.</span> | draft |
+| `experiences.intro` | Planned around your family's days. Choose what catches your eye, and we fit it in. | <span dir="rtl" lang="ar">مخطّطة حول أيام عائلتكم. اختاروا ما يلفت انتباهكم، ونحن ندرجه.</span> | draft |
 | `experiences.categories[0].label` | Family days | <span dir="rtl" lang="ar">أيام للعائلة</span> | draft |
 | `experiences.categories[1].label` | Culture | <span dir="rtl" lang="ar">ثقافة</span> | draft |
 | `experiences.categories[2].label` | Nature | <span dir="rtl" lang="ar">طبيعة</span> | draft |

@@ -4,7 +4,7 @@ import type { experiences } from "./experiences";
 
 export const experiencesAr: Translation<typeof experiences> = {
   title: ard("تجارب نُدرجها في رحلتكم."),
-  intro: ard("نخطّط كلًّا منها حول أيام عائلتكم، ولا نبيعها منفصلة. اختاروا ما يلفت انتباهكم، وسندرجه في الخطة."),
+  intro: ard("مخطّطة حول أيام عائلتكم. اختاروا ما يلفت انتباهكم، ونحن ندرجه."),
   categories: [
     { label: ard("أيام للعائلة") },
     { label: ard("ثقافة") },
