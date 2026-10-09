@@ -26,11 +26,11 @@ export default async function ExperiencesPage() {
     <main id="main">
       <StructuredData page="experiences" />
       <section aria-labelledby="exp-title" className="mx-auto max-w-(--content-max) px-(--page-margin) pt-10 desktop:pt-16">
-        <div className="grid gap-x-12 gap-y-6 desktop:grid-cols-12 desktop:items-end">
-          <h1 id="exp-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60] desktop:col-span-7">
+        <div className="flex flex-col gap-5">
+          <h1 id="exp-title" data-reveal="words" className="font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]">
             <SplitWords copy={experiences.title} />
           </h1>
-          <p data-reveal className="max-w-[34rem] font-gothic text-copy text-ink-soft desktop:col-span-5 desktop:pb-2">
+          <p data-reveal className="max-w-[40rem] font-gothic text-copy text-ink-soft">
             <CopyText copy={experiences.intro} />
           </p>
         </div>

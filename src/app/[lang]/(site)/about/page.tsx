@@ -137,11 +137,11 @@ export default function AboutPage() {
       {/* How we are registered: three points on one line, from you to the licensed operator. */}
       <section aria-labelledby="registration-title" className={section}>
         <Mark copy={about.chapters.registration} />
-        <div className="grid gap-x-12 gap-y-4 desktop:grid-cols-12 desktop:items-end">
-          <h2 id="registration-title" data-reveal className={`${h2} desktop:col-span-6`}>
+        <div className="flex flex-col gap-5">
+          <h2 id="registration-title" data-reveal className={h2}>
             <CopyText copy={registration.heading} />
           </h2>
-          <p data-reveal className="max-w-[34rem] font-gothic text-copy text-ink-soft desktop:col-span-6 desktop:pb-2">
+          <p data-reveal className="max-w-[40rem] font-gothic text-copy text-ink-soft">
             <CopyText copy={registration.intro} />
           </p>
         </div>
