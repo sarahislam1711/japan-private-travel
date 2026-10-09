@@ -6,6 +6,10 @@
 export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
+  // Summer Journeys region switcher (10 Oct 2026): one summer photo per region. None yet: the Alps photo is winter.
+  "region-hokkaido": { photoId: null, brief: "Hokkaido in July or August: lavender at Furano, or a lake at Shikotsu-Toya." },
+  "region-okinawa": { photoId: null, brief: "Okinawa: calm sea and a quiet beach, a family at a distance." },
+  "region-alps": { photoId: null, brief: "The Japan Alps in summer: Kamikochi or Tateyama-Kurobe, green and clear." },
   // Experiences: one photo per card, faded behind its text (10 Oct 2026). Stand-ins only where they truly match.
   "exp-disneyland": { photoId: "tokyo-disneyland", brief: "Tokyo Disneyland, a family at a distance or from behind." },
   "exp-usj": { photoId: "universal-studios", brief: "Universal Studios Japan, Osaka." },
