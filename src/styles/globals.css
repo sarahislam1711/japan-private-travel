@@ -23,12 +23,13 @@
     --text-h1--letter-spacing: 0;
     --text-h2--letter-spacing: 0;
     --text-h3--letter-spacing: 0;
-    --text-display--line-height: 1.25;
-    --text-h1--line-height: 1.3;
-    --text-h2--line-height: 1.35;
-    --text-h3--line-height: 1.4;
-    --text-body--line-height: 1.85;
-    --text-copy--line-height: 1.85;
+    /* Tightened 10 Oct 2026 (Sarah: too much white space): still clear of the marks above and below. */
+    --text-display--line-height: 1.12;
+    --text-h1--line-height: 1.18;
+    --text-h2--line-height: 1.25;
+    --text-h3--line-height: 1.3;
+    --text-body--line-height: 1.65;
+    --text-copy--line-height: 1.65;
     /* Markazi sets small for its size; lift the reading sizes a step. */
     --text-body: 1.3125rem;
     --text-lede: clamp(1.4375rem, 0.4vw + 1.3rem, 1.625rem);
@@ -75,12 +76,12 @@
     letter-spacing: -0.024em;
   }
   :root:lang(ar) .sj-title {
-    line-height: 1.3;
+    line-height: 1.18;
     letter-spacing: 0;
   }
 
   :root:lang(ar) .hero-display {
-    line-height: 1.25;
+    line-height: 1.12;
     letter-spacing: 0;
   }
 

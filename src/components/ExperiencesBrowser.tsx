@@ -218,7 +218,7 @@ export function ExperiencesBrowser({
                       alt=""
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 834px) 50vw, 100vw"
-                      className="pointer-events-none object-cover opacity-20 grayscale-[25%] transition-opacity duration-500 group-hover:opacity-30"
+                      className="pointer-events-none object-cover opacity-35 grayscale-[15%] transition-opacity duration-500 group-hover:opacity-45"
                       style={{ objectPosition: e.photo.focus }}
                     />
                   ) : null}

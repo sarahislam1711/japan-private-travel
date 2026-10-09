@@ -28,7 +28,7 @@ export async function CopyText({ copy }: { copy: Copy }) {
   const segments = r.body.map((segment, i) => {
     if (typeof segment === "string") return segment;
     if ("ph" in segment) {
-      const value = placeholderValue(segment.ph);
+      const value = placeholderValue(segment.ph, locale);
       // A supplied value keeps its own direction inside the sentence (Latin names and addresses in Arabic text).
       return value !== null ? <bdi key={i}>{value}</bdi> : <Placeholder key={i} name={segment.ph} />;
     }

@@ -19,6 +19,7 @@ Status markers:
 | `entity.address` | `[[ENTITY_ADDRESS]]` (Tokyo) and `[[OSAKA_ADDRESS]]` | |
 | `registration.lineJa` | `[[REG_AUTHORITY_JA]]登録旅行業者代理業 第[[REG_NUMBER]]号` → 東京都知事登録旅行業者代理業 第11300号 (corrected 8 Oct 2026: Travel World is a travel agency agent of Air World; DRAFT for Sarah and the 行政書士) | DRAFT |
 | `registration.lineEn` | `Travel Agency Agent, registered with the Governor of Tokyo, No. [[REG_NUMBER]]` | DRAFT |
+| `brand (Arabic)` | On the Arabic site the brand reads **هلا يابان** (Sarah, 10 Oct 2026), in text and in the wordmark (هلا in pine, يابان in ink). DRAFT: native check of the spelling (يابان vs جابان). | DRAFT |
 | `tradeNameLine` | `HalaJapan is a trading name of [[ENTITY_NAME_EN]]` (no closing full stop: the name ends with one) | DRAFT (COMPLIANCE C2) |
 | `principal` | `Air World Co., Ltd. (観光庁長官登録旅行業第961号), JATA member` — the licensed travel company we sell for. JATA membership is Air World's, never shown as ours (replaces `memberships`, 8 Oct 2026). | LOCKED |
 | `whatsapp` | `[[WHATSAPP_E164]]` | |

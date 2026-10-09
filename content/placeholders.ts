@@ -88,6 +88,8 @@ export type Placeholder = {
   kind: "fact" | "copy";
   note: string;
   value: string | null;
+  /** The value on the Arabic site, where it differs (the brand name in Arabic script). */
+  valueAr?: string;
 };
 
 const fact = (owner: PlaceholderOwner, note: string): Placeholder => ({
@@ -151,7 +153,7 @@ export const placeholders: Record<PlaceholderKey, Placeholder> = {
   DURATION: fact("operator", "Experience: duration"),
   GROUP_LIMIT: fact("operator", "Experience: group limit"),
 
-  BRAND: { ...fact("team", "Brand name (D1). Final written form, trademark and native checks still open — PROJECT-GUIDE §4."), value: "HalaJapan" },
+  BRAND: { ...fact("team", "Brand name (D1). Final written form, trademark and native checks still open — PROJECT-GUIDE §4."), value: "HalaJapan", valueAr: "هلا يابان" },
   DOMAIN: fact("team", "Production domain (D13)"),
   DESK_ZONE: fact("team", "Desk reference time zone, IANA name (D3)"),
   DESK_HOURS: fact("team", "Desk hours in the reference zone (D3)"),

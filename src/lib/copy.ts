@@ -2,8 +2,10 @@ import { placeholders, type PlaceholderKey } from "@content/placeholders";
 import type { Locale } from "@content/routes";
 import type { Copy, Segment } from "@content/schema";
 
-export function placeholderValue(key: PlaceholderKey): string | null {
-  return placeholders[key].value;
+/** A supplied value in a language: Arabic pages use the Arabic form where one exists (the brand name). */
+export function placeholderValue(key: PlaceholderKey, locale: Locale = "en"): string | null {
+  const p = placeholders[key];
+  return (locale === "ar" ? p.valueAr : undefined) ?? p.value;
 }
 
 const onlyPlaceholders = (body: Segment[]) => body.every((s) => typeof s === "object" && "ph" in s);
@@ -23,9 +25,9 @@ export function resolve(copy: Copy, locale: Locale): Resolved {
   return { status: "draft", body: copy.body, missing: true };
 }
 
-function segmentText(segment: Segment): string {
+function segmentText(segment: Segment, locale: Locale): string {
   if (typeof segment === "string") return segment;
-  if ("ph" in segment) return placeholderValue(segment.ph) ?? `[[${segment.ph}]]`;
+  if ("ph" in segment) return placeholderValue(segment.ph, locale) ?? `[[${segment.ph}]]`;
   return segment.text;
 }
 
@@ -33,7 +35,7 @@ function segmentText(segment: Segment): string {
 export function copyText(copy: Copy, locale: Locale = "en"): string {
   const r = resolve(copy, locale);
   if (r.missing) return "[[AR]]";
-  return r.body.map(segmentText).join("");
+  return r.body.map((s) => segmentText(s, locale)).join("");
 }
 
 /** True when every placeholder in the node has a value. */

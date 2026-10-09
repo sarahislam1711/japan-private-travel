@@ -123,7 +123,7 @@ export async function StructuredData({ page }: { page: RouteKey }) {
       "@type": "TravelAgency",
       "@id": orgId,
       name: copyText(site.brand.name),
-      alternateName: "Hala Japan",
+      alternateName: ["Hala Japan", "هلا يابان"],
       legalName: fact("ENTITY_NAME_EN"),
       description: text(homeContent.hero.paragraph),
       slogan: text(homeContent.hero.headline),
