@@ -122,8 +122,11 @@ export function ExperiencesBrowser({
       <div className="sticky top-0 z-20 -mx-(--page-margin) mt-8 bg-ground/95 px-(--page-margin) pt-2 pb-4 backdrop-blur-sm">
         <div className="flex flex-col gap-3">
           {/* When: text tabs with a pine underline, unlike the type pills below. */}
-          <div className="flex items-end justify-between gap-6 border-b border-ink/10">
-            <div role="group" aria-label={ui.seasonQuestion.text} className="-mb-px flex gap-5 overflow-x-auto [scrollbar-width:none] tablet:gap-7">
+          <p id="exp-season-q" className="font-gothic text-small text-ink-soft">
+            {ui.seasonQuestion.node}
+          </p>
+          <div className="-mt-2 flex items-end justify-between gap-6 border-b border-ink/10">
+            <div role="group" aria-labelledby="exp-season-q" className="-mb-px flex gap-5 overflow-x-auto [scrollbar-width:none] tablet:gap-7">
               {(["any", "spring", "summer", "autumn", "winter"] as const).map((s) => {
                 const on = season === s;
                 return (
