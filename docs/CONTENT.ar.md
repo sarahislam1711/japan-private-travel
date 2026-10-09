@@ -334,7 +334,7 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `about.title` | About HalaJapan | <span dir="rtl" lang="ar">عن HalaJapan</span> | draft |
-| `about.intro` | HalaJapan is run by Travel World Co., Ltd., founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">HalaJapan تديرها شركة Travel World Co., Ltd.، التي تأسّست في طوكيو في 23 سبتمبر 2016، ولها مكتبان في طوكيو وأوساكا.</span> | draft |
+| `about.intro` | HalaJapan is run by Travel World Co., Ltd., founded in Tokyo in 2016, with offices in Tokyo and Osaka. | <span dir="rtl" lang="ar">HalaJapan تديرها شركة Travel World Co., Ltd.، التي تأسّست في طوكيو عام 2016، ولها مكتبان في طوكيو وأوساكا.</span> | draft |
 | `about.keyFacts[0]` | Since 2016 | <span dir="rtl" lang="ar">منذ 2016</span> | draft |
 | `about.keyFacts[1]` | Tokyo and Osaka | <span dir="rtl" lang="ar">طوكيو وأوساكا</span> | draft |
 | `about.keyFacts[2]` | Tokyo Governor Registration No. 11300 | <span dir="rtl" lang="ar">تسجيل حاكم طوكيو رقم 11300</span> | draft |

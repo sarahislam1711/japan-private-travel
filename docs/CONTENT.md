@@ -289,7 +289,7 @@ Banned in any entry (COMPLIANCE C3): "private access", "exclusive", "arranged th
 **LOCKED** — approved by Sarah, 8 Oct 2026 (built from the company details she supplied; Travel World Co., Ltd. was formerly A.T.S). Layout: hero with three key facts; the people; "How we are registered" as a three-step chain (You → HalaJapan · Travel World → Air World); two office cards; a company facts table.
 
 > **About [[BRAND]]**
-> [[BRAND]] is run by [[ENTITY_NAME_EN]], founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka.
+> [[BRAND]] is run by [[ENTITY_NAME_EN]], founded in Tokyo in 2016, with offices in Tokyo and Osaka.
 >
 > Key facts: Since 2016 · Tokyo and Osaka · Tokyo Governor Registration No. [[REG_NUMBER]]
 >

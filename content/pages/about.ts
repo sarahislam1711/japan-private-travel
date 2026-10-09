@@ -4,7 +4,7 @@ import { aboutAr } from "./about.ar";
 
 export const about = {
   title: locked(["About ", ph("BRAND")]),
-  intro: locked([ph("BRAND"), " is run by ", ph("ENTITY_NAME_EN"), ", founded in Tokyo on 23 September 2016, with offices in Tokyo and Osaka."]),
+  intro: locked([ph("BRAND"), " is run by ", ph("ENTITY_NAME_EN"), ", founded in Tokyo in 2016, with offices in Tokyo and Osaka."]),
   keyFacts: [locked("Since 2016"), locked("Tokyo and Osaka"), locked(["Tokyo Governor Registration No. ", ph("REG_NUMBER")])],
   /** The page's thread: one kanji per chapter, on the line down the page (decorative, DRAFT, 10 Oct 2026). */
   chapters: {

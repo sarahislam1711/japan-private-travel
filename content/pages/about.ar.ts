@@ -4,7 +4,7 @@ import type { about } from "./about";
 
 export const aboutAr: Translation<typeof about> = {
   title: ard(["عن ", ph("BRAND")]),
-  intro: ard([ph("BRAND"), " تديرها شركة ", ph("ENTITY_NAME_EN"), "، التي تأسّست في طوكيو في 23 سبتمبر 2016، ولها مكتبان في طوكيو وأوساكا."]),
+  intro: ard([ph("BRAND"), " تديرها شركة ", ph("ENTITY_NAME_EN"), "، التي تأسّست في طوكيو عام 2016، ولها مكتبان في طوكيو وأوساكا."]),
   keyFacts: [ard("منذ 2016"), ard("طوكيو وأوساكا"), ard(["تسجيل حاكم طوكيو رقم ", ph("REG_NUMBER")])],
   people: {
     heading: ard("فريقنا"),
