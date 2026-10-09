@@ -40,6 +40,8 @@ export const summerJourneys = {
       [-0.4, 0.4, 4.5, 11.7, 17.9, 21.8, 25.4, 26.4, 22.8, 16.4, 8.7, 2.0],
     ] as number[][],
     headline: draft("In August, Sapporo is about 5°C cooler than Tokyo.", { claims: ["CL-05"] }),
+    /** JMA 1991–2020 normals, Tokyo, mean relative humidity in July: 76%. */
+    humidity: draft("Tokyo is humid too: 76% on average in July, which makes the heat feel stronger.", { claims: ["CL-05"] }),
   },
   regions: [
     {

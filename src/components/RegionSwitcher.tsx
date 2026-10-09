@@ -65,7 +65,7 @@ export function RegionSwitcher({ regions, label, months }: { regions: RegionPane
                 onClick={() => setActive(i)}
                 // The dot (18px) sits exactly on the map point; the label runs away from it.
                 style={{
-                  left: `${(px / W) * 100}%`,
+                  insetInlineStart: `${(px / W) * 100}%`, // the map is always dir="ltr", so this is the x position
                   top: `${(py / H) * 100}%`,
                   transform: right ? "translate(-0.5625rem, -50%)" : "translate(calc(-100% + 0.5625rem), -50%)",
                 }}

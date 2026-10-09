@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**457** draft,
-**0** missing — of 459 strings.
+**458** draft,
+**0** missing — of 460 strings.
 
 ## content/site.ts
 
@@ -144,6 +144,7 @@ Status: **2** approved,
 | `summerJourneys.seasonBand.rows[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
 | `summerJourneys.seasonBand.rows[1]` | Sapporo | <span dir="rtl" lang="ar">سابورو</span> | draft |
 | `summerJourneys.seasonBand.headline` | In August, Sapporo is about 5°C cooler than Tokyo. | <span dir="rtl" lang="ar">في أغسطس، تكون سابورو أبرد من طوكيو بنحو 5 درجات مئوية.</span> | draft |
+| `summerJourneys.seasonBand.humidity` | Tokyo is humid too: 76% on average in July, which makes the heat feel stronger. | <span dir="rtl" lang="ar">وطوكيو رطبة أيضًا: 76% في المتوسط في يوليو، ما يجعل الحرّ أشدّ وطأة.</span> | draft |
 | `summerJourneys.regions[0].heading` | Hokkaido | <span dir="rtl" lang="ar">هوكايدو</span> | draft |
 | `summerJourneys.regions[0].body` | In July and August, Hokkaido is where a family slows down. Mornings in the lavender fields around Furano, afternoons by the lakes at Shikotsu-Toya, and dinners that a kitchen can prepare without alcohol-based seasoning when you ask. The distances are short, the air is cool, and a grandparent and a child can share the same easy day. | <span dir="rtl" lang="ar">في يوليو وأغسطس، هوكايدو هي المكان الذي تهدأ فيه العائلة. صباحات في حقول اللافندر حول فورانو، وعصريات عند بحيرات شيكوتسو-تويا، وعشاء يستطيع المطبخ تحضيره دون توابل تحتوي على الكحول عندما تطلبون ذلك. المسافات قصيرة، والهواء منعش، ويمكن للجدّ والطفل أن يتشاركا اليوم الهادئ نفسه.</span> | draft |
 | `summerJourneys.regions[0].bestWeeks` | Mid-July to late August | <span dir="rtl" lang="ar">من منتصف يوليو إلى أواخر أغسطس</span> | draft |

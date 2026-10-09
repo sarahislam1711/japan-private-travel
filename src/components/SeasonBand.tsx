@@ -11,7 +11,7 @@ import { CopyText } from "./CopyText";
  */
 export async function SeasonBand() {
   const locale = await getLocale();
-  const { caption, rows, data, headline } = summerJourneys.seasonBand;
+  const { caption, rows, data, headline, humidity } = summerJourneys.seasonBand;
   const series = rows
     .map((row, i) => ({ row, values: data[i] }))
     .filter((s) => s.values && isResolved(s.row));
@@ -113,6 +113,12 @@ export async function SeasonBand() {
         </tbody>
       </table>
       </div>
+
+      {/* How the heat feels: one sourced note. */}
+      <p className="flex items-start gap-3 font-gothic text-copy text-ink">
+        <span aria-hidden className="mt-[0.55em] size-2 shrink-0 rounded-full bg-ink" />
+        <CopyText copy={humidity} />
+      </p>
 
       <figcaption className="font-gothic text-small text-ink-soft">
         <CopyText copy={caption} />

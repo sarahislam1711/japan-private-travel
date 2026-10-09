@@ -26,7 +26,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 - [ ] Superlative approvals (C4), which only Sarah adds in `content/approvals.ts`: "best months" (title), "Best weeks" (region labels), "What are the best months…" (FAQ), "finest" if still used
 - [ ] Approve the guard fix for "WhatsApp" being read as pricing language (C3: `pp\b` to `\bpp\b`)
 - [ ] Attach a checked source for each claim in `content/claims.ts` (C5): CL-01 to CL-04, CL-06, CL-07 (CL-05 temperatures sourced from JMA, 10 Oct 2026)
-- [ ] Choose the Japan Alps weather station (D6) so its line joins the season chart; check it shows the Alps as cool in summer
+- [ ] Choose the Japan Alps weather station (D6) for the season chart. JMA has no temperature normals for Kamikochi; options: Hakuba (Northern Alps, ~700 m, mildly cool), Karuizawa (~1,000 m, cool, not in the Alps), or no Alps line
 
 ## 3. Legal review (行政書士)
 
