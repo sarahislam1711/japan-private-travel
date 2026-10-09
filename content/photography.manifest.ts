@@ -32,5 +32,7 @@ export const photographs: Photo[] = z.array(PhotoSchema).parse([
   { id: "indigo-dyeing", src: "/photos/indigo-dyeing.jpg", alt: "", focus: "50% 45%" },
   { id: "cherry-blossoms", src: "/photos/cherry-blossoms.jpg", alt: "", focus: "60% 40%" },
   { id: "universal-studios", src: "/photos/universal-studios-japan.jpg", alt: "", focus: "50% 25%" },
+  { id: "ryokan", src: "/photos/ryokan.jpg", alt: "", focus: "50% 45%" },
+  { id: "nishiki-market", src: "/photos/nishiki-market.jpg", alt: "", focus: "50% 55%" },
   { id: "mt-fuji", src: "/photos/mountain-fuji.jpg", alt: "", focus: "50% 22%" },
 ]);

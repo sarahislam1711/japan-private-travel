@@ -42,7 +42,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 - [ ] For travel advisors: content, and agent terms (no public numbers; tiers via the rate portal)
 - [ ] Advisor rate portal (planned, gated, noindex)
 - [ ] Final photographs (currently stand-ins) and their alt text where they carry meaning
-- [ ] Experiences photos: one per card (slots `exp-*` in `content/photography.slots.ts`); 10 set (Disneyland, Universal Studios, Nara, Miyajima, Mt Fuji, indigo dyeing, cherry blossom from Sarah; snow monkeys, autumn leaves, tea ceremony as stand-ins), 2 to supply: Hakone ryokan, Nishiki Market
+- [ ] Experiences photos: one per card (slots `exp-*` in `content/photography.slots.ts`); all 12 set (9 from Sarah; snow monkeys, autumn leaves and tea ceremony use stand-ins: replace with matching photos if possible)
 - [ ] About portraits: Fathy Mohamed Mohamed Ismail Ahmed (4:5), Mariko Kajiwara and Takashi Mino (square). Add to `public/photos`, log in the photo manifest and set the `about-*` slots; initials show until then
 
 ## 5. Hosting and backend
