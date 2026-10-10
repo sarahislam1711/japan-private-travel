@@ -284,7 +284,7 @@ export function TripPlanner({
           <p className="mt-2 max-w-[34rem] font-gothic text-copy text-ink-soft">{t[`planner.hints.${step}`].node}</p>
 
           {/* On desktop the answers scroll inside the card if a step runs long; the buttons stay put. */}
-          <div data-lenis-prevent tabIndex={-1} className="mt-6 flex-1 desktop:-mx-2 desktop:min-h-0 desktop:overflow-y-auto desktop:px-2 desktop:pb-1">
+          <div data-lenis-prevent tabIndex={-1} className="mt-6 flex-1 desktop:-mx-3 desktop:-mb-3 desktop:min-h-0 desktop:overflow-y-auto desktop:px-3 desktop:pt-1 desktop:pb-3">
             {step === "who" && (
               <div className="flex flex-col gap-2">
                 <Counter label={t["planner.people.adults"]} value={plan.adults} onChange={(v) => set("adults", v)} t={t} />
