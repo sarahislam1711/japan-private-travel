@@ -48,8 +48,9 @@ export const photoSlots = {
   // Private Japan onward tiles (10 Oct 2026): the photo is most of the tile, the page name sits on it.
   "pj-onward-summer": { photoId: "japan-summer", brief: "Hokkaido or the Japan Alps in summer, green and open." },
   "pj-onward-packages": { photoId: "mt-fuji", brief: "Mt Fuji or another first-trip landmark, clear light." },
+  // Faded behind the hero (Sarah, 10 Oct 2026): a Kyoto garden with cherry blossom and early maples.
   "private-japan-hero": {
-    photoId: null,
+    photoId: "japan-spring",
     brief: "A household together in Japan in spring, autumn or winter; at a distance or from behind; natural light.",
   },
 } satisfies Record<string, PhotoSlot>;

@@ -32,6 +32,7 @@ const onward: { key: RouteKey; slot: PhotoSlotId }[] = [
  */
 export default async function PrivateJapanPage() {
   const locale = await getLocale();
+  const hero = photographs.find((p) => p.id === photoSlots["private-japan-hero"].photoId);
   // The seasons stand out in the title in pine, on the line with the rest, as July and August do on Summer Journeys.
   const accent: Record<string, string> =
     locale === "ar" ? { "الربيع": "", "الخريف": "", "الشتاء": "" } : { spring: "", autumn: "", winter: "" };
@@ -40,7 +41,14 @@ export default async function PrivateJapanPage() {
       <StructuredData page="privateJapan" />
 
       {/* Hero: title and lede, with the seasons set vertically beside them. */}
-      <section aria-labelledby="pj-title" className="mx-auto grid max-w-(--content-max) items-center gap-x-12 gap-y-8 px-(--page-margin) pt-12 tablet:grid-cols-[1fr_auto] desktop:pt-16">
+      <section aria-labelledby="pj-title" className="relative isolate">
+        {/* A spring garden, faded behind the open side of the title (Sarah, 10 Oct 2026). Decorative. */}
+        {hero ? (
+          <div aria-hidden className="hero-photo pointer-events-none absolute inset-y-0 end-0 -z-10 w-full opacity-30 tablet:opacity-45 desktop:w-[65%]">
+            <Image src={hero.src} alt="" fill priority sizes="(min-width: 1280px) 65vw, 100vw" className="object-cover" style={{ objectPosition: hero.focus }} />
+          </div>
+        ) : null}
+        <div className="mx-auto grid max-w-(--content-max) items-center gap-x-12 gap-y-8 px-(--page-margin) pt-12 pb-16 tablet:grid-cols-[1fr_auto] desktop:pt-16 desktop:pb-20">
         <div>
           <h1 id="pj-title" data-reveal="words" className="sj-title max-w-[20ch] font-serif [font-variation-settings:'opsz'_60]">
             <SplitWords copy={c.title} accent={accent} />
@@ -54,6 +62,7 @@ export default async function PrivateJapanPage() {
             <CopyText key={i} copy={k} />
           ))}
         </span>
+        </div>
       </section>
 
       {/* The four principles: stops on one line, each with its kanji. */}
