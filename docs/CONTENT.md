@@ -47,6 +47,12 @@ Drafted 6 Oct 2026 for approval. Most come from DESIGN.md, where they were speci
 | `languageMenu.label` | Language (accessible name of the globe button; Arabic: اللغة) | DRAFT |
 | `languageNames` | English · Arabic (in English on both sites, each beside a flag: United States, Saudi Arabia) | LOCKED (Sarah, 7 Oct 2026) |
 | `seasonBandPending` | Temperatures to be added from the cited source. | DRAFT (placeholder text for the season band until CL-05 is sourced) |
+| `trip.add` | Add to my trip (the button on every experience, package and summer region) | LOCKED (Sarah, 10 Oct 2026) |
+| `trip.added` | Added to my trip (the same button once pressed) | DRAFT |
+| `trip.title` | My trip (header counter and panel title) | DRAFT |
+| `trip.plan` | Plan my trip (panel button to the planner) | DRAFT |
+| `trip.remove` | Remove | DRAFT |
+| `trip.empty` | Nothing here yet. Choose Add to my trip on an experience, a package or a summer region. | DRAFT |
 
 ## 1b. Page titles and meta descriptions (`content/meta.ts`)
 
@@ -245,7 +251,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 > **Osaka, Kyoto and Nara** · 4–5 days · Fly in and out: Osaka · Osaka → Kyoto → Nara · Three cities close together: temples and gardens, the deer of Nara, and Osaka's food.
 > **Tokyo to Osaka, through Kyoto** · 6–8 days · Fly in and out: Tokyo / Osaka · Tokyo → Mt Fuji → Kyoto → Osaka · The classic first trip, by bullet train, at a pace that suits grandparents and children.
 > **Tokyo to Hiroshima** · 9–12 days · Fly in and out: Tokyo / Osaka · Tokyo → Kyoto → Nara → Osaka → Hiroshima · Further west, with Miyajima's shrine gate in the sea at the end.
-> Button: Start from this · Note: Every package is planned again for your family. Nothing is fixed until you agree to it.
+> Button: Add to my trip (replaced "Start from this", 10 Oct 2026; see §1a) · Note: Every package is planned again for your family. Nothing is fixed until you agree to it.
 >
 > **Can be added to any package**
 > Female guides · Arabic-speaking guides · Child seats · Cots and high chairs · Connecting rooms · Step-free routes · Private transport · Private bathing · Halal dining · Prayer time and space · Earlier dinners for children · Rest in the middle of the day
@@ -282,7 +288,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 
 Categories: Family days (遊) · Culture (寺) · Nature (山) · Ryokan and onsen (湯) · Food (食) · Craft (匠)
 
-Labels: "All" · "Season" · "Type" · "Spring" · "Summer" · "Autumn" · "Winter" · "Host" · "Where" · "Length" · "Group" · "Book ahead" · "weeks" · "week" · "When" · "All year" · "Plan this into my trip" · "Close" · "experiences" · "experience" · "When are you travelling?" · "Nothing in that season yet. Try another, or ask us." · "Details"
+Labels: "All" · "Season" · "Type" · "Spring" · "Summer" · "Autumn" · "Winter" · "Host" · "Where" · "Length" · "Group" · "Book ahead" · "weeks" · "week" · "When" · "All year" · "Add to my trip" (§1a; replaced "Plan this into my trip", 10 Oct 2026) · "Close" · "experiences" · "experience" · "When are you travelling?" · "Nothing in that season yet. Try another, or ask us." · "Details"
 
 Entries (SAMPLE):
 
@@ -465,6 +471,13 @@ Steps: Who → When → Where → The trip → Reply → Your plan. Month names 
 | `planner.errors.needName` | Please add your name. | DRAFT |
 | `planner.errors.needContact` | Please add a number or email so we can reply. | DRAFT |
 | `planner.saved` | Your answers stay on this device until you send them. | DRAFT |
+| `planner.email.heading` | Where should we send your itinerary? (the highlighted email card that leads the Reply step; email is required, Sarah 10 Oct 2026) | DRAFT |
+| `planner.email.line` | Your planned trip and day-by-day itinerary come to this email, so please check it carefully. | DRAFT |
+| `planner.email.label` | Your email | DRAFT |
+| `planner.email.required` | Required | DRAFT |
+| `planner.email.summary` | Itinerary to (the line in the plan summary) | DRAFT |
+| `planner.email.error` | Please add your email so we can send your itinerary. | DRAFT |
+| `planner.picks` | Added to my trip (the plan summary line listing My trip) | DRAFT |
 
 ## 11. Utility pages
 

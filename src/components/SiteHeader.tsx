@@ -9,7 +9,10 @@ import { LanguageSwitch } from "./LanguageSwitch";
 import { MobileMenu } from "./MobileMenu";
 import { NavGroup } from "./NavGroup";
 import { NavLink } from "./NavLink";
+import { TripMenu } from "./TripMenu";
 import { Wordmark } from "./Wordmark";
+import { copyText } from "@/lib/copy";
+import { tripCatalogue } from "@/lib/trip-catalogue";
 
 const linkClass = "no-underline hover:underline aria-[current=page]:underline aria-[current=page]:decoration-2";
 const ctaClass =
@@ -26,6 +29,14 @@ const label = (key: RouteKey): ReactNode => <CopyText copy={routeFor(key).navLab
 /** Skip link, wordmark at inline-start, navigation at inline-end (docs/CONTENT.md §2). Not sticky. */
 export async function SiteHeader() {
   const locale = await getLocale();
+  const l = (c: (typeof ui.trip)["title"]) => ({ node: <CopyText copy={c} />, text: copyText(c, locale) });
+  const trip = (
+    <TripMenu
+      catalogue={tripCatalogue(locale)}
+      labels={{ title: l(ui.trip.title), plan: l(ui.trip.plan), remove: l(ui.trip.remove), empty: l(ui.trip.empty), close: l(ui.close) }}
+      contactPath={localePath("contact", locale)}
+    />
+  );
   return (
     <>
       <a href="#main" className="skip-link">
@@ -72,6 +83,8 @@ export async function SiteHeader() {
                 </li>
               ) : null,
             )}
+            {/* My trip: appears once something is added. */}
+            <li className="hidden has-[button]:block">{trip}</li>
             {mainNav
               .filter((e) => e.kind === "cta")
               .map((entry) => (
@@ -86,6 +99,7 @@ export async function SiteHeader() {
 
         {/* Mobile: the globe sits in the bar beside Menu; the menu opens as a full-screen sheet. */}
         <div className="flex items-center gap-1 desktop:hidden">
+          {trip}
           <LanguageSwitch />
           <MobileMenu
             openLabel={<CopyText copy={ui.menu} />}

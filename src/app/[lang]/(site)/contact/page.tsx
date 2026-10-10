@@ -10,6 +10,7 @@ import { TripPlanner, type T } from "@/components/TripPlanner";
 import { copyText, isResolved } from "@/lib/copy";
 import { getLocale } from "@/lib/locale";
 import { pageMetadata } from "@/lib/metadata";
+import { tripCatalogue } from "@/lib/trip-catalogue";
 
 export const generateMetadata = () => pageMetadata("contact");
 
@@ -107,7 +108,7 @@ export default async function ContactPage() {
       </section>
 
       <section aria-label={t["planner.steps.review"].text} className="mx-auto mt-8 mb-24 w-full max-w-(--content-max) px-(--page-margin) desktop:mt-6 desktop:mb-0 desktop:min-h-0 desktop:flex-1 desktop:pb-6">
-        <TripPlanner t={t} locale={locale} places={places} whatsappNumber={number} />
+        <TripPlanner t={t} locale={locale} places={places} whatsappNumber={number} catalogue={tripCatalogue(locale)} />
       </section>
     </main>
   );

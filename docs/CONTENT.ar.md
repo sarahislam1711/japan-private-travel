@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**508** draft,
-**0** missing — of 510 strings.
+**521** draft,
+**0** missing — of 523 strings.
 
 ## content/site.ts
 
@@ -37,6 +37,12 @@ Status: **2** approved,
 | `ui.footer.legal` | Legal | <span dir="rtl" lang="ar">قانوني</span> | draft |
 | `ui.footer.talkToUs` | Talk to us | <span dir="rtl" lang="ar">تواصلوا معنا</span> | draft |
 | `ui.seasonBandPending` | Temperatures to be added from the cited source. | <span dir="rtl" lang="ar">ستُضاف درجات الحرارة من المصدر المذكور.</span> | draft |
+| `ui.trip.add` | Add to my trip | <span dir="rtl" lang="ar">أضف إلى رحلتي</span> | draft |
+| `ui.trip.added` | Added to my trip | <span dir="rtl" lang="ar">أُضيفت إلى رحلتي</span> | draft |
+| `ui.trip.title` | My trip | <span dir="rtl" lang="ar">رحلتي</span> | draft |
+| `ui.trip.plan` | Plan my trip | <span dir="rtl" lang="ar">خطّط رحلتي</span> | draft |
+| `ui.trip.remove` | Remove | <span dir="rtl" lang="ar">إزالة</span> | draft |
+| `ui.trip.empty` | Nothing here yet. Choose Add to my trip on an experience, a package or a summer region. | <span dir="rtl" lang="ar">لا شيء هنا بعد. اختر «أضف إلى رحلتي» في تجربة أو باقة أو منطقة صيفية.</span> | draft |
 
 ## content/navigation.ts
 
@@ -537,6 +543,13 @@ Status: **2** approved,
 | `contact.planner.errors.needName` | Please add your name. | <span dir="rtl" lang="ar">يُرجى كتابة الاسم.</span> | draft |
 | `contact.planner.errors.needContact` | Please add a number or email so we can reply. | <span dir="rtl" lang="ar">يُرجى إضافة رقم أو بريد إلكتروني لنتمكّن من الردّ.</span> | draft |
 | `contact.planner.saved` | Your answers stay on this device until you send them. | <span dir="rtl" lang="ar">تُحفظ إجاباتكم على هذا الجهاز حتى ترسلوها.</span> | draft |
+| `contact.planner.email.heading` | Where should we send your itinerary? | <span dir="rtl" lang="ar">إلى أين نرسل برنامج رحلتكم؟</span> | draft |
+| `contact.planner.email.line` | Your planned trip and day-by-day itinerary come to this email, so please check it carefully. | <span dir="rtl" lang="ar">تصلكم خطة الرحلة وبرنامجها يومًا بيوم على هذا البريد، فيُرجى التأكد منه.</span> | draft |
+| `contact.planner.email.label` | Your email | <span dir="rtl" lang="ar">بريدكم الإلكتروني</span> | draft |
+| `contact.planner.email.required` | Required | <span dir="rtl" lang="ar">مطلوب</span> | draft |
+| `contact.planner.email.summary` | Itinerary to | <span dir="rtl" lang="ar">البرنامج إلى</span> | draft |
+| `contact.planner.email.error` | Please add your email so we can send your itinerary. | <span dir="rtl" lang="ar">يُرجى إضافة بريدكم الإلكتروني لنرسل إليكم برنامج الرحلة.</span> | draft |
+| `contact.planner.picks` | Added to my trip | <span dir="rtl" lang="ar">أُضيفت إلى رحلتي</span> | draft |
 
 ## content/pages/utility.ts
 

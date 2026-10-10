@@ -2,7 +2,7 @@ import "server-only";
 import { randomUUID } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import type { Enquiry, PlanInput, Status } from "./schema";
+import { withDefaults, type Enquiry, type PlanInput, type Status } from "./schema";
 
 /**
  * Where plans are kept. With SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY set,
@@ -30,7 +30,7 @@ function fileStore(): EnquiryStore {
   if (process.env.VERCEL) throw new Error("No database configured: set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.");
   const read = async (): Promise<Enquiry[]> => {
     try {
-      return JSON.parse(await readFile(FILE, "utf8"));
+      return (JSON.parse(await readFile(FILE, "utf8")) as Enquiry[]).map(withDefaults);
     } catch {
       return [];
     }
@@ -83,6 +83,8 @@ type Row = {
   dates_note: string;
   places: PlanInput["places"];
   needs: string;
+  email: string | null;
+  picks: string[] | null;
   notes: string;
 };
 
@@ -104,6 +106,8 @@ const fromRow = (r: Row): Enquiry => ({
   datesNote: r.dates_note,
   places: r.places,
   needs: r.needs,
+  email: r.email ?? "",
+  picks: r.picks ?? [],
   notes: r.notes,
 });
 
@@ -137,6 +141,8 @@ function supabaseStore(): EnquiryStore {
           dates_note: i.datesNote,
           places: i.places,
           needs: i.needs,
+          email: i.email,
+          picks: i.picks,
         }),
       });
       return fromRow(row);

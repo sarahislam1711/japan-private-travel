@@ -3,6 +3,7 @@ import { summerJourneys } from "@content/pages/summer-journeys";
 import { copyText } from "@/lib/copy";
 import { CopyText } from "./CopyText";
 import { RegionSwitcher } from "./RegionSwitcher";
+import { ui } from "@content/interface";
 import { photographs } from "@content/photography.manifest";
 import { photoSlots } from "@content/photography.slots";
 
@@ -25,6 +26,7 @@ export async function RegionsTrio() {
       <div data-reveal>
         <RegionSwitcher
           label={copyText(summerJourneys.months.heading, locale)}
+          trip={{ add: <CopyText copy={ui.trip.add} />, added: <CopyText copy={ui.trip.added} /> }}
           months={summerJourneys.heroImage.map((m) => copyText(m, locale)).join("・")}
           regions={summerJourneys.regions.map((region, i) => {
             const slot = (["region-hokkaido", "region-okinawa", "region-alps"] as const)[i];

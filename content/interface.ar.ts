@@ -15,4 +15,12 @@ export const uiAr: Translation<typeof ui> = {
     talkToUs: ard("تواصلوا معنا"),
   },
   seasonBandPending: ard("ستُضاف درجات الحرارة من المصدر المذكور."),
+  trip: {
+    add: ard("أضف إلى رحلتي"),
+    added: ard("أُضيفت إلى رحلتي"),
+    title: ard("رحلتي"),
+    plan: ard("خطّط رحلتي"),
+    remove: ard("إزالة"),
+    empty: ard("لا شيء هنا بعد. اختر «أضف إلى رحلتي» في تجربة أو باقة أو منطقة صيفية."),
+  },
 };

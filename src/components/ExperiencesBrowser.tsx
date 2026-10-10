@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { flushSync } from "react-dom";
+import { TripButton } from "./TripButton";
 
 /** One string in the page's language: the rendered node (with dev markers) and its plain text. */
 export type T = { node: ReactNode; text: string };
@@ -34,8 +35,8 @@ const SEASONS: Record<Exclude<Season, "any">, { months: number[]; kanji: string 
 
 /**
  * The Experiences library: filter by type and season, cards that rearrange
- * smoothly, and a detail panel with "Plan this into my trip" (which opens the
- * planner with the experience written in). Every card is in the HTML on first
+ * smoothly, and a detail panel with "Add to my trip" (My trip, carried into the
+ * planner). Every card is in the HTML on first
  * render, so crawlers and visitors without JavaScript see the whole list.
  */
 export function ExperiencesBrowser({
@@ -43,14 +44,12 @@ export function ExperiencesBrowser({
   entries,
   ui,
   locale,
-  contactPath,
   header,
 }: {
   categories: Category[];
   entries: Entry[];
   ui: Record<string, T>;
   locale: "en" | "ar";
-  contactPath: string;
   /** The page's title and intro, set beside the season tiles. */
   header: ReactNode;
 }) {
@@ -313,12 +312,7 @@ export function ExperiencesBrowser({
               </p>
             </div>
             <div className="relative mt-8 flex flex-col gap-3 tablet:flex-row tablet:items-center">
-              <a
-                href={`${contactPath}?add=${encodeURIComponent(open.title.text)}`}
-                className="inline-flex min-h-12 items-center justify-center rounded-(--radius-control) bg-ink px-6 font-gothic text-label font-bold text-plate no-underline transition-colors hover:bg-pine hover:text-plate"
-              >
-                {ui.plan.node}
-              </a>
+              <TripButton id={`exp:${open.id}`} kind="experience" add={ui.addToTrip.node} added={ui.addedToTrip.node} className="px-6" />
               <button type="button" onClick={hide} className="tap cursor-pointer font-gothic text-label text-ink-soft underline hover:text-pine">
                 {ui.close.node}
               </button>

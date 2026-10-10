@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
 import { JAPAN_MAP } from "@/lib/japan-map";
+import { TripButton } from "./TripButton";
 
 export type RegionPanel = {
   id: "hokkaido" | "okinawa" | "alps";
@@ -21,7 +22,7 @@ export type RegionPanel = {
  * Japanese; the chosen region's story and facts sit beside the map. Every
  * panel is rendered for crawlers; arrow keys move between pins (WAI-ARIA tabs).
  */
-export function RegionSwitcher({ regions, label, months }: { regions: RegionPanel[]; label: string; months: string }) {
+export function RegionSwitcher({ regions, label, months, trip }: { regions: RegionPanel[]; label: string; months: string; trip: { add: ReactNode; added: ReactNode } }) {
   const [active, setActive] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const onKey = (e: KeyboardEvent) => {
@@ -135,6 +136,7 @@ export function RegionSwitcher({ regions, label, months }: { regions: RegionPane
                 ))}
               </dl>
               {r.note ? <p className="font-gothic text-small text-ink-soft">{r.note}</p> : null}
+              <TripButton id={`region:${r.id}`} kind="region" add={trip.add} added={trip.added} className="self-start" />
             </div>
           </div>
         ))}

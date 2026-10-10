@@ -52,7 +52,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 
 - [ ] Vercel project connected to the GitHub repo; function region `hnd1` (Tokyo)
 - [ ] Domain connected; apex canonical, www redirects (already coded)
-- [ ] Supabase project in Tokyo (`ap-northeast-1`); run `supabase/migrations/0001_enquiries.sql` and `0002_advisor_requests.sql`; confirm row level security is on
+- [ ] Supabase project in Tokyo (`ap-northeast-1`); run `supabase/migrations/0001_enquiries.sql`, `0002_advisor_requests.sql` and `0003_enquiries_email_picks.sql` (itinerary email and My trip picks); confirm row level security is on
 - [ ] Vercel environment variables:
   - [ ] `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
   - [ ] `ADMIN_PASSWORD` (new and strong; never the local one) and `ADMIN_SECRET` (a long random string)

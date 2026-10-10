@@ -1,6 +1,6 @@
 import { experiences } from "@content/pages/experiences";
 import { home } from "@content/pages/home";
-import { localePath } from "@content/routes";
+import { ui as siteUi } from "@content/interface";
 import { photographs } from "@content/photography.manifest";
 import { photoSlots, type PhotoSlotId } from "@content/photography.slots";
 import type { Copy } from "@content/schema";
@@ -23,6 +23,9 @@ export default async function ExperiencesPage() {
   const locale = await getLocale();
   const pick = (c: Copy): T => ({ node: <CopyText copy={c} />, text: copyText(c, locale) });
   const ui = Object.fromEntries(Object.entries(experiences.ui).map(([k, v]) => [k, pick(v)]));
+  // The detail panel's button adds the experience to My trip (Sarah, 10 Oct 2026).
+  ui.addToTrip = pick(siteUi.trip.add);
+  ui.addedToTrip = pick(siteUi.trip.added);
 
   return (
     <main id="main">
@@ -40,7 +43,6 @@ export default async function ExperiencesPage() {
             </>
           }
           locale={locale}
-          contactPath={localePath("contact", locale)}
           ui={ui}
           categories={experiences.categories.map((c, i) => ({ id: experiences.categories[i].id, label: pick(c.label), symbol: pick(c.symbol) }))}
           entries={experiences.entries.map((e) => ({

@@ -20,9 +20,11 @@ export default async function EnquiryPage({ params, searchParams }: { params: Pr
   const rows: [string, string][] = [
     ["Travelling", travellers(e)],
     ["When", when(e) || "—"],
+    ["Added to their trip", e.picks.length ? e.picks.join("\n") : "—"],
     ["Where", where(e) || "—"],
     ["What the trip needs to do", e.needs || "—"],
     ["Reply in", languageLabel[e.language]],
+    ["Send the itinerary to", e.email || "—"],
     ["Reply by", `${replyLabel[e.reply]} · ${e.contact}`],
     ["Sent from", e.locale === "ar" ? "Arabic site" : "English site"],
     ["Received", formatDate(e.createdAt)],

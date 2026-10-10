@@ -93,6 +93,16 @@ export const contact = {
       needContact: draft("Please add a number or email so we can reply."),
     },
     saved: draft("Your answers stay on this device until you send them."),
+    // The email card on the Reply step (Sarah, 10 Oct 2026: make the email clearly the important step).
+    email: {
+      heading: draft("Where should we send your itinerary?"),
+      line: draft("Your planned trip and day-by-day itinerary come to this email, so please check it carefully."),
+      label: draft("Your email"),
+      required: draft("Required"),
+      summary: draft("Itinerary to"),
+      error: draft("Please add your email so we can send your itinerary."),
+    },
+    picks: draft("Added to my trip"),
   },
 };
 

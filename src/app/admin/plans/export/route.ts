@@ -9,9 +9,9 @@ export async function GET() {
   if (!(await isSignedIn())) return new Response("Not signed in", { status: 401 });
   const all = await enquiryStore().list();
   const cell = (v: string | number) => `"${String(v).replace(/"/g, '""')}"`;
-  const head = ["Received", "Status", "Name", "Reply by", "Contact", "Reply in", "Travelling", "When", "Where", "Needs", "Team notes", "Site", "ID"];
+  const head = ["Received", "Status", "Name", "Reply by", "Contact", "Itinerary email", "Added to their trip", "Reply in", "Travelling", "When", "Where", "Needs", "Team notes", "Site", "ID"];
   const lines = all.map((e) =>
-    [formatDate(e.createdAt), statusLabel[e.status], e.name, replyLabel[e.reply], e.contact, languageLabel[e.language], travellers(e), when(e), where(e), e.needs, e.notes, e.locale, e.id]
+    [formatDate(e.createdAt), statusLabel[e.status], e.name, replyLabel[e.reply], e.contact, e.email, e.picks.join("; "), languageLabel[e.language], travellers(e), when(e), where(e), e.needs, e.notes, e.locale, e.id]
       .map(cell)
       .join(","),
   );

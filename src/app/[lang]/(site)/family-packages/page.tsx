@@ -3,13 +3,12 @@ import Image from "next/image";
 import { familyServices as c } from "@content/pages/family-services";
 import { home } from "@content/pages/home";
 import { photographs } from "@content/photography.manifest";
-import { localePath } from "@content/routes";
+import { ui } from "@content/interface";
 import { CopyText } from "@/components/CopyText";
 import { PageClose } from "@/components/PageClose";
 import { SplitWords } from "@/components/SplitWords";
 import { StructuredData } from "@/components/StructuredData";
-import { copyText } from "@/lib/copy";
-import { getLocale } from "@/lib/locale";
+import { TripButton } from "@/components/TripButton";
 import { pageMetadata } from "@/lib/metadata";
 
 export const generateMetadata = () => pageMetadata("familyServices");
@@ -22,13 +21,11 @@ const h2 = "font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]";
 /**
  * Family Packages (CONTENT.md §6, rebuilt 10 Oct 2026): starting points each
  * family tailors, not fixed products. Four package cards (photo fading into
- * the card, the stops on a route line, days, fly in and out, "Start from
- * this" into the planner), then the extras as small tags: things that can be
+ * the card, the stops on a route line, days, fly in and out, "Add to my
+ * trip"), then the extras as small tags: things that can be
  * added to any package, deliberately secondary.
  */
-export default async function FamilyPackagesPage() {
-  const locale = await getLocale();
-  const contact = localePath("contact", locale);
+export default function FamilyPackagesPage() {
   return (
     <main id="main">
       <StructuredData page="familyServices" />
@@ -91,12 +88,7 @@ export default async function FamilyPackagesPage() {
                     <p className="font-gothic text-small text-ink-soft">
                       <CopyText copy={c.inOut} />: <span className="text-ink">{<CopyText copy={p.inOut} />}</span>
                     </p>
-                    <a
-                      href={`${contact}?add=${encodeURIComponent(copyText(p.name, locale))}`}
-                      className="inline-flex min-h-11 items-center rounded-(--radius-control) bg-ink px-5 font-gothic text-label font-bold text-plate no-underline transition-colors hover:bg-pine hover:text-plate"
-                    >
-                      <CopyText copy={c.start} />
-                    </a>
+                    <TripButton id={`pkg:${p.id}`} kind="package" add={<CopyText copy={ui.trip.add} />} added={<CopyText copy={ui.trip.added} />} />
                   </div>
                 </div>
               </li>

@@ -350,6 +350,13 @@ On desktop and tablet each section, or each pinned screen, fits one viewport fro
 - Onward: two photo tiles (24px radius, the photo filling the tile under a soft Ink fade from the bottom), each carrying only the page name in Snow and a round arrow button; the photo eases in slightly on hover. Photos from slots `pj-onward-summer` and `pj-onward-packages`. Then the page close.
 - Summer Journeys map pins: the two unchosen pins are solid (Pine mixed 60% into Paper, never see-through, so a pin never melts into the island under it) and swell to 1.45× with a fading ring in turn, every 2.2s, so they read as things to press; still under reduced motion. Hover or focus grows the dot and lifts its label.
 
+### My trip (10 Oct 2026, Sarah)
+- "Add to my trip" on every experience (detail panel), package card and summer region panel: an Ink button with a plus that turns Pine with a tick ("Added to my trip"); pressing again takes the item out. Nothing navigates away.
+- The list lives on the visitor's device (`src/lib/trip.ts`, localStorage, like the planner's answers). One package at a time: a package is a starting route, so a second replaces the first. Experiences and regions stack.
+- Header: a quiet Snow pill "My trip" with a Pine count, before Contact, shown only once something is added; the count pops when it changes. Below the tablet breakpoint the pill shows the count alone (the label stays for screen readers). It opens a panel at inline-end (slides in, mirrored in Arabic): each item with its photo thumbnail, title and Remove, and "Plan my trip" to the planner.
+- The planner leads its summary with "Added to my trip"; summer regions on the list count as chosen under Where. The list is sent with the plan (admin: "Added to their trip"; CSV column) and cleared once sent.
+- **Itinerary email:** the Reply step opens with its own card (Pine tint, Pine ring, envelope in a Pine circle, "Required" pill, a large field): the email is asked of every family because the itinerary goes there. Choosing Email as the reply route reuses it; WhatsApp or telephone ask for a number. A missing email strengthens the ring, scrolls the card into view and puts the cursor in it. The summary shows "Itinerary to" in a lighter box.
+
 ### Family Packages (10 Oct 2026, Sarah)
 - Packages are tailored starting points, never fixed products (the FAQ's "we do not sell fixed packages" stays true).
 - Four cards in a two-column grid (one on phones), Snow on Mist, 24px radius. Each card has its photo across the top at 60% opacity, masked to clear by 45% so the text sits on plain Snow; the day count in Pine; the name; one line; the route as dots joined by short rules; "Fly in and out"; and "Start from this", which opens Contact with the package added.

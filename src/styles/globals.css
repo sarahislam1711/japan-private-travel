@@ -438,6 +438,36 @@
     }
   }
 
+  /* My trip: the count pops when something is added; the panel slides in from inline-end. */
+  @media (prefers-reduced-motion: no-preference) {
+    .trip-count-n {
+      animation: trip-pop 420ms var(--ease-out-expo) both;
+    }
+    .trip-panel[open] {
+      animation: trip-in 380ms var(--ease-out-expo) both;
+    }
+    [dir="rtl"] .trip-panel[open] {
+      animation-name: trip-in-rtl;
+    }
+  }
+  @keyframes trip-pop {
+    from {
+      transform: scale(0.6);
+    }
+  }
+  @keyframes trip-in {
+    from {
+      transform: translateX(2rem);
+      opacity: 0;
+    }
+  }
+  @keyframes trip-in-rtl {
+    from {
+      transform: translateX(-2rem);
+      opacity: 0;
+    }
+  }
+
   /* Trip planner: each step and each new line of the plan settles in. */
   @media (prefers-reduced-motion: no-preference) {
     .planner-step {

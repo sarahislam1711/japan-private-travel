@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
+import { clearTrip, useTrip } from "@/lib/trip";
+import { REGION_IDS, type Catalogue } from "@/lib/trip-catalogue";
 
 /** One string in the page's language: the rendered node (with dev markers) and its plain text. */
 export type T = { node: ReactNode; text: string };
@@ -21,6 +23,7 @@ type Plan = {
   reply: Reply | null;
   name: string;
   contact: string;
+  email: string;
 };
 
 const EMPTY: Plan = {
@@ -36,30 +39,36 @@ const EMPTY: Plan = {
   reply: null,
   name: "",
   contact: "",
+  email: "",
 };
 
 const STEPS = ["who", "when", "where", "needs", "reply", "review"] as const;
 type Step = (typeof STEPS)[number];
 const STORE = "halajapan-plan";
 const MAX = 12;
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**
  * The trip planner: the Contact form as six short steps, with the plan
  * building up live beside it on pine. Answers stay on this device
- * (localStorage) until sent. Sending opens WhatsApp with the plan written
- * out; the email enquiry joins once its backend exists.
+ * (localStorage) until sent. What the visitor added to My trip leads the
+ * plan, and the email for the itinerary is asked of everyone, in its own
+ * highlighted card (Sarah, 10 Oct 2026).
  */
 export function TripPlanner({
   t,
   locale,
   places,
   whatsappNumber,
+  catalogue,
 }: {
   t: Dict;
   locale: "en" | "ar";
   /** Place options: id and label, in display order. */
   places: { id: string; label: T; group: T }[];
   whatsappNumber: string;
+  /** Everything that can be on My trip, with titles in this page's language. */
+  catalogue: Catalogue;
 }) {
   const [plan, setPlan] = useState<Plan>(EMPTY);
   const [step, setStep] = useState<Step>("who");
@@ -67,8 +76,14 @@ export function TripPlanner({
   const [loaded, setLoaded] = useState(false);
   const [send, setSend] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
   const firstRender = useRef(true);
   const uid = useId();
+  const trip = useTrip().filter((x) => catalogue[x.id]);
+  const picks = trip.map((x) => catalogue[x.id].title);
+  // Summer regions on My trip count as chosen under Where (taken off by removing them from My trip).
+  const fromTrip = trip.filter((x) => x.kind === "region").map((x) => `summer-${REGION_IDS.indexOf(x.id.replace("region:", "") as (typeof REGION_IDS)[number])}`);
+  const chosen = [...new Set([...plan.places, ...fromTrip])];
 
   // Restore and keep answers on this device only.
   useEffect(() => {
@@ -77,9 +92,6 @@ export function TripPlanner({
       const saved = localStorage.getItem(STORE);
       if (saved) base = { ...EMPTY, ...JSON.parse(saved) };
     } catch {}
-    // "Plan this into my trip" on Experiences arrives as ?add=<title>: write it into the trip's needs.
-    const add = new URLSearchParams(window.location.search).get("add")?.trim().slice(0, 160);
-    if (add && !base.needs.includes(add)) base = { ...base, needs: base.needs ? `${base.needs}\n${add}` : add };
     setPlan(base);
     setLoaded(true);
   }, []);
@@ -111,6 +123,7 @@ export function TripPlanner({
   const toggle = <V,>(list: V[], v: V) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
 
   const index = STEPS.indexOf(step);
+  const emailMissing = error === t["planner.email.error"].text;
   const go = (i: number) => {
     setError(null);
     setStep(STEPS[Math.max(0, Math.min(STEPS.length - 1, i))]);
@@ -120,13 +133,19 @@ export function TripPlanner({
     if (s === "who" && plan.adults + plan.grandparents < 1) return t["planner.errors.needTraveller"].text;
     if (s === "when" && !plan.notSure && plan.months.length === 0 && !plan.datesNote.trim()) return t["planner.errors.needWhen"].text;
     if (s === "reply") {
+      if (!EMAIL.test(plan.email.trim())) return t["planner.email.error"].text;
       if (!plan.name.trim()) return t["planner.errors.needName"].text;
-      if (!plan.language || !plan.reply || !plan.contact.trim()) return t["planner.errors.needContact"].text;
+      if (!plan.language || !plan.reply || (plan.reply !== "email" && !plan.contact.trim())) return t["planner.errors.needContact"].text;
     }
     return null;
   };
   const next = () => {
     const p = problem(step);
+    if (p === t["planner.email.error"].text) {
+      // Bring the whole email card into view (on phones it can be scrolled away), then put the cursor in it.
+      emailRef.current?.closest("[data-email-card]")?.scrollIntoView({ block: "center", behavior: "smooth" });
+      emailRef.current?.focus({ preventScroll: true });
+    }
     if (p) return setError(p);
     go(index + 1);
   };
@@ -148,16 +167,19 @@ export function TripPlanner({
     .filter(Boolean)
     .join(" · ");
   const where = places
-    .filter((p) => plan.places.includes(p.id))
+    .filter((p) => chosen.includes(p.id))
     .map((p) => p.label.text)
     .join(sep);
   const replyLine = [plan.language && languages[plan.language].text, plan.reply && replies[plan.reply].text].filter(Boolean).join(" · ");
 
-  const lines: { key: string; label: T; value: string }[] = [
+  // `edit` is the step that changes the line; My trip is changed from the header instead.
+  const lines: { key: string; label: T; value: string; edit?: Step }[] = [
+    { key: "picks", label: t["planner.picks"], value: picks.join(sep) },
     { key: "who", label: t["planner.summary.travelling"], value: travelling },
     { key: "when", label: t["planner.summary.months"], value: when },
     { key: "where", label: t["planner.summary.places"], value: where },
     { key: "needs", label: t["fields.purpose"], value: plan.needs.trim() },
+    { key: "email", label: t["planner.email.summary"], value: plan.email.trim(), edit: "reply" },
     { key: "reply", label: t["fields.replyLanguage"], value: replyLine },
   ];
 
@@ -166,7 +188,7 @@ export function TripPlanner({
     "",
     ...lines.filter((l) => l.value).map((l) => `${l.label.text}: ${l.value}`),
     `${t["fields.name"].text}: ${plan.name.trim()}`,
-    plan.contact.trim() ? `${(plan.reply === "email" ? t["fields.email"] : t["fields.phone"]).text}: ${plan.contact.trim()}` : "",
+    plan.reply !== "email" && plan.contact.trim() ? `${t["fields.phone"].text}: ${plan.contact.trim()}` : "",
   ]
     .filter((l, i, all) => l !== "" || all[i - 1] !== "")
     .join("\n");
@@ -183,7 +205,9 @@ export function TripPlanner({
           locale,
           name: plan.name,
           reply: plan.reply,
-          contact: plan.contact,
+          contact: plan.reply === "email" ? plan.email : plan.contact,
+          email: plan.email,
+          picks,
           language: plan.language,
           adults: plan.adults,
           grandparents: plan.grandparents,
@@ -191,7 +215,7 @@ export function TripPlanner({
           months: plan.notSure ? [] : plan.months,
           notSure: plan.notSure,
           datesNote: plan.datesNote,
-          places: plan.places,
+          places: chosen,
           needs: plan.needs,
           website: "",
         }),
@@ -201,6 +225,7 @@ export function TripPlanner({
       try {
         localStorage.removeItem(STORE);
       } catch {}
+      clearTrip();
     } catch {
       setSend("error");
     }
@@ -324,7 +349,7 @@ export function TripPlanner({
                   <button
                     key={p.id}
                     type="button"
-                    aria-pressed={plan.places.includes(p.id)}
+                    aria-pressed={chosen.includes(p.id)}
                     onClick={() => set("places", toggle(plan.places, p.id))}
                     className="group flex min-h-24 cursor-pointer flex-col justify-between gap-3 rounded-[16px] bg-ground p-5 text-start desktop:min-h-0 desktop:gap-1.5 desktop:px-5 desktop:py-3.5 transition-colors hover:bg-mist aria-pressed:bg-pine aria-pressed:text-plate"
                   >
@@ -351,6 +376,41 @@ export function TripPlanner({
 
             {step === "reply" && (
               <div className="flex flex-col gap-6">
+                {/* The itinerary email: the one detail that must be right, so it leads the step in its own card. */}
+                <div data-email-card className={`rounded-[20px] bg-pine/[0.07] p-5 ring-inset transition-shadow tablet:p-6 ${emailMissing ? "ring-2 ring-pine" : "ring-1 ring-pine/25"}`}>
+                  <div className="flex items-start gap-4">
+                    <span aria-hidden className="flex size-11 shrink-0 items-center justify-center rounded-full bg-pine text-plate">
+                      <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3.5 6.5h17v11h-17zM3.8 7l8.2 6.5L20.2 7" />
+                      </svg>
+                    </span>
+                    <div className="min-w-0">
+                      <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <span className="font-serif text-[1.375rem] leading-tight [font-variation-settings:'opsz'_24]">{t["planner.email.heading"].node}</span>
+                        <span className="rounded-full bg-pine px-2.5 py-0.5 font-gothic text-[0.75rem] font-bold text-plate">{t["planner.email.required"].node}</span>
+                      </p>
+                      <p className="mt-1.5 font-gothic text-small text-ink-soft">{t["planner.email.line"].node}</p>
+                    </div>
+                  </div>
+                  <label className="mt-5 flex flex-col gap-2 font-gothic text-small text-ink">
+                    {t["planner.email.label"].node}
+                    <input
+                      ref={emailRef}
+                      aria-invalid={emailMissing || undefined}
+                      aria-describedby={emailMissing ? `${uid}-err` : undefined}
+                      value={plan.email}
+                      onChange={(e) => set("email", e.target.value)}
+                      type="email"
+                      autoComplete="email"
+                      inputMode="email"
+                      required
+                      aria-required="true"
+                      dir="ltr"
+                      maxLength={160}
+                      className="min-h-14 w-full rounded-(--radius-control) bg-plate px-4 font-gothic text-[1.125rem] text-ink ring-1 ring-pine/30 ring-inset outline-pine"
+                    />
+                  </label>
+                </div>
                 <Field label={t["fields.name"]}>
                   <input value={plan.name} onChange={(e) => set("name", e.target.value)} autoComplete="name" maxLength={120} className={inputClass} />
                 </Field>
@@ -374,13 +434,14 @@ export function TripPlanner({
                     ))}
                   </div>
                 </fieldset>
-                {plan.reply && (
-                  <Field label={plan.reply === "email" ? t["fields.email"] : t["fields.phone"]}>
+                {/* Email replies use the itinerary email above; only WhatsApp or telephone need a number. */}
+                {plan.reply && plan.reply !== "email" && (
+                  <Field label={t["fields.phone"]}>
                     <input
                       value={plan.contact}
                       onChange={(e) => set("contact", e.target.value)}
-                      type={plan.reply === "email" ? "email" : "tel"}
-                      autoComplete={plan.reply === "email" ? "email" : "tel"}
+                      type="tel"
+                      autoComplete="tel"
                       dir="ltr"
                       maxLength={160}
                       className={inputClass}
@@ -393,14 +454,22 @@ export function TripPlanner({
             {step === "review" && (
               <div className="flex flex-col gap-6">
                 <dl className="divide-y divide-ink/10 rounded-[16px] bg-ground px-5">
-                  {[...lines, { key: "reply", label: t["fields.name"], value: [plan.name.trim(), plan.contact.trim()].filter(Boolean).join(" · ") }].map((l, i) => (
+                  {[...lines, { key: "reply", label: t["fields.name"], value: [plan.name.trim(), plan.reply === "email" ? "" : plan.contact.trim()].filter(Boolean).join(" · ") }]
+                    .filter((l) => l.key !== "picks" || l.value)
+                    .map((l, i) => (
                     <div key={i} className="flex flex-col gap-1 py-4 tablet:flex-row tablet:items-baseline tablet:gap-6">
                       <dt className="shrink-0 font-gothic text-small text-ink-soft tablet:w-44">{l.label.node}</dt>
                       <dd className="flex-1 font-gothic text-label">{l.value || "—"}</dd>
                       <dd>
-                        <button type="button" onClick={() => go(STEPS.indexOf(l.key as Step))} className="tap cursor-pointer font-gothic text-small text-ink-soft underline hover:text-pine">
-                          {t["planner.buttons.edit"].node}
-                        </button>
+                        {l.key === "picks" ? null : (
+                          <button
+                            type="button"
+                            onClick={() => go(STEPS.indexOf(("edit" in l && l.edit) || (l.key as Step)))}
+                            className="tap cursor-pointer font-gothic text-small text-ink-soft underline hover:text-pine"
+                          >
+                            {t["planner.buttons.edit"].node}
+                          </button>
+                        )}
                       </dd>
                     </div>
                   ))}
@@ -440,7 +509,7 @@ export function TripPlanner({
           </div>
 
           {error && (
-            <p role="alert" className="mt-4 font-gothic text-small text-pine">
+            <p role="alert" id={`${uid}-err`} className="mt-4 font-gothic text-small text-pine">
               {error}
             </p>
           )}
@@ -481,7 +550,7 @@ export function TripPlanner({
             {lines
               .filter((l) => l.value)
               .map((l) => (
-                <div key={l.key} className="planner-line">
+                <div key={l.key} className={`planner-line ${l.key === "email" ? "rounded-[12px] bg-plate/10 px-3 py-2.5" : ""}`}>
                   <dt className="font-gothic text-small text-pine-soft">{l.label.node}</dt>
                   <dd className="mt-1 font-gothic text-label text-plate">{l.value}</dd>
                 </div>
