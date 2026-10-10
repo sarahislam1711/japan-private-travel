@@ -39,7 +39,7 @@ Each page: brief → copy drafted in `CONTENT.md` → Sarah approves → build �
 - [ ] Family Services
 - [ ] About
 - [ ] Contact
-- [ ] Private Japan — built 6 Oct 2026 (hero with 春 秋 冬 and a photo slot, four principles, onward panels to Summer Journeys and Family Services, pine close). Title and section heading drafted in CONTENT.md §5, awaiting approval; the four sections are earlier drafts, also awaiting approval.
+- [ ] Private Japan — built 6 Oct 2026, rebuilt 10 Oct 2026 in the open style (title with the seasons in pine and 春秋冬 set vertically, four principles as stops on one line, onward panels to Summer Journeys and Family Packages, pine close). Title and section heading drafted in CONTENT.md §5, awaiting approval; the four sections are earlier drafts, also awaiting approval.
 - [ ] Experiences
 - [ ] For travel advisors
 - [ ] Privacy, Terms, 404

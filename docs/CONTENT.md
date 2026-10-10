@@ -221,7 +221,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 **Page sections — DRAFT** (drafted 6 Oct 2026 for approval; restates approved copy, no new facts)
 
 - Title: "Japan in spring, autumn and winter, planned for the whole family."
-- Hero image, set vertically in the pine panel (decorative): 春 · 秋 · 冬
+- Hero image, set vertically beside the title (decorative): 春 · 秋 · 冬
 - Sections heading: "Planned for the unit."
 - Step symbols under each principle (decorative Japanese): 室 (room) · 歩 (pace) · 車 (vehicle) · 静 (quiet, private)
 - Onward panels reuse approved text: Summer Journeys (Home §3 entry text) and Family Services (§6 title and intro).
