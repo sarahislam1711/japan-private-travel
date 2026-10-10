@@ -48,6 +48,8 @@ export const photoSlots = {
   // Private Japan onward tiles (10 Oct 2026): the photo is most of the tile, the page name sits on it.
   "pj-onward-summer": { photoId: "japan-summer", brief: "Hokkaido or the Japan Alps in summer, green and open." },
   "pj-onward-packages": { photoId: "mt-fuji", brief: "Mt Fuji or another first-trip landmark, clear light." },
+  // Family Packages hero (Sarah, 10 Oct 2026): a parent and child walking through a temple gate, faded behind the title.
+  "fp-hero": { photoId: "japan-family-hero", brief: "A parent and child walking through a temple gate, from behind." },
   // Faded behind the hero (Sarah, 10 Oct 2026): a Kyoto garden with cherry blossom and early maples.
   "private-japan-hero": {
     photoId: "japan-spring",

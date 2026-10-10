@@ -3,6 +3,7 @@ import Image from "next/image";
 import { familyServices as c } from "@content/pages/family-services";
 import { home } from "@content/pages/home";
 import { photographs } from "@content/photography.manifest";
+import { photoSlots } from "@content/photography.slots";
 import { ui } from "@content/interface";
 import { CopyText } from "@/components/CopyText";
 import { PageClose } from "@/components/PageClose";
@@ -26,17 +27,26 @@ const h2 = "font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]";
  * added to any package, deliberately secondary.
  */
 export default function FamilyPackagesPage() {
+  const hero = photographs.find((x) => x.id === photoSlots["fp-hero"].photoId);
   return (
     <main id="main">
       <StructuredData page="familyServices" />
 
-      <section aria-labelledby="fp-title" className="mx-auto max-w-(--content-max) px-(--page-margin) pt-12 desktop:pt-20">
+      <section aria-labelledby="fp-title" className="relative isolate">
+        {/* A parent and child at a temple gate, faded behind the open side of the title (Sarah, 10 Oct 2026). Decorative. */}
+        {hero ? (
+          <div aria-hidden className="hero-photo pointer-events-none absolute top-0 -bottom-16 end-0 -z-10 w-full opacity-30 tablet:-bottom-24 tablet:opacity-45 desktop:w-[65%]">
+            <Image src={hero.src} alt="" fill priority sizes="(min-width: 1280px) 65vw, 100vw" className="object-cover" style={{ objectPosition: hero.focus }} />
+          </div>
+        ) : null}
+        <div className="mx-auto max-w-(--content-max) px-(--page-margin) pt-12 pb-4 desktop:pt-20">
         <h1 id="fp-title" data-reveal="words" className="max-w-[20ch] font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60] desktop:text-[clamp(3rem,3.2vw+1.4rem,4.5rem)] desktop:leading-[1.02]">
           <SplitWords copy={c.title} />
         </h1>
         <p data-reveal style={d(1)} className="mt-5 max-w-[38rem] font-gothic text-copy text-ink-soft">
           <CopyText copy={c.intro} />
         </p>
+        </div>
       </section>
 
       {/* The packages: the main part of the page. */}
