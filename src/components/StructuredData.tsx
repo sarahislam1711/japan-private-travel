@@ -23,7 +23,7 @@ const clean = <T extends object>(o: T) => JSON.parse(JSON.stringify(o)) as T; //
  * - the page, typed where schema.org has a fitting type (AboutPage, ContactPage),
  *   with its breadcrumb (BreadcrumbList) and the date its content last changed;
  * - what the page offers: TouristTrip (Summer Journeys with its three
- *   destinations, Private Japan), Service (Family Services, Experiences, and
+ *   destinations, Private Japan), Service (Family Packages, Experiences, and
  *   the advisor service for a business audience);
  * - on About, Air World Co., Ltd., the licensed principal named on the page;
  * - on Home, the FAQ.

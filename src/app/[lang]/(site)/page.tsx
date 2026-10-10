@@ -11,7 +11,7 @@ export const generateMetadata = () => pageMetadata("home");
 /**
  * Home (CONTENT.md §3): hero with the registration plate (→ About), two ways
  * in (→ Summer Journeys, Private Japan), how we work (→ Private Japan, About,
- * Family Services), the FAQ (→ For travel advisors), and the contact close on pine (→ WhatsApp, email, phone).
+ * Family Packages), the FAQ (→ For travel advisors), and the contact close on pine (→ WhatsApp, email, phone).
  */
 export default function HomePage() {
   return (

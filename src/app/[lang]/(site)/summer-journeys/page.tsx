@@ -10,7 +10,7 @@ export const generateMetadata = () => pageMetadata("summerJourneys");
 
 /**
  * Summer Journeys (CONTENT.md §4): the case for summer (→ Private Japan for
- * other seasons), the months, three regions (→ Family Services), and the close
+ * other seasons), the months, three regions, and the close
  * (→ WhatsApp, Contact).
  */
 export default function SummerJourneysPage() {

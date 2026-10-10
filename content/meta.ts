@@ -25,8 +25,8 @@ const en: Record<RouteKey, Meta> = {
     ),
   },
   familyServices: {
-    title: draft("Japan for Muslim families: halal and prayer"),
-    description: draft("Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic, for the whole family."),
+    title: draft("Family packages for Japan, planned for every age"),
+    description: draft("Family packages for Japan built around grandparents and children alike: connecting rooms, paced days, private transport and care planned in from the start."),
   },
   experiences: {
     title: draft("Experiences in Japan, arranged with named people"),
@@ -72,8 +72,8 @@ export const pageMeta = attachArabic(en, {
     description: ard("رحلات خاصة في أنحاء اليابان خارج الصيف، مخطّطة للعائلة كلها: غرف متصلة، وأيام بإيقاع يناسب كل الأعمار، وتنقّل يُبقي الجميع معًا."),
   },
   familyServices: {
-    title: ard("اليابان للعائلات المسلمة: الحلال والصلاة"),
-    description: ard("نشرح شهادات الحلال بوضوح، ونؤكّد الاستحمام الخاص غرفةً غرفة، ونُدرج أوقات الصلاة في اليوم، مع مرشدين يعملون بالعربية."),
+    title: ard("باقات عائلية إلى اليابان لكل الأعمار"),
+    description: ard("باقات عائلية إلى اليابان مخطّطة حول الأجداد والأطفال معًا: غرف متصلة، وأيام بإيقاع مريح، وتنقّل خاص، ورعاية مدروسة منذ البداية."),
   },
   experiences: {
     title: ard("تجارب في اليابان مع أشخاص بأسمائهم"),

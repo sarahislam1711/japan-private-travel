@@ -3,7 +3,7 @@ import { ard, type Translation } from "../schema";
 import type { summerJourneys } from "./summer-journeys";
 
 export const summerJourneysAr: Translation<typeof summerJourneys> = {
-  title: ard("يوليو وأغسطس هما أفضل شهرين لزيارة العائلة لليابان"),
+  title: ard("يوليو وأغسطس هما أفضل شهرين لزيارة اليابان"),
   story: {
     before: ard("في الصيف تكون المدن الكبرى حارّة ومزدحمة."),
     turn: ard("أما الشمال فلا."),

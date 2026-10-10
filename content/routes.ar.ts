@@ -6,7 +6,7 @@ export const navLabelsAr: Record<RouteKey, ArText | undefined> = {
   home: undefined,
   summerJourneys: ard("رحلات الصيف"),
   privateJapan: ard("رحلات خاصة"),
-  familyServices: ard("خدمات العائلات"),
+  familyServices: ard("باقات العائلات"),
   experiences: ard("التجارب"),
   about: ard("من نحن"),
   forTravelAdvisors: ard("لمستشاري السفر"),

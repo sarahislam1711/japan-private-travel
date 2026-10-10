@@ -57,7 +57,7 @@ Drafted 7 Oct 2026 for approval, for search intent in each language; Arabic in `
 | home | Private family trips to Japan for every age | Private trips to Japan for families who travel together, from grandparents to young children, planned in Arabic, English or Japanese from Tokyo and Osaka. | DRAFT |
 | summerJourneys | Summer in Japan: Hokkaido, Okinawa and the Alps | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips for July and August, planned around your family. | DRAFT |
 | privateJapan | Private Japan trips in spring, autumn and winter | Private trips across Japan outside summer, planned for the whole family: connecting rooms, days paced for every age, transport that keeps you together. | DRAFT |
-| familyServices | Japan for Muslim families: halal and prayer | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic, for the whole family. | DRAFT |
+| familyServices | Family packages for Japan, planned for every age | Family packages for Japan built around grandparents and children alike: connecting rooms, paced days, private transport and care planned in from the start. | DRAFT |
 | experiences | Experiences in Japan, arranged with named people | Experiences in Japan for families, each arranged with a named person, in a stated season and with a stated lead time, and planned around the rest of your trip. | DRAFT |
 | about | About HalaJapan and how we are registered | HalaJapan is run by Travel World Co., Ltd., a registered travel agency agent in Tokyo and Osaka, selling trips operated by Air World Co., Ltd., a JATA member. | DRAFT |
 | forTravelAdvisors | For travel advisors: private Japan for families | For clients who travel as a household. You hold the client relationship; we arrange the trip, and Air World, our licensed principal, operates it in Japan. | DRAFT |
@@ -67,12 +67,12 @@ Drafted 7 Oct 2026 for approval, for search intent in each language; Arabic in `
 
 ## 2. Navigation (`content/navigation.ts`)
 
-Page names: Summer Journeys · Private Japan · Family Services · Experiences · About · Contact — and "For travel advisors". Status: LOCKED (page names from strategy §5).
+Page names: Summer Journeys · Private Japan · Family Packages (renamed from Family Services by Sarah, 10 Oct 2026) · Experiences · About · Contact — and "For travel advisors". Status: LOCKED (page names from strategy §5).
 
 Header structure (set by Sarah, 6 Oct 2026):
 
 ```
-HalaJapan        Trips   Family Services   Experiences   About   | Advisors   [ Contact ]
+HalaJapan        Trips   Family Packages   Experiences   About   | Advisors   [ Contact ]
                  ├ Summer Journeys
                  └ Private Japan
 ```
@@ -152,9 +152,9 @@ Step symbols, set large under each promise in the How we work stage — DRAFT (d
 
 **Title and hero story — LOCKED** (written by Sarah, 8 Oct 2026; replaces the earlier title and lede, so "best" and "finest" are gone. Set as a visual story, her words unchanged.)
 
-> **July and August are the best months a family can visit Japan**
+> **July & August are the best months to visit Japan**
 
-(Title changed by Sarah, 8 Oct 2026, from "July and August are the months to bring a family to Japan, in the right places.". "best" is hers; the C4 approval entry is hers to add.)
+(Title changed by Sarah, 8 Oct 2026, from "July and August are the months to bring a family to Japan, in the right places.", and again 10 Oct 2026 from "July and August are the best months a family can visit Japan". "best" is hers; the C4 approval entry is hers to add.)
 >
 >
 > In summer the big cities are hot and crowded. The north is not. Hokkaido is cool, the Japan Alps are cool up high, and Okinawa is by the sea. We build your tour around that.
@@ -227,7 +227,7 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 - Onward panels reuse approved text: Summer Journeys (Home §3 entry text) and Family Services (§6 title and intro).
 - Close reuses the Home contact heading (§3, LOCKED).
 
-## 6. Family Services (`/family-services`)
+## 6. Family Packages (`/family-packages`, renamed from Family Services, /family-services, 10 Oct 2026)
 
 **All copy — LOCKED.** Page title: **For Muslim families**
 

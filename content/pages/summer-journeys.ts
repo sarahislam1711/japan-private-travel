@@ -17,7 +17,7 @@ type Region = {
 
 export const summerJourneys = {
   // Title and the hero's story, written by Sarah (8 Oct 2026); set as a sequence of beats, her words unchanged.
-  title: locked("July and August are the best months a family can visit Japan"),
+  title: locked("July & August are the best months to visit Japan"),
   story: {
     before: locked("In summer the big cities are hot and crowded."),
     turn: locked("The north is not."),

@@ -36,9 +36,15 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    if (!domain) return [];
+    // Family Services became Family Packages (10 Oct 2026): old addresses move permanently.
+    const renamed = [
+      { source: "/family-services", destination: "/family-packages", permanent: true },
+      { source: "/ar/" + encodeURIComponent("خدمات-العائلات"), destination: "/ar/" + encodeURIComponent("باقات-العائلات"), permanent: true },
+    ];
+    if (!domain) return renamed;
     // Apex is canonical: www redirects permanently.
     return [
+      ...renamed,
       {
         source: "/:path*",
         has: [{ type: "host", value: `www.${domain}` }],

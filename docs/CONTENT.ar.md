@@ -65,8 +65,8 @@ Status: **2** approved,
 | `pageMeta.summerJourneys.description` | Summer in Japan for families: Hokkaido and the Japan Alps stay cool and Okinawa is by the sea. Private trips for July and August, planned around your family. | <span dir="rtl" lang="ar">صيف اليابان للعائلات: هوكايدو وجبال الألب اليابانية معتدلة، وأوكيناوا على البحر. رحلات خاصة نخطّطها لشهري يوليو وأغسطس.</span> | draft |
 | `pageMeta.privateJapan.title` | Private Japan trips in spring, autumn and winter | <span dir="rtl" lang="ar">رحلات خاصة في اليابان في الربيع والخريف والشتاء</span> | draft |
 | `pageMeta.privateJapan.description` | Private trips across Japan outside summer, planned for the whole family: connecting rooms, days paced for every age, transport that keeps you together. | <span dir="rtl" lang="ar">رحلات خاصة في أنحاء اليابان خارج الصيف، مخطّطة للعائلة كلها: غرف متصلة، وأيام بإيقاع يناسب كل الأعمار، وتنقّل يُبقي الجميع معًا.</span> | draft |
-| `pageMeta.familyServices.title` | Japan for Muslim families: halal and prayer | <span dir="rtl" lang="ar">اليابان للعائلات المسلمة: الحلال والصلاة</span> | draft |
-| `pageMeta.familyServices.description` | Halal certification explained honestly, private bathing confirmed room by room, prayer built into the day, and guides who work in Arabic, for the whole family. | <span dir="rtl" lang="ar">نشرح شهادات الحلال بوضوح، ونؤكّد الاستحمام الخاص غرفةً غرفة، ونُدرج أوقات الصلاة في اليوم، مع مرشدين يعملون بالعربية.</span> | draft |
+| `pageMeta.familyServices.title` | Family packages for Japan, planned for every age | <span dir="rtl" lang="ar">باقات عائلية إلى اليابان لكل الأعمار</span> | draft |
+| `pageMeta.familyServices.description` | Family packages for Japan built around grandparents and children alike: connecting rooms, paced days, private transport and care planned in from the start. | <span dir="rtl" lang="ar">باقات عائلية إلى اليابان مخطّطة حول الأجداد والأطفال معًا: غرف متصلة، وأيام بإيقاع مريح، وتنقّل خاص، ورعاية مدروسة منذ البداية.</span> | draft |
 | `pageMeta.experiences.title` | Experiences in Japan, arranged with named people | <span dir="rtl" lang="ar">تجارب في اليابان مع أشخاص بأسمائهم</span> | draft |
 | `pageMeta.experiences.description` | Experiences in Japan for families, each arranged with a named person, in a stated season and with a stated lead time, and planned around the rest of your trip. | <span dir="rtl" lang="ar">تجارب في اليابان للعائلات، نرتّب كلًّا منها مع شخص محدّد بالاسم، في موسم محدّد وبمهلة حجز محدّدة، ونخطّطها حول بقية رحلتكم.</span> | draft |
 | `pageMeta.about.title` | About HalaJapan and how we are registered | <span dir="rtl" lang="ar">عن HalaJapan وكيف نحن مسجّلون</span> | draft |
@@ -86,7 +86,7 @@ Status: **2** approved,
 |---|---|---|---|
 | `routes.summerJourneys.navLabel` | Summer Journeys | <span dir="rtl" lang="ar">رحلات الصيف</span> | draft |
 | `routes.privateJapan.navLabel` | Private Japan | <span dir="rtl" lang="ar">رحلات خاصة</span> | draft |
-| `routes.familyServices.navLabel` | Family Services | <span dir="rtl" lang="ar">خدمات العائلات</span> | draft |
+| `routes.familyServices.navLabel` | Family Packages | <span dir="rtl" lang="ar">باقات العائلات</span> | draft |
 | `routes.experiences.navLabel` | Experiences | <span dir="rtl" lang="ar">التجارب</span> | draft |
 | `routes.about.navLabel` | About | <span dir="rtl" lang="ar">من نحن</span> | draft |
 | `routes.forTravelAdvisors.navLabel` | For travel advisors | <span dir="rtl" lang="ar">لمستشاري السفر</span> | draft |
@@ -133,7 +133,7 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `summerJourneys.title` | July and August are the best months a family can visit Japan | <span dir="rtl" lang="ar">يوليو وأغسطس هما أفضل شهرين لزيارة العائلة لليابان</span> | draft |
+| `summerJourneys.title` | July & August are the best months to visit Japan | <span dir="rtl" lang="ar">يوليو وأغسطس هما أفضل شهرين لزيارة اليابان</span> | draft |
 | `summerJourneys.story.before` | In summer the big cities are hot and crowded. | <span dir="rtl" lang="ar">في الصيف تكون المدن الكبرى حارّة ومزدحمة.</span> | draft |
 | `summerJourneys.story.turn` | The north is not. | <span dir="rtl" lang="ar">أما الشمال فلا.</span> | draft |
 | `summerJourneys.story.places[0].line` | Hokkaido is cool | <span dir="rtl" lang="ar">هوكايدو معتدلة الحرارة</span> | draft |

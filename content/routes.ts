@@ -66,10 +66,11 @@ export const routes: Route[] = z.array(RouteSchema).parse([
   },
   {
     key: "familyServices",
-    path: "/family-services",
-    arSlug: "خدمات-العائلات",
+    // Renamed by Sarah, 10 Oct 2026 (was Family Services, /family-services; old addresses redirect).
+    path: "/family-packages",
+    arSlug: "باقات-العائلات",
     kind: "page",
-    navLabel: locked("Family Services"),
+    navLabel: locked("Family Packages"),
     meta: noMeta,
     priority: 0.8,
   },
