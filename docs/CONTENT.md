@@ -333,19 +333,28 @@ Left out by choice (8 Oct 2026): the Cairo office, bank names and the registered
 
 ## 9. For Travel Advisors (`/for-travel-advisors`)
 
-**All copy — DRAFT ⚑D9**
+**All copy — DRAFT** (rebuilt 10 Oct 2026; corrected to the agent model: Air World operates trips. No commission figures, response time or membership claims in public.)
 
-> **For travel advisors**
+> **For travel advisors** (hero mark, decorative, DRAFT: 協力)
+> Japan for your clients who travel as a family. You keep the relationship; we plan the trip with you, in Arabic, English or Japanese.
+> Buttons: Request agent access · Already approved? Sign in
 >
-> We work with advisors whose clients travel to Japan as a household. You hold the client relationship; we plan and operate the trip in Japan, and we speak with your clients in Arabic, English or Japanese when you ask us to.
+> **How it works**
+> 01 · **You send the brief.** Who is travelling, when, and what the trip needs to do. (mark 依)
+> 02 · **We plan it with you.** A day-by-day plan, rooms checked one by one, and a quote you can present as your own. (mark 計)
+> 03 · **We look after them in Japan.** Your clients are met, guided and supported on the ground, and you stay in the loop. (mark 迎)
 >
-> Everything a due-diligence check needs is public: our registration, our named travel services managers, our memberships and our insurance are on the About page. Only net rates sit behind a sign-in, issued to advisors we have verified.
-
-Sections:
-- **Net rates.** Quoted in yen, net of our margin, so your commission is yours to set. ⚑D9 (confirm yen pricing and FX clause per strategy §8)
-- **Response.** The same desk that answers clients answers advisors, on the same response commitment.
-- **Request access.** Form fields: your name; agency; country; consortium or network (Virtuoso, Traveller Made, Signature, Ensemble, independent, other); agency registration or IATA number; work email. Submit: "Request access". Confirmation: "Request received. We verify every agency by hand and reply by email."
-- **Already approved?** Link "Sign in to net rates".
+> **Why advisors work with us**
+> **Your client stays yours.** We never market to them directly.
+> **Families are our specialism.** Grandparents to young children, private and paced.
+> **We speak their language.** Arabic, English and Japanese, with no interpreter in the middle.
+> **Registered and verifiable** Travel World Co., Ltd., Tokyo Governor Registration No. [[REG_NUMBER]], selling for Air World Co., Ltd. (Japan Tourism Agency No. 961, JATA member). Link: How we are registered
+>
+> **Agent terms** Registered advisors receive agent terms, with further terms for series departures, regular monthly bookings and early confirmation. We share the current tiers once we have verified your agency.
+>
+> **Request agent access** We check every agency by hand and reply by email.
+> Fields: Your name · Agency · Country · Agency registration or IATA number · Work email · Consortium or network: Virtuoso · Traveller Made · Signature · Ensemble · Independent · Other
+> Submit: Send request · Sending… · Confirmation: Request received. We verify every agency by hand and reply by email. · Error: Your request could not be sent just now. Please try again.
 
 ## 10. Contact (`/contact`)
 

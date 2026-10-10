@@ -40,7 +40,8 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 
 - [ ] Experiences: the page is built (9 Oct 2026) with **12 SAMPLE entries** (real public places, hosts by role, no named people). Replace or confirm each with real details: host, place, season, length, group size, booking lead time
 - [ ] Family Services: refocus on families (decide how far to take the Muslim-focus change, including the Home How we work step 3, the FAQ halal answer, the Summer Journeys link label and the page's meta title)
-- [ ] For travel advisors: content, and agent terms (no public numbers; tiers via the rate portal)
+- [ ] For travel advisors: page built 10 Oct 2026 (drafts). Confirm the commission model (discount off published rates, or net rates), whether to state a response time, and the network list; approve the copy
+- [ ] Advisor sign-in and rate portal: not built; the page has no sign-in link until it exists
 - [ ] Advisor rate portal (planned, gated, noindex)
 - [ ] Final photographs (currently stand-ins) and their alt text where they carry meaning
 - [ ] Experiences photos: one per card (slots `exp-*` in `content/photography.slots.ts`); all 12 set (9 from Sarah; snow monkeys, autumn leaves and tea ceremony use stand-ins: replace with matching photos if possible)
@@ -50,7 +51,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 
 - [ ] Vercel project connected to the GitHub repo; function region `hnd1` (Tokyo)
 - [ ] Domain connected; apex canonical, www redirects (already coded)
-- [ ] Supabase project in Tokyo (`ap-northeast-1`); run `supabase/migrations/0001_enquiries.sql`; confirm row level security is on
+- [ ] Supabase project in Tokyo (`ap-northeast-1`); run `supabase/migrations/0001_enquiries.sql` and `0002_advisor_requests.sql`; confirm row level security is on
 - [ ] Vercel environment variables:
   - [ ] `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
   - [ ] `ADMIN_PASSWORD` (new and strong; never the local one) and `ADMIN_SECRET` (a long random string)

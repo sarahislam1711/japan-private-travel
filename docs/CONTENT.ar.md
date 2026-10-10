@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**457** draft,
-**0** missing — of 459 strings.
+**474** draft,
+**0** missing — of 476 strings.
 
 ## content/site.ts
 
@@ -392,29 +392,46 @@ Status: **2** approved,
 | Where | English | Arabic | Status |
 |---|---|---|---|
 | `forTravelAdvisors.title` | For travel advisors | <span dir="rtl" lang="ar">لمستشاري السفر</span> | draft |
-| `forTravelAdvisors.paragraphs[0]` | We work with advisors whose clients travel to Japan as a household. You hold the client relationship; we plan and operate the trip in Japan, and we speak with your clients in Arabic, English or Japanese when you ask us to. | <span dir="rtl" lang="ar">نعمل مع المستشارين الذين يسافر عملاؤهم إلى اليابان كعائلة واحدة. أنتم تحتفظون بالعلاقة مع العميل؛ ونحن نخطّط الرحلة وننفّذها في اليابان، ونتحدّث مع عملائكم بالعربية أو الإنجليزية أو اليابانية متى طلبتم ذلك.</span> | draft |
-| `forTravelAdvisors.paragraphs[1]` | Everything a due-diligence check needs is public: our registration, our named travel services managers, our memberships and our insurance are on the About page. Only net rates sit behind a sign-in, issued to advisors we have verified. | <span dir="rtl" lang="ar">كل ما يتطلّبه التحقق من العناية الواجبة منشور للعموم: تسجيلنا، وأسماء مديري خدمات السفر لدينا، وعضوياتنا، وتأميننا، كلها في صفحة «من نحن». ولا يقع خلف تسجيل الدخول سوى الأسعار الصافية، وتُمنح للمستشارين الذين تحقّقنا منهم.</span> | draft |
-| `forTravelAdvisors.sections.netRates.lead` | Net rates. | <span dir="rtl" lang="ar">الأسعار الصافية.</span> | draft |
-| `forTravelAdvisors.sections.netRates.body` | Quoted in yen, net of our margin, so your commission is yours to set. | <span dir="rtl" lang="ar">مسعّرة بالين الياباني، صافية من هامشنا، فتحدّدون عمولتكم بأنفسكم.</span> | draft |
-| `forTravelAdvisors.sections.response.lead` | Response. | <span dir="rtl" lang="ar">الاستجابة.</span> | draft |
-| `forTravelAdvisors.sections.response.body` | The same desk that answers clients answers advisors, on the same response commitment. | <span dir="rtl" lang="ar">المكتب نفسه الذي يردّ على العملاء يردّ على المستشارين، وبالتزام الاستجابة نفسه.</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.lead` | Request access. | <span dir="rtl" lang="ar">طلب الوصول.</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.fields.name` | your name | <span dir="rtl" lang="ar">الاسم</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.fields.agency` | agency | <span dir="rtl" lang="ar">الوكالة</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.fields.country` | country | <span dir="rtl" lang="ar">الدولة</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.fields.consortium` | consortium or network | <span dir="rtl" lang="ar">التحالف أو الشبكة</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.fields.registration` | agency registration or IATA number | <span dir="rtl" lang="ar">رقم تسجيل الوكالة أو رقم IATA</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.fields.email` | work email | <span dir="rtl" lang="ar">البريد الإلكتروني للعمل</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.consortiumOptions[0]` | Virtuoso | <span dir="rtl" lang="ar">Virtuoso</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.consortiumOptions[1]` | Traveller Made | <span dir="rtl" lang="ar">Traveller Made</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.consortiumOptions[2]` | Signature | <span dir="rtl" lang="ar">Signature</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.consortiumOptions[3]` | Ensemble | <span dir="rtl" lang="ar">Ensemble</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.consortiumOptions[4]` | independent | <span dir="rtl" lang="ar">مستقل</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.consortiumOptions[5]` | other | <span dir="rtl" lang="ar">أخرى</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.submit` | Request access | <span dir="rtl" lang="ar">طلب الوصول</span> | draft |
-| `forTravelAdvisors.sections.requestAccess.confirmation` | Request received. We verify every agency by hand and reply by email. | <span dir="rtl" lang="ar">تمّ استلام طلبكم. نتحقّق من كل وكالة يدويًا ونردّ عبر البريد الإلكتروني.</span> | draft |
-| `forTravelAdvisors.sections.signIn.lead` | Already approved? | <span dir="rtl" lang="ar">حصلتم على الموافقة مسبقًا؟</span> | draft |
-| `forTravelAdvisors.sections.signIn.link` | Sign in to net rates | <span dir="rtl" lang="ar">تسجيل الدخول إلى الأسعار الصافية</span> | draft |
+| `forTravelAdvisors.intro` | Japan for your clients who travel as a family. You keep the relationship; we plan the trip with you, in Arabic, English or Japanese. | <span dir="rtl" lang="ar">اليابان لعملائكم الذين يسافرون كعائلة. تحتفظون بعلاقتكم مع العميل، ونخطّط الرحلة معكم بالعربية أو الإنجليزية أو اليابانية.</span> | draft |
+| `forTravelAdvisors.requestCta` | Request agent access | <span dir="rtl" lang="ar">اطلبوا حساب وكيل</span> | draft |
+| `forTravelAdvisors.signInCta` | Already approved? Sign in | <span dir="rtl" lang="ar">لديكم حساب؟ سجّلوا الدخول</span> | draft |
+| `forTravelAdvisors.stepsHeading` | How it works | <span dir="rtl" lang="ar">كيف نعمل معًا</span> | draft |
+| `forTravelAdvisors.whyHeading` | Why advisors work with us | <span dir="rtl" lang="ar">لماذا يعمل المستشارون معنا</span> | draft |
+| `forTravelAdvisors.registered` | Registered and verifiable | <span dir="rtl" lang="ar">مسجّلون ويمكن التحقق منّا</span> | draft |
+| `forTravelAdvisors.registeredLine` | Travel World Co., Ltd., Tokyo Governor Registration No. 11300, selling for Air World Co., Ltd. (Japan Tourism Agency No. 961, JATA member). | <span dir="rtl" lang="ar">شركة Travel World المحدودة، تسجيل حاكم طوكيو رقم 11300، تبيع لصالح شركة Air World المحدودة (وكالة السياحة اليابانية رقم 961، عضو في JATA).</span> | draft |
+| `forTravelAdvisors.registeredLink` | How we are registered | <span dir="rtl" lang="ar">كيف نحن مسجّلون</span> | draft |
+| `forTravelAdvisors.termsHeading` | Agent terms | <span dir="rtl" lang="ar">شروط الوكلاء</span> | draft |
+| `forTravelAdvisors.termsBody` | Registered advisors receive agent terms, with further terms for series departures, regular monthly bookings and early confirmation. We share the current tiers once we have verified your agency. | <span dir="rtl" lang="ar">يحصل المستشارون المسجّلون على شروط الوكلاء، مع شروط إضافية للرحلات المتكرّرة والحجوزات الشهرية المنتظمة والتأكيد المبكر. ونشارك المستويات الحالية بعد التحقق من وكالتكم.</span> | draft |
+| `forTravelAdvisors.formHeading` | Request agent access | <span dir="rtl" lang="ar">طلب حساب وكيل</span> | draft |
+| `forTravelAdvisors.formIntro` | We check every agency by hand and reply by email. | <span dir="rtl" lang="ar">نتحقّق من كل وكالة يدويًا ونردّ عبر البريد الإلكتروني.</span> | draft |
+| `forTravelAdvisors.submit` | Send request | <span dir="rtl" lang="ar">إرسال الطلب</span> | draft |
+| `forTravelAdvisors.sending` | Sending… | <span dir="rtl" lang="ar">جارٍ الإرسال…</span> | draft |
+| `forTravelAdvisors.confirmation` | Request received. We verify every agency by hand and reply by email. | <span dir="rtl" lang="ar">تمّ استلام طلبكم. نتحقّق من كل وكالة يدويًا ونردّ عبر البريد الإلكتروني.</span> | draft |
+| `forTravelAdvisors.error` | Your request could not be sent just now. Please try again. | <span dir="rtl" lang="ar">تعذّر إرسال طلبكم الآن. يُرجى المحاولة مرة أخرى.</span> | draft |
+| `forTravelAdvisors.networkLabel` | Consortium or network | <span dir="rtl" lang="ar">الشبكة أو التحالف</span> | draft |
+| `forTravelAdvisors.steps[0].lead` | You send the brief. | <span dir="rtl" lang="ar">أرسلوا لنا التفاصيل.</span> | draft |
+| `forTravelAdvisors.steps[0].body` | Who is travelling, when, and what the trip needs to do. | <span dir="rtl" lang="ar">مَن سيسافر، ومتى، وما الذي تريدونه من الرحلة.</span> | draft |
+| `forTravelAdvisors.steps[1].lead` | We plan it with you. | <span dir="rtl" lang="ar">نخطّطها معكم.</span> | draft |
+| `forTravelAdvisors.steps[1].body` | A day-by-day plan, rooms checked one by one, and a quote you can present as your own. | <span dir="rtl" lang="ar">خطة يومًا بيوم، وغرف نتحقّق منها واحدة واحدة، وعرض سعر تقدّمونه باسمكم.</span> | draft |
+| `forTravelAdvisors.steps[2].lead` | We look after them in Japan. | <span dir="rtl" lang="ar">نعتني بهم في اليابان.</span> | draft |
+| `forTravelAdvisors.steps[2].body` | Your clients are met, guided and supported on the ground, and you stay in the loop. | <span dir="rtl" lang="ar">نستقبل عملاءكم ونرشدهم وندعمهم على أرض الواقع، وتبقون على اطّلاع دائم.</span> | draft |
+| `forTravelAdvisors.why[0].lead` | Your client stays yours. | <span dir="rtl" lang="ar">عميلكم يبقى عميلكم.</span> | draft |
+| `forTravelAdvisors.why[0].body` | We never market to them directly. | <span dir="rtl" lang="ar">لا نتواصل معهم تسويقيًا أبدًا.</span> | draft |
+| `forTravelAdvisors.why[1].lead` | Families are our specialism. | <span dir="rtl" lang="ar">العائلات تخصّصنا.</span> | draft |
+| `forTravelAdvisors.why[1].body` | Grandparents to young children, private and paced. | <span dir="rtl" lang="ar">من الأجداد إلى الأطفال الصغار، بخصوصية وإيقاع مريح.</span> | draft |
+| `forTravelAdvisors.why[2].lead` | We speak their language. | <span dir="rtl" lang="ar">نتحدّث لغتهم.</span> | draft |
+| `forTravelAdvisors.why[2].body` | Arabic, English and Japanese, with no interpreter in the middle. | <span dir="rtl" lang="ar">العربية والإنجليزية واليابانية، دون مترجم وسيط.</span> | draft |
+| `forTravelAdvisors.fields.name` | Your name | <span dir="rtl" lang="ar">الاسم</span> | draft |
+| `forTravelAdvisors.fields.agency` | Agency | <span dir="rtl" lang="ar">الوكالة</span> | draft |
+| `forTravelAdvisors.fields.country` | Country | <span dir="rtl" lang="ar">الدولة</span> | draft |
+| `forTravelAdvisors.fields.registration` | Agency registration or IATA number | <span dir="rtl" lang="ar">رقم تسجيل الوكالة أو رقم IATA</span> | draft |
+| `forTravelAdvisors.fields.email` | Work email | <span dir="rtl" lang="ar">البريد الإلكتروني للعمل</span> | draft |
+| `forTravelAdvisors.networks[0]` | Virtuoso | <span dir="rtl" lang="ar">Virtuoso</span> | draft |
+| `forTravelAdvisors.networks[1]` | Traveller Made | <span dir="rtl" lang="ar">Traveller Made</span> | draft |
+| `forTravelAdvisors.networks[2]` | Signature | <span dir="rtl" lang="ar">Signature</span> | draft |
+| `forTravelAdvisors.networks[3]` | Ensemble | <span dir="rtl" lang="ar">Ensemble</span> | draft |
+| `forTravelAdvisors.networks[4]` | Independent | <span dir="rtl" lang="ar">مستقلّة</span> | draft |
+| `forTravelAdvisors.networks[5]` | Other | <span dir="rtl" lang="ar">أخرى</span> | draft |
 
 ## content/pages/contact.ts
 

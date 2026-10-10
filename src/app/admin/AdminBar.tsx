@@ -14,6 +14,12 @@ export function AdminBar() {
       </Link>
       <div className="flex items-center gap-3 text-small">
         <span className="rounded-full bg-plate px-3 py-1 text-ink-soft">{storeKind() === "supabase" ? "Database: Supabase" : "Database: local file (development)"}</span>
+        <Link href="/admin" className="tap text-ink">
+          Trip plans
+        </Link>
+        <Link href="/admin/advisors" className="tap text-ink">
+          Advisor requests
+        </Link>
         <a href="/admin/export" className="tap text-ink">
           Export CSV
         </a>
