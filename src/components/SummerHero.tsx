@@ -26,7 +26,7 @@ export async function SummerHero() {
       {/* A summer photo, faded behind the open side of the title (Sarah, 10 Oct 2026). Decorative. */}
       {photo ? (
         <div aria-hidden className="sj-hero-photo pointer-events-none absolute inset-y-0 end-0 -z-10 w-full opacity-30 tablet:opacity-45 desktop:w-[65%]">
-          <Image src={photo.src} alt="" fill priority sizes="(min-width: 1280px) 65vw, 100vw" className="object-cover" style={{ objectPosition: "50% 40%" }} />
+          <Image src={photo.src} alt="" fill priority sizes="(min-width: 1280px) 65vw, 100vw" className="object-cover" style={{ objectPosition: photo.focus }} />
         </div>
       ) : null}
       <div className="mx-auto max-w-(--content-max) px-(--page-margin) pt-12 pb-4 desktop:pt-16">

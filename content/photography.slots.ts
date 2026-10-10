@@ -7,7 +7,7 @@ export type PhotoSlot = { photoId: string | null; brief: string };
 
 export const photoSlots = {
   // Summer Journeys hero (10 Oct 2026): faded behind the empty side of the title, so the first screen is not text alone.
-  "sj-hero": { photoId: "hokkaido-lavender", brief: "Hokkaido in July: a lavender field, someone walking away towards the hills, wide open sky." },
+  "sj-hero": { photoId: "kyoto-street", brief: "Supplied by Sarah 10 Oct 2026: a busy Kyoto street (Sannenzaka to Kiyomizu-dera), city behind." },
   // Summer Journeys regions (10 Oct 2026): one summer photo per region, faded behind its panel.
   "region-hokkaido": { photoId: "hokkaido-furano", brief: "Hokkaido in July or August: lavender at Furano, or a lake at Shikotsu-Toya." },
   "region-okinawa": { photoId: "okinawa-beach", brief: "Okinawa: calm sea and a quiet beach, a family at a distance." },

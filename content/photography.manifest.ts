@@ -38,5 +38,6 @@ export const photographs: Photo[] = z.array(PhotoSchema).parse([
   { id: "hokkaido-lavender", src: "/photos/hokkaido.jpg", alt: "", focus: "50% 60%" },
   { id: "alps-summer", src: "/photos/japan-alps-main.png", alt: "" },
   { id: "okinawa-beach", src: "/photos/okinawa-main.jpg", alt: "", focus: "60% 60%" },
+  { id: "kyoto-street", src: "/photos/japan-hero-image.jpg", alt: "", focus: "50% 55%" },
   { id: "mt-fuji", src: "/photos/mountain-fuji.jpg", alt: "", focus: "50% 22%" },
 ]);
