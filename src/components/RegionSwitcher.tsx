@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
 import { JAPAN_MAP } from "@/lib/japan-map";
 
 export type RegionPanel = {
@@ -71,13 +71,21 @@ export function RegionSwitcher({ regions, label, months }: { regions: RegionPane
                 }}
                 className={`group absolute flex cursor-pointer items-center gap-2.5 ${right ? "" : "flex-row-reverse"}`}
               >
-                <span className="relative flex size-[1.125rem] shrink-0 items-center justify-center">
-                  {on ? <span className="absolute inset-0 animate-ping rounded-full bg-pine/40 motion-reduce:animate-none" /> : null}
-                  <span className={`relative size-full rounded-full ring-4 ring-ground transition-colors ${on ? "bg-pine" : "bg-pine/45 group-hover:bg-pine/80"}`} />
+                {/* The dot grows on hover and focus; unchosen dots breathe and ripple in turn to invite a press. */}
+                <span
+                  style={{ "--i": i } as CSSProperties}
+                  className="relative flex size-[1.125rem] shrink-0 items-center justify-center transition-transform duration-300 ease-(--ease-out-expo) group-hover:scale-130 group-focus-visible:scale-130"
+                >
+                  {on ? (
+                    <span className="absolute inset-0 animate-ping rounded-full bg-pine/40 motion-reduce:animate-none" />
+                  ) : (
+                    <span className="pin-ripple absolute inset-0 rounded-full bg-pine/35 opacity-0" />
+                  )}
+                  <span className={`relative size-full rounded-full ring-4 ring-ground transition-colors ${on ? "bg-pine" : "pin-breathe bg-pine/55 group-hover:bg-pine/85"}`} />
                 </span>
                 <span
-                  className={`flex flex-col whitespace-nowrap rounded-[12px] px-3 py-1.5 transition-colors ${right ? "items-start" : "items-end"} ${
-                    on ? "bg-pine text-plate" : "bg-plate/90 text-ink group-hover:bg-white"
+                  className={`flex flex-col whitespace-nowrap rounded-[12px] px-3 py-1.5 transition-[background-color,box-shadow,translate] duration-300 ease-(--ease-out-expo) ${right ? "items-start" : "items-end"} ${
+                    on ? "bg-pine text-plate" : "bg-plate/90 text-ink group-hover:-translate-y-0.5 group-hover:bg-white group-hover:shadow-[0_6px_18px_-8px_rgb(26_34_48/0.35)]"
                   }`}
                 >
                   <span lang="ja" className={`font-mincho text-[1rem] leading-tight ${on ? "text-pine-soft" : "text-pine"}`}>

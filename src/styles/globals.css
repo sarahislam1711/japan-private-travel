@@ -393,6 +393,39 @@
     }
   }
 
+  /* Summer regions map: the pins not yet chosen breathe and send out a ring,
+     one after another, so they read as things to press (Sarah, 10 Oct 2026). */
+  @media (prefers-reduced-motion: no-preference) {
+    .pin-breathe {
+      animation: pin-breathe 2.4s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 0.8s);
+    }
+    .pin-ripple {
+      animation: pin-ripple 2.4s var(--ease-out-expo) infinite;
+      animation-delay: calc(var(--i, 0) * 0.8s);
+    }
+  }
+  @keyframes pin-breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.22);
+    }
+  }
+  @keyframes pin-ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    70%,
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  }
+
   /* Trip planner: each step and each new line of the plan settles in. */
   @media (prefers-reduced-motion: no-preference) {
     .planner-step {
