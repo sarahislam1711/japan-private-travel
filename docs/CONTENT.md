@@ -207,9 +207,15 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 
 ## 5. Private Japan (`/private-japan`)
 
-**Lede — LOCKED**
+**Lede — LOCKED** (shortened and approved by Sarah, 10 Oct 2026; the earlier version is below)
+
+> We plan for the whole household, not the individual traveller: rooms together, a pace for every age, and privacy from the start.
+
+<details><summary>Earlier lede (LOCKED until 10 Oct 2026)</summary>
 
 > A family trip to Japan is a household moving together. We plan for the unit, not the individual traveller: rooms that connect, pacing that works for a grandparent and a six-year-old on the same day, transport that keeps the group together, and privacy for the group as a whole rather than as a request added at the end.
+
+</details>
 
 **Sections — DRAFT**
 

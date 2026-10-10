@@ -7,9 +7,8 @@ export const privateJapan = {
   title: draft("Japan in spring, autumn and winter, planned for the whole family."),
   heroImage: [draft("春", { lang: "ja" }), draft("秋", { lang: "ja" }), draft("冬", { lang: "ja" })],
   sectionsHeading: draft("Planned for the unit."),
-  lede: locked(
-    "A family trip to Japan is a household moving together. We plan for the unit, not the individual traveller: rooms that connect, pacing that works for a grandparent and a six-year-old on the same day, transport that keeps the group together, and privacy for the group as a whole rather than as a request added at the end.",
-  ),
+  // Shortened and approved by Sarah, 10 Oct 2026.
+  lede: locked("We plan for the whole household, not the individual traveller: rooms together, a pace for every age, and privacy from the start."),
   sections: [
     {
       lead: draft("Rooms."),
