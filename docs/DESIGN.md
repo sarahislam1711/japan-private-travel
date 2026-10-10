@@ -359,8 +359,8 @@ On desktop and tablet each section, or each pinned screen, fits one viewport fro
 
 ### Family Packages (10 Oct 2026, Sarah)
 - Packages are tailored starting points, never fixed products (the FAQ's "we do not sell fixed packages" stays true).
-- Four cards in a two-column grid (one on phones), Snow on Mist, 24px radius. Each card has its photo across the top at 60% opacity, masked to clear by 45% so the text sits on plain Snow; the day count in Pine; the name; one line; the route as dots joined by short rules; "Fly in and out"; and "Start from this", which opens Contact with the package added.
-- Card photos are portrait in a landscape card, so each card sets its own crop (`cardFocus` in the page) to keep the subject (Fuji, the Miyajima gate) in the clear band.
+- Four cards in a two-column grid (one on phones), Snow on Mist, 24px radius. Each card has its photo as a band across the top (10rem on phones, 13rem from tablet) at 85% opacity, fading out over its lower half so the text below sits on plain Snow (photos made stronger by Sarah, 10 Oct 2026); the day count in Pine; the name; one line; the route as dots joined by short rules; "Fly in and out"; and "Start from this", which opens Contact with the package added.
+- Card photos are portrait in a landscape band, so each card sets its own crop (`cardFocus` in the page) to keep the subject (Fuji's peak, the Nara deer, the Miyajima gate) in the clear part of the band.
 - What can be added is secondary: a heading and note at inline-start, the extras as small Snow pills with a Pine tick at inline-end. Halal dining and prayer time are two pills among them, not a section.
 
 ## Arabic and right to left (7 Oct 2026)

@@ -14,8 +14,8 @@ import { pageMetadata } from "@/lib/metadata";
 export const generateMetadata = () => pageMetadata("familyServices");
 
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
-// Where each photo's subject sits within the card's top band (the photos are portrait, the cards landscape).
-const cardFocus: Record<string, string> = { "mt-fuji": "50% 40%", miyajima: "25% 88%", "nara-park": "50% 30%" };
+// Where each photo's subject sits within the card's photo band (the photos are portrait, the band landscape).
+const cardFocus: Record<string, string> = { "mt-fuji": "50% 40%", miyajima: "20% 60%", "nara-park": "50% 95%" };
 const h2 = "font-serif text-h1 font-[450] [font-variation-settings:'opsz'_60]";
 
 /**
@@ -49,17 +49,13 @@ export default function FamilyPackagesPage() {
             const photo = photographs.find((x) => x.id === p.photo);
             return (
               <li key={p.id} data-reveal style={d(i % 2)} className="relative flex flex-col overflow-hidden rounded-[24px] bg-plate">
+                {/* The photo is its own band across the top, fading out before the text, so the text always sits on plain Snow. */}
                 {photo ? (
-                  <Image
-                    src={photo.src}
-                    alt=""
-                    fill
-                    sizes="(min-width: 834px) 50vw, 100vw"
-                    className="pointer-events-none object-cover opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_15%,transparent_45%)]"
-                    style={{ objectPosition: cardFocus[p.photo] ?? photo.focus }}
-                  />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[10rem] [mask-image:linear-gradient(to_bottom,black_55%,transparent)] tablet:h-[13rem]">
+                    <Image src={photo.src} alt="" fill sizes="(min-width: 834px) 50vw, 100vw" className="object-cover opacity-85" style={{ objectPosition: cardFocus[p.photo] ?? photo.focus }} />
+                  </div>
                 ) : null}
-                <div className="relative flex flex-1 flex-col p-7 pt-28 tablet:p-9 tablet:pt-36">
+                <div className="relative flex flex-1 flex-col p-7 pt-[10.5rem] tablet:p-9 tablet:pt-[13rem]">
                   <p className="flex items-baseline gap-2 font-gothic text-small text-ink-soft">
                     <span className="font-serif text-[1.75rem] leading-none text-pine" dir="ltr">
                       {p.days}
