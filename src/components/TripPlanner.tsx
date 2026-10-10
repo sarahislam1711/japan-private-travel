@@ -411,6 +411,16 @@ export function TripPlanner({
                       className="min-h-14 w-full rounded-(--radius-control) bg-plate px-4 font-gothic text-[1.125rem] text-ink ring-1 ring-pine/30 ring-inset outline-pine"
                     />
                   </label>
+                  {/* The email error sits with the email, not at the foot of the step where it reads as the phone's. */}
+                  {emailMissing ? (
+                    <p role="alert" id={`${uid}-err`} className="mt-3 flex items-center gap-2 font-gothic text-small font-bold text-pine">
+                      <svg aria-hidden viewBox="0 0 16 16" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                        <circle cx="8" cy="8" r="6.5" />
+                        <path d="M8 4.5v4.2M8 11.2v.1" />
+                      </svg>
+                      {error}
+                    </p>
+                  ) : null}
                 </div>
                 <Field label={t["fields.name"]}>
                   <input value={plan.name} onChange={(e) => set("name", e.target.value)} autoComplete="name" maxLength={120} className={inputClass} />
@@ -509,8 +519,8 @@ export function TripPlanner({
             )}
           </div>
 
-          {error && (
-            <p role="alert" id={`${uid}-err`} className="mt-4 font-gothic text-small text-pine">
+          {error && !emailMissing && (
+            <p role="alert" className="mt-4 font-gothic text-small text-pine">
               {error}
             </p>
           )}
