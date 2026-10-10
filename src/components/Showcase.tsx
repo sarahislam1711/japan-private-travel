@@ -14,9 +14,11 @@ const SEGMENT_VH = 70; // scroll distance per item while pinned
 /**
  * A pinned, scroll-driven stage. On desktop with motion allowed, the section
  * holds one screen while scrolling moves through the items, one at a time.
- * Each wheel gesture moves exactly one step (a fast flick never skips through
- * the stage; its leftover momentum is absorbed), and scrolling on from the
- * last step carries on down the page:
+ * Scrolling down, each wheel gesture moves exactly one step (a fast flick
+ * never skips through the stage; its leftover momentum is absorbed), and
+ * scrolling on from the last step carries on down the page. Scrolling up
+ * passes straight through, with no stepping (Sarah, 10 Oct 2026: stepping
+ * back felt like lag):
  * the current promise leaves upwards, the next one's words rise in, and a
  * progress bar fills continuously. Bar segments are buttons that jump to an
  * item. Otherwise (phones, reduced motion, crawlers): a compact stacked list.
@@ -103,6 +105,11 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
 
     window.__scrollGate = ({ deltaY, event }) => {
       if (!event.type.includes("wheel") || event.ctrlKey) return true;
+      // Upwards is ordinary scrolling: the steps only hold the visitor on the way down.
+      if (deltaY < 0) {
+        intent = 0;
+        return true;
+      }
       const now = performance.now();
       const gap = now - lastWheel;
       const abs = Math.abs(deltaY);
@@ -123,14 +130,10 @@ export function Showcase({ id, heading, items }: { id: string; heading: ReactNod
       const at = lenis.targetScroll;
       const TOL = 2;
 
-      // Outside the stage: catch a gesture that would carry into (or across) it, and land on its first or last step.
+      // Outside the stage: catch a downward gesture that would carry into (or across) it, and land on its first step.
       if (at < start - TOL || at > end + TOL) {
-        if (deltaY > 0 && at < start && at + deltaY >= start - TOL) {
+        if (at < start && at + deltaY >= start - TOL) {
           go(start);
-          return block();
-        }
-        if (deltaY < 0 && at > end && at + deltaY <= end + TOL) {
-          go(end);
           return block();
         }
         return true;
