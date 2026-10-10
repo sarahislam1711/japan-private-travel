@@ -56,7 +56,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
   - [ ] `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
   - [ ] `ADMIN_PASSWORD` (new and strong; never the local one) and `ADMIN_SECRET` (a long random string)
   - [ ] `DOMAIN` filled in `content/placeholders.ts`, so production builds are indexable
-- [ ] Send a test plan from the live Contact page and see it in `/admin`; then delete it
+- [ ] Send a test plan from the live Contact page and a test request from the advisors page; see them in `/admin/plans` and `/admin/advisors`; then delete them
 - [ ] Optional, decided against for now: email alert per new plan (Resend), Cloudflare Turnstile on the planner
 
 ## 6. Analytics

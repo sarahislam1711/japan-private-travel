@@ -4,8 +4,8 @@ import { requireAdmin } from "@/lib/enquiries/admin-auth";
 import { formatDate, languageLabel, replyHref, replyLabel, statusLabel, travellers, when, where } from "@/lib/enquiries/format";
 import { STATUSES } from "@/lib/enquiries/schema";
 import { enquiryStore } from "@/lib/enquiries/store";
-import { updateEnquiry } from "../actions";
-import { AdminBar } from "../AdminBar";
+import { updateEnquiry } from "../../actions";
+import { AdminBar } from "../../AdminBar";
 
 export const dynamic = "force-dynamic";
 
@@ -31,10 +31,10 @@ export default async function EnquiryPage({ params, searchParams }: { params: Pr
 
   return (
     <>
-      <AdminBar />
+      <AdminBar current="plans" />
       <main className="mx-auto grid max-w-7xl gap-6 px-6 pb-20 desktop:grid-cols-12">
         <section className="rounded-[20px] bg-plate p-7 desktop:col-span-8">
-          <Link href="/admin" className="text-small text-ink-soft">
+          <Link href="/admin/plans" className="text-small text-ink-soft">
             ← All plans
           </Link>
           <h1 className="mt-3 font-serif text-[2rem] leading-tight">{e.name}</h1>

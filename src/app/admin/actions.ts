@@ -25,9 +25,9 @@ export async function updateEnquiry(form: FormData) {
   await requireAdmin();
   const { id, status, notes } = Update.parse({ id: form.get("id"), status: form.get("status"), notes: form.get("notes") ?? "" });
   await enquiryStore().update(id, { status, notes });
-  revalidatePath("/admin");
-  revalidatePath(`/admin/${id}`);
-  redirect(`/admin/${id}?saved=1`);
+  revalidatePath("/admin/plans");
+  revalidatePath(`/admin/plans/${id}`);
+  redirect(`/admin/plans/${id}?saved=1`);
 }
 
 const AdvisorUpdate = z.object({ id: z.uuid(), status: z.enum(ADVISOR_STATUSES), notes: z.string().max(5000) });
