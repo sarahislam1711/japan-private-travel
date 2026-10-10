@@ -1,10 +1,13 @@
 import type { CSSProperties } from "react";
-import { familyServices } from "@content/pages/family-services";
+import Image from "next/image";
+import Link from "next/link";
+import { photographs } from "@content/photography.manifest";
+import { photoSlots, type PhotoSlotId } from "@content/photography.slots";
+import { localePath, routeFor, type RouteKey } from "@content/routes";
 import { home } from "@content/pages/home";
 import { privateJapan as c } from "@content/pages/private-japan";
 import { CopyText } from "@/components/CopyText";
 import { MarginNote } from "@/components/MarginNote";
-import { OnwardPanels } from "@/components/OnwardPanels";
 import { PageClose } from "@/components/PageClose";
 import { SplitWords } from "@/components/SplitWords";
 import { StructuredData } from "@/components/StructuredData";
@@ -14,13 +17,18 @@ import { pageMetadata } from "@/lib/metadata";
 export const generateMetadata = () => pageMetadata("privateJapan");
 
 const d = (n: number) => ({ "--d": n }) as CSSProperties;
+const onward: { key: RouteKey; slot: PhotoSlotId }[] = [
+  { key: "summerJourneys", slot: "pj-onward-summer" },
+  { key: "familyServices", slot: "pj-onward-packages" },
+];
 
 /**
  * Private Japan (CONTENT.md §5, rebuilt 10 Oct 2026 in the open style of
  * Summer Journeys and For travel advisors): the title with the three seasons
  * in pine and 春秋冬 set in one vertical column beside it; the four principles for the
  * household as stops on one line, each with its kanji (→ proof on transport);
- * onward to Summer Journeys and Family Packages; and the close.
+ * onward to Summer Journeys and Family Packages as
+ * two photo tiles; and the close.
  */
 export default async function PrivateJapanPage() {
   const locale = await getLocale();
@@ -83,12 +91,44 @@ export default async function PrivateJapanPage() {
         </ol>
       </section>
 
-      <OnwardPanels
-        items={[
-          { route: "summerJourneys", heading: home.entryPoints.summerJourneys.heading, text: home.entryPoints.summerJourneys.text, tone: "snow" },
-          { route: "familyServices", heading: familyServices.title, text: familyServices.intro, tone: "pine" },
-        ]}
-      />
+      {/* Onward: two photo tiles carrying only the page name (Sarah, 10 Oct 2026: the text panels were too much). */}
+      <div className="section-gap mx-auto grid max-w-(--content-max) gap-4 px-(--page-margin) tablet:grid-cols-2 tablet:gap-5">
+        {onward.map(({ key, slot }, i) => {
+          const photoId = photoSlots[slot].photoId;
+          const photo = photographs.find((p) => p.id === photoId);
+          return (
+            <Link
+              key={key}
+              href={localePath(key, locale)}
+              data-reveal
+              style={d(i)}
+              className="group relative isolate flex aspect-[16/10] items-end overflow-hidden rounded-[24px] bg-pine p-7 no-underline tablet:aspect-[4/3] tablet:p-9 desktop:aspect-[16/10]"
+            >
+              {photo ? (
+                <Image
+                  src={photo.src}
+                  alt=""
+                  fill
+                  sizes="(min-width: 834px) 50vw, 100vw"
+                  className="-z-10 object-cover transition-transform duration-700 ease-(--ease-out-expo) group-hover:scale-[1.04]"
+                  style={{ objectPosition: photo.focus }}
+                />
+              ) : null}
+              <span aria-hidden className="absolute inset-0 -z-10 bg-linear-to-t from-ink/70 via-ink/15 to-transparent" />
+              <span className="flex w-full items-center justify-between gap-4 text-plate">
+                <span className="font-serif text-h2 font-[450] [font-variation-settings:'opsz'_36]">
+                  <CopyText copy={routeFor(key).navLabel!} />
+                </span>
+                <span aria-hidden className="flex size-11 shrink-0 items-center justify-center rounded-full bg-plate text-ink transition-colors duration-300 group-hover:bg-pine group-hover:text-plate">
+                  <svg viewBox="0 0 16 16" className="size-4 rtl:-scale-x-100" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </span>
+              </span>
+            </Link>
+          );
+        })}
+      </div>
       <PageClose heading={home.contact.heading} />
     </main>
   );

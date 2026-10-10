@@ -71,17 +71,13 @@ export function RegionSwitcher({ regions, label, months }: { regions: RegionPane
                 }}
                 className={`group absolute flex cursor-pointer items-center gap-2.5 ${right ? "" : "flex-row-reverse"}`}
               >
-                {/* The dot grows on hover and focus; unchosen dots breathe and ripple in turn to invite a press. */}
-                <span
-                  style={{ "--i": i } as CSSProperties}
-                  className="relative flex size-[1.125rem] shrink-0 items-center justify-center transition-transform duration-300 ease-(--ease-out-expo) group-hover:scale-130 group-focus-visible:scale-130"
-                >
-                  {on ? (
-                    <span className="absolute inset-0 animate-ping rounded-full bg-pine/40 motion-reduce:animate-none" />
-                  ) : (
-                    <span className="pin-ripple absolute inset-0 rounded-full bg-pine/35 opacity-0" />
-                  )}
-                  <span className={`relative size-full rounded-full ring-4 ring-ground transition-colors ${on ? "bg-pine" : "pin-breathe bg-pine/55 group-hover:bg-pine/85"}`} />
+                {/* The dot grows on hover and focus; unchosen dots swell and ring in turn to invite a press. Solid colours, so a dot never melts into the island under it. */}
+                <span className="relative flex size-[1.125rem] shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-130 group-focus-visible:scale-130">
+                  {on ? <span className="absolute inset-0 animate-ping rounded-full bg-pine/40 motion-reduce:animate-none" /> : null}
+                  <span
+                    style={on ? undefined : ({ "--i": i } as CSSProperties)}
+                    className={`relative size-full rounded-full ring-4 ring-ground transition-colors ${on ? "bg-pine" : "pin-pulse bg-[color-mix(in_srgb,var(--color-pine)_60%,var(--color-ground))] group-hover:bg-pine"}`}
+                  />
                 </span>
                 <span
                   className={`flex flex-col whitespace-nowrap rounded-[12px] px-3 py-1.5 transition-[background-color,box-shadow,translate] duration-300 ease-(--ease-out-expo) ${right ? "items-start" : "items-end"} ${

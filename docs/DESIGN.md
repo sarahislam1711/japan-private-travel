@@ -347,7 +347,8 @@ On desktop and tablet each section, or each pinned screen, fits one viewport fro
 ### Private Japan (10 Oct 2026, Sarah)
 - Rebuilt in the open style of Summer Journeys and For travel advisors: no hero panel. The title at the Summer Journeys size with spring, autumn and winter in Pine on the line; the lede beneath; 春秋冬 in one vertical Pine column beside them (hidden on phones; `dir="ltr"` so it reads 春 to 冬 on the Arabic site too).
 - The four principles as stops on one thin route line (one row on desktop, two columns on tablet, one on phones): a numbered Pine circle and its kanji (室 歩 車 静), the lead, the body; the transport proof sits under its principle as small print above a faint rule.
-- Onward panels to Summer Journeys (Snow, no photo, so the text keeps its contrast) and Family Packages (Pine), then the page close.
+- Onward: two photo tiles (24px radius, the photo filling the tile under a soft Ink fade from the bottom), each carrying only the page name in Snow and a round arrow button; the photo eases in slightly on hover. Photos from slots `pj-onward-summer` and `pj-onward-packages`. Then the page close.
+- Summer Journeys map pins: the two unchosen pins are solid (Pine mixed 60% into Paper, never see-through, so a pin never melts into the island under it) and swell to 1.45× with a fading ring in turn, every 2.2s, so they read as things to press; still under reduced motion. Hover or focus grows the dot and lifts its label.
 
 ### Family Packages (10 Oct 2026, Sarah)
 - Packages are tailored starting points, never fixed products (the FAQ's "we do not sell fixed packages" stays true).

@@ -43,6 +43,9 @@ export const photoSlots = {
     photoId: "japan-private-tours",
     brief: "A family moving together in Japan outside summer; shot at a distance or from behind; no faces of real clients.",
   },
+  // Private Japan onward tiles (10 Oct 2026): the photo is most of the tile, the page name sits on it.
+  "pj-onward-summer": { photoId: "japan-summer", brief: "Hokkaido or the Japan Alps in summer, green and open." },
+  "pj-onward-packages": { photoId: "mt-fuji", brief: "Mt Fuji or another first-trip landmark, clear light." },
   "private-japan-hero": {
     photoId: null,
     brief: "A household together in Japan in spring, autumn or winter; at a distance or from behind; natural light.",
