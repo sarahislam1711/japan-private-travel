@@ -44,11 +44,11 @@ export default async function PrivateJapanPage() {
       <section aria-labelledby="pj-title" className="relative isolate">
         {/* A spring garden, faded behind the open side of the title (Sarah, 10 Oct 2026). Decorative. */}
         {hero ? (
-          <div aria-hidden className="hero-photo pointer-events-none absolute inset-y-0 end-0 -z-10 w-full opacity-30 tablet:opacity-45 desktop:w-[65%]">
+          <div aria-hidden className="hero-photo pointer-events-none absolute top-0 -bottom-16 end-0 -z-10 w-full opacity-30 tablet:-bottom-24 tablet:opacity-45 desktop:w-[65%]">
             <Image src={hero.src} alt="" fill priority sizes="(min-width: 1280px) 65vw, 100vw" className="object-cover" style={{ objectPosition: hero.focus }} />
           </div>
         ) : null}
-        <div className="mx-auto grid max-w-(--content-max) items-center gap-x-12 gap-y-8 px-(--page-margin) pt-12 pb-16 tablet:grid-cols-[1fr_auto] desktop:pt-16 desktop:pb-20">
+        <div className="mx-auto grid max-w-(--content-max) items-center gap-x-12 gap-y-8 px-(--page-margin) pt-12 pb-4 tablet:grid-cols-[1fr_auto] desktop:pt-16">
         <div>
           <h1 id="pj-title" data-reveal="words" className="sj-title max-w-[20ch] font-serif [font-variation-settings:'opsz'_60]">
             <SplitWords copy={c.title} accent={accent} />
