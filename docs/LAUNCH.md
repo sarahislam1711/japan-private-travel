@@ -39,7 +39,8 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 ## 4. Pages still to finish
 
 - [ ] Experiences: the page is built (9 Oct 2026) with **12 SAMPLE entries** (real public places, hosts by role, no named people). Replace or confirm each with real details: host, place, season, length, group size, booking lead time
-- [ ] Family Services: refocus on families (decide how far to take the Muslim-focus change, including the Home How we work step 3, the FAQ halal answer, the Summer Journeys link label and the page's meta title)
+- [ ] Family Packages: page built 10 Oct 2026 (drafts). Confirm the four starting routes and day ranges, and that every extra listed is really offered (female guides, Arabic-speaking guides, child seats, cots and high chairs, connecting rooms, step-free routes, private transport, private bathing, halal dining, prayer time and space, earlier dinners, a midday rest); approve the copy
+- [ ] Muslim-focus wording left elsewhere: Home How we work step 3 and the FAQ halal answer
 - [ ] For travel advisors: page built 10 Oct 2026 (drafts). Confirm the commission model (discount off published rates, or net rates), whether to state a response time, and the network list; approve the copy
 - [ ] Advisor sign-in and rate portal: not built; the page has no sign-in link until it exists
 - [ ] Advisor rate portal (planned, gated, noindex)
@@ -68,7 +69,7 @@ Production builds fail while any copy is DRAFT (`pnpm guard:prod`). Review with 
 - [ ] `https://<domain>/robots.txt` opens to search engines and AI crawlers (it is closed on every non-production build, by design)
 - [ ] Google Search Console: verify the domain property; submit `https://<domain>/sitemap.xml`
 - [ ] Bing Webmaster Tools: import from Search Console (Bing also feeds ChatGPT search)
-- [ ] Google Rich Results Test and validator.schema.org on one page of each type: Home, Summer Journeys, Private Japan, Family Services, About, For travel advisors, Contact, a legal page, and an Arabic page
+- [ ] Google Rich Results Test and validator.schema.org on one page of each type: Home, Summer Journeys, Private Japan, Family Packages, About, For travel advisors, Contact, a legal page, and an Arabic page
 - [ ] Open `/llms.txt` and `/llms-full.txt` on the live domain and read them: only approved copy appears in production
 - [ ] Share cards: paste the Home, Summer Journeys and About links into WhatsApp, LinkedIn and Slack; check the image, title and description in both languages
 - [ ] Google Business Profile for the Tokyo and Osaka offices

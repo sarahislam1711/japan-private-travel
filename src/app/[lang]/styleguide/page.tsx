@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { contact } from "@content/pages/contact";
 import { familyServices } from "@content/pages/family-services";
+import { privateJapan } from "@content/pages/private-japan";
 import { home } from "@content/pages/home";
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { CopyText } from "@/components/CopyText";
@@ -42,7 +43,7 @@ function Spec({ name, children }: { name: string; children: ReactNode }) {
 
 export default function StyleguidePage() {
   if (process.env.NODE_ENV === "production") notFound();
-  const guiding = familyServices.sections[3];
+  const guiding = privateJapan.sections.find((x) => "margin" in x && x.margin)! as { lead: typeof privateJapan.sections[number]["lead"]; body: typeof privateJapan.sections[number]["body"]; margin?: typeof privateJapan.sections[number]["body"] & { claims?: string[] } };
 
   return (
     <>

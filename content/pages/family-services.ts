@@ -1,55 +1,26 @@
-/* Family Services (/family-services) — docs/CONTENT.md §6. All copy LOCKED. */
-import { attachArabic, draft, ja, locked } from "../schema";
+/* Family Packages (/family-packages; route key familyServices) — docs/CONTENT.md §6. Rebuilt 10 Oct 2026, all DRAFT.
+ * Packages are starting points each family tailors (Sarah: option a), drawn from the supplier's routes
+ * without prices or codes. Extras are things that can be added; each to be confirmed as really offered. */
+import { attachArabic, draft } from "../schema";
 import { familyServicesAr } from "./family-services.ar";
 
 export const familyServices = {
-  title: locked("For Muslim families"),
-  intro: locked("We build these into the itinerary from the first draft, not as requests added later."),
-  sections: [
-    {
-      lead: locked("Dining."),
-      body: locked(
-        "Japan has no national halal standard — certification is issued by private bodies, and the certifier matters: the UAE recognises three Japanese certifiers, and Saudi recognition is narrower still. We tell you which certification a restaurant holds and whether your authority recognises it. Where it does not, we arrange a private chef or a kitchen briefed to cook without alcohol-based seasoning — mirin, cooking sake and most commercial soy sauces — and we say plainly which of the two we have arranged. We do not describe a pork-free kitchen as halal.",
-        { claims: ["CL-01", "CL-07"] },
-      ),
-    },
-    {
-      lead: locked("Bathing."),
-      body: locked(
-        [
-          "Communal bathing is the norm in Japan. We book only properties with private bathing — ",
-          ja("貸切風呂"),
-          " or rooms with their own bath — and we confirm the specific room, not the room category. At the luxury tier this narrows the property list considerably, and in Kyoto it narrows it to a handful. We will tell you which properties are available for your dates before you commit.",
-        ],
-        { flags: ["D5"] },
-      ),
-    },
-    {
-      lead: locked("Prayer."),
-      body: locked(
-        "Prayer times shape the day's pacing rather than interrupting it. Mosques and prayer rooms are concentrated in Tokyo, Osaka and Kyoto, and are limited outside them, so we provide prayer space in the vehicle and at the hotel when the itinerary goes regional.",
-        { claims: ["CL-04"] },
-      ),
-    },
-    {
-      lead: locked("Guiding."),
-      body: locked(
-        "We provide guides who work in Arabic, and female guides where requested. Japan has no Arabic guide credential — Arabic is not one of the ten languages of the national interpreter-guide examination — so ours are people we have recruited, trained and worked with ourselves. We will name your guide before you travel.",
-        { claims: ["CL-02"] },
-      ),
-      margin: draft(
-        "National interpreter-guide examination languages: ten. Arabic is not among them.",
-        { claims: ["CL-02"] },
-      ),
-    },
-    {
-      lead: locked("Transport."),
-      body: locked(
-        "Private vehicles with professional drivers, arranged through a licensed hire operator. Where a female driver is requested we will say honestly whether one is available for your dates: there are roughly 13,000 female professional drivers in all of Japan, and we will not promise what we cannot confirm.",
-        { claims: ["CL-03"] },
-      ),
-    },
+  title: draft("Family packages, shaped around yours."),
+  intro: draft("Start from a trip that works for most families, then we change it around yours: who is coming, how fast you like to travel, and what you need."),
+  packagesHeading: draft("Where families often start"),
+  days: draft("days"),
+  inOut: draft("Fly in and out"),
+  start: draft("Start from this"),
+  tailored: draft("Every package is planned again for your family. Nothing is fixed until you agree to it."),
+  extrasHeading: draft("Can be added to any package"),
+  extrasNote: draft("Tell us what your family needs and we build it in from the first draft."),
+  packages: [
+    { id: "tokyo-fuji", photo: "mt-fuji", name: draft("Tokyo and Mt Fuji"), days: "4–5", inOut: draft("Tokyo"), stops: [draft("Tokyo"), draft("Mt Fuji")], line: draft("The city and the mountain: Tokyo's neighbourhoods and a day by the lakes facing Fuji.") },
+    { id: "kansai", photo: "nara-park", name: draft("Osaka, Kyoto and Nara"), days: "4–5", inOut: draft("Osaka"), stops: [draft("Osaka"), draft("Kyoto"), draft("Nara")], line: draft("Three cities close together: temples and gardens, the deer of Nara, and Osaka's food.") },
+    { id: "classic", photo: "japan-summer", name: draft("Tokyo to Osaka, through Kyoto"), days: "6–8", inOut: draft("Tokyo / Osaka"), stops: [draft("Tokyo"), draft("Mt Fuji"), draft("Kyoto"), draft("Osaka")], line: draft("The classic first trip, by bullet train, at a pace that suits grandparents and children.") },
+    { id: "west", photo: "miyajima", name: draft("Tokyo to Hiroshima"), days: "9–12", inOut: draft("Tokyo / Osaka"), stops: [draft("Tokyo"), draft("Kyoto"), draft("Nara"), draft("Osaka"), draft("Hiroshima")], line: draft("Further west, with Miyajima's shrine gate in the sea at the end.") },
   ],
+  extras: [draft("Female guides"), draft("Arabic-speaking guides"), draft("Child seats"), draft("Cots and high chairs"), draft("Connecting rooms"), draft("Step-free routes"), draft("Private transport"), draft("Private bathing"), draft("Halal dining"), draft("Prayer time and space"), draft("Earlier dinners for children"), draft("Rest in the middle of the day")],
 };
 
 attachArabic(familyServices, familyServicesAr);

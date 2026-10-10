@@ -275,7 +275,7 @@ Softly rounded, never square and never pill. Content panels take a generous 20px
 
 ### Navigation
 - Wordmark at inline-start; navigation at inline-end in BIZ UDPGothic label size. Not sticky.
-- Order: Trips (disclosure), Family Services, Experiences, About, a quieter small Advisors in Ink Soft, then Contact as the ringed button.
+- Order: Trips (disclosure), Family Packages, Experiences, About, a quieter small Advisors in Ink Soft, then Contact as the ringed button.
 - Links have no underline at rest, underline on hover; the current page carries a 2px underline.
 - **Trips menu:** opens on click or hover, closes on Escape, outside click or focus leaving. The chevron (10 by 6, 1.5 stroke) turns 180° when open. A 320px Snow panel, 10px radius, faint ring; each item shows its page name and a one-line Ink Soft description. Hover fills Mist; the current item is bold Pine. Opens with a 150ms fade-and-settle.
 - **Mobile:** a "Menu" disclosure opening a Snow panel at inline-end with the same entries, Trips' pages indented under the group label.
@@ -343,6 +343,12 @@ On desktop with motion allowed, the section pins for one screen (about 70vh of s
 
 ### Every section fits the screen (7 Oct 2026, Sarah)
 On desktop and tablet each section, or each pinned screen, fits one viewport from 1280×720 up to 1920×1080; on phones every panel fits the screen and text runs naturally above or below it. Short laptop screens (≤ 820px tall, ≥ 1024px wide) step the display, h1 and h2 sizes down. Private Japan's principles use the same pinned showcase as Home's How we work; with four or more items the showcase sets its heading and promises one size smaller. The page close keeps a wide three-line headline with the contact details centred beside it.
+
+### Family Packages (10 Oct 2026, Sarah)
+- Packages are tailored starting points, never fixed products (the FAQ's "we do not sell fixed packages" stays true).
+- Four cards in a two-column grid (one on phones), Snow on Mist, 24px radius. Each card has its photo across the top at 60% opacity, masked to clear by 45% so the text sits on plain Snow; the day count in Pine; the name; one line; the route as dots joined by short rules; "Fly in and out"; and "Start from this", which opens Contact with the package added.
+- Card photos are portrait in a landscape card, so each card sets its own crop (`cardFocus` in the page) to keep the subject (Fuji, the Miyajima gate) in the clear band.
+- What can be added is secondary: a heading and note at inline-start, the extras as small Snow pills with a Pine tick at inline-end. Halal dining and prayer time are two pills among them, not a section.
 
 ## Arabic and right to left (7 Oct 2026)
 

@@ -11,8 +11,8 @@ Read Family Services first (halal, bathing, guiding, transport: legal and religi
 weight), then the Summer Journeys title and lede.
 
 Status: **2** approved,
-**474** draft,
-**0** missing — of 476 strings.
+**508** draft,
+**0** missing — of 510 strings.
 
 ## content/site.ts
 
@@ -197,19 +197,53 @@ Status: **2** approved,
 
 | Where | English | Arabic | Status |
 |---|---|---|---|
-| `familyServices.title` | For Muslim families | <span dir="rtl" lang="ar">للعائلات المسلمة</span> | draft |
-| `familyServices.intro` | We build these into the itinerary from the first draft, not as requests added later. | <span dir="rtl" lang="ar">نُدرج هذه الخدمات في البرنامج منذ المسودة الأولى، لا كطلبات تُضاف لاحقًا.</span> | draft |
-| `familyServices.sections[0].lead` | Dining. | <span dir="rtl" lang="ar">الطعام.</span> | draft |
-| `familyServices.sections[0].body` | Japan has no national halal standard — certification is issued by private bodies, and the certifier matters: the UAE recognises three Japanese certifiers, and Saudi recognition is narrower still. We tell you which certification a restaurant holds and whether your authority recognises it. Where it does not, we arrange a private chef or a kitchen briefed to cook without alcohol-based seasoning — mirin, cooking sake and most commercial soy sauces — and we say plainly which of the two we have arranged. We do not describe a pork-free kitchen as halal. | <span dir="rtl" lang="ar">لا يوجد في اليابان معيار وطني للحلال؛ فشهادات الحلال تصدرها جهات خاصة، والجهة المانحة للشهادة مهمّة: فدولة الإمارات تعترف بثلاث جهات يابانية مانحة للشهادة، واعتراف المملكة العربية السعودية أضيق من ذلك. نخبركم بالشهادة التي يحملها المطعم، وما إذا كانت الجهة المختصة لديكم تعترف بها. وحيث لا تعترف بها، نرتّب طاهيًا خاصًا أو مطبخًا يُوجَّه مسبقًا إلى الطهي من دون توابل أساسها الكحول — مثل الميرين وساكي الطبخ ومعظم أنواع صلصة الصويا التجارية — ونوضّح لكم بصراحة أيّ الخيارين رتّبنا. ولا نصف المطبخ الخالي من لحم الخنزير بأنه حلال.</span> | draft |
-| `familyServices.sections[1].lead` | Bathing. | <span dir="rtl" lang="ar">الاستحمام.</span> | draft |
-| `familyServices.sections[1].body` | Communal bathing is the norm in Japan. We book only properties with private bathing — 貸切風呂 or rooms with their own bath — and we confirm the specific room, not the room category. At the luxury tier this narrows the property list considerably, and in Kyoto it narrows it to a handful. We will tell you which properties are available for your dates before you commit. | <span dir="rtl" lang="ar">الاستحمام الجماعي هو المعتاد في اليابان. لا نحجز إلا في أماكن إقامة توفّر استحمامًا خاصًا — 貸切風呂 أو غرفًا لها مغطسها الخاص — ونؤكّد الغرفة بعينها، لا فئة الغرفة. وفي الفئة الفاخرة يُضيّق ذلك قائمة أماكن الإقامة كثيرًا، وفي كيوتو يحصرها في عدد قليل منها. سنخبركم بأماكن الإقامة المتاحة في تواريخكم قبل أن تلتزموا.</span> | draft |
-| `familyServices.sections[2].lead` | Prayer. | <span dir="rtl" lang="ar">الصلاة.</span> | draft |
-| `familyServices.sections[2].body` | Prayer times shape the day's pacing rather than interrupting it. Mosques and prayer rooms are concentrated in Tokyo, Osaka and Kyoto, and are limited outside them, so we provide prayer space in the vehicle and at the hotel when the itinerary goes regional. | <span dir="rtl" lang="ar">تُحدّد أوقات الصلاة إيقاع اليوم بدلًا من أن تقطعه. تتركّز المساجد والمصلّيات في طوكيو وأوساكا وكيوتو، وهي محدودة خارجها، لذلك نوفّر مكانًا للصلاة في المركبة وفي الفندق حين يمتدّ البرنامج إلى المناطق الأخرى.</span> | draft |
-| `familyServices.sections[3].lead` | Guiding. | <span dir="rtl" lang="ar">الإرشاد.</span> | draft |
-| `familyServices.sections[3].body` | We provide guides who work in Arabic, and female guides where requested. Japan has no Arabic guide credential — Arabic is not one of the ten languages of the national interpreter-guide examination — so ours are people we have recruited, trained and worked with ourselves. We will name your guide before you travel. | <span dir="rtl" lang="ar">نوفّر مرشدين يعملون باللغة العربية، ومرشدات عند الطلب. لا توجد في اليابان شهادة اعتماد للإرشاد باللغة العربية — فالعربية ليست من اللغات العشر في الاختبار الوطني للمرشدين المترجمين — لذا فمرشدونا أشخاص استقطبناهم ودرّبناهم وعملنا معهم بأنفسنا. سنخبركم باسم مرشدكم قبل السفر.</span> | draft |
-| `familyServices.sections[3].margin` | National interpreter-guide examination languages: ten. Arabic is not among them. | <span dir="rtl" lang="ar">لغات الاختبار الوطني للمرشدين المترجمين: عشر لغات. وليست العربية من بينها.</span> | draft |
-| `familyServices.sections[4].lead` | Transport. | <span dir="rtl" lang="ar">التنقّل.</span> | draft |
-| `familyServices.sections[4].body` | Private vehicles with professional drivers, arranged through a licensed hire operator. Where a female driver is requested we will say honestly whether one is available for your dates: there are roughly 13,000 female professional drivers in all of Japan, and we will not promise what we cannot confirm. | <span dir="rtl" lang="ar">مركبات خاصة مع سائقين محترفين، تُرتَّب عبر شركة تأجير مرخّصة. وإذا طُلبت سائقة، فسنخبركم بصدق إن كانت متاحة في تواريخكم: ففي اليابان كلها نحو 13,000 سائقة محترفة، ولن نَعِد بما لا نستطيع تأكيده.</span> | draft |
+| `familyServices.title` | Family packages, shaped around yours. | <span dir="rtl" lang="ar">باقات عائلية تُشكَّل حول عائلتكم.</span> | draft |
+| `familyServices.intro` | Start from a trip that works for most families, then we change it around yours: who is coming, how fast you like to travel, and what you need. | <span dir="rtl" lang="ar">ابدؤوا من رحلة تناسب معظم العائلات، ثم نعدّلها حول عائلتكم: مَن سيسافر، وبأي إيقاع تحبّون السفر، وما الذي تحتاجون إليه.</span> | draft |
+| `familyServices.packagesHeading` | Where families often start | <span dir="rtl" lang="ar">من أين تبدأ العائلات عادةً</span> | draft |
+| `familyServices.days` | days | <span dir="rtl" lang="ar">أيام</span> | draft |
+| `familyServices.inOut` | Fly in and out | <span dir="rtl" lang="ar">الوصول والمغادرة</span> | draft |
+| `familyServices.start` | Start from this | <span dir="rtl" lang="ar">ابدؤوا من هذه</span> | draft |
+| `familyServices.tailored` | Every package is planned again for your family. Nothing is fixed until you agree to it. | <span dir="rtl" lang="ar">نخطّط كل باقة من جديد لعائلتكم، ولا شيء نهائي حتى توافقوا عليه.</span> | draft |
+| `familyServices.extrasHeading` | Can be added to any package | <span dir="rtl" lang="ar">يمكن إضافتها إلى أي باقة</span> | draft |
+| `familyServices.extrasNote` | Tell us what your family needs and we build it in from the first draft. | <span dir="rtl" lang="ar">أخبرونا بما تحتاج إليه عائلتكم، وندرجه منذ المسودة الأولى.</span> | draft |
+| `familyServices.packages[0].name` | Tokyo and Mt Fuji | <span dir="rtl" lang="ar">طوكيو وجبل فوجي</span> | draft |
+| `familyServices.packages[0].inOut` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
+| `familyServices.packages[0].stops[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
+| `familyServices.packages[0].stops[1]` | Mt Fuji | <span dir="rtl" lang="ar">جبل فوجي</span> | draft |
+| `familyServices.packages[0].line` | The city and the mountain: Tokyo's neighbourhoods and a day by the lakes facing Fuji. | <span dir="rtl" lang="ar">المدينة والجبل: أحياء طوكيو ويوم عند البحيرات في مواجهة فوجي.</span> | draft |
+| `familyServices.packages[1].name` | Osaka, Kyoto and Nara | <span dir="rtl" lang="ar">أوساكا وكيوتو ونارا</span> | draft |
+| `familyServices.packages[1].inOut` | Osaka | <span dir="rtl" lang="ar">أوساكا</span> | draft |
+| `familyServices.packages[1].stops[0]` | Osaka | <span dir="rtl" lang="ar">أوساكا</span> | draft |
+| `familyServices.packages[1].stops[1]` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `familyServices.packages[1].stops[2]` | Nara | <span dir="rtl" lang="ar">نارا</span> | draft |
+| `familyServices.packages[1].line` | Three cities close together: temples and gardens, the deer of Nara, and Osaka's food. | <span dir="rtl" lang="ar">ثلاث مدن متقاربة: معابد وحدائق، وغزلان نارا، ومطبخ أوساكا.</span> | draft |
+| `familyServices.packages[2].name` | Tokyo to Osaka, through Kyoto | <span dir="rtl" lang="ar">من طوكيو إلى أوساكا عبر كيوتو</span> | draft |
+| `familyServices.packages[2].inOut` | Tokyo / Osaka | <span dir="rtl" lang="ar">طوكيو / أوساكا</span> | draft |
+| `familyServices.packages[2].stops[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
+| `familyServices.packages[2].stops[1]` | Mt Fuji | <span dir="rtl" lang="ar">جبل فوجي</span> | draft |
+| `familyServices.packages[2].stops[2]` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `familyServices.packages[2].stops[3]` | Osaka | <span dir="rtl" lang="ar">أوساكا</span> | draft |
+| `familyServices.packages[2].line` | The classic first trip, by bullet train, at a pace that suits grandparents and children. | <span dir="rtl" lang="ar">الرحلة الأولى الكلاسيكية بالقطار السريع، بإيقاع يناسب الأجداد والأطفال.</span> | draft |
+| `familyServices.packages[3].name` | Tokyo to Hiroshima | <span dir="rtl" lang="ar">من طوكيو إلى هيروشيما</span> | draft |
+| `familyServices.packages[3].inOut` | Tokyo / Osaka | <span dir="rtl" lang="ar">طوكيو / أوساكا</span> | draft |
+| `familyServices.packages[3].stops[0]` | Tokyo | <span dir="rtl" lang="ar">طوكيو</span> | draft |
+| `familyServices.packages[3].stops[1]` | Kyoto | <span dir="rtl" lang="ar">كيوتو</span> | draft |
+| `familyServices.packages[3].stops[2]` | Nara | <span dir="rtl" lang="ar">نارا</span> | draft |
+| `familyServices.packages[3].stops[3]` | Osaka | <span dir="rtl" lang="ar">أوساكا</span> | draft |
+| `familyServices.packages[3].stops[4]` | Hiroshima | <span dir="rtl" lang="ar">هيروشيما</span> | draft |
+| `familyServices.packages[3].line` | Further west, with Miyajima's shrine gate in the sea at the end. | <span dir="rtl" lang="ar">أبعد غربًا، وفي نهايتها بوّابة مزار مياجيما في البحر.</span> | draft |
+| `familyServices.extras[0]` | Female guides | <span dir="rtl" lang="ar">مرشدات</span> | draft |
+| `familyServices.extras[1]` | Arabic-speaking guides | <span dir="rtl" lang="ar">مرشدون يتحدّثون العربية</span> | draft |
+| `familyServices.extras[2]` | Child seats | <span dir="rtl" lang="ar">مقاعد أطفال للسيارات</span> | draft |
+| `familyServices.extras[3]` | Cots and high chairs | <span dir="rtl" lang="ar">أسرّة وكراسٍ عالية للأطفال</span> | draft |
+| `familyServices.extras[4]` | Connecting rooms | <span dir="rtl" lang="ar">غرف متصلة</span> | draft |
+| `familyServices.extras[5]` | Step-free routes | <span dir="rtl" lang="ar">مسارات دون درج</span> | draft |
+| `familyServices.extras[6]` | Private transport | <span dir="rtl" lang="ar">تنقّل خاص</span> | draft |
+| `familyServices.extras[7]` | Private bathing | <span dir="rtl" lang="ar">استحمام خاص</span> | draft |
+| `familyServices.extras[8]` | Halal dining | <span dir="rtl" lang="ar">طعام حلال</span> | draft |
+| `familyServices.extras[9]` | Prayer time and space | <span dir="rtl" lang="ar">وقت ومكان للصلاة</span> | draft |
+| `familyServices.extras[10]` | Earlier dinners for children | <span dir="rtl" lang="ar">عشاء أبكر للأطفال</span> | draft |
+| `familyServices.extras[11]` | Rest in the middle of the day | <span dir="rtl" lang="ar">استراحة في منتصف اليوم</span> | draft |
 
 ## content/pages/experiences.ts
 

@@ -229,6 +229,24 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 
 ## 6. Family Packages (`/family-packages`, renamed from Family Services, /family-services, 10 Oct 2026)
 
+**All DRAFT** (rebuilt 10 Oct 2026). Packages are starting points each family tailors, not fixed products (Sarah chose this, so the FAQ's "We do not sell fixed packages" stays true). Routes come from the supplier list, without prices, codes or links. Extras are secondary: shown as small tags. **Confirm each extra is really offered.**
+
+> **Family packages, shaped around yours.**
+> Start from a trip that works for most families, then we change it around yours: who is coming, how fast you like to travel, and what you need.
+>
+> **Where families often start**
+> **Tokyo and Mt Fuji** · 4–5 days · Fly in and out: Tokyo · Tokyo → Mt Fuji · The city and the mountain: Tokyo's neighbourhoods and a day by the lakes facing Fuji.
+> **Osaka, Kyoto and Nara** · 4–5 days · Fly in and out: Osaka · Osaka → Kyoto → Nara · Three cities close together: temples and gardens, the deer of Nara, and Osaka's food.
+> **Tokyo to Osaka, through Kyoto** · 6–8 days · Fly in and out: Tokyo / Osaka · Tokyo → Mt Fuji → Kyoto → Osaka · The classic first trip, by bullet train, at a pace that suits grandparents and children.
+> **Tokyo to Hiroshima** · 9–12 days · Fly in and out: Tokyo / Osaka · Tokyo → Kyoto → Nara → Osaka → Hiroshima · Further west, with Miyajima's shrine gate in the sea at the end.
+> Button: Start from this · Note: Every package is planned again for your family. Nothing is fixed until you agree to it.
+>
+> **Can be added to any package**
+> Female guides · Arabic-speaking guides · Child seats · Cots and high chairs · Connecting rooms · Step-free routes · Private transport · Private bathing · Halal dining · Prayer time and space · Earlier dinners for children · Rest in the middle of the day
+> Tell us what your family needs and we build it in from the first draft.
+
+<details><summary>Retired copy (previous LOCKED "For Muslim families" page, retired by Sarah 10 Oct 2026)</summary>
+
 **All copy — LOCKED.** Page title: **For Muslim families**
 
 > We build these into the itinerary from the first draft, not as requests added later.
@@ -246,6 +264,8 @@ Shared fact labels (LOCKED): "Best weeks" · "Suggested stay" · "From Tokyo". T
 `貸切風呂` renders with `lang="ja"`.
 
 **Margin notes — DRAFT** (one per section, each carrying the claim's source link): e.g. beside Guiding — "National interpreter-guide examination languages: ten. Arabic is not among them." {CL-02}
+
+</details>
 
 ## 7. Experiences (`/experiences`)
 
