@@ -170,7 +170,6 @@ export function TripPlanner({
     .filter((p) => chosen.includes(p.id))
     .map((p) => p.label.text)
     .join(sep);
-  const replyLine = [plan.language && languages[plan.language].text, plan.reply && replies[plan.reply].text].filter(Boolean).join(" · ");
 
   // `edit` is the step that changes the line; My trip is changed from the header instead.
   const lines: { key: string; label: T; value: string; edit?: Step }[] = [
@@ -180,7 +179,9 @@ export function TripPlanner({
     { key: "where", label: t["planner.summary.places"], value: where },
     { key: "needs", label: t["fields.purpose"], value: plan.needs.trim() },
     { key: "email", label: t["planner.email.summary"], value: plan.email.trim(), edit: "reply" },
-    { key: "reply", label: t["fields.replyLanguage"], value: replyLine },
+    // Language and route are separate answers, each under its own label (one combined line showed "Email" as a language).
+    { key: "language", label: t["fields.replyLanguage"], value: plan.language ? languages[plan.language].text : "", edit: "reply" },
+    { key: "reply", label: t["fields.replyChannel"], value: plan.reply ? replies[plan.reply].text : "" },
   ];
 
   const message = [
