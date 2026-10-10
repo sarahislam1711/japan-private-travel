@@ -1,5 +1,8 @@
 import { getLocale } from "@/lib/locale";
+import Image from "next/image";
 import Link from "next/link";
+import { photographs } from "@content/photography.manifest";
+import { photoSlots } from "@content/photography.slots";
 import { summerJourneys } from "@content/pages/summer-journeys";
 import { routeFor, localePath } from "@content/routes";
 import { CopyText } from "./CopyText";
@@ -15,10 +18,18 @@ export async function SummerHero() {
   const locale = await getLocale();
   const pj = routeFor("privateJapan");
   const s = summerJourneys.story;
+  const photo = photographs.find((p) => p.id === photoSlots["sj-hero"].photoId);
   // July and August stand out in the title in pine, on the line with the rest (no notes above, Sarah 10 Oct 2026).
   const accent: Record<string, string> = locale === "ar" ? { "يوليو": "", "أغسطس": "" } : { July: "", August: "" };
   return (
-    <section aria-labelledby="sj-title" className="mx-auto max-w-(--content-max) px-(--page-margin) pt-12 pb-4 desktop:pt-16">
+    <section aria-labelledby="sj-title" className="relative isolate">
+      {/* A summer photo, faded behind the open side of the title (Sarah, 10 Oct 2026). Decorative. */}
+      {photo ? (
+        <div aria-hidden className="sj-hero-photo pointer-events-none absolute inset-y-0 end-0 -z-10 w-full opacity-30 tablet:opacity-45 desktop:w-[65%]">
+          <Image src={photo.src} alt="" fill priority sizes="(min-width: 1280px) 65vw, 100vw" className="object-cover" style={{ objectPosition: "50% 40%" }} />
+        </div>
+      ) : null}
+      <div className="mx-auto max-w-(--content-max) px-(--page-margin) pt-12 pb-4 desktop:pt-16">
       <h1 id="sj-title" data-reveal="words" className="sj-title max-w-[20ch] font-serif [font-variation-settings:'opsz'_60]">
         <SplitWords copy={summerJourneys.title} accent={accent} />
       </h1>
@@ -33,15 +44,16 @@ export async function SummerHero() {
       </p>
 
       {/* The three places along one line, like stops on a route. */}
-      <ol data-reveal className="relative mt-12 grid gap-8 tablet:grid-cols-3 tablet:gap-6">
-        <span aria-hidden className="absolute start-0 end-0 top-[2.1rem] hidden h-px bg-pine/25 tablet:block" />
+      <ol data-reveal className="mt-12 grid gap-8 tablet:grid-cols-3 tablet:gap-3">
         {s.places.map((place, i) => (
           <li key={i} className="relative flex min-w-0 flex-col gap-2 tablet:gap-4">
-            <span className="relative flex items-center gap-3">
-              <span aria-hidden className="relative z-10 size-3 shrink-0 rounded-full bg-pine ring-4 ring-ground" />
-              <span lang="ja" className="relative z-10 bg-ground pe-3 font-mincho text-[clamp(2rem,2.6vw,2.75rem)] leading-none text-pine">
+            {/* The route runs on from each name to the next stop, so nothing needs a ground colour behind it (the hero has a photo). */}
+            <span className="flex items-center gap-3">
+              <span aria-hidden className="size-3 shrink-0 rounded-full bg-pine" />
+              <span lang="ja" className="font-mincho text-[clamp(2rem,2.6vw,2.75rem)] leading-none text-pine">
                 <CopyText copy={place.name} />
               </span>
+              <span aria-hidden className="hidden h-px min-w-6 flex-1 self-end bg-pine/25 mb-[0.2em] tablet:block" />
             </span>
             <span className="font-serif text-[clamp(1.25rem,0.8vw+1rem,1.625rem)] leading-snug text-ink [font-variation-settings:'opsz'_24] tablet:ps-6">
               <CopyText copy={place.line} />
@@ -62,6 +74,7 @@ export async function SummerHero() {
             <CopyText copy={pj.navLabel!} />
           </Link>
         </p>
+      </div>
       </div>
     </section>
   );
