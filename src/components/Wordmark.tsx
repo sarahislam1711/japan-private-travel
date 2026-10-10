@@ -1,11 +1,11 @@
 import { placeholderValue } from "@/lib/copy";
 import { getLocale } from "@/lib/locale";
-import { splitBrand } from "@/lib/noren";
-import { NorenMark } from "./NorenMark";
+import { splitBrand } from "@/lib/mark";
+import { StonesMark } from "./StonesMark";
 import { Placeholder } from "./Placeholder";
 
 /**
- * The logo lockup: noren mark and wordmark, the first word in Pine and the
+ * The logo lockup: stepping-stones mark and wordmark, the first word in Pine and the
  * second in Ink. English: "Hala" + "Japan" in Source Serif 4. Arabic site
  * (Sarah, 10 Oct 2026): "هلا" + "يابان" in Markazi Text, right to left.
  * `stacked` sets the mark above the name (footer).
@@ -17,7 +17,7 @@ export async function Wordmark({ stacked = false }: { stacked?: boolean }) {
   const [first, second] = name ? (ar ? (name.split(/\s+/) as [string, string]) : splitBrand(name)) : ["", ""];
   return (
     <span dir={ar ? "rtl" : "ltr"} className={`inline-flex ${stacked ? "flex-col items-start gap-2" : "items-center gap-2.5"}`}>
-      <NorenMark className={`shrink-0 text-pine ${stacked ? "size-8" : "size-[1.875rem]"}`} />
+      <StonesMark className={`shrink-0 text-pine ${stacked ? "size-8" : "size-[1.875rem]"}`} />
       <span
         lang={ar ? "ar" : "en"}
         className={
